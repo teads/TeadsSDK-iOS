@@ -57,11 +57,6 @@
     }
 }
 
--(void)threadStartAnimating
-{
-//    [self.activityIndicator startAnimating];
-}
-
 #pragma mark - TeadsInterstitialDelegate mandatory delegate methods
 
 
@@ -84,8 +79,7 @@
 
 // Interstitial Will Load (loading)
 - (void)teadsInterstitialWillLoad:(TeadsInterstitial *)interstitial {
-    [self performSelectorInBackground:@selector(threadStartAnimating) withObject:nil];
-//    [NSThread detachNewThreadSelector:@selector(threadStartAnimating) toTarget:self withObject:nil];
+
 }
 
 // Interstitial Did Load (loaded successfully)
