@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TeadsSDK/TeadsNativeVideo.h>
 
-@interface InBoardWebViewController : UIViewController
+@interface InBoardWebViewController : UIViewController <UIWebViewDelegate, TeadsNativeVideoDelegate>
 
 @end
