@@ -10,28 +10,79 @@
 
 @interface InBoardScrollViewController ()
 
+@property (strong, nonatomic) TeadsNativeVideo *teadsInBoard;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *inBoardConstraint;
+
+@property (assign, nonatomic) BOOL adExperienceLoaded;
+
 @end
 
 @implementation InBoardScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.scrollView.delegate = self;
+    self.automaticallyAdjustsScrollViewInsets = NO; 
+    
+    self.navigationItem.title = @"inBoard ScrollView";
+    
+    self.adExperienceLoaded = NO;
+    self.teadsInBoard = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" placeholder:self.inBoardView heightConstraint:self.inBoardConstraint scrollView:self.scrollView rootViewController:self delegate:self];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.adExperienceLoaded) {
+        [self.teadsInBoard viewControllerAppeared:self];
+    } else {
+        [self.teadsInBoard load];
+    }
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if (self.adExperienceLoaded) {
+        [self.teadsInBoard viewControllerDisappeared:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self.teadsInBoard clean];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - TeadsNativeVideoDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
+    self.adExperienceLoaded = YES;
 }
-*/
+
+- (void)teadsNativeVideoDidDismiss:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+- (void)teadsNativeVideoDidStart:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+- (void)teadsNativeVideoDidStop:(TeadsNativeVideo *)nativeVideo {
+}
+
+- (void)teadsNativeVideoDidPause:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+- (void)teadsNativeVideoDidResume:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+- (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
+    self.adExperienceLoaded = NO;
+}
 
 @end
