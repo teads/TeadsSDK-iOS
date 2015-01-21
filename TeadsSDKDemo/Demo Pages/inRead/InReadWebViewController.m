@@ -10,28 +10,81 @@
 
 @interface InReadWebViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
+@property (assign, nonatomic) BOOL adExperienceLoaded;
+
 @end
 
 @implementation InReadWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.webView.delegate = self;
+    
+    self.adExperienceLoaded = NO;
+    
+    self.navigationItem.title = @"inRead WebView";
+    
+    //Load a web page from an URL
+    NSURL *webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
+    
+    // inRead
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" placeholderText:@"#my-placement-id" webView:self.webView rootViewController:self delegate:self];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.adExperienceLoaded) {
+        [self.teadsInRead viewControllerAppeared:self];
+    } else {
+        [self.teadsInRead load];
+    }
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if (self.adExperienceLoaded) {
+        [self.teadsInRead viewControllerDisappeared:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self.teadsInRead clean];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    return YES;
 }
-*/
+
+#pragma mark - TeadsNativeVideoDelegate
+
+- (void)teadsNativeVideoDidDismiss:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+- (void)teadsNativeVideoDidStart:(TeadsNativeVideo *)nativeVideo {
+}
+
+- (void)teadsNativeVideoDidStop:(TeadsNativeVideo *)nativeVideo {
+}
+
+- (void)teadsNativeVideoDidPause:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+- (void)teadsNativeVideoDidResume:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+-(void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
+    self.adExperienceLoaded = NO;
+}
 
 @end
