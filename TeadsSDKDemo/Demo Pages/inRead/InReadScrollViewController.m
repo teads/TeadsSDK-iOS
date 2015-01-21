@@ -29,7 +29,7 @@
     self.navigationItem.title = @"inRead ScrollView";
     
     self.adExperienceLoaded = NO;
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

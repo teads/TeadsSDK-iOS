@@ -32,7 +32,7 @@
     
     self.adExperienceLoaded = NO;
     // inRead
-    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27675" webView:self.webView rootViewController:self delegate:self];
+    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" webView:self.webView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

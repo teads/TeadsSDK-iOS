@@ -32,7 +32,7 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
     
     // inRead
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" placeholderText:@"#my-placement-id" webView:self.webView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholderText:@"#my-placement-id" webView:self.webView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

@@ -23,7 +23,7 @@
     self.navigationItem.title = @"inBoard TableView";
     
     self.adExperienceLoaded = NO;
-    self.teadsinBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27675" tableView:self.tableView rootViewController:self delegate:self];
+    self.teadsinBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" tableView:self.tableView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

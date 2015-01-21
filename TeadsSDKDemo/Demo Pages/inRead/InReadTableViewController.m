@@ -30,7 +30,7 @@
     }
     
     NSIndexPath *pathForTeadsInRead = [NSIndexPath indexPathForRow:rowToDisplayInRead inSection:0];
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" insertionIndexPath:pathForTeadsInRead tableView:self.tableView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" insertionIndexPath:pathForTeadsInRead tableView:self.tableView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

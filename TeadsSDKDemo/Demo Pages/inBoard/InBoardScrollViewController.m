@@ -29,7 +29,7 @@
     self.navigationItem.title = @"inBoard ScrollView";
     
     self.adExperienceLoaded = NO;
-    self.teadsInBoard = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27675" placeholder:self.inBoardView heightConstraint:self.inBoardConstraint scrollView:self.scrollView rootViewController:self delegate:self];
+    self.teadsInBoard = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholder:self.inBoardView heightConstraint:self.inBoardConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
