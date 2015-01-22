@@ -29,8 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.viewLabel.text = [NSString stringWithFormat:@"%ld", (long)self.index];
+    self.viewLabel.text = [NSString stringWithFormat:@"%ld", (long)self.index+1];
     if (self.index >= 2) {
         self.arrowRight.hidden = YES;
         self.arrowLeft.hidden = NO;
@@ -38,6 +37,8 @@
         self.arrowRight.hidden = NO;
         self.arrowLeft.hidden = YES;
     }
+    
+    self.pageControl.currentPage = self.index;
 }
 
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TeadsSDK/TeadsNativeVideo.h>
 
-@interface InSwipeViewController : UIPageViewController
+@interface InSwipeViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, TeadsNativeVideoDelegate>
+
+@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 
 @end

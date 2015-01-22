@@ -10,7 +10,7 @@
 
 @interface ContentPageViewController : UIViewController
 
-
+@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (assign, nonatomic) NSInteger index;
 
 @property (strong, nonatomic) IBOutlet UILabel *viewLabel;
