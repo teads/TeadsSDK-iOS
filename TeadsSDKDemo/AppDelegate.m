@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <TeadsSDK/TeadsSDK.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [TeadsLog setLevelType:TeadsDebugLevelVerbose];
+    
+    // Set the debug level to verbose
+    TeadsLogInfo(@"Framework has been set up correctly");
+    
     // Override point for customization after application launch.
     return YES;
 }
