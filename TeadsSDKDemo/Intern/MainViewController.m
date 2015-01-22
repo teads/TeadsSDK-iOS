@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setTranslucent:NO];
-    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"Teads SDK Demo";
     
     titlesForHeader = @[@"Native Video", @"Interstitial"];
@@ -38,13 +38,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)tableView:(UITableView *)tableView canCollapseSection:(NSInteger)section
-{
-    if (section!=1) return YES;
-    
-    return NO;
 }
 
 #pragma mark - Table view data source
@@ -70,26 +63,37 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellTitleIdentifier = @"CellTitle";
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    
+    UITableViewCell *cell;
+    
+    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 8)) ||
+        (indexPath.section == 1 && indexPath.row == 0)) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTitleIdentifier];
+        }
         cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:14];
+        cell.userInteractionEnabled = NO;
+        cell.backgroundColor = [UIColor  colorWithWhite:1 alpha:0.5];
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                cell.userInteractionEnabled = NO;
-                cell.backgroundColor = [UIColor  colorWithWhite:1 alpha:0.5];
-                cell.textLabel.textColor = [UIColor grayColor];
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.textLabel.text = @"inRead";
                 break;
             case 1:
                 cell.textLabel.text = @"inRead ScrollView";
-                
                 break;
             case 2:
                 cell.textLabel.text = @"inRead WebView";
@@ -98,10 +102,6 @@
                 cell.textLabel.text = @"inRead TableView";
                 break;
             case 4:
-                cell.userInteractionEnabled = NO;
-                cell.backgroundColor = [UIColor  colorWithWhite:1 alpha:0.5];
-                cell.textLabel.textColor = [UIColor grayColor];
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.textLabel.text = @"inBoard";
                 break;
             case 5:
@@ -114,10 +114,6 @@
                 cell.textLabel.text = @"inBoard TableView";
                 break;
             case 8:
-                cell.userInteractionEnabled = NO;
-                cell.backgroundColor = [UIColor  colorWithWhite:1 alpha:0.5];
-                cell.textLabel.textColor = [UIColor grayColor];
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.textLabel.text = @"inSwipe";
                 break;
             case 9:
@@ -129,10 +125,6 @@
     } else {
         switch (indexPath.row) {
             case 0:
-                cell.userInteractionEnabled = NO;
-                cell.backgroundColor = [UIColor  colorWithWhite:1 alpha:0.5];
-                cell.textLabel.textColor = [UIColor grayColor];
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.textLabel.text = @"inFlow";
                 break;
             case 1:
