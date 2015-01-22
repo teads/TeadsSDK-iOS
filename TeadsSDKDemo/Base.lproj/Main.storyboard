@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-1i-PcB" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1264"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1277"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="4uj-fP-euB">
                                                 <rect key="frame" x="8" y="20" width="359" height="27"/>
@@ -38,8 +38,14 @@
                                                     </mask>
                                                 </variation>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="uRB-zQ-xDX">
+                                                <rect key="frame" x="120" y="54" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-Za-vgg">
+                                                <rect key="frame" x="238" y="54" width="16" height="16"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-1T-cGL">
-                                                <rect key="frame" x="8" y="67" width="359" height="629"/>
+                                                <rect key="frame" x="8" y="80" width="359" height="629"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
@@ -48,6 +54,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <mutableString key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</mutableString>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Zg-urx" userLabel="inRead">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,7 +63,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-Ah-1JY">
-                                                <rect key="frame" x="8" y="716" width="359" height="528"/>
+                                                <rect key="frame" x="8" y="729" width="359" height="528"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -68,6 +75,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ieY-Zg-urx" firstAttribute="top" secondItem="NJs-1T-cGL" secondAttribute="bottom" constant="10" id="3Mm-Zw-aH1"/>
+                                            <constraint firstItem="uRB-zQ-xDX" firstAttribute="leading" secondItem="kb7-1i-PcB" secondAttribute="leading" constant="120" id="4CX-f9-us7"/>
                                             <constraint firstItem="nIU-Ah-1JY" firstAttribute="top" secondItem="ieY-Zg-urx" secondAttribute="bottom" constant="10" id="APM-ad-OD2"/>
                                             <constraint firstItem="4uj-fP-euB" firstAttribute="top" secondItem="kb7-1i-PcB" secondAttribute="top" constant="20" id="CRW-7n-UpL"/>
                                             <constraint firstItem="4uj-fP-euB" firstAttribute="leading" secondItem="NJs-1T-cGL" secondAttribute="leading" id="Csl-LQ-Q8J"/>
@@ -77,12 +85,14 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <constraint firstItem="NJs-1T-cGL" firstAttribute="top" secondItem="4uj-fP-euB" secondAttribute="bottom" constant="20" id="Q8S-bC-geR"/>
                                             <constraint firstItem="nIU-Ah-1JY" firstAttribute="top" secondItem="ieY-Zg-urx" secondAttribute="bottom" constant="10" id="QaK-jR-hdj"/>
                                             <constraint firstItem="ieY-Zg-urx" firstAttribute="leading" secondItem="kb7-1i-PcB" secondAttribute="leading" id="T0A-VZ-JO0"/>
+                                            <constraint firstItem="uRB-zQ-xDX" firstAttribute="top" secondItem="4uj-fP-euB" secondAttribute="bottom" constant="8" id="TZD-El-I0d"/>
                                             <constraint firstAttribute="trailing" secondItem="ieY-Zg-urx" secondAttribute="trailing" id="Tau-IS-qGH"/>
                                             <constraint firstItem="ieY-Zg-urx" firstAttribute="leading" secondItem="kb7-1i-PcB" secondAttribute="leading" id="Tsi-gj-oNT"/>
                                             <constraint firstItem="ieY-Zg-urx" firstAttribute="centerX" secondItem="nIU-Ah-1JY" secondAttribute="centerX" id="XPI-cJ-hSh"/>
                                             <constraint firstItem="4uj-fP-euB" firstAttribute="top" secondItem="kb7-1i-PcB" secondAttribute="top" constant="20" id="Yte-HE-S1m"/>
                                             <constraint firstItem="4uj-fP-euB" firstAttribute="leading" secondItem="NJs-1T-cGL" secondAttribute="leading" id="Z5h-Wq-VKv"/>
                                             <constraint firstAttribute="trailing" secondItem="ieY-Zg-urx" secondAttribute="trailing" id="ZKc-x0-EGJ"/>
+                                            <constraint firstItem="NJs-1T-cGL" firstAttribute="top" secondItem="uRB-zQ-xDX" secondAttribute="bottom" constant="10" id="Zan-0Z-gSa"/>
                                             <constraint firstAttribute="trailing" secondItem="4uj-fP-euB" secondAttribute="trailing" constant="8" id="dDV-Ds-488"/>
                                             <constraint firstItem="4uj-fP-euB" firstAttribute="leading" secondItem="NJs-1T-cGL" secondAttribute="leading" id="gPa-vz-q4h"/>
                                             <constraint firstItem="NJs-1T-cGL" firstAttribute="leading" secondItem="kb7-1i-PcB" secondAttribute="leading" constant="8" id="goo-WY-fZp"/>
@@ -91,23 +101,27 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <constraint firstItem="nIU-Ah-1JY" firstAttribute="leading" secondItem="NJs-1T-cGL" secondAttribute="leading" id="hWr-4D-pcR"/>
                                             <constraint firstAttribute="bottom" secondItem="nIU-Ah-1JY" secondAttribute="bottom" constant="20" id="jJl-Ax-YWr"/>
                                             <constraint firstItem="NJs-1T-cGL" firstAttribute="leading" secondItem="nIU-Ah-1JY" secondAttribute="leading" id="q3G-3j-ple"/>
+                                            <constraint firstAttribute="trailing" secondItem="dEz-Za-vgg" secondAttribute="trailing" constant="121" id="sIN-bX-1bj"/>
                                             <constraint firstItem="NJs-1T-cGL" firstAttribute="trailing" secondItem="4uj-fP-euB" secondAttribute="trailing" id="tag-tX-RLU"/>
                                             <constraint firstAttribute="trailing" secondItem="NJs-1T-cGL" secondAttribute="trailing" constant="8" id="uRm-lU-SIo"/>
+                                            <constraint firstItem="NJs-1T-cGL" firstAttribute="top" secondItem="dEz-Za-vgg" secondAttribute="bottom" constant="10" id="vNu-un-dbx"/>
+                                            <constraint firstItem="dEz-Za-vgg" firstAttribute="top" secondItem="4uj-fP-euB" secondAttribute="bottom" constant="8" id="zAb-Ls-yJv"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Lif-qh-5XA"/>
-                                                <exclude reference="Tau-IS-qGH"/>
-                                                <exclude reference="Tsi-gj-oNT"/>
-                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="Csl-LQ-Q8J"/>
                                                 <exclude reference="Yte-HE-S1m"/>
                                                 <exclude reference="gPa-vz-q4h"/>
                                                 <exclude reference="hHk-ZW-q8s"/>
+                                                <exclude reference="Fof-0Y-aHn"/>
                                                 <exclude reference="Q8S-bC-geR"/>
                                                 <exclude reference="hUK-jq-Jbx"/>
                                                 <exclude reference="q3G-3j-ple"/>
                                                 <exclude reference="tag-tX-RLU"/>
+                                                <exclude reference="Lif-qh-5XA"/>
+                                                <exclude reference="Tau-IS-qGH"/>
+                                                <exclude reference="Tsi-gj-oNT"/>
+                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="QaK-jR-hdj"/>
                                             </mask>
                                         </variation>
@@ -224,10 +238,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D2558B0B-E864-4CF8-8B3F-D91E3F272463" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-Pn-SfR">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-Pn-SfR">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D2558B0B-E864-4CF8-8B3F-D91E3F272463" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-bD-k0v">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-bD-k0v">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -250,6 +264,9 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         <constraint firstItem="Rly-Pn-SfR" firstAttribute="top" secondItem="UtD-UE-hdp" secondAttribute="bottom" constant="35" id="rYt-Nd-gIo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                </accessibility>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="RaY-Hr-fkn" detailTextLabel="oYZ-9x-1Tv" imageView="acZ-FS-ooV" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="2b7-nm-aYl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -416,56 +433,6 @@ Your intersitial will appear when you will leave this view.</string>
             </objects>
             <point key="canvasLocation" x="1192.5" y="730.5"/>
         </scene>
-        <!--Content Page View Controller-->
-        <scene sceneID="OFn-Ms-FeK">
-            <objects>
-                <viewController storyboardIdentifier="contentPageViewControllerID" id="nCT-H2-6Wn" customClass="ContentPageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7m0-is-6de"/>
-                        <viewControllerLayoutGuide type="bottom" id="QjY-yV-p6H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SOp-nw-xsc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="x5V-wu-yjr">
-                                <rect key="frame" x="88" y="164" width="200" height="222"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="x5V-wu-yjr" firstAttribute="trailing" secondItem="SOp-nw-xsc" secondAttribute="trailingMargin" id="Ey8-mK-vMA"/>
-                            <constraint firstItem="QjY-yV-p6H" firstAttribute="top" secondItem="x5V-wu-yjr" secondAttribute="bottom" constant="192" id="KLG-zm-sVk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="x5V-wu-yjr" secondAttribute="trailing" constant="71" id="Xrg-rC-867"/>
-                            <constraint firstItem="x5V-wu-yjr" firstAttribute="leading" secondItem="SOp-nw-xsc" secondAttribute="leadingMargin" constant="72" id="hLn-ts-bok"/>
-                            <constraint firstItem="QjY-yV-p6H" firstAttribute="top" secondItem="x5V-wu-yjr" secondAttribute="bottom" constant="281" id="imJ-IW-dDT"/>
-                            <constraint firstItem="x5V-wu-yjr" firstAttribute="leading" secondItem="SOp-nw-xsc" secondAttribute="leadingMargin" id="rpz-wI-Fwx"/>
-                            <constraint firstItem="x5V-wu-yjr" firstAttribute="top" secondItem="7m0-is-6de" secondAttribute="bottom" constant="120" id="wg3-9q-dGh"/>
-                            <constraint firstItem="x5V-wu-yjr" firstAttribute="top" secondItem="7m0-is-6de" secondAttribute="bottom" constant="173" id="x5A-re-8vE"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ey8-mK-vMA"/>
-                                <exclude reference="rpz-wI-Fwx"/>
-                                <exclude reference="x5A-re-8vE"/>
-                                <exclude reference="KLG-zm-sVk"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="viewLabel" destination="x5V-wu-yjr" id="Xmy-Rh-86B"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lv7-Fj-Lnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1708.5" y="730.5"/>
-        </scene>
         <!--inBoard Web View Controller-->
         <scene sceneID="ur2-Sp-gad">
             <objects>
@@ -518,10 +485,10 @@ Your intersitial will appear when you will leave this view.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWT-zX-SiL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1275"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="TJ5-tv-JcO"/>
@@ -638,10 +605,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="447D10C1-BB32-4E26-BA2F-7A3EB76783E3" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EAA08D6D-134A-42C9-BAE1-E711DEB806BC" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="447D10C1-BB32-4E26-BA2F-7A3EB76783E3" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EAA08D6D-134A-42C9-BAE1-E711DEB806BC" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -704,7 +671,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </scene>
     </scenes>
     <resources>
-        <image name="447D10C1-BB32-4E26-BA2F-7A3EB76783E3" width="16" height="16">
+        <image name="EAA08D6D-134A-42C9-BAE1-E711DEB806BC" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -772,74 +739,7 @@ pg2rDbMNtg27DcoNzg3VDd0N6g3vDfEN8w34DgAOAw4IDhAOEw4lDigOLQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAAA4vA
 </mutableData>
         </image>
-        <image name="D2558B0B-E864-4CF8-8B3F-D91E3F272463" width="16" height="16">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
-GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
-c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MTYsIDE2fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
-HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPEQxuTU0AKgAABAgAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAJgAAACoAAAAqAAAAKgAAACoAAAAqAAAAKgAAACoAAAA
-qAAAAJ0AAAARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2AAAA8AAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA
-/wAAAPUAAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADUAAADvAAAA/wAAAP8AAAD/AAAA
-/wAAAPQAAAA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAO8AAAD/AAAA
-/wAAAPQAAAA+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzAAAA
-7gAAAPMAAAA9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAADIAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4B
-AAADAAAAAQAQAAABAQADAAAAAQAQAAABAgADAAAABAAABLYBAwADAAAAAQABAAABBgADAAAAAQACAAAB
-EQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQAQAAABFwAEAAAAAQAABAAB
-HAADAAAAAQABAAABUgADAAAAAQABAAABUwADAAAABAAABL6HcwAHAAAHqAAABMYAAAAAAAgACAAIAAgA
-AQABAAEAAQAAB6hhcHBsAiAAAG1udHJSR0IgWFlaIAfZAAIAGQALABoAC2Fjc3BBUFBMAAAAAGFwcGwA
-AAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAC2Rlc2MAAAEIAAAAb2RzY20AAAF4AAAFbGNwcnQAAAbkAAAAOHd0cHQA
-AAccAAAAFHJYWVoAAAcwAAAAFGdYWVoAAAdEAAAAFGJYWVoAAAdYAAAAFHJUUkMAAAdsAAAADmNoYWQA
-AAd8AAAALGJUUkMAAAdsAAAADmdUUkMAAAdsAAAADmRlc2MAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2Zp
-bGUAAAAAAAAAAAAAABRHZW5lcmljIFJHQiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtbHVjAAAAAAAAAB4AAAAMc2tTSwAAACgAAAF4aHJIUgAAACgA
-AAGgY2FFUwAAACQAAAHIcHRCUgAAACYAAAHsdWtVQQAAACoAAAISZnJGVQAAACgAAAI8emhUVwAAABYA
-AAJkaXRJVAAAACgAAAJ6bmJOTwAAACYAAAKia29LUgAAABYAAALIY3NDWgAAACIAAALeaGVJTAAAAB4A
-AAMAZGVERQAAACwAAAMeaHVIVQAAACgAAANKc3ZTRQAAACYAAAKiemhDTgAAABYAAANyamFKUAAAABoA
-AAOIcm9STwAAACQAAAOiZWxHUgAAACIAAAPGcHRQTwAAACYAAAPobmxOTAAAACgAAAQOZXNFUwAAACYA
-AAPodGhUSAAAACQAAAQ2dHJUUgAAACIAAARaZmlGSQAAACgAAAR8cGxQTAAAACwAAASkcnVSVQAAACIA
-AATQYXJFRwAAACYAAATyZW5VUwAAACYAAAUYZGFESwAAAC4AAAU+AFYBYQBlAG8AYgBlAGMAbgD9ACAA
-UgBHAEIAIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwA
-UABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOgAcgBpAGMAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcA
-ZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIA
-bwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAAUgBWAEKQGnUoACAAUgBHAEIAIIJyX2ljz4/wAFAA
-cgBvAGYAaQBsAG8AIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABSAEcA
-QgAtAHAAcgBvAGYAaQBsx3y8GAAgAFIARwBCACDVBLhc0wzHfABPAGIAZQBjAG4A/QAgAFIARwBCACAA
-cAByAG8AZgBpAGwF5AXoBdUF5AXZBdwAIABSAEcAQgAgBdsF3AXcBdkAQQBsAGwAZwBlAG0AZQBpAG4A
-ZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbADBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8A
-ZgBpAGxmbpAaACAAUgBHAEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsAUAByAG8A
-ZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIA
-RwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAA
-UgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcA
-ZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIA
-bwBmAGkAaQBsAGkAVQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEE
-SQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAAUgBHAEIGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicG
-RAY5BicGRQBHAGUAbgBlAHIAaQBjACAAUgBHAEIAIABQAHIAbwBmAGkAbABlAEcAZQBuAGUAcgBlAGwA
-IABSAEcAQgAtAGIAZQBzAGsAcgBpAHYAZQBsAHMAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUg
-SW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0A
-AD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEB
-zQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xhc3Nu
-YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1h
-Z2VSZXBYTlNPYmplY3TSJSYtLldOU0FycmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2
-N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdl
-ojwrXxAPTlNLZXllZEFyY2hpdmVy0UBBVHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkA
-gQCDAIUAigCMAI4AlwCcAKcAqQCrAK0AsgC1ALcAuQC7AL0AwgDZANsA3Q1PDVQNXw1oDXsNfw2SDZ0N
-pg2rDbMNtg27DcoNzg3VDd0N6g3vDfEN8w34DgAOAw4IDhAOEw4lDigOLQAAAAAAAAIBAAAAAAAAAEIA
-AAAAAAAAAAAAAAAAAA4vA
-</mutableData>
-        </image>
+        <image name="arrow_down.png" width="16" height="16"/>
         <image name="teads.png" width="70" height="70"/>
         <image name="teads_grayed.png" width="70" height="70"/>
     </resources>
