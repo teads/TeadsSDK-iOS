@@ -29,6 +29,7 @@
     self.navigationItem.title = @"inFlow";
 
     self.showInFlowButton.enabled = NO;
+    self.activityIndicator.hidden = YES;
     
     self.teadsInterstitialIsLoaded = NO;
     //Init the inFlow
@@ -44,6 +45,7 @@
     if (!self.teadsInterstitialIsLoaded) {
         self.loadInFlowButton.enabled = NO;
         
+        self.activityIndicator.hidden = NO;
         [self.activityIndicator startAnimating];
         [self.teadsInterstitial load];
     }
@@ -71,7 +73,7 @@
 // Interstitial Failed to Load
 - (void)teadsInterstitial:(TeadsInterstitial *)interstitial didFailLoading:(TeadsError *)error {
     [self.activityIndicator stopAnimating];
-    
+    self.activityIndicator.hidden = YES;
     self.teadsInterstitialIsLoaded = NO;
     
     self.loadInFlowButton.enabled = YES;
@@ -85,6 +87,7 @@
 // Interstitial Did Load (loaded successfully)
 - (void)teadsInterstitialDidLoad:(TeadsInterstitial *)interstitial {
     [self.activityIndicator stopAnimating];
+    self.activityIndicator.hidden = YES;
     //Boolean to keep track of load status
     self.teadsInterstitialIsLoaded = YES;
     
@@ -110,7 +113,7 @@
 - (void)teadsInterstitialDidDismissFullScreen:(TeadsInterstitial *)interstitial {
     //inFlow has been dismissed : ad is not loaded anymore
     self.teadsInterstitialIsLoaded = NO;
-    
+    self.activityIndicator.hidden = YES;
     self.showInFlowButton.enabled = NO;
     self.loadInFlowButton.enabled = YES;
 }
