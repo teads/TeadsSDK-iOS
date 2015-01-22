@@ -26,6 +26,8 @@
 
 @property (nonatomic) BOOL playbackActive;
 
+@property (nonatomic) CGFloat maxContainerWidth;
+
 //////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Methods
