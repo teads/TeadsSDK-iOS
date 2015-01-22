@@ -288,8 +288,8 @@
 		916CFB121A68288400E36306 /* TeadsSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				916CFB401A68304900E36306 /* Demo Pages */,
 				916CFB201A68288400E36306 /* Images.xcassets */,
+				916CFB401A68304900E36306 /* Demo Pages */,
 				916CFB3C1A68303700E36306 /* Intern */,
 				916CFB131A68288400E36306 /* Supporting Files */,
 			);
