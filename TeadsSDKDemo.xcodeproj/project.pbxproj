@@ -128,7 +128,7 @@
 		910CB44F1A695933005E6711 /* InReadWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWebViewController.m; sourceTree = "<group>"; };
 		913B3BEE1A70F495008E3E30 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		913B3BF01A70F509008E3E30 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
-		913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentPageViewController.xib; sourceTree = "<group>"; };
+		913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentPageViewController.xib; path = "../../Demo Pages/inSwipe/ContentPageViewController.xib"; sourceTree = "<group>"; };
 		916CFB101A68288400E36306 /* TeadsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CFB141A68288400E36306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CFB151A68288400E36306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 		919567221A6D463200F5FB9B /* npm.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = npm.js; sourceTree = "<group>"; };
 		919567231A6D463200F5FB9B /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		919567401A6D4AE400F5FB9B /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
-		919567451A6D5F4400F5FB9B /* ContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPageViewController.h; sourceTree = "<group>"; };
-		919567461A6D5F4400F5FB9B /* ContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentPageViewController.m; sourceTree = "<group>"; };
+		919567451A6D5F4400F5FB9B /* ContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentPageViewController.h; path = "../../Demo Pages/inSwipe/ContentPageViewController.h"; sourceTree = "<group>"; };
+		919567461A6D5F4400F5FB9B /* ContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentPageViewController.m; path = "../../Demo Pages/inSwipe/ContentPageViewController.m"; sourceTree = "<group>"; };
 		919567491A6E5BB400F5FB9B /* teads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teads.png; sourceTree = "<group>"; };
 		9195674A1A6E5BB400F5FB9B /* teads@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads@2x.png"; sourceTree = "<group>"; };
 		9195674B1A6E5BB400F5FB9B /* teads@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads@3x.png"; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 				916CFB181A68288400E36306 /* AppDelegate.m */,
 				916CFB3D1A68303700E36306 /* MainViewController.h */,
 				916CFB3E1A68303700E36306 /* MainViewController.m */,
-				91F41DE31A691E30007CA91D /* AccordionTableView */,
 				919566CF1A6D061B00F5FB9B /* Images */,
+				91F581DF1A712E40007D70AC /* inSwipe pages */,
 				919567041A6D463200F5FB9B /* webview */,
 			);
 			path = Intern;
@@ -475,18 +475,18 @@
 			children = (
 				910CB4391A695898005E6711 /* InSwipeViewController.h */,
 				910CB43A1A695898005E6711 /* InSwipeViewController.m */,
-				919567451A6D5F4400F5FB9B /* ContentPageViewController.h */,
-				919567461A6D5F4400F5FB9B /* ContentPageViewController.m */,
-				913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */,
 			);
 			path = inSwipe;
 			sourceTree = "<group>";
 		};
-		91F41DE31A691E30007CA91D /* AccordionTableView */ = {
+		91F581DF1A712E40007D70AC /* inSwipe pages */ = {
 			isa = PBXGroup;
 			children = (
+				919567451A6D5F4400F5FB9B /* ContentPageViewController.h */,
+				919567461A6D5F4400F5FB9B /* ContentPageViewController.m */,
+				913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */,
 			);
-			path = AccordionTableView;
+			path = "inSwipe pages";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
