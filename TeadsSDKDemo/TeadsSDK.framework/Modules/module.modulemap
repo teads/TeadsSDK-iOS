@@ -1,0 +1,6 @@
+framework module TeadsSDK {
+  umbrella header "TeadsSDK.h"
+
+  export *
+  module * { export * }
+}

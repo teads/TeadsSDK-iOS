@@ -21,7 +21,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F5-Bz-xvT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-1i-PcB" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-1i-PcB" userLabel="Content View">
                                         <rect key="frame" x="30" y="0.0" width="315" height="1500"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="4uj-fP-euB">
@@ -54,15 +54,15 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <mutableString key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</mutableString>
+                                                <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Zg-urx" userLabel="inRead">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Zg-urx" userLabel="inRead">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="YQ0-yW-4QH"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-Ah-1JY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-Ah-1JY">
                                                 <rect key="frame" x="8" y="851" width="299" height="629"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
@@ -109,6 +109,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="Lif-qh-5XA"/>
+                                                <exclude reference="Tau-IS-qGH"/>
+                                                <exclude reference="Tsi-gj-oNT"/>
+                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="Csl-LQ-Q8J"/>
                                                 <exclude reference="Yte-HE-S1m"/>
                                                 <exclude reference="gPa-vz-q4h"/>
@@ -118,10 +122,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                                 <exclude reference="hUK-jq-Jbx"/>
                                                 <exclude reference="q3G-3j-ple"/>
                                                 <exclude reference="tag-tX-RLU"/>
-                                                <exclude reference="Lif-qh-5XA"/>
-                                                <exclude reference="Tau-IS-qGH"/>
-                                                <exclude reference="Tsi-gj-oNT"/>
-                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="QaK-jR-hdj"/>
                                             </mask>
                                         </variation>
@@ -177,7 +177,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uJ-gC-3vI">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-Qo-2rQ" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-Qo-2rQ" userLabel="Content View">
                                         <rect key="frame" x="30" y="0.0" width="708" height="2037"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="S3E-M8-GC6">
@@ -194,15 +194,15 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="v87-Is-L6D">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="v87-Is-L6D">
                                                 <rect key="frame" x="120" y="54" width="16" height="16"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="hdq-1Y-vvU">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="hdq-1Y-vvU">
                                                 <rect key="frame" x="571" y="54" width="16" height="16"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXe-8E-ugJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXe-8E-ugJ">
                                                 <rect key="frame" x="8" y="80" width="692" height="1024"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
 
@@ -210,27 +210,27 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tempus leo sit amet nulla finibus molestie et condimentum odio. Aliquam viverra turpis urna, at bibendum eros accumsan sed. Duis at tristique sem, nec luctus odio. Pellentesque id sem in tortor convallis congue. Nullam ex risus, ullamcorper eget consequat non, ornare in purus. Praesent nec purus neque. Donec porta massa vitae ex mollis, vitae iaculis ipsum viverra. Morbi sollicitudin tortor ac sem accumsan viverra.
 
-Sed vel massa nec nisl sagittis condimentum. Sed fringilla fringilla ex, sit amet accumsan dui tincidunt et. Suspendisse elementum et tortor nec hendrerit. Suspendisse facilisis commodo nisi id convallis. Etiam sollicitudin ex sed posuere lacinia. Integer mollis enim aliquet velit tincidunt, vel porttitor sapien aliquet. Quisque et ex nisi. Curabitur sollicitudin felis velit, quis sollicitudin mi mollis eget. Nam fringilla ipsum neque, a elementum lorem blandit id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</mutableString>
+Sed vel massa nec nisl sagittis condimentum. Sed fringilla fringilla ex, sit amet accumsan dui tincidunt et. Suspendisse elementum et tortor nec hendrerit. Suspendisse facilisis commodo nisi id convallis. Etiam sollicitudin ex sed posuere lacinia. Integer mollis enim aliquet velit tincidunt, vel porttitor sapien aliquet. Quisque et ex nisi. Curabitur sollicitudin felis velit, quis sollicitudin mi mollis eget. Nam fringilla ipsum neque, a elementum lorem blandit id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-uJ-5rc" userLabel="inRead">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-uJ-5rc" userLabel="inRead">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="Ka9-To-4af"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-Ql-sJW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-Ql-sJW">
                                                 <rect key="frame" x="8" y="1124" width="692" height="893"/>
-                                                <mutableString key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
+                                                <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.
 
 Integer sem ex, molestie quis sapien a, luctus feugiat est. Ut eu vulputate sapien, quis eleifend felis. Morbi enim turpis, consequat a facilisis eget, varius nec nunc. Duis fringilla tristique aliquet. Curabitur posuere metus id erat posuere finibus. Suspendisse elit augue, vehicula quis lacinia vel, commodo quis sapien. Vestibulum nec facilisis augue, vitae scelerisque ipsum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tempus leo sit amet nulla finibus molestie et condimentum odio. Aliquam viverra turpis urna, at bibendum eros accumsan sed. Duis at tristique sem, nec luctus odio. Pellentesque id sem in tortor convallis congue. Nullam ex risus, ullamcorper eget consequat non, ornare in purus. Praesent nec purus neque. Donec porta massa vitae ex mollis, vitae iaculis ipsum viverra. Morbi sollicitudin tortor ac sem accumsan viverra.</mutableString>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tempus leo sit amet nulla finibus molestie et condimentum odio. Aliquam viverra turpis urna, at bibendum eros accumsan sed. Duis at tristique sem, nec luctus odio. Pellentesque id sem in tortor convallis congue. Nullam ex risus, ullamcorper eget consequat non, ornare in purus. Praesent nec purus neque. Donec porta massa vitae ex mollis, vitae iaculis ipsum viverra. Morbi sollicitudin tortor ac sem accumsan viverra.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -273,19 +273,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ph9-NZ-1xg"/>
-                                                <exclude reference="gcd-Td-tvq"/>
-                                                <exclude reference="NPT-rh-gqr"/>
-                                                <exclude reference="SQj-Au-n3W"/>
-                                                <exclude reference="nll-9z-Bh1"/>
-                                                <exclude reference="vNb-wP-irk"/>
-                                                <exclude reference="8Xd-ds-SZb"/>
-                                                <exclude reference="6Gy-Im-czL"/>
-                                                <exclude reference="8oM-vf-z5A"/>
-                                                <exclude reference="Tet-7g-565"/>
-                                                <exclude reference="yxh-2U-cia"/>
                                                 <exclude reference="30C-a1-6lk"/>
                                                 <exclude reference="QYt-zt-gHn"/>
+                                                <exclude reference="Tet-7g-565"/>
+                                                <exclude reference="yxh-2U-cia"/>
+                                                <exclude reference="NPT-rh-gqr"/>
+                                                <exclude reference="SQj-Au-n3W"/>
+                                                <exclude reference="gcd-Td-tvq"/>
+                                                <exclude reference="ph9-NZ-1xg"/>
+                                                <exclude reference="6Gy-Im-czL"/>
+                                                <exclude reference="8Xd-ds-SZb"/>
+                                                <exclude reference="8oM-vf-z5A"/>
+                                                <exclude reference="nll-9z-Bh1"/>
+                                                <exclude reference="vNb-wP-irk"/>
                                                 <exclude reference="dGg-bk-ocf"/>
                                             </mask>
                                         </variation>
@@ -367,7 +367,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <scene sceneID="nv2-m9-BE7">
             <objects>
                 <tableViewController storyboardIdentifier="inReadTableView" id="rJx-mq-Wdn" userLabel="inRead Table View Controller" customClass="InReadTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="brl-gH-eE0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="brl-gH-eE0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -378,28 +378,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dZt-xm-HuI" id="1eJ-bP-lAM">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJo-3L-z1f">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJo-3L-z1f">
                                             <rect key="frame" x="15" y="10" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="oEy-LT-dKD"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="UtD-UE-hdp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="UtD-UE-hdp">
                                             <rect key="frame" x="100" y="10" width="267" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NIz-D4-QlS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NIz-D4-QlS">
                                             <rect key="frame" x="100" y="40" width="267" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-Pn-SfR">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-Pn-SfR">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-bD-k0v">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-bD-k0v">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -643,7 +643,7 @@ Your intersitial will appear when you will leave this view.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWT-zX-SiL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1275"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
@@ -734,7 +734,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <scene sceneID="g8L-MT-zeb">
             <objects>
                 <tableViewController storyboardIdentifier="inBoardTableView" id="2xJ-tq-MH4" userLabel="inRead Table View Controller" customClass="InBoardTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -745,28 +745,28 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CNY-OY-Vbt" id="F9p-9Z-Kip">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="2sC-uG-5Eg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="2sC-uG-5Eg">
                                             <rect key="frame" x="15" y="10" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="O7P-hX-gge"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-tO-D0m">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-tO-D0m">
                                             <rect key="frame" x="100" y="10" width="267" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7e5-vw-Mf6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7e5-vw-Mf6">
                                             <rect key="frame" x="100" y="40" width="267" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B0154F62-F115-4BBC-88DF-8F79DFBC5E5D" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="38A30237-DA53-4296-95F3-A823097DDD04" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B0154F62-F115-4BBC-88DF-8F79DFBC5E5D" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="38A30237-DA53-4296-95F3-A823097DDD04" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -829,7 +829,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </scene>
     </scenes>
     <resources>
-        <image name="B0154F62-F115-4BBC-88DF-8F79DFBC5E5D" width="16" height="16">
+        <image name="38A30237-DA53-4296-95F3-A823097DDD04" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
