@@ -65,6 +65,10 @@
 
 #pragma mark - TeadsNativeVideoDelegate
 
+- (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
+    self.adExperienceLoaded = YES;
+}
+
 - (void)teadsNativeVideoDidDismiss:(TeadsNativeVideo *)nativeVideo {
 
 }
