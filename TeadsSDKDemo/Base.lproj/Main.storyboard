@@ -132,7 +132,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                     <constraint firstAttribute="trailing" secondItem="kb7-1i-PcB" secondAttribute="trailing" constant="30" id="2M3-M5-g0S"/>
                                     <constraint firstItem="kb7-1i-PcB" firstAttribute="top" secondItem="6F5-Bz-xvT" secondAttribute="top" id="8lj-8X-gGw"/>
                                     <constraint firstItem="kb7-1i-PcB" firstAttribute="leading" secondItem="6F5-Bz-xvT" secondAttribute="leading" constant="30" id="Obb-MF-hdK"/>
-                                    <constraint firstAttribute="bottom" secondItem="kb7-1i-PcB" secondAttribute="bottom" constant="-833" id="Qkt-XP-WD4"/>
+                                    <constraint firstAttribute="bottom" secondItem="kb7-1i-PcB" secondAttribute="bottom" constant="20" symbolic="YES" id="Qkt-XP-WD4"/>
                                     <constraint firstAttribute="centerX" secondItem="kb7-1i-PcB" secondAttribute="centerX" id="Sfx-pw-flg"/>
                                 </constraints>
                                 <connections>
@@ -763,10 +763,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C5456B72-27A4-423C-BEB6-C0B624EBF695" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C32F6070-1CD5-4EAC-B472-D3549EE9D171" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C5456B72-27A4-423C-BEB6-C0B624EBF695" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C32F6070-1CD5-4EAC-B472-D3549EE9D171" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -829,7 +829,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </scene>
     </scenes>
     <resources>
-        <image name="C5456B72-27A4-423C-BEB6-C0B624EBF695" width="16" height="16">
+        <image name="C32F6070-1CD5-4EAC-B472-D3549EE9D171" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
