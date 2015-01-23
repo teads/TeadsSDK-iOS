@@ -28,21 +28,15 @@
 		919566D41A6D062400F5FB9B /* teads_grayed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D11A6D062400F5FB9B /* teads_grayed@2x.png */; };
 		919566D51A6D062400F5FB9B /* teads_grayed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D21A6D062400F5FB9B /* teads_grayed@3x.png */; };
 		919566DF1A6D2C6200F5FB9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */; };
-		919566E11A6D2C6700F5FB9B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E01A6D2C6700F5FB9B /* AdSupport.framework */; };
 		919566E31A6D2C6C00F5FB9B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */; };
 		919566E51A6D2C7200F5FB9B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E41A6D2C7200F5FB9B /* CoreMedia.framework */; };
 		919566E71A6D2C7700F5FB9B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E61A6D2C7700F5FB9B /* CoreVideo.framework */; };
 		919566E91A6D2C7C00F5FB9B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */; };
-		919566EB1A6D2C8100F5FB9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566EA1A6D2C8100F5FB9B /* CoreLocation.framework */; };
-		919566ED1A6D2C8700F5FB9B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566EC1A6D2C8700F5FB9B /* CoreTelephony.framework */; };
 		919566EF1A6D2C8E00F5FB9B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566EE1A6D2C8E00F5FB9B /* EventKit.framework */; };
 		919566F11A6D2C9300F5FB9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F01A6D2C9300F5FB9B /* Foundation.framework */; };
 		919566F31A6D2C9800F5FB9B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */; };
-		919566F51A6D2CA000F5FB9B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F41A6D2C9F00F5FB9B /* MessageUI.framework */; };
 		919566F71A6D2CD700F5FB9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F61A6D2CD700F5FB9B /* Security.framework */; };
-		919566F91A6D2CDC00F5FB9B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F81A6D2CDC00F5FB9B /* Social.framework */; };
 		919566FB1A6D2CE300F5FB9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */; };
-		919566FD1A6D2CFF00F5FB9B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566FC1A6D2CFF00F5FB9B /* Twitter.framework */; };
 		919566FF1A6D2D0500F5FB9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566FE1A6D2D0500F5FB9B /* UIKit.framework */; };
 		919567011A6D2D1000F5FB9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 919567001A6D2D1000F5FB9B /* libz.dylib */; };
 		919567031A6D2D1700F5FB9B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */; };
@@ -145,21 +139,15 @@
 		919566D11A6D062400F5FB9B /* teads_grayed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@2x.png"; sourceTree = "<group>"; };
 		919566D21A6D062400F5FB9B /* teads_grayed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@3x.png"; sourceTree = "<group>"; };
 		919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		919566E01A6D2C6700F5FB9B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		919566E41A6D2C7200F5FB9B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		919566E61A6D2C7700F5FB9B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		919566EA1A6D2C8100F5FB9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		919566EC1A6D2C8700F5FB9B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		919566EE1A6D2C8E00F5FB9B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		919566F01A6D2C9300F5FB9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		919566F41A6D2C9F00F5FB9B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		919566F61A6D2CD700F5FB9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		919566F81A6D2CDC00F5FB9B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		919566FC1A6D2CFF00F5FB9B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		919566FE1A6D2D0500F5FB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		919567001A6D2D1000F5FB9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -210,22 +198,16 @@
 				919567031A6D2D1700F5FB9B /* libsqlite3.0.dylib in Frameworks */,
 				919567011A6D2D1000F5FB9B /* libz.dylib in Frameworks */,
 				919566FF1A6D2D0500F5FB9B /* UIKit.framework in Frameworks */,
-				919566FD1A6D2CFF00F5FB9B /* Twitter.framework in Frameworks */,
 				919566FB1A6D2CE300F5FB9B /* SystemConfiguration.framework in Frameworks */,
-				919566F91A6D2CDC00F5FB9B /* Social.framework in Frameworks */,
 				919566F71A6D2CD700F5FB9B /* Security.framework in Frameworks */,
-				919566F51A6D2CA000F5FB9B /* MessageUI.framework in Frameworks */,
 				919566F31A6D2C9800F5FB9B /* MediaPlayer.framework in Frameworks */,
 				919566F11A6D2C9300F5FB9B /* Foundation.framework in Frameworks */,
 				919566EF1A6D2C8E00F5FB9B /* EventKit.framework in Frameworks */,
-				919566ED1A6D2C8700F5FB9B /* CoreTelephony.framework in Frameworks */,
-				919566EB1A6D2C8100F5FB9B /* CoreLocation.framework in Frameworks */,
 				919567411A6D4AE400F5FB9B /* TeadsSDK.framework in Frameworks */,
 				919566E91A6D2C7C00F5FB9B /* CoreMotion.framework in Frameworks */,
 				919566E71A6D2C7700F5FB9B /* CoreVideo.framework in Frameworks */,
 				919566E51A6D2C7200F5FB9B /* CoreMedia.framework in Frameworks */,
 				919566E31A6D2C6C00F5FB9B /* CFNetwork.framework in Frameworks */,
-				919566E11A6D2C6700F5FB9B /* AdSupport.framework in Frameworks */,
 				919566DF1A6D2C6200F5FB9B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,21 +431,15 @@
 				919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */,
 				919567001A6D2D1000F5FB9B /* libz.dylib */,
 				919566FE1A6D2D0500F5FB9B /* UIKit.framework */,
-				919566FC1A6D2CFF00F5FB9B /* Twitter.framework */,
 				919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */,
-				919566F81A6D2CDC00F5FB9B /* Social.framework */,
 				919566F61A6D2CD700F5FB9B /* Security.framework */,
-				919566F41A6D2C9F00F5FB9B /* MessageUI.framework */,
 				919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */,
 				919566F01A6D2C9300F5FB9B /* Foundation.framework */,
 				919566EE1A6D2C8E00F5FB9B /* EventKit.framework */,
-				919566EC1A6D2C8700F5FB9B /* CoreTelephony.framework */,
-				919566EA1A6D2C8100F5FB9B /* CoreLocation.framework */,
 				919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */,
 				919566E61A6D2C7700F5FB9B /* CoreVideo.framework */,
 				919566E41A6D2C7200F5FB9B /* CoreMedia.framework */,
 				919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */,
-				919566E01A6D2C6700F5FB9B /* AdSupport.framework */,
 				919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */,
 			);
 			name = Frameworks;

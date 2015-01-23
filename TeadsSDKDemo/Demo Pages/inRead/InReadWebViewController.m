@@ -12,8 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
 @property (assign, nonatomic) BOOL adExperienceLoaded;
+@property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
 
 @end
 
@@ -22,15 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.delegate = self;
-    
-    self.adExperienceLoaded = NO;
-    
     self.navigationItem.title = @"inRead WebView";
     
     //Load a web page from an URL
     NSURL *webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
     
+    //Your custom ad tracking status : the ad is not loaded yet
+    self.adExperienceLoaded = NO;
     // inRead
     self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholderText:@"#my-placement-id" webView:self.webView rootViewController:self delegate:self];
 }
@@ -63,32 +62,216 @@
     return YES;
 }
 
+#pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
 
+/**
+ * NativeVideo Failed to Load
+ *
+ * @param interstitial  : the TeadsNativeVideo object
+ * @param error         : the TeadsError object
+ */
+- (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
+    self.adExperienceLoaded = NO;
+}
+
+/**
+ * NativeVideo Will Load (loading)
+ *
+ * @param interstitial  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillLoad:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Load (loaded successfully)
+ *
+ * @param interstitial  : the TeadsNativeVideo object
+ */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
     self.adExperienceLoaded = YES;
 }
 
-- (void)teadsNativeVideoDidDismiss:(TeadsNativeVideo *)nativeVideo {
+/**
+ * NativeVideo Will Start Playing (loading)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillStart:(TeadsNativeVideo *)nativeVideo {
 
 }
 
+/**
+ * NativeVideo Did Start Playing (playing)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
 - (void)teadsNativeVideoDidStart:(TeadsNativeVideo *)nativeVideo {
+
 }
 
+/**
+ * NativeVideo Will Stop Playing (stopping)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillStop:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Stop Playing (stopped)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
 - (void)teadsNativeVideoDidStop:(TeadsNativeVideo *)nativeVideo {
+
 }
 
+/**
+ * NativeVideo Did Pause (paused)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
 - (void)teadsNativeVideoDidPause:(TeadsNativeVideo *)nativeVideo {
 
 }
 
+/**
+ * NativeVideo Did Resume (playing)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
 - (void)teadsNativeVideoDidResume:(TeadsNativeVideo *)nativeVideo {
 
 }
 
--(void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
+/**
+ * NativeVideo Did Mute Sound
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidMute:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Unmute Sound
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidUnmute:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Will expand
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillExpand:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did expand
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidExpand:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Will collapse
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillCollapse:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo did collapse
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
     self.adExperienceLoaded = NO;
 }
+
+/**
+ * NativeVideo was clicked
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWasClicked:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Stop Playing (stopped)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClickBrowserClose:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Will Take Over Fullscreen
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillTakeOverFullScreen:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Take Over Fullscreen
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidTakeOverFullScreen:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Will Dismiss Fullscreen
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoWillDismissFullscreen:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Did Dismiss Fullscreen
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidDismissFullscreen:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Skip Button Was Tapped (skip button pressed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoSkipButtonTapped:(TeadsNativeVideo *)nativeVideo {
+
+}
+
+/**
+ * NativeVideo Skip Button Did Show (skip button appeared)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+
+}
+
 
 @end

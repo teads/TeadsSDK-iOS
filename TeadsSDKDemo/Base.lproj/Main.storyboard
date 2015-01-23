@@ -763,10 +763,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C32F6070-1CD5-4EAC-B472-D3549EE9D171" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F1AA02BE-3D58-456D-A5D0-15DD6B4E9728" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
                                             <rect key="frame" x="132" y="65" width="16" height="16"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C32F6070-1CD5-4EAC-B472-D3549EE9D171" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F1AA02BE-3D58-456D-A5D0-15DD6B4E9728" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-PK-zMG">
                                             <rect key="frame" x="250" y="65" width="16" height="16"/>
                                         </imageView>
                                     </subviews>
@@ -829,7 +829,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </scene>
     </scenes>
     <resources>
-        <image name="C32F6070-1CD5-4EAC-B472-D3549EE9D171" width="16" height="16">
+        <image name="F1AA02BE-3D58-456D-A5D0-15DD6B4E9728" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
