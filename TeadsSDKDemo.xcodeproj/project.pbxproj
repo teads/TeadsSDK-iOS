@@ -24,6 +24,9 @@
 		916CFB211A68288400E36306 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB201A68288400E36306 /* Images.xcassets */; };
 		916CFB301A68288400E36306 /* TeadsSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB2F1A68288400E36306 /* TeadsSDKDemoTests.m */; };
 		916CFB3F1A68303700E36306 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB3E1A68303700E36306 /* MainViewController.m */; };
+		918A90251A76407400CC4C52 /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 918A90221A76407400CC4C52 /* arrow_up.png */; };
+		918A90261A76407400CC4C52 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 918A90231A76407400CC4C52 /* arrow_up@2x.png */; };
+		918A90271A76407400CC4C52 /* arrow_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 918A90241A76407400CC4C52 /* arrow_up@3x.png */; };
 		919566D31A6D062400F5FB9B /* teads_grayed.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D01A6D062400F5FB9B /* teads_grayed.png */; };
 		919566D41A6D062400F5FB9B /* teads_grayed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D11A6D062400F5FB9B /* teads_grayed@2x.png */; };
 		919566D51A6D062400F5FB9B /* teads_grayed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D21A6D062400F5FB9B /* teads_grayed@3x.png */; };
@@ -135,6 +138,9 @@
 		916CFB2F1A68288400E36306 /* TeadsSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeadsSDKDemoTests.m; sourceTree = "<group>"; };
 		916CFB3D1A68303700E36306 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		916CFB3E1A68303700E36306 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		918A90221A76407400CC4C52 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		918A90231A76407400CC4C52 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
+		918A90241A76407400CC4C52 /* arrow_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@3x.png"; sourceTree = "<group>"; };
 		919566D01A6D062400F5FB9B /* teads_grayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teads_grayed.png; sourceTree = "<group>"; };
 		919566D11A6D062400F5FB9B /* teads_grayed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@2x.png"; sourceTree = "<group>"; };
 		919566D21A6D062400F5FB9B /* teads_grayed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@3x.png"; sourceTree = "<group>"; };
@@ -341,6 +347,9 @@
 				91F581DB1A710A22007D70AC /* arrow_left@2x.png */,
 				913B3BEE1A70F495008E3E30 /* arrow_right.png */,
 				91F581DD1A710A29007D70AC /* arrow_right@2x.png */,
+				918A90221A76407400CC4C52 /* arrow_up.png */,
+				918A90231A76407400CC4C52 /* arrow_up@2x.png */,
+				918A90241A76407400CC4C52 /* arrow_up@3x.png */,
 				919567491A6E5BB400F5FB9B /* teads.png */,
 				9195674A1A6E5BB400F5FB9B /* teads@2x.png */,
 				9195674B1A6E5BB400F5FB9B /* teads@3x.png */,
@@ -559,8 +568,11 @@
 				9195672B1A6D463200F5FB9B /* glyphicons-halflings-regular.eot in Resources */,
 				919566D41A6D062400F5FB9B /* teads_grayed@2x.png in Resources */,
 				919567321A6D463200F5FB9B /* slide3.jpg in Resources */,
+				918A90271A76407400CC4C52 /* arrow_up@3x.png in Resources */,
+				918A90261A76407400CC4C52 /* arrow_up@2x.png in Resources */,
 				916CFB1F1A68288400E36306 /* Main.storyboard in Resources */,
 				9195675C1A6E8EB500F5FB9B /* arrow_down@3x.png in Resources */,
+				918A90251A76407400CC4C52 /* arrow_up.png in Resources */,
 				91F581DE1A710A29007D70AC /* arrow_right@2x.png in Resources */,
 				9195674C1A6E5BB400F5FB9B /* teads.png in Resources */,
 				9195673A1A6D463200F5FB9B /* ie10-viewport-bug-workaround.js in Resources */,
