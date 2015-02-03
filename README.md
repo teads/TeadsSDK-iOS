@@ -21,5 +21,10 @@ Integration instructions are available on the [wiki](https://github.com/ebuzzing
 
 ## New in this Version
 
+v1.0.1:
+- Memory & performance optimization
+- Minor bug fixes
+- Add reward handling
+
 v1.0:
 - First version
