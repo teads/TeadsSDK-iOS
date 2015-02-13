@@ -15,6 +15,12 @@
 		910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
 		910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
+		91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C801A8CF9D000B68D82 /* UIKit.framework */; };
+		91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C821A8CF9D900B68D82 /* Foundation.framework */; };
+		91317C8C1A8D00FA00B68D82 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */; };
+		91317C8E1A8D02A400B68D82 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */; };
+		91317C901A8D2CAA00B68D82 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */; };
+		91317C921A8D2CAF00B68D82 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C911A8D2CAF00B68D82 /* libxml2.dylib */; };
 		913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BEE1A70F495008E3E30 /* arrow_right.png */; };
 		913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF01A70F509008E3E30 /* arrow_left.png */; };
 		913B3BF31A70F83E008E3E30 /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */; };
@@ -30,19 +36,6 @@
 		919566D31A6D062400F5FB9B /* teads_grayed.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D01A6D062400F5FB9B /* teads_grayed.png */; };
 		919566D41A6D062400F5FB9B /* teads_grayed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D11A6D062400F5FB9B /* teads_grayed@2x.png */; };
 		919566D51A6D062400F5FB9B /* teads_grayed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919566D21A6D062400F5FB9B /* teads_grayed@3x.png */; };
-		919566DF1A6D2C6200F5FB9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */; };
-		919566E31A6D2C6C00F5FB9B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */; };
-		919566E51A6D2C7200F5FB9B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E41A6D2C7200F5FB9B /* CoreMedia.framework */; };
-		919566E71A6D2C7700F5FB9B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E61A6D2C7700F5FB9B /* CoreVideo.framework */; };
-		919566E91A6D2C7C00F5FB9B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */; };
-		919566EF1A6D2C8E00F5FB9B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566EE1A6D2C8E00F5FB9B /* EventKit.framework */; };
-		919566F11A6D2C9300F5FB9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F01A6D2C9300F5FB9B /* Foundation.framework */; };
-		919566F31A6D2C9800F5FB9B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */; };
-		919566F71A6D2CD700F5FB9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566F61A6D2CD700F5FB9B /* Security.framework */; };
-		919566FB1A6D2CE300F5FB9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */; };
-		919566FF1A6D2D0500F5FB9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919566FE1A6D2D0500F5FB9B /* UIKit.framework */; };
-		919567011A6D2D1000F5FB9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 919567001A6D2D1000F5FB9B /* libz.dylib */; };
-		919567031A6D2D1700F5FB9B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */; };
 		919567241A6D463200F5FB9B /* blog.css in Resources */ = {isa = PBXBuildFile; fileRef = 919567051A6D463200F5FB9B /* blog.css */; };
 		919567251A6D463200F5FB9B /* bootstrap-theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 919567081A6D463200F5FB9B /* bootstrap-theme.css */; };
 		919567261A6D463200F5FB9B /* bootstrap-theme.css.map in Sources */ = {isa = PBXBuildFile; fileRef = 919567091A6D463200F5FB9B /* bootstrap-theme.css.map */; };
@@ -69,8 +62,6 @@
 		9195673B1A6D463200F5FB9B /* jquery-2.1.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 919567211A6D463200F5FB9B /* jquery-2.1.0.min.js */; };
 		9195673C1A6D463200F5FB9B /* npm.js in Resources */ = {isa = PBXBuildFile; fileRef = 919567221A6D463200F5FB9B /* npm.js */; };
 		9195673D1A6D463200F5FB9B /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 919567231A6D463200F5FB9B /* index.html */; };
-		919567411A6D4AE400F5FB9B /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919567401A6D4AE400F5FB9B /* TeadsSDK.framework */; };
-		919567421A6D4AF500F5FB9B /* TeadsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 919567401A6D4AE400F5FB9B /* TeadsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		919567471A6D5F4400F5FB9B /* ContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919567461A6D5F4400F5FB9B /* ContentPageViewController.m */; };
 		9195674C1A6E5BB400F5FB9B /* teads.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567491A6E5BB400F5FB9B /* teads.png */; };
 		9195674D1A6E5BB400F5FB9B /* teads@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9195674A1A6E5BB400F5FB9B /* teads@2x.png */; };
@@ -93,13 +84,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		919566DC1A6D195000F5FB9B /* Embed Frameworks */ = {
+		912B443A1A852A8700E5AE23 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		912B443E1A852B5D00E5AE23 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				919567421A6D4AF500F5FB9B /* TeadsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +122,12 @@
 		910CB44D1A695933005E6711 /* InReadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadTableViewController.m; sourceTree = "<group>"; };
 		910CB44E1A695933005E6711 /* InReadWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadWebViewController.h; sourceTree = "<group>"; };
 		910CB44F1A695933005E6711 /* InReadWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWebViewController.m; sourceTree = "<group>"; };
+		91317C801A8CF9D000B68D82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		91317C821A8CF9D900B68D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
+		91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
+		91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		91317C911A8D2CAF00B68D82 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		913B3BEE1A70F495008E3E30 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		913B3BF01A70F509008E3E30 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
 		913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentPageViewController.xib; path = "../../Demo Pages/inSwipe/ContentPageViewController.xib"; sourceTree = "<group>"; };
@@ -144,19 +149,6 @@
 		919566D01A6D062400F5FB9B /* teads_grayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teads_grayed.png; sourceTree = "<group>"; };
 		919566D11A6D062400F5FB9B /* teads_grayed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@2x.png"; sourceTree = "<group>"; };
 		919566D21A6D062400F5FB9B /* teads_grayed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads_grayed@3x.png"; sourceTree = "<group>"; };
-		919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		919566E41A6D2C7200F5FB9B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		919566E61A6D2C7700F5FB9B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		919566EE1A6D2C8E00F5FB9B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		919566F01A6D2C9300F5FB9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		919566F61A6D2CD700F5FB9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		919566FE1A6D2D0500F5FB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		919567001A6D2D1000F5FB9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		919567051A6D463200F5FB9B /* blog.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = blog.css; sourceTree = "<group>"; };
 		919567081A6D463200F5FB9B /* bootstrap-theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "bootstrap-theme.css"; sourceTree = "<group>"; };
 		919567091A6D463200F5FB9B /* bootstrap-theme.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "bootstrap-theme.css.map"; sourceTree = "<group>"; };
@@ -183,7 +175,6 @@
 		919567211A6D463200F5FB9B /* jquery-2.1.0.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.0.min.js"; sourceTree = "<group>"; };
 		919567221A6D463200F5FB9B /* npm.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = npm.js; sourceTree = "<group>"; };
 		919567231A6D463200F5FB9B /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		919567401A6D4AE400F5FB9B /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		919567451A6D5F4400F5FB9B /* ContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentPageViewController.h; path = "../../Demo Pages/inSwipe/ContentPageViewController.h"; sourceTree = "<group>"; };
 		919567461A6D5F4400F5FB9B /* ContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentPageViewController.m; path = "../../Demo Pages/inSwipe/ContentPageViewController.m"; sourceTree = "<group>"; };
 		919567491A6E5BB400F5FB9B /* teads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teads.png; sourceTree = "<group>"; };
@@ -201,20 +192,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919567031A6D2D1700F5FB9B /* libsqlite3.0.dylib in Frameworks */,
-				919567011A6D2D1000F5FB9B /* libz.dylib in Frameworks */,
-				919566FF1A6D2D0500F5FB9B /* UIKit.framework in Frameworks */,
-				919566FB1A6D2CE300F5FB9B /* SystemConfiguration.framework in Frameworks */,
-				919566F71A6D2CD700F5FB9B /* Security.framework in Frameworks */,
-				919566F31A6D2C9800F5FB9B /* MediaPlayer.framework in Frameworks */,
-				919566F11A6D2C9300F5FB9B /* Foundation.framework in Frameworks */,
-				919566EF1A6D2C8E00F5FB9B /* EventKit.framework in Frameworks */,
-				919567411A6D4AE400F5FB9B /* TeadsSDK.framework in Frameworks */,
-				919566E91A6D2C7C00F5FB9B /* CoreMotion.framework in Frameworks */,
-				919566E71A6D2C7700F5FB9B /* CoreVideo.framework in Frameworks */,
-				919566E51A6D2C7200F5FB9B /* CoreMedia.framework in Frameworks */,
-				919566E31A6D2C6C00F5FB9B /* CFNetwork.framework in Frameworks */,
-				919566DF1A6D2C6200F5FB9B /* AVFoundation.framework in Frameworks */,
+				91317C921A8D2CAF00B68D82 /* libxml2.dylib in Frameworks */,
+				91317C901A8D2CAA00B68D82 /* libsqlite3.0.dylib in Frameworks */,
+				91317C8E1A8D02A400B68D82 /* TeadsSDK.framework in Frameworks */,
+				91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */,
+				91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +236,14 @@
 			path = inRead;
 			sourceTree = "<group>";
 		};
+		91317C881A8CFC7A00B68D82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		916CFB071A68288400E36306 = {
 			isa = PBXGroup;
 			children = (
@@ -276,9 +266,10 @@
 		916CFB121A68288400E36306 /* TeadsSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				916CFB201A68288400E36306 /* Images.xcassets */,
 				916CFB401A68304900E36306 /* Demo Pages */,
+				916CFB201A68288400E36306 /* Images.xcassets */,
 				916CFB3C1A68303700E36306 /* Intern */,
+				91317C881A8CFC7A00B68D82 /* Resources */,
 				916CFB131A68288400E36306 /* Supporting Files */,
 			);
 			path = TeadsSDKDemo;
@@ -436,20 +427,11 @@
 		9195673F1A6D49F400F5FB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				919567401A6D4AE400F5FB9B /* TeadsSDK.framework */,
-				919567021A6D2D1700F5FB9B /* libsqlite3.0.dylib */,
-				919567001A6D2D1000F5FB9B /* libz.dylib */,
-				919566FE1A6D2D0500F5FB9B /* UIKit.framework */,
-				919566FA1A6D2CE300F5FB9B /* SystemConfiguration.framework */,
-				919566F61A6D2CD700F5FB9B /* Security.framework */,
-				919566F21A6D2C9800F5FB9B /* MediaPlayer.framework */,
-				919566F01A6D2C9300F5FB9B /* Foundation.framework */,
-				919566EE1A6D2C8E00F5FB9B /* EventKit.framework */,
-				919566E81A6D2C7C00F5FB9B /* CoreMotion.framework */,
-				919566E61A6D2C7700F5FB9B /* CoreVideo.framework */,
-				919566E41A6D2C7200F5FB9B /* CoreMedia.framework */,
-				919566E21A6D2C6C00F5FB9B /* CFNetwork.framework */,
-				919566DE1A6D2C6200F5FB9B /* AVFoundation.framework */,
+				91317C911A8D2CAF00B68D82 /* libxml2.dylib */,
+				91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */,
+				91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */,
+				91317C821A8CF9D900B68D82 /* Foundation.framework */,
+				91317C801A8CF9D000B68D82 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			path = TeadsSDKDemo;
@@ -484,7 +466,8 @@
 				916CFB0C1A68288400E36306 /* Sources */,
 				916CFB0D1A68288400E36306 /* Frameworks */,
 				916CFB0E1A68288400E36306 /* Resources */,
-				919566DC1A6D195000F5FB9B /* Embed Frameworks */,
+				912B443A1A852A8700E5AE23 /* CopyFiles */,
+				912B443E1A852B5D00E5AE23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -524,6 +507,7 @@
 				TargetAttributes = {
 					916CFB0F1A68288400E36306 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 94WK42QYJ9;
 					};
 					916CFB281A68288400E36306 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -555,6 +539,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91317C8C1A8D00FA00B68D82 /* TeadsSDKResources.bundle in Resources */,
+				916CFB211A68288400E36306 /* Images.xcassets in Resources */,
 				9195672A1A6D463200F5FB9B /* bootstrap.min.css in Resources */,
 				913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */,
 				919567281A6D463200F5FB9B /* bootstrap.css in Resources */,
@@ -582,7 +568,6 @@
 				919567331A6D463200F5FB9B /* slide4.jpg in Resources */,
 				9195673D1A6D463200F5FB9B /* index.html in Resources */,
 				913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */,
-				916CFB211A68288400E36306 /* Images.xcassets in Resources */,
 				919566D31A6D062400F5FB9B /* teads_grayed.png in Resources */,
 				91F581DC1A710A22007D70AC /* arrow_left@2x.png in Resources */,
 				9195672F1A6D463200F5FB9B /* logo.png in Resources */,
@@ -747,16 +732,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo/SDK",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TeadsSDKSample-cxrxlcimnkwmckfgboeemobesqgz/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = TeadsSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSDKDemo",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -766,16 +759,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo/SDK",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TeadsSDKSample-cxrxlcimnkwmckfgboeemobesqgz/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = TeadsSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSDKDemo",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

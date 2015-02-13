@@ -3,31 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon_58x58_sdk.png",
-      "scale" : "2x"
+      "filename" : "icon_29x29-1.png",
+      "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon_87x87_sdk.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "icon_80x80_sdk.png",
+      "filename" : "icon_58x58_sdk-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon_120x120_sdk.png",
-      "scale" : "3x"
+      "filename" : "icon_80x80_sdk-1.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "57x57",
+      "idiom" : "iphone",
+      "filename" : "icon_57x57_sdk.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "57x57",
+      "idiom" : "iphone",
+      "filename" : "icon_114x114_sdk.png",
+      "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon_120x120_sdk-1.png",
+      "filename" : "icon_120x120_sdk.png",
       "scale" : "2x"
     },
     {
@@ -39,25 +45,49 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon_58x58_sdk-1.png",
+      "filename" : "icon_29x29-1-1.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon_87x87_sdk-1.png",
+      "filename" : "icon_58x58_sdk-1-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icon_40x40_sdk.png",
+      "filename" : "icon_40x40_sdk-1.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icon_80x80_sdk-1.png",
+      "filename" : "icon_80x80_sdk.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "50x50",
+      "idiom" : "ipad",
+      "filename" : "icon_50x50_sdk.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "50x50",
+      "idiom" : "ipad",
+      "filename" : "icon_100x100_sdk.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "72x72",
+      "idiom" : "ipad",
+      "filename" : "icon_72x72_sdk.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "72x72",
+      "idiom" : "ipad",
+      "filename" : "icon_144x144_sdk.png",
       "scale" : "2x"
     },
     {
