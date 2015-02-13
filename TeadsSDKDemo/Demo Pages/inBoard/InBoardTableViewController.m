@@ -34,7 +34,7 @@
         [self.teadsinBoard viewControllerAppeared:self];
         
     } else {
-        [self.teadsinBoard load];
+        [self.teadsinBoard loadFromFactory];
     }
 }
 

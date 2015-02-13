@@ -17,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [TeadsLog setLevelType:TeadsDebugLevelVerbose];
+    [TeadsLog setLevelType:TeadsDebugLevelError];
+    
+    [TeadsAdFactory setDelegate:self];
+    [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
     
     // Set the debug level to verbose
     TeadsLogInfo(@"Framework has been set up correctly");
@@ -46,6 +49,31 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - TeadsAdFactoryDelegate delegates
+
+-(void)teadsAdType:(TeadsAdType)type withPid:(NSString *)pid didFailLoading:(TeadsError *)error {
+    NSLog(@"Ad with pid %@ failed to load", pid);
+    [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
+}
+
+-(void)teadsAdType:(TeadsAdType)type willLoad:(NSString *)pid {
+    
+}
+
+-(void)teadsAdType:(TeadsAdType)type didLoad:(NSString *)pid {
+    NSLog(@"Ad with pid %@ did load", pid);
+}
+
+-(void)teadsAdType:(TeadsAdType)type wasConsumed:(NSString *)pid {
+    NSLog(@"Ad with pid %@ was consumed", pid);
+    [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
+}
+
+- (void)teadsAdType:(TeadsAdType)type DidExpire:(NSString *)pid {
+    NSLog(@"Ad with pid %@ expired", pid);
+    [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
 }
 
 @end

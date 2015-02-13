@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TeadsSDK/TeadsAdFactory.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, TeadsAdFactoryDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

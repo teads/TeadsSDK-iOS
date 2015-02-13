@@ -36,7 +36,7 @@
     if (self.adExperienceLoaded) {
         [self.teadsInRead viewControllerAppeared:self];
     } else {
-        [self.teadsInRead load];
+        [self.teadsInRead loadFromFactory];
     }
 }
 
