@@ -13,13 +13,16 @@ This iOS Demo App includes the Teads Framework and is showing integration exampl
 
 The Teads SDK is distributed as a .framework file that you have to include in your application. It includes everything you need to serve "outstream" video ads.
 
-Teads iOS SDK ZIP file : [Teads SDK V1.1](https://github.com/ebuzzing/TeadsSDK-iOS/releases/download/v1.1/TeadsSDK-V1.1.zip)
+Teads iOS SDK ZIP file : [Teads SDK V1.1.1](https://github.com/ebuzzing/TeadsSDK-iOS/releases/download/v1.1.1/TeadsSDK-V1.1.1.zip)
 
 ## Integration Documentation
 
 Integration instructions are available on the [wiki](https://github.com/ebuzzing/TeadsSDK-iOS/wiki).
 
 ## New in this Version
+v1.1.1:
+- Add AdFactory feature for Interstitial ads
+- Minor Bug fixes in callbacks
 
 v1.1:
 - New build configuration (framework + bundle)
