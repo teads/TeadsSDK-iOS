@@ -12,9 +12,9 @@
 #define PREFIX_LOG_VERBOSE  @"Teads_Verbose"
 
 //Log functions
-#define TeadsLogError(fmt, ...)       [TeadsLog logErrorWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] format:fmt, ##__VA_ARGS__ ];
-#define TeadsLogInfo(fmt, ...)        [TeadsLog logInfoWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] format:fmt, ##__VA_ARGS__ ];
-#define TeadsLogVerbose(fmt, ...)     [TeadsLog logVerboseWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] format:fmt, ##__VA_ARGS__ ];
+#define TeadsLogError(fmt, ...)       [TeadsLog logErrorWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] forLine:[NSString stringWithFormat:@"%d", __LINE__] format:fmt, ##__VA_ARGS__ ];
+#define TeadsLogInfo(fmt, ...)        [TeadsLog logInfoWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] forLine:[NSString stringWithFormat:@"%d", __LINE__] format:fmt, ##__VA_ARGS__ ];
+#define TeadsLogVerbose(fmt, ...)     [TeadsLog logVerboseWithFunctionName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] forLine:[NSString stringWithFormat:@"%d", __LINE__] format:fmt, ##__VA_ARGS__ ];
 
 typedef enum {
     TeadsDebugLevelInactive   = 0,
@@ -29,9 +29,9 @@ typedef enum {
 
 +(TeadsLog *)sharedInstance;
 
-+(void)logErrorWithFunctionName:(NSString*)functionName format:(NSString *)format, ...;
-+(void)logInfoWithFunctionName:(NSString*)functionName format:(NSString *)format, ...;
-+(void)logVerboseWithFunctionName:(NSString*)functionName format:(NSString *)format, ...;
++(void)logErrorWithFunctionName:(NSString*)functionName forLine:(NSString *)line format:(NSString *)format, ...;
++(void)logInfoWithFunctionName:(NSString*)functionName forLine:(NSString *)line format:(NSString *)format, ...;
++(void)logVerboseWithFunctionName:(NSString*)functionName forLine:(NSString *)line format:(NSString *)format, ...;
 
 +(void) setLevelType:(TeadsDebugLevelType)levelType;
 

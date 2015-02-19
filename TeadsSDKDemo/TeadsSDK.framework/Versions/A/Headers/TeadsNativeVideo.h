@@ -54,6 +54,8 @@
 
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
+- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+
 /* In Swipe */
 
 - (id)initInSwipeWithPlacementId:(NSString*)placement pageViewController:(UIPageViewController*)pageViewController insertionIndex:(NSInteger)insertionIndex currentIndex:(NSInteger)currentIndex delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
