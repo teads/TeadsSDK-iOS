@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [TeadsLog setLevelType:TeadsDebugLevelError];
+    [TeadsLog setLevelType:TeadsDebugLevelVerbose];
     
     [TeadsAdFactory setDelegate:self];
     [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
@@ -55,6 +55,8 @@
 
 -(void)teadsAdType:(TeadsAdType)type withPid:(NSString *)pid didFailLoading:(TeadsError *)error {
     NSLog(@"Ad with pid %@ failed to load", pid);
+    
+    //You can immediately load a new ad with TeadsAdFactory if one has failed loading
     [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
 }
 
@@ -68,11 +70,17 @@
 
 -(void)teadsAdType:(TeadsAdType)type wasConsumed:(NSString *)pid {
     NSLog(@"Ad with pid %@ was consumed", pid);
+    
+    //Automatically load a new ad when one has been consumed
+    //Do this if you want to always have a video at disposal
     [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
 }
 
 - (void)teadsAdType:(TeadsAdType)type DidExpire:(NSString *)pid {
     NSLog(@"Ad with pid %@ expired", pid);
+    
+    //Automatically load a new ad when one has has expired
+    //Do this if you want to always have a video at disposal
     [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
 }
 

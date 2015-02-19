@@ -40,7 +40,7 @@
 - (void)setPreDownLoad:(BOOL)preDownload;
 
 - (void)load;
-- (TeadsError*)loadFromFactory;
+- (void)loadFromFactory;
 
 - (void)show;
 

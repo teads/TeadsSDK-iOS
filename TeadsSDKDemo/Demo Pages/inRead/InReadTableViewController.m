@@ -106,6 +106,10 @@
     [self.tableView reloadData];
 }
 
+-(void)dealloc {
+    [self.teadsInRead clean];
+}
+
 #pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
 

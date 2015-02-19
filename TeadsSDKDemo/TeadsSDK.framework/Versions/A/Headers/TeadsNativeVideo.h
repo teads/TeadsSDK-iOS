@@ -67,7 +67,7 @@
 - (void)setPreDownLoad:(BOOL)preDownload;
 
 - (void)load;
-- (TeadsError*)loadFromFactory;
+- (void)loadFromFactory;
 
 - (void)loadWithRequest:(NSURLRequest *)request forStartUrl:(NSString *)startUrl;
 

@@ -55,6 +55,10 @@
     [self.teadsInBoard clean];
 }
 
+-(void)dealloc {
+    [self.teadsInBoard clean];
+}
+
 #pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
 

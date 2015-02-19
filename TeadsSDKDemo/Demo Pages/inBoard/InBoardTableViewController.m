@@ -92,6 +92,10 @@
     return 90.0;
 }
 
+-(void)dealloc {
+    [self.teadsinBoard clean];
+}
+
 #pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
 
