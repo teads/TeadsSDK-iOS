@@ -17,7 +17,7 @@ Teads iOS SDK ZIP file : [Teads SDK V1.1.1](https://github.com/ebuzzing/TeadsSDK
 
 ## Integration Documentation
 
-Integration instructions are available on the [wiki](https://github.com/ebuzzing/TeadsSDK-iOS/wiki).
+Integration instructions are available on the [wiki](https://github.com/teads/TeadsSDK-iOS/wiki).
 
 ## New in this Version
 v1.1.1:
