@@ -6,7 +6,7 @@ This iOS Demo App includes the Teads Framework and is showing integration exampl
 ## Build the sample app
 
 * Press 'Clone', wait until repository checkout
-* Open EbuzzingSDKSample.xcodeproj in XCode 
+* Open TeadsSDKDemo.xcodeproj in XCode 
 * Finally, build and test on your device
 
 ## Download the Teads SDK iOS library
