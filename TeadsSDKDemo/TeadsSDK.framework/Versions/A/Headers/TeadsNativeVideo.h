@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Ebuzzing. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import "TeadsError.h"
 
 @protocol TeadsNativeVideoDelegate;
@@ -36,7 +37,11 @@
 
 /* In Board */
 
-- (id)initInBoardWithPlacementId:(NSString*)placement webView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement webView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate __deprecated_msg("use now initInBoardWithPlacementId:placeholderText:uiWebView:rootViewController:delegate:");
+
+- (id)initInBoardWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+
+- (id)initInBoardWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
 - (id)initInBoardWithPlacementId:(NSString*)placement referenceView:(UIView *)reference scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
@@ -46,7 +51,11 @@
 
 /* In Read */
 
-- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText webView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText webView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate __deprecated_msg("use now initInReadWithPlacementId:placeholderText:uiWebView:rootViewController:delegate:");
+
+- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText uiWebView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+
+- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText wkWebView:(WKWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
 - (id)initInReadWithPlacementId:(NSString*)placement afterView:(UIView *)afterView scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
@@ -55,6 +64,8 @@
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+
+- (void)setInReadInsertionIndexPath:(NSIndexPath*)newIndexPath;
 
 /* In Swipe */
 
@@ -262,4 +273,11 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo;
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo;
 @end

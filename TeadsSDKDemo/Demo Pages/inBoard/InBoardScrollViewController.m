@@ -10,7 +10,6 @@
 
 @interface InBoardScrollViewController ()
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (strong, nonatomic) TeadsNativeVideo *teadsInBoard;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *inBoardConstraint;
 
@@ -26,15 +25,13 @@
     
     self.navigationItem.title = @"inBoard ScrollView";
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     self.teadsInBoard = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholder:self.inBoardView heightConstraint:self.inBoardConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInBoard.isLoaded) {
         [self.teadsInBoard viewControllerAppeared:self];
     } else {
         [self.teadsInBoard load];
@@ -44,7 +41,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInBoard.isLoaded) {
         [self.teadsInBoard viewControllerDisappeared:self];
     }
 }
@@ -69,7 +66,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -87,7 +84,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -195,7 +192,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

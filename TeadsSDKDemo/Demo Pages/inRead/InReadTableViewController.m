@@ -10,7 +10,6 @@
 
 @interface InReadTableViewController ()
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (nonatomic, strong) TeadsNativeVideo *teadsInRead;
 
 @end
@@ -26,9 +25,6 @@
         rowToDisplayInRead = 13;
     }
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
-    
      //Create an NSIndexPath, it will be used to place the ad in the table view
     NSIndexPath *pathForTeadsInRead = [NSIndexPath indexPathForRow:rowToDisplayInRead inSection:0];
     
@@ -39,7 +35,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInRead.isLoaded) {
         [self.teadsInRead viewControllerAppeared:self];
         
     } else {
@@ -50,9 +46,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
-        [self.teadsInRead viewControllerDisappeared:self];
-    }
+    [self.teadsInRead viewControllerDisappeared:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,7 +114,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -138,7 +132,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -246,7 +240,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

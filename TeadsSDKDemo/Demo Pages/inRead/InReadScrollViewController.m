@@ -10,7 +10,6 @@
 
 @interface InReadScrollViewController ()
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *inReadConstraint;
 
@@ -25,15 +24,13 @@
     
     self.navigationItem.title = @"inRead ScrollView";
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInRead.isLoaded) {
         [self.teadsInRead viewControllerAppeared:self];
     } else {
         [self.teadsInRead loadFromFactory];
@@ -43,9 +40,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
-        [self.teadsInRead viewControllerDisappeared:self];
-    }
+    [self.teadsInRead viewControllerDisappeared:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +59,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -82,7 +77,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -190,7 +185,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

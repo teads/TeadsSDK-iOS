@@ -70,15 +70,6 @@
  */
 @protocol TeadsInterstitialDelegate <NSObject>
 
-@required
-
-/**
- * Mandatory: return the viewController that will be used for modal presentation
- *
- * @param interstitial  : the TeadsInterstitial object
- */
-- (UIViewController*)viewControllerForModalPresentation:(TeadsInterstitial *)interstitial;
-
 @optional
 
 /**
@@ -137,5 +128,12 @@
  * @param interstitial  : the TeadsInterstitial object
  */
 - (void)teadsInterstitialRewardUnlocked:(TeadsInterstitial *)interstitial;
+
+/**
+ * Interstitial Did Clean
+ *
+ * @param interstitial  : the TeadsInterstitial object
+ */
+- (void)teadsInterstitialDidClean:(TeadsInterstitial *)interstitial;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface InBoardTableViewController ()
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (nonatomic, strong) TeadsNativeVideo *teadsinBoard;
 
 @end
@@ -22,15 +21,13 @@
     
     self.navigationItem.title = @"inBoard TableView";
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     self.teadsinBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" tableView:self.tableView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsinBoard.isLoaded) {
         [self.teadsinBoard viewControllerAppeared:self];
         
     } else {
@@ -41,9 +38,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
-        [self.teadsinBoard viewControllerDisappeared:self];
-    }
+    [self.teadsinBoard viewControllerDisappeared:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,7 +101,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -124,7 +119,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -232,7 +227,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

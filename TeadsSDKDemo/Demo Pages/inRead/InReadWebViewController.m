@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
 
 @end
@@ -28,16 +27,14 @@
     NSURL *webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     // inRead
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholderText:@"#my-placement-id" webView:self.webView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholderText:@"#my-placement-id" uiWebView:self.webView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInRead.isLoaded) {
         [self.teadsInRead viewControllerAppeared:self];
     } else {
         [self.teadsInRead load];
@@ -47,9 +44,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
-        [self.teadsInRead viewControllerDisappeared:self];
-    }
+    [self.teadsInRead viewControllerDisappeared:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +67,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -90,7 +85,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -198,7 +193,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

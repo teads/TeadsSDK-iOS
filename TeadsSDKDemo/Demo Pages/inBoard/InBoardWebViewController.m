@@ -13,8 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (strong, nonatomic) TeadsNativeVideo *teadsInBoard;
+@property (strong, nonatomic) NSURL *startURL;
+@property (nonatomic) BOOL firsTimeURLoad;
 
 @end
 
@@ -23,23 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"inBoard WebView";
+    self.firsTimeURLoad = YES;
     
     self.webView.delegate = self;
     
-    NSURL *webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
+    self.startURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:self.startURL]];
     
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     // Create the teadsInBoard
-    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" webView:self.webView rootViewController:self delegate:self];
+    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" uiWebView:self.webView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInBoard.isLoaded) {
         [self.teadsInBoard viewControllerAppeared:self];
     } else {
         [self.teadsInBoard load];
@@ -49,9 +49,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    if (self.adExperienceLoaded) {
-        [self.teadsInBoard viewControllerDisappeared:self];
-    }
+    [self.teadsInBoard viewControllerDisappeared:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +59,8 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [self.teadsInBoard loadWithRequest:request forStartUrl:[NSString stringWithFormat:@"%@",self.startURL]];
+    
     return YES;
 }
 
@@ -78,7 +78,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -96,7 +96,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -204,7 +204,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

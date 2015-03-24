@@ -17,7 +17,6 @@
 
 @property (readonly, strong, nonatomic) NSArray *viewArray;
 
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 @property (nonatomic, strong) TeadsNativeVideo *teadsInSwipe;
 
 @end
@@ -42,17 +41,13 @@
         [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     });
     
-    
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
-    
     self.teadsInSwipe = [[TeadsNativeVideo alloc] initInSwipeWithPlacementId:@"27695" pageViewController:self insertionIndex:TEADS_INSWIPE_INSERTION_INDEX currentIndex:0 delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.adExperienceLoaded) {
+    if (self.teadsInSwipe.isLoaded) {
         [self.teadsInSwipe viewControllerAppeared:self];
     } else {
         [self.teadsInSwipe load];
@@ -137,7 +132,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**
@@ -155,7 +150,7 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = YES;
+
 }
 
 /**
@@ -263,7 +258,7 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-    self.adExperienceLoaded = NO;
+
 }
 
 /**

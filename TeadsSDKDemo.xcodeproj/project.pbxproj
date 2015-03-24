@@ -17,8 +17,6 @@
 		910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
 		91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C801A8CF9D000B68D82 /* UIKit.framework */; };
 		91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C821A8CF9D900B68D82 /* Foundation.framework */; };
-		91317C8C1A8D00FA00B68D82 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */; };
-		91317C8E1A8D02A400B68D82 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */; };
 		91317C901A8D2CAA00B68D82 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */; };
 		91317C921A8D2CAF00B68D82 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C911A8D2CAF00B68D82 /* libxml2.dylib */; };
 		913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BEE1A70F495008E3E30 /* arrow_right.png */; };
@@ -69,6 +67,8 @@
 		9195675A1A6E8EB500F5FB9B /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567571A6E8EB500F5FB9B /* arrow_down.png */; };
 		9195675B1A6E8EB500F5FB9B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567581A6E8EB500F5FB9B /* arrow_down@2x.png */; };
 		9195675C1A6E8EB500F5FB9B /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567591A6E8EB500F5FB9B /* arrow_down@3x.png */; };
+		91B69D2D1AC1CFF400786150 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */; };
+		91B69D2F1AC1CFFF00786150 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B69D2E1AC1CFFF00786150 /* TeadsSDK.framework */; };
 		91F581DC1A710A22007D70AC /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F581DB1A710A22007D70AC /* arrow_left@2x.png */; };
 		91F581DE1A710A29007D70AC /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F581DD1A710A29007D70AC /* arrow_right@2x.png */; };
 /* End PBXBuildFile section */
@@ -124,8 +124,6 @@
 		910CB44F1A695933005E6711 /* InReadWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWebViewController.m; sourceTree = "<group>"; };
 		91317C801A8CF9D000B68D82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		91317C821A8CF9D900B68D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
-		91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		91317C911A8D2CAF00B68D82 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		913B3BEE1A70F495008E3E30 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
@@ -183,6 +181,8 @@
 		919567571A6E8EB500F5FB9B /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		919567581A6E8EB500F5FB9B /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
 		919567591A6E8EB500F5FB9B /* arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
+		91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
+		91B69D2E1AC1CFFF00786150 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		91F581DB1A710A22007D70AC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		91F581DD1A710A29007D70AC /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,8 +194,8 @@
 			files = (
 				91317C921A8D2CAF00B68D82 /* libxml2.dylib in Frameworks */,
 				91317C901A8D2CAA00B68D82 /* libsqlite3.0.dylib in Frameworks */,
-				91317C8E1A8D02A400B68D82 /* TeadsSDK.framework in Frameworks */,
 				91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */,
+				91B69D2F1AC1CFFF00786150 /* TeadsSDK.framework in Frameworks */,
 				91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,7 +239,7 @@
 		91317C881A8CFC7A00B68D82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				91317C8B1A8D00FA00B68D82 /* TeadsSDKResources.bundle */,
+				91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -427,9 +427,9 @@
 		9195673F1A6D49F400F5FB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91B69D2E1AC1CFFF00786150 /* TeadsSDK.framework */,
 				91317C911A8D2CAF00B68D82 /* libxml2.dylib */,
 				91317C8F1A8D2CAA00B68D82 /* libsqlite3.0.dylib */,
-				91317C8D1A8D02A400B68D82 /* TeadsSDK.framework */,
 				91317C821A8CF9D900B68D82 /* Foundation.framework */,
 				91317C801A8CF9D000B68D82 /* UIKit.framework */,
 			);
@@ -539,7 +539,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91317C8C1A8D00FA00B68D82 /* TeadsSDKResources.bundle in Resources */,
 				916CFB211A68288400E36306 /* Images.xcassets in Resources */,
 				9195672A1A6D463200F5FB9B /* bootstrap.min.css in Resources */,
 				913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */,
@@ -582,6 +581,7 @@
 				919567371A6D463200F5FB9B /* bootstrap.js in Resources */,
 				919567311A6D463200F5FB9B /* slide2.jpg in Resources */,
 				919567301A6D463200F5FB9B /* slide1.jpg in Resources */,
+				91B69D2D1AC1CFF400786150 /* TeadsSDKResources.bundle in Resources */,
 				919567391A6D463200F5FB9B /* docs.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,8 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *loadInFlowButton;
 @property (strong, nonatomic) IBOutlet UIButton *showInFlowButton;
 
-//Your boolean : will be used to track load status of the ad
-@property (assign, nonatomic) BOOL adExperienceLoaded;
 //Teads inFlow
 @property (strong, nonatomic) TeadsInterstitial *teadsInterstitial;
 
@@ -30,8 +28,6 @@
     self.showInFlowButton.enabled = NO;
     self.activityIndicator.hidden = YES;
     
-    //Your custom ad tracking status : the ad is not loaded yet
-    self.adExperienceLoaded = NO;
     //Init the inFlow
     self.teadsInterstitial = [[TeadsInterstitial alloc] initInFlowWithPlacementId:@"27695" rootViewController:self delegate:self];
 }
@@ -42,7 +38,7 @@
 }
 
 - (IBAction)loadInterstitial:(id)sender {
-    if (!self.adExperienceLoaded) {
+    if (!self.teadsInterstitial.isLoaded) {
         self.loadInFlowButton.enabled = NO;
         
         self.activityIndicator.hidden = NO;
@@ -53,7 +49,7 @@
 
 - (IBAction)showInterstitial:(id)sender {
     //inFlow is loaded ?
-    if (self.adExperienceLoaded) {
+    if (self.teadsInterstitial.isLoaded) {
         //We show it
         [self.teadsInterstitial show];
     }
@@ -80,7 +76,6 @@
 - (void)teadsInterstitial:(TeadsInterstitial *)interstitial didFailLoading:(TeadsError *)error {
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
-    self.adExperienceLoaded = NO;
     
     self.showInFlowButton.enabled = NO;
     self.loadInFlowButton.enabled = YES;
@@ -103,7 +98,6 @@
 - (void)teadsInterstitialDidLoad:(TeadsInterstitial *)interstitial {
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
-    self.adExperienceLoaded = YES;
     
     self.showInFlowButton.enabled = YES;
     self.loadInFlowButton.enabled = NO;
@@ -142,8 +136,6 @@
  * @param interstitial The TeadsInterstitial object
  */
 - (void)teadsInterstitialDidDismissFullScreen:(TeadsInterstitial *)interstitial {
-    //inFlow has been dismissed : ad is not loaded anymore
-    self.adExperienceLoaded = NO;
     self.activityIndicator.hidden = YES;
     self.showInFlowButton.enabled = NO;
     self.loadInFlowButton.enabled = YES;
