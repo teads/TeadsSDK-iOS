@@ -267,5 +267,14 @@
     
 }
 
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
 
 @end

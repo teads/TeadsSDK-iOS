@@ -35,6 +35,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    [self.teadsInterstitial clean];
+}
+
+- (void)dealloc {
+    [self.teadsInterstitial clean];
 }
 
 - (IBAction)loadInterstitial:(id)sender {
@@ -139,6 +145,15 @@
     self.activityIndicator.hidden = YES;
     self.showInFlowButton.enabled = NO;
     self.loadInFlowButton.enabled = YES;
+}
+
+/**
+ * Interstitial Did Clean
+ *
+ * @param interstitial  : the TeadsInterstitial object
+ */
+- (void)teadsInterstitialDidClean:(TeadsInterstitial *)interstitial {
+    
 }
 
 @end

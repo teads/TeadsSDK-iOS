@@ -66,6 +66,10 @@
     [self.teadsInSwipe clean];
 }
 
+- (void)dealloc {
+    [self.teadsInSwipe clean];
+}
+
 - (NSUInteger)indexOfViewController:(id)viewController {
     // Return the index of the given data view controller.
     return [self.viewArray indexOfObject:viewController];
@@ -330,6 +334,15 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
     
 }
 

@@ -58,15 +58,16 @@
     [self.teadsInBoard clean];
 }
 
+-(void)dealloc {
+    [self.teadsInBoard clean];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     [self.teadsInBoard loadWithRequest:request forStartUrl:[NSString stringWithFormat:@"%@",self.startURL]];
     
     return YES;
 }
 
--(void)dealloc {
-    [self.teadsInBoard clean];
-}
 
 #pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
@@ -276,6 +277,15 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
     
 }
 

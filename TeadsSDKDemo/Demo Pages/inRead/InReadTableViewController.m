@@ -56,6 +56,10 @@
     [self.teadsInRead clean];
 }
 
+-(void)dealloc {
+    [self.teadsInRead clean];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -98,10 +102,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self.tableView reloadData];
-}
-
--(void)dealloc {
-    [self.teadsInRead clean];
 }
 
 #pragma mark -
@@ -312,6 +312,15 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
     
 }
 

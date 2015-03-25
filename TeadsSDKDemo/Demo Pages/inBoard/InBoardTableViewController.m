@@ -48,6 +48,10 @@
     [self.teadsinBoard clean];
 }
 
+-(void)dealloc {
+    [self.teadsinBoard clean];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -85,10 +89,6 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 90.0;
-}
-
--(void)dealloc {
-    [self.teadsinBoard clean];
 }
 
 #pragma mark -
@@ -299,6 +299,15 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
     
 }
 

@@ -49,6 +49,10 @@
     [self.teadsInRead clean];
 }
 
+-(void)dealloc {
+    [self.teadsInRead clean];
+}
+
 #pragma mark -
 #pragma mark - TeadsNativeVideoDelegate
 
@@ -257,6 +261,15 @@
  * @param nativeVideo  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
+ * NativeVideo did clean (all related resoures have been removed)
+ *
+ * @param nativeVideo  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
     
 }
 
