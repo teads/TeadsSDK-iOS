@@ -199,9 +199,9 @@ a{color: #388bbd}
   height: 400px;
 }
 
-#slide1{background-image: url('dist/img/slide1.jpg'); }
-#slide2{background-image: url('dist/img/slide2.jpg'); }
-#slide3{background-image: url('dist/img/slide3.jpg'); }
+#slide1{background-image: url('slide1.jpg'); }
+#slide2{background-image: url('slide2.jpg'); }
+#slide3{background-image: url('slide3.jpg'); }
 
 
 
