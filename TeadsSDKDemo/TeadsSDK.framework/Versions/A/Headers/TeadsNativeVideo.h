@@ -65,6 +65,8 @@
 
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
+- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath collectionView:(UICollectionView*)collectionView rootViewController:(id)viewController delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
+
 - (void)setInReadInsertionIndexPath:(NSIndexPath*)newIndexPath;
 
 /* In Swipe */
