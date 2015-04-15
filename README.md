@@ -13,13 +13,19 @@ This iOS Demo App includes the Teads Framework and is showing integration exampl
 
 The Teads SDK is distributed as a .framework file that you have to include in your application. It includes everything you need to serve "outstream" video ads.
 
-Teads iOS SDK ZIP file : [Teads SDK V1.2.0](https://github.com/teads/TeadsSDK-iOS/releases/download/v1.2.0/TeadsSDK-V1.2.0.zip)
+Teads iOS SDK ZIP file : [Teads SDK V1.3.0](https://github.com/teads/TeadsSDK-iOS/releases/download/v1.3.0/TeadsSDK-V1.3.0.zip)
 
 ## Integration Documentation
 
 Integration instructions are available on the [wiki](https://github.com/teads/TeadsSDK-iOS/wiki).
 
 ## New in this Version
+v1.3.0:
+- Improve VAST parsing
+- Improve handling of clean functions
+- Various bug fixes and improvements
+- Improve testing of media files formats
+
 v1.2.0:
 - Add support for WKWebView (inRead & inBoard formats)
 - Simplified implementation & load process
