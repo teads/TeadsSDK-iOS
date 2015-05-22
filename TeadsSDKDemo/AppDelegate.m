@@ -56,8 +56,11 @@
 -(void)teadsAdType:(TeadsAdType)type withPid:(NSString *)pid didFailLoading:(TeadsError *)error {
     NSLog(@"Ad with pid %@ failed to load", pid);
     
-    //You can immediately load a new ad with TeadsAdFactory if one has failed loading
-    [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
+    //You can load a new ad with TeadsAdFactory if one has failed loading
+    //We strongly recommand you to set a timer before doing the new load
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
+    });
 }
 
 -(void)teadsAdType:(TeadsAdType)type willLoad:(NSString *)pid {
