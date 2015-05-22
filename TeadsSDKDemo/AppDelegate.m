@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import <TeadsSDK/TeadsSDK.h>
 
+
+//Number of seconds to wait before doing a new [TeadsAdFactory loadNativeVideoAdWithPid:] when TeadsAdFactoryDelegate didFailLoading is called
+#define NB_SEC_BEFORE_RELOAD 2
+
 @interface AppDelegate ()
 
 @end
@@ -58,7 +62,7 @@
     
     //You can load a new ad with TeadsAdFactory if one has failed loading
     //We strongly recommand you to set a timer before doing the new load
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NB_SEC_BEFORE_RELOAD * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [TeadsAdFactory loadNativeVideoAdWithPid:@"27695"];
     });
 }
