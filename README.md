@@ -20,6 +20,15 @@ Teads iOS SDK ZIP file : [Teads SDK V1.3.0](https://github.com/teads/TeadsSDK-iO
 Integration instructions are available on the [wiki](https://github.com/teads/TeadsSDK-iOS/wiki).
 
 ## New in this Version
+
+v1.3.2:
+- Fullscreen experience is enhanced
+- Minor bug fixes and improvements
+
+v1.3.1:
+- Fix bug iOS7
+- Various bug fixes & Improvements
+
 v1.3.0:
 - Improve VAST parsing
 - Improve handling of clean functions
