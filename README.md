@@ -20,6 +20,7 @@ Teads iOS SDK ZIP file : [Teads SDK V1.3.1](https://github.com/teads/TeadsSDK-iO
 Integration instructions are available on the [wiki](https://github.com/teads/TeadsSDK-iOS/wiki).
 
 ## New in this Version
+
 v1.3.1:
 - fix bug iOS7
 - Various bug fixes & Improvements
