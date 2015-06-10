@@ -20,6 +20,7 @@
 /////////////////////////////////////////////////////////////
 
 @property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL isPlaying;
 
 @property (nonatomic, weak) id rootViewController;
 
@@ -96,6 +97,10 @@
 
 - (void)viewControllerAppeared:(UIViewController *)viewController;
 - (void)viewControllerDisappeared:(UIViewController *)viewController;
+
+- (CGRect)getExpandedFrame;
+- (float)getExpandAnimationDuration;
+- (float)getCollapseAnimationDuration;
 
 @end
 

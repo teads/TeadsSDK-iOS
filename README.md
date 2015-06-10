@@ -21,6 +21,10 @@ Integration instructions are available on the [wiki](https://github.com/teads/Te
 
 ## New in this Version
 
+v1.3.3:
+- New read-only data about video ad experience
+- New playing tracking status
+- Bug fixes and improvements
 
 v1.3.2:
 - Fullscreen experience is enhanced
