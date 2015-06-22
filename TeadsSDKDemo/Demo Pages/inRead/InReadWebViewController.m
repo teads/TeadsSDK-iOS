@@ -93,6 +93,15 @@
 }
 
 /**
+ * NativeVideo failed to find a slot in web view
+ *
+ * @param interstitial  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoFailedToFindAvailableSlot:(TeadsNativeVideo *)nativeVideo {
+    
+}
+
+/**
  * NativeVideo Will Start Playing (loading)
  *
  * @param nativeVideo  : the TeadsNativeVideo object
