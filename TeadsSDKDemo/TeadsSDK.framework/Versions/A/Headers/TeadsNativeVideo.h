@@ -80,6 +80,8 @@
 
 - (void)setPreDownLoad:(BOOL)preDownload;
 
+- (void)setAltScrollView:(UIScrollView *)scrollView;
+
 - (void)load;
 - (void)loadFromFactory;
 
@@ -140,6 +142,13 @@
  * @param interstitial  : the TeadsNativeVideo object
  */
 - (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo;
+
+/**
+ * NativeVideo failed to find a slot in web view
+ *
+ * @param interstitial  : the TeadsNativeVideo object
+ */
+- (void)teadsNativeVideoFailedToFindAvailableSlot:(TeadsNativeVideo *)nativeVideo;
 
 /**
  * NativeVideo Will Start Playing (loading)
