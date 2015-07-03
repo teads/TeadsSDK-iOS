@@ -864,7 +864,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"\"$(SRCROOT)/TeadsSDKDemo/calabash.framework/calabash\"",
@@ -873,7 +873,7 @@
 				);
 				PRODUCT_NAME = "TeadsSDKDemo-cal";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -895,7 +895,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"\"$(SRCROOT)/TeadsSDKDemo/calabash.framework/calabash\"",
@@ -904,7 +904,7 @@
 				);
 				PRODUCT_NAME = "TeadsSDKDemo-cal";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Release;
 		};
