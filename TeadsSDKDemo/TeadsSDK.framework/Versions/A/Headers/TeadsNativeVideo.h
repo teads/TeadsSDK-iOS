@@ -20,6 +20,7 @@
 /////////////////////////////////////////////////////////////
 
 @property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL isStarted;
 @property (nonatomic) BOOL isPlaying;
 
 @property (nonatomic, weak) id rootViewController;
@@ -35,6 +36,10 @@
 #pragma mark Methods
 #pragma mark -
 /////////////////////////////////////////////////////////////
+
+/* Simple */
+
+- (id)initWithPlacementId:(NSString *)placement delegate:(id<TeadsNativeVideoDelegate>)teadsDelegate;
 
 /* In Board */
 
@@ -83,6 +88,8 @@
 - (void)setAltScrollView:(UIScrollView *)scrollView;
 
 - (void)load;
+- (void)cancelLoad;
+
 - (void)loadFromFactory;
 
 - (void)loadWithRequest:(NSURLRequest *)request forStartUrl:(NSString *)startUrl;
@@ -99,6 +106,12 @@
 
 - (void)viewControllerAppeared:(UIViewController *)viewController;
 - (void)viewControllerDisappeared:(UIViewController *)viewController;
+
+- (UIView *)getNativeVideoView;
+- (void)setNativeVideoViewFrame:(CGRect)frame;
+- (void)setNativeVideoViewFrameHeight:(float)height;
+- (BOOL)isViewableInView:(id)rootView;
+- (BOOL)isFrame:(CGRect)frame viewableInView:(id)rootView;
 
 - (CGRect)getExpandedFrame;
 - (float)getExpandAnimationDuration;

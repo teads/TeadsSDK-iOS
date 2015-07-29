@@ -40,6 +40,8 @@
 - (void)setPreDownLoad:(BOOL)preDownload;
 
 - (void)load;
+- (void)cancelLoad;
+
 - (void)loadFromFactory;
 
 - (void)show;
