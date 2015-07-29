@@ -87,6 +87,7 @@
 		913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BEE1A70F495008E3E30 /* arrow_right.png */; };
 		913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF01A70F509008E3E30 /* arrow_left.png */; };
 		913B3BF31A70F83E008E3E30 /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */; };
+		913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */; };
 		916CFB161A68288400E36306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB151A68288400E36306 /* main.m */; };
 		916CFB191A68288400E36306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		916CFB1F1A68288400E36306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB1D1A68288400E36306 /* Main.storyboard */; };
@@ -217,6 +218,8 @@
 		913B3BEE1A70F495008E3E30 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		913B3BF01A70F509008E3E30 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
 		913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentPageViewController.xib; path = "../../Demo Pages/inSwipe/ContentPageViewController.xib"; sourceTree = "<group>"; };
+		913CED761B67C3590058623A /* CustomNativeVideoScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNativeVideoScrollViewViewController.h; sourceTree = "<group>"; };
+		913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNativeVideoScrollViewViewController.m; sourceTree = "<group>"; };
 		916CFB101A68288400E36306 /* TeadsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CFB141A68288400E36306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CFB151A68288400E36306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				910CB44D1A695933005E6711 /* InReadTableViewController.m */,
 				910CB44E1A695933005E6711 /* InReadWebViewController.h */,
 				910CB44F1A695933005E6711 /* InReadWebViewController.m */,
+				913CED761B67C3590058623A /* CustomNativeVideoScrollViewViewController.h */,
+				913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */,
 			);
 			path = inRead;
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */,
+				913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */,
 				910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */,
 				919567291A6D463200F5FB9B /* bootstrap.css.map in Sources */,
 				910CB43B1A695898005E6711 /* InSwipeViewController.m in Sources */,

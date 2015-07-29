@@ -13,6 +13,7 @@
 #import "InBoardWebViewController.h"
 #import "InReadScrollViewController.h"
 #import "InReadTableViewController.h"
+#import "CustomNativeVideoScrollViewViewController.h"
 #import "InReadWebViewController.h"
 #import "InSwipeViewController.h"
 #import "InFlowViewController.h"
@@ -29,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setTranslucent:NO];
-//    self.automaticallyAdjustsScrollViewInsets = NO;
+
     self.title = @"Teads SDK Demo";
     
     titlesForHeader = @[@"Native Video", @"Interstitial"];
@@ -49,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 10;
+        return 12;
     }
     
     return 2;
@@ -58,7 +59,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    return [titlesForHeader objectAtIndex:section]; ;
+    return [titlesForHeader objectAtIndex:section];
 }
 
 
@@ -68,7 +69,7 @@
     
     UITableViewCell *cell;
     
-    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 8)) ||
+    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 8 || indexPath.row == 10)) ||
         (indexPath.section == 1 && indexPath.row == 0)) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
@@ -114,9 +115,15 @@
                 cell.textLabel.text = @"inBoard TableView";
                 break;
             case 8:
-                cell.textLabel.text = @"inSwipe";
+                cell.textLabel.text = @"Custom Native Video View";
                 break;
             case 9:
+                cell.textLabel.text = @"Custom in ScrollView";
+                break;
+            case 10:
+                cell.textLabel.text = @"inSwipe";
+                break;
+            case 11:
                 cell.textLabel.text = @"inSwipe Pager";
                 break;
             default:
@@ -143,33 +150,61 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    id controller = nil;
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    InReadScrollViewController *inReadScrollView =  [storyboard  instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadScrollViewForIPad":@"inReadScrollView"];
-    InReadWebViewController *inReadWebView =        [storyboard instantiateViewControllerWithIdentifier:@"inReadWebView"];
-    InReadTableViewController *inReadTableView =    [storyboard instantiateViewControllerWithIdentifier:@"inReadTableView"];
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 1: {
+                InReadScrollViewController *inReadScrollView = [storyboard  instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadScrollViewForIPad":@"inReadScrollView"];
+                controller = inReadScrollView;
+                break;
+            }
+            case 2: {
+                InReadWebViewController *inReadWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadWebView"];
+                controller = inReadWebView;
+                break;
+            }
+            case 3: {
+                 InReadTableViewController *inReadTableView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTableView"];
+                controller = inReadTableView;
+                break;
+            }
+            case 5: {
+                InBoardScrollViewController *inBoardScrollView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardScrollView"];
+                controller = inBoardScrollView;
+                break;
+            }
+            case 6: {
+                InBoardWebViewController *inBoardWebView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardWebView"];
+                controller = inBoardWebView;
+                break;
+            }
+            case 7: {
+                InBoardTableViewController *inBoardTableView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardTableView"];
+                controller = inBoardTableView;
+                break;
+            }
+            case 9: {
+                CustomNativeVideoScrollViewViewController *simpleInReadScrollViewController = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"customNativeVideoScrollViewiPad":@"customNativeVideoScrollView"];
+                controller = simpleInReadScrollViewController;
+                break;
+            }
+            case 11: {
+                InSwipeViewController *inSwipe = [storyboard instantiateViewControllerWithIdentifier:@"inSwipe"];
+                controller = inSwipe;
+                break;
+            }
+            default:
+                break;
+        }
+        
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        InFlowViewController *inFlow = [storyboard instantiateViewControllerWithIdentifier:@"inFlow"];
+        controller = inFlow;
+    }
     
-    InBoardScrollViewController *inBoardScrollView =    [storyboard instantiateViewControllerWithIdentifier:@"inBoardScrollView"];
-    InBoardWebViewController *inBoardWebView =          [storyboard instantiateViewControllerWithIdentifier:@"inBoardWebView"];
-    InBoardTableViewController *inBoardTableView =      [storyboard instantiateViewControllerWithIdentifier:@"inBoardTableView"];
-    
-    InSwipeViewController *inSwipe = [storyboard instantiateViewControllerWithIdentifier:@"inSwipe"];
-    
-    NSArray *section1 = @[[NSNull null], inReadScrollView, inReadWebView, inReadTableView,
-                          [NSNull null], inBoardScrollView, inBoardWebView, inBoardTableView,
-                          [NSNull null], inSwipe];
-    
-    InFlowViewController *inFlow = [storyboard instantiateViewControllerWithIdentifier:@"inFlow"];
-    
-    NSArray *section2 = @[[NSNull null], inFlow];
-    
-    controllers = @[section1, section2];
-    
-    
-    
-    NSArray *controllersAtIndex = [controllers objectAtIndex:indexPath.section];
-    id controller = [controllersAtIndex objectAtIndex:indexPath.row];
-    
-    if (controller != [NSNull null]) {
+    if (controller != nil) {
         [self.navigationController pushViewController:controller animated:YES];
     }
 }
