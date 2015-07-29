@@ -32,13 +32,6 @@
     self.teadsInterstitial = [[TeadsInterstitial alloc] initInFlowWithPlacementId:@"27695" rootViewController:self delegate:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
-    [self.teadsInterstitial clean];
-}
-
 - (void)dealloc {
     [self.teadsInterstitial clean];
 }
