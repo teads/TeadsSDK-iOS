@@ -15,6 +15,7 @@ typedef enum TeadsErrorEnum {
 	TeadsAdFailsToLoad = 3,
     TeadsNoAdsAvailable = 4,
     TeadsTimeoutError = 5,
+    TeadsLoadOperationCancelled = 6
 } TeadsErrorType;
 
 @interface TeadsError : NSObject
@@ -31,5 +32,6 @@ typedef enum TeadsErrorEnum {
 +(TeadsError*)adServerBadResponse;
 +(TeadsError*)adFailsToLoad;
 +(TeadsError*)noAdsAvailable;
++(TeadsError*)loadOperationCancelled;
 
 @end
