@@ -30,10 +30,6 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 ## Changelog
 
-V1.4.1:
-- Improved VAST handling elements
-- Bug fixes and improvements
-
 V1.4.0:
 - New feature : Custom Native Video
 - New tracking status « isStarted »
