@@ -23,6 +23,8 @@ Integration instructions are available [on the wiki](https://github.com/teads/Te
 
 When updating the SDK to a new version in your project, make sure to clean your project before running your app project from menu.
 
+We also recommend you to delete first the old `.framework` and `.bundle` files, and then place the new ones.
+
 Shortcut clean project : &#x21E7; &#x2318; K 
 
 Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K 
