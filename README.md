@@ -30,6 +30,10 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 ## Changelog
 
+v1.4.3:
+- Bug fix CoreData migration
+- Bug fixes and improvements
+
 v1.4.2:
 - Improved VAST handling elements
 - Bug fixes and improvements
