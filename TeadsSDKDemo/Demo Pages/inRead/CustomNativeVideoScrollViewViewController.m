@@ -58,7 +58,7 @@
 }
 
 -(void)addVideoView {
-    [self.scrollView addSubview:[self.teadsSimpleAd getNativeVideoView]];
+    [self.scrollView addSubview:[self.teadsSimpleAd nativeVideoView]];
     
     //Exemple of presenting animation
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
@@ -82,7 +82,7 @@
         
         //teadsSimpleAd is started implies that we already have defined its frame
         //So we can directly check if teadsSimpleAd's view meets visibility requirements
-        if ([self.teadsSimpleAd isFrame:[self.teadsSimpleAd getNativeVideoView].frame viewableInView:self.scrollView]){
+        if ([self.teadsSimpleAd isFrame:[self.teadsSimpleAd nativeVideoView].frame viewableInView:self.scrollView]){
             //If ad is NOT alreay playing
             if (!self.teadsSimpleAd.isPlaying) {
                 //Start playing
@@ -153,7 +153,7 @@
     } completion:^(BOOL finished) {
         
         //We remove our teadsSimpleAd view
-        [[self.teadsSimpleAd getNativeVideoView] removeFromSuperview];
+        [[self.teadsSimpleAd nativeVideoView] removeFromSuperview];
         
         //Depending on your own needs, you can also remove your equivalent of simpleAdContainerView if you are using one
         //[self.simpleAdContainerView removeFromSuperview];

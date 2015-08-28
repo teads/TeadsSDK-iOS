@@ -107,15 +107,15 @@
 - (void)viewControllerAppeared:(UIViewController *)viewController;
 - (void)viewControllerDisappeared:(UIViewController *)viewController;
 
-- (UIView *)getNativeVideoView;
+- (UIView *)nativeVideoView;
 - (void)setNativeVideoViewFrame:(CGRect)frame;
 - (void)setNativeVideoViewFrameHeight:(float)height;
 - (BOOL)isViewableInView:(id)rootView;
 - (BOOL)isFrame:(CGRect)frame viewableInView:(id)rootView;
 
-- (CGRect)getExpandedFrame;
-- (float)getExpandAnimationDuration;
-- (float)getCollapseAnimationDuration;
+- (CGRect)expandedFrame;
+- (float)expandAnimationDuration;
+- (float)collapseAnimationDuration;
 
 @end
 
