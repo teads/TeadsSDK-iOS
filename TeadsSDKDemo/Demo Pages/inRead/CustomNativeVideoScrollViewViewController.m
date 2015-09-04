@@ -43,19 +43,15 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
-    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
-        //Back button was pressed.  We know this is true because self is no longer in the navigation stack.
-
-        //We can immediately clean our teadsSimpleAd
-        [self.teadsSimpleAd clean];
-    }
     [super viewWillDisappear:animated];
+    
+    [self.teadsSimpleAd requestPause];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)dealloc {
+    [self.teadsSimpleAd clean];
 }
+
 
 -(void)addVideoView {
     [self.scrollView addSubview:[self.teadsSimpleAd nativeVideoView]];

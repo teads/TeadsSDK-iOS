@@ -32,6 +32,11 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 ## Changelog
 
+v1.5.1:
+- Fix with TableView section headers
+- Fix non-released objects with WebView
+- Other minor fixes and improvements
+
 v1.5.0:
 - Fixed non-release elements with inRead/inBoard (wk)webview
 - Removed unused resources
