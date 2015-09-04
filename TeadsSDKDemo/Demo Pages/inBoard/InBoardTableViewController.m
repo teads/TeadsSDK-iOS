@@ -36,16 +36,9 @@
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
-    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
-        //Back button was pressed.  We know this is true because self is no longer in the navigation stack.
-        
-        //We can immediately clean our teadsSimpleAd
-        [self.teadsinBoard clean];
-    } else {
-        [self.teadsinBoard viewControllerDisappeared:self];
-    }
-    
     [super viewDidDisappear:animated];
+    
+    [self.teadsinBoard viewControllerDisappeared:self];
 }
 
 -(void)dealloc {
