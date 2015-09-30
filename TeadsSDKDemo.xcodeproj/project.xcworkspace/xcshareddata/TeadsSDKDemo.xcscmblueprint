@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6B3A8DF9EE74378972E93B1CCA4A8E663DF3D8D1" : 0,
+    "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7ACC427C-2545-4826-BE48-3BCB0DF608A9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6B3A8DF9EE74378972E93B1CCA4A8E663DF3D8D1" : "TeadsSDKDev-iOS\/",
+    "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E" : "TeadsSDK-iOS"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TeadsSDKDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TeadsSDKDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ebuzzing\/TeadsSDKDev-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6B3A8DF9EE74378972E93B1CCA4A8E663DF3D8D1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/teads\/TeadsSDK-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E"
+    }
+  ]
+}

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-1i-PcB" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1278"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1258"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="4uj-fP-euB">
                                                 <rect key="frame" x="8" y="20" width="359" height="27"/>
@@ -56,14 +55,15 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Zg-urx" userLabel="inRead">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Zg-urx" userLabel="inRead">
+                                                <rect key="frame" x="0.0" y="720" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="YQ0-yW-4QH"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-Ah-1JY">
-                                                <rect key="frame" x="8" y="730" width="359" height="528"/>
+                                                <rect key="frame" x="8" y="730" width="359" height="508"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -213,7 +213,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChI-k5-q85">
-                                                <rect key="frame" x="8" y="947" width="359" height="528"/>
+                                                <rect key="frame" x="8" y="947" width="359" height="508"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -327,21 +327,21 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25g-Rh-wEt">
-                                                <rect key="frame" x="8" y="78" width="752" height="859"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
+                                                <rect key="frame" x="8" y="78" width="752" height="888"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
 
 Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.
 Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.
-Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</mutableString>
+Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98p-uR-gKB">
-                                                <rect key="frame" x="8" y="1177" width="752" height="394"/>
+                                                <rect key="frame" x="8" y="1206" width="752" height="421"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -375,15 +375,15 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="M3y-SS-v4r"/>
+                                                <exclude reference="YtD-CA-jPY"/>
                                                 <exclude reference="lQ1-bC-J9q"/>
                                                 <exclude reference="vs8-9N-GMC"/>
-                                                <exclude reference="YtD-CA-jPY"/>
-                                                <exclude reference="M3y-SS-v4r"/>
                                                 <exclude reference="8tF-yx-tMa"/>
-                                                <exclude reference="jAv-h4-Zig"/>
                                                 <exclude reference="Beh-gs-lvl"/>
-                                                <exclude reference="bl0-rQ-Pj5"/>
                                                 <exclude reference="ICK-6i-bUQ"/>
+                                                <exclude reference="bl0-rQ-Pj5"/>
+                                                <exclude reference="jAv-h4-Zig"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -476,7 +476,8 @@ Sed vel massa nec nisl sagittis condimentum. Sed fringilla fringilla ex, sit ame
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-uJ-5rc" userLabel="inRead">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-uJ-5rc" userLabel="inRead">
+                                                <rect key="frame" x="0.0" y="1115" width="708" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="Ka9-To-4af"/>
@@ -633,9 +634,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsFirstCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsFirstCell" rowHeight="90" id="dZt-xm-HuI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dZt-xm-HuI" id="1eJ-bP-lAM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJo-3L-z1f">
@@ -683,22 +685,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                    <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="RaY-Hr-fkn" detailTextLabel="oYZ-9x-1Tv" imageView="acZ-FS-ooV" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="2b7-nm-aYl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2b7-nm-aYl" id="YrE-uQ-Q0C">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RaY-Hr-fkn">
+                                            <rect key="frame" x="100" y="14" width="260" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYZ-9x-1Tv">
+                                            <rect key="frame" x="100" y="34" width="260" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -706,6 +711,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="teads_grayed.png" id="acZ-FS-ooV">
+                                            <rect key="frame" x="15" y="10" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -904,9 +910,10 @@ Your intersitial will appear when you will leave this view.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1275"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1255"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" id="TJ5-tv-JcO"/>
@@ -930,7 +937,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3n-8X-h1v">
-                                                <rect key="frame" x="8" y="717" width="359" height="528"/>
+                                                <rect key="frame" x="8" y="717" width="359" height="508"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -1000,9 +1007,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsFirstCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsFirstCell" rowHeight="90" id="CNY-OY-Vbt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CNY-OY-Vbt" id="F9p-9Z-Kip">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-pt-HbS">
@@ -1052,18 +1060,21 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="H0y-VH-8Hg" detailTextLabel="Glc-yn-GNP" imageView="8My-gA-Cyt" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="qGd-Ey-OMX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qGd-Ey-OMX" id="05r-dW-k6B">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H0y-VH-8Hg">
+                                            <rect key="frame" x="100" y="14" width="260" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Glc-yn-GNP">
+                                            <rect key="frame" x="100" y="34" width="260" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1071,6 +1082,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="teads_grayed.png" id="8My-gA-Cyt">
+                                            <rect key="frame" x="15" y="10" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
