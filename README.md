@@ -38,8 +38,8 @@ v1.6.0:
 - BITCODE compliant
 - Fixed log error message when server has no ad available 
 - Fixed duplicated symbols with Millenium Media SDK
-- Minor internal improvement
-- 
+- Minor internal improvements
+
 v1.5.1:
 - Fix with TableView section headers
 - Fix non-released objects with WebView
