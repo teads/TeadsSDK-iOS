@@ -32,6 +32,9 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 ## Changelog
 
+v1.6.1:
+- Fixed dSYM files warning issue
+
 v1.6.0:
 - Minimum iOS version required is now iOS 7
 - Full iOS 9 support
