@@ -32,6 +32,10 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 ## Changelog
 
+v1.6.2:
+- Fixed compatibility for scrollView with `clipToBounds = NO`
+- Webview video insertion script enhanced
+
 v1.6.1:
 - Fixed dSYM files warning issue
 
@@ -56,45 +60,3 @@ v1.5.0:
     - `getExpandedFrame:`   => `expandedFrame:`
     - `getExpandAnimationDuration:`   => `expandAnimationDuration:`
     - `getCollapseAnimationDuration:` => `collapseAnimationDuration:`
-
-v1.4.4:
-- Increased close button touch-zone
-- Fixed false log error display
-- Bug fixes
-
-v1.4.3:
-- Bug fix CoreData migration
-- Bug fixes and improvements
-
-v1.4.2:
-- Improved VAST handling elements
-- Bug fixes and improvements
-
-V1.4.0:
-- New feature : Custom Native Video
-- New tracking status « isStarted »
-- Bug fixes and improvements
-
-v1.3.4:
-- Alternative scroll view for web view integrations
-- Added callback when no slot found in web view
-- Bug fixes and performance improvements
-
-v1.3.3:
-- New read-only data about video ad experience
-- New playing tracking status
-- Bug fixes and improvements
-
-v1.3.2:
-- Fullscreen experience is enhanced
-- Minor bug fixes and improvements
-
-v1.3.1:
-- Fix bug iOS7
-- Various bug fixes & Improvements
-
-v1.3.0:
-- Improve VAST parsing
-- Improve handling of clean functions
-- Various bug fixes and improvements
-- Improve testing of media files formats
