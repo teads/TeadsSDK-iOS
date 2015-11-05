@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
+		015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
 		01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		01A4E6E71B46826F005D381E /* bootstrap.css.map in Sources */ = {isa = PBXBuildFile; fileRef = 9195670C1A6D463200F5FB9B /* bootstrap.css.map */; };
@@ -285,6 +287,8 @@
 				01A4E6F61B46826F005D381E /* Foundation.framework in Frameworks */,
 				01A4E6F71B46826F005D381E /* TeadsSDK.framework in Frameworks */,
 				01A4E6F81B46826F005D381E /* UIKit.framework in Frameworks */,
+				015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */,
+				015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */,
 				01A4E7301B468478005D381E /* calabash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

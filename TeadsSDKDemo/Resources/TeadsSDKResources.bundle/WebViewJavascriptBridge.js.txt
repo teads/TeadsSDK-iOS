@@ -14,6 +14,7 @@
 	function _createQueueReadyIframe(doc) {
 		messagingIframe = doc.createElement('iframe')
 		messagingIframe.style.display = 'none'
+        messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE
 		doc.documentElement.appendChild(messagingIframe)
 	}
 
@@ -22,9 +23,11 @@
 		WebViewJavascriptBridge._messageHandler = messageHandler
 		var receivedMessages = receiveMessageQueue
 		receiveMessageQueue = null
-		for (var i=0; i<receivedMessages.length; i++) {
-			_dispatchMessageFromObjC(receivedMessages[i])
-		}
+        if (receivedMessages) {
+            for (var i=0; i<receivedMessages.length; i++) {
+                _dispatchMessageFromObjC(receivedMessages[i])
+            }
+        }
 	}
 
 	function send(data, responseCallback) {
@@ -59,14 +62,14 @@
 		setTimeout(function _timeoutDispatchMessageFromObjC() {
 			var message = JSON.parse(messageJSON)
 			var messageHandler
+            var responseCallback
 			
 			if (message.responseId) {
-				var responseCallback = responseCallbacks[message.responseId]
+				responseCallback = responseCallbacks[message.responseId]
 				if (!responseCallback) { return; }
 				responseCallback(message.responseData)
 				delete responseCallbacks[message.responseId]
 			} else {
-				var responseCallback
 				if (message.callbackId) {
 					var callbackResponseId = message.callbackId
 					responseCallback = function(responseData) {
