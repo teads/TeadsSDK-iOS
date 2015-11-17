@@ -13,7 +13,7 @@ This iOS Demo App includes the Teads Framework and is showing integration exampl
 
 The Teads SDK is distributed as a .framework file that you have to include in your application. It includes everything you need to serve "outstream" video ads.
 
-Teads iOS SDK ZIP file : [Teads SDK V1.6.1](https://github.com/teads/TeadsSDK-iOS/releases/latest)
+Teads iOS SDK ZIP file : [Teads SDK V1.6.3](https://github.com/teads/TeadsSDK-iOS/releases/latest)
 
 ## Integration Documentation
 
@@ -31,6 +31,12 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 
 
 ## Changelog
+
+v1.6.3:
+- Fixed bug when inRead inserted scrollview with complex hierachy
+- Added mute/unmute tracking for inFlow
+- Fixed bug for inRead/inBoard in WKWebView
+- Fixed bug when opening in safari from the SDK browser
 
 v1.6.2:
 - Fixed compatibility for scrollView with `clipToBounds = NO`
