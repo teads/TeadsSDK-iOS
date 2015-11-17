@@ -28,8 +28,9 @@
      //Create an NSIndexPath, it will be used to place the ad in the table view
     NSIndexPath *pathForTeadsInRead = [NSIndexPath indexPathForRow:rowToDisplayInRead inSection:0];
     
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     //Create the teadsInRead with a PLACEMENT_ID, an IndexPath, a tableView, a rootViewController and a delegate
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" insertionIndexPath:pathForTeadsInRead tableView:self.tableView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:pid insertionIndexPath:pathForTeadsInRead tableView:self.tableView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

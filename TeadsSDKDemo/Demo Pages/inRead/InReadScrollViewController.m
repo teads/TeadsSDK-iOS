@@ -24,7 +24,9 @@
     
     self.navigationItem.title = @"inRead ScrollView";
     
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:@"27695" placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    
+    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:pid placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -33,7 +35,7 @@
     if (self.teadsInRead.isLoaded) {
         [self.teadsInRead viewControllerAppeared:self];
     } else {
-        [self.teadsInRead loadFromFactory];
+        [self.teadsInRead load];
     }
 }
 

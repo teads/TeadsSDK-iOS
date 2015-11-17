@@ -28,8 +28,9 @@
     self.showInFlowButton.enabled = NO;
     self.activityIndicator.hidden = YES;
     
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     //Init the inFlow
-    self.teadsInterstitial = [[TeadsInterstitial alloc] initInFlowWithPlacementId:@"27695" rootViewController:self delegate:self];
+    self.teadsInterstitial = [[TeadsInterstitial alloc] initInFlowWithPlacementId:pid rootViewController:self delegate:self];
 }
 
 - (void)dealloc {

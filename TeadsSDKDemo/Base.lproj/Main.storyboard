@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -112,10 +112,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Lif-qh-5XA"/>
-                                                <exclude reference="Tau-IS-qGH"/>
-                                                <exclude reference="Tsi-gj-oNT"/>
-                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="Csl-LQ-Q8J"/>
                                                 <exclude reference="Yte-HE-S1m"/>
                                                 <exclude reference="gPa-vz-q4h"/>
@@ -128,6 +124,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                                 <exclude reference="4CX-f9-us7"/>
                                                 <exclude reference="cAZ-Rc-UwF"/>
                                                 <exclude reference="sIN-bX-1bj"/>
+                                                <exclude reference="Lif-qh-5XA"/>
+                                                <exclude reference="Tau-IS-qGH"/>
+                                                <exclude reference="Tsi-gj-oNT"/>
+                                                <exclude reference="XPI-cJ-hSh"/>
                                                 <exclude reference="QaK-jR-hdj"/>
                                             </mask>
                                         </variation>
@@ -166,7 +166,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgC-hs-jRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="-841.5"/>
+            <point key="canvasLocation" x="1216.5" y="85.5"/>
         </scene>
         <!--custom Native Video Scroll View Controller-->
         <scene sceneID="sy3-uE-xt7">
@@ -292,7 +292,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqo-St-UNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="737.5"/>
+            <point key="canvasLocation" x="1208.5" y="1844.5"/>
         </scene>
         <!--custom Native Video Scroll View Controller - iPad-->
         <scene sceneID="cb1-RN-rBO">
@@ -420,7 +420,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-zU-weO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="902"/>
+            <point key="canvasLocation" x="1923" y="1862"/>
         </scene>
         <!--inRead Scroll View Controller - iPad-->
         <scene sceneID="dub-cY-ibn">
@@ -534,10 +534,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="30C-a1-6lk"/>
-                                                <exclude reference="QYt-zt-gHn"/>
-                                                <exclude reference="Tet-7g-565"/>
-                                                <exclude reference="yxh-2U-cia"/>
                                                 <exclude reference="NPT-rh-gqr"/>
                                                 <exclude reference="SQj-Au-n3W"/>
                                                 <exclude reference="gcd-Td-tvq"/>
@@ -547,6 +543,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                                 <exclude reference="8oM-vf-z5A"/>
                                                 <exclude reference="nll-9z-Bh1"/>
                                                 <exclude reference="vNb-wP-irk"/>
+                                                <exclude reference="30C-a1-6lk"/>
+                                                <exclude reference="QYt-zt-gHn"/>
+                                                <exclude reference="Tet-7g-565"/>
+                                                <exclude reference="yxh-2U-cia"/>
                                                 <exclude reference="dGg-bk-ocf"/>
                                             </mask>
                                         </variation>
@@ -585,7 +585,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Blx-6A-axV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389" y="-1796"/>
+            <point key="canvasLocation" x="1405" y="-924"/>
         </scene>
         <!--inRead Web View Controller-->
         <scene sceneID="bxv-oc-qhz">
@@ -622,7 +622,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmp-GF-Fl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714.5" y="-841.5"/>
+            <point key="canvasLocation" x="1726.5" y="85.5"/>
         </scene>
         <!--inRead Table View Controller-->
         <scene sceneID="nv2-m9-BE7">
@@ -727,7 +727,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5a-F2-3VZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276.5" y="-842.5"/>
+            <point key="canvasLocation" x="2222.5" y="85.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="toJ-na-SCs">
@@ -762,10 +762,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Eis-55-xVB">
                                 <rect key="frame" x="46" y="50" width="283" height="350"/>
-                                <string key="text">Interstitial ad placement differs from its inBoard and inRead counterparts in that it typically provides a full-screen interactive experience. It is usually presented modally and takes over the app experience while providing a way to return to the application.
+                                <string key="text">Interstitial ad placement differs from its inBoard and inRead counterparts in that it typically provides a full-screen interactive experience. 
 
-
-Your intersitial will appear when you will leave this view.</string>
+It is usually presented modally and takes over the app experience while providing a way to return to the application.
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -827,7 +827,7 @@ Your intersitial will appear when you will leave this view.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17R-UT-wlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="2310.5"/>
+            <point key="canvasLocation" x="1216.5" y="2662.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4hq-hX-Mlu">
@@ -844,18 +844,6 @@ Your intersitial will appear when you will leave this view.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oay-Kr-7LN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="1253"/>
-        </scene>
-        <!--inSwipe View Controller-->
-        <scene sceneID="4J7-Ng-ukR">
-            <objects>
-                <pageViewController storyboardIdentifier="inSwipe" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ELk-te-JlT" userLabel="inSwipe View Controller" customClass="InSwipeViewController" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-HW-lBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1192.5" y="1562.5"/>
         </scene>
         <!--inBoard Web View Controller-->
         <scene sceneID="ur2-Sp-gad">
@@ -892,7 +880,7 @@ Your intersitial will appear when you will leave this view.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wre-N6-A0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708.5" y="-53.5"/>
+            <point key="canvasLocation" x="1726.5" y="898.5"/>
         </scene>
         <!--inBoard Scroll View Controller-->
         <scene sceneID="cPg-zV-9yO">
@@ -995,12 +983,12 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MO-Zc-oGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="-53.5"/>
+            <point key="canvasLocation" x="1216.5" y="898.5"/>
         </scene>
-        <!--inRead Table View Controller-->
+        <!--inBoard Table View Controller-->
         <scene sceneID="g8L-MT-zeb">
             <objects>
-                <tableViewController storyboardIdentifier="inBoardTableView" id="2xJ-tq-MH4" userLabel="inRead Table View Controller" customClass="InBoardTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inBoardTableView" id="2xJ-tq-MH4" userLabel="inBoard Table View Controller" customClass="InBoardTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1098,7 +1086,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYE-X6-h7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276.5" y="-53.5"/>
+            <point key="canvasLocation" x="2222.5" y="898.5"/>
         </scene>
     </scenes>
     <resources>
