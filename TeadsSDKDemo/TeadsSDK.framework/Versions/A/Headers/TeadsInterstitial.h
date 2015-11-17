@@ -111,6 +111,20 @@
 - (void)teadsInterstitialDidTakeOverFullScreen:(TeadsInterstitial *)interstitial;
 
 /**
+ * Interstitial Did mute Sound
+ *
+ * @param interstitial  : the TeadsInterstitial object
+ */
+- (void)teadsInterstitialDidMute:(TeadsInterstitial *)interstitial;
+
+/**
+ * Interstitial Did unmute Sound
+ *
+ * @param interstitial  : the TeadsInterstitial object
+ */
+- (void)teadsInterstitialDidUnmute:(TeadsInterstitial *)interstitial;
+
+/**
  * Interstitial Will Dismiss Fullscreen (closing)
  *
  * @param interstitial  : the TeadsInterstitial object

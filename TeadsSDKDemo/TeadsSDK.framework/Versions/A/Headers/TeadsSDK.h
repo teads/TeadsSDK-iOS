@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define TEADS_SDK_VERSION                         @"1.6.2"
+#define TEADS_SDK_VERSION                         @"1.6.3"
 
 //! Project version number for TeadsSDK.
 FOUNDATION_EXPORT double TeadsSDKVersionNumber;
