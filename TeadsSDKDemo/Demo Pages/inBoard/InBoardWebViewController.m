@@ -28,12 +28,20 @@
     
     self.webView.delegate = self;
     
-    self.startURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+    NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
+    
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
+        self.startURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+    } else {
+        self.startURL = [NSURL URLWithString:urlToLoad];
+    }
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.startURL]];
     
     
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // Create the teadsInBoard
-    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" uiWebView:self.webView rootViewController:self delegate:self];
+    self.teadsInBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:pid uiWebView:self.webView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

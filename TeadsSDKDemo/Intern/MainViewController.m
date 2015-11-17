@@ -15,8 +15,9 @@
 #import "InReadTableViewController.h"
 #import "CustomNativeVideoScrollViewViewController.h"
 #import "InReadWebViewController.h"
-#import "InSwipeViewController.h"
 #import "InFlowViewController.h"
+
+#import "DemoUtils.h"
 
 @interface MainViewController () {
     NSArray *titlesForHeader;
@@ -33,7 +34,7 @@
 
     self.title = @"Teads SDK Demo";
     
-    titlesForHeader = @[@"Native Video", @"Interstitial"];
+    titlesForHeader = @[@"Native Video", @"Interstitial", @"App Parameters"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,11 +51,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 12;
+        return 10;
     }
-    
     return 2;
-    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -120,16 +119,10 @@
             case 9:
                 cell.textLabel.text = @"Custom in ScrollView";
                 break;
-            case 10:
-                cell.textLabel.text = @"inSwipe";
-                break;
-            case 11:
-                cell.textLabel.text = @"inSwipe Pager";
-                break;
             default:
                 break;
         }
-    } else {
+    } else if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"inFlow";
@@ -140,6 +133,19 @@
             default:
                 break;
         } 
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"Change PID";
+                break;
+            case 1:
+                cell.textLabel.text = @"Change website";
+                break;
+            default:
+                break;
+        }
     }
     
     return cell;
@@ -190,11 +196,6 @@
                 controller = simpleInReadScrollViewController;
                 break;
             }
-            case 11: {
-                InSwipeViewController *inSwipe = [storyboard instantiateViewControllerWithIdentifier:@"inSwipe"];
-                controller = inSwipe;
-                break;
-            }
             default:
                 break;
         }
@@ -202,6 +203,19 @@
     } else if (indexPath.section == 1 && indexPath.row == 1) {
         InFlowViewController *inFlow = [storyboard instantiateViewControllerWithIdentifier:@"inFlow"];
         controller = inFlow;
+    } else if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0: {
+                [DemoUtils presentControllerToChangePid:self];
+                break;
+            }
+            case 1: {
+                [DemoUtils presentControllerToChangeWebsite:self];
+                break;
+            }
+            default:
+                break;
+        }
     }
     
     if (controller != nil) {

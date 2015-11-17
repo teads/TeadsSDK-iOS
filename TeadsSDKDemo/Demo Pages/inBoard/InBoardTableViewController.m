@@ -21,7 +21,9 @@
     
     self.navigationItem.title = @"inBoard TableView";
     
-    self.teadsinBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:@"27695" tableView:self.tableView rootViewController:self delegate:self];
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    
+    self.teadsinBoard = [[TeadsNativeVideo alloc] initInBoardWithPlacementId:pid tableView:self.tableView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -31,7 +33,7 @@
         [self.teadsinBoard viewControllerAppeared:self];
         
     } else {
-        [self.teadsinBoard loadFromFactory];
+        [self.teadsinBoard load];
     }
 }
 

@@ -35,11 +35,11 @@
 
     self.scrollView.delegate = self;
     
-    self.teadsSimpleAd = [[TeadsNativeVideo alloc] initWithPlacementId:@"27695" delegate:self];
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    
+    self.teadsSimpleAd = [[TeadsNativeVideo alloc] initWithPlacementId:pid delegate:self];
     
     [self.teadsSimpleAd load];
-    
-    self.navigationController.delegate = self;
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
@@ -115,10 +115,11 @@
     
     //We set a collapsed frame (height is 0) to our teadsSimpleAd, needed for the expanding animation that we do later in -(void)addVideoView
     
+    CGFloat videoViewFrameWidth = CGRectGetMaxX(self.uiLabelForReference.frame) - CGRectGetMinX(self.uiLabelForReference.frame);
     
-    self.collapsedVideoViewFrame = CGRectMake(8,
+    self.collapsedVideoViewFrame = CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
                                        CGRectGetMaxY(self.uiLabelForReference.frame),
-                                       359,
+                                       videoViewFrameWidth,
                                        0);
     [self.teadsSimpleAd setNativeVideoViewFrame:self.collapsedVideoViewFrame];
     
