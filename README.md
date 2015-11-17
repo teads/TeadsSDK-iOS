@@ -33,10 +33,10 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 ## Changelog
 
 v1.6.3:
-- Fixed bug when inRead inserted scrollview with complex hierachy
-- Added mute/unmute tracking for inFlow
+- Fixed bug when inRead inserted in ScrollView with complex hierachy
 - Fixed bug for inRead/inBoard in WKWebView
 - Fixed bug when opening in safari from the SDK browser
+- Added mute/unmute tracking for inFlow
 
 v1.6.2:
 - Fixed compatibility for scrollView with `clipToBounds = NO`
