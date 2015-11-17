@@ -12,7 +12,6 @@
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
 		01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4461A69592C005E6711 /* InBoardWebViewController.m */; };
-		01A4E6EA1B46826F005D381E /* ContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919567461A6D5F4400F5FB9B /* ContentPageViewController.m */; };
 		01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
 		01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB43D1A6958D7005E6711 /* InFlowViewController.m */; };
@@ -43,7 +42,6 @@
 		01A4E70C1B46826F005D381E /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 918A90221A76407400CC4C52 /* arrow_up.png */; };
 		01A4E70D1B46826F005D381E /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F581DD1A710A29007D70AC /* arrow_right@2x.png */; };
 		01A4E70E1B46826F005D381E /* teads.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567491A6E5BB400F5FB9B /* teads.png */; };
-		01A4E7101B46826F005D381E /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */; };
 		01A4E7111B46826F005D381E /* jquery-2.1.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 919567211A6D463200F5FB9B /* jquery-2.1.0.min.js */; };
 		01A4E7131B46826F005D381E /* slide4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919567181A6D463200F5FB9B /* slide4.jpg */; };
 		01A4E7141B46826F005D381E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 919567231A6D463200F5FB9B /* index.html */; };
@@ -75,7 +73,6 @@
 		91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91317C821A8CF9D900B68D82 /* Foundation.framework */; };
 		913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BEE1A70F495008E3E30 /* arrow_right.png */; };
 		913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF01A70F509008E3E30 /* arrow_left.png */; };
-		913B3BF31A70F83E008E3E30 /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */; };
 		913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */; };
 		914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
 		914E2BA71BBC23E5001D6A83 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
@@ -110,7 +107,6 @@
 		919567391A6D463200F5FB9B /* docs.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 9195671F1A6D463200F5FB9B /* docs.min.js */; };
 		9195673B1A6D463200F5FB9B /* jquery-2.1.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 919567211A6D463200F5FB9B /* jquery-2.1.0.min.js */; };
 		9195673D1A6D463200F5FB9B /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 919567231A6D463200F5FB9B /* index.html */; };
-		919567471A6D5F4400F5FB9B /* ContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919567461A6D5F4400F5FB9B /* ContentPageViewController.m */; };
 		9195674C1A6E5BB400F5FB9B /* teads.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567491A6E5BB400F5FB9B /* teads.png */; };
 		9195674D1A6E5BB400F5FB9B /* teads@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9195674A1A6E5BB400F5FB9B /* teads@2x.png */; };
 		9195674E1A6E5BB400F5FB9B /* teads@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9195674B1A6E5BB400F5FB9B /* teads@3x.png */; };
@@ -198,7 +194,6 @@
 		91317C821A8CF9D900B68D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		913B3BEE1A70F495008E3E30 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		913B3BF01A70F509008E3E30 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
-		913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentPageViewController.xib; path = "../../Demo Pages/inSwipe/ContentPageViewController.xib"; sourceTree = "<group>"; };
 		913CED761B67C3590058623A /* CustomNativeVideoScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNativeVideoScrollViewViewController.h; sourceTree = "<group>"; };
 		913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNativeVideoScrollViewViewController.m; sourceTree = "<group>"; };
 		914E2BA41BBC23CE001D6A83 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
@@ -240,8 +235,6 @@
 		9195671F1A6D463200F5FB9B /* docs.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = docs.min.js; sourceTree = "<group>"; };
 		919567211A6D463200F5FB9B /* jquery-2.1.0.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.0.min.js"; sourceTree = "<group>"; };
 		919567231A6D463200F5FB9B /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		919567451A6D5F4400F5FB9B /* ContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentPageViewController.h; path = "../../Demo Pages/inSwipe/ContentPageViewController.h"; sourceTree = "<group>"; };
-		919567461A6D5F4400F5FB9B /* ContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentPageViewController.m; path = "../../Demo Pages/inSwipe/ContentPageViewController.m"; sourceTree = "<group>"; };
 		919567491A6E5BB400F5FB9B /* teads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teads.png; sourceTree = "<group>"; };
 		9195674A1A6E5BB400F5FB9B /* teads@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads@2x.png"; sourceTree = "<group>"; };
 		9195674B1A6E5BB400F5FB9B /* teads@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teads@3x.png"; sourceTree = "<group>"; };
@@ -399,7 +392,6 @@
 				916CFB3D1A68303700E36306 /* MainViewController.h */,
 				916CFB3E1A68303700E36306 /* MainViewController.m */,
 				919566CF1A6D061B00F5FB9B /* Images */,
-				91F581DF1A712E40007D70AC /* inSwipe pages */,
 				919567041A6D463200F5FB9B /* webview */,
 			);
 			path = Intern;
@@ -518,16 +510,6 @@
 			);
 			name = Frameworks;
 			path = TeadsSDKDemo;
-			sourceTree = "<group>";
-		};
-		91F581DF1A712E40007D70AC /* inSwipe pages */ = {
-			isa = PBXGroup;
-			children = (
-				919567451A6D5F4400F5FB9B /* ContentPageViewController.h */,
-				919567461A6D5F4400F5FB9B /* ContentPageViewController.m */,
-				913B3BF21A70F83E008E3E30 /* ContentPageViewController.xib */,
-			);
-			path = "inSwipe pages";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,7 +635,6 @@
 				01A4E70C1B46826F005D381E /* arrow_up.png in Resources */,
 				01A4E70D1B46826F005D381E /* arrow_right@2x.png in Resources */,
 				01A4E70E1B46826F005D381E /* teads.png in Resources */,
-				01A4E7101B46826F005D381E /* ContentPageViewController.xib in Resources */,
 				01A4E7111B46826F005D381E /* jquery-2.1.0.min.js in Resources */,
 				01A4E7131B46826F005D381E /* slide4.jpg in Resources */,
 				01A4E7141B46826F005D381E /* index.html in Resources */,
@@ -699,7 +680,6 @@
 				918A90251A76407400CC4C52 /* arrow_up.png in Resources */,
 				91F581DE1A710A29007D70AC /* arrow_right@2x.png in Resources */,
 				9195674C1A6E5BB400F5FB9B /* teads.png in Resources */,
-				913B3BF31A70F83E008E3E30 /* ContentPageViewController.xib in Resources */,
 				9195673B1A6D463200F5FB9B /* jquery-2.1.0.min.js in Resources */,
 				919567331A6D463200F5FB9B /* slide4.jpg in Resources */,
 				9195673D1A6D463200F5FB9B /* index.html in Resources */,
@@ -738,7 +718,6 @@
 				01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */,
 				01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */,
 				01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */,
-				01A4E6EA1B46826F005D381E /* ContentPageViewController.m in Sources */,
 				01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */,
 				01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */,
 				01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */,
@@ -757,7 +736,6 @@
 				913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */,
 				910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */,
 				910CB4491A69592C005E6711 /* InBoardWebViewController.m in Sources */,
-				919567471A6D5F4400F5FB9B /* ContentPageViewController.m in Sources */,
 				916CFB191A68288400E36306 /* AppDelegate.m in Sources */,
 				910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */,
 				910CB43E1A6958D7005E6711 /* InFlowViewController.m in Sources */,
