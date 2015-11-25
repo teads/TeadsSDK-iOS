@@ -1,5 +1,7 @@
 # Teads iOS SDK
 
+[![Build Status](https://jenkins.teads.net/buildStatus/icon?job=TeadsSDK-iOS_master)](https://jenkins.teads.net/view/Mobile/job/TeadsSDK-iOS_master/)
+
 Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. 
 This iOS Demo App includes the Teads Framework and is showing integration examples.
 
