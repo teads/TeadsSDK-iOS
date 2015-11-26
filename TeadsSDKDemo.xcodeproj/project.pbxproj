@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013271241C0490390074EB12 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B565D31BFB3B4700347185 /* DemoUtils.m */; };
 		015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
 		015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
@@ -715,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013271241C0490390074EB12 /* DemoUtils.m in Sources */,
 				01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */,
 				01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */,
 				01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */,
