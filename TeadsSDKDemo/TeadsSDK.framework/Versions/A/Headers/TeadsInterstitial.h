@@ -37,24 +37,12 @@
 
 - (id)initInFlowWithPlacementId:(NSString*)placement rootViewController:(id)viewController delegate:(id<TeadsInterstitialDelegate>)teadsDelegate;
 
-- (void)setPreDownLoad:(BOOL)preDownload;
-
 - (void)load;
 - (void)cancelLoad;
 
-- (void)loadFromFactory;
-
 - (void)show;
 
-- (void)forceCreativeUrl:(NSString*)creativeUrl;
-
 - (void)clean;
-
-- (void)setRewardEnabled:(BOOL)enabled;
-
-- (BOOL)isRewardEnabled;
-
-- (void)setRewardInfo:(NSString*)userId withDebug:(BOOL)debug;
 
 - (void)onLayoutChange;
 
@@ -137,13 +125,6 @@
  * @param interstitial The TeadsInterstitial object
  */
 - (void)teadsInterstitialDidDismissFullScreen:(TeadsInterstitial *)interstitial;
-
-/**
- * Interstitial Unlocked Reward
- *
- * @param interstitial  : the TeadsInterstitial object
- */
-- (void)teadsInterstitialRewardUnlocked:(TeadsInterstitial *)interstitial;
 
 /**
  * Interstitial Did Clean

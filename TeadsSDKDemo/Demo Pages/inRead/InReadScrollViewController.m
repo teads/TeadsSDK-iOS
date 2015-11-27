@@ -10,7 +10,7 @@
 
 @interface InReadScrollViewController ()
 
-@property (strong, nonatomic) TeadsNativeVideo *teadsInRead;
+@property (strong, nonatomic) TeadsVideo *teadsInRead;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *inReadConstraint;
 
 @end
@@ -26,7 +26,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsInRead = [[TeadsNativeVideo alloc] initInReadWithPlacementId:pid placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholder:self.inReadView heightConstraint:self.inReadConstraint scrollView:self.scrollView rootViewController:self delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -45,227 +45,223 @@
     [self.teadsInRead viewControllerDisappeared:self];
 }
 
--(void)dealloc {
-    [self.teadsInRead clean];
-}
-
 #pragma mark -
-#pragma mark - TeadsNativeVideoDelegate
+#pragma mark - TeadsVideoDelegate
 
 /**
  * NativeVideo Failed to Load
  *
- * @param interstitial  : the TeadsNativeVideo object
+ * @param interstitial  : the TeadsVideo object
  * @param error         : the TeadsError object
  */
-- (void)teadsNativeVideo:(TeadsNativeVideo *)nativeVideo didFailLoading:(TeadsError *)error {
-
+- (void)teadsVideo:(TeadsVideo *)video didFailLoading:(TeadsError *)error {
+    
 }
 
 /**
  * NativeVideo Will Load (loading)
  *
- * @param interstitial  : the TeadsNativeVideo object
+ * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillLoad:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillLoad:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Load (loaded successfully)
  *
- * @param interstitial  : the TeadsNativeVideo object
+ * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo {
-
+- (void)teadsVideoDidLoad:(TeadsVideo *)video {
+    
 }
 
 /**
  * NativeVideo Will Start Playing (loading)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillStart:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillStart:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Start Playing (playing)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidStart:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidStart:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Will Stop Playing (stopping)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillStop:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillStop:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Stop Playing (stopped)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidStop:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidStop:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Pause (paused)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidPause:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidPause:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Resume (playing)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidResume:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidResume:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Mute Sound
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidMute:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidMute:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Unmute Sound
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidUnmute:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidUnmute:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Will expand
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillExpand:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillExpand:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did expand
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidExpand:(TeadsNativeVideo *)nativeVideo {
+-(void)teadsVideoDidExpand:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Will collapse
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillCollapse:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillCollapse:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo did collapse
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidCollapse:(TeadsNativeVideo *)nativeVideo {
-
+- (void)teadsVideoDidCollapse:(TeadsVideo *)video {
+    
 }
 
 /**
  * NativeVideo was clicked
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWasClicked:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWasClicked:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Stop Playing (stopped)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidClickBrowserClose:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidClickBrowserClose:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Will Take Over Fullscreen
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillTakeOverFullScreen:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillTakeOverFullScreen:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Take Over Fullscreen
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidTakeOverFullScreen:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidTakeOverFullScreen:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Will Dismiss Fullscreen
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoWillDismissFullscreen:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoWillDismissFullscreen:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Did Dismiss Fullscreen
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidDismissFullscreen:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidDismissFullscreen:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Skip Button Was Tapped (skip button pressed)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoSkipButtonTapped:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoSkipButtonTapped:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo Skip Button Did Show (skip button appeared)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoSkipButtonDidShow:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoSkipButtonDidShow:(TeadsVideo *)video {
     
 }
 
 /**
  * NativeVideo did clean (all related resoures have been removed)
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidClean:(TeadsNativeVideo *)nativeVideo {
+- (void)teadsVideoDidClean:(TeadsVideo *)video {
     
 }
 
