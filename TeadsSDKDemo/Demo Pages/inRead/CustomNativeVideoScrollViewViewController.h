@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TeadsSDK/TeadsNativeVideo.h>
+#import <TeadsSDK/TeadsVideo.h>
 
-@interface CustomNativeVideoScrollViewViewController : UIViewController <UIScrollViewDelegate, TeadsNativeVideoDelegate, UINavigationControllerDelegate>
+@interface CustomNativeVideoScrollViewViewController : UIViewController <UIScrollViewDelegate, TeadsVideoDelegate, UINavigationControllerDelegate>
 
 @end

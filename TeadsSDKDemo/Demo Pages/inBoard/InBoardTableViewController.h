@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TeadsSDK/TeadsNativeVideo.h>
+#import <TeadsSDK/TeadsVideo.h>
 
-@interface InBoardTableViewController : UITableViewController <TeadsNativeVideoDelegate>
+@interface InBoardTableViewController : UITableViewController <TeadsVideoDelegate>
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define TEADS_SDK_VERSION                         @"1.6.4"
+#define TEADS_SDK_VERSION                         @"2.0.0"
 
 //! Project version number for TeadsSDK.
 FOUNDATION_EXPORT double TeadsSDKVersionNumber;
@@ -18,6 +18,5 @@ FOUNDATION_EXPORT const unsigned char TeadsSDKVersionString[];
 
 #import <TeadsSDK/TeadsLog.h>
 #import <TeadsSDK/TeadsError.h>
-#import <TeadsSDK/TeadsNativeVideo.h>
+#import <TeadsSDK/TeadsVideo.h>
 #import <TeadsSDK/TeadsInterstitial.h>
-#import <TeadsSDK/TeadsAdFactory.h>

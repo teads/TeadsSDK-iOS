@@ -9,7 +9,7 @@
 #import "CustomNativeVideoScrollViewViewController.h"
 
 ////Defines the Teads video frame before display
-//#define collapsedVideoViewFrame CGRectMake(8, 715, 359, 0)
+#define collapsedVideoViewFrame CGRectMake(8, 715, 359, 0)
 //
 ////Defines the Teads video frame for display
 //#define expandedVideoViewFrame CGRectMake(8, 715, 359, 220)
@@ -18,11 +18,9 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (strong, nonatomic) TeadsNativeVideo *teadsSimpleAd;
+@property (strong, nonatomic) TeadsVideo *teadsVideo;
 @property (strong, nonatomic) IBOutlet UILabel *uiLabelForReference;
 
-//Defines the Teads video frame before display
-@property (nonatomic, assign) CGRect collapsedVideoViewFrame;
 //Defines the Teads video frame for display
 @property (nonatomic, assign) CGRect expandedVideoViewFrame;
 
@@ -32,72 +30,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.scrollView.delegate = self;
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsSimpleAd = [[TeadsNativeVideo alloc] initWithPlacementId:pid delegate:self];
+    self.teadsVideo = [[TeadsVideo alloc] initWithPlacementId:pid delegate:self];
     
-    [self.teadsSimpleAd load];
+    [self.teadsVideo.videoView setFrame:collapsedVideoViewFrame];
+    [self.scrollView addSubview:self.teadsVideo.videoView];
+    [self.teadsVideo videoViewWasAdded];
+    [self.teadsVideo load];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.teadsSimpleAd requestPause];
-}
-
--(void)dealloc {
-    [self.teadsSimpleAd clean];
-}
-
-
--(void)addVideoView {
-    [self.scrollView addSubview:[self.teadsSimpleAd nativeVideoView]];
-    
-    //Exemple of presenting animation
-    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-        [self.teadsSimpleAd setNativeVideoViewFrameHeight:self.expandedVideoViewFrame.size.height];
-    } completion:^(BOOL finished) {
-        
-        //Ad is presented, we can now start playing
-        [self.teadsSimpleAd requestPlay];
-    }];
+    [self.teadsVideo viewControllerDisappeared:self];
 }
 
 #pragma mark -
 #pragma UIScrollView
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //
-    // This behaviour is strongly recommanded on scrolling
-    //
-    
-    if (self.teadsSimpleAd.isStarted) { //Ad is already started
-        
-        //teadsSimpleAd is started implies that we already have defined its frame
-        //So we can directly check if teadsSimpleAd's view meets visibility requirements
-        if ([self.teadsSimpleAd isFrame:[self.teadsSimpleAd nativeVideoView].frame viewableInView:self.scrollView]){
-            //If ad is NOT alreay playing
-            if (!self.teadsSimpleAd.isPlaying) {
-                //Start playing
-                [self.teadsSimpleAd requestPlay];
-            }
-        }
-        //The view frame that contains our teadsSimpleAd's view DOES NOT meet visibility requirements
-        else if (self.teadsSimpleAd.isPlaying) { //If ad is already playing
-            //Pause playing
-            [self.teadsSimpleAd requestPause];
-        }
-    }
-    //Ad is NOT already started
-    //If our teadsSimpleAd is loaded AND the expandedVideoViewFrame (frame that will be applied to teadsSimpleAd view) meets visibility requirements in our scrollView
-    else if (self.teadsSimpleAd.isLoaded && [self.teadsSimpleAd isFrame:self.expandedVideoViewFrame viewableInView:self.scrollView]) {
-        
-        //We can then display our Ad
-        [self addVideoView];
-    }
+    [self.teadsVideo videoViewDidMove:scrollView];
 }
 
 #pragma mark -
@@ -106,55 +62,49 @@
 /**
  * NativeVideo Did Load (loaded successfully)
  *
- * @param interstitial  : the TeadsNativeVideo object
+ * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidLoad:(TeadsNativeVideo *)nativeVideo{ //Our teadsSimpleAd is now loaded
+- (void)teadsVideoDidLoad:(TeadsVideo *)nativeVideo{
     
-    //The following code is for example purposes
-    //It allows to immiadiately show teadsSimpleAd if its parent view (simpleAdContainerView) is immediately “viewable" without the need to have a first scroll event
-    
-    //We set a collapsed frame (height is 0) to our teadsSimpleAd, needed for the expanding animation that we do later in -(void)addVideoView
+}
+
+/**
+ * Teads Video is ready to be shown
+ *
+ * @param video  : the TeadsVideo object
+ */
+- (void)teadsVideoCanExpand:(TeadsVideo *)video WithRatio:(CGFloat)ratio{
     
     CGFloat videoViewFrameWidth = CGRectGetMaxX(self.uiLabelForReference.frame) - CGRectGetMinX(self.uiLabelForReference.frame);
     
-    self.collapsedVideoViewFrame = CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
-                                       CGRectGetMaxY(self.uiLabelForReference.frame),
-                                       videoViewFrameWidth,
-                                       0);
-    [self.teadsSimpleAd setNativeVideoViewFrame:self.collapsedVideoViewFrame];
-    
-    self.expandedVideoViewFrame = CGRectMake(self.collapsedVideoViewFrame.origin.x,
-                                             self.collapsedVideoViewFrame.origin.y,
-                                             self.collapsedVideoViewFrame.size.width,
-                                             220);
-    
-    //For safety reason, we check if video ad is NOT already started
-    //And if the expandedVideoViewFrame (frame that will be applied to teadsSimpleAd view) meets visibility requirements in our scrollView
-    if (!self.teadsSimpleAd.isStarted && [self.teadsSimpleAd isFrame:self.expandedVideoViewFrame viewableInView:self.scrollView]) {
-        //We can then display our Ad
-        [self addVideoView];
-    }
+    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+        [self.teadsVideo.videoView setFrame:CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
+                                                       CGRectGetMaxY(self.uiLabelForReference.frame),
+                                                       videoViewFrameWidth,
+                                                       videoViewFrameWidth * ratio)];
+    } completion:^(BOOL finished) {
+        [self.teadsVideo videoViewDidExpand];
+    }];
 }
 
-
 /**
- * NativeVideo Did Stop Playing (stopped)
+ * Teads Video can be collapsed
  *
- * @param nativeVideo  : the TeadsNativeVideo object
+ * @param video  : the TeadsVideo object
  */
-- (void)teadsNativeVideoDidStop:(TeadsNativeVideo *)nativeVideo{ //Native video did stop : we should remove the video view
+- (void)teadsVideoCanCollapse:(TeadsVideo *)video {
     
-    //Exemple of collapsing animation
+    CGRect collapsedFrame = CGRectMake(CGRectGetMinX(self.teadsVideo.videoView.frame),
+                                       CGRectGetMinY(self.teadsVideo.videoView.frame),
+                                       CGRectGetWidth(self.teadsVideo.videoView.frame),
+                                       0);
+    
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-        [self.teadsSimpleAd setNativeVideoViewFrameHeight:0];
+        [self.teadsVideo.videoView setFrame:collapsedFrame];
     } completion:^(BOOL finished) {
-        
-        //We remove our teadsSimpleAd view
-        [[self.teadsSimpleAd nativeVideoView] removeFromSuperview];
-        
-        //Depending on your own needs, you can also remove your equivalent of simpleAdContainerView if you are using one
-        //[self.simpleAdContainerView removeFromSuperview];
+        [self.teadsVideo videoViewDidCollapse];
     }];
+    
 }
 
 
