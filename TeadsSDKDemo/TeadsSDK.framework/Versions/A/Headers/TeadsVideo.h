@@ -25,7 +25,6 @@
 
 @property (nonatomic, readonly) BOOL isSoundEnabled;
 
-@property (nonatomic, weak) id rootViewController;
 @property (nonatomic, weak) id<TeadsVideoDelegate> delegate;
 
 @property (nonatomic) BOOL playbackActive;
@@ -43,31 +42,31 @@
 
 /* In Board */
 
-- (id)initInBoardWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInBoardWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInBoardWithPlacementId:(NSString*)placement referenceView:(UIView *)reference scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement referenceView:(UIView *)reference scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInBoardWithPlacementId:(NSString*)placement forPlaceHolder:(UIView *)inBoardView withHeightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement forPlaceHolder:(UIView *)inBoardView withHeightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInBoardWithPlacementId:(NSString*)placement tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 /* In Read */
 
-- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText uiWebView:(UIWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText uiWebView:(UIWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText wkWebView:(WKWebView*)webView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText wkWebView:(WKWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement afterView:(UIView *)afterView scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement afterView:(UIView *)afterView scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement placeholder:(UIView *)placeHolder heightConstraint:(NSLayoutConstraint*)constraints scrollView:(UIScrollView*)scrollView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement placeholder:(UIView *)placeHolder heightConstraint:(NSLayoutConstraint*)constraints scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath collectionView:(UICollectionView*)collectionView rootViewController:(id)viewController delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath collectionView:(UICollectionView*)collectionView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 - (void)setInReadInsertionIndexPath:(NSIndexPath*)newIndexPath;
 
@@ -152,13 +151,6 @@
  * @param video  : the TeadsVideo object
  */
 - (void)teadsVideoDidLoad:(TeadsVideo *)video;
-
-/**
- * Video failed to find a slot in web view
- *
- * @param video  : the TeadsVideo object
- */
-- (void)teadsVideoFailedToFindAvailableSlot:(TeadsVideo *)video;
 
 /**
  * Video Will Start Playing (loading)

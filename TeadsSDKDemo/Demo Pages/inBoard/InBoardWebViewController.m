@@ -41,7 +41,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // Create the teadsInBoard
-    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid uiWebView:self.webView rootViewController:self delegate:self];
+    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid uiWebView:self.webView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

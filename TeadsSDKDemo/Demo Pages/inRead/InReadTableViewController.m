@@ -30,7 +30,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     //Create the teadsInRead with a PLACEMENT_ID, an IndexPath, a tableView, a rootViewController and a delegate
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid insertionIndexPath:pathForTeadsInRead tableView:self.tableView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid insertionIndexPath:pathForTeadsInRead tableView:self.tableView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

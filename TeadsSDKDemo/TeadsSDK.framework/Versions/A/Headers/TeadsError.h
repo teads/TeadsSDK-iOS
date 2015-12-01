@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 
 typedef enum TeadsErrorEnum {
-	TeadsNetworkError = 0,
-	TeadsAdServerError = 1,
-	TeadsAdServerBadResponse = 2,
-	TeadsAdFailsToLoad = 3,
-    TeadsNoAdsAvailable = 4,
-    TeadsTimeoutError = 5,
-    TeadsLoadOperationCancelled = 6
+    TeadsNoSlotAvailable,
+    TeadsServerError,
+    TeadsConnectionError,
+    TeadsParseTimeout,
+    TeadsNoAdsAvailable,
+    TeadsVastError,
+    TeadsSettingsError,
+    TeadsServerBadResponse,
+    TeadsInternalError
 } TeadsErrorType;
 
 @interface TeadsError : NSObject
@@ -26,12 +28,16 @@ typedef enum TeadsErrorEnum {
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *message;
 
-+(TeadsError*)networkError;
-+(TeadsError*)timeoutError;
-+(TeadsError*)adServerError;
-+(TeadsError*)adServerBadResponse;
-+(TeadsError*)adFailsToLoad;
-+(TeadsError*)noAdsAvailable;
-+(TeadsError*)loadOperationCancelled;
++ (TeadsError *)noSlotAvailable;
++ (TeadsError *)serverError:(NSString *)code;
++ (TeadsError *)connectionTimeout;
++ (TeadsError *)noNetwork;
++ (TeadsError *)parseTimeout;
++ (TeadsError *)noAdsAvailable;
++ (TeadsError *)vastError:(NSString *)code;
++ (TeadsError *)settingsError;
++ (TeadsError *)jsonCorrupted;
++ (TeadsError *)serverBadResponse;
++ (TeadsError *)internalError;
 
 @end

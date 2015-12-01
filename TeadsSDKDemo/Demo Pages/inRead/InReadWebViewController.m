@@ -36,7 +36,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // inRead
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView rootViewController:self delegate:self];
+    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
