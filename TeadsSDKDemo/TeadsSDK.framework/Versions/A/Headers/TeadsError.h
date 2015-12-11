@@ -11,29 +11,31 @@
 typedef enum TeadsErrorEnum {
     TeadsNoSlotAvailable,
     TeadsServerError,
-    TeadsConnectionError,
+    TeadsNetworkError,
     TeadsParseTimeout,
-    TeadsNoAdsAvailable,
+    TeadsNotFilled,
     TeadsVastError,
     TeadsSettingsError,
     TeadsServerBadResponse,
-    TeadsInternalError
+    TeadsInternalError,
+    TeadsNoNetwork
 } TeadsErrorType;
 
 @interface TeadsError : NSObject
 
 -(BOOL)isType:(TeadsErrorType)errorType;
 
-@property (nonatomic) TeadsErrorType code;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *message;
+@property (nonatomic) TeadsErrorType type;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *code;
 
 + (TeadsError *)noSlotAvailable;
 + (TeadsError *)serverError:(NSString *)code;
 + (TeadsError *)connectionTimeout;
 + (TeadsError *)noNetwork;
 + (TeadsError *)parseTimeout;
-+ (TeadsError *)noAdsAvailable;
++ (TeadsError *)notFilled;
 + (TeadsError *)vastError:(NSString *)code;
 + (TeadsError *)settingsError;
 + (TeadsError *)jsonCorrupted;

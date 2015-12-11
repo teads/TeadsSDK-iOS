@@ -85,6 +85,20 @@
 - (void)teadsInterstitialDidLoad:(TeadsInterstitial *)interstitial;
 
 /**
+ * Video was clicked
+ *
+ * @param video  : the TeadsVideo object
+ */
+- (void)teadsInterstitialWasClicked:(TeadsInterstitial *)interstitial;
+
+/**
+ * Video Did Stop Playing (stopped)
+ *
+ * @param video  : the TeadsVideo object
+ */
+- (void)teadsInterstitialDidClickBrowserClose:(TeadsInterstitial *)interstitial;
+
+/**
  * Interstitial Will Take Over Fullscreen (showing)
  *
  * @param interstitial  : the TeadsInterstitial object

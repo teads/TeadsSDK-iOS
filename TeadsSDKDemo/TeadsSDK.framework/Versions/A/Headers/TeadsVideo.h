@@ -66,8 +66,6 @@
 
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath collectionView:(UICollectionView*)collectionView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
 - (void)setInReadInsertionIndexPath:(NSIndexPath*)newIndexPath;
 
 /* Common methods */
