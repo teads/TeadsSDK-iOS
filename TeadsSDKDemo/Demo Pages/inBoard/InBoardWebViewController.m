@@ -60,9 +60,7 @@
     [self.teadsInBoard viewControllerDisappeared:self];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    [self.teadsInBoard loadWithRequest:request forStartUrl:[NSString stringWithFormat:@"%@",self.startURL]];
-    
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {   
     return YES;
 }
 
