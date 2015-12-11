@@ -35,6 +35,7 @@ Shortcut clean build folder : &#x2325; &#x21E7; &#x2318; K
 v1.6.5:
 - Fixed specific case when VAST progress event were not sent
 - Fixed duplicated symbol with Reachability framework
+- Changed present modal view for fullscreen
 
 v1.6.4:
 - Fixed issue introduced in v1.6.0 with wrapped VAST
