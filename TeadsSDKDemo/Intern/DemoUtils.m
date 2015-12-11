@@ -76,7 +76,7 @@
                              if (![alert.textFields.firstObject.text isEqual:@""]) {
                                  NSString *typedUrl = alert.textFields.firstObject.text;
                                  
-                                 if (![typedUrl.lowercaseString hasPrefix:@"http://"]) {
+                                 if (![typedUrl.lowercaseString hasPrefix:@"http://"] && ![typedUrl.lowercaseString hasPrefix:@"https://"]) {
                                      typedUrl = [NSString stringWithFormat:@"http://%@", typedUrl];
                                  }
                                  [[NSUserDefaults standardUserDefaults] setObject:typedUrl forKey:@"website"];;
