@@ -11,10 +11,12 @@
 #import "InBoardScrollViewController.h"
 #import "InBoardTableViewController.h"
 #import "InBoardWebViewController.h"
+#import "InBoardWKWebView.h"
 #import "InReadScrollViewController.h"
 #import "InReadTableViewController.h"
 #import "CustomNativeVideoScrollViewViewController.h"
 #import "InReadWebViewController.h"
+#import "InReadWKWebview.h"
 #import "InFlowViewController.h"
 
 #import "DemoUtils.h"
@@ -68,7 +70,7 @@
     
     UITableViewCell *cell;
     
-    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 8 || indexPath.row == 10)) ||
+    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 10 || indexPath.row == 12)) ||
         (indexPath.section == 1 && indexPath.row == 0)) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
@@ -99,24 +101,30 @@
                 cell.textLabel.text = @"inRead WebView";
                 break;
             case 3:
-                cell.textLabel.text = @"inRead TableView";
+                cell.textLabel.text = @"inRead WKWebview";
                 break;
             case 4:
-                cell.textLabel.text = @"inBoard";
+                cell.textLabel.text = @"inRead TableView";
                 break;
             case 5:
-                cell.textLabel.text = @"inBoard ScrollView";
+                cell.textLabel.text = @"inBoard";
                 break;
             case 6:
-                cell.textLabel.text = @"inBoard WebView";
+                cell.textLabel.text = @"inBoard ScrollView";
                 break;
             case 7:
-                cell.textLabel.text = @"inBoard TableView";
+                cell.textLabel.text = @"inBoard WebView";
                 break;
             case 8:
-                cell.textLabel.text = @"Custom Native Video View";
+                cell.textLabel.text = @"inBoard WKWebview";
                 break;
             case 9:
+                cell.textLabel.text = @"inBoard TableView";
+                break;
+            case 10:
+                cell.textLabel.text = @"Custom Native Video View";
+                break;
+            case 11:
                 cell.textLabel.text = @"Custom in ScrollView";
                 break;
             default:
@@ -172,26 +180,36 @@
                 break;
             }
             case 3: {
+                InReadWKWebview *inReadWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadWKWebView"];
+                controller = inReadWKWebView;
+                break;
+            }
+            case 4: {
                  InReadTableViewController *inReadTableView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTableView"];
                 controller = inReadTableView;
                 break;
             }
-            case 5: {
+            case 6: {
                 InBoardScrollViewController *inBoardScrollView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardScrollView"];
                 controller = inBoardScrollView;
                 break;
             }
-            case 6: {
+            case 7: {
                 InBoardWebViewController *inBoardWebView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardWebView"];
                 controller = inBoardWebView;
                 break;
             }
-            case 7: {
+            case 8: {
+                InBoardWKWebView *inBoardWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardWKWebView"];
+                controller = inBoardWKWebView;
+                break;
+            }
+            case 9: {
                 InBoardTableViewController *inBoardTableView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardTableView"];
                 controller = inBoardTableView;
                 break;
             }
-            case 9: {
+            case 11: {
                 CustomNativeVideoScrollViewViewController *simpleInReadScrollViewController = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"customNativeVideoScrollViewiPad":@"customNativeVideoScrollView"];
                 controller = simpleInReadScrollViewController;
                 break;

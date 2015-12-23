@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -727,7 +727,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5a-F2-3VZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222.5" y="85.5"/>
+            <point key="canvasLocation" x="2690.5" y="85.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="toJ-na-SCs">
@@ -1086,7 +1086,45 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYE-X6-h7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222.5" y="898.5"/>
+            <point key="canvasLocation" x="2690.5" y="898.5"/>
+        </scene>
+        <!--inRead WK Web View Controller-->
+        <scene sceneID="73d-BJ-Ddc">
+            <objects>
+                <viewController storyboardIdentifier="inReadWKWebView" id="lVs-K8-5vP" userLabel="inRead WK Web View Controller" customClass="InReadWKWebview" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7s-WZ-XMr"/>
+                        <viewControllerLayoutGuide type="bottom" id="3H0-cb-LQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1C2-B6-5Oh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCQ-uF-F83" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2202.5" y="85.5"/>
+        </scene>
+        <!--inBoard WK Web View Controller-->
+        <scene sceneID="LK3-HN-Y0w">
+            <objects>
+                <viewController storyboardIdentifier="inBoardWKWebView" id="dtQ-TG-1QA" userLabel="inBoard WK Web View Controller" customClass="InBoardWKWebView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="exB-he-Hsa"/>
+                        <viewControllerLayoutGuide type="bottom" id="I8A-GW-NmF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZVR-te-H4w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ix-pc-mx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2202.5" y="898.5"/>
         </scene>
     </scenes>
     <resources>

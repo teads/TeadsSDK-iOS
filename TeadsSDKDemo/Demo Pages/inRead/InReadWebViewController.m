@@ -23,6 +23,10 @@
     self.webView.delegate = self;
     self.navigationItem.title = @"inRead WebView";
     
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    // inRead
+    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView delegate:self];
+    
     //Load a web page from an URL
     NSURL *webSiteURL;
     NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
@@ -34,9 +38,6 @@
     }
     [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
     
-    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    // inRead
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
