@@ -50,7 +50,7 @@ typedef enum {
 
 @property (nonatomic) UIWebView *webView;
 
-@property (nonatomic, assign) id<TeadsVpaidWebViewDelegate> delegate;
+@property (nonatomic, weak) id<TeadsVpaidWebViewDelegate> delegate;
 
 //////////////////////////////////////////////////////////////
 #pragma mark -
