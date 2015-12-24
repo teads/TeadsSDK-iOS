@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
-#import <TeadsSDK/TeadsVideo.h>
+#import <TeadsSDK/TeadsSDK.h>
 
 @interface InBoardWKWebView : UIViewController  <WKNavigationDelegate, UIScrollViewDelegate, TeadsVideoDelegate>
 

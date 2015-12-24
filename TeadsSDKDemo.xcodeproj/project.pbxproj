@@ -10,6 +10,10 @@
 		013271241C0490390074EB12 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B565D31BFB3B4700347185 /* DemoUtils.m */; };
 		015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
 		015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
+		019381DD1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */; };
+		019381DE1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */; };
+		019381E01C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */; };
+		019381E11C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */; };
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
 		01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4461A69592C005E6711 /* InBoardWebViewController.m */; };
@@ -58,11 +62,9 @@
 		01A4E7201B46826F005D381E /* visu2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9195671A1A6D463200F5FB9B /* visu2.jpg */; };
 		01A4E7221B46826F005D381E /* slide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919567161A6D463200F5FB9B /* slide2.jpg */; };
 		01A4E7231B46826F005D381E /* slide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919567151A6D463200F5FB9B /* slide1.jpg */; };
-		01A4E7241B46826F005D381E /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */; };
 		01A4E7251B46826F005D381E /* docs.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 9195671F1A6D463200F5FB9B /* docs.min.js */; };
 		01A4E7301B468478005D381E /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E72F1B468478005D381E /* calabash.framework */; };
 		01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E7311B46848F005D381E /* CFNetwork.framework */; };
-		91066C091C2B152C003E845F /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C081C2B152C003E845F /* TeadsSDK.framework */; };
 		91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
 		91066C0E1C2B15E8003E845F /* InBoardWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */; };
 		91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
@@ -118,7 +120,6 @@
 		9195675A1A6E8EB500F5FB9B /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567571A6E8EB500F5FB9B /* arrow_down.png */; };
 		9195675B1A6E8EB500F5FB9B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567581A6E8EB500F5FB9B /* arrow_down@2x.png */; };
 		9195675C1A6E8EB500F5FB9B /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567591A6E8EB500F5FB9B /* arrow_down@3x.png */; };
-		91AD5E931C2B11BA00B96030 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,11 +174,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
+		019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
 		01A4E72B1B46826F005D381E /* TeadsSDKDemo-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeadsSDKDemo-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01A4E72C1B46826F005D381E /* TeadsSDKDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TeadsSDKDemo copy-Info.plist"; path = "/Users/ibrahimennafaa/IOS/TeadsSDK-iOS/TeadsSDKDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		01A4E72F1B468478005D381E /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		01A4E7311B46848F005D381E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		91066C081C2B152C003E845F /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		91066C0A1C2B1531003E845F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		91066C0C1C2B15E8003E845F /* InBoardWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardWKWebView.h; sourceTree = "<group>"; };
 		91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardWKWebView.m; sourceTree = "<group>"; };
@@ -250,7 +252,6 @@
 		919567591A6E8EB500F5FB9B /* arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
 		91B565D21BFB3B4700347185 /* DemoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
 		91B565D31BFB3B4700347185 /* DemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
-		91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
 		91F581DB1A710A22007D70AC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		91F581DD1A710A29007D70AC /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */,
+				019381DE1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */,
 				01A4E6F61B46826F005D381E /* Foundation.framework in Frameworks */,
 				01A4E6F81B46826F005D381E /* UIKit.framework in Frameworks */,
 				015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */,
@@ -276,8 +278,8 @@
 				91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */,
 				914E2BA71BBC23E5001D6A83 /* libsqlite3.0.tbd in Frameworks */,
 				914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */,
+				019381DD1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */,
 				91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */,
-				91066C091C2B152C003E845F /* TeadsSDK.framework in Frameworks */,
 				91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +329,7 @@
 		91317C881A8CFC7A00B68D82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				91B69D2C1AC1CFF400786150 /* TeadsSDKResources.bundle */,
+				019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -510,10 +512,10 @@
 		9195673F1A6D49F400F5FB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */,
 				91066C0A1C2B1531003E845F /* WebKit.framework */,
 				914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */,
 				914E2BA41BBC23CE001D6A83 /* libxml2.tbd */,
-				91066C081C2B152C003E845F /* TeadsSDK.framework */,
 				01A4E7311B46848F005D381E /* CFNetwork.framework */,
 				01A4E72F1B468478005D381E /* calabash.framework */,
 				91317C821A8CF9D900B68D82 /* Foundation.framework */,
@@ -632,6 +634,7 @@
 				01A4E6FD1B46826F005D381E /* bootstrap.css in Resources */,
 				01A4E6FE1B46826F005D381E /* glyphicons-halflings-regular.ttf in Resources */,
 				01A4E7001B46826F005D381E /* visu3.jpg in Resources */,
+				019381E11C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */,
 				01A4E7011B46826F005D381E /* arrow_down.png in Resources */,
 				01A4E7021B46826F005D381E /* blog.css in Resources */,
 				01A4E7031B46826F005D381E /* glyphicons-halflings-regular.svg in Resources */,
@@ -662,7 +665,6 @@
 				01A4E7201B46826F005D381E /* visu2.jpg in Resources */,
 				01A4E7221B46826F005D381E /* slide2.jpg in Resources */,
 				01A4E7231B46826F005D381E /* slide1.jpg in Resources */,
-				01A4E7241B46826F005D381E /* TeadsSDKResources.bundle in Resources */,
 				01A4E7251B46826F005D381E /* docs.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,9 +673,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91AD5E931C2B11BA00B96030 /* TeadsSDKResources.bundle in Resources */,
 				916CFB211A68288400E36306 /* Images.xcassets in Resources */,
 				9195672A1A6D463200F5FB9B /* bootstrap.min.css in Resources */,
+				019381E01C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */,
 				913B3BEF1A70F495008E3E30 /* arrow_right.png in Resources */,
 				919567281A6D463200F5FB9B /* bootstrap.css in Resources */,
 				9195672D1A6D463200F5FB9B /* glyphicons-halflings-regular.ttf in Resources */,

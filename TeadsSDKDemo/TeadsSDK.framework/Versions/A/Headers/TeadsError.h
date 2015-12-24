@@ -32,7 +32,7 @@ typedef enum TeadsErrorEnum {
 
 + (TeadsError *)noSlotAvailable;
 + (TeadsError *)serverError:(NSString *)code;
-+ (TeadsError *)connectionTimeout;
++ (TeadsError *)networkError;
 + (TeadsError *)noNetwork;
 + (TeadsError *)parseTimeout;
 + (TeadsError *)notFilled;

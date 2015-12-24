@@ -17,10 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [TeadsLog setLevelType:TeadsDebugLevelVerbose];
-    
     // Set the debug level to verbose
-    TeadsLogInfo(@"Framework has been set up correctly");
+    [TeadsSDK setLogLevel:TeadslogLevelVerbose];
     
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"pid"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"27695" forKey:@"pid"];
