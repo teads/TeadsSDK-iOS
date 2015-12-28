@@ -6,12 +6,12 @@
 //  Copyright © 2015 Teads. All rights reserved.
 //
 
-#define TEADS_SDK_VERSION                         @"2.0.0"
-
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsError.h>
 #import <TeadsSDK/TeadsVideo.h>
 #import <TeadsSDK/TeadsInterstitial.h>
+
+#define TEADS_SDK_VERSION                         @"2.0.0"
 
 typedef enum {
     TeadsLogLevelInactive   = 0,
