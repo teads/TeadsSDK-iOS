@@ -65,6 +65,9 @@
 		01A4E7251B46826F005D381E /* docs.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 9195671F1A6D463200F5FB9B /* docs.min.js */; };
 		01A4E7301B468478005D381E /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E72F1B468478005D381E /* calabash.framework */; };
 		01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E7311B46848F005D381E /* CFNetwork.framework */; };
+		01E490B81C31785E00167A39 /* InBoardWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */; };
+		01E490B91C31785E00167A39 /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
+		01E490BC1C31789000167A39 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
 		91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
 		91066C0E1C2B15E8003E845F /* InBoardWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */; };
 		91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
@@ -180,6 +183,7 @@
 		01A4E72C1B46826F005D381E /* TeadsSDKDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TeadsSDKDemo copy-Info.plist"; path = "/Users/ibrahimennafaa/IOS/TeadsSDK-iOS/TeadsSDKDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		01A4E72F1B468478005D381E /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		01A4E7311B46848F005D381E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		01E490BA1C31788200167A39 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
 		91066C0A1C2B1531003E845F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		91066C0C1C2B15E8003E845F /* InBoardWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardWKWebView.h; sourceTree = "<group>"; };
 		91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardWKWebView.m; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E490BC1C31789000167A39 /* WebKit.framework in Frameworks */,
 				01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */,
 				019381DE1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */,
 				01A4E6F61B46826F005D381E /* Foundation.framework in Frameworks */,
@@ -512,6 +517,7 @@
 		9195673F1A6D49F400F5FB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01E490BA1C31788200167A39 /* WebKit.framework */,
 				019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */,
 				91066C0A1C2B1531003E845F /* WebKit.framework */,
 				914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */,
@@ -726,6 +732,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E490B81C31785E00167A39 /* InBoardWKWebView.m in Sources */,
+				01E490B91C31785E00167A39 /* InReadWKWebview.m in Sources */,
 				013271241C0490390074EB12 /* DemoUtils.m in Sources */,
 				01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */,
 				01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */,
@@ -802,6 +810,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "TeadsSDKDemo copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -834,6 +843,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "TeadsSDKDemo copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
