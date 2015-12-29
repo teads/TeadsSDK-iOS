@@ -24,16 +24,19 @@
     self.navigationItem.title = @"inRead WebView";
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    // inRead
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView delegate:self];
+    
     
     //Load a web page from an URL
     NSURL *webSiteURL;
     NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
     
     if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
+        //Here we specify in placeholderText an id for a HTML node to insert the inRead
+        self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" uiWebView:self.webView delegate:self];
         webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     } else {
+        // inRead
+        self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"" uiWebView:self.webView delegate:self];
         webSiteURL = [NSURL URLWithString:urlToLoad];
     }
     [self.webView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];

@@ -27,23 +27,25 @@
     
     [self.view addSubview:self.wkWwebView];
     
-    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    // inRead
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" wkWebView:self.wkWwebView delegate:self];
-    
     [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
     
     self.navigationItem.title = @"inRead WKWebView";
     
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    
     //Load a web page from an URL
     NSURL *webSiteURL;
     NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
     
     if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
+        //Here we specify in placeholderText an id for a HTML node to insert the inRead
+        self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"#my-placement-id" wkWebView:self.wkWwebView delegate:self];
         webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     } else {
+        // inRead
+        self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid placeholderText:@"" wkWebView:self.wkWwebView delegate:self];
         webSiteURL = [NSURL URLWithString:urlToLoad];
     }
     [self.wkWwebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
