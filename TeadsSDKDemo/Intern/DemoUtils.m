@@ -74,7 +74,7 @@
                          handler:^(UIAlertAction * action)
                          {
                              if (![alert.textFields.firstObject.text isEqual:@""]) {
-                                 NSString *typedUrl = alert.textFields.firstObject.text;
+                                 NSString *typedUrl = [alert.textFields.firstObject.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                                  
                                  if (![typedUrl.lowercaseString hasPrefix:@"http://"] && ![typedUrl.lowercaseString hasPrefix:@"https://"]) {
                                      typedUrl = [NSString stringWithFormat:@"http://%@", typedUrl];
