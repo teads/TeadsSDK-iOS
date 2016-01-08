@@ -807,7 +807,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TeadsSDKSample-cxrxlcimnkwmckfgboeemobesqgz/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeadsSDKDemo/Info.plist;
@@ -835,7 +834,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TeadsSDKSample-cxrxlcimnkwmckfgboeemobesqgz/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeadsSDKDemo/Info.plist;
@@ -857,7 +855,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -877,7 +875,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TeadsSDKDemoTests/Info.plist;
