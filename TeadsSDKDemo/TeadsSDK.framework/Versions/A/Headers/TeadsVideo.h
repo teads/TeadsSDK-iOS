@@ -48,11 +48,15 @@
 
 - (id)initInBoardWithPlacementId:(NSString*)placement referenceView:(UIView *)reference scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
-- (id)initInBoardWithPlacementId:(NSString*)placement forPlaceHolder:(UIView *)inBoardView withHeightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInBoardWithPlacementId:(NSString*)placement placeHolder:(UIView *)placeHolder heightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 - (id)initInBoardWithPlacementId:(NSString*)placement tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 /* In Read */
+
+- (id)initInReadWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+
+- (id)initInReadWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 - (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText uiWebView:(UIWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 

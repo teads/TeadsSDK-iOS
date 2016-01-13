@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		013271241C0490390074EB12 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B565D31BFB3B4700347185 /* DemoUtils.m */; };
-		015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
 		015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
-		019381DD1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */; };
-		019381DE1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */; };
 		019381E01C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */; };
 		019381E11C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */; };
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
@@ -67,7 +64,6 @@
 		913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF01A70F509008E3E30 /* arrow_left.png */; };
 		913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */; };
 		914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
-		914E2BA71BBC23E5001D6A83 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */; };
 		916CFB161A68288400E36306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB151A68288400E36306 /* main.m */; };
 		916CFB191A68288400E36306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		916CFB1F1A68288400E36306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB1D1A68288400E36306 /* Main.storyboard */; };
@@ -87,6 +83,23 @@
 		9195675A1A6E8EB500F5FB9B /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567571A6E8EB500F5FB9B /* arrow_down.png */; };
 		9195675B1A6E8EB500F5FB9B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567581A6E8EB500F5FB9B /* arrow_down@2x.png */; };
 		9195675C1A6E8EB500F5FB9B /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567591A6E8EB500F5FB9B /* arrow_down@3x.png */; };
+		91AB35B81C46BAB600BAB5D1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B71C46BAB600BAB5D1 /* CoreTelephony.framework */; };
+		91AB35BC1C46BAC600BAB5D1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35BB1C46BAC600BAB5D1 /* AdSupport.framework */; };
+		91AB35BE1C46BACD00BAB5D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35BD1C46BACD00BAB5D1 /* CoreLocation.framework */; };
+		91AB35BF1C46BAF700BAB5D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B51C46BAAE00BAB5D1 /* AVFoundation.framework */; };
+		91AB35C11C46BB1B00BAB5D1 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35C01C46BB1B00BAB5D1 /* MediaPlayer.framework */; };
+		91AB35C31C46BB2100BAB5D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35C21C46BB2100BAB5D1 /* SystemConfiguration.framework */; };
+		91AB35C41C46BB5400BAB5D1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B91C46BAC000BAB5D1 /* CoreMedia.framework */; };
+		91AB35C51C46BB7600BAB5D1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B91C46BAC000BAB5D1 /* CoreMedia.framework */; };
+		91AB35C61C46BB7A00BAB5D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B51C46BAAE00BAB5D1 /* AVFoundation.framework */; };
+		91AB35C71C46BB8200BAB5D1 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35C01C46BB1B00BAB5D1 /* MediaPlayer.framework */; };
+		91AB35C81C46BB8A00BAB5D1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35B71C46BAB600BAB5D1 /* CoreTelephony.framework */; };
+		91AB35C91C46BB8E00BAB5D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35BD1C46BACD00BAB5D1 /* CoreLocation.framework */; };
+		91AB35CA1C46BB9800BAB5D1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35BB1C46BAC600BAB5D1 /* AdSupport.framework */; };
+		91AB35CB1C46BBAF00BAB5D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35C21C46BB2100BAB5D1 /* SystemConfiguration.framework */; };
+		91AB35D61C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
+		91AB35D71C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
+		91AB35D81C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,7 +154,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TeadsSDKResources.bundle; sourceTree = "<group>"; };
 		01A4E72B1B46826F005D381E /* TeadsSDKDemo-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeadsSDKDemo-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01A4E72C1B46826F005D381E /* TeadsSDKDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TeadsSDKDemo copy-Info.plist"; path = "/Users/ibrahimennafaa/IOS/TeadsSDK-iOS/TeadsSDKDemo copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -174,7 +186,6 @@
 		913CED761B67C3590058623A /* CustomNativeVideoScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNativeVideoScrollViewViewController.h; sourceTree = "<group>"; };
 		913CED771B67C3590058623A /* CustomNativeVideoScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNativeVideoScrollViewViewController.m; sourceTree = "<group>"; };
 		914E2BA41BBC23CE001D6A83 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		916CFB101A68288400E36306 /* TeadsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CFB141A68288400E36306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CFB151A68288400E36306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -200,6 +211,14 @@
 		919567571A6E8EB500F5FB9B /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		919567581A6E8EB500F5FB9B /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
 		919567591A6E8EB500F5FB9B /* arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
+		91AB35B51C46BAAE00BAB5D1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		91AB35B71C46BAB600BAB5D1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		91AB35B91C46BAC000BAB5D1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		91AB35BB1C46BAC600BAB5D1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		91AB35BD1C46BACD00BAB5D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		91AB35C01C46BB1B00BAB5D1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		91AB35C21C46BB2100BAB5D1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		91B565D21BFB3B4700347185 /* DemoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
 		91B565D31BFB3B4700347185 /* DemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
 		91F581DB1A710A22007D70AC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
@@ -211,12 +230,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91AB35CB1C46BBAF00BAB5D1 /* SystemConfiguration.framework in Frameworks */,
+				91AB35D71C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */,
+				91AB35CA1C46BB9800BAB5D1 /* AdSupport.framework in Frameworks */,
+				91AB35C91C46BB8E00BAB5D1 /* CoreLocation.framework in Frameworks */,
+				91AB35C81C46BB8A00BAB5D1 /* CoreTelephony.framework in Frameworks */,
+				91AB35C71C46BB8200BAB5D1 /* MediaPlayer.framework in Frameworks */,
+				91AB35C61C46BB7A00BAB5D1 /* AVFoundation.framework in Frameworks */,
+				91AB35C51C46BB7600BAB5D1 /* CoreMedia.framework in Frameworks */,
 				01E490BC1C31789000167A39 /* WebKit.framework in Frameworks */,
 				01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */,
-				019381DE1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */,
 				01A4E6F61B46826F005D381E /* Foundation.framework in Frameworks */,
 				01A4E6F81B46826F005D381E /* UIKit.framework in Frameworks */,
-				015F06381BEA07FC00EA39AA /* libsqlite3.0.tbd in Frameworks */,
 				015F06391BEA07FE00EA39AA /* libxml2.tbd in Frameworks */,
 				01A4E7301B468478005D381E /* calabash.framework in Frameworks */,
 			);
@@ -226,11 +251,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */,
-				914E2BA71BBC23E5001D6A83 /* libsqlite3.0.tbd in Frameworks */,
-				914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */,
-				019381DD1C2C4F6B00A8FE14 /* TeadsSDK.framework in Frameworks */,
+				91AB35C41C46BB5400BAB5D1 /* CoreMedia.framework in Frameworks */,
 				91317C831A8CF9D900B68D82 /* Foundation.framework in Frameworks */,
+				91AB35C31C46BB2100BAB5D1 /* SystemConfiguration.framework in Frameworks */,
+				91AB35C11C46BB1B00BAB5D1 /* MediaPlayer.framework in Frameworks */,
+				91AB35BF1C46BAF700BAB5D1 /* AVFoundation.framework in Frameworks */,
+				91AB35BE1C46BACD00BAB5D1 /* CoreLocation.framework in Frameworks */,
+				91AB35BC1C46BAC600BAB5D1 /* AdSupport.framework in Frameworks */,
+				91AB35B81C46BAB600BAB5D1 /* CoreTelephony.framework in Frameworks */,
+				91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */,
+				91AB35D61C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */,
+				914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */,
 				91317C811A8CF9D000B68D82 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91AB35D81C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +437,16 @@
 		9195673F1A6D49F400F5FB9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */,
+				91AB35C21C46BB2100BAB5D1 /* SystemConfiguration.framework */,
+				91AB35C01C46BB1B00BAB5D1 /* MediaPlayer.framework */,
+				91AB35BD1C46BACD00BAB5D1 /* CoreLocation.framework */,
+				91AB35BB1C46BAC600BAB5D1 /* AdSupport.framework */,
+				91AB35B91C46BAC000BAB5D1 /* CoreMedia.framework */,
+				91AB35B71C46BAB600BAB5D1 /* CoreTelephony.framework */,
+				91AB35B51C46BAAE00BAB5D1 /* AVFoundation.framework */,
 				01E490BA1C31788200167A39 /* WebKit.framework */,
-				019381DC1C2C4F6B00A8FE14 /* TeadsSDK.framework */,
 				91066C0A1C2B1531003E845F /* WebKit.framework */,
-				914E2BA61BBC23E5001D6A83 /* libsqlite3.0.tbd */,
 				914E2BA41BBC23CE001D6A83 /* libxml2.tbd */,
 				01A4E7311B46848F005D381E /* CFNetwork.framework */,
 				01A4E72F1B468478005D381E /* calabash.framework */,
@@ -665,7 +703,7 @@
 					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "TeadsSDKDemo copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,7 +714,6 @@
 					"-force_load",
 					"\"$(SRCROOT)/TeadsSDKDemo/calabash.framework/calabash\"",
 					"-lstdc++",
-					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TeadsSDKDemo-cal";
@@ -698,7 +735,7 @@
 					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "TeadsSDKDemo copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,7 +746,6 @@
 					"-force_load",
 					"\"$(SRCROOT)/TeadsSDKDemo/calabash.framework/calabash\"",
 					"-lstdc++",
-					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TeadsSDKDemo-cal";
@@ -817,7 +853,7 @@
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -843,7 +879,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -854,9 +890,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -864,6 +902,7 @@
 				);
 				INFOPLIST_FILE = TeadsSDKDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeadsSDKDemo.app/TeadsSDKDemo";
@@ -877,9 +916,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
 				INFOPLIST_FILE = TeadsSDKDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeadsSDKDemo.app/TeadsSDKDemo";
