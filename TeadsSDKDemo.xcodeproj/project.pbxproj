@@ -95,6 +95,7 @@
 		91AB35D71C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
 		91AB35D81C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
 		91E792861C47A8D80080DD03 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E792851C47A8D80080DD03 /* MediaPlayer.framework */; };
+		91E792871C480FD80080DD03 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E792851C47A8D80080DD03 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91E792871C480FD80080DD03 /* MediaPlayer.framework in Frameworks */,
 				91AB35CB1C46BBAF00BAB5D1 /* SystemConfiguration.framework in Frameworks */,
 				91AB35D71C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */,
 				91AB35CA1C46BB9800BAB5D1 /* AdSupport.framework in Frameworks */,
