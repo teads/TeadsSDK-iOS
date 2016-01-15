@@ -21,7 +21,6 @@
     [super viewDidLoad];
     
     self.scrollView.delegate = self;
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.navigationItem.title = @"inBoard ScrollView";
     

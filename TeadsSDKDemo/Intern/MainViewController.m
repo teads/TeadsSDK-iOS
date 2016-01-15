@@ -190,7 +190,7 @@
                 break;
             }
             case 6: {
-                InBoardScrollViewController *inBoardScrollView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardScrollView"];
+                InBoardScrollViewController *inBoardScrollView = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inBoardScrollViewForIPad":@"inBoardScrollView"];
                 controller = inBoardScrollView;
                 break;
             }
