@@ -1,5 +1,7 @@
 # Teads iOS SDK
 
+[![Build Status](https://jenkins.teads.net/buildStatus/icon?job=TeadsSDK-iOS_master)](https://jenkins.teads.net/view/Mobile/job/TeadsSDK-iOS_master/)
+
 Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. 
 This iOS Demo App includes the Teads Framework and is showing integration examples.
 
@@ -15,6 +17,13 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 
 ## Changelog
+
+v1.6.6:
+- Fixed duplicated symbol with Reachability framework
+
+v1.6.5:
+- Fixed specific case when VAST progress event were not sent
+- Changed present modal view for fullscreen
 
 v1.6.6:
 - Fixed duplicated symbol with Reachability framework
