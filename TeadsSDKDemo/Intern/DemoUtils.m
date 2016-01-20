@@ -68,6 +68,14 @@
         
     }];
     
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.placeholder = @"DOM selector (empty = auto fin slot)";
+        if (![[[NSUserDefaults standardUserDefaults] stringForKey:@"placeholderText"] isEqual:@""]) {
+            textField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"placeholderText"];
+        }
+    }];
+    
     UIAlertAction* ok = [UIAlertAction
                          actionWithTitle:@"OK"
                          style:UIAlertActionStyleDefault
@@ -79,10 +87,20 @@
                                  if (![typedUrl.lowercaseString hasPrefix:@"http://"] && ![typedUrl.lowercaseString hasPrefix:@"https://"]) {
                                      typedUrl = [NSString stringWithFormat:@"http://%@", typedUrl];
                                  }
-                                 [[NSUserDefaults standardUserDefaults] setObject:typedUrl forKey:@"website"];;
+                                 [[NSUserDefaults standardUserDefaults] setObject:typedUrl forKey:@"website"];
+                                 
+                                 [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"placeholderText"];
+                                 
                              } else {
-                                 [[NSUserDefaults standardUserDefaults] setObject:@"Default demo website" forKey:@"website"];;
+                                 [[NSUserDefaults standardUserDefaults] setObject:@"Default demo website" forKey:@"website"];
+                                 
+                                 if (![alert.textFields[1].text isEqualToString:@""]) {
+                                     [[NSUserDefaults standardUserDefaults] setObject:alert.textFields[1].text forKey:@"placeholderText"];
+                                 } else {
+                                     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"placeholderText"];
+                                 }
                              }
+                             
                              [alert dismissViewControllerAnimated:YES completion:nil];
                          }];
     
