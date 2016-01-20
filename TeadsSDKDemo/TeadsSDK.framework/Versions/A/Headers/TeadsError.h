@@ -3,7 +3,7 @@
 //  TeadsSDK
 //
 //  Created by Ibrahim Ennafaa on 10/03/2014.
-//  Copyright (c) 2014 Ebuzzing. All rights reserved.
+//  Copyright (c) 2016 Teads. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

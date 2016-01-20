@@ -12,8 +12,6 @@
 #import <TeadsSDK/TeadsVideo.h>
 #import <TeadsSDK/TeadsInterstitial.h>
 
-#define TEADS_SDK_VERSION                         @"2.0.0"
-
 typedef enum {
     TeadsLogLevelInactive   = 0,
     TeadsLogLevelError      = 1,
@@ -23,6 +21,6 @@ typedef enum {
 
 @interface TeadsSDK : NSObject
 
-+(void)setLogLevel:(TeadsLogLevelType)level;
++(void)setLogLevel:(TeadsLogLevelType)level; //Set the log level of Teads SDK
 
 @end
