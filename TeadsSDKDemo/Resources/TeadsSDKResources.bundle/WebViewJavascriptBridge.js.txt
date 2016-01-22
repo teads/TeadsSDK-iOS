@@ -10,7 +10,7 @@
 
 	var CUSTOM_PROTOCOL_SCHEME = 'wvjbscheme'
 	var QUEUE_HAS_MESSAGE = '__WVJB_QUEUE_MESSAGE__'
-	var URL_BOOTSTRAP = 'https://cdn.teads.tv/media/sdk/bootstrap.min.js?v=2.0.0';
+	var URL_BOOTSTRAP = 'URL_BOOTSTRAP_TAG';
 
 		var responseCallbacks = {}
 	var uniqueId = 1
