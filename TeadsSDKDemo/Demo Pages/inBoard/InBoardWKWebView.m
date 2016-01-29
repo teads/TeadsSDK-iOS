@@ -24,13 +24,12 @@
     WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
     self.wkWwebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
     self.wkWwebView.navigationDelegate = self;
-    self.wkWwebView.scrollView.delegate = self;
     
     [self.view addSubview:self.wkWwebView];
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // inBoard
-    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid wkWebView:self.wkWwebView delegate:self];
+    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid scrollView:self.wkWwebView.scrollView delegate:self];
     
     [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];

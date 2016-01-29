@@ -26,7 +26,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid placeHolder:self.inBoardView heightConstraint:self.inBoardConstraint scrollView:self.scrollView delegate:self];
+    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid scrollView:self.scrollView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

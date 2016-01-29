@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.webView.delegate = self;
     self.navigationItem.title = @"inRead WebView";
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];

@@ -25,12 +25,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"inBoard WebView";
     self.firsTimeURLoad = YES;
-    
-    self.webView.delegate = self;
-    
+        
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // Create the teadsInBoard
-    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid uiWebView:self.webView delegate:self];
+    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid scrollView:self.webView.scrollView delegate:self];
     
     NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
     

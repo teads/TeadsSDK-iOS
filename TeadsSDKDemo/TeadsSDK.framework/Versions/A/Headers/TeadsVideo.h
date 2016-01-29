@@ -39,7 +39,7 @@
 #pragma mark Custom Video
 
 /**
- * -initInBoardWithPlacementId:delegate:
+ * -initWithPlacementId:delegate:
  *
  * @param placement     : a placement ID string
  * @param teadsDelegate : the instance that implements TeadsVideoDelegate
@@ -50,52 +50,13 @@
 #pragma mark inBoard
 
 /**
- * -initInBoardWithPlacementId:uiWebView:delegate:
- *
- * @param placement     : a placement ID string
- * @param webView       : the UIWebview object
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInBoardWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
-/**
- * -initInBoardWithPlacementId:wkWebView:delegate:
- *
- * @param placement     : a placement ID string
- * @param webView       : the WKWebview object
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInBoardWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
-/**
- * -initInBoardWithPlacementId:referenceView:scrollView:delegate:
- *
- * @param placement     : a placement ID string
- * @param reference     : a uiview object that is in the scrollview
- * @param scrollView    : a scroll-view object
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInBoardWithPlacementId:(NSString*)placement referenceView:(UIView *)reference scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
-/**
- * -initInBoardWithPlacementId:placeHolder:heightConstraint:scrollView:delegate:
- *
- * @param placement     : a placement ID string
- * @param placeHolder   : a UIView that will contain Teads Video
- * @param constraint    : the height constraint of 'placeHolder' parameter
- * @param scrollView    : a scroll-view object
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInBoardWithPlacementId:(NSString*)placement placeHolder:(UIView *)placeHolder heightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
-/**
- * -initInBoardWithPlacementId:tableView:delegate:
- *
- * @param placement     : a placement ID string
- * @param tableView     : a table-view
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInBoardWithPlacementId:(NSString*)placement tableView:(UITableView*)tableView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+* -initInBoardWithPlacementId:scrollView:delegate:
+*
+* @param placement     : a placement ID string
+* @param webView       : a UIScrollView object
+* @param teadsDelegate : the instance that implements TeadsVideoDelegate
+*/
+- (id)initInBoardWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 #pragma mark -
 #pragma mark inRead
@@ -182,7 +143,15 @@
 
 #pragma mark Common methods
 
-/**
+/*
+ * -setBackgroundColor:
+ *
+ * @param backgroundColor : Set the wanted color for the inBoard background only
+ *
+ */
+- (void)setBackgroundColor:(UIColor *)backgroundColor;
+
+/*
  * -setAltScrollView:
  *
  * @param scrollView     : set the real scroll-view of your interface that in the end contains the inRead
