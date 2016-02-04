@@ -53,7 +53,7 @@
  * -clean
  *
  * destroys everything related to Teads Interstitial.
- * You will need to do a new init inBoard/inRead + load if you want to display a TeadsVideo again
+ * You will need to do a new init + load if you want to display a TeadsVideo again
  */
 - (void)clean;
 

@@ -26,7 +26,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsInBoard = [[TeadsVideo alloc] initInBoardWithPlacementId:pid scrollView:self.scrollView delegate:self];
+    self.teadsInBoard = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.scrollView delegate:self];
     //Set background color to match parent container
     [self.teadsInBoard setBackgroundColor:[UIColor whiteColor]];
 }

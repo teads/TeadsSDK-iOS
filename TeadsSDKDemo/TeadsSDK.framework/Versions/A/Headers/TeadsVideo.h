@@ -47,16 +47,16 @@
 - (id)initWithPlacementId:(NSString *)placement delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 #pragma mark
-#pragma mark inBoard
+#pragma mark inReadTop
 
 /**
-* -initInBoardWithPlacementId:scrollView:delegate:
+* -initInReadTopWithPlacementId:scrollView:delegate:
 *
 * @param placement     : a placement ID string
 * @param webView       : a UIScrollView object
 * @param teadsDelegate : the instance that implements TeadsVideoDelegate
 */
-- (id)initInBoardWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+- (id)initInReadTopWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 #pragma mark -
 #pragma mark inRead
@@ -146,7 +146,7 @@
 /*
  * -setBackgroundColor:
  *
- * @param backgroundColor : Set the wanted color for the inBoard background only
+ * @param backgroundColor : Set the wanted color for the inReadTop background only
  *
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
@@ -157,7 +157,7 @@
  * @param scrollView     : set the real scroll-view of your interface that in the end contains the inRead
  *
  * Eg : 
- * You have a webview in which you want to display an inRead/inBoard.
+ * You have a webview in which you want to display an inRead.
  * The webView.scrollView.scrollEnabled is set to NO
  * The webview is embedded in a scroll-view or table-view, which is the scrolling element
  * You have then to call -setAltScrollView:  providing the scrolling UI-element
@@ -175,7 +175,7 @@
  *
  * Resets TeadsVideo
  * If TeadsVideo is opened : it will close it
- * After 'reset' call, you can do a new 'load' call (no need to init inRead/inBoard again)
+ * After 'reset' call, you can do a new 'load' call (no need to init inRead/inReadTop again)
  *
 */
 - (void)reset;
@@ -184,7 +184,7 @@
  * -clean
  *
  * destroys everything related to TeadsVideo.
- * You will need to do a new init inBoard/inRead + load if you want to display a TeadsVideo again
+ * You will need to do a new init inRead/inReadTop + load if you want to display a TeadsVideo again
 */
 - (void)clean;
 
