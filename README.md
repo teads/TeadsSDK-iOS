@@ -18,6 +18,9 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.0.0:
+- Whole new version of SDK that brings breaking changes. Read [Migration guide from SDK v1.x to v2](http://mobile.teads.tv/sdk/documentation/ios/migration-from-sdk-v1-x)
+
 v1.6.6:
 - Fixed duplicated symbol with Reachability framework
 
