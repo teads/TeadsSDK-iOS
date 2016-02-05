@@ -3,35 +3,43 @@
 //  TeadsSDK
 //
 //  Created by Ibrahim Ennafaa on 10/03/2014.
-//  Copyright (c) 2014 Ebuzzing. All rights reserved.
+//  Copyright (c) 2016 Teads. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 typedef enum TeadsErrorEnum {
-	TeadsNetworkError = 0,
-	TeadsAdServerError = 1,
-	TeadsAdServerBadResponse = 2,
-	TeadsAdFailsToLoad = 3,
-    TeadsNoAdsAvailable = 4,
-    TeadsTimeoutError = 5,
-    TeadsLoadOperationCancelled = 6
+    TeadsNoSlotAvailable,
+    TeadsServerError,
+    TeadsNetworkError,
+    TeadsParseTimeout,
+    TeadsNotFilled,
+    TeadsVastError,
+    TeadsSettingsError,
+    TeadsServerBadResponse,
+    TeadsInternalError,
+    TeadsNoNetwork
 } TeadsErrorType;
 
 @interface TeadsError : NSObject
 
 -(BOOL)isType:(TeadsErrorType)errorType;
 
-@property (nonatomic) TeadsErrorType code;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *message;
+@property (nonatomic) TeadsErrorType type;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *code;
 
-+(TeadsError*)networkError;
-+(TeadsError*)timeoutError;
-+(TeadsError*)adServerError;
-+(TeadsError*)adServerBadResponse;
-+(TeadsError*)adFailsToLoad;
-+(TeadsError*)noAdsAvailable;
-+(TeadsError*)loadOperationCancelled;
++ (TeadsError *)noSlotAvailable;
++ (TeadsError *)serverError:(NSString *)code;
++ (TeadsError *)networkError;
++ (TeadsError *)noNetwork;
++ (TeadsError *)parseTimeout;
++ (TeadsError *)notFilled;
++ (TeadsError *)vastError:(NSString *)code;
++ (TeadsError *)settingsError;
++ (TeadsError *)jsonCorrupted;
++ (TeadsError *)serverBadResponse;
++ (TeadsError *)internalError;
 
 @end

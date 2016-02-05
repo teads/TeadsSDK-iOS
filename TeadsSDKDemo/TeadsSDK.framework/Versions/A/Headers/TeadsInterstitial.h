@@ -1,9 +1,9 @@
 //
 //  TeadsInterstitial.h
-//  TeadsSDKDev
+//  TeadsSDK
 //
-//  Created by Emmanuel Digiaro on 5/13/14.
-//  Copyright (c) 2014 Ebuzzing. All rights reserved.
+//  Created by Ibrahim Ennafaa on 5/13/14.
+//  Copyright (c) 2016 Teads. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,7 +21,7 @@
 #pragma mark -
 /////////////////////////////////////////////////////////////
 
-@property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL isLoaded; //returns YES if Teads Interstitial is loaded
 
 @property (nonatomic, weak) id rootViewController;
 
@@ -35,28 +35,29 @@
 #pragma mark -
 /////////////////////////////////////////////////////////////
 
+/**
+ * -initInFlowWithPlacementId:rootViewController:delegate:
+ *
+ * @param placement         : a placement ID string
+ * @param viewController    : the parent view-controller from which Teads Interstitial will be presented
+ * @param teadsDelegate     : the instance that implements TeadsVideoDelegate
+ */
 - (id)initInFlowWithPlacementId:(NSString*)placement rootViewController:(id)viewController delegate:(id<TeadsInterstitialDelegate>)teadsDelegate;
 
-- (void)setPreDownLoad:(BOOL)preDownload;
+- (void)load;       //Load the Teads Interstitial
+- (void)cancelLoad; //Cancel Teads Interstitial load
 
-- (void)load;
-- (void)cancelLoad;
+- (void)show;       //Show the Teads Interstitial
 
-- (void)loadFromFactory;
-
-- (void)show;
-
-- (void)forceCreativeUrl:(NSString*)creativeUrl;
-
+/*
+ * -clean
+ *
+ * destroys everything related to Teads Interstitial.
+ * You will need to do a new init + load if you want to display a TeadsVideo again
+ */
 - (void)clean;
 
-- (void)setRewardEnabled:(BOOL)enabled;
-
-- (BOOL)isRewardEnabled;
-
-- (void)setRewardInfo:(NSString*)userId withDebug:(BOOL)debug;
-
-- (void)onLayoutChange;
+- (void)onLayoutChange; //Call when layout has changed
 
 @end
 
@@ -95,6 +96,20 @@
  * @param interstitial  : the TeadsInterstitial object
  */
 - (void)teadsInterstitialDidLoad:(TeadsInterstitial *)interstitial;
+
+/**
+ * Video was clicked
+ *
+ * @param video  : the TeadsVideo object
+ */
+- (void)teadsInterstitialWasClicked:(TeadsInterstitial *)interstitial;
+
+/**
+ * Video Did Stop Playing (stopped)
+ *
+ * @param video  : the TeadsVideo object
+ */
+- (void)teadsInterstitialDidClickBrowserClose:(TeadsInterstitial *)interstitial;
 
 /**
  * Interstitial Will Take Over Fullscreen (showing)
@@ -137,13 +152,6 @@
  * @param interstitial The TeadsInterstitial object
  */
 - (void)teadsInterstitialDidDismissFullScreen:(TeadsInterstitial *)interstitial;
-
-/**
- * Interstitial Unlocked Reward
- *
- * @param interstitial  : the TeadsInterstitial object
- */
-- (void)teadsInterstitialRewardUnlocked:(TeadsInterstitial *)interstitial;
 
 /**
  * Interstitial Did Clean

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TeadsSDK/TeadsInterstitial.h>
+#import <TeadsSDK/TeadsSDK.h>
 
 @interface InFlowViewController : UIViewController <TeadsInterstitialDelegate>
 
