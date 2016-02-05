@@ -8,10 +8,10 @@
 
 #import "MainViewController.h"
 
-#import "InBoardScrollViewController.h"
-#import "InBoardTableViewController.h"
-#import "InBoardWebViewController.h"
-#import "InBoardWKWebView.h"
+#import "InReadTopScrollViewController.h"
+#import "InReadTopTableViewController.h"
+#import "InReadTopWebViewController.h"
+#import "InReadTopWKWebView.h"
 #import "InReadScrollViewController.h"
 #import "InReadTableViewController.h"
 #import "CustomNativeVideoScrollViewViewController.h"
@@ -107,19 +107,19 @@
                 cell.textLabel.text = @"inRead TableView";
                 break;
             case 5:
-                cell.textLabel.text = @"inBoard";
+                cell.textLabel.text = @"inRead Top";
                 break;
             case 6:
-                cell.textLabel.text = @"inBoard ScrollView";
+                cell.textLabel.text = @"inRead Top ScrollView";
                 break;
             case 7:
-                cell.textLabel.text = @"inBoard WebView";
+                cell.textLabel.text = @"inRead Top WebView";
                 break;
             case 8:
-                cell.textLabel.text = @"inBoard WKWebview";
+                cell.textLabel.text = @"inRead Top WKWebview";
                 break;
             case 9:
-                cell.textLabel.text = @"inBoard TableView";
+                cell.textLabel.text = @"inRead Top TableView";
                 break;
             case 10:
                 cell.textLabel.text = @"Custom Native Video View";
@@ -190,23 +190,23 @@
                 break;
             }
             case 6: {
-                InBoardScrollViewController *inBoardScrollView = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inBoardScrollViewForIPad":@"inBoardScrollView"];
-                controller = inBoardScrollView;
+                InReadTopScrollViewController *inReadTopScrollView = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadTopScrollViewForIPad":@"inReadTopScrollView"];
+                controller = inReadTopScrollView;
                 break;
             }
             case 7: {
-                InBoardWebViewController *inBoardWebView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardWebView"];
-                controller = inBoardWebView;
+                InReadTopWebViewController *inReadTopWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopWebView"];
+                controller = inReadTopWebView;
                 break;
             }
             case 8: {
-                InBoardWKWebView *inBoardWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardWKWebView"];
-                controller = inBoardWKWebView;
+                InReadTopWKWebView *inReadTopWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopWKWebView"];
+                controller = inReadTopWKWebView;
                 break;
             }
             case 9: {
-                InBoardTableViewController *inBoardTableView = [storyboard instantiateViewControllerWithIdentifier:@"inBoardTableView"];
-                controller = inBoardTableView;
+                InReadTopTableViewController *inReadTopTableView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopTableView"];
+                controller = inReadTopTableView;
                 break;
             }
             case 11: {

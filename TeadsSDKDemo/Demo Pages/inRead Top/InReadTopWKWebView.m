@@ -1,69 +1,83 @@
 //
-//  InBoardWebViewController.m
+//  InReadTopWKWebView.m
 //  TeadsSDKDemo
 //
-//  Created by Nikolaï Roycourt on 16/01/2015.
-//  Copyright (c) 2015 Teads. All rights reserved.
+//  Created by Nikolaï Roycourt on 17/12/2015.
+//  Copyright © 2015 Teads. All rights reserved.
 //
 
-#import "InBoardWebViewController.h"
-#import <TeadsSDK/TeadsSDK.h>
+#import "InReadTopWKWebView.h"
 
-@interface InBoardWebViewController ()
+@interface InReadTopWKWebView ()
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) WKWebView *wkWwebView;
 
-@property (strong, nonatomic) TeadsVideo *teadsInBoard;
-@property (strong, nonatomic) NSURL *startURL;
-@property (nonatomic) BOOL firsTimeURLoad;
+@property (strong, nonatomic) TeadsVideo *teadsVideo;
 
 @end
 
-@implementation InBoardWebViewController
+@implementation InReadTopWKWebView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"inBoard WebView";
-    self.firsTimeURLoad = YES;
-        
-    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    // Create the teadsInBoard
-    self.teadsInBoard = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.webView.scrollView delegate:self];
-    //Set background color to match parent container
-    [self.teadsInBoard setBackgroundColor:[UIColor whiteColor]];
     
+    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
+    self.wkWwebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
+    self.wkWwebView.navigationDelegate = self;
+    
+    [self.view addSubview:self.wkWwebView];
+    
+    NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
+    // inRead Top
+    self.teadsVideo = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.wkWwebView.scrollView delegate:self];
+    
+    [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
+    
+    self.navigationItem.title = @"inRead Top WKWebView";
+    
+    //Load a web page from an URL
+    NSURL *webSiteURL;
     NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
     
     if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
-        self.startURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+        webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     } else {
-        self.startURL = [NSURL URLWithString:urlToLoad];
+        webSiteURL = [NSURL URLWithString:urlToLoad];
     }
-    
-    [self.webView loadRequest:[NSURLRequest requestWithURL:self.startURL]];
-    
+    [self.wkWwebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
+
 }
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.teadsInBoard.isLoaded) {
-        [self.teadsInBoard viewControllerAppeared:self];
+    if (self.teadsVideo.isLoaded) {
+        [self.teadsVideo viewControllerAppeared:self];
     } else {
-        [self.teadsInBoard load];
+        [self.teadsVideo load];
     }
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.teadsInBoard viewControllerDisappeared:self];
+    [self.teadsVideo viewControllerDisappeared:self];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {   
-    return YES;
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+        decisionHandler(WKNavigationActionPolicyAllow);
 }
 
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
+
+-(void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, NSURLCredentialPersistenceNone);
+}
 
 #pragma mark -
 #pragma mark - TeadsVideoDelegate
@@ -75,7 +89,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsVideo:(TeadsVideo *)video didFailLoading:(TeadsError *)error {
-    
+
 }
 
 /**
@@ -292,5 +306,6 @@
 - (void)teadsVideoDidClean:(TeadsVideo *)video {
     
 }
+
 
 @end

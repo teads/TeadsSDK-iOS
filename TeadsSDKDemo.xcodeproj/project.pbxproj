@@ -13,14 +13,11 @@
 		019381E11C2C4F7C00A8FE14 /* TeadsSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 019381DF1C2C4F7C00A8FE14 /* TeadsSDKResources.bundle */; };
 		01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
 		01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
-		01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4461A69592C005E6711 /* InBoardWebViewController.m */; };
 		01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
 		01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB43D1A6958D7005E6711 /* InFlowViewController.m */; };
 		01A4E6EF1B46826F005D381E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB151A68288400E36306 /* main.m */; };
-		01A4E6F01B46826F005D381E /* InBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4441A69592C005E6711 /* InBoardTableViewController.m */; };
 		01A4E6F11B46826F005D381E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB3E1A68303700E36306 /* MainViewController.m */; };
-		01A4E6F21B46826F005D381E /* InBoardScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4421A69592C005E6711 /* InBoardScrollViewController.m */; };
 		01A4E6FA1B46826F005D381E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB201A68288400E36306 /* Images.xcassets */; };
 		01A4E6FC1B46826F005D381E /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BEE1A70F495008E3E30 /* arrow_right.png */; };
 		01A4E7011B46826F005D381E /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 919567571A6E8EB500F5FB9B /* arrow_down.png */; };
@@ -42,17 +39,12 @@
 		01A4E71F1B46826F005D381E /* teads@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9195674A1A6E5BB400F5FB9B /* teads@2x.png */; };
 		01A4E7301B468478005D381E /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E72F1B468478005D381E /* calabash.framework */; };
 		01A4E7321B46848F005D381E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4E7311B46848F005D381E /* CFNetwork.framework */; };
-		01E490B81C31785E00167A39 /* InBoardWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */; };
 		01E490B91C31785E00167A39 /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
 		01E490BC1C31789000167A39 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
 		91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
-		91066C0E1C2B15E8003E845F /* InBoardWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */; };
 		91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
 		91066C121C2B162D003E845F /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B565D31BFB3B4700347185 /* DemoUtils.m */; };
 		910CB43E1A6958D7005E6711 /* InFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB43D1A6958D7005E6711 /* InFlowViewController.m */; };
-		910CB4471A69592C005E6711 /* InBoardScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4421A69592C005E6711 /* InBoardScrollViewController.m */; };
-		910CB4481A69592C005E6711 /* InBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4441A69592C005E6711 /* InBoardTableViewController.m */; };
-		910CB4491A69592C005E6711 /* InBoardWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB4461A69592C005E6711 /* InBoardWebViewController.m */; };
 		910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
 		910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
@@ -94,6 +86,14 @@
 		91AB35D61C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
 		91AB35D71C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
 		91AB35D81C46C27D00BAB5D1 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */; };
+		91E125C31C64B7AA0095F327 /* InReadTopScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125BC1C64B7AA0095F327 /* InReadTopScrollViewController.m */; };
+		91E125C41C64B7AA0095F327 /* InReadTopScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125BC1C64B7AA0095F327 /* InReadTopScrollViewController.m */; };
+		91E125C51C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125BE1C64B7AA0095F327 /* InReadTopTableViewController.m */; };
+		91E125C61C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125BE1C64B7AA0095F327 /* InReadTopTableViewController.m */; };
+		91E125C71C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125C01C64B7AA0095F327 /* InReadTopWebViewController.m */; };
+		91E125C81C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125C01C64B7AA0095F327 /* InReadTopWebViewController.m */; };
+		91E125C91C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125C21C64B7AA0095F327 /* InReadTopWKWebView.m */; };
+		91E125CA1C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E125C21C64B7AA0095F327 /* InReadTopWKWebView.m */; };
 		91E792861C47A8D80080DD03 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E792851C47A8D80080DD03 /* MediaPlayer.framework */; };
 		91E792871C480FD80080DD03 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E792851C47A8D80080DD03 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -157,18 +157,10 @@
 		01A4E7311B46848F005D381E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01E490BA1C31788200167A39 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
 		91066C0A1C2B1531003E845F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		91066C0C1C2B15E8003E845F /* InBoardWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardWKWebView.h; sourceTree = "<group>"; };
-		91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardWKWebView.m; sourceTree = "<group>"; };
 		91066C0F1C2B15F2003E845F /* InReadWKWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadWKWebview.h; sourceTree = "<group>"; };
 		91066C101C2B15F2003E845F /* InReadWKWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWKWebview.m; sourceTree = "<group>"; };
 		910CB43C1A6958D7005E6711 /* InFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InFlowViewController.h; sourceTree = "<group>"; };
 		910CB43D1A6958D7005E6711 /* InFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InFlowViewController.m; sourceTree = "<group>"; };
-		910CB4411A69592C005E6711 /* InBoardScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardScrollViewController.h; sourceTree = "<group>"; };
-		910CB4421A69592C005E6711 /* InBoardScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardScrollViewController.m; sourceTree = "<group>"; };
-		910CB4431A69592C005E6711 /* InBoardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardTableViewController.h; sourceTree = "<group>"; };
-		910CB4441A69592C005E6711 /* InBoardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardTableViewController.m; sourceTree = "<group>"; };
-		910CB4451A69592C005E6711 /* InBoardWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBoardWebViewController.h; sourceTree = "<group>"; };
-		910CB4461A69592C005E6711 /* InBoardWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBoardWebViewController.m; sourceTree = "<group>"; };
 		910CB44A1A695933005E6711 /* InReadScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadScrollViewController.h; sourceTree = "<group>"; };
 		910CB44B1A695933005E6711 /* InReadScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadScrollViewController.m; sourceTree = "<group>"; };
 		910CB44C1A695933005E6711 /* InReadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTableViewController.h; sourceTree = "<group>"; };
@@ -214,6 +206,14 @@
 		91AB35D51C46C27D00BAB5D1 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		91B565D21BFB3B4700347185 /* DemoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
 		91B565D31BFB3B4700347185 /* DemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
+		91E125BB1C64B7AA0095F327 /* InReadTopScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTopScrollViewController.h; sourceTree = "<group>"; };
+		91E125BC1C64B7AA0095F327 /* InReadTopScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadTopScrollViewController.m; sourceTree = "<group>"; };
+		91E125BD1C64B7AA0095F327 /* InReadTopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTopTableViewController.h; sourceTree = "<group>"; };
+		91E125BE1C64B7AA0095F327 /* InReadTopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadTopTableViewController.m; sourceTree = "<group>"; };
+		91E125BF1C64B7AA0095F327 /* InReadTopWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTopWebViewController.h; sourceTree = "<group>"; };
+		91E125C01C64B7AA0095F327 /* InReadTopWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadTopWebViewController.m; sourceTree = "<group>"; };
+		91E125C11C64B7AA0095F327 /* InReadTopWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTopWKWebView.h; sourceTree = "<group>"; };
+		91E125C21C64B7AA0095F327 /* InReadTopWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadTopWKWebView.m; sourceTree = "<group>"; };
 		91E792851C47A8D80080DD03 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		91F581DB1A710A22007D70AC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		91F581DD1A710A29007D70AC /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
@@ -267,21 +267,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		910CB43F1A695900005E6711 /* inBoard */ = {
-			isa = PBXGroup;
-			children = (
-				910CB4411A69592C005E6711 /* InBoardScrollViewController.h */,
-				910CB4421A69592C005E6711 /* InBoardScrollViewController.m */,
-				910CB4431A69592C005E6711 /* InBoardTableViewController.h */,
-				910CB4441A69592C005E6711 /* InBoardTableViewController.m */,
-				910CB4451A69592C005E6711 /* InBoardWebViewController.h */,
-				910CB4461A69592C005E6711 /* InBoardWebViewController.m */,
-				91066C0C1C2B15E8003E845F /* InBoardWKWebView.h */,
-				91066C0D1C2B15E8003E845F /* InBoardWKWebView.m */,
-			);
-			path = inBoard;
-			sourceTree = "<group>";
-		};
 		910CB4401A695900005E6711 /* inRead */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,7 +370,7 @@
 		916CFB401A68304900E36306 /* Demo Pages */ = {
 			isa = PBXGroup;
 			children = (
-				910CB43F1A695900005E6711 /* inBoard */,
+				91E125BA1C64B7AA0095F327 /* inRead Top */,
 				910CB4401A695900005E6711 /* inRead */,
 				910CB43C1A6958D7005E6711 /* InFlowViewController.h */,
 				910CB43D1A6958D7005E6711 /* InFlowViewController.m */,
@@ -443,6 +428,21 @@
 			);
 			name = Frameworks;
 			path = TeadsSDKDemo;
+			sourceTree = "<group>";
+		};
+		91E125BA1C64B7AA0095F327 /* inRead Top */ = {
+			isa = PBXGroup;
+			children = (
+				91E125BB1C64B7AA0095F327 /* InReadTopScrollViewController.h */,
+				91E125BC1C64B7AA0095F327 /* InReadTopScrollViewController.m */,
+				91E125BD1C64B7AA0095F327 /* InReadTopTableViewController.h */,
+				91E125BE1C64B7AA0095F327 /* InReadTopTableViewController.m */,
+				91E125BF1C64B7AA0095F327 /* InReadTopWebViewController.h */,
+				91E125C01C64B7AA0095F327 /* InReadTopWebViewController.m */,
+				91E125C11C64B7AA0095F327 /* InReadTopWKWebView.h */,
+				91E125C21C64B7AA0095F327 /* InReadTopWKWebView.m */,
+			);
+			path = "inRead Top";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,19 +610,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E490B81C31785E00167A39 /* InBoardWKWebView.m in Sources */,
+				91E125C41C64B7AA0095F327 /* InReadTopScrollViewController.m in Sources */,
+				91E125C61C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */,
 				01E490B91C31785E00167A39 /* InReadWKWebview.m in Sources */,
 				013271241C0490390074EB12 /* DemoUtils.m in Sources */,
 				01A4E6E51B46826F005D381E /* InReadWebViewController.m in Sources */,
 				01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */,
-				01A4E6E91B46826F005D381E /* InBoardWebViewController.m in Sources */,
 				01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */,
 				01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */,
+				91E125CA1C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */,
 				01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */,
 				01A4E6EF1B46826F005D381E /* main.m in Sources */,
-				01A4E6F01B46826F005D381E /* InBoardTableViewController.m in Sources */,
+				91E125C81C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */,
 				01A4E6F11B46826F005D381E /* MainViewController.m in Sources */,
-				01A4E6F21B46826F005D381E /* InBoardScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,19 +631,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				91066C121C2B162D003E845F /* DemoUtils.m in Sources */,
+				91E125C71C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */,
+				91E125C91C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */,
 				910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */,
+				91E125C31C64B7AA0095F327 /* InReadTopScrollViewController.m in Sources */,
 				913CED781B67C3590058623A /* CustomNativeVideoScrollViewViewController.m in Sources */,
 				910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */,
-				91066C0E1C2B15E8003E845F /* InBoardWKWebView.m in Sources */,
-				910CB4491A69592C005E6711 /* InBoardWebViewController.m in Sources */,
 				916CFB191A68288400E36306 /* AppDelegate.m in Sources */,
+				91E125C51C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */,
 				910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */,
 				910CB43E1A6958D7005E6711 /* InFlowViewController.m in Sources */,
 				91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */,
 				916CFB161A68288400E36306 /* main.m in Sources */,
-				910CB4481A69592C005E6711 /* InBoardTableViewController.m in Sources */,
 				916CFB3F1A68303700E36306 /* MainViewController.m in Sources */,
-				910CB4471A69592C005E6711 /* InBoardScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

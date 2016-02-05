@@ -1,51 +1,69 @@
 //
-//  InBoardScrollViewController.m
+//  InReadTopWebViewController.m
 //  TeadsSDKDemo
 //
 //  Created by Nikolaï Roycourt on 16/01/2015.
 //  Copyright (c) 2015 Teads. All rights reserved.
 //
 
-#import "InBoardScrollViewController.h"
+#import "InReadTopWebViewController.h"
+#import <TeadsSDK/TeadsSDK.h>
 
-@interface InBoardScrollViewController ()
+@interface InReadTopWebViewController ()
 
-@property (strong, nonatomic) TeadsVideo *teadsInBoard;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *inBoardConstraint;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) TeadsVideo *teadsVideo;
+@property (strong, nonatomic) NSURL *startURL;
+@property (nonatomic) BOOL firsTimeURLoad;
 
 @end
 
-@implementation InBoardScrollViewController
+@implementation InReadTopWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.scrollView.delegate = self;
-    
-    self.navigationItem.title = @"inBoard ScrollView";
-    
+    self.navigationItem.title = @"inRead Top WebView";
+    self.firsTimeURLoad = YES;
+        
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    
-    self.teadsInBoard = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.scrollView delegate:self];
+    // Create the teadsVideo
+    self.teadsVideo = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.webView.scrollView delegate:self];
     //Set background color to match parent container
-    [self.teadsInBoard setBackgroundColor:[UIColor whiteColor]];
+    [self.teadsVideo setBackgroundColor:[UIColor whiteColor]];
+    
+    NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
+    
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
+        self.startURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
+    } else {
+        self.startURL = [NSURL URLWithString:urlToLoad];
+    }
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:self.startURL]];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.teadsInBoard.isLoaded) {
-        [self.teadsInBoard viewControllerAppeared:self];
+    if (self.teadsVideo.isLoaded) {
+        [self.teadsVideo viewControllerAppeared:self];
     } else {
-        [self.teadsInBoard load];
+        [self.teadsVideo load];
     }
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.teadsInBoard viewControllerDisappeared:self];
+    [self.teadsVideo viewControllerDisappeared:self];
 }
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {   
+    return YES;
+}
+
 
 #pragma mark -
 #pragma mark - TeadsVideoDelegate
@@ -75,6 +93,15 @@
  * @param interstitial  : the TeadsVideo object
  */
 - (void)teadsVideoDidLoad:(TeadsVideo *)video {
+    
+}
+
+/**
+ * NativeVideo failed to find a slot in web view
+ *
+ * @param interstitial  : the TeadsVideo object
+ */
+- (void)teadsVideoFailedToFindAvailableSlot:(TeadsVideo *)video {
     
 }
 
@@ -155,7 +182,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoCanExpand:(TeadsVideo *)video {
+- (void)teadsVideoWillExpand:(TeadsVideo *)video {
     
 }
 
@@ -165,7 +192,6 @@
  * @param nativeVideo  : the TeadsVideo object
  */
 - (void)teadsVideoDidExpand:(TeadsVideo *)video {
-    
 }
 
 /**
@@ -266,6 +292,5 @@
 - (void)teadsVideoDidClean:(TeadsVideo *)video {
     
 }
-
 
 @end

@@ -1,46 +1,46 @@
 //
-//  InBoardTableViewController.m
+//  InReadTopTableViewController.m
 //  TeadsSDKDemo
 //
 //  Created by Nikolaï Roycourt on 16/01/2015.
 //  Copyright (c) 2015 Teads. All rights reserved.
 //
 
-#import "InBoardTableViewController.h"
+#import "InReadTopTableViewController.h"
 
-@interface InBoardTableViewController ()
+@interface InReadTopTableViewController ()
 
-@property (nonatomic, strong) TeadsVideo *teadsInBoard;
+@property (nonatomic, strong) TeadsVideo *teadsVideo;
 
 @end
 
-@implementation InBoardTableViewController
+@implementation InReadTopTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"inBoard TableView";
+    self.navigationItem.title = @"inRead Top TableView";
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsInBoard = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.tableView delegate:self];
+    self.teadsVideo = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.tableView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.teadsInBoard.isLoaded) {
-        [self.teadsInBoard viewControllerAppeared:self];
+    if (self.teadsVideo.isLoaded) {
+        [self.teadsVideo viewControllerAppeared:self];
         
     } else {
-        [self.teadsInBoard load];
+        [self.teadsVideo load];
     }
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.teadsInBoard viewControllerDisappeared:self];
+    [self.teadsVideo viewControllerDisappeared:self];
 }
 
 #pragma mark - Table view data source

@@ -1,5 +1,5 @@
 //
-//  inBoardWKWebView.h
+//  InReadTopWKWebView.h
 //  TeadsSDKDemo
 //
 //  Created by Nikolaï Roycourt on 17/12/2015.
@@ -10,6 +10,6 @@
 #import <WebKit/WebKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InBoardWKWebView : UIViewController  <WKNavigationDelegate, UIScrollViewDelegate, TeadsVideoDelegate>
+@interface InReadTopWKWebView : UIViewController  <WKNavigationDelegate, UIScrollViewDelegate, TeadsVideoDelegate>
 
 @end

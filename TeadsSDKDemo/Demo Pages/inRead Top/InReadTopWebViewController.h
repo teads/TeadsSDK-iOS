@@ -1,5 +1,5 @@
 //
-//  InBoardWebViewController.h
+//  InReadTopWebViewController.h
 //  TeadsSDKDemo
 //
 //  Created by Nikolaï Roycourt on 16/01/2015.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InBoardWebViewController : UIViewController <UIWebViewDelegate, TeadsVideoDelegate>
+@interface InReadTopWebViewController : UIViewController <UIWebViewDelegate, TeadsVideoDelegate>
 
 @end

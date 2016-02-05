@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KGe-QN-D1W">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -763,7 +763,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Eis-55-xVB">
                                 <rect key="frame" x="46" y="50" width="283" height="350"/>
-                                <string key="text">Interstitial ad placement differs from its inBoard and inRead counterparts in that it typically provides a full-screen interactive experience. 
+                                <string key="text">Interstitial ad placement differs from its inRead Top and inRead counterparts in that it typically provides a full-screen interactive experience. 
 
 It is usually presented modally and takes over the app experience while providing a way to return to the application.
 </string>
@@ -846,10 +846,10 @@ It is usually presented modally and takes over the app experience while providin
             </objects>
             <point key="canvasLocation" x="-216" y="1253"/>
         </scene>
-        <!--inBoard Web View Controller-->
+        <!--inRead Top Web View Controller-->
         <scene sceneID="ur2-Sp-gad">
             <objects>
-                <viewController storyboardIdentifier="inBoardWebView" id="DyY-xw-AEg" userLabel="inBoard Web View Controller" customClass="InBoardWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inReadTopWebView" id="DyY-xw-AEg" userLabel="inRead Top Web View Controller" customClass="InReadTopWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DkU-77-gNH"/>
                         <viewControllerLayoutGuide type="bottom" id="WcJ-KI-l6p"/>
@@ -883,10 +883,10 @@ It is usually presented modally and takes over the app experience while providin
             </objects>
             <point key="canvasLocation" x="1726.5" y="898.5"/>
         </scene>
-        <!--inBoard Scroll View Controller-->
+        <!--inRead Top Scroll View Controller-->
         <scene sceneID="cPg-zV-9yO">
             <objects>
-                <viewController storyboardIdentifier="inBoardScrollView" id="LGl-sg-YQ5" userLabel="inBoard Scroll View Controller" customClass="InBoardScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inReadTopScrollView" id="LGl-sg-YQ5" userLabel="inRead Top Scroll View Controller" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qzN-JS-JqE"/>
                         <viewControllerLayoutGuide type="bottom" id="dOb-2k-eB2"/>
@@ -901,14 +901,7 @@ It is usually presented modally and takes over the app experience while providin
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-gL-AzR" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1255"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Ki-gfz" userLabel="inBoard">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" priority="750" id="TJ5-tv-JcO"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inBoard in a ScrollView is displayed on top" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-zh-Ji3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inRead Top in a ScrollView is displayed on top" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-zh-Ji3">
                                                 <rect key="frame" x="8" y="5" width="359" height="53"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -937,18 +930,15 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="eOr-Ki-gfz" firstAttribute="top" secondItem="Cts-gL-AzR" secondAttribute="top" id="6bA-K8-GEq"/>
+                                            <constraint firstItem="bQz-zh-Ji3" firstAttribute="top" secondItem="Cts-gL-AzR" secondAttribute="top" constant="5" id="9KC-Fa-9MZ"/>
                                             <constraint firstItem="p3n-8X-h1v" firstAttribute="leading" secondItem="lCG-kP-WVi" secondAttribute="leading" id="DeV-X4-nE0"/>
                                             <constraint firstItem="lCG-kP-WVi" firstAttribute="trailing" secondItem="bQz-zh-Ji3" secondAttribute="trailing" id="Izs-iO-tTY"/>
                                             <constraint firstAttribute="trailing" secondItem="lCG-kP-WVi" secondAttribute="trailing" constant="8" id="M1n-Z5-ihY"/>
                                             <constraint firstItem="lCG-kP-WVi" firstAttribute="leading" secondItem="Cts-gL-AzR" secondAttribute="leading" constant="8" id="Za7-Gn-RHI"/>
-                                            <constraint firstItem="bQz-zh-Ji3" firstAttribute="top" secondItem="eOr-Ki-gfz" secondAttribute="bottom" constant="5" id="cZq-u1-CVX"/>
                                             <constraint firstItem="lCG-kP-WVi" firstAttribute="top" secondItem="bQz-zh-Ji3" secondAttribute="bottom" constant="20" id="f0o-Gt-na5"/>
                                             <constraint firstAttribute="bottom" secondItem="p3n-8X-h1v" secondAttribute="bottom" constant="30" id="hUx-wV-wug"/>
-                                            <constraint firstAttribute="trailing" secondItem="eOr-Ki-gfz" secondAttribute="trailing" id="jMy-nv-0Ih"/>
                                             <constraint firstItem="lCG-kP-WVi" firstAttribute="leading" secondItem="bQz-zh-Ji3" secondAttribute="leading" id="k0D-kd-1cI"/>
                                             <constraint firstItem="p3n-8X-h1v" firstAttribute="trailing" secondItem="lCG-kP-WVi" secondAttribute="trailing" id="nB1-Zh-8uW"/>
-                                            <constraint firstItem="eOr-Ki-gfz" firstAttribute="leading" secondItem="Cts-gL-AzR" secondAttribute="leading" id="nzE-XD-Nru"/>
                                             <constraint firstItem="p3n-8X-h1v" firstAttribute="top" secondItem="lCG-kP-WVi" secondAttribute="bottom" constant="10" id="tR8-vu-z8U"/>
                                         </constraints>
                                     </view>
@@ -977,8 +967,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="inBoardConstraint" destination="TJ5-tv-JcO" id="6aq-Ql-BUH"/>
-                        <outlet property="inBoardView" destination="eOr-Ki-gfz" id="Uwg-r4-w0T"/>
                         <outlet property="scrollView" destination="rWT-zX-SiL" id="2Vx-KU-P9U"/>
                     </connections>
                 </viewController>
@@ -986,10 +974,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="1216.5" y="898.5"/>
         </scene>
-        <!--inBoard Table View Controller-->
+        <!--inRead Top Table View Controller-->
         <scene sceneID="g8L-MT-zeb">
             <objects>
-                <tableViewController storyboardIdentifier="inBoardTableView" id="2xJ-tq-MH4" userLabel="inBoard Table View Controller" customClass="InBoardTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inReadTopTableView" id="2xJ-tq-MH4" userLabel="inRead Top Table View Controller" customClass="InReadTopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1014,7 +1002,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                                 <constraint firstAttribute="width" constant="70" id="7KH-hU-zr8"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inBoard in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-tO-D0m">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead Top in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-tO-D0m">
                                             <rect key="frame" x="100" y="27" width="267" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="ZwA-JP-nGS"/>
@@ -1023,7 +1011,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inBoard is always displayed on top" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7e5-vw-Mf6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inRead Top is always displayed on top" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7e5-vw-Mf6">
                                             <rect key="frame" x="100" y="57" width="267" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1108,10 +1096,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="2202.5" y="85.5"/>
         </scene>
-        <!--inBoard WK Web View Controller-->
+        <!--inRead Top WK Web View Controller-->
         <scene sceneID="LK3-HN-Y0w">
             <objects>
-                <viewController storyboardIdentifier="inBoardWKWebView" id="dtQ-TG-1QA" userLabel="inBoard WK Web View Controller" customClass="InBoardWKWebView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inReadTopWKWebView" id="dtQ-TG-1QA" userLabel="inRead Top WK Web View Controller" customClass="InReadTopWKWebView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exB-he-Hsa"/>
                         <viewControllerLayoutGuide type="bottom" id="I8A-GW-NmF"/>
@@ -1127,10 +1115,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="2202.5" y="898.5"/>
         </scene>
-        <!--inBoard Scroll View Controller - iPad-->
+        <!--inRead Top Scroll View Controller - iPad-->
         <scene sceneID="FmF-UW-cT4">
             <objects>
-                <viewController storyboardIdentifier="inBoardScrollViewForIPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inBoard Scroll View Controller - iPad" customClass="InBoardScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inReadTopScrollViewForIPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inRead Top Scroll View Controller - iPad" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGA-Ia-HPa"/>
                         <viewControllerLayoutGuide type="bottom" id="jLm-wh-Iu4"/>
@@ -1145,14 +1133,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tr-tH-MyN" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1527"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-uu-LOS" userLabel="inBoard">
-                                                <rect key="frame" x="0.0" y="0.0" width="768" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" priority="750" id="sHv-C3-cT8"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inBoard in a ScrollView is displayed on top" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="BS5-89-wIq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inRead Top in a ScrollView is displayed on top" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="BS5-89-wIq">
                                                 <rect key="frame" x="8" y="5" width="752" height="53"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1160,7 +1141,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozQ-GY-a7C">
                                                 <rect key="frame" x="8" y="78" width="752" height="1429"/>
-                                                <mutableString key="text">ipad Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
+                                                <string key="text">ipad Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
 
@@ -1176,7 +1157,7 @@ In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales ve
 
 Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
-Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.</mutableString>
+Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1189,12 +1170,9 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
                                             <constraint firstItem="ozQ-GY-a7C" firstAttribute="leading" secondItem="4tr-tH-MyN" secondAttribute="leading" constant="8" id="ISS-sX-uTV"/>
                                             <constraint firstItem="ozQ-GY-a7C" firstAttribute="trailing" secondItem="BS5-89-wIq" secondAttribute="trailing" id="JhZ-dn-QIx"/>
                                             <constraint firstAttribute="height" constant="1527" id="L5F-im-SGf"/>
-                                            <constraint firstItem="aRI-uu-LOS" firstAttribute="top" secondItem="4tr-tH-MyN" secondAttribute="top" id="SEV-DS-Jhd"/>
-                                            <constraint firstItem="BS5-89-wIq" firstAttribute="top" secondItem="aRI-uu-LOS" secondAttribute="bottom" constant="5" id="UT9-pa-N4N"/>
+                                            <constraint firstItem="BS5-89-wIq" firstAttribute="top" secondItem="4tr-tH-MyN" secondAttribute="top" constant="5" id="Z4h-ih-rEO"/>
                                             <constraint firstItem="ozQ-GY-a7C" firstAttribute="top" secondItem="BS5-89-wIq" secondAttribute="bottom" constant="20" id="g2G-9I-3xD"/>
                                             <constraint firstAttribute="trailing" secondItem="ozQ-GY-a7C" secondAttribute="trailing" constant="8" id="nr1-rb-6he"/>
-                                            <constraint firstItem="aRI-uu-LOS" firstAttribute="leading" secondItem="4tr-tH-MyN" secondAttribute="leading" id="s5O-yA-7yl"/>
-                                            <constraint firstAttribute="trailing" secondItem="aRI-uu-LOS" secondAttribute="trailing" id="ua5-on-jGv"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -1233,8 +1211,6 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="inBoardConstraint" destination="sHv-C3-cT8" id="fDH-9p-TNe"/>
-                        <outlet property="inBoardView" destination="aRI-uu-LOS" id="xPQ-3j-V2d"/>
                         <outlet property="scrollView" destination="ZX2-30-Lw4" id="Y2t-0z-Wec"/>
                     </connections>
                 </viewController>

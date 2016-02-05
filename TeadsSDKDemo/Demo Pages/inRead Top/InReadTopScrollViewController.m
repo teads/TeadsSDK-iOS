@@ -1,82 +1,49 @@
 //
-//  inBoardWKWebView.m
+//  InReadTopScrollViewController.m
 //  TeadsSDKDemo
 //
-//  Created by Nikolaï Roycourt on 17/12/2015.
-//  Copyright © 2015 Teads. All rights reserved.
+//  Created by Nikolaï Roycourt on 16/01/2015.
+//  Copyright (c) 2015 Teads. All rights reserved.
 //
 
-#import "InBoardWKWebView.h"
+#import "InReadTopScrollViewController.h"
 
-@interface InBoardWKWebView ()
+@interface InReadTopScrollViewController ()
 
-@property (strong, nonatomic) WKWebView *wkWwebView;
-
-@property (strong, nonatomic) TeadsVideo *teadsInBoard;
+@property (strong, nonatomic) TeadsVideo *teadsVideo;
 
 @end
 
-@implementation InBoardWKWebView
+@implementation InReadTopScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-    self.wkWwebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
-    self.wkWwebView.navigationDelegate = self;
+    self.scrollView.delegate = self;
     
-    [self.view addSubview:self.wkWwebView];
+    self.navigationItem.title = @"inRead Top ScrollView";
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
-    // inBoard
-    self.teadsInBoard = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.wkWwebView.scrollView delegate:self];
     
-    [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
-    
-    self.navigationItem.title = @"inBoard WKWebView";
-    
-    //Load a web page from an URL
-    NSURL *webSiteURL;
-    NSString *urlToLoad = [[NSUserDefaults standardUserDefaults] stringForKey:@"website"];
-    
-    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"website"] isEqual:@"Default demo website"]) {
-        webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
-    } else {
-        webSiteURL = [NSURL URLWithString:urlToLoad];
-    }
-    [self.wkWwebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
-
+    self.teadsVideo = [[TeadsVideo alloc] initInReadTopWithPlacementId:pid scrollView:self.scrollView delegate:self];
+    //Set background color to match parent container
+    [self.teadsVideo setBackgroundColor:[UIColor whiteColor]];
 }
-
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.teadsInBoard.isLoaded) {
-        [self.teadsInBoard viewControllerAppeared:self];
+    if (self.teadsVideo.isLoaded) {
+        [self.teadsVideo viewControllerAppeared:self];
     } else {
-        [self.teadsInBoard load];
+        [self.teadsVideo load];
     }
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.teadsInBoard viewControllerDisappeared:self];
-}
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-        decisionHandler(WKNavigationActionPolicyAllow);
-}
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    decisionHandler(WKNavigationResponsePolicyAllow);
-}
-
--(void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, NSURLCredentialPersistenceNone);
+    [self.teadsVideo viewControllerDisappeared:self];
 }
 
 #pragma mark -
@@ -89,7 +56,7 @@
  * @param error         : the TeadsError object
  */
 - (void)teadsVideo:(TeadsVideo *)video didFailLoading:(TeadsError *)error {
-
+    
 }
 
 /**
@@ -107,15 +74,6 @@
  * @param interstitial  : the TeadsVideo object
  */
 - (void)teadsVideoDidLoad:(TeadsVideo *)video {
-    
-}
-
-/**
- * NativeVideo failed to find a slot in web view
- *
- * @param interstitial  : the TeadsVideo object
- */
-- (void)teadsVideoFailedToFindAvailableSlot:(TeadsVideo *)video {
     
 }
 
@@ -196,7 +154,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillExpand:(TeadsVideo *)video {
+- (void)teadsVideoCanExpand:(TeadsVideo *)video {
     
 }
 
@@ -206,6 +164,7 @@
  * @param nativeVideo  : the TeadsVideo object
  */
 - (void)teadsVideoDidExpand:(TeadsVideo *)video {
+    
 }
 
 /**
