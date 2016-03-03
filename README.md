@@ -18,6 +18,10 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.0.2:
+- Fixed ERROR ITMS-90166 that might appear when submitting app to iTunes Connect
+- Added support for inRead Vertical
+
 v2.0.0:
 - New ad design and behaviors
 - Whole new version of SDK that brings breaking changes. Read [Migration guide from SDK v1.x to v2](http://mobile.teads.tv/sdk/documentation/ios/migration-from-sdk-v1-x)
