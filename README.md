@@ -18,6 +18,9 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.0.3:
+- Minor internal improvements
+
 v2.0.2:
 - Fixed ERROR ITMS-90166 that might appear when submitting app to iTunes Connect
 - Added support for inRead Vertical
