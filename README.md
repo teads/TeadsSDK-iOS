@@ -18,6 +18,12 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.0.4:
+- Fixed a crash that can be caused by a corrupted video file
+- Fixed small memory leaks
+- Fixed the error "Failed to load font" (this won't happen anymore, promised)
+- Fixed an occasionnal "unrecognized selector" error log (selector is now recognized)
+
 v2.0.3:
 - Minor internal improvements
 
