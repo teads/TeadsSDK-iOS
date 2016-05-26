@@ -18,6 +18,14 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.1.0:
+- Fixed potential crash when video file received is corrupted
+- Fixed a typo in callback method `-teadsVideoCanExpand:withRatio:`
+- Memory optimizations
+- Improved integration in some complex view hierachies
+- New TeadsVideo setting available : `maxContainerHeight`
+- New branding features
+
 v2.0.4:
 - Fixed a crash that can be caused by a corrupted video file
 - Fixed small memory leaks
