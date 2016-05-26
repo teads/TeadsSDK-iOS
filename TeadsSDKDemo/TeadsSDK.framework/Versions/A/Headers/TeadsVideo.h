@@ -11,6 +11,11 @@
 
 @protocol TeadsVideoDelegate;
 
+typedef enum {
+    TeadsInReadTopPositionHeader,
+    TeadsInReadTopPositionFooter
+} TeadsInReadTopPosition;
+
 @interface TeadsVideo : NSObject
 
 //////////////////////////////////////////////////////////////
@@ -29,6 +34,7 @@
 
 @property (nonatomic) BOOL playbackActive;
 @property (nonatomic) CGFloat maxContainerWidth;
+@property (nonatomic) CGFloat maxContainerHeight;
 
 //////////////////////////////////////////////////////////////
 #pragma mark -
@@ -53,10 +59,21 @@
 * -initInReadTopWithPlacementId:scrollView:delegate:
 *
 * @param placement     : a placement ID string
-* @param webView       : a UIScrollView object
+* @param scrollView       : a UIScrollView object
 * @param teadsDelegate : the instance that implements TeadsVideoDelegate
 */
 - (id)initInReadTopWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
+
+
+/**
+ * -initInReadTopWithPlacementId:scrollView:delegate:
+ *
+ * @param placement     : a placement ID string
+ * @param scrollView       : a UIScrollView object
+ * @param TeadsInReadTopPosition : the position of the inReadTop
+ * @param teadsDelegate : the instance that implements TeadsVideoDelegate
+ */
+- (id)initInReadTopWithPlacementId:(NSString *)placement position:(TeadsInReadTopPosition)position scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 #pragma mark -
 #pragma mark inRead
@@ -342,7 +359,7 @@
  *
  * @param video  : the TeadsVideo object
  */
-- (void)teadsVideoCanExpand:(TeadsVideo *)video WithRatio:(CGFloat)ratio;
+- (void)teadsVideoCanExpand:(TeadsVideo *)video withRatio:(CGFloat)ratio;
 
 /**
  * Video Will expand
