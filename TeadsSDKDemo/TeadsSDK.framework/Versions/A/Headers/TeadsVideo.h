@@ -9,14 +9,21 @@
 #import <WebKit/WebKit.h>
 #import "TeadsError.h"
 
+__attribute__((deprecated))
 @protocol TeadsVideoDelegate;
 
-typedef enum {
-    TeadsInReadTopPositionHeader,
-    TeadsInReadTopPositionFooter
-} TeadsInReadTopPosition;
+typedef NS_ENUM(NSInteger, TeadsVideoInReadTopPosition) {
+    TeadsVideoInReadTopPositionHeader,
+    TeadsVideoInReadTopPositionFooter
+};
 
-@interface TeadsVideo : NSObject
+typedef NS_ENUM(NSInteger, TeadsVideoPlayerColorMode) {
+    TeadsVideoPlayerColorModeDark,
+    TeadsVideoPlayerColorModeLight
+};
+
+__attribute__((deprecated ("use TeadsAd now")))
+@interface TeadsVideo : NSObject //TeadsVideo is deprecated and going to be removed soon. Please use TeadsAd.
 
 //////////////////////////////////////////////////////////////
 #pragma mark -
@@ -35,6 +42,8 @@ typedef enum {
 @property (nonatomic) BOOL playbackActive;
 @property (nonatomic) CGFloat maxContainerWidth;
 @property (nonatomic) CGFloat maxContainerHeight;
+
+@property (nonatomic) TeadsVideoPlayerColorMode playerColorMode; // Color mode for start and end screens
 
 //////////////////////////////////////////////////////////////
 #pragma mark -
@@ -63,17 +72,6 @@ typedef enum {
 * @param teadsDelegate : the instance that implements TeadsVideoDelegate
 */
 - (id)initInReadTopWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
-
-
-/**
- * -initInReadTopWithPlacementId:scrollView:delegate:
- *
- * @param placement     : a placement ID string
- * @param scrollView       : a UIScrollView object
- * @param TeadsInReadTopPosition : the position of the inReadTop
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
- */
-- (id)initInReadTopWithPlacementId:(NSString *)placement position:(TeadsInReadTopPosition)position scrollView:(UIScrollView *)scrollView delegate:(id<TeadsVideoDelegate>)teadsDelegate;
 
 #pragma mark -
 #pragma mark inRead
@@ -167,6 +165,7 @@ typedef enum {
  *
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
+
 
 /*
  * -setAltScrollView:
@@ -271,6 +270,7 @@ typedef enum {
  * Delegate about TeadsVastVideo object: set the viewController responsible of modal presentation
  * and gives information about TeadsVideo lifecycle
  */
+__attribute__((deprecated))
 @protocol TeadsVideoDelegate <NSObject>
 
 @optional

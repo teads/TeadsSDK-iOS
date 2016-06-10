@@ -10,7 +10,7 @@
 
 @interface InReadTableViewController ()
 
-@property (nonatomic, strong) TeadsVideo *teadsInRead;
+@property (nonatomic, strong) TeadsAd *teadsInRead;
 
 @end
 
@@ -30,7 +30,7 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     //Create the teadsInRead with a PLACEMENT_ID, an IndexPath, a tableView, a rootViewController and a delegate
-    self.teadsInRead = [[TeadsVideo alloc] initInReadWithPlacementId:pid insertionIndexPath:pathForTeadsInRead tableView:self.tableView delegate:self];
+    self.teadsInRead = [[TeadsAd alloc] initInReadWithPlacementId:pid insertionIndexPath:pathForTeadsInRead tableView:self.tableView delegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -100,10 +100,10 @@
 /**
  * NativeVideo Failed to Load
  *
- * @param interstitial  : the TeadsVideo object
+ * @param interstitial  : the TeadsAd object
  * @param error         : the TeadsError object
  */
-- (void)teadsVideo:(TeadsVideo *)video didFailLoading:(TeadsError *)error {
+- (void)teadsAd:(TeadsAd *)video didFailLoading:(TeadsError *)error {
     
 }
 
@@ -112,7 +112,7 @@
  *
  * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsVideoWillLoad:(TeadsVideo *)video {
+- (void)teadsAdWillLoad:(TeadsAd *)video {
     
 }
 
@@ -121,7 +121,7 @@
  *
  * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsVideoDidLoad:(TeadsVideo *)video {
+- (void)teadsAdDidLoad:(TeadsAd *)video {
     
 }
 
@@ -130,7 +130,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillStart:(TeadsVideo *)video {
+- (void)teadsAdWillStart:(TeadsAd *)video {
     
 }
 
@@ -139,7 +139,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidStart:(TeadsVideo *)video {
+- (void)teadsAdDidStart:(TeadsAd *)video {
     
 }
 
@@ -148,7 +148,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillStop:(TeadsVideo *)video {
+- (void)teadsAdWillStop:(TeadsAd *)video {
     
 }
 
@@ -157,7 +157,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidStop:(TeadsVideo *)video {
+- (void)teadsAdDidStop:(TeadsAd *)video {
     
 }
 
@@ -166,7 +166,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidPause:(TeadsVideo *)video {
+- (void)teadsAdDidPause:(TeadsAd *)video {
     
 }
 
@@ -175,7 +175,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidResume:(TeadsVideo *)video {
+- (void)teadsAdDidResume:(TeadsAd *)video {
     
 }
 
@@ -184,7 +184,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidMute:(TeadsVideo *)video {
+- (void)teadsAdDidMute:(TeadsAd *)video {
     
 }
 
@@ -193,7 +193,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidUnmute:(TeadsVideo *)video {
+- (void)teadsAdDidUnmute:(TeadsAd *)video {
     
 }
 
@@ -202,7 +202,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillExpand:(TeadsVideo *)video {
+- (void)teadsAdWillExpand:(TeadsAd *)video {
     
 }
 
@@ -211,7 +211,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
--(void)teadsVideoDidExpand:(TeadsVideo *)video {
+-(void)teadsVideoDidExpand:(TeadsAd *)video {
     
 }
 
@@ -220,7 +220,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillCollapse:(TeadsVideo *)video {
+- (void)teadsAdWillCollapse:(TeadsAd *)video {
     
 }
 
@@ -229,7 +229,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidCollapse:(TeadsVideo *)video {
+- (void)teadsAdDidCollapse:(TeadsAd *)video {
     
 }
 
@@ -238,7 +238,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWasClicked:(TeadsVideo *)video {
+- (void)teadsAdWasClicked:(TeadsAd *)video {
     
 }
 
@@ -247,7 +247,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidClickBrowserClose:(TeadsVideo *)video {
+- (void)teadsAdDidClickBrowserClose:(TeadsAd *)video {
     
 }
 
@@ -256,7 +256,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillTakeOverFullScreen:(TeadsVideo *)video {
+- (void)teadsAdWillTakeOverFullScreen:(TeadsAd *)video {
     
 }
 
@@ -265,7 +265,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidTakeOverFullScreen:(TeadsVideo *)video {
+- (void)teadsAdDidTakeOverFullScreen:(TeadsAd *)video {
     
 }
 
@@ -274,7 +274,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoWillDismissFullscreen:(TeadsVideo *)video {
+- (void)teadsAdWillDismissFullscreen:(TeadsAd *)video {
     
 }
 
@@ -283,7 +283,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidDismissFullscreen:(TeadsVideo *)video {
+- (void)teadsAdDidDismissFullscreen:(TeadsAd *)video {
     
 }
 
@@ -292,7 +292,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoSkipButtonTapped:(TeadsVideo *)video {
+- (void)teadsAdSkipButtonTapped:(TeadsAd *)video {
     
 }
 
@@ -301,7 +301,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoSkipButtonDidShow:(TeadsVideo *)video {
+- (void)teadsAdSkipButtonDidShow:(TeadsAd *)video {
     
 }
 
@@ -310,7 +310,7 @@
  *
  * @param nativeVideo  : the TeadsVideo object
  */
-- (void)teadsVideoDidClean:(TeadsVideo *)video {
+- (void)teadsAdDidClean:(TeadsAd *)video {
     
 }
 

@@ -9,8 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsError.h>
+#import <TeadsSDK/TeadsAd.h>
 #import <TeadsSDK/TeadsVideo.h>
-#import <TeadsSDK/TeadsInterstitial.h>
 
 typedef enum {
     TeadsLogLevelInactive   = 0,
@@ -22,5 +22,6 @@ typedef enum {
 @interface TeadsSDK : NSObject
 
 +(void)setLogLevel:(TeadsLogLevelType)level; //Set the log level of Teads SDK
++(NSString *)versionNumber; //Get version number of Teads SDK
 
 @end

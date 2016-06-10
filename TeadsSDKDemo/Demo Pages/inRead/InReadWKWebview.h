@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InReadWKWebview : UIViewController  <WKNavigationDelegate, UIScrollViewDelegate, TeadsVideoDelegate>
+@interface InReadWKWebview : UIViewController  <WKNavigationDelegate, UIScrollViewDelegate, TeadsAdDelegate>
 
 
 @end
