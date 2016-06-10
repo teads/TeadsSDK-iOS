@@ -17,7 +17,6 @@
 #import "CustomNativeVideoScrollViewViewController.h"
 #import "InReadWebViewController.h"
 #import "InReadWKWebview.h"
-#import "InFlowViewController.h"
 
 #import "DemoUtils.h"
 
@@ -36,7 +35,7 @@
 
     self.title = @"Teads SDK Demo";
     
-    titlesForHeader = @[@"Native Video", @"Interstitial", @"App Parameters"];
+    titlesForHeader = @[@"Native Video", @"App Parameters"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,8 +69,7 @@
     
     UITableViewCell *cell;
     
-    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 10 || indexPath.row == 12)) ||
-        (indexPath.section == 1 && indexPath.row == 0)) {
+    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 10 || indexPath.row == 12))) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTitleIdentifier];
@@ -130,17 +128,6 @@
             default:
                 break;
         }
-    } else if (indexPath.section == 1) {
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"inFlow";
-                break;
-            case 1:
-                cell.textLabel.text = @"inFlow demo page";
-                break;
-            default:
-                break;
-        } 
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -218,10 +205,7 @@
                 break;
         }
         
-    } else if (indexPath.section == 1 && indexPath.row == 1) {
-        InFlowViewController *inFlow = [storyboard instantiateViewControllerWithIdentifier:@"inFlow"];
-        controller = inFlow;
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0: {
                 [DemoUtils presentControllerToChangePid:self];

@@ -15,7 +15,6 @@
 		01A4E6E61B46826F005D381E /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
-		01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB43D1A6958D7005E6711 /* InFlowViewController.m */; };
 		01A4E6EF1B46826F005D381E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB151A68288400E36306 /* main.m */; };
 		01A4E6F11B46826F005D381E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB3E1A68303700E36306 /* MainViewController.m */; };
 		01A4E6FA1B46826F005D381E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB201A68288400E36306 /* Images.xcassets */; };
@@ -44,7 +43,6 @@
 		91066C0B1C2B1531003E845F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91066C0A1C2B1531003E845F /* WebKit.framework */; };
 		91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91066C101C2B15F2003E845F /* InReadWKWebview.m */; };
 		91066C121C2B162D003E845F /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B565D31BFB3B4700347185 /* DemoUtils.m */; };
-		910CB43E1A6958D7005E6711 /* InFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB43D1A6958D7005E6711 /* InFlowViewController.m */; };
 		910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44B1A695933005E6711 /* InReadScrollViewController.m */; };
 		910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44D1A695933005E6711 /* InReadTableViewController.m */; };
 		910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910CB44F1A695933005E6711 /* InReadWebViewController.m */; };
@@ -159,8 +157,6 @@
 		91066C0A1C2B1531003E845F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		91066C0F1C2B15F2003E845F /* InReadWKWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadWKWebview.h; sourceTree = "<group>"; };
 		91066C101C2B15F2003E845F /* InReadWKWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWKWebview.m; sourceTree = "<group>"; };
-		910CB43C1A6958D7005E6711 /* InFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InFlowViewController.h; sourceTree = "<group>"; };
-		910CB43D1A6958D7005E6711 /* InFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InFlowViewController.m; sourceTree = "<group>"; };
 		910CB44A1A695933005E6711 /* InReadScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadScrollViewController.h; sourceTree = "<group>"; };
 		910CB44B1A695933005E6711 /* InReadScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadScrollViewController.m; sourceTree = "<group>"; };
 		910CB44C1A695933005E6711 /* InReadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadTableViewController.h; sourceTree = "<group>"; };
@@ -372,8 +368,6 @@
 			children = (
 				91E125BA1C64B7AA0095F327 /* inRead Top */,
 				910CB4401A695900005E6711 /* inRead */,
-				910CB43C1A6958D7005E6711 /* InFlowViewController.h */,
-				910CB43D1A6958D7005E6711 /* InFlowViewController.m */,
 			);
 			path = "Demo Pages";
 			sourceTree = "<group>";
@@ -618,7 +612,6 @@
 				01A4E6EB1B46826F005D381E /* AppDelegate.m in Sources */,
 				01A4E6ED1B46826F005D381E /* InReadTableViewController.m in Sources */,
 				91E125CA1C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */,
-				01A4E6EE1B46826F005D381E /* InFlowViewController.m in Sources */,
 				01A4E6EF1B46826F005D381E /* main.m in Sources */,
 				91E125C81C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */,
 				01A4E6F11B46826F005D381E /* MainViewController.m in Sources */,
@@ -639,7 +632,6 @@
 				916CFB191A68288400E36306 /* AppDelegate.m in Sources */,
 				91E125C51C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */,
 				910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */,
-				910CB43E1A6958D7005E6711 /* InFlowViewController.m in Sources */,
 				91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */,
 				916CFB161A68288400E36306 /* main.m in Sources */,
 				916CFB3F1A68303700E36306 /* MainViewController.m in Sources */,

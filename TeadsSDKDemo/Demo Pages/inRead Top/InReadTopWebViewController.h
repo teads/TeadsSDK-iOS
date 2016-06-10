@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InReadTopWebViewController : UIViewController <UIWebViewDelegate, TeadsVideoDelegate>
+@interface InReadTopWebViewController : UIViewController <UIWebViewDelegate, TeadsAdDelegate>
 
 @end
