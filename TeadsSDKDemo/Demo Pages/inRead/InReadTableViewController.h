@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InReadTableViewController : UITableViewController <TeadsVideoDelegate>
+@interface InReadTableViewController : UITableViewController <TeadsAdDelegate>
 
 @end

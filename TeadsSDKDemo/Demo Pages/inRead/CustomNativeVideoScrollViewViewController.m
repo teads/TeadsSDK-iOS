@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (strong, nonatomic) TeadsVideo *teadsVideo;
+@property (strong, nonatomic) TeadsAd *teadsAd;
 @property (strong, nonatomic) IBOutlet UILabel *uiLabelForReference;
 
 //Defines the Teads video frame for display
@@ -35,25 +35,25 @@
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
-    self.teadsVideo = [[TeadsVideo alloc] initWithPlacementId:pid delegate:self];
+    self.teadsAd = [[TeadsAd alloc] initWithPlacementId:pid delegate:self];
     
-    [self.teadsVideo.videoView setFrame:collapsedVideoViewFrame];
-    [self.scrollView addSubview:self.teadsVideo.videoView];
-    [self.teadsVideo videoViewWasAdded];
-    [self.teadsVideo load];
+    [self.teadsAd.videoView setFrame:collapsedVideoViewFrame];
+    [self.scrollView addSubview:self.teadsAd.videoView];
+    [self.teadsAd videoViewWasAdded];
+    [self.teadsAd load];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.teadsVideo viewControllerDisappeared:self];
+    [self.teadsAd viewControllerDisappeared:self];
 }
 
 #pragma mark -
 #pragma UIScrollView
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.teadsVideo videoViewDidMove:scrollView];
+    [self.teadsAd videoViewDidMove:scrollView];
 }
 
 #pragma mark -
@@ -64,7 +64,7 @@
  *
  * @param interstitial  : the TeadsVideo object
  */
-- (void)teadsVideoDidLoad:(TeadsVideo *)nativeVideo{
+- (void)teadsAdDidLoad:(TeadsAd *)nativeVideo{
     
 }
 
@@ -73,17 +73,17 @@
  *
  * @param video  : the TeadsVideo object
  */
-- (void)teadsVideoCanExpand:(TeadsVideo *)video WithRatio:(CGFloat)ratio{
+- (void)teadsAdCanExpand:(TeadsAd *)video WithRatio:(CGFloat)ratio{
     
     CGFloat videoViewFrameWidth = CGRectGetMaxX(self.uiLabelForReference.frame) - CGRectGetMinX(self.uiLabelForReference.frame);
     
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-        [self.teadsVideo.videoView setFrame:CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
+        [self.teadsAd.videoView setFrame:CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
                                                        CGRectGetMaxY(self.uiLabelForReference.frame),
                                                        videoViewFrameWidth,
                                                        videoViewFrameWidth * ratio)];
     } completion:^(BOOL finished) {
-        [self.teadsVideo videoViewDidExpand];
+        [self.teadsAd videoViewDidExpand];
     }];
 }
 
@@ -92,17 +92,17 @@
  *
  * @param video  : the TeadsVideo object
  */
-- (void)teadsVideoCanCollapse:(TeadsVideo *)video {
+- (void)teadsAdCanCollapse:(TeadsAd *)video {
     
-    CGRect collapsedFrame = CGRectMake(CGRectGetMinX(self.teadsVideo.videoView.frame),
-                                       CGRectGetMinY(self.teadsVideo.videoView.frame),
-                                       CGRectGetWidth(self.teadsVideo.videoView.frame),
+    CGRect collapsedFrame = CGRectMake(CGRectGetMinX(self.teadsAd.videoView.frame),
+                                       CGRectGetMinY(self.teadsAd.videoView.frame),
+                                       CGRectGetWidth(self.teadsAd.videoView.frame),
                                        0);
     
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
-        [self.teadsVideo.videoView setFrame:collapsedFrame];
+        [self.teadsAd.videoView setFrame:collapsedFrame];
     } completion:^(BOOL finished) {
-        [self.teadsVideo videoViewDidCollapse];
+        [self.teadsAd videoViewDidCollapse];
     }];
     
 }

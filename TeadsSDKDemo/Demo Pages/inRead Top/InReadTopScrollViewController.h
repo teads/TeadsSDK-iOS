@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsSDK.h>
 
-@interface InReadTopScrollViewController : UIViewController <UIScrollViewDelegate, TeadsVideoDelegate>
+@interface InReadTopScrollViewController : UIViewController <UIScrollViewDelegate, TeadsAdDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
