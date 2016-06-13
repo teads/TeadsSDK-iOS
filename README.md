@@ -18,6 +18,14 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.2.1:
+- TeadsVideo is now deprecated, you should use TeadsAd instead
+- Fixed issues with iOS 7
+- Fixed a bug that can occure with some specific video files
+- Fixed some issues with `clean` call
+- Fixed last warning logs that may appear
+- Internal improvements
+
 v2.1.0:
 - Fixed potential crash when video file received is corrupted
 - Fixed a typo in callback method `-teadsVideoCanExpand:withRatio:`
