@@ -1,22 +1,4 @@
-# Teads iOS SDK
-
-[![Build Status](https://jenkins.teads.net/buildStatus/icon?job=TeadsSDK-iOS_master)](https://jenkins.teads.net/view/Mobile/job/TeadsSDK-iOS_master/)
-
-Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. 
-This iOS Demo App includes the Teads Framework and is showing integration examples.
-
-## Build the sample app
-
-* Press 'Clone', wait until repository checkout
-* Open TeadsSDKDemo.xcodeproj in XCode 
-* Finally, build and test on your device
-
-## Integration Documentation
-
-Integration instructions are available on [Teads SDK documentation](http://mobile.teads.tv/sdk/documentation/)
-
-
-## Changelog
+# Changelog
 
 v2.3.1:
 - SDK should not stop audio from other apps when player is muted
@@ -56,12 +38,8 @@ v2.0.0:
 - New ad design and behaviors
 - Whole new version of SDK that brings breaking changes. Read [Migration guide from SDK v1.x to v2](http://mobile.teads.tv/sdk/documentation/ios/migration-from-sdk-v1-x)
 
-v1.6.6:
-- Fixed duplicated symbol with Reachability framework
-
-v1.6.5:
-- Fixed specific case when VAST progress event were not sent
-- Changed present modal view for fullscreen
+----------
+### Old version (SDK v1.x)
 
 v1.6.6:
 - Fixed duplicated symbol with Reachability framework
@@ -93,3 +71,82 @@ v1.6.0:
 - Fixed log error message when server has no ad available 
 - Fixed duplicated symbols with Millenium Media SDK
 - Minor internal improvements
+
+v1.5.1:
+- Fix with TableView section headers
+- Fix non-released objects with WebView
+- Other minor fixes and improvements
+
+v1.5.0:
+- Fixed non-release elements with inRead/inBoard (wk)webview
+- Removed unused resources
+- Renamed following methods for TeadsNativeVideo :
+  - `getNativeVideoView:` => `nativeVideoView:`
+  - `getExpandedFrame:` => `expandedFrame:`
+  - `getExpandAnimationDuration:` => `expandAnimationDuration:`
+  - `getCollapseAnimationDuration:` => `collapseAnimationDuration:`
+
+v1.4.4:
+- Increased close button touch-zone
+- Fixed false log error display
+- Bug fixes
+
+v1.4.3:
+- Bug fix CoreData migration
+- Bug fixes and improvements
+
+v1.4.2:
+- Improved VAST handling elements
+- Bug fixes and improvements
+
+V1.4.0:
+- New feature : Custom Native Video
+- New tracking status « isStarted »
+- Bug fixes and improvements
+
+v1.3.4:
+- Alternative scroll view for web view integrations
+- Added callback when no slot found in web view
+- Bug fixes and performance improvements
+
+v1.3.3:
+- New read-only data about video ad experience
+- New playing tracking status
+- Bug fixes and improvements
+
+v1.3.2:
+- Fullscreen experience is enhanced
+- Minor bug fixes and improvements
+
+v1.3.1:
+- Fix bug iOS7
+- Various bug fixes & Improvements
+
+v1.3.0:
+- Improve VAST parsing
+- Improve handling of clean functions
+- Various bug fixes and improvements
+- Improve testing of media files formats
+
+v1.2.0:
+- Add support for WKWebView (inRead & inBoard formats)
+- Simplified implementation & load process
+- Add callbacks about cleaning ads
+- Bug fixes & optimizations
+
+v1.1.1:
+- Add AdFactory feature for Interstitial ads
+- Minor Bug fixes in callbacks
+
+v1.1:
+- New build configuration (framework + bundle)
+- New AdFactory feature
+- Minor Bug fixes & performance improvements
+
+v1.0.1:
+- Memory & performance optimization
+- Minor bug fixes
+- Add reward handling
+
+v1.0:
+- First version
