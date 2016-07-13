@@ -60,9 +60,9 @@
 #pragma mark Teads delegate
 
 /**
- * NativeVideo Did Load (loaded successfully)
+ * TeadsAd Did Load (loaded successfully)
  *
- * @param interstitial  : the TeadsVideo object
+ * @param TeadsAd  : the TeadsAd object
  */
 - (void)teadsAdDidLoad:(TeadsAd *)nativeVideo{
     
@@ -71,7 +71,7 @@
 /**
  * Teads Video is ready to be shown
  *
- * @param video  : the TeadsVideo object
+ * @param video  : the TeadsAd object
  */
 - (void)teadsAdCanExpand:(TeadsAd *)video WithRatio:(CGFloat)ratio{
     
@@ -90,7 +90,7 @@
 /**
  * Teads Video can be collapsed
  *
- * @param video  : the TeadsVideo object
+ * @param video  : the TeadsAd object
  */
 - (void)teadsAdCanCollapse:(TeadsAd *)video {
     

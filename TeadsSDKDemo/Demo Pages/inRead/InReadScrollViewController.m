@@ -46,12 +46,12 @@
 }
 
 #pragma mark -
-#pragma mark - TeadsVideoDelegate
+#pragma mark - TeadsAdDelegate
 
 /**
  * NativeVideo Failed to Load
  *
- * @param interstitial  : the TeadsVideo object
+ * @param interstitial  : the TeadsAd object
  * @param error         : the TeadsError object
  */
 - (void)teadsAd:(TeadsAd *)video didFailLoading:(TeadsError *)error {
@@ -61,7 +61,7 @@
 /**
  * NativeVideo Will Load (loading)
  *
- * @param interstitial  : the TeadsVideo object
+ * @param interstitial  : the TeadsAd object
  */
 - (void)teadsAdWillLoad:(TeadsAd *)video {
     
@@ -70,7 +70,7 @@
 /**
  * NativeVideo Did Load (loaded successfully)
  *
- * @param interstitial  : the TeadsVideo object
+ * @param interstitial  : the TeadsAd object
  */
 - (void)teadsAdDidLoad:(TeadsAd *)video {
     
@@ -79,7 +79,7 @@
 /**
  * NativeVideo Will Start Playing (loading)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillStart:(TeadsAd *)video {
     
@@ -88,7 +88,7 @@
 /**
  * NativeVideo Did Start Playing (playing)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidStart:(TeadsAd *)video {
     
@@ -97,7 +97,7 @@
 /**
  * NativeVideo Will Stop Playing (stopping)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillStop:(TeadsAd *)video {
     
@@ -106,7 +106,7 @@
 /**
  * NativeVideo Did Stop Playing (stopped)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidStop:(TeadsAd *)video {
     
@@ -115,7 +115,7 @@
 /**
  * NativeVideo Did Pause (paused)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidPause:(TeadsAd *)video {
     
@@ -124,7 +124,7 @@
 /**
  * NativeVideo Did Resume (playing)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidResume:(TeadsAd *)video {
     
@@ -133,7 +133,7 @@
 /**
  * NativeVideo Did Mute Sound
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidMute:(TeadsAd *)video {
     
@@ -142,7 +142,7 @@
 /**
  * NativeVideo Did Unmute Sound
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidUnmute:(TeadsAd *)video {
     
@@ -151,7 +151,7 @@
 /**
  * NativeVideo Will expand
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillExpand:(TeadsAd *)video {
     
@@ -160,7 +160,7 @@
 /**
  * NativeVideo Did expand
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 -(void)teadsAdDidExpand:(TeadsAd *)video {
     
@@ -169,7 +169,7 @@
 /**
  * NativeVideo Will collapse
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillCollapse:(TeadsAd *)video {
     
@@ -178,7 +178,7 @@
 /**
  * NativeVideo did collapse
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidCollapse:(TeadsAd *)video {
     
@@ -187,7 +187,7 @@
 /**
  * NativeVideo was clicked
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWasClicked:(TeadsAd *)video {
     
@@ -196,7 +196,7 @@
 /**
  * NativeVideo Did Stop Playing (stopped)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidClickBrowserClose:(TeadsAd *)video {
     
@@ -205,7 +205,7 @@
 /**
  * NativeVideo Will Take Over Fullscreen
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillTakeOverFullScreen:(TeadsAd *)video {
     
@@ -214,7 +214,7 @@
 /**
  * NativeVideo Did Take Over Fullscreen
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidTakeOverFullScreen:(TeadsAd *)video {
     
@@ -223,7 +223,7 @@
 /**
  * NativeVideo Will Dismiss Fullscreen
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdWillDismissFullscreen:(TeadsAd *)video {
     
@@ -232,7 +232,7 @@
 /**
  * NativeVideo Did Dismiss Fullscreen
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidDismissFullscreen:(TeadsAd *)video {
     
@@ -241,7 +241,7 @@
 /**
  * NativeVideo Skip Button Was Tapped (skip button pressed)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdSkipButtonTapped:(TeadsAd *)video {
     
@@ -250,7 +250,7 @@
 /**
  * NativeVideo Skip Button Did Show (skip button appeared)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdSkipButtonDidShow:(TeadsAd *)video {
     
@@ -259,7 +259,7 @@
 /**
  * NativeVideo did clean (all related resoures have been removed)
  *
- * @param nativeVideo  : the TeadsVideo object
+ * @param nativeVideo  : the TeadsAd object
  */
 - (void)teadsAdDidClean:(TeadsAd *)video {
     
