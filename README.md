@@ -18,6 +18,11 @@ Integration instructions are available on [Teads SDK documentation](http://mobil
 
 ## Changelog
 
+v2.3.1:
+- SDK should not stop audio from other apps when player is muted
+- Fixed an offset issue with inRead Top
+- Internal improvements
+
 v2.2.1:
 - TeadsVideo is now deprecated, you should use TeadsAd instead
 - Fixed issues with iOS 7
