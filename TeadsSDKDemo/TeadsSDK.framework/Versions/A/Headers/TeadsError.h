@@ -15,6 +15,7 @@ typedef enum TeadsErrorEnum {
     TeadsParseTimeout,
     TeadsNotFilled,
     TeadsVastError,
+    TeadsDisplayError,
     TeadsSettingsError,
     TeadsServerBadResponse,
     TeadsInternalError,
@@ -37,6 +38,7 @@ typedef enum TeadsErrorEnum {
 + (TeadsError *)parseTimeout;
 + (TeadsError *)notFilled;
 + (TeadsError *)vastError:(NSString *)code;
++ (TeadsError *)displayError;
 + (TeadsError *)settingsError;
 + (TeadsError *)jsonCorrupted;
 + (TeadsError *)serverBadResponse;
