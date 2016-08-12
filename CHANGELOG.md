@@ -1,5 +1,10 @@
 # Changelog
 
+v2.3.3:
+- new engage format
+- Fixed issue with sound when app goes in background
+- New VAST macros support
+
 v2.3.1:
 - SDK should not stop audio from other apps when player is muted
 - Fixed an offset issue with inRead Top
