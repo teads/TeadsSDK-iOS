@@ -1,6 +1,6 @@
 # Changelog
 
-v2.3.2:
+v2.3.3:
 - new engage format
 - Fixed issue with sound when app goes in background
 - New VAST macros support
