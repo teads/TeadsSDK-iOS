@@ -10,7 +10,7 @@ s.description  = <<-DESC
 
 s.ios.deployment_target     = "7.0"
 
-s.homepage     = "http://www.teads.tv"
+s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
 s.license      = "Apache 2.0"
 s.author       = { "Teads" => "support-sdk@teads.tv" }
 s.source       = { :git => "https://github.com/teads/TeadsSDK-iOS.git", :branch => "master", :tag => "v#{s.version}" }
