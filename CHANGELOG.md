@@ -1,7 +1,14 @@
 # Changelog
 
+v2.3.4:
+ - Fixed issue with status when rotating video fullscreen if app doesn't allow rotation
+ - Fixed issue with WKWebView that could block aync loaded content
+ - Fixed minor issue with engage format
+ - Fixed issue preventing square ad to display in landscape
+ - Internal improvements
+
 v2.3.3:
-- new engage format
+- New engage format
 - Fixed issue with sound when app goes in background
 - New VAST macros support
 

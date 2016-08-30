@@ -27,9 +27,25 @@ Read [Project Setup](http://mobile.teads.tv/sdk/documentation/ios/ios-project-se
 
 ### CocoaPods
 
-Teads SDK is available on Cocoapods. Add `TeadsSDK` to your `Podfile
+Teads SDK is available on Cocoapods. Add `TeadsSDK` to your Podfile
 ```
 pod 'TeadsSDK'
+```
+
+#### App Transport Security
+
+Even if Teads SDK if fully compliant with iOS 9 network restrictions (SSL ready), third party ad servers don't all use SSL yet. This is why we highly recommend to allow non-ssl connexions until all ad servers and tracking vendors are ssl compliant too.
+
+You should add the `NSAppTransportSecurity` exception with `NSAllowsArbitraryLoads` exception to plist:
+
+![AppTransportSecurity](AppTransportSecurity.png)
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
 ```
 
 ## Changelog
