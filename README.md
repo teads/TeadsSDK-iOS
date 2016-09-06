@@ -1,5 +1,6 @@
 # Teads iOS SDK
 
+
 <p align="center">
     <img src="https://jenkins.teads.net/buildStatus/icon?job=TeadsSDK-iOS_master" alt="Build Status"/>
     <img src="https://img.shields.io/badge/platform-iOS%207%2B-blue.svg?style=flat" alt="Platform: iOS 7+"/>
@@ -62,6 +63,8 @@ CocoaPods is a dependency manager for Xcode projects.
 ## App Transport Security
 
 Even if Teads SDK if fully compliant with iOS 9 network restrictions (SSL ready), third party ad servers don't all use SSL yet. This is why we highly recommend to allow non-ssl connexions until all ad servers and tracking vendors are ssl compliant too.
+
+
 
 You should add the `NSAppTransportSecurity` exception with `NSAllowsArbitraryLoads` exception to plist:
 
