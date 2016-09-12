@@ -12,16 +12,27 @@
 
 @protocol TeadsAdDelegate;
 
+/**
+ * The position for inReadTop
+ * @discussion Default value is TeadsAdInReadTopPositionHeader
+ */
 typedef NS_ENUM(NSInteger, TeadsAdInReadTopPosition) {
     TeadsAdInReadTopPositionHeader,
     TeadsAdInReadTopPositionFooter
 };
 
+/**
+ * Player color mode for start and end screens
+ * @discussion Default value is TeadsAdPlayerColorModeDark
+ */
 typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
     TeadsAdPlayerColorModeDark,
     TeadsAdPlayerColorModeLight
 };
 
+/**
+ * The object used for displaying ads
+ */
 @interface TeadsAd : NSObject
 
 //////////////////////////////////////////////////////////////
@@ -30,19 +41,50 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 #pragma mark -
 /////////////////////////////////////////////////////////////
 
-@property (nonatomic, readonly) BOOL isLoaded;  //returns YES if Teads Video is loaded
-@property (nonatomic, readonly) BOOL isStarted; //returns YES if Teads Video has started playing
-@property (nonatomic, readonly) BOOL isPlaying; //returns YES if Teads Video is playing
+/**
+ * Whether or not Teads Ad is loaded
+ */
+@property (nonatomic, readonly) BOOL isLoaded;
+/**
+ * Whether or not Teads Ad has started playing
+ */
+@property (nonatomic, readonly) BOOL isStarted;
+/**
+ * Whether or not Teads Ad is playing
+ */
+@property (nonatomic, readonly) BOOL isPlaying;
+/**
+ * Whether or not Teads Ad player sound is active
+ */
+@property (nonatomic, readonly) BOOL isSoundEnabled;
 
-@property (nonatomic, readonly) BOOL isSoundEnabled; //returns YES if Teads Video player sound is active
 
+/**
+ * The object listening to TeadsAd
+ */
 @property (nonatomic, weak) id<TeadsAdDelegate> delegate;
 
+
+/**
+ * Whether or not playback is active
+ */
 @property (nonatomic) BOOL playbackActive;
+/**
+ * Set a max width for the ad container
+ * @discussion Setting this value is optionnal
+ */
 @property (nonatomic) CGFloat maxContainerWidth;
+/**
+ * Set a max height for the ad container
+ * @discussion Setting this value is optionnal
+ */
 @property (nonatomic) CGFloat maxContainerHeight;
 
-@property (nonatomic) TeadsAdPlayerColorMode playerColorMode; // Color mode for start and end screens
+/**
+ * Set a player color mode for start and end screens
+ * @discussion Setting this value is optionnal
+ */
+@property (nonatomic) TeadsAdPlayerColorMode playerColorMode;
 
 //////////////////////////////////////////////////////////////
 #pragma mark -
@@ -50,13 +92,13 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 #pragma mark -
 /////////////////////////////////////////////////////////////
 
-#pragma mark Custom Video
+#pragma mark Custom Ad
 
 /**
- * -initWithPlacementId:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initWithPlacementId:(NSString *)placement delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
@@ -64,21 +106,22 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 #pragma mark inReadTop
 
 /**
- * -initInReadTopWithPlacementId:scrollView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param scrollView       : a UIScrollView object
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param scrollView A UIScrollView object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadTopWithPlacementId:(NSString *)placement scrollView:(UIScrollView *)scrollView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadTopWithPlacementId:scrollView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param scrollView       : a UIScrollView object
- * @param TeadsInReadTopPosition : the position of the inReadTop
- * @param teadsDelegate : the instance that implements TeadsVideoDelegate
+ * @param placement A placement ID string
+ * @param scrollView A UIScrollView object
+ * @param position The position of the inReadTop
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
+ * @discussion Default position is TeadsAdInReadTopPositionHeader
  */
 - (id)initInReadTopWithPlacementId:(NSString *)placement position:(TeadsAdInReadTopPosition)position scrollView:(UIScrollView *)scrollView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
@@ -87,185 +130,225 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 #pragma mark inRead
 
 /**
- * -initInReadWithPlacementId:uiWebView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param webView       : a UIWebview object
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param webView A UIWebview object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement uiWebView:(UIWebView*)webView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:wkWebView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param webView       : a WKWebview object
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param webView A WKWebview object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement wkWebView:(WKWebView*)webView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:placeholderText:uiWebView:delegate:
+ * Class constructor
  *
- * @param placement         : a placement ID string
- * @param placeholderText   : a DOM selector string
- * @param webView           : a UIWebview object
- * @param teadsDelegate     : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param placeholderText A DOM selector string
+ * @param webView A UIWebview object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText uiWebView:(UIWebView*)webView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:placeholderText:wkWebView:delegate:
+ * Class constructor
  *
- * @param placement         : a placement ID string
- * @param placeholderText   : a DOM selector string
- * @param webView           : a WKWebView object
- * @param teadsDelegate     : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param placeholderText A DOM selector string
+ * @param webView A WKWebView object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement placeholderText:(NSString *)placeholderText wkWebView:(WKWebView*)webView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:afterView:scrollView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param afterView     : a UIView element after which the inRead will be displayed
- * @param scrollView    : a scroll-view object
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param afterView A UIView element after which the inRead will be displayed
+ * @param scrollView A scroll-view object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement afterView:(UIView *)afterView scrollView:(UIScrollView*)scrollView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:placeholder:heightConstraint:scrollView:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param placeHolder   : a UIView that will contain Teads Video
- * @param constraint    : the height constraint of 'placeHolder' parameter
- * @param scrollView    : a scroll-view object
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement   A placement ID string
+ * @param placeHolder A UIView that will contain Teads Ad
+ * @param constraint The height constraint of 'placeHolder' parameter
+ * @param scrollView  A scroll-view object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement placeholder:(UIView *)placeHolder heightConstraint:(NSLayoutConstraint*)constraint scrollView:(UIScrollView*)scrollView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
- * -initInReadWithPlacementId:insertionIndexPath:tableView:delegate:
+ * Class constructor
  *
- * @param placement     : a placement ID string
- * @param indexPath     : the TeadsError object
- * @param tableView     : an index path locating a row in tableView where to insert Teads Video
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param indexPath An index path locating a row in tableView where to insert Teads Ad
+ * @param tableView A UITableView object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath tableView:(UITableView*)tableView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 /**
  * -initInReadWithPlacementId:insertionIndexPath:repeatMode:tableView:delegate:
  *
- * @param placement     : a placement ID string
- * @param indexPath     : an index path locating a row in tableView where to insert Teads Video
- * @param repeat        : a boolean whether or not inRead should be repeated
- * @param tableView     : a table-view
- * @param teadsDelegate : the instance that implements TeadsAdDelegate
+ * @param placement A placement ID string
+ * @param indexPath An index path locating a row in tableView where to insert Teads Ad
+ * @param repeat A boolean whether or not inRead should be repeated
+ * @param tableView A UITableView object
+ * @param teadsDelegate The instance that implements TeadsAdDelegate
  */
 - (id)initInReadWithPlacementId:(NSString*)placement insertionIndexPath:(NSIndexPath*)indexPath repeatMode:(BOOL)repeat tableView:(UITableView*)tableView delegate:(id<TeadsAdDelegate>)teadsDelegate;
 
 #pragma mark Common methods
 
 /*
- * -setBackgroundColor:
+ * Set the wanted color for the inReadTop background only
  *
- * @param backgroundColor : Set the wanted color for the inReadTop background only
+ * @param backgroundColor A UIColor
  *
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
 
 /*
- * -setAltScrollView:
+ * Set the real scrollView of your interface that in the end contains the inRead
  *
- * @param scrollView     : set the real scroll-view of your interface that in the end contains the inRead
- *
- * Eg :
- * You have a webview in which you want to display an inRead.
- * The webView.scrollView.scrollEnabled is set to NO
- * The webview is embedded in a scroll-view or table-view, which is the scrolling element
- * You have then to call -setAltScrollView:  providing the scrolling UI-element
+ * @param scrollView A UIScrollView
+ * @discussion Eg: You have a webview in which you want to display an inRead. The webView.scrollView.scrollEnabled is set to NO, and your webview is embedded in a scrollView or tableView which is the scrolling element. You have then to call -setAltScrollView:  providing the scrolling UI-element
  *
  */
 - (void)setAltScrollView:(UIScrollView *)scrollView;
 
-- (void)load;       //Load the Teads Video
-- (void)cancelLoad; //Cancel Teads Video load
+/**
+ * Load Teads Ad
+ */
+- (void)load;
+/**
+ * Cancel Teads Ad load
+ */
+- (void)cancelLoad;
+
 
 - (void)loadWithRequest:(NSURLRequest *)request forStartUrl:(NSString *)startUrl;
 
 /*
- * -reset
  *
  * Resets TeadsAd
- * If TeadsAd is opened : it will close it
- * After 'reset' call, you can do a new 'load' call (no need to init inRead/inReadTop again)
+ *
+ * @warning If TeadsAd is opened : it will close it
+ * @discussion After 'reset' call, you can do a new 'load' call (no need to init inRead/inReadTop again)
  *
  */
 - (void)reset;
 
 /*
- * -clean
+ * Destroys everything related to TeadsAd.
  *
- * destroys everything related to TeadsAd.
- * You will need to do a new init inRead/inReadTop + load if you want to display a TeadsAd again
+ * @warning If TeadsAd is opened : it will close it
+ * @discussion You will need to do a new init inRead/inReadTop + load if you want to display a TeadsAd again
  */
 - (void)clean;
 
-- (void)onLayoutChange; //Call when layout has changed
+/**
+ * Call when layout has changed to trigger a new size computer of our format
+ */
+- (void)onLayoutChange;
 
-- (void)requestPause;   //If TeadsAd can be paused : it will be paused
-- (void)requestPlay;    //If TeadsAd can resume : it will resume
+/**
+ * Request to pause the ad
+ *
+ * @discussion If TeadsAd can be paused : it will be paused, otherwise it won't
+ */
+- (void)requestPause;
+/**
+ * Request to resume the ad
+ * @discussion If TeadsAd can resume : it will resume, otherwise it won't
+ */
+- (void)requestPlay;
 
 /*
- * -viewControllerAppeared:
+ * Inform TeadsAd that its parent view controller appeared
  *
- * @param viewController : the view-controller that will display the Teads Video
- *
- * This method has to be called in your view-controller -viewDidAppear: method
+ * @param viewController : the view controller that will display the Teads Ad
+ * @discussion This method has to be called in your view-controller -viewDidAppear: method
  *
  */
 - (void)viewControllerAppeared:(UIViewController *)viewController;
 
 /*
- * -viewControllerDisappeared:
+ * Inform TeadsAd that its parent view controller did disappear
  *
- * @param viewController : the view-controller that will display the Teads Video
- *
- * This method has to be called in your view-controller -viewDidDisappear: method
+ * @param viewController : the view controller that will display the Teads Ad
+ * @discussion This method has to be called in your view controller -viewDidDisappear: method
  *
  */
 - (void)viewControllerDisappeared:(UIViewController *)viewController;
 
-- (CGRect)expandedFrame;            //Get the expanded frame of Teads Video
-- (float)expandAnimationDuration;   //Get expand animation duration
-- (float)collapseAnimationDuration; //Get collapse animation duration
+/**
+ * Get the expanded frame of Teads Ad.
+ */
+- (CGRect)expandedFrame;
+/**
+ * Get expand animation duration
+ */
+- (float)expandAnimationDuration;
+/**
+ * Get collapse animation duration
+ */
+- (float)collapseAnimationDuration;
 
 #pragma mark Method for inRead in TableView
 
 /**
- * -setInReadInsertionIndexPath:newIndexPath
+ * Set a new index path for inRead in tableView
  *
- * @param newIndexPath     : set a new index path for inRead in table-view BEFORE load
+ * @param newIndexPath A NSIndexPath s
+ * @warning This has to be set BEFORE calling `load` method
+ * @discussion Can be used when TableView data is loaded asynchronously or chunk by chunk
  */
 - (void)setInReadInsertionIndexPath:(NSIndexPath*)newIndexPath;
 
 
-#pragma mark Methods for Custom Video
+#pragma mark Methods for Custom Ad
 
-- (UIView *)videoView;      //Get the UIView for Custom Video which contains the player
-- (void)videoViewWasAdded;  //Call to inform that videoView was added
 /**
- * -videoViewDidMove:
+ * Get the UIView for Custom Ad which contains the player
  *
- * @param containerView : the container view in which the video has moved
- *
- * Eg : A ScrollView is the top UI component, we have to call -videoViewDidMove: when user scrolls that the Video will still be viewable
+ * @discussion To be used only for Custom Ad type instance
  */
-- (void)videoViewDidMove:(UIView *)containerView; //Call to inform that
-- (void)videoViewDidExpand;     //Call to inform that videoView frame has been expanded
-- (void)videoViewDidCollapse;   //Call to inform that videoView frame has been collapsed
+- (UIView *)videoView;
+/**
+ * Call to inform that videoView was added to your user interface
+ *
+ * @discussion To be used only for Custom Video type instance
+ */
+- (void)videoViewWasAdded;
+/**
+ * Call to inform that the container view did move
+ *
+ * @param containerView The container view in which the video has moved
+ * @discussion Eg: A ScrollView is the top UI component, we have to call -videoViewDidMove: when user scrolls that the Video will still be viewable
+ */
+- (void)videoViewDidMove:(UIView *)containerView;
+/**
+ * Call to inform that videoView frame has been expanded
+ * @discussion To be used only for Custom Video type instance
+ */
+- (void)videoViewDidExpand;
+/**
+ * Call to inform that videoView frame has been collapsed
+ * @discussion To be used only for Custom Video type instance
+ */
+- (void)videoViewDidCollapse;
 
 @end
 
@@ -276,8 +359,7 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 /////////////////////////////////////////////////////////////
 
 /**
- * Delegate about TeadsVastVideo object: set the viewController responsible of modal presentation
- * and gives information about TeadsAd lifecycle
+ * The protocol used for listening to TeadsAd events and give information about TeadsAd lifecycle
  */
 @protocol TeadsAdDelegate <NSObject>
 
@@ -285,192 +367,197 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 
 
 /**
- * Video Failed to Load
+ * Ad failed to load
  *
- * @param video  : the TeadsAd object
- * @param error         : the TeadsError object
+ * @param ad The TeadsAd object
+ * @param error The TeadsError object
  */
 - (void)teadsAd:(TeadsAd *)ad didFailLoading:(TeadsError *)error;
 
 /**
- * Video Will Load (loading)
+ * Ad will load (loading)
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillLoad:(TeadsAd *)ad;
 
 /**
- * Video Did Load (loaded successfully)
+ * Ad did load (loaded successfully)
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidLoad:(TeadsAd *)ad;
 
 /**
- * Video Will Start Playing (loading)
+ * Ad experience will start
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillStart:(TeadsAd *)ad;
 
 /**
- * Video Did Start Playing (playing)
+ * Ad experience did start
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidStart:(TeadsAd *)ad;
 
 /**
- * Video Will Stop Playing (stopping)
+ * Ad experience stop
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillStop:(TeadsAd *)ad;
 
 /**
- * Video Did Stop Playing (stopped)
+ * Ad experience did stop
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidStop:(TeadsAd *)ad;
 
 /**
- * Video Did Pause (paused)
+ * Ad experience did pause
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidPause:(TeadsAd *)ad;
 
 /**
- * Video Did Resume (playing)
+ * Ad experience did resume
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidResume:(TeadsAd *)ad;
 
 /**
- * Video Did Mute Sound
+ * Ad did mute sound
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidMute:(TeadsAd *)ad;
 
 /**
- * Video Did Unmute Sound
+ * Ad did unmute sound
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidUnmute:(TeadsAd *)ad;
 
 /**
- * Video Can expand
+ * Ad can expand
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
+ * @dicussion Triggered when using Custom Ad to inform you that you can expand your container view
  */
 - (void)teadsAdCanExpand:(TeadsAd *)ad withRatio:(CGFloat)ratio;
 
 /**
- * Video Will expand
+ * Ad will expand
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillExpand:(TeadsAd *)ad;
 
 /**
- * Video Did expand
+ * Ad did expand
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidExpand:(TeadsAd *)ad;
 
 /**
- * Video Can collapse
+ * Ad can collapse
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
+* @dicussion Triggered when using Custom Ad to inform you that you can collapse your container view
  */
 - (void)teadsAdCanCollapse:(TeadsAd *)ad;
 
 /**
- * Video Will collapse
+ * Ad will collapse
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillCollapse:(TeadsAd *)ad;
 
 /**
- * Video did collapse
+ * Ad did collapse
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidCollapse:(TeadsAd *)ad;
 
 /**
- * Video was clicked
+ * Ad was clicked
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWasClicked:(TeadsAd *)ad;
 
 /**
- * Video Did Stop Playing (stopped)
+ * Ad experience did stop
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidClickBrowserClose:(TeadsAd *)ad;
 
 /**
- * Video Will Take Over Fullscreen
+ * Ad will take over fullscreen
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillTakeOverFullScreen:(TeadsAd *)ad;
 
 /**
- * Video Did Take Over Fullscreen
+ * Ad did take over fullscreen
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidTakeOverFullScreen:(TeadsAd *)ad;
 
 /**
- * Video Will Dismiss Fullscreen
+ * Ad qill dismiss fullscreen
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdWillDismissFullscreen:(TeadsAd *)ad;
 
 /**
- * Video Did Dismiss Fullscreen
+ * Ad did dismiss fullscreen
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdDidDismissFullscreen:(TeadsAd *)ad;
 
 /**
- * Video Skip Button Was Tapped (skip button pressed)
+ * Ad Skip Button Was Tapped
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
+ * @discussion Eg: skip button was pressed
  */
 - (void)teadsAdSkipButtonTapped:(TeadsAd *)ad;
 
 /**
- * Video Skip Button Did Show (skip button appeared)
+ * Ad skip button appeared
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
  */
 - (void)teadsAdSkipButtonDidShow:(TeadsAd *)ad;
 
 /**
- * Video did reset (player is closed if open, new load can be made after)
+ * Ad did reset
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
+ * @discussion Player is closed if open, new `load` call can be made after
  */
 - (void)teadsAdDidReset:(TeadsAd *)ad;
 
 /**
- * Video did clean (all related resoures have been removed)
+ * Ad did clean
  *
- * @param video  : the TeadsAd object
+ * @param ad The TeadsAd object
+ * @discussion All related resoures have been removed
  */
 - (void)teadsAdDidClean:(TeadsAd *)ad;
 @end
