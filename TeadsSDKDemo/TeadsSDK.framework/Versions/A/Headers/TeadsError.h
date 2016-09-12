@@ -22,13 +22,28 @@ typedef enum TeadsErrorEnum {
     TeadsNoNetwork
 } TeadsErrorType;
 
+/**
+ * The object used for Teads errors
+ */
 @interface TeadsError : NSObject
 
 -(BOOL)isType:(TeadsErrorType)errorType;
 
+/**
+ * Type of TeadsError
+ */
 @property (nonatomic) TeadsErrorType type;
+/**
+ * TeadsError name String
+ */
 @property (nonatomic, strong) NSString *name;
+/**
+ * TeadsError message String
+ */
 @property (nonatomic, strong) NSString *message;
+/**
+ * TeadsError code String
+ */
 @property (nonatomic, strong) NSString *code;
 
 + (TeadsError *)noSlotAvailable;
