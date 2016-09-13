@@ -1,5 +1,12 @@
 # Changelog
 
+v2.4.1:
+ - Fixed player playing issue after rotation
+ - Fixed issue coming from rare malformed data from VAST causing crashes
+ - Fixed issue with VAST URLs macros causing crashes
+ - Fixed blocked UI in ScrollView during inRead expand/collapse 
+ - New feature: brand logo
+
 v2.3.4:
  - Fixed issue with status when rotating video fullscreen if app doesn't allow rotation
  - Fixed issue with WKWebView that could block aync loaded content
