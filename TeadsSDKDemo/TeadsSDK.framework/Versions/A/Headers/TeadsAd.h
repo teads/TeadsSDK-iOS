@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, TeadsAdInReadTopPosition) {
 
 /**
  * Player color mode for start and end screens
- * @discussion Default value is TeadsAdPlayerColorModeDark
+ * @discussion Default value is TeadsAdPlayerColorModeLight
  */
 typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
     TeadsAdPlayerColorModeDark,

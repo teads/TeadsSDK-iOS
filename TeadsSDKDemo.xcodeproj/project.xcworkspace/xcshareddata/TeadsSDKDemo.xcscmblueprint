@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7ACC427C-2545-4826-BE48-3BCB0DF608A9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "6B3A8DF9EE74378972E93B1CCA4A8E663DF3D8D1" : "TeadsSDKDev-iOS\/",
-    "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E" : "TeadsSDK-iOS"
+    "D2E9F8BB307F22D11DF60FF9DC1F56D27E62B57E" : "TeadsSDK-iOS\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TeadsSDKDemo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
