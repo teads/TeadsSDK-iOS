@@ -1,5 +1,9 @@
 # Changelog
 
+v2.4.2
+ - Fixed an issue causing crash when user arrives on view and immediately goes back
+ - Internal improvements
+
 v2.4.1:
  - Fixed player playing issue after rotation
  - Fixed issue coming from rare malformed data from VAST causing crashes
