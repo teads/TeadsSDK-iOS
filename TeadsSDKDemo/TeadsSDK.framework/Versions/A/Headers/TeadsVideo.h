@@ -293,6 +293,14 @@ __attribute__((deprecated ("use TeadsAd")))
  */
 - (float)collapseAnimationDuration;
 
+/*
+ * Inform TeadsVideo that your app needs a specific AVAudioSession category
+ *
+ * @param category An AVAudioSessionCategory (AVAudioSessionCategoryAmbient, AVAudioSessionCategoryRecord, etc...)
+ * @discussion Calling this method is optionnal, use it only if needed
+ */
+- (void)requiredAVAudioSession:(NSString *)category;
+
 #pragma mark Method for inRead in TableView
 
 /**

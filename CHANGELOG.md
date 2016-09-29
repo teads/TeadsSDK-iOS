@@ -1,5 +1,8 @@
 # Changelog
 
+v2.4.3
+ - New method to call if your app uses specific AVAudioSessionCategory : `- (void)requiredAVAudioSession:(NSString *)category`
+
 v2.4.2
  - Fixed an issue causing crash when user arrives on view and immediately goes back
  - Internal improvements
