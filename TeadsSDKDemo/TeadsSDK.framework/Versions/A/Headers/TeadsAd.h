@@ -287,24 +287,32 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
 /*
  * Inform TeadsAd that its parent view controller did disappear
  *
- * @param viewController : the view controller that will display the Teads Ad
+ * @param viewController The view controller that will display the Teads Ad
  * @discussion This method has to be called in your view controller -viewDidDisappear: method
  *
  */
 - (void)viewControllerDisappeared:(UIViewController *)viewController;
 
-/**
+/*
  * Get the expanded frame of Teads Ad.
  */
 - (CGRect)expandedFrame;
-/**
+/*
  * Get expand animation duration
  */
 - (float)expandAnimationDuration;
-/**
+/*
  * Get collapse animation duration
  */
 - (float)collapseAnimationDuration;
+
+/*
+ * Inform TeadsAd that your app needs a specific AVAudioSession category
+ *
+ * @param category An AVAudioSessionCategory (AVAudioSessionCategoryAmbient, AVAudioSessionCategoryRecord, etc...)
+ * @discussion Calling this method is optionnal, use it only if needed
+ */
+- (void)requiredAVAudioSession:(NSString *)category;
 
 #pragma mark Method for inRead in TableView
 
