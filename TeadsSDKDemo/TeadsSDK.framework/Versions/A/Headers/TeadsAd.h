@@ -69,6 +69,15 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
  * Whether or not playback is active
  */
 @property (nonatomic) BOOL playbackActive;
+
+/**
+ * Inform the SDK that you handle AVAudioSession.category
+ * @discussion When cleaning or deallocating, TeadsAd set AVAudioSession.category to its original state at init time. This will prevent this and keep the AVAudioSession.category you might have applied
+ * @warning If you change AVAudioSession.category, please call -(void)requiredAVAudioSession:(NSString *)category to inform the SDK about this so that the SDK respects your setting.
+ * If set to YES, it will also be your responsibility to set AVAudioSession active to NO when ad experience is over
+ */
+@property (nonatomic) BOOL applicationHandlesAVAudioSessionCategory;
+
 /**
  * Set a max width for the ad container
  * @discussion Setting this value is optionnal
@@ -478,7 +487,8 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
  * Ad can collapse
  *
  * @param ad The TeadsAd object
-* @dicussion Triggered when using Custom Ad to inform you that you can collapse your container view
+ * @dicussion Triggered when using Custom Ad to inform you that you can collapse your container view. 
+ * @warning If you have set applicationHandlesAVAudioSessionCategory to YES, you should set AVAudioSession active to NO when teadsAdCanCollapse: is triggered
  */
 - (void)teadsAdCanCollapse:(TeadsAd *)ad;
 
