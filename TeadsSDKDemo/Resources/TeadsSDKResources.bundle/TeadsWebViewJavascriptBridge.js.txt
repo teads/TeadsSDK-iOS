@@ -1,5 +1,5 @@
 ;(function() {
-	if (window.WebViewJavascriptBridge) {
+	if (window.TeadsWebViewJavascriptBridge) {
 		return
 	}
 
@@ -8,8 +8,8 @@
 	var receiveMessageQueue = []
 	var messageHandlers = {}
 
-	var CUSTOM_PROTOCOL_SCHEME = 'wvjbscheme'
-	var QUEUE_HAS_MESSAGE = '__WVJB_QUEUE_MESSAGE__'
+	var CUSTOM_PROTOCOL_SCHEME = 'teadswvjbscheme'
+	var QUEUE_HAS_MESSAGE = '__TEADS_WVJB_QUEUE_MESSAGE__'
 	var URL_BOOTSTRAP = 'URL_BOOTSTRAP_TAG';
 
 		var responseCallbacks = {}
@@ -33,10 +33,10 @@
 	}
 
 	function init(messageHandler) {
-		if (WebViewJavascriptBridge._messageHandler) {
-			throw new Error('WebViewJavascriptBridge.init called twice')
+		if (TeadsWebViewJavascriptBridge._messageHandler) {
+			throw new Error('TeadsWebViewJavascriptBridge.init called twice')
 		}
-		WebViewJavascriptBridge._messageHandler = messageHandler
+		TeadsWebViewJavascriptBridge._messageHandler = messageHandler
 		var receivedMessages = receiveMessageQueue
 		receiveMessageQueue = null
 		if (receivedMessages) {
@@ -103,7 +103,7 @@
 					}
 				}
 
-				var handler = WebViewJavascriptBridge._messageHandler
+				var handler = TeadsWebViewJavascriptBridge._messageHandler
 				if (message.handlerName) {
 					handler = messageHandlers[message.handlerName]
 				}
@@ -112,7 +112,7 @@
 					handler(message.data, responseCallback)
 				} catch (exception) {
 					if (typeof console != 'undefined') {
-						console.log("WebViewJavascriptBridge: WARNING: javascript handler threw.", message, exception)
+						console.log("TeadsWebViewJavascriptBridge: WARNING: javascript handler threw.", message, exception)
 					}
 				}
 			}
@@ -127,7 +127,7 @@
 		}
 	}
 
-	window.WebViewJavascriptBridge = {
+	window.TeadsWebViewJavascriptBridge = {
 		init: init,
 		send: send,
 		registerHandler: registerHandler,
@@ -139,8 +139,8 @@
 	var doc = document
 	_createQueueReadyIframe(doc)
 	var readyEvent = doc.createEvent('Events')
-	readyEvent.initEvent('WebViewJavascriptBridgeReady')
-	readyEvent.bridge = WebViewJavascriptBridge
+	readyEvent.initEvent('TeadsWebViewJavascriptBridgeReady')
+	readyEvent.bridge = TeadsWebViewJavascriptBridge
 	doc.dispatchEvent(readyEvent)
 
 	setTimeout(function(){_injectBootstrap()});
