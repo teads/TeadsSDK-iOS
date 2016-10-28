@@ -1,5 +1,8 @@
 # Changelog
 
+v2.5.1
+ - iOS 8 layout issue when going fullscreen after rotation
+
 v2.5.0
  - Fixed an issue with video playing in fullscreen
  - Fixes and improvements with AVAudioSession interaction
