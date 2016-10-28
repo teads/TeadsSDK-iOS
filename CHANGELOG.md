@@ -1,5 +1,11 @@
 # Changelog
 
+v2.5.0
+ - Fixed an issue with video playing in fullscreen
+ - Fixes and improvements with AVAudioSession interaction
+ - Improved webview integration
+ - New endscreen
+
 v2.4.3
  - New method to call if your app uses specific AVAudioSessionCategory : `- (void)requiredAVAudioSession:(NSString *)category`
 
