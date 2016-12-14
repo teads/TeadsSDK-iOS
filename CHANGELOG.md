@@ -1,5 +1,9 @@
 # Changelog
 
+v2.5.5
+ - Bug fixes
+ - Internal improvements
+
 v2.5.1
  - iOS 8 layout issue when going fullscreen after rotation
 
