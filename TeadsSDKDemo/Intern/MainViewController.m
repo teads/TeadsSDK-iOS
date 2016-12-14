@@ -12,9 +12,11 @@
 #import "InReadTopTableViewController.h"
 #import "InReadTopWebViewController.h"
 #import "InReadTopWKWebView.h"
+#import "InReadTopCollectionViewController.h"
 #import "InReadScrollViewController.h"
 #import "InReadTableViewController.h"
-#import "CustomNativeVideoScrollViewViewController.h"
+#import "CustomAdScrollViewController.h"
+#import "CustomAdCollectionViewController.h"
 #import "InReadWebViewController.h"
 #import "InReadWKWebview.h"
 
@@ -52,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 10;
+        return 14;
     }
     return 2;
 }
@@ -69,7 +71,7 @@
     
     UITableViewCell *cell;
     
-    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 10 || indexPath.row == 12))) {
+    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 11))) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTitleIdentifier];
@@ -120,10 +122,16 @@
                 cell.textLabel.text = @"inRead Top TableView";
                 break;
             case 10:
-                cell.textLabel.text = @"Custom Native Video View";
+                cell.textLabel.text = @"inRead Top CollectionView";
                 break;
             case 11:
+                cell.textLabel.text = @"Custom Native Video View";
+                break;
+            case 12:
                 cell.textLabel.text = @"Custom in ScrollView";
+                break;
+            case 13:
+                cell.textLabel.text = @"Custom in CollectionView";
                 break;
             default:
                 break;
@@ -196,9 +204,20 @@
                 controller = inReadTopTableView;
                 break;
             }
-            case 11: {
-                CustomNativeVideoScrollViewViewController *simpleInReadScrollViewController = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"customNativeVideoScrollViewiPad":@"customNativeVideoScrollView"];
+            case 10: {
+                InReadTopCollectionViewController *inReadTopCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopCollectionView"];
+                controller = inReadTopCollectionView;
+                break;
+            }
+            case 12: {
+                CustomAdScrollViewController *simpleInReadScrollViewController = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"customAdScrollViewiPad":@"customAdScrollView"];
                 controller = simpleInReadScrollViewController;
+                break;
+            }
+            case 13: {
+                CustomAdCollectionViewController *simpleInReadCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"customAdCollectionViewController"];
+                controller = simpleInReadCollectionView;
+                
                 break;
             }
             default:
