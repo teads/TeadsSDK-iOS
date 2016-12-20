@@ -1,5 +1,8 @@
 # Changelog
 
+v2.5.6
+ - Bug fix for Custom type integration
+
 v2.5.5
  - Bug fixes
  - Internal improvements
