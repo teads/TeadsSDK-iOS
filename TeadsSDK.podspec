@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
 
 s.name         = "TeadsSDK"
-s.version      = "2.5.6"
+s.version      = "2.6.0"
 s.summary      = "Teads' iOS SDK"
 
 s.description  = <<-DESC
                  Teads allows you to integrate a single SDK into your app, and serve premium branded ads from Teads' SSP.
                  DESC
 
-s.ios.deployment_target     = "7.0"
+s.ios.deployment_target     = "8.0"
 
 s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
 s.license      = "Apache 2.0"
