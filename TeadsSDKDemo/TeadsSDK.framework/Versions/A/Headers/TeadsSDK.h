@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import <TeadsSDK/TeadsError.h>
 #import <TeadsSDK/TeadsAd.h>
-#import <TeadsSDK/TeadsVideo.h>
 
 /**
  * Possible log levels of Teads SDK

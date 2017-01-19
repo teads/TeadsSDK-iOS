@@ -1,5 +1,10 @@
 # Changelog
 
+v2.6.0
+ - Drop iOS 7
+ - Minor improvements on the player
+ - Minor internal fix
+
 v2.5.6
  - Bug fix for Custom type integration
 
