@@ -1,5 +1,10 @@
 # Changelog
 
+v2.7.0
+ - Added new ad format support
+ - Internal improvements
+ - Minor internal fixes
+
 v2.6.0
  - Drop iOS 7
  - Minor improvements on the player

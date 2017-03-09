@@ -114,12 +114,6 @@ NSString *collectionViewCellID = @"collectionViewCell";
     if ([indexPath isEqual:self.insertionPath]) {
         self.adCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"teadsAdCell" forIndexPath:indexPath];
         
-        [self.adCell.contentView addSubview:self.teadsAd.videoView];
-        if (!self.videoViewAdded) {
-            [self.teadsAd videoViewWasAdded]; //Inform that Teads Ad was added
-            self.videoViewAdded = YES;
-        }
-        
         return self.adCell;
     } else {
         CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellID forIndexPath:indexPath];
@@ -140,7 +134,9 @@ NSString *collectionViewCellID = @"collectionViewCell";
 #pragma mark - UIScrollView
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.teadsAd videoViewDidMove:scrollView]; //Inform TeadsAd that the view did move in its scrollView container
+    if (self.videoViewAdded) {
+        [self.teadsAd videoViewDidMove:scrollView]; //Inform TeadsAd that the view did move in its scrollView container
+    }
 }
 
 #pragma mark - UICollectionView delegate
@@ -152,6 +148,18 @@ NSString *collectionViewCellID = @"collectionViewCell";
         return CGSizeMake(([UIScreen mainScreen].bounds.size.width-30)/2 , 200);
     }
 }
+
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath :(NSIndexPath *)indexPath {
+    if ([indexPath isEqual:self.insertionPath]) { //self.insertionPath is the indexPath where TeadsAd was added
+        if (!self.videoViewAdded) {
+            [self.adCell.contentView addSubview:self.teadsAd.videoView];
+            [self.teadsAd videoViewWasAdded]; //Inform that Teads Ad was added and cell will be displayed
+            self.videoViewAdded = YES;
+        }
+    }
+}
+
 
 #pragma mark - 
 #pragma mark - Your methods to calculate Custom Ad size
