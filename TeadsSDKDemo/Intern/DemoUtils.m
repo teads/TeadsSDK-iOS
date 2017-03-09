@@ -19,8 +19,13 @@
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.placeholder = @"27695";
-        if (![[[NSUserDefaults standardUserDefaults] stringForKey:@"pid"] isEqual:@"27695"]) {
+        
+        /** /!\ /!\ /!\
+         *  WARNING: Don't use this PID (54934) in production. Contact your Publisher Manager to obtain your own dedicated PID
+         *  /!\ /!\ /!\
+         */
+        textField.placeholder = @"54934";
+        if (![[[NSUserDefaults standardUserDefaults] stringForKey:@"pid"] isEqual:@"54934"]) {
             textField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
         }
     }];
@@ -33,7 +38,11 @@
                              if (![alert.textFields.firstObject.text isEqual:@""]) {
                                  [[NSUserDefaults standardUserDefaults] setObject:alert.textFields.firstObject.text forKey:@"pid"];;
                              } else {
-                                 [[NSUserDefaults standardUserDefaults] setObject:@"27695" forKey:@"pid"];;
+                                 /** /!\ /!\ /!\
+                                  *  WARNING: Don't use this PID (54934) in production. Contact your Publisher Manager to obtain your own dedicated PID
+                                  *  /!\ /!\ /!\
+                                  */
+                                 [[NSUserDefaults standardUserDefaults] setObject:@"54934" forKey:@"pid"];;
                              }
                              [alert dismissViewControllerAnimated:YES completion:nil];
                          }];
