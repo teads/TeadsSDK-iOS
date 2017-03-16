@@ -181,14 +181,14 @@ NSString *collectionViewCellID = @"collectionViewCell";
 }
 
 #pragma mark -
-#pragma mark Teads delegate
+#pragma mark - TeadsAd delegate
 
 /**
- * Teads Video is ready to be shown
+ * Teads Ad is ready to be shown
  *
- * @param video  : the TeadsVideo object
+ * @param video  : the TeadsAd object
  */
-- (void)teadsAdCanExpand:(TeadsAd *)video withRatio:(CGFloat)ratio{
+- (void)teadsAdCanExpand:(TeadsAd *)ad withRatio:(CGFloat)ratio{
     self.adRatio = ratio;
     
     [self.collctnView performBatchUpdates:^{
@@ -199,11 +199,11 @@ NSString *collectionViewCellID = @"collectionViewCell";
 }
 
 /**
- * Teads Video can be collapsed
+ * Teads Ad can be collapsed
  *
- * @param video  : the TeadsVideo object
+ * @param video  : the TeadsAd object
  */
-- (void)teadsAdCanCollapse:(TeadsAd *)video {
+- (void)teadsAdCanCollapse:(TeadsAd *)ad {
     self.adRatio = 0;
     
     CGRect collapsedAdFrame = self.teadsAd.videoView.frame;

@@ -8,12 +8,6 @@
 
 #import "CustomAdScrollViewController.h"
 
-////Defines the Teads video frame before display
-#define collapsedVideoViewFrame CGRectMake(8, 715, 359, 0)
-//
-////Defines the Teads video frame for display
-//#define expandedVideoViewFrame CGRectMake(8, 715, 359, 220)
-
 @interface CustomAdScrollViewController ()
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -22,10 +16,6 @@
 @property (strong, nonatomic) TeadsAd *teadsAd;
 @property (strong, nonatomic) IBOutlet UILabel *uiLabelForReference;
 @property (strong, nonatomic) IBOutlet UILabel *bottomLabelForReference;
-
-
-//Defines the Teads video frame for display
-@property (nonatomic, assign) CGRect expandedVideoViewFrame;
 
 @end
 
@@ -120,7 +110,7 @@
 
 
 #pragma mark -
-#pragma mark Teads delegate
+#pragma mark - TeadsAd delegate
 
 /**
  * TeadsAd Did Load (loaded successfully)
@@ -132,11 +122,11 @@
 }
 
 /**
- * Teads Video is ready to be shown
+ * Teads Ad is ready to be shown
  *
- * @param video  : the TeadsAd object
+ * @param ad  : the TeadsAd object
  */
-- (void)teadsAdCanExpand:(TeadsAd *)video withRatio:(CGFloat)ratio {
+- (void)teadsAdCanExpand:(TeadsAd *)ad withRatio:(CGFloat)ratio {
     self.adRatio = ratio;
     
     CGFloat adFrameHeight = CGRectGetMinY(self.bottomLabelForReference.frame) - 5 - CGRectGetMaxY(self.uiLabelForReference.frame) - 5;
@@ -157,11 +147,11 @@
 }
 
 /**
- * Teads Video can be collapsed
+ * Teads Ad can be collapsed
  *
- * @param video  : the TeadsAd object
+ * @param ad  : the TeadsAd object
  */
-- (void)teadsAdCanCollapse:(TeadsAd *)video {
+- (void)teadsAdCanCollapse:(TeadsAd *)ad {
     
     CGRect collapsedFrame = CGRectMake(CGRectGetMinX(self.teadsAd.videoView.frame),
                                        CGRectGetMinY(self.teadsAd.videoView.frame)+5,
