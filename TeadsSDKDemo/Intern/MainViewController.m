@@ -17,6 +17,7 @@
 #import "InReadTableViewController.h"
 #import "CustomAdScrollViewController.h"
 #import "CustomAdCollectionViewController.h"
+#import "MultiCustomAdCollectionViewController.h"
 #import "InReadWebViewController.h"
 #import "InReadWKWebview.h"
 
@@ -54,7 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 14;
+        return 16;
     }
     return 2;
 }
@@ -69,9 +70,81 @@
     static NSString *CellTitleIdentifier = @"CellTitle";
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell;
+    NSString *cellTextLabel;
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                cellTextLabel = @"inRead";
+                break;
+            case 1:
+                cellTextLabel = @"inRead ScrollView";
+                break;
+            case 2:
+                cellTextLabel = @"inRead WebView";
+                break;
+            case 3:
+                cellTextLabel = @"inRead WKWebview";
+                break;
+            case 4:
+                cellTextLabel = @"inRead TableView";
+                break;
+            case 5:
+                cellTextLabel = @"inRead Top";
+                break;
+            case 6:
+                cellTextLabel = @"inRead Top ScrollView";
+                break;
+            case 7:
+                cellTextLabel = @"inRead Top WebView";
+                break;
+            case 8:
+                cellTextLabel = @"inRead Top WKWebview";
+                break;
+            case 9:
+                cellTextLabel = @"inRead Top TableView";
+                break;
+            case 10:
+                cellTextLabel = @"inRead Top CollectionView";
+                break;
+            case 11:
+                cellTextLabel = @"Custom Native Video View";
+                break;
+            case 12:
+                cellTextLabel = @"Custom in ScrollView";
+                break;
+            case 13:
+                cellTextLabel = @"Custom in CollectionView";
+                break;
+            case 14:
+                cellTextLabel = @"Multiple inRead (multi-slot)";
+                break;
+            case 15:
+                cellTextLabel = @"Multiple inRead in CollectionView";
+                break;
+            default:
+                break;
+        }
+        
+    } else {
+        
+        switch (indexPath.row) {
+            case 0:
+                cellTextLabel = @"Change PID";
+                break;
+            case 1:
+                cellTextLabel = @"Change website";
+                break;
+            default:
+                break;
+        }
+    }
     
-    if ((indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 5 || indexPath.row == 11))) {
+    UITableViewCell *cell;
+    if ((indexPath.section == 0
+         && (indexPath.row == 0
+             || indexPath.row == 5
+             || indexPath.row == 11
+             || indexPath.row == 14))) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTitleIdentifier];
@@ -87,69 +160,10 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-
-    if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"inRead";
-                break;
-            case 1:
-                cell.textLabel.text = @"inRead ScrollView";
-                break;
-            case 2:
-                cell.textLabel.text = @"inRead WebView";
-                break;
-            case 3:
-                cell.textLabel.text = @"inRead WKWebview";
-                break;
-            case 4:
-                cell.textLabel.text = @"inRead TableView";
-                break;
-            case 5:
-                cell.textLabel.text = @"inRead Top";
-                break;
-            case 6:
-                cell.textLabel.text = @"inRead Top ScrollView";
-                break;
-            case 7:
-                cell.textLabel.text = @"inRead Top WebView";
-                break;
-            case 8:
-                cell.textLabel.text = @"inRead Top WKWebview";
-                break;
-            case 9:
-                cell.textLabel.text = @"inRead Top TableView";
-                break;
-            case 10:
-                cell.textLabel.text = @"inRead Top CollectionView";
-                break;
-            case 11:
-                cell.textLabel.text = @"Custom Native Video View";
-                break;
-            case 12:
-                cell.textLabel.text = @"Custom in ScrollView";
-                break;
-            case 13:
-                cell.textLabel.text = @"Custom in CollectionView";
-                break;
-            default:
-                break;
-        }
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"Change PID";
-                break;
-            case 1:
-                cell.textLabel.text = @"Change website";
-                break;
-            default:
-                break;
-        }
     }
+    
+    cell.textLabel.text = cellTextLabel;
     
     return cell;
 }
@@ -219,6 +233,9 @@
                 controller = simpleInReadCollectionView;
                 
                 break;
+            } case 15: {
+                MultiCustomAdCollectionViewController *multiCustomAdCollectionViewController = [storyboard instantiateViewControllerWithIdentifier:@"multiCustomAdCollectionViewController"];
+                controller = multiCustomAdCollectionViewController;
             }
             default:
                 break;

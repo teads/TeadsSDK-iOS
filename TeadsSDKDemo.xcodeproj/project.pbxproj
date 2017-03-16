@@ -18,6 +18,7 @@
 		913B3BF11A70F509008E3E30 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 913B3BF01A70F509008E3E30 /* arrow_left.png */; };
 		913CED781B67C3590058623A /* CustomAdScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913CED771B67C3590058623A /* CustomAdScrollViewController.m */; };
 		914E2BA51BBC23CE001D6A83 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 914E2BA41BBC23CE001D6A83 /* libxml2.tbd */; };
+		91566E681E78451B008AF47F /* MultiCustomAdCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91566E671E78451B008AF47F /* MultiCustomAdCollectionViewController.m */; };
 		916CFB161A68288400E36306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB151A68288400E36306 /* main.m */; };
 		916CFB191A68288400E36306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CFB181A68288400E36306 /* AppDelegate.m */; };
 		916CFB1F1A68288400E36306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916CFB1D1A68288400E36306 /* Main.storyboard */; };
@@ -107,6 +108,8 @@
 		913CED761B67C3590058623A /* CustomAdScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAdScrollViewController.h; sourceTree = "<group>"; };
 		913CED771B67C3590058623A /* CustomAdScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAdScrollViewController.m; sourceTree = "<group>"; };
 		914E2BA41BBC23CE001D6A83 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		91566E661E78451B008AF47F /* MultiCustomAdCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiCustomAdCollectionViewController.h; path = "TeadsSDKDemo/Demo Pages/inRead_multi/MultiCustomAdCollectionViewController.h"; sourceTree = SOURCE_ROOT; };
+		91566E671E78451B008AF47F /* MultiCustomAdCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiCustomAdCollectionViewController.m; path = "TeadsSDKDemo/Demo Pages/inRead_multi/MultiCustomAdCollectionViewController.m"; sourceTree = SOURCE_ROOT; };
 		916CFB101A68288400E36306 /* TeadsSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CFB141A68288400E36306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CFB151A68288400E36306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -216,6 +219,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		91566E651E784427008AF47F /* inRead_multi */ = {
+			isa = PBXGroup;
+			children = (
+				91566E661E78451B008AF47F /* MultiCustomAdCollectionViewController.h */,
+				91566E671E78451B008AF47F /* MultiCustomAdCollectionViewController.m */,
+			);
+			path = inRead_multi;
+			sourceTree = "<group>";
+		};
 		916CFB071A68288400E36306 = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +307,7 @@
 		916CFB401A68304900E36306 /* Demo Pages */ = {
 			isa = PBXGroup;
 			children = (
+				91566E651E784427008AF47F /* inRead_multi */,
 				91E125BA1C64B7AA0095F327 /* inRead Top */,
 				910CB4401A695900005E6711 /* inRead */,
 			);
@@ -498,6 +511,7 @@
 				916CFB191A68288400E36306 /* AppDelegate.m in Sources */,
 				91E125C51C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */,
 				91E635A41DDB0AAE00525579 /* CustomCollectionViewCell.m in Sources */,
+				91566E681E78451B008AF47F /* MultiCustomAdCollectionViewController.m in Sources */,
 				910CB4511A695933005E6711 /* InReadTableViewController.m in Sources */,
 				91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */,
 				916CFB161A68288400E36306 /* main.m in Sources */,
