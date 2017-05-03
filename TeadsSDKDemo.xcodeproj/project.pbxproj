@@ -54,6 +54,17 @@
 		91E635A41DDB0AAE00525579 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E635A31DDB0AAE00525579 /* CustomCollectionViewCell.m */; };
 		91E635A71DDB17B600525579 /* InReadTopCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E635A61DDB17B600525579 /* InReadTopCollectionViewController.m */; };
 		91E792861C47A8D80080DD03 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E792851C47A8D80080DD03 /* MediaPlayer.framework */; };
+		B5FE9B4D1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B4C1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.m */; };
+		B5FE9B501EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B4F1EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m */; };
+		B5FE9B581EB9C99E00649FD6 /* TeadsWebViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B571EB9C99E00649FD6 /* TeadsWebViewTableViewCell.m */; };
+		B5FE9B5B1EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B5A1EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.m */; };
+		B5FE9B5E1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B5D1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m */; };
+		B5FE9B611EBA017700649FD6 /* TeadsWkWebViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B601EBA017700649FD6 /* TeadsWkWebViewTableViewCell.m */; };
+		B5FE9B641EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B631EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m */; };
+		B5FE9B671EBB121D00649FD6 /* RandomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B661EBB121D00649FD6 /* RandomCollectionViewCell.m */; };
+		B5FE9B6A1EBB177600649FD6 /* WebViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B691EBB177600649FD6 /* WebViewCollectionViewCell.m */; };
+		B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */; };
+		B5FE9B701EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B6F1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +172,28 @@
 		91E792851C47A8D80080DD03 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		91F581DB1A710A22007D70AC /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		91F581DD1A710A29007D70AC /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
+		B5FE9B4B1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadWebViewEmbededInScrollViewViewController.h; sourceTree = "<group>"; };
+		B5FE9B4C1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWebViewEmbededInScrollViewViewController.m; sourceTree = "<group>"; };
+		B5FE9B4E1EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InReadWkWebViewEmbededInScrollViewViewController.h; sourceTree = "<group>"; };
+		B5FE9B4F1EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InReadWkWebViewEmbededInScrollViewViewController.m; sourceTree = "<group>"; };
+		B5FE9B561EB9C99E00649FD6 /* TeadsWebViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeadsWebViewTableViewCell.h; sourceTree = "<group>"; };
+		B5FE9B571EB9C99E00649FD6 /* TeadsWebViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeadsWebViewTableViewCell.m; sourceTree = "<group>"; };
+		B5FE9B591EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWebViewInTableViewViewController.h; sourceTree = "<group>"; };
+		B5FE9B5A1EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWebViewInTableViewViewController.m; sourceTree = "<group>"; };
+		B5FE9B5C1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWkWebViewInTableViewViewController.h; sourceTree = "<group>"; };
+		B5FE9B5D1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWkWebViewInTableViewViewController.m; sourceTree = "<group>"; };
+		B5FE9B5F1EBA017700649FD6 /* TeadsWkWebViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeadsWkWebViewTableViewCell.h; sourceTree = "<group>"; };
+		B5FE9B601EBA017700649FD6 /* TeadsWkWebViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeadsWkWebViewTableViewCell.m; sourceTree = "<group>"; };
+		B5FE9B621EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWebViewInCollectionViewController.h; sourceTree = "<group>"; };
+		B5FE9B631EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWebViewInCollectionViewController.m; sourceTree = "<group>"; };
+		B5FE9B651EBB121D00649FD6 /* RandomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomCollectionViewCell.h; sourceTree = "<group>"; };
+		B5FE9B661EBB121D00649FD6 /* RandomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomCollectionViewCell.m; sourceTree = "<group>"; };
+		B5FE9B681EBB177600649FD6 /* WebViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewCollectionViewCell.h; sourceTree = "<group>"; };
+		B5FE9B691EBB177600649FD6 /* WebViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewCollectionViewCell.m; sourceTree = "<group>"; };
+		B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWkWebViewInCollectionViewControllerCollectionViewController.h; sourceTree = "<group>"; };
+		B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWkWebViewInCollectionViewControllerCollectionViewController.m; sourceTree = "<group>"; };
+		B5FE9B6E1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WkWebViewCollectionViewCell.h; sourceTree = "<group>"; };
+		B5FE9B6F1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WkWebViewCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +342,7 @@
 			children = (
 				91566E651E784427008AF47F /* inRead_multi */,
 				91E125BA1C64B7AA0095F327 /* inRead Top */,
+				B5FE9B511EB8C84100649FD6 /* inRead embeded */,
 				910CB4401A695900005E6711 /* inRead */,
 			);
 			path = "Demo Pages";
@@ -383,6 +417,44 @@
 			path = "inRead Top";
 			sourceTree = "<group>";
 		};
+		B5FE9B511EB8C84100649FD6 /* inRead embeded */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE9B551EB9C97D00649FD6 /* WebViewCell */,
+				B5FE9B4B1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.h */,
+				B5FE9B4C1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.m */,
+				B5FE9B4E1EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.h */,
+				B5FE9B4F1EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m */,
+				B5FE9B591EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.h */,
+				B5FE9B5A1EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.m */,
+				B5FE9B5C1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.h */,
+				B5FE9B5D1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m */,
+				B5FE9B621EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.h */,
+				B5FE9B631EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m */,
+				B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.h */,
+				B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */,
+			);
+			name = "inRead embeded";
+			path = inRead;
+			sourceTree = "<group>";
+		};
+		B5FE9B551EB9C97D00649FD6 /* WebViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE9B561EB9C99E00649FD6 /* TeadsWebViewTableViewCell.h */,
+				B5FE9B571EB9C99E00649FD6 /* TeadsWebViewTableViewCell.m */,
+				B5FE9B5F1EBA017700649FD6 /* TeadsWkWebViewTableViewCell.h */,
+				B5FE9B601EBA017700649FD6 /* TeadsWkWebViewTableViewCell.m */,
+				B5FE9B651EBB121D00649FD6 /* RandomCollectionViewCell.h */,
+				B5FE9B661EBB121D00649FD6 /* RandomCollectionViewCell.m */,
+				B5FE9B681EBB177600649FD6 /* WebViewCollectionViewCell.h */,
+				B5FE9B691EBB177600649FD6 /* WebViewCollectionViewCell.m */,
+				B5FE9B6E1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.h */,
+				B5FE9B6F1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m */,
+			);
+			name = WebViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,9 +506,12 @@
 				TargetAttributes = {
 					916CFB0F1A68288400E36306 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = V55UEG98F8;
+						ProvisioningStyle = Automatic;
 					};
 					916CFB281A68288400E36306 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = V55UEG98F8;
 						TestTargetID = 916CFB0F1A68288400E36306;
 					};
 				};
@@ -500,15 +575,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m in Sources */,
 				91066C121C2B162D003E845F /* DemoUtils.m in Sources */,
+				B5FE9B501EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m in Sources */,
+				B5FE9B641EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m in Sources */,
 				91E125C71C64B7AA0095F327 /* InReadTopWebViewController.m in Sources */,
 				91E125C91C64B7AA0095F327 /* InReadTopWKWebView.m in Sources */,
+				B5FE9B701EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m in Sources */,
 				910CB4521A695933005E6711 /* InReadWebViewController.m in Sources */,
 				91E125C31C64B7AA0095F327 /* InReadTopScrollViewController.m in Sources */,
+				B5FE9B671EBB121D00649FD6 /* RandomCollectionViewCell.m in Sources */,
 				913CED781B67C3590058623A /* CustomAdScrollViewController.m in Sources */,
+				B5FE9B581EB9C99E00649FD6 /* TeadsWebViewTableViewCell.m in Sources */,
+				B5FE9B5E1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m in Sources */,
+				B5FE9B5B1EB9FFCC00649FD6 /* inReadWebViewInTableViewViewController.m in Sources */,
 				910CB4501A695933005E6711 /* InReadScrollViewController.m in Sources */,
 				91E635A71DDB17B600525579 /* InReadTopCollectionViewController.m in Sources */,
+				B5FE9B611EBA017700649FD6 /* TeadsWkWebViewTableViewCell.m in Sources */,
 				916CFB191A68288400E36306 /* AppDelegate.m in Sources */,
+				B5FE9B4D1EB8730800649FD6 /* InReadWebViewEmbededInScrollViewViewController.m in Sources */,
 				91E125C51C64B7AA0095F327 /* InReadTopTableViewController.m in Sources */,
 				91E635A41DDB0AAE00525579 /* CustomCollectionViewCell.m in Sources */,
 				91566E681E78451B008AF47F /* MultiCustomAdCollectionViewController.m in Sources */,
@@ -516,6 +601,7 @@
 				91066C111C2B15F2003E845F /* InReadWKWebview.m in Sources */,
 				916CFB161A68288400E36306 /* main.m in Sources */,
 				91E635A11DDB081C00525579 /* CustomAdCollectionViewController.m in Sources */,
+				B5FE9B6A1EBB177600649FD6 /* WebViewCollectionViewCell.m in Sources */,
 				916CFB3F1A68303700E36306 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +729,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V55UEG98F8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
@@ -657,9 +744,10 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.teads.TeadsSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -670,6 +758,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V55UEG98F8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeadsSDKDemo",
@@ -683,9 +772,10 @@
 					"$(PROJECT_DIR)/TeadsSDKDemo",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.teads.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.teads.TeadsSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -694,6 +784,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = V55UEG98F8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
@@ -716,6 +807,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V55UEG98F8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
