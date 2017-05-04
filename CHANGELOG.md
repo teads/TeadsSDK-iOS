@@ -1,5 +1,10 @@
 # Changelog
 
+v2.7.1
+ - Respecting Apple default audio parameter for your app caused to stop other audio streaming apps. This has been fixed.
+ - Improved webviews integration support
+ - Internal improvements
+
 v2.7.0
  - Added new ad format support
  - Internal improvements
