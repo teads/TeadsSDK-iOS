@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.2
+ - Fixed a duplicate symbol issue after an update with CocoaPods
+
 v2.7.1
  - Respecting Apple default audio parameter for your app caused to stop other audio streaming apps. This has been fixed.
  - Improved webviews integration support
