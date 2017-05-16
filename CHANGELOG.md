@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.3
+ - Added method `reinjectTeadsInWebView` to be used in case multiple load might be done on a WebView
+
 v2.7.2
  - Fixed a duplicate symbol issue after an update with CocoaPods
 

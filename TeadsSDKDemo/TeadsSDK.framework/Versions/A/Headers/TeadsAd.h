@@ -237,6 +237,14 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
  */
 - (void)setAltScrollView:(UIScrollView *)scrollView;
 
+/*
+ * Reinject Teads inRead in your UIWebView/WKWebview
+ *
+ * @discussion You might have the need to do different loadRequest/loadHTMLString/... on your webview (content to update/reload, etc...). If you make new loadRequest/loadHTMLString/... you need then to call reinjectTeadsInWebView in order to inform TeadsAd that the WebView content will be loaded again
+ *
+ */
+- (void)reinjectTeadsInWebView;
+
 /**
  * Load Teads Ad
  */
