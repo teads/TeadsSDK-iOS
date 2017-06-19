@@ -1,22 +1,22 @@
 //
-//  inReadWkWebViewInCollectionViewControllerCollectionViewController.m
+//  inReadWkWebViewInCollectionViewController.m
 //  TeadsSDKDemo
 //
 //  Created by Jérémy Grosjean on 04/05/2017.
 //  Copyright © 2017 Teads. All rights reserved.
 //
 
-#import "inReadWkWebViewInCollectionViewControllerCollectionViewController.h"
+#import "inReadWkWebViewInCollectionViewController.h"
 #import "RandomCollectionViewCell.h"
 #import "WkWebViewCollectionViewCell.h"
 #import <TeadsSDK/TeadsSDK.h>
-@interface inReadWkWebViewInCollectionViewControllerCollectionViewController ()<TeadsAdDelegate, UIScrollViewDelegate>{
+@interface inReadWkWebViewInCollectionViewController ()<TeadsAdDelegate, UIScrollViewDelegate>{
 
 NSIndexPath *teadsIntegrationIndex;
 }
 @end
 
-@implementation inReadWkWebViewInCollectionViewControllerCollectionViewController
+@implementation inReadWkWebViewInCollectionViewController
 
 static NSString * const reuseIdentifier = @"collectionViewCell2";
 static NSString * const reuseIdentifier2 = @"webViewcollectionViewCell";
@@ -26,7 +26,7 @@ static NSString * const reuseIdentifier2 = @"webViewcollectionViewCell";
     [super viewDidLoad];
     //the index where we will add the ad
     teadsIntegrationIndex = [NSIndexPath indexPathForRow:10 inSection:0];
-    self.navigationItem.title = @"inRead WkWebView embeded in Collection View";
+    self.navigationItem.title = @"inRead WkWebView in Collection View";
     // Register cell classes
     [self.collectionView registerClass:[WkWebViewCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier2];
     self.collectionView.delegate = self;

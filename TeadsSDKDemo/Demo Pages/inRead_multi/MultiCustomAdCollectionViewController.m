@@ -73,7 +73,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"UICollectionView";
+    self.navigationItem.title = @"Multiple inRead in CollectionView";
     
     [self createMultipleTeadsAd];
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KGe-QN-D1W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--inRead Scroll View Controller-->
         <scene sceneID="EdH-VC-OxD">
             <objects>
-                <viewController storyboardIdentifier="inReadScrollView" id="GSn-sh-pqI" userLabel="inRead Scroll View Controller" customClass="InReadScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead ScrollView" id="GSn-sh-pqI" userLabel="inRead Scroll View Controller" customClass="InReadScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ihH-Ky-6zk"/>
                         <viewControllerLayoutGuide type="bottom" id="bIf-9h-yEh"/>
@@ -175,7 +175,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--custom Ad Scroll View Controller-->
         <scene sceneID="sy3-uE-xt7">
             <objects>
-                <viewController storyboardIdentifier="customAdScrollView" id="eKp-Kz-5n7" userLabel="custom Ad Scroll View Controller" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead custom in ScrollView" id="eKp-Kz-5n7" userLabel="custom Ad Scroll View Controller" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eib-fG-5SY"/>
                         <viewControllerLayoutGuide type="bottom" id="Dni-yr-pMg"/>
@@ -301,7 +301,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--custom Ad Scroll View Controller - iPad-->
         <scene sceneID="cb1-RN-rBO">
             <objects>
-                <viewController storyboardIdentifier="customAdScrollViewiPad" id="wfP-us-imQ" userLabel="custom Ad Scroll View Controller - iPad" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead custom in ScrollView iPad" id="wfP-us-imQ" userLabel="custom Ad Scroll View Controller - iPad" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yb3-wm-51f"/>
                         <viewControllerLayoutGuide type="bottom" id="dIE-ad-hEc"/>
@@ -431,7 +431,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Scroll View Controller - iPad-->
         <scene sceneID="dub-cY-ibn">
             <objects>
-                <viewController storyboardIdentifier="inReadScrollViewForIPad" id="szK-Ef-Ods" userLabel="inRead Scroll View Controller - iPad" customClass="InReadScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead ScrollView iPad" id="szK-Ef-Ods" userLabel="inRead Scroll View Controller - iPad" customClass="InReadScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCp-b3-qkV"/>
                         <viewControllerLayoutGuide type="bottom" id="ot4-FU-TQi"/>
@@ -597,7 +597,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--In Read Web View Embeded In Scroll View View Controller-->
         <scene sceneID="5ph-Kl-l9Y">
             <objects>
-                <viewController storyboardIdentifier="inRead WebView embeded in Scroll View" id="311-7U-4EM" customClass="InReadWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WebView in ScrollView" id="311-7U-4EM" customClass="InReadWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qg5-xQ-lPB"/>
                         <viewControllerLayoutGuide type="bottom" id="TKa-58-Vik"/>
@@ -660,7 +660,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--In Read Wk Web View Embeded In Scroll View View Controller-->
         <scene sceneID="hTB-yJ-B9O">
             <objects>
-                <viewController storyboardIdentifier="inRead WkWebView embeded in Scroll View" id="uxF-Hw-N3i" customClass="InReadWkWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WKWebView in ScrollView" id="uxF-Hw-N3i" customClass="InReadWkWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gNL-x0-iHV"/>
                         <viewControllerLayoutGuide type="bottom" id="u1A-0E-oDv"/>
@@ -719,7 +719,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--In Read Web View In Table View View Controller-->
         <scene sceneID="Ztd-Y6-5RF">
             <objects>
-                <tableViewController storyboardIdentifier="inRead WebView In TableView ViewController" id="ddg-k6-X4L" customClass="inReadWebViewInTableViewViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead WebView in TableView" id="ddg-k6-X4L" customClass="inReadWebViewInTableViewViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mkA-nC-8EY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,7 +846,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--In Read Wk Web View In Table View View Controller-->
         <scene sceneID="nwY-St-F2y">
             <objects>
-                <tableViewController storyboardIdentifier="inRead WkWebView In TableView ViewController" id="F46-Xp-AlE" customClass="inReadWkWebViewInTableViewViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead WKWebView in TableView" id="F46-Xp-AlE" customClass="inReadWkWebViewInTableViewViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fxi-bz-aWt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -958,7 +958,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--In Read Web View In Collection View Controller-->
         <scene sceneID="dVE-tM-vZq">
             <objects>
-                <collectionViewController storyboardIdentifier="inRead WebView In CollectionViewController" id="fUU-EK-XPd" customClass="inReadWebViewInCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="inRead WebView in CollectionView" id="fUU-EK-XPd" customClass="inReadWebViewInCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xiW-G6-lpI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,10 +1018,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
             </objects>
             <point key="canvasLocation" x="5810.3999999999996" y="-756.07196401799104"/>
         </scene>
-        <!--In Read Wk Web View In Collection View Controller Collection View Controller-->
+        <!--In Read Wk Web View In Collection View Controller-->
         <scene sceneID="UA0-hC-kg3">
             <objects>
-                <collectionViewController storyboardIdentifier="inRead WkWebView In CollectionViewController" id="MLl-qx-4fd" customClass="inReadWkWebViewInCollectionViewControllerCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="inRead WKWebView in CollectionView" id="MLl-qx-4fd" customClass="inReadWkWebViewInCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="3Wr-XC-jpm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1084,7 +1084,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--inRead Web View Controller-->
         <scene sceneID="bxv-oc-qhz">
             <objects>
-                <viewController storyboardIdentifier="inReadWebView" id="1X4-Pi-Zc9" userLabel="inRead Web View Controller" customClass="InReadWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WebView" id="1X4-Pi-Zc9" userLabel="inRead Web View Controller" customClass="InReadWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kzk-cl-4Lw"/>
                         <viewControllerLayoutGuide type="bottom" id="cFy-db-V0b"/>
@@ -1120,7 +1120,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--inRead Table View Controller-->
         <scene sceneID="nv2-m9-BE7">
             <objects>
-                <tableViewController storyboardIdentifier="inReadTableView" id="rJx-mq-Wdn" userLabel="inRead Table View Controller" customClass="InReadTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead TableView" id="rJx-mq-Wdn" userLabel="inRead Table View Controller" customClass="InReadTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="brl-gH-eE0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1339,7 +1339,7 @@ It is usually presented modally and takes over the app experience while providin
         <!--inRead Top Web View Controller-->
         <scene sceneID="ur2-Sp-gad">
             <objects>
-                <viewController storyboardIdentifier="inReadTopWebView" id="DyY-xw-AEg" userLabel="inRead Top Web View Controller" customClass="InReadTopWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top WebView" id="DyY-xw-AEg" userLabel="inRead Top Web View Controller" customClass="InReadTopWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DkU-77-gNH"/>
                         <viewControllerLayoutGuide type="bottom" id="WcJ-KI-l6p"/>
@@ -1375,7 +1375,7 @@ It is usually presented modally and takes over the app experience while providin
         <!--inRead Top Scroll View Controller-->
         <scene sceneID="cPg-zV-9yO">
             <objects>
-                <viewController storyboardIdentifier="inReadTopScrollView" id="LGl-sg-YQ5" userLabel="inRead Top Scroll View Controller" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top ScrollView" id="LGl-sg-YQ5" userLabel="inRead Top Scroll View Controller" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qzN-JS-JqE"/>
                         <viewControllerLayoutGuide type="bottom" id="dOb-2k-eB2"/>
@@ -1465,7 +1465,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top Table View Controller-->
         <scene sceneID="g8L-MT-zeb">
             <objects>
-                <tableViewController storyboardIdentifier="inReadTopTableView" id="2xJ-tq-MH4" userLabel="inRead Top Table View Controller" customClass="InReadTopTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead Top TableView" id="2xJ-tq-MH4" userLabel="inRead Top Table View Controller" customClass="InReadTopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1567,7 +1567,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead WK Web View Controller-->
         <scene sceneID="73d-BJ-Ddc">
             <objects>
-                <viewController storyboardIdentifier="inReadWKWebView" id="lVs-K8-5vP" userLabel="inRead WK Web View Controller" customClass="InReadWKWebview" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WKWebView" id="lVs-K8-5vP" userLabel="inRead WK Web View Controller" customClass="InReadWKWebview" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U7s-WZ-XMr"/>
                         <viewControllerLayoutGuide type="bottom" id="3H0-cb-LQh"/>
@@ -1585,7 +1585,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top WK Web View Controller-->
         <scene sceneID="LK3-HN-Y0w">
             <objects>
-                <viewController storyboardIdentifier="inReadTopWKWebView" id="dtQ-TG-1QA" userLabel="inRead Top WK Web View Controller" customClass="InReadTopWKWebView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top WKWebView" id="dtQ-TG-1QA" userLabel="inRead Top WK Web View Controller" customClass="InReadTopWKWebView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exB-he-Hsa"/>
                         <viewControllerLayoutGuide type="bottom" id="I8A-GW-NmF"/>
@@ -1603,7 +1603,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top Scroll View Controller - iPad-->
         <scene sceneID="FmF-UW-cT4">
             <objects>
-                <viewController storyboardIdentifier="inReadTopScrollViewForIPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inRead Top Scroll View Controller - iPad" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top ScrollView iPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inRead Top Scroll View Controller - iPad" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGA-Ia-HPa"/>
                         <viewControllerLayoutGuide type="bottom" id="jLm-wh-Iu4"/>
@@ -1707,7 +1707,7 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--Custom Ad Collection View Controller-->
         <scene sceneID="p4B-cM-DSm">
             <objects>
-                <viewController storyboardIdentifier="customAdCollectionViewController" id="HHF-6k-ruF" customClass="CustomAdCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead in CollectionView" id="HHF-6k-ruF" customClass="CustomAdCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="06O-y1-dHr"/>
                         <viewControllerLayoutGuide type="bottom" id="6Kf-Hg-jQi"/>
@@ -1798,7 +1798,7 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--Multi Custom Ad Collection View Controller-->
         <scene sceneID="Y3i-Sa-Tsg">
             <objects>
-                <collectionViewController storyboardIdentifier="multiCustomAdCollectionViewController" id="dip-Do-pwX" customClass="MultiCustomAdCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Multiple inRead in CollectionView" id="dip-Do-pwX" customClass="MultiCustomAdCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eZM-us-UrI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1893,8 +1893,8 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--In Read Top Collection View Controller-->
         <scene sceneID="cqS-0Q-p7O">
             <objects>
-                <collectionViewController storyboardIdentifier="inReadTopCollectionView" id="t7u-Cx-fOU" customClass="InReadTopCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Kwr-N4-nVa">
+                <collectionViewController storyboardIdentifier="inRead Top CollectionView" id="t7u-Cx-fOU" customClass="InReadTopCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Kwr-N4-nVa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

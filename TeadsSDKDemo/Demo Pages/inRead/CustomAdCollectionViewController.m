@@ -37,7 +37,7 @@ NSString *collectionViewCellID = @"collectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"UICollectionView";
+    self.navigationItem.title = @"inRead in CollectionView";
     
     self.collctnView.delegate = self;
     self.collctnView.dataSource = self;

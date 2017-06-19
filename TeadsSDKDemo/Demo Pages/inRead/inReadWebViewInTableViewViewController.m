@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     teadsAdIndex = 13;
-    self.navigationItem.title = @"inRead WebView embeded in Table View";
+    self.navigationItem.title = @"inRead WebView in Table View";
 }
 
 

@@ -29,7 +29,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     teadsAdIndex = [NSIndexPath indexPathForRow:13 inSection:0];
-    self.navigationItem.title = @"inRead WkWebView embeded in Table View";
+    self.navigationItem.title = @"inRead WkWebView in Table View";
 }
 
 - (void)didReceiveMemoryWarning {

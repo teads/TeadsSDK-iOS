@@ -27,7 +27,7 @@ static NSString * const reuseIdentifier2 = @"webViewcollectionViewCell";
     [super viewDidLoad];
     //the index where we will add the ad
     teadsIntegrationIndex = 10;
-    self.navigationItem.title = @"inRead WebView embeded in Collection View";
+    self.navigationItem.title = @"inRead WebView in Collection View";
     // Register cell classes
     [self.collectionView registerClass:[WebViewCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier2];
     self.collectionView.delegate = self;

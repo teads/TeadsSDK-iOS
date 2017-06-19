@@ -25,12 +25,60 @@
 #import "inReadWebViewInTableViewViewController.h"
 #import "inReadWkWebViewInTableViewViewController.h"
 #import "inReadWebViewInCollectionViewController.h"
-#import "inReadWkWebViewInCollectionViewControllerCollectionViewController.h"
+#import "inReadWkWebViewInCollectionViewController.h"
 #import "DemoUtils.h"
+
+
+//BE CAREFUL : this string should be the title you want in the list AND the storyboard Id of the controller attached to the cell
+static NSString *inReadHeaderString         = @"inRead";
+static NSString *inReadScrollViewString     = @"inRead ScrollView";
+static NSString *inReadWebViewString        = @"inRead WebView";
+static NSString *inReadWKWebViewString      = @"inRead WKWebView";
+static NSString *inReadTableViewString      = @"inRead TableView";
+static NSString *inReadWebViewEmbededHeaderString               = @"inRead WebView embeded";
+static NSString *inReadWebViewEmbededInScrollViewString         = @"inRead WebView in ScrollView";
+static NSString *inReadWKWebViewEmbededInScrollViewString       = @"inRead WKWebView in ScrollView";
+static NSString *inReadWebViewEmbededInTableViewString          = @"inRead WebView in TableView";
+static NSString *inReadWKWebViewEmbededInTableViewString        = @"inRead WKWebView in TableView";
+static NSString *inReadWebViewEmbededInCollectionViewString     = @"inRead WebView in CollectionView";
+static NSString *inReadWKWebViewEmbededInCollectionViewString   = @"inRead WKWebView in CollectionView";
+static NSString *inReadTopHeaderString          = @"inRead Top";
+static NSString *inReadTopScrollViewString      = @"inRead Top ScrollView";
+static NSString *inReadTopWebViewString         = @"inRead Top WebView";
+static NSString *inReadTopWKWebViewString       = @"inRead Top WKWebView";
+static NSString *inReadTopTableViewString       = @"inRead Top TableView";
+static NSString *inReadTopCollectionViewString  = @"inRead Top CollectionView";
+static NSString *inReadCustomHeaderString                   = @"inRead particuliar case";
+static NSString *inReadCustomScrollViewString               = @"inRead custom in ScrollView";
+static NSString *inReadCustomCollectionViewString           = @"inRead in CollectionView";
+static NSString *inReadMultipleCustomCollectionViewString   = @"Multiple inRead in CollectionView";
+
+@interface ListObject : NSObject
+
+@property NSString *className;
+@property BOOL isHeader;
+/// yes if the object has an ipad version of the controller
+@property BOOL hasIpadVersion;
+- (id) initWithClassName:(NSString *)className withIsHeader: (BOOL)isHeader;
+@end
+
+@implementation ListObject
+
+- (id) initWithClassName:(NSString *)className withIsHeader: (BOOL)isHeader {
+    self = [super init];
+    if (self) {
+        self.className = className;
+        self.isHeader = isHeader;
+    }
+    return self;
+}
+
+@end
 
 @interface MainViewController () {
     NSArray *titlesForHeader;
     NSArray *controllers;
+    NSMutableArray *listObjects;
 }
 
 @end
@@ -43,7 +91,78 @@
 
     self.title = @"Teads SDK Demo";
     
-    titlesForHeader = @[@"Native Video", @"App Parameters"];
+    {
+        titlesForHeader = @[@"Native Video", @"App Parameters"];
+        listObjects = [NSMutableArray new];
+        ListObject *inReadHeader = [[ListObject alloc]initWithClassName:inReadHeaderString withIsHeader:YES];
+        [listObjects addObject:inReadHeader];
+        
+        ListObject *inReadScrollView = [[ListObject alloc]initWithClassName:inReadScrollViewString withIsHeader:NO];
+        inReadScrollView.hasIpadVersion = YES;
+        [listObjects addObject:inReadScrollView];
+        
+        ListObject *inReadWebView = [[ListObject alloc]initWithClassName:inReadWebViewString withIsHeader:NO];
+        [listObjects addObject:inReadWebView];
+        
+        ListObject *inReadWKWebView = [[ListObject alloc]initWithClassName:inReadWKWebViewString withIsHeader:NO];
+        [listObjects addObject:inReadWKWebView];
+        
+        ListObject *inReadTableView = [[ListObject alloc]initWithClassName:inReadTableViewString withIsHeader:NO];
+        [listObjects addObject:inReadTableView];
+        
+        ListObject *inReadWebViewEmbededHeader = [[ListObject alloc]initWithClassName:inReadWebViewEmbededHeaderString withIsHeader:YES];
+        [listObjects addObject:inReadWebViewEmbededHeader];
+        
+        ListObject *inReadWebViewEmbededInScrollView = [[ListObject alloc]initWithClassName:inReadWebViewEmbededInScrollViewString withIsHeader:NO];
+        [listObjects addObject:inReadWebViewEmbededInScrollView];
+        
+        ListObject *inReadWkWebViewEmbededInScrollView = [[ListObject alloc]initWithClassName:inReadWKWebViewEmbededInScrollViewString withIsHeader:NO];
+        [listObjects addObject:inReadWkWebViewEmbededInScrollView];
+        
+        ListObject *inReadWKWebViewEmbededInScrollView = [[ListObject alloc]initWithClassName:inReadWebViewEmbededInTableViewString withIsHeader:NO];
+        [listObjects addObject:inReadWKWebViewEmbededInScrollView];
+        
+        ListObject *inReadWebViewEmbededInTableView = [[ListObject alloc]initWithClassName:inReadWKWebViewEmbededInTableViewString withIsHeader:NO];
+        [listObjects addObject:inReadWebViewEmbededInTableView];
+        
+        ListObject *inReadWebViewEmbededInCollectionView = [[ListObject alloc]initWithClassName:inReadWebViewEmbededInCollectionViewString withIsHeader:NO];
+        [listObjects addObject:inReadWebViewEmbededInCollectionView];
+        
+        ListObject *inReadWKWebViewEmbededInCollectionView = [[ListObject alloc]initWithClassName:inReadWKWebViewEmbededInCollectionViewString withIsHeader:NO];
+        [listObjects addObject:inReadWKWebViewEmbededInCollectionView];
+        
+        ListObject *inReadTopHeader = [[ListObject alloc]initWithClassName:inReadTopHeaderString withIsHeader:YES];
+        [listObjects addObject:inReadTopHeader];
+        
+        ListObject *inReadTopScrollView = [[ListObject alloc]initWithClassName:inReadTopScrollViewString withIsHeader:NO];
+        inReadTopScrollView.hasIpadVersion = YES;
+        [listObjects addObject:inReadTopScrollView];
+        
+        ListObject *inReadTopWebView = [[ListObject alloc]initWithClassName:inReadTopWebViewString withIsHeader:NO];
+        [listObjects addObject:inReadTopWebView];
+        
+        ListObject *inReadTopWKWebView = [[ListObject alloc]initWithClassName:inReadTopWKWebViewString withIsHeader:NO];
+        [listObjects addObject:inReadTopWKWebView];
+        
+        ListObject *inReadTopTableView = [[ListObject alloc]initWithClassName:inReadTopTableViewString withIsHeader:NO];
+        [listObjects addObject:inReadTopTableView];
+        
+        ListObject *inReadTopCollectionView = [[ListObject alloc]initWithClassName:inReadTopCollectionViewString withIsHeader:NO];
+        [listObjects addObject:inReadTopCollectionView];
+        
+        ListObject *inReadCustomHeader = [[ListObject alloc]initWithClassName:inReadCustomHeaderString withIsHeader:YES];
+        [listObjects addObject:inReadCustomHeader];
+        
+        ListObject *inReadCustomScrollView = [[ListObject alloc]initWithClassName:inReadCustomScrollViewString withIsHeader:NO];
+        inReadCustomScrollView.hasIpadVersion = YES;
+        [listObjects addObject:inReadCustomScrollView];
+        
+        ListObject *inReadCustomCollectionView = [[ListObject alloc]initWithClassName:inReadCustomCollectionViewString withIsHeader:NO];
+        [listObjects addObject:inReadCustomCollectionView];
+        
+        ListObject *inReadMultipleCustomCollectionView = [[ListObject alloc]initWithClassName:inReadMultipleCustomCollectionViewString withIsHeader:NO];
+        [listObjects addObject:inReadMultipleCustomCollectionView];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +179,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 24;
+        return listObjects.count;
     }
     return 2;
 }
@@ -75,87 +194,14 @@
     static NSString *CellTitleIdentifier = @"CellTitle";
     static NSString *CellIdentifier = @"Cell";
     
+    
     NSString *cellTextLabel;
+    ListObject *currentObject;
     if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-                cellTextLabel = @"inRead"; //header
-                break;
-            case 1:
-                cellTextLabel = @"inRead ScrollView";
-                break;
-            case 2:
-                cellTextLabel = @"inRead WebView";
-                break;
-            case 3:
-                cellTextLabel = @"inRead WKWebview";
-                break;
-            case 4:
-                cellTextLabel = @"inRead TableView";
-                break;
-            case 5:
-                cellTextLabel = @"inRead in WebView embeded"; //header
-                break;
-            case 6:
-                cellTextLabel = @"inRead in WebView embeded in ScrollView";
-                break;
-            case 7:
-                cellTextLabel = @"inRead in WKwebView embeded in ScrollView";
-                break;
-            case 8:
-                cellTextLabel = @"inRead in WebView embeded in TableView";
-                break;
-            case 9:
-                cellTextLabel = @"inRead in WKwebView embeded in TableView";
-                break;
-            case 10:
-                cellTextLabel = @"inRead in WebView embeded in CollectionView";
-                break;
-            case 11:
-                cellTextLabel = @"inRead in WKwebView embeded in CollectionView";
-                break;
-            case 12:
-                cellTextLabel = @"inRead Top"; //header
-                break;
-            case 13:
-                cellTextLabel = @"inRead Top ScrollView";
-                break;
-            case 14:
-                cellTextLabel = @"inRead Top WebView";
-                break;
-            case 15:
-                cellTextLabel = @"inRead Top WKWebview";
-                break;
-            case 16:
-                cellTextLabel = @"inRead Top TableView";
-                break;
-            case 17:
-                cellTextLabel = @"inRead Top CollectionView";
-                break;
-            case 18:
-                cellTextLabel = @"Custom Native Video View";
-                break;
-            case 19:
-                cellTextLabel = @"Custom in ScrollView";
-                break;
-            case 20:
-                cellTextLabel = @"Custom in CollectionView";
-                break;
-            case 21:
-                cellTextLabel = @"Multiple inRead (multi-slot)"; //header
-                break;
-            case 22:
-                cellTextLabel = @"Simple inRead in CollectionView";
-                break;
-            case 23:
-                cellTextLabel = @"Multiple inRead in CollectionView";
-                break;
-            default:
-                break;
-        }
-        
-    } else {
-        
+        currentObject = [listObjects objectAtIndex:indexPath.row];
+        cellTextLabel = currentObject.className;
+    }
+    else {
         switch (indexPath.row) {
             case 0:
                 cellTextLabel = @"Change PID";
@@ -169,11 +215,8 @@
     }
     
     UITableViewCell *cell;
-    if ((indexPath.section == 0
-         && (indexPath.row == 0
-             || indexPath.row == 5
-             || indexPath.row == 12
-             || indexPath.row == 21))) {
+    if (indexPath.section == 0
+         && currentObject.isHeader) {
         cell = [tableView dequeueReusableCellWithIdentifier:CellTitleIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTitleIdentifier];
@@ -200,111 +243,15 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id controller = nil;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 1: {
-                InReadScrollViewController *inReadScrollView = [storyboard  instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadScrollViewForIPad":@"inReadScrollView"];
-                controller = inReadScrollView;
-                break;
-            }
-            case 2: {
-                InReadWebViewController *inReadWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadWebView"];
-                controller = inReadWebView;
-                break;
-            }
-            case 3: {
-                InReadWKWebview *inReadWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadWKWebView"];
-                controller = inReadWKWebView;
-                break;
-            }
-            case 4: {
-                InReadTableViewController *inReadTableView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTableView"];
-                controller = inReadTableView;
-                break;
-            }
-            case 6: {
-                InReadWebViewEmbededInScrollViewViewController *inReadWebViewInScrollView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WebView embeded in Scroll View"];
-                controller = inReadWebViewInScrollView;
-                break;
-            }
-            case 7: {
-                InReadWkWebViewEmbededInScrollViewViewController *inReadWkWebViewInScrollView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WkWebView embeded in Scroll View"];
-                controller = inReadWkWebViewInScrollView;
-                break;
-            }
-            case 8: {
-                inReadWebViewInTableViewViewController *inReadWebViewInTableView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WebView In TableView ViewController"];
-                controller = inReadWebViewInTableView;
-                break;
-            }
-            case 9: {
-                inReadWkWebViewInTableViewViewController *inReadWkWebViewTableView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WkWebView In TableView ViewController"];
-                controller = inReadWkWebViewTableView;
-
-                break;
-            }
-            case 10: {
-                inReadWebViewInCollectionViewController *inReadWebViewInCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WebView In CollectionViewController"];
-                controller = inReadWebViewInCollectionView;
-                break;
-            }
-            case 11: {
-                inReadWkWebViewInCollectionViewControllerCollectionViewController *inReadWkWebViewInCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"inRead WkWebView In CollectionViewController"];
-                controller = inReadWkWebViewInCollectionView;
-                break;
-            }
-            case 13: {
-                InReadTopScrollViewController *inReadTopScrollView = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadTopScrollViewForIPad":@"inReadTopScrollView"];
-                controller = inReadTopScrollView;
-                break;
-            }
-            case 14: {
-                InReadTopScrollViewController *inReadTopScrollView = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"inReadTopScrollViewForIPad":@"inReadTopScrollView"];
-                controller = inReadTopScrollView;
-                break;
-            }
-            case 15: {
-                InReadTopWebViewController *inReadTopWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopWebView"];
-                controller = inReadTopWebView;
-                break;
-            }
-            case 16: {
-                InReadTopWKWebView *inReadTopWKWebView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopWKWebView"];
-                controller = inReadTopWKWebView;
-                break;
-            }
-            case 17: {
-                InReadTopTableViewController *inReadTopTableView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopTableView"];
-                controller = inReadTopTableView;
-                break;
-            }
-            case 18: {
-                InReadTopCollectionViewController *inReadTopCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"inReadTopCollectionView"];
-                controller = inReadTopCollectionView;
-                break;
-            }
-            case 20: {
-                CustomAdScrollViewController *simpleInReadScrollViewController = [storyboard instantiateViewControllerWithIdentifier:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?@"customAdScrollViewiPad":@"customAdScrollView"];
-                controller = simpleInReadScrollViewController;
-                break;
-            }
-            case 22: {
-                CustomAdCollectionViewController *simpleInReadCollectionView = [storyboard instantiateViewControllerWithIdentifier:@"customAdCollectionViewController"];
-                controller = simpleInReadCollectionView;
-                
-                break;
-            } case 23: {
-                MultiCustomAdCollectionViewController *multiCustomAdCollectionViewController = [storyboard instantiateViewControllerWithIdentifier:@"multiCustomAdCollectionViewController"];
-                controller = multiCustomAdCollectionViewController;
-            }
-            default:
-                break;
-        }
+        ListObject *currentListObject = [listObjects objectAtIndex:indexPath.row];
+        NSString *controllerName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) && currentListObject.hasIpadVersion ? [currentListObject.className stringByAppendingString:@" iPad"] : currentListObject.className;
+        
+        controller = [storyboard instantiateViewControllerWithIdentifier:controllerName];
         
     } else if (indexPath.section == 1) {
         switch (indexPath.row) {

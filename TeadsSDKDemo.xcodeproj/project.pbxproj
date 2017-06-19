@@ -63,7 +63,7 @@
 		B5FE9B641EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B631EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m */; };
 		B5FE9B671EBB121D00649FD6 /* RandomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B661EBB121D00649FD6 /* RandomCollectionViewCell.m */; };
 		B5FE9B6A1EBB177600649FD6 /* WebViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B691EBB177600649FD6 /* WebViewCollectionViewCell.m */; };
-		B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */; };
+		B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.m */; };
 		B5FE9B701EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FE9B6F1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -190,8 +190,8 @@
 		B5FE9B661EBB121D00649FD6 /* RandomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomCollectionViewCell.m; sourceTree = "<group>"; };
 		B5FE9B681EBB177600649FD6 /* WebViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewCollectionViewCell.h; sourceTree = "<group>"; };
 		B5FE9B691EBB177600649FD6 /* WebViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewCollectionViewCell.m; sourceTree = "<group>"; };
-		B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWkWebViewInCollectionViewControllerCollectionViewController.h; sourceTree = "<group>"; };
-		B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWkWebViewInCollectionViewControllerCollectionViewController.m; sourceTree = "<group>"; };
+		B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inReadWkWebViewInCollectionViewController.h; sourceTree = "<group>"; };
+		B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inReadWkWebViewInCollectionViewController.m; sourceTree = "<group>"; };
 		B5FE9B6E1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WkWebViewCollectionViewCell.h; sourceTree = "<group>"; };
 		B5FE9B6F1EBB25EF00649FD6 /* WkWebViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WkWebViewCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -431,8 +431,8 @@
 				B5FE9B5D1EBA00AA00649FD6 /* inReadWkWebViewInTableViewViewController.m */,
 				B5FE9B621EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.h */,
 				B5FE9B631EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m */,
-				B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.h */,
-				B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m */,
+				B5FE9B6B1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.h */,
+				B5FE9B6C1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.m */,
 			);
 			name = "inRead embeded";
 			path = inRead;
@@ -575,7 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewControllerCollectionViewController.m in Sources */,
+				B5FE9B6D1EBB251F00649FD6 /* inReadWkWebViewInCollectionViewController.m in Sources */,
 				91066C121C2B162D003E845F /* DemoUtils.m in Sources */,
 				B5FE9B501EB88DEC00649FD6 /* InReadWkWebViewEmbededInScrollViewViewController.m in Sources */,
 				B5FE9B641EBA21AB00649FD6 /* inReadWebViewInCollectionViewController.m in Sources */,

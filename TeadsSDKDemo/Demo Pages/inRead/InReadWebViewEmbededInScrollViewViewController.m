@@ -29,7 +29,7 @@
     self.webView.delegate = self;
     
     [self.webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
-    self.navigationItem.title = @"inRead WebView embeded in Scroll View";
+    self.navigationItem.title = @"inRead WebView in Scroll View";
     //VERY IMPORTANT : if you want to set this delegate set them before instantiate the teadsAd
     self.scrollView.delegate = self;
     

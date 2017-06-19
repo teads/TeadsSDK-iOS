@@ -27,7 +27,7 @@
     //VERY IMPORTANT : if you want to set this delegate set them before instantiate the teadsAd
     self.wkWebView.navigationDelegate = self;
     self.scrollView.delegate = self;
-    
+    self.navigationItem.title = @"inRead WKWebView in Scroll View";
     [self.scrollView addSubview:self.wkWebView];
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     NSURL *webSiteURL;
@@ -106,7 +106,6 @@
     }@catch(id anException){
         //do nothing, obviously it wasn't attached because an exception was thrown
     }
-    self.navigationItem.title = @"inRead WkWebView embeded in Scroll View";
 }
 
 #pragma mark -
