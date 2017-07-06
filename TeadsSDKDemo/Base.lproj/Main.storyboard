@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KGe-QN-D1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KGe-QN-D1W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--inRead Scroll View Controller-->
         <scene sceneID="EdH-VC-OxD">
             <objects>
-                <viewController storyboardIdentifier="inReadScrollView" id="GSn-sh-pqI" userLabel="inRead Scroll View Controller" customClass="InReadScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead ScrollView" id="GSn-sh-pqI" userLabel="inRead Scroll View Controller" customClass="InReadScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ihH-Ky-6zk"/>
                         <viewControllerLayoutGuide type="bottom" id="bIf-9h-yEh"/>
@@ -175,7 +175,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--custom Ad Scroll View Controller-->
         <scene sceneID="sy3-uE-xt7">
             <objects>
-                <viewController storyboardIdentifier="customAdScrollView" id="eKp-Kz-5n7" userLabel="custom Ad Scroll View Controller" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead custom in ScrollView" id="eKp-Kz-5n7" userLabel="custom Ad Scroll View Controller" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eib-fG-5SY"/>
                         <viewControllerLayoutGuide type="bottom" id="Dni-yr-pMg"/>
@@ -301,7 +301,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--custom Ad Scroll View Controller - iPad-->
         <scene sceneID="cb1-RN-rBO">
             <objects>
-                <viewController storyboardIdentifier="customAdScrollViewiPad" id="wfP-us-imQ" userLabel="custom Ad Scroll View Controller - iPad" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead custom in ScrollView iPad" id="wfP-us-imQ" userLabel="custom Ad Scroll View Controller - iPad" customClass="CustomAdScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yb3-wm-51f"/>
                         <viewControllerLayoutGuide type="bottom" id="dIE-ad-hEc"/>
@@ -431,7 +431,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Scroll View Controller - iPad-->
         <scene sceneID="dub-cY-ibn">
             <objects>
-                <viewController storyboardIdentifier="inReadScrollViewForIPad" id="szK-Ef-Ods" userLabel="inRead Scroll View Controller - iPad" customClass="InReadScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead ScrollView iPad" id="szK-Ef-Ods" userLabel="inRead Scroll View Controller - iPad" customClass="InReadScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCp-b3-qkV"/>
                         <viewControllerLayoutGuide type="bottom" id="ot4-FU-TQi"/>
@@ -594,10 +594,497 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
             </objects>
             <point key="canvasLocation" x="1405" y="-924"/>
         </scene>
+        <!--In Read Web View Embeded In Scroll View View Controller-->
+        <scene sceneID="5ph-Kl-l9Y">
+            <objects>
+                <viewController storyboardIdentifier="inRead WebView in ScrollView" id="311-7U-4EM" customClass="InReadWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qg5-xQ-lPB"/>
+                        <viewControllerLayoutGuide type="bottom" id="TKa-58-Vik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eNJ-ER-dQW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="344" affinity="minY"/>
+                        </userGuides>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-Zk-vEz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V79-4G-Cpc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View in scroll view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b73-Gt-xbc">
+                                                <rect key="frame" x="90.5" y="49.5" width="194.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.48803877829999998" green="0.73832297329999996" blue="0.90428286790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="91W-C6-8p0"/>
+                                            <constraint firstItem="b73-Gt-xbc" firstAttribute="centerY" secondItem="V79-4G-Cpc" secondAttribute="centerY" id="QeR-el-nbE"/>
+                                            <constraint firstItem="b73-Gt-xbc" firstAttribute="centerX" secondItem="V79-4G-Cpc" secondAttribute="centerX" id="Wyf-08-T34"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="V79-4G-Cpc" secondAttribute="bottom" constant="519" id="KmA-Jy-7XK"/>
+                                    <constraint firstItem="V79-4G-Cpc" firstAttribute="leading" secondItem="hQj-Zk-vEz" secondAttribute="leading" id="RcG-Pq-kHm"/>
+                                    <constraint firstItem="V79-4G-Cpc" firstAttribute="top" secondItem="hQj-Zk-vEz" secondAttribute="top" id="anl-xg-P21"/>
+                                    <constraint firstAttribute="trailing" secondItem="V79-4G-Cpc" secondAttribute="trailing" id="ejS-QM-uFy"/>
+                                    <constraint firstItem="V79-4G-Cpc" firstAttribute="centerX" secondItem="hQj-Zk-vEz" secondAttribute="centerX" id="p9d-Mf-Xiw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TKa-58-Vik" firstAttribute="top" secondItem="hQj-Zk-vEz" secondAttribute="bottom" id="WfP-NG-TMQ"/>
+                            <constraint firstItem="hQj-Zk-vEz" firstAttribute="leading" secondItem="eNJ-ER-dQW" secondAttribute="leadingMargin" constant="-16" id="dh6-km-cIR"/>
+                            <constraint firstItem="hQj-Zk-vEz" firstAttribute="width" secondItem="eNJ-ER-dQW" secondAttribute="width" id="oRY-Rb-jsk"/>
+                            <constraint firstItem="hQj-Zk-vEz" firstAttribute="height" secondItem="eNJ-ER-dQW" secondAttribute="height" id="v25-L8-yn9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hQj-Zk-vEz" secondAttribute="trailing" constant="-16" id="zjj-cw-cTi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="hQj-Zk-vEz" id="eUT-bX-VDr"/>
+                        <outlet property="topView" destination="V79-4G-Cpc" id="Dgc-bX-iUY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7W-u0-2db" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2652" y="-764.16791604197908"/>
+        </scene>
+        <!--In Read Wk Web View Embeded In Scroll View View Controller-->
+        <scene sceneID="hTB-yJ-B9O">
+            <objects>
+                <viewController storyboardIdentifier="inRead WKWebView in ScrollView" id="uxF-Hw-N3i" customClass="InReadWkWebViewEmbededInScrollViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gNL-x0-iHV"/>
+                        <viewControllerLayoutGuide type="bottom" id="u1A-0E-oDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TbA-oY-gbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWT-Ix-aFZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbb-K3-W5x">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View in scroll view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-Nm-HkJ">
+                                                <rect key="frame" x="90.5" y="49.5" width="194.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.48803877829999998" green="0.73832297329999996" blue="0.90428286790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Cqy-fP-pks"/>
+                                            <constraint firstItem="M1e-Nm-HkJ" firstAttribute="centerX" secondItem="Gbb-K3-W5x" secondAttribute="centerX" id="n9R-hN-17W"/>
+                                            <constraint firstItem="M1e-Nm-HkJ" firstAttribute="centerY" secondItem="Gbb-K3-W5x" secondAttribute="centerY" id="z2z-K5-n1f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gbb-K3-W5x" firstAttribute="top" secondItem="JWT-Ix-aFZ" secondAttribute="top" id="5P5-Kf-oxr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gbb-K3-W5x" secondAttribute="bottom" constant="533" id="RqU-aB-9Tl"/>
+                                    <constraint firstItem="Gbb-K3-W5x" firstAttribute="centerX" secondItem="JWT-Ix-aFZ" secondAttribute="centerX" id="VDC-u7-5j3"/>
+                                    <constraint firstItem="Gbb-K3-W5x" firstAttribute="leading" secondItem="JWT-Ix-aFZ" secondAttribute="leading" id="dA3-ny-0yP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gbb-K3-W5x" secondAttribute="trailing" id="eni-0j-h2X"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JWT-Ix-aFZ" firstAttribute="top" secondItem="gNL-x0-iHV" secondAttribute="bottom" id="DkG-AB-Kec"/>
+                            <constraint firstItem="u1A-0E-oDv" firstAttribute="top" secondItem="JWT-Ix-aFZ" secondAttribute="bottom" id="Lhk-Xl-LFG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JWT-Ix-aFZ" secondAttribute="trailing" constant="-16" id="W3l-un-rdB"/>
+                            <constraint firstItem="JWT-Ix-aFZ" firstAttribute="leading" secondItem="TbA-oY-gbJ" secondAttribute="leadingMargin" constant="-16" id="ZVI-g1-u5p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="JWT-Ix-aFZ" id="9Kh-b7-C8U"/>
+                        <outlet property="topView" destination="Gbb-K3-W5x" id="dQh-2Q-40q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSi-TI-lvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3445.5999999999999" y="-761.46926536731644"/>
+        </scene>
+        <!--In Read Web View In Table View View Controller-->
+        <scene sceneID="Ztd-Y6-5RF">
+            <objects>
+                <tableViewController storyboardIdentifier="inRead WebView in TableView" id="ddg-k6-X4L" customClass="inReadWebViewInTableViewViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mkA-nC-8EY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsFirstCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsFirstCell" rowHeight="90" id="YVf-ep-vgR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YVf-ep-vgR" id="2eW-q7-fKp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="pm0-9w-BaA">
+                                            <rect key="frame" x="15" y="10" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="zr1-YF-UqA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="T7p-E9-lmK">
+                                            <rect key="frame" x="100" y="10" width="267" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6J3-Xz-lJy">
+                                            <rect key="frame" x="100" y="40" width="267" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="usv-na-kWN">
+                                            <rect key="frame" x="132" y="65" width="16" height="16"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="3bO-Gv-O5L">
+                                            <rect key="frame" x="250" y="65" width="16" height="16"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="usv-na-kWN" firstAttribute="top" secondItem="T7p-E9-lmK" secondAttribute="bottom" constant="35" id="4Kp-lE-lN0"/>
+                                        <constraint firstItem="pm0-9w-BaA" firstAttribute="top" secondItem="2eW-q7-fKp" secondAttribute="topMargin" constant="2" id="4xd-kb-ebr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pm0-9w-BaA" secondAttribute="bottom" constant="2" id="6BV-gY-fdH"/>
+                                        <constraint firstItem="3bO-Gv-O5L" firstAttribute="top" secondItem="usv-na-kWN" secondAttribute="top" id="7VM-TW-2xH"/>
+                                        <constraint firstAttribute="trailing" secondItem="3bO-Gv-O5L" secondAttribute="trailing" constant="109" id="92b-Y7-aKj"/>
+                                        <constraint firstItem="usv-na-kWN" firstAttribute="leading" secondItem="pm0-9w-BaA" secondAttribute="trailing" constant="47" id="CwI-I3-Xdj"/>
+                                        <constraint firstItem="usv-na-kWN" firstAttribute="bottom" secondItem="3bO-Gv-O5L" secondAttribute="bottom" id="DMb-Ds-Eky"/>
+                                        <constraint firstItem="6J3-Xz-lJy" firstAttribute="leading" secondItem="T7p-E9-lmK" secondAttribute="leading" id="FMp-Hm-jFs"/>
+                                        <constraint firstItem="6J3-Xz-lJy" firstAttribute="trailing" secondItem="2eW-q7-fKp" secondAttribute="trailingMargin" id="Mfl-Yo-YVv"/>
+                                        <constraint firstItem="T7p-E9-lmK" firstAttribute="leading" secondItem="pm0-9w-BaA" secondAttribute="trailing" constant="15" id="Pqv-oJ-qCn"/>
+                                        <constraint firstItem="T7p-E9-lmK" firstAttribute="top" secondItem="pm0-9w-BaA" secondAttribute="top" id="QAX-vC-ave"/>
+                                        <constraint firstItem="6J3-Xz-lJy" firstAttribute="top" secondItem="T7p-E9-lmK" secondAttribute="bottom" constant="10" id="ZoK-ZZ-bRZ"/>
+                                        <constraint firstItem="T7p-E9-lmK" firstAttribute="trailing" secondItem="6J3-Xz-lJy" secondAttribute="trailing" id="cMU-3i-bxm"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6J3-Xz-lJy" secondAttribute="bottom" constant="14" id="hKS-6k-HcZ"/>
+                                        <constraint firstItem="3bO-Gv-O5L" firstAttribute="bottom" secondItem="2eW-q7-fKp" secondAttribute="bottomMargin" constant="-1" id="hMw-ee-APY"/>
+                                        <constraint firstItem="pm0-9w-BaA" firstAttribute="leading" secondItem="2eW-q7-fKp" secondAttribute="leadingMargin" constant="7" id="vll-0w-x5H"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                </accessibility>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="lE6-rG-tY1" detailTextLabel="Gjh-Oa-OgB" imageView="4IR-Eo-rfP" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="evv-go-w8j">
+                                <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="evv-go-w8j" id="UlP-pm-VSG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lE6-rG-tY1">
+                                            <rect key="frame" x="100" y="15" width="260" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gjh-Oa-OgB">
+                                            <rect key="frame" x="100" y="34.5" width="260" height="40.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="teads_grayed.png" id="4IR-Eo-rfP">
+                                            <rect key="frame" x="15" y="9" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WebViewCell" id="aBu-kR-rzO" customClass="TeadsWebViewTableViewCell">
+                                <rect key="frame" x="0.0" y="208" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBu-kR-rzO" id="nip-PO-mFV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-uC-bI2">
+                                            <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </webView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4Wu-uC-bI2" secondAttribute="bottom" id="8uc-dI-7FT"/>
+                                        <constraint firstItem="4Wu-uC-bI2" firstAttribute="leading" secondItem="nip-PO-mFV" secondAttribute="leadingMargin" id="OiK-3W-rj1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4Wu-uC-bI2" secondAttribute="trailing" id="R6u-PP-gj0"/>
+                                        <constraint firstItem="4Wu-uC-bI2" firstAttribute="top" secondItem="nip-PO-mFV" secondAttribute="topMargin" id="WkV-kg-js3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="webView" destination="4Wu-uC-bI2" id="6vK-Nq-khp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ddg-k6-X4L" id="cpI-FY-VFL"/>
+                            <outlet property="delegate" destination="ddg-k6-X4L" id="woa-Kj-4sR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNR-xR-yZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4323" y="-757"/>
+        </scene>
+        <!--In Read Wk Web View In Table View View Controller-->
+        <scene sceneID="nwY-St-F2y">
+            <objects>
+                <tableViewController storyboardIdentifier="inRead WKWebView in TableView" id="F46-Xp-AlE" customClass="inReadWkWebViewInTableViewViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fxi-bz-aWt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="zK0-LN-2kp" detailTextLabel="SCd-jZ-gR6" imageView="c2h-0D-ObL" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="SXU-sv-o0X">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SXU-sv-o0X" id="hq8-Pd-bCF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zK0-LN-2kp">
+                                            <rect key="frame" x="100" y="15" width="260" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SCd-jZ-gR6">
+                                            <rect key="frame" x="100" y="34.5" width="260" height="40.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="teads_grayed.png" id="c2h-0D-ObL">
+                                            <rect key="frame" x="15" y="9" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsFirstCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsFirstCell" rowHeight="90" id="lL7-rn-MVa">
+                                <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lL7-rn-MVa" id="IPn-pc-Bu5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="bAQ-kU-Wz9">
+                                            <rect key="frame" x="15" y="10" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="fAG-7h-wfM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kCd-Nr-FkC">
+                                            <rect key="frame" x="100" y="10" width="267" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r7R-P4-X9N">
+                                            <rect key="frame" x="100" y="40" width="267" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-MD-6f2">
+                                            <rect key="frame" x="132" y="65" width="16" height="16"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="v0j-EK-qrv">
+                                            <rect key="frame" x="250" y="65" width="16" height="16"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="r7R-P4-X9N" firstAttribute="trailing" secondItem="IPn-pc-Bu5" secondAttribute="trailingMargin" id="52v-Di-YUi"/>
+                                        <constraint firstAttribute="trailing" secondItem="v0j-EK-qrv" secondAttribute="trailing" constant="109" id="9JY-Ot-dTc"/>
+                                        <constraint firstItem="r7R-P4-X9N" firstAttribute="top" secondItem="kCd-Nr-FkC" secondAttribute="bottom" constant="10" id="C3B-BX-rUN"/>
+                                        <constraint firstItem="bAQ-kU-Wz9" firstAttribute="leading" secondItem="IPn-pc-Bu5" secondAttribute="leadingMargin" constant="7" id="DDv-Jt-K1Y"/>
+                                        <constraint firstItem="kCd-Nr-FkC" firstAttribute="leading" secondItem="bAQ-kU-Wz9" secondAttribute="trailing" constant="15" id="Nvw-D6-cbj"/>
+                                        <constraint firstItem="v0j-EK-qrv" firstAttribute="top" secondItem="h5D-MD-6f2" secondAttribute="top" id="Rgb-Qa-1k7"/>
+                                        <constraint firstItem="kCd-Nr-FkC" firstAttribute="top" secondItem="bAQ-kU-Wz9" secondAttribute="top" id="bB1-cN-EAG"/>
+                                        <constraint firstItem="v0j-EK-qrv" firstAttribute="bottom" secondItem="IPn-pc-Bu5" secondAttribute="bottomMargin" constant="-1" id="dLi-R3-fjj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bAQ-kU-Wz9" secondAttribute="bottom" constant="2" id="ggB-51-Q9o"/>
+                                        <constraint firstItem="h5D-MD-6f2" firstAttribute="leading" secondItem="bAQ-kU-Wz9" secondAttribute="trailing" constant="47" id="ggv-ns-XWq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="r7R-P4-X9N" secondAttribute="bottom" constant="14" id="gpd-fG-vtQ"/>
+                                        <constraint firstItem="h5D-MD-6f2" firstAttribute="top" secondItem="kCd-Nr-FkC" secondAttribute="bottom" constant="35" id="j3z-Ld-qTI"/>
+                                        <constraint firstItem="r7R-P4-X9N" firstAttribute="leading" secondItem="kCd-Nr-FkC" secondAttribute="leading" id="lTQ-da-cNZ"/>
+                                        <constraint firstItem="h5D-MD-6f2" firstAttribute="bottom" secondItem="v0j-EK-qrv" secondAttribute="bottom" id="nsw-oD-Wep"/>
+                                        <constraint firstItem="kCd-Nr-FkC" firstAttribute="trailing" secondItem="r7R-P4-X9N" secondAttribute="trailing" id="zHL-cs-4Mu"/>
+                                        <constraint firstItem="bAQ-kU-Wz9" firstAttribute="top" secondItem="IPn-pc-Bu5" secondAttribute="topMargin" constant="2" id="zMk-Vh-QDj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                </accessibility>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WkWebViewCell" id="Ci4-1g-5Tp" customClass="TeadsWkWebViewTableViewCell">
+                                <rect key="frame" x="0.0" y="208" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ci4-1g-5Tp" id="knM-aS-KIl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F46-Xp-AlE" id="N97-11-WtE"/>
+                            <outlet property="delegate" destination="F46-Xp-AlE" id="Top-PT-M0v"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3b-OP-xBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080" y="-756"/>
+        </scene>
+        <!--In Read Web View In Collection View Controller-->
+        <scene sceneID="dVE-tM-vZq">
+            <objects>
+                <collectionViewController storyboardIdentifier="inRead WebView in CollectionView" id="fUU-EK-XPd" customClass="inReadWebViewInCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xiW-G6-lpI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JkS-wW-uaT">
+                            <size key="itemSize" width="166" height="168"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell2" id="QfH-h6-QV1" customClass="RandomCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="1IC-Rn-v2a">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
+                                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title Title Title Title Title Title Title Title Title " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qz5-Df-kz1" userLabel="Title Title Title Title Title Title Title Title Title">
+                                            <rect key="frame" x="8" y="158" width="124" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="Jkh-2w-zk5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1IC-Rn-v2a" secondAttribute="trailing" id="Exp-ca-7fE"/>
+                                    <constraint firstItem="1IC-Rn-v2a" firstAttribute="leading" secondItem="QfH-h6-QV1" secondAttribute="leading" id="Ns5-6b-IJB"/>
+                                    <constraint firstItem="qz5-Df-kz1" firstAttribute="top" secondItem="1IC-Rn-v2a" secondAttribute="bottom" constant="8" symbolic="YES" id="Nva-d8-Mmp"/>
+                                    <constraint firstItem="qz5-Df-kz1" firstAttribute="leading" secondItem="QfH-h6-QV1" secondAttribute="leadingMargin" id="R40-ME-r9K"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="qz5-Df-kz1" secondAttribute="bottom" constant="10" id="XeL-Ce-LRI"/>
+                                    <constraint firstItem="1IC-Rn-v2a" firstAttribute="centerX" secondItem="qz5-Df-kz1" secondAttribute="centerX" id="ZN0-3d-weo"/>
+                                    <constraint firstItem="1IC-Rn-v2a" firstAttribute="top" secondItem="QfH-h6-QV1" secondAttribute="top" id="wCH-xv-6Rl"/>
+                                </constraints>
+                                <size key="customSize" width="140" height="200"/>
+                                <connections>
+                                    <outlet property="imageView2" destination="1IC-Rn-v2a" id="bDf-OX-exv"/>
+                                    <outlet property="titleLabel2" destination="qz5-Df-kz1" id="mEx-LJ-53n"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fUU-EK-XPd" id="JPZ-4T-VCq"/>
+                            <outlet property="delegate" destination="fUU-EK-XPd" id="Le2-Lh-B46"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjj-E2-ZqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5810.3999999999996" y="-756.07196401799104"/>
+        </scene>
+        <!--In Read Wk Web View In Collection View Controller-->
+        <scene sceneID="UA0-hC-kg3">
+            <objects>
+                <collectionViewController storyboardIdentifier="inRead WKWebView in CollectionView" id="MLl-qx-4fd" customClass="inReadWkWebViewInCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="3Wr-XC-jpm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MzA-OI-v83">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell2" id="vSL-dp-aBS" customClass="RandomCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="teads.png" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-hX-DEm">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
+                                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title Title Title Title Title Title Title Title Title " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO2-P9-9QK" userLabel="Title Title Title Title Title Title Title Title Title">
+                                            <rect key="frame" x="8" y="158" width="124" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="FJC-Fk-muZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hv3-hX-DEm" firstAttribute="top" secondItem="vSL-dp-aBS" secondAttribute="top" id="1oi-t4-Dzi"/>
+                                    <constraint firstItem="RO2-P9-9QK" firstAttribute="top" secondItem="hv3-hX-DEm" secondAttribute="bottom" constant="8" symbolic="YES" id="3M1-YB-2BO"/>
+                                    <constraint firstAttribute="trailing" secondItem="hv3-hX-DEm" secondAttribute="trailing" id="OSF-fE-pjA"/>
+                                    <constraint firstItem="hv3-hX-DEm" firstAttribute="centerX" secondItem="RO2-P9-9QK" secondAttribute="centerX" id="bCx-XC-sXJ"/>
+                                    <constraint firstItem="hv3-hX-DEm" firstAttribute="leading" secondItem="vSL-dp-aBS" secondAttribute="leading" id="fv6-fl-vnO"/>
+                                    <constraint firstItem="RO2-P9-9QK" firstAttribute="leading" secondItem="vSL-dp-aBS" secondAttribute="leadingMargin" id="teR-YE-ifb"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="RO2-P9-9QK" secondAttribute="bottom" constant="10" id="ufO-bX-909"/>
+                                </constraints>
+                                <size key="customSize" width="140" height="200"/>
+                                <connections>
+                                    <outlet property="imageView2" destination="hv3-hX-DEm" id="22s-cl-XcT"/>
+                                    <outlet property="titleLabel2" destination="RO2-P9-9QK" id="cfi-Tf-G2s"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="MLl-qx-4fd" id="zfv-gp-D9w"/>
+                            <outlet property="delegate" destination="MLl-qx-4fd" id="dri-EB-Skl"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLJ-Lk-qVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6473" y="-754"/>
+        </scene>
         <!--inRead Web View Controller-->
         <scene sceneID="bxv-oc-qhz">
             <objects>
-                <viewController storyboardIdentifier="inReadWebView" id="1X4-Pi-Zc9" userLabel="inRead Web View Controller" customClass="InReadWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WebView" id="1X4-Pi-Zc9" userLabel="inRead Web View Controller" customClass="InReadWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kzk-cl-4Lw"/>
                         <viewControllerLayoutGuide type="bottom" id="cFy-db-V0b"/>
@@ -633,7 +1120,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
         <!--inRead Table View Controller-->
         <scene sceneID="nv2-m9-BE7">
             <objects>
-                <tableViewController storyboardIdentifier="inReadTableView" id="rJx-mq-Wdn" userLabel="inRead Table View Controller" customClass="InReadTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead TableView" id="rJx-mq-Wdn" userLabel="inRead Table View Controller" customClass="InReadTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="brl-gH-eE0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -702,14 +1189,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada f
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RaY-Hr-fkn">
-                                            <rect key="frame" x="100" y="14" width="260" height="20"/>
+                                            <rect key="frame" x="100" y="15" width="260" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYZ-9x-1Tv">
-                                            <rect key="frame" x="100" y="34" width="260" height="42"/>
+                                            <rect key="frame" x="100" y="34.5" width="260" height="40.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -852,7 +1339,7 @@ It is usually presented modally and takes over the app experience while providin
         <!--inRead Top Web View Controller-->
         <scene sceneID="ur2-Sp-gad">
             <objects>
-                <viewController storyboardIdentifier="inReadTopWebView" id="DyY-xw-AEg" userLabel="inRead Top Web View Controller" customClass="InReadTopWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top WebView" id="DyY-xw-AEg" userLabel="inRead Top Web View Controller" customClass="InReadTopWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DkU-77-gNH"/>
                         <viewControllerLayoutGuide type="bottom" id="WcJ-KI-l6p"/>
@@ -888,7 +1375,7 @@ It is usually presented modally and takes over the app experience while providin
         <!--inRead Top Scroll View Controller-->
         <scene sceneID="cPg-zV-9yO">
             <objects>
-                <viewController storyboardIdentifier="inReadTopScrollView" id="LGl-sg-YQ5" userLabel="inRead Top Scroll View Controller" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top ScrollView" id="LGl-sg-YQ5" userLabel="inRead Top Scroll View Controller" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qzN-JS-JqE"/>
                         <viewControllerLayoutGuide type="bottom" id="dOb-2k-eB2"/>
@@ -978,7 +1465,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top Table View Controller-->
         <scene sceneID="g8L-MT-zeb">
             <objects>
-                <tableViewController storyboardIdentifier="inReadTopTableView" id="2xJ-tq-MH4" userLabel="inRead Top Table View Controller" customClass="InReadTopTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead Top TableView" id="2xJ-tq-MH4" userLabel="inRead Top Table View Controller" customClass="InReadTopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lle-Tg-z8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1045,14 +1532,14 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H0y-VH-8Hg">
-                                            <rect key="frame" x="100" y="14" width="260" height="20"/>
+                                            <rect key="frame" x="100" y="15" width="260" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Glc-yn-GNP">
-                                            <rect key="frame" x="100" y="34" width="260" height="42"/>
+                                            <rect key="frame" x="100" y="34.5" width="260" height="40.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1080,7 +1567,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead WK Web View Controller-->
         <scene sceneID="73d-BJ-Ddc">
             <objects>
-                <viewController storyboardIdentifier="inReadWKWebView" id="lVs-K8-5vP" userLabel="inRead WK Web View Controller" customClass="InReadWKWebview" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WKWebView" id="lVs-K8-5vP" userLabel="inRead WK Web View Controller" customClass="InReadWKWebview" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U7s-WZ-XMr"/>
                         <viewControllerLayoutGuide type="bottom" id="3H0-cb-LQh"/>
@@ -1098,7 +1585,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top WK Web View Controller-->
         <scene sceneID="LK3-HN-Y0w">
             <objects>
-                <viewController storyboardIdentifier="inReadTopWKWebView" id="dtQ-TG-1QA" userLabel="inRead Top WK Web View Controller" customClass="InReadTopWKWebView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top WKWebView" id="dtQ-TG-1QA" userLabel="inRead Top WK Web View Controller" customClass="InReadTopWKWebView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exB-he-Hsa"/>
                         <viewControllerLayoutGuide type="bottom" id="I8A-GW-NmF"/>
@@ -1116,7 +1603,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         <!--inRead Top Scroll View Controller - iPad-->
         <scene sceneID="FmF-UW-cT4">
             <objects>
-                <viewController storyboardIdentifier="inReadTopScrollViewForIPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inRead Top Scroll View Controller - iPad" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead Top ScrollView iPad" automaticallyAdjustsScrollViewInsets="NO" id="Ylq-wo-f8W" userLabel="inRead Top Scroll View Controller - iPad" customClass="InReadTopScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGA-Ia-HPa"/>
                         <viewControllerLayoutGuide type="bottom" id="jLm-wh-Iu4"/>
@@ -1220,7 +1707,7 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--Custom Ad Collection View Controller-->
         <scene sceneID="p4B-cM-DSm">
             <objects>
-                <viewController storyboardIdentifier="customAdCollectionViewController" id="HHF-6k-ruF" customClass="CustomAdCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead in CollectionView" id="HHF-6k-ruF" customClass="CustomAdCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="06O-y1-dHr"/>
                         <viewControllerLayoutGuide type="bottom" id="6Kf-Hg-jQi"/>
@@ -1311,7 +1798,7 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--Multi Custom Ad Collection View Controller-->
         <scene sceneID="Y3i-Sa-Tsg">
             <objects>
-                <collectionViewController storyboardIdentifier="multiCustomAdCollectionViewController" id="dip-Do-pwX" customClass="MultiCustomAdCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Multiple inRead in CollectionView" id="dip-Do-pwX" customClass="MultiCustomAdCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eZM-us-UrI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1406,7 +1893,7 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
         <!--In Read Top Collection View Controller-->
         <scene sceneID="cqS-0Q-p7O">
             <objects>
-                <collectionViewController storyboardIdentifier="inReadTopCollectionView" id="t7u-Cx-fOU" customClass="InReadTopCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="inRead Top CollectionView" id="t7u-Cx-fOU" customClass="InReadTopCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Kwr-N4-nVa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1454,6 +1941,28 @@ Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus
                                     <outlet property="imageView" destination="ids-Tf-HSJ" id="t17-bu-rZi"/>
                                     <outlet property="titleLabel" destination="eFh-cW-Sfe" id="nsq-Jc-kiM"/>
                                 </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="webView" id="6II-aN-z4Q" customClass="CustomCollectionViewCell">
+                                <rect key="frame" x="225" y="10" width="140" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3a-qN-01h">
+                                            <rect key="frame" x="8" y="8" width="124" height="184"/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </webView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="W3a-qN-01h" firstAttribute="leading" secondItem="6II-aN-z4Q" secondAttribute="leadingMargin" id="EP7-pd-lAa"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="W3a-qN-01h" secondAttribute="trailing" id="NcP-uR-3NK"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="W3a-qN-01h" secondAttribute="bottom" id="RWx-uZ-frT"/>
+                                    <constraint firstItem="W3a-qN-01h" firstAttribute="top" secondItem="6II-aN-z4Q" secondAttribute="topMargin" id="Xsk-iK-lBv"/>
+                                </constraints>
+                                <size key="customSize" width="140" height="200"/>
                             </collectionViewCell>
                         </cells>
                         <connections>

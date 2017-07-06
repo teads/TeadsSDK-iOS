@@ -29,7 +29,7 @@
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     
     self.teadsAd = [[TeadsAd alloc] initWithPlacementId:pid delegate:self];
-    
+    self.navigationItem.title = @"inRead custom in scrollView";
     //Set a collapsed frame to TeadsAd.videoView
     CGRect collapsedAdFrame = CGRectMake(CGRectGetMinX(self.uiLabelForReference.frame),
                                 CGRectGetMaxY(self.uiLabelForReference.frame)+5,
