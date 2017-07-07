@@ -1,5 +1,11 @@
 # Changelog
 
+v2.7.4
+- Internal fixes and improvements
+- Minor UI improvements
+- Fixed I/O audio error log
+- Improved VPAID support
+
 v2.7.3
  - Added method `reinjectTeadsInWebView` to be used in case multiple load might be done on a WebView
 
