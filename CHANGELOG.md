@@ -1,5 +1,9 @@
 # Changelog
 
+v2.7.5
+- Improved reinjection in UIWebView
+- Improved UX with deeplinks
+
 v2.7.4
 - Internal fixes and improvements
 - Minor UI improvements
