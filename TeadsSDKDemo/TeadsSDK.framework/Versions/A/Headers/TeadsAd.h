@@ -54,6 +54,10 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
  */
 @property (nonatomic, readonly) BOOL isPlaying;
 /**
+ * Whether or not Teads Ad is in fullscreen
+ */
+@property (nonatomic, readonly) BOOL isFullscreen;
+/**
  * Whether or not Teads Ad player sound is active
  */
 @property (nonatomic, readonly) BOOL isSoundEnabled;
