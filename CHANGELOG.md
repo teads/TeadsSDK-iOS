@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.8
+- Fixed issue resulting in a build error on Xcode 8
+
 v2.7.7
 - Fixes and improvements for display format
 - Crash fix for iPhone X
