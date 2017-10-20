@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.9
+- Fixed case where `-teadsAd:didFailLoading:` was not called after a VPAID `AdError`
+
 v2.7.8
 - Fixed issue resulting in a build error on Xcode 8
 
