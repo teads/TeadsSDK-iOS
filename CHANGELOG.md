@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.10
+- Fixed sound been wrongly activated with specific settings from ad server
+
 v2.7.9
 - Fixed case where `-teadsAd:didFailLoading:` was not called after a VPAID `AdError`
 
