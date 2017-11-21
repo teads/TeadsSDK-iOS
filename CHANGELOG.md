@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.11
+- Improved VPAID support for creatives using IMA SDK for HTML
+
 v2.7.10
 - Fixed sound been wrongly activated with specific settings from ad server
 
