@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.12
+- Fixed an issue with WKWebView delegates when using `reinjectTeadsInWebView`
+
 v2.7.11
 - Improved VPAID support for creatives using IMA SDK for HTML
 
