@@ -10,7 +10,7 @@
 
 @interface InReadWKWebview ()
 
-@property (strong, nonatomic) WKWebView *wkWwebView;
+@property (strong, nonatomic) WKWebView *wkWebView;
 
 @property (strong, nonatomic) TeadsAd *teadsInRead;
 
@@ -22,14 +22,14 @@
     [super viewDidLoad];
     
     WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-    self.wkWwebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
-    self.wkWwebView.navigationDelegate = self;
+    self.wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
+    self.wkWebView.navigationDelegate = self;
     
-    [self.view addSubview:self.wkWwebView];
+    [self.view addSubview:self.wkWebView];
     
-    [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
+    [self.wkWebView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
     
     self.navigationItem.title = @"inRead WKWebView";
     
@@ -43,18 +43,18 @@
         //Here we specify in placeholderText an id for a HTML node to insert the inRead
         self.teadsInRead = [[TeadsAd alloc] initInReadWithPlacementId:pid
                                                          placeholderText:@"#my-placement-id"
-                                                               wkWebView:self.wkWwebView
+                                                               wkWebView:self.wkWebView
                                                                 delegate:self];
         webSiteURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] isDirectory:NO];
     } else {
         // inRead
         self.teadsInRead = [[TeadsAd alloc] initInReadWithPlacementId:pid
                                                          placeholderText:[[NSUserDefaults standardUserDefaults] stringForKey:@"placeholderText"]
-                                                               wkWebView:self.wkWwebView
+                                                               wkWebView:self.wkWebView
                                                                 delegate:self];
         webSiteURL = [NSURL URLWithString:urlToLoad];
     }
-    [self.wkWwebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
+    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
 
 }
 
