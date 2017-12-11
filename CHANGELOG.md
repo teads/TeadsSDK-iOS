@@ -1,5 +1,9 @@
 # Changelog
 
+v2.7.13
+- UI adjustement for fullscreen on iPhone X
+- Fix for (wk)webview integration
+
 v2.7.12
 - Fixed an issue with WKWebView delegates when using `reinjectTeadsInWebView`
 
