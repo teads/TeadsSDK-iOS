@@ -28,8 +28,8 @@
     [self.view addSubview:self.wkWebView];
     
     [self.wkWebView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
     
     self.navigationItem.title = @"inRead WKWebView";
     

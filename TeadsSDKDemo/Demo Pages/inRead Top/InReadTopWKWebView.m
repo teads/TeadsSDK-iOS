@@ -10,7 +10,7 @@
 
 @interface InReadTopWKWebView ()
 
-@property (strong, nonatomic) WKWebView *wkWwebView;
+@property (strong, nonatomic) WKWebView *wkWebView;
 
 @property (strong, nonatomic) TeadsAd *teadsAd;
 
@@ -22,18 +22,18 @@
     [super viewDidLoad];
     
     WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-    self.wkWwebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
-    self.wkWwebView.navigationDelegate = self;
+    self.wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:theConfiguration];
+    self.wkWebView.navigationDelegate = self;
     
-    [self.view addSubview:self.wkWwebView];
+    [self.view addSubview:self.wkWebView];
     
     NSString *pid = [[NSUserDefaults standardUserDefaults] stringForKey:@"pid"];
     // inRead Top
-    self.teadsAd = [[TeadsAd alloc] initInReadTopWithPlacementId:pid scrollView:self.wkWwebView.scrollView delegate:self];
+    self.teadsAd = [[TeadsAd alloc] initInReadTopWithPlacementId:pid scrollView:self.wkWebView.scrollView delegate:self];
     
-    [self.wkWwebView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWwebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWwebView)]];
+    [self.wkWebView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_wkWebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_wkWebView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_wkWebView)]];
     
     self.navigationItem.title = @"inRead Top WKWebView";
     
@@ -46,7 +46,7 @@
     } else {
         webSiteURL = [NSURL URLWithString:urlToLoad];
     }
-    [self.wkWwebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
+    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:webSiteURL]];
 
 }
 
