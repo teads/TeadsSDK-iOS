@@ -2,6 +2,7 @@
 
 <p align="center">
     <img src="https://jenkins.teads.net/buildStatus/icon?job=format/sdk/ios/TeadsSDK-iOS_master" alt="Build Status"/>
+    <img src="https://img.shields.io/badge/Xcode-9.0+-blue.svg?style=flat" alt="Xcode: 9+"/>
     <img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat" alt="Platform: iOS 8+"/>
     <a href="https://cocoapods.org/?q=TeadsSDK"><img src="https://img.shields.io/cocoapods/v/TeadsSDK.svg" alt="CocoaPods compatible" /></a>
 </p>

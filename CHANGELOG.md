@@ -1,6 +1,7 @@
 # Changelog
 
 v2.7.13
+- The SDK is now build with Xcode 9. Please use Xcode 9 now as it supports iOS 8+
 - UI adjustement for fullscreen on iPhone X
 - Fix for (wk)webview integration
 
