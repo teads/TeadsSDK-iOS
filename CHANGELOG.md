@@ -1,5 +1,9 @@
 # Changelog
 
+v2.7.14
+- Internal fixes & improvements
+- Improvements related to VAST mediafile selection
+
 v2.7.13
 - The SDK is now build with Xcode 9. Please use Xcode 9 now as it supports iOS 8+
 - UI adjustement for fullscreen on iPhone X
