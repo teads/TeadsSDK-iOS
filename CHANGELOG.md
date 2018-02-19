@@ -1,5 +1,8 @@
 # Changelog
 
+v2.7.15
+- Fix regarding changes in Apple guidelines for using UIStatusBarDataNetworkItemView
+
 v2.7.14
 - Internal fixes & improvements
 - Improvements related to VAST mediafile selection
