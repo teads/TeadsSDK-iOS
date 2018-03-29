@@ -22,10 +22,10 @@
     
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"pid"]) {
         /** /!\ /!\ /!\
-         *  WARNING: Don't use this PID (54934) in production. Contact your Publisher Manager to obtain your own dedicated PID
+         *  WARNING: Don't use this PID (84242) in production. Contact your Publisher Manager to obtain your own dedicated PID
          *  /!\ /!\ /!\
          */
-        [[NSUserDefaults standardUserDefaults] setObject:@"54934" forKey:@"pid"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"84242" forKey:@"pid"];
     }
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"website"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"Default demo website" forKey:@"website"];

@@ -1,5 +1,7 @@
 # Changelog
 
+v2.7.16
+- Add support for brandsafety. If you have news content in your app, you should use `[self.teadsAd setPageUrl:@"https://news.com/myArticle"];` where the url is you equivalent http url of your article. More information [http://mobile.teads.tv/sdk/documentation/ios/integration/inread-ios#a-init-your-teads-ad]()
 v2.7.15
 - Fix regarding changes in Apple guidelines for using UIStatusBarDataNetworkItemView
 

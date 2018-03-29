@@ -249,6 +249,11 @@ typedef NS_ENUM(NSInteger, TeadsAdPlayerColorMode) {
  */
 - (void)reinjectTeadsInWebView;
 
+/*
+ * The publisher http page url that matches the content where Teads Ad will be loaded into.
+ */
+- (void)setPageUrl:(NSString *)contentUrl;
+
 /**
  * Load Teads Ad
  */
