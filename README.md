@@ -55,7 +55,7 @@ CocoaPods is a dependency manager for Xcode projects.
 3. In terminal in the directory containing your project's `.xcodeproj` file and the Podfile, run `pod install` command. This will install Teads SDK along with our needed dependencies.
 
     ```
-    $ pod install
+    $ pod install --repo-update
     ```
 
 4. Once the installation is finished, open the `.xcworkspace` of your app to launch Xcode. Your project files should include a Pods project with the dependencies for TeadsSDK. From now on you will have to use this file for your app's developments.
