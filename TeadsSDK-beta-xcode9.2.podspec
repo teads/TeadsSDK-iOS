@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-s.name         = "TeadsSDK-beta"
+s.name         = "TeadsSDK-beta-xcode9.2"
 s.version      = "4.0.5-beta"
 s.summary      = "Teads' iOS SDK"
 
@@ -13,7 +13,7 @@ s.ios.deployment_target     = "9.0"
 s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
 s.license      = "Apache 2.0"
 s.author       = { "Teads" => "support-sdk@teads.tv" }
-s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'TeadsSDK-v4-beta', :tag => "v#{s.version}"}
+s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'TeadsSDK-v4-beta-xcode9.2', :tag => "v#{s.version}"}
 
 s.requires_arc = true
 s.preserve_paths = 'TeadsSDK.framework'
