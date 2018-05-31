@@ -6,7 +6,7 @@
   
   window.onerror = function (msg, url, lineNo, columnNo, error) {
   var string = msg.toLowerCase();
-  var substring = "script error";
+  var substring = "Teads.js script error";
   var errorJson = {
   message: msg,
   url: url,

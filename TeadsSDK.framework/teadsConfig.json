@@ -1,7 +1,0 @@
-{
-    "sumologic": {
-        "amount": 1.0,
-        "errors": true,
-        "collector": "https://endpoint2.collection.sumologic.com/receiver/v1/http/ZaVnC4dhaV1tWZrHlWgPgBULUi7HqwnXQ8s7YuzGORH5Z7GCqrxsw7lcfUwa-uzNZsDL1Cqe-YY1hsxqEoKkCObuwN3faguEa-Rb96rMSfNsE6sAdaOVYg=="
-    }
-}

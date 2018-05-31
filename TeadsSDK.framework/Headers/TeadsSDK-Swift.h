@@ -183,9 +183,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+typedef SWIFT_ENUM(NSInteger, AdErrorCode) {
+  AdErrorCodeErrorNoSlot = 1,
+  AdErrorCodeErrorNetwork = 2,
+  AdErrorCodeErrorNotFilled = 3,
+  AdErrorCodeErrorBadResponse = 4,
+  AdErrorCodeErrorVastError = 5,
+  AdErrorCodeErrorUserIdMissing = 6,
+  AdErrorCodeErrorInternal = 7,
+};
+
 
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
+/// Error code
+@property (nonatomic) enum AdErrorCode errorCode;
+/// String that describes the error reason
+@property (nonatomic, copy) NSString * _Nonnull errorMessage;
+- (nonnull instancetype)initWithErrorCode:(enum AdErrorCode)errorCode errorMessage:(NSString * _Nonnull)errorMessage OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -208,7 +223,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when you did not get and ad
 /// \param ad The teadsAd object
 ///
-/// \param adFailReason adFailReason object that contains an error code and an error message
+/// \param adFailReason AdFailReason object that contains an error code and an error message
 ///
 - (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 /// Called when the ad should be closed
@@ -247,6 +262,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when ad changes volume state
 /// \param ad The teadsAd object
 ///
+/// \param muted true if the sound is off false otherwise
+///
 - (void)adDidChangeVolume:(TFACustomAdView * _Nonnull)ad muted:(BOOL)muted;
 @end
 
@@ -263,7 +280,13 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 @property (nonatomic, readonly) BOOL isPlaying;
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
+@property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
 @property (nonatomic, copy) NSString * _Nullable pid;
+@property (nonatomic) CGRect bounds;
+@property (nonatomic) CGRect frame;
+- (void)awakeFromNib;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)didMoveToSuperview;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 /// Init TFACustomAdView by prodiving the pId and optional parameters
 /// \param pid The Placement ID
@@ -275,11 +298,6 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 /// The TeadsAd instance
 - (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFAAdDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic) CGRect bounds;
-@property (nonatomic) CGRect frame;
-- (void)awakeFromNib;
-- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
-- (void)didMoveToSuperview;
 /// Request an ad from Teads ad server
 /// \param teadsAdSettings Optionnal <code>TeadsAdSettings</code> to define custom settings
 ///
@@ -305,13 +323,20 @@ typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState) {
   TeadsAdPlaybackStatePlaybackStatePaused = 2,
 };
 
+@protocol TFAInterstitialAdDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 @interface TFAInterstitialAd : NSObject <TFAAdDelegate>
+@property (nonatomic, weak) id <TFAInterstitialAdDelegate> _Nullable delegate;
+@property (nonatomic) BOOL isShown;
+- (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFAInterstitialAdDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)loadWithSettings:(TeadsAdSettings * _Nullable)settings;
+- (void)show;
 - (void)didReceiveAd:(TFACustomAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFACustomAdView * _Nonnull)ad userAction:(BOOL)userAction;
 - (void)adError:(TFACustomAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
+- (void)adBrowserDidOpen:(TFACustomAdView * _Nonnull)ad;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -321,19 +346,39 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAInterstitialAdDelegate_")
 @protocol TFAInterstitialAdDelegate
 - (void)interstitialDidReceiveAd:(TFAInterstitialAd * _Nonnull)ad;
 - (void)interstitial:(TFAInterstitialAd * _Nonnull)ad didFailToReceiveAdWithError:(NSString * _Nonnull)error;
+@optional
+- (void)interstitialWillOpen:(TFAInterstitialAd * _Nonnull)ad;
+- (void)interstitialWillClose:(TFAInterstitialAd * _Nonnull)ad;
 - (void)interstitialDidOpen:(TFAInterstitialAd * _Nonnull)ad;
 - (void)interstitialDidClose:(TFAInterstitialAd * _Nonnull)ad;
 - (void)interstitialWillLeaveApplication:(TFAInterstitialAd * _Nonnull)ad;
+- (void)interstitialDidClickthrough:(TFAInterstitialAd * _Nonnull)ad;
 @end
 
 
+SWIFT_CLASS("_TtC8TeadsSDK9TFAReward")
+@interface TFAReward : NSObject
+@property (nonatomic, copy) NSString * _Nullable type;
+@property (nonatomic) double amount;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@protocol TFARewardedAdDelegate;
+
 SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 @interface TFARewardedAd : NSObject <TFAAdDelegate>
+@property (nonatomic, weak) id <TFARewardedAdDelegate> _Nullable delegate;
+@property (nonatomic) BOOL isShown;
+- (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFARewardedAdDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)loadWithSettings:(TeadsAdSettings * _Nullable)settings;
+- (void)show;
 - (void)didReceiveAd:(TFACustomAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFACustomAdView * _Nonnull)ad userAction:(BOOL)userAction;
 - (void)adError:(TFACustomAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 - (void)adPlaybackChange:(TFACustomAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
+- (void)adBrowserDidOpen:(TFACustomAdView * _Nonnull)ad;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -341,23 +386,16 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK21TFARewardedAdDelegate_")
 @protocol TFARewardedAdDelegate
-@optional
-- (void)rewarded:(TFARewardedAd * _Nonnull)rewardedAd didRewardUserWith:(CGFloat)reward;
+- (void)rewarded:(TFARewardedAd * _Nonnull)rewardedAd didRewardUserWith:(TFAReward * _Nullable)reward;
 - (void)rewarded:(TFARewardedAd * _Nonnull)rewardedAd didFailToReceiveAdWithError:(NSString * _Nonnull)didFailToReceiveAdWithError;
 - (void)rewardedAdDidReceive:(TFARewardedAd * _Nonnull)rewardedAd;
+@optional
 - (void)rewardedAdDidOpen:(TFARewardedAd * _Nonnull)rewardedAd;
 - (void)rewardedAdDidStartPlaying:(TFARewardedAd * _Nonnull)rewardedAd;
 - (void)rewardedAdDidCompletePlaying:(TFARewardedAd * _Nonnull)rewardedAd;
 - (void)rewardedAdDidClose:(TFARewardedAd * _Nonnull)rewardedAd;
 - (void)rewardedAdWillLeaveApplication:(TFARewardedAd * _Nonnull)rewardedAd;
-@end
-
-
-/// Class that contains teads ad response from the server
-SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdResponse")
-@interface TeadsAdResponse : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (void)rewardedAdDidClickthrough:(TFARewardedAd * _Nonnull)rewardedAd;
 @end
 
 
@@ -368,6 +406,7 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)enableLigtEndScreen;
 - (void)disableMediaPreload;
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+- (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
