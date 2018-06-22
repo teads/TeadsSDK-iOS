@@ -20,7 +20,7 @@ class InReadTopViewController: UIViewController, TFAAdDelegate {
         // Key Path: pid
         // Type: String
         // Value: 84242 (<- to be replaced by your production PID)
-        self.teadsAdView.pid = UserDefaults.standard.string(forKey: "PID")
+        self.teadsAdView.pid = UserDefaults.standard.integer(forKey: "PID")
         self.teadsAdView.load()
     }
     

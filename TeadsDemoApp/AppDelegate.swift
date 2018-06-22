@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore {
             let defaults = UserDefaults.standard
-            defaults.set("84242", forKey: "PID")
+            defaults.set(84242, forKey: "PID")
             defaults.set(true, forKey: "launchedBefore")
         }
         return true

@@ -36,7 +36,7 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
         self.webView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.webView.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(pid: UserDefaults.standard.string(forKey: "PID")!)
+        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
         self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
         
         self.collectionView!.register(TeadsAdEmbededCollectionViewCell.self, forCellWithReuseIdentifier: self.reuseTeadsIdentifier)
@@ -59,10 +59,12 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
                 if let newValue = change.newValue as CGSize?, newValue != CGSize.zero {
                     DispatchQueue.main.async {
                         if self.adView != nil {
-                            self.webViewHeight = newValue.height
-                            self.webView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.webViewHeight!)
-                            self.collectionView?.reloadItems(at: [IndexPath(row: self.adRowNumber, section: 0)])
-                            self.webSync?.webViewHelper.updateSlot(adRatio: self.adView!.adRatio)
+                            if self.webViewHeight != newValue.height {
+                                self.webViewHeight = newValue.height
+                                self.webView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.webViewHeight!)
+                                self.collectionView?.reloadItems(at: [IndexPath(row: self.adRowNumber, section: 0)])
+                                self.webSync?.webViewHelper.updateSlot(adRatio: self.adView!.adRatio)
+                            }
                         }
                     }
                 }

@@ -19,7 +19,7 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
         
         self.teadsAdView.delegate = self
         // the PID has been set in the storyboard
-        self.teadsAdView.pid = UserDefaults.standard.string(forKey: "PID")
+        self.teadsAdView.pid = UserDefaults.standard.integer(forKey: "PID")
         
         let teadsAdSettings = TeadsAdSettings(build: { (settings) in
             settings.enableDebug()

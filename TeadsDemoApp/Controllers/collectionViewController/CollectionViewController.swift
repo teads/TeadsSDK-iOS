@@ -22,7 +22,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         super.viewDidLoad()
         self.adIndexPath = IndexPath(row: 21, section: 0)
 
-        self.teadsAdView = TFACustomAdView(pid: UserDefaults.standard.string(forKey: "PID")!, delegate: self)
+        self.teadsAdView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
         self.teadsAdView?.load()
         self.teadsAdView?.translatesAutoresizingMaskIntoConstraints = false
     }

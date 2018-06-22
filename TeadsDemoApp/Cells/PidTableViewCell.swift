@@ -14,7 +14,7 @@ class PidTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.textField.delegate = self
-        self.textField.text = UserDefaults.standard.string(forKey: "PID")
+        self.textField.text = "\(UserDefaults.standard.integer(forKey: "PID"))"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,9 +26,9 @@ class PidTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         let defaults = UserDefaults.standard
         if  let text = textField.text, !text.isEmpty {
-            defaults.set(text, forKey: "PID")
+            defaults.set(Int(text), forKey: "PID")
         } else {
-            defaults.set("84242", forKey: "PID")
+            defaults.set(84242, forKey: "PID")
         }
     }
 }

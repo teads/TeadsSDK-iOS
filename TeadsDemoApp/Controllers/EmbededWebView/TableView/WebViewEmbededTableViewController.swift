@@ -46,7 +46,7 @@ class WebViewEmbededTableViewController: UITableViewController, WKNavigationDele
         self.webView?.scrollView.isScrollEnabled = false
         self.webView?.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(pid: UserDefaults.standard.string(forKey: "PID")!)
+        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
         self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
                
         self.startObservingContentSize()

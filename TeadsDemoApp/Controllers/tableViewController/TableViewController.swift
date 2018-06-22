@@ -23,7 +23,7 @@ class TableViewController: UITableViewController, TFAAdDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.teadsAdView = TFACustomAdView(pid: UserDefaults.standard.string(forKey: "PID")!, delegate: self)
+        self.teadsAdView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
         self.teadsAdView?.load()
         self.teadsAdView?.translatesAutoresizingMaskIntoConstraints = false
         

@@ -13,7 +13,7 @@ Teads SDK is currently distributed through CocoaPods. It include everything you 
 
 ```
 target 'YourProject' do
-    pod 'TeadsSDK-beta', '4.0.6-beta'
+    pod 'TeadsSDK', '4.0.7'
 end
 ```
 
@@ -26,3 +26,7 @@ $ pod install --repo-update
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](http://mobile.teads.tv/sdk/documentation/v4).
+
+## Changelog
+
+See [changelog here](CHANGELOG.md). 

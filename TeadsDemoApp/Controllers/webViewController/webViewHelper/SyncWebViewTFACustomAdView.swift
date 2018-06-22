@@ -132,5 +132,3 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
         self.webViewHelper.updateSlot(adRatio: ad.adRatio)
     }
 }
-
-
