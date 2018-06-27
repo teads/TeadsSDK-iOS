@@ -1,4 +1,6 @@
 # Changelog
+v2.7.17
+- fix on tableView integration
 
 v2.7.16
 - Add support for brandsafety. If you have news content in your app, you should use `[self.teadsAd setPageUrl:@"https://news.com/myArticle"];` where the url is you equivalent http url of your article. More information [http://mobile.teads.tv/sdk/documentation/ios/integration/inread-ios#a-init-your-teads-ad]()
