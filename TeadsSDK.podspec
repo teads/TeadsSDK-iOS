@@ -13,7 +13,7 @@ s.ios.deployment_target     = "9.0"
 s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
 s.license      = "Apache 2.0"
 s.author       = { "Teads" => "support-sdk@teads.tv" }
-s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'TeadsSDK-v4', :tag => "v#{s.version}"}
+s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'master', :tag => "v#{s.version}"}
 
 s.requires_arc = true
 s.preserve_paths = 'TeadsSDK.framework'
