@@ -13,7 +13,7 @@ Teads SDK is currently distributed through CocoaPods. It include everything you 
 
 ```
 target 'YourProject' do
-    pod 'TeadsSDK', '4.0.7'
+    pod 'TeadsSDK', '4.0.9'
 end
 ```
 

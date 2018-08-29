@@ -1,5 +1,10 @@
 # Changelog
 
+v4.0.9
+- GDPR support
+- Improvements and bug fixes
+- Dedicated build to support Xcode 10 & Swift 4.2
+
 v4.0.7
 - Improvement for visibility
 - Opt-out cookie

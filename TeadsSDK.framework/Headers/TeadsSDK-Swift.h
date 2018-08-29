@@ -310,11 +310,11 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 /// Reset ad loading
 - (void)reset;
 /// Request ad to pause
-- (void)requestPause;
+- (void)requestPause SWIFT_DEPRECATED_MSG("It is not supported anymore");
 /// Request ad to resume
-- (void)requestStart;
+- (void)requestStart SWIFT_DEPRECATED_MSG("It is not supported anymore");
 /// Request ad to resume
-- (void)requestResume;
+- (void)requestResume SWIFT_DEPRECATED_MSG("It is not supported anymore");
 /// Call that method when you did not add the TFACustomAdView to your to your view hierarchy or if Teads view has width/height of 0 and the container view reached the spot where the ad was supposed to be
 - (void)slotReached;
 @end

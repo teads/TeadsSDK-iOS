@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* WebViewViewController.swift */; };
+		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
+		B501EC7A1F823F6F002909B9 /* SyncWebViewTFACustomAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC761F823BA8002909B9 /* SyncWebViewTFACustomAdView.swift */; };
+		B501EC7C1F823F8A002909B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B501EC6B1F8232B3002909B9 /* index.html */; };
+		B502B9F01F826842008257EC /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = B501EC751F823BA8002909B9 /* bootstrap.js */; };
+		B502BA131F827D5C008257EC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* TableViewController.swift */; };
+		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
+		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
+		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
+		B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A371F7CDF80007406D4 /* ViewController.swift */; };
+		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
+		B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3C1F7CDF80007406D4 /* Assets.xcassets */; };
+		B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */; };
+		B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A471F7CE4C7007406D4 /* DemoTableViewCell.swift */; };
+		B5555A4E1F7D3177007406D4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A4D1F7D3177007406D4 /* ScrollViewController.swift */; };
+		B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */; };
+		B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561029B1F83C18400E59C76 /* WebViewTableViewCell.swift */; };
+		B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */; };
+		B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */; };
+		B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */; };
+		B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A81F853B0000E59C76 /* InReadTopViewController.swift */; };
+		B5660B7A207FAF0A00406869 /* TeadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5660B78207FAEA700406869 /* TeadsSDK.framework */; };
+		B5660B7B207FAF0A00406869 /* TeadsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5660B78207FAEA700406869 /* TeadsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57FB1EA1FC5D5C600609036 /* images.xcassets */; };
+		B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1EE1FC5E07E00609036 /* SettingsViewController.swift */; };
+		B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */; };
+		B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */; };
+		B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */; };
+		B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5660B7C207FAF0A00406869 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5660B7B207FAF0A00406869 /* TeadsSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B501EC6A1F8232B3002909B9 /* ie10-viewport-bug-workaround.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "ie10-viewport-bug-workaround.js"; sourceTree = "<group>"; };
+		B501EC6B1F8232B3002909B9 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		B501EC6D1F8232B3002909B9 /* bootstrap-theme.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "bootstrap-theme.css"; sourceTree = "<group>"; };
+		B501EC6E1F8232B3002909B9 /* bootstrap-theme.css.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "bootstrap-theme.css.map"; sourceTree = "<group>"; };
+		B501EC6F1F8232B3002909B9 /* bootstrap-theme.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "bootstrap-theme.min.css"; sourceTree = "<group>"; };
+		B501EC701F8232B3002909B9 /* bootstrap.css.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = bootstrap.css.map; sourceTree = "<group>"; };
+		B501EC711F823541002909B9 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		B501EC751F823BA8002909B9 /* bootstrap.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
+		B501EC761F823BA8002909B9 /* SyncWebViewTFACustomAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncWebViewTFACustomAdView.swift; sourceTree = "<group>"; };
+		B501EC771F823BA8002909B9 /* WebViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelper.swift; sourceTree = "<group>"; };
+		B502BA121F827D5C008257EC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
+		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
+		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5555A371F7CDF80007406D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5555A3A1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5555A3C1F7CDF80007406D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5555A3F1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5555A411F7CDF80007406D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5555A471F7CE4C7007406D4 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		B5555A4D1F7D3177007406D4 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededTableViewController.swift; sourceTree = "<group>"; };
+		B561029B1F83C18400E59C76 /* WebViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTableViewCell.swift; sourceTree = "<group>"; };
+		B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededCollectionViewController.swift; sourceTree = "<group>"; };
+		B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
+		B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdEmbededCollectionViewCell.swift; sourceTree = "<group>"; };
+		B56102A81F853B0000E59C76 /* InReadTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadTopViewController.swift; sourceTree = "<group>"; };
+		B5660B78207FAEA700406869 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
+		B57FB1EA1FC5D5C600609036 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		B57FB1EE1FC5E07E00609036 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidTableViewCell.swift; sourceTree = "<group>"; };
+		B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5555A2F1F7CDF80007406D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5660B7A207FAF0A00406869 /* TeadsSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2592708B5E82C5A12C737F0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5660B78207FAEA700406869 /* TeadsSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B50159911FB1B6A0007399A0 /* scrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A4D1F7D3177007406D4 /* ScrollViewController.swift */,
+			);
+			path = scrollViewController;
+			sourceTree = "<group>";
+		};
+		B50159921FB1B6C6007399A0 /* collectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5CCB65C1FB1C53D00BA4B72 /* CollectionViewCell */,
+				B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */,
+			);
+			path = collectionViewController;
+			sourceTree = "<group>";
+		};
+		B501EC681F8232A4002909B9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B502B9F11F827C35008257EC /* Images */,
+				B501EC6C1F8232B3002909B9 /* css */,
+				B501EC6B1F8232B3002909B9 /* index.html */,
+				B501EC691F8232B3002909B9 /* js */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		B501EC691F8232B3002909B9 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC6A1F8232B3002909B9 /* ie10-viewport-bug-workaround.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		B501EC6C1F8232B3002909B9 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC6D1F8232B3002909B9 /* bootstrap-theme.css */,
+				B501EC6E1F8232B3002909B9 /* bootstrap-theme.css.map */,
+				B501EC6F1F8232B3002909B9 /* bootstrap-theme.min.css */,
+				B501EC701F8232B3002909B9 /* bootstrap.css.map */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		B501EC731F823BA8002909B9 /* webViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC741F823BA8002909B9 /* Ressources */,
+				B501EC761F823BA8002909B9 /* SyncWebViewTFACustomAdView.swift */,
+				B501EC771F823BA8002909B9 /* WebViewHelper.swift */,
+			);
+			path = webViewHelper;
+			sourceTree = "<group>";
+		};
+		B501EC741F823BA8002909B9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC751F823BA8002909B9 /* bootstrap.js */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		B501EC781F823C2A002909B9 /* webViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC731F823BA8002909B9 /* webViewHelper */,
+				B501EC711F823541002909B9 /* WebViewViewController.swift */,
+			);
+			path = webViewController;
+			sourceTree = "<group>";
+		};
+		B502B9F11F827C35008257EC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B57FB1EA1FC5D5C600609036 /* images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B502BA141F8282B8008257EC /* tableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B502BA151F8282C4008257EC /* cell */,
+				B502BA121F827D5C008257EC /* TableViewController.swift */,
+			);
+			path = tableViewController;
+			sourceTree = "<group>";
+		};
+		B502BA151F8282C4008257EC /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		B5555A291F7CDF80007406D4 = {
+			isa = PBXGroup;
+			children = (
+				B5555A341F7CDF80007406D4 /* TeadsDemoApp */,
+				B5555A331F7CDF80007406D4 /* Products */,
+				2592708B5E82C5A12C737F0B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5555A331F7CDF80007406D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5555A341F7CDF80007406D4 /* TeadsDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC681F8232A4002909B9 /* Ressources */,
+				B5555A4C1F7D3153007406D4 /* Controllers */,
+				B5555A4B1F7CEF1C007406D4 /* Cells */,
+				B5555A351F7CDF80007406D4 /* AppDelegate.swift */,
+				B57FB1EE1FC5E07E00609036 /* SettingsViewController.swift */,
+				B5555A371F7CDF80007406D4 /* ViewController.swift */,
+				B5555A391F7CDF80007406D4 /* Main.storyboard */,
+				B5555A3C1F7CDF80007406D4 /* Assets.xcassets */,
+				B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */,
+				B5555A411F7CDF80007406D4 /* Info.plist */,
+			);
+			path = TeadsDemoApp;
+			sourceTree = "<group>";
+		};
+		B5555A4B1F7CEF1C007406D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A471F7CE4C7007406D4 /* DemoTableViewCell.swift */,
+				B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B5555A4C1F7D3153007406D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B50159921FB1B6C6007399A0 /* collectionViewController */,
+				B50159911FB1B6A0007399A0 /* scrollViewController */,
+				B56102A51F8533CF00E59C76 /* inRead Top */,
+				B56102981F83BFCB00E59C76 /* EmbededWebView */,
+				B502BA141F8282B8008257EC /* tableViewController */,
+				B501EC781F823C2A002909B9 /* webViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B56102981F83BFCB00E59C76 /* EmbededWebView */ = {
+			isa = PBXGroup;
+			children = (
+				B561029D1F84C3B700E59C76 /* CollectionView */,
+				B56102991F83BFD900E59C76 /* TableView */,
+				B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */,
+			);
+			path = EmbededWebView;
+			sourceTree = "<group>";
+		};
+		B56102991F83BFD900E59C76 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B561029A1F83BFE700E59C76 /* Cell */,
+				B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		B561029A1F83BFE700E59C76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B561029B1F83C18400E59C76 /* WebViewTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B561029D1F84C3B700E59C76 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B56102A01F84D22600E59C76 /* Cell */,
+				B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		B56102A01F84D22600E59C76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */,
+				B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B56102A51F8533CF00E59C76 /* inRead Top */ = {
+			isa = PBXGroup;
+			children = (
+				B56102A81F853B0000E59C76 /* InReadTopViewController.swift */,
+			);
+			path = "inRead Top";
+			sourceTree = "<group>";
+		};
+		B5CCB65C1FB1C53D00BA4B72 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */,
+				B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5555A311F7CDF80007406D4 /* TeadsDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsDemoApp" */;
+			buildPhases = (
+				B5555A2E1F7CDF80007406D4 /* Sources */,
+				B5555A2F1F7CDF80007406D4 /* Frameworks */,
+				B5555A301F7CDF80007406D4 /* Resources */,
+				913FE1D31FEC291B003C6E5E /* ShellScript */,
+				B5660B7C207FAF0A00406869 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeadsDemoApp;
+			productName = TeadsDemoApp;
+			productReference = B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5555A2A1F7CDF80007406D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Jérémy Grosjean";
+				TargetAttributes = {
+					B5555A311F7CDF80007406D4 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B5555A2D1F7CDF80007406D4 /* Build configuration list for PBXProject "TeadsDemoApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5555A291F7CDF80007406D4;
+			productRefGroup = B5555A331F7CDF80007406D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5555A311F7CDF80007406D4 /* TeadsDemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5555A301F7CDF80007406D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
+				B501EC7C1F823F8A002909B9 /* index.html in Resources */,
+				B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */,
+				B502B9F01F826842008257EC /* bootstrap.js in Resources */,
+				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
+				B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		913FE1D31FEC291B003C6E5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5555A2E1F7CDF80007406D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */,
+				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
+				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
+				B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */,
+				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
+				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
+				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
+				B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */,
+				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
+				B501EC7A1F823F6F002909B9 /* SyncWebViewTFACustomAdView.swift in Sources */,
+				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
+				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
+				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
+				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
+				B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */,
+				B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */,
+				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
+				B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */,
+				B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */,
+				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
+				B5555A4E1F7D3177007406D4 /* ScrollViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5555A391F7CDF80007406D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5555A3A1F7CDF80007406D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5555A3F1F7CDF80007406D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5555A421F7CDF80007406D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B5555A431F7CDF80007406D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5555A451F7CDF80007406D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsDemoApp",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TeadsDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5555A461F7CDF80007406D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsDemoApp",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TeadsDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5555A2D1F7CDF80007406D4 /* Build configuration list for PBXProject "TeadsDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5555A421F7CDF80007406D4 /* Debug */,
+				B5555A431F7CDF80007406D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5555A451F7CDF80007406D4 /* Debug */,
+				B5555A461F7CDF80007406D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5555A2A1F7CDF80007406D4 /* Project object */;
+}
