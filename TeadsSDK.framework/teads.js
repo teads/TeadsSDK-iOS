@@ -136,11 +136,17 @@
   var jsonString = JSON.stringify(jsonVariables);
   window.webkit.messageHandlers.openBrowser.postMessage(jsonString);
   }
+
+  
+  window.teads.reward = function reward(value, type) {
+  var jsonVariables = {"value": value, "type": type};
+  var jsonString = JSON.stringify(jsonVariables);
+  window.webkit.messageHandlers.reward.postMessage(jsonString);
+  }
   
   window.teads.debug = function debug(message){
   var jsonVariables = {"message":message};
   var jsonString = JSON.stringify(jsonVariables);
-  
   window.webkit.messageHandlers.debug.postMessage(jsonString);
   }
 })();
