@@ -16,8 +16,8 @@ s.author       = { "Teads" => "support-sdk@teads.tv" }
 s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'TeadsSDK-v4', :tag => "v#{s.version}"}
 
 s.requires_arc = true
-s.preserve_paths = 'TeadsSDK-Xcode9.4/TeadsSDK.framework'
-s.vendored_frameworks = 'TeadsSDK-Xcode9.4/TeadsSDK.framework'
+s.preserve_paths = 'TeadsSDK-Xcode9.4/TeadsSDK-Xcode9.4.framework'
+s.vendored_frameworks = 'TeadsSDK-Xcode9.4/TeadsSDK-Xcode9.4.framework'
 s.ios.frameworks = 'AdSupport', 'AVFoundation', 'CoreLocation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
 s.framework = 'TeadsSDK'
 
