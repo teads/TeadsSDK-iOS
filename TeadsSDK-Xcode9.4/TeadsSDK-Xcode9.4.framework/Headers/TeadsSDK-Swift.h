@@ -261,6 +261,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adPlaybackChange:(TFACustomAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
+/// @deprecated since 4.1.2 please use TFASoundDelegate instead
 /// \param ad The teadsAd object
 ///
 /// \param muted true if the sound is off false otherwise
@@ -268,6 +269,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 - (void)adDidChangeVolume:(TFACustomAdView * _Nonnull)ad muted:(BOOL)muted;
 @end
 
+@protocol TFASoundDelegate;
 @class NSCoder;
 @class TeadsAdSettings;
 
@@ -282,6 +284,7 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
 @property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <TFASoundDelegate> _Nullable soundDelegate;
 @property (nonatomic) NSInteger pid;
 @property (nonatomic) CGRect bounds;
 @property (nonatomic) CGRect frame;
@@ -411,8 +414,18 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TFARewardedAdDelegate_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
+@protocol TFASoundDelegate
+/// Called when the ad will start playing audio
+- (void)adWillStartPlayingAudio:(TFACustomAdView * _Nonnull)ad;
+/// Called when the ad will stop playing audio
+- (void)adDidStopPlayingAudio:(TFACustomAdView * _Nonnull)ad;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
+- (void)disableTeadsAudioSessionManagement;
 - (void)enableDebug;
 - (void)disableLocation;
 - (void)enableLigtEndScreen;
