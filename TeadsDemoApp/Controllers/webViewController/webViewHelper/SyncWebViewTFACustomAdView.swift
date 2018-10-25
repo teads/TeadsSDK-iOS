@@ -3,7 +3,7 @@
 //  TeadsSDK
 //
 //  Created by Jérémy Grosjean on 15/09/2017.
-//  Copyright © 2017 Teads. All rights reserved.
+//  Copyright © 2018 Teads. All rights reserved.
 //
 
 import UIKit

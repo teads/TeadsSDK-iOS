@@ -3,7 +3,7 @@
 //  TeadsApp
 //
 //  Created by Jérémy Grosjean on 29/05/2017.
-//  Copyright © 2017 Teads. All rights reserved.
+//  Copyright © 2018 Teads. All rights reserved.
 //
 
 import UIKit

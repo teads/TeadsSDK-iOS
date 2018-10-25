@@ -36,6 +36,7 @@
 		B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */; };
 		B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */; };
 		B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */; };
+		DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* AdMobController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +89,7 @@
 		B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB4660DB2181B865003A6CF5 /* AdMobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 		B5555A4C1F7D3153007406D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB4660D82181B718003A6CF5 /* adMobController */,
 				B50159921FB1B6C6007399A0 /* collectionViewController */,
 				B50159911FB1B6A0007399A0 /* scrollViewController */,
 				B56102A51F8533CF00E59C76 /* inRead Top */,
@@ -327,6 +330,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		DB4660D82181B718003A6CF5 /* adMobController */ = {
+			isa = PBXGroup;
+			children = (
+				DB4660DB2181B865003A6CF5 /* AdMobController.swift */,
+			);
+			path = adMobController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,7 +368,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Jérémy Grosjean";
+				ORGANIZATIONNAME = Teads;
 				TargetAttributes = {
 					B5555A311F7CDF80007406D4 = {
 						CreatedOnToolsVersion = 9.0;
@@ -423,6 +434,7 @@
 				B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */,
 				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
 				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
+				DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */,
 				B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */,
 				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
 				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
