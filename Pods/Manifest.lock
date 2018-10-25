@@ -1,0 +1,24 @@
+PODS:
+  - Google-Mobile-Ads-SDK (7.35.1)
+  - GoogleMobileAdsMediationTeads (4.1.2):
+    - Google-Mobile-Ads-SDK (>= 7.31)
+    - TeadsSDK (= 4.1.2)
+  - TeadsSDK (4.1.2)
+
+DEPENDENCIES:
+  - GoogleMobileAdsMediationTeads
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Google-Mobile-Ads-SDK
+    - GoogleMobileAdsMediationTeads
+    - TeadsSDK
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
+  GoogleMobileAdsMediationTeads: 916222bb9a1726a85be8977599d2c4d231da8220
+  TeadsSDK: 1933a0852d1ce324de3fa26eb3e8cb5853b5d7aa
+
+PODFILE CHECKSUM: 0e0b3452e2e774c7c3b06ca3fdf0da9e25cd80cf
+
+COCOAPODS: 1.5.3
