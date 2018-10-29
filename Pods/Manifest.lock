@@ -1,9 +1,9 @@
 PODS:
   - Google-Mobile-Ads-SDK (7.35.1)
-  - GoogleMobileAdsMediationTeads (4.1.2):
+  - GoogleMobileAdsMediationTeads (4.1.3):
     - Google-Mobile-Ads-SDK (>= 7.31)
-    - TeadsSDK (= 4.1.2)
-  - TeadsSDK (4.1.2)
+    - TeadsSDK (= 4.1.3)
+  - TeadsSDK (4.1.3)
 
 DEPENDENCIES:
   - GoogleMobileAdsMediationTeads
@@ -16,8 +16,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
-  GoogleMobileAdsMediationTeads: 916222bb9a1726a85be8977599d2c4d231da8220
-  TeadsSDK: 1933a0852d1ce324de3fa26eb3e8cb5853b5d7aa
+  GoogleMobileAdsMediationTeads: 95ed56aef9264b3f05623c51d6aef00488109cc3
+  TeadsSDK: 72162b7e173ea52a11c5ebfd3490904c87bc6a04
 
 PODFILE CHECKSUM: 0e0b3452e2e774c7c3b06ca3fdf0da9e25cd80cf
 

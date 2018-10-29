@@ -2,7 +2,6 @@
 //  AdMobController.swift
 //  TeadsDemoApp
 //
-//  Created by Hugo Gresse on 25/10/2018.
 //  Copyright © 2018 Teads. All rights reserved.
 //
 
@@ -13,6 +12,7 @@ import UIKit
 class AdMobController: UIViewController, GADBannerViewDelegate {
     
     var bannerView: GADBannerView!
+    @IBOutlet weak var slotView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,33 +21,17 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3570580224725271~8055914490")
 
         // 2. Create AdMob view and add it to hierarchy
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
-        
-        
+        self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+        self.bannerView.translatesAutoresizingMaskIntoConstraints = false
+        self.slotView.addSubview(bannerView)
+        NSLayoutConstraint.activate(
+            [self.bannerView.centerXAnchor.constraint(equalTo: self.slotView.centerXAnchor),
+             self.bannerView.centerYAnchor.constraint(equalTo: self.slotView.centerYAnchor)])
+
+        // 3. Attach Delegate (will include Teads events)
         bannerView.adUnitID = "ca-app-pub-3570580224725271/5615499706"
         bannerView.rootViewController = self
-        
-        // 3. Attach Delegate (will include Teads events)
         bannerView.delegate = self
-
 
         // 4. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()

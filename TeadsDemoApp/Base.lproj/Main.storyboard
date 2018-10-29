@@ -791,7 +791,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
         <!--AdMob Mediation Controller Scene-->
         <scene sceneID="MLK-2k-5Vm">
             <objects>
-                <viewController storyboardIdentifier="inRead ScrollView" id="VdU-U4-5Mo" userLabel="AdMob Mediation Controller Scene" customClass="ScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdMob Mediation" id="VdU-U4-5Mo" userLabel="AdMob Mediation Controller Scene" customClass="AdMobController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbj-C5-e3q" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -802,12 +802,6 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqn-pe-RuH" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1519.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="teads" translatesAutoresizingMaskIntoConstraints="NO" id="hHj-dS-SmQ">
-                                                <rect key="frame" x="152.08277027027179" y="712.71621621621625" width="69.999999999999091" height="96"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="96" id="KYe-EN-cIP"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="NBj-Da-gkH">
                                                 <rect key="frame" x="8" y="20" width="359" height="26.5"/>
                                                 <constraints>
@@ -824,27 +818,22 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-Nh-3kC">
                                                 <rect key="frame" x="8" y="80.5" width="359" height="629"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
 
-Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</mutableString>
+Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bve-a8-GlN" customClass="TFACustomAdView" customModule="TeadsSDK">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bve-a8-GlN">
                                                 <rect key="frame" x="8" y="717.5" width="359" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="uHe-vQ-kH9"/>
+                                                    <constraint firstAttribute="height" constant="250" id="1NN-YQ-NMw"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="pid">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrX-di-mEz">
                                                 <rect key="frame" x="8" y="975.5" width="359" height="507.5"/>
@@ -897,8 +886,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
-                        <outlet property="teadsAdHeightConstraint" destination="uHe-vQ-kH9" id="bTg-Qk-cis"/>
-                        <outlet property="teadsAdView" destination="Bve-a8-GlN" id="JXC-i2-BKA"/>
+                        <outlet property="slotView" destination="Bve-a8-GlN" id="pr6-3I-OeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exc-Rq-U7f" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -261,7 +261,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adPlaybackChange:(TFACustomAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
-/// @deprecated since 4.1.2 please use TFASoundDelegate instead
+/// @deprecated since 4.1.x please use TFASoundDelegate instead
 /// \param ad The teadsAd object
 ///
 /// \param muted true if the sound is off false otherwise
