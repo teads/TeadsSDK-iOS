@@ -11,6 +11,10 @@ import UIKit
 
 class AdMobController: UIViewController, GADBannerViewDelegate {
     
+    // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
+    let ADMOB_APP_ID = "ca-app-pub-3570580224725271~8055914490"
+    let ADMOB_AD_UNIT_ID = "ca-app-pub-3570580224725271/5615499706"
+    
     var bannerView: GADBannerView!
     @IBOutlet weak var slotView: UIView!
     
@@ -18,7 +22,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         
         // 1. Init AdMob (could be done in your Application class)
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3570580224725271~8055914490")
+        GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
 
         // 2. Create AdMob view and add it to hierarchy
         self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
@@ -29,7 +33,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
              self.bannerView.centerYAnchor.constraint(equalTo: self.slotView.centerYAnchor)])
 
         // 3. Attach Delegate (will include Teads events)
-        bannerView.adUnitID = "ca-app-pub-3570580224725271/5615499706"
+        bannerView.adUnitID = ADMOB_AD_UNIT_ID
         bannerView.rootViewController = self
         bannerView.delegate = self
 
@@ -45,7 +49,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         // The article url if you are a news publisher
         teadsExtras.pageUrl = "http://page.com/article1"
         
-        request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "__custom_event_label__"))
+        request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "Teads"))
         
         bannerView.load(request)
     }
@@ -54,11 +58,14 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
+        NSLayoutConstraint.activate([self.slotView.heightAnchor.constraint(equalToConstant: 250)])
     }
     
     /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
+        NSLayoutConstraint.activate([self.slotView.heightAnchor.constraint(equalToConstant: 0)])
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
