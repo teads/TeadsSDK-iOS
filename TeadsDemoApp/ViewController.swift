@@ -3,7 +3,7 @@
 //  TeadsDemoApp
 //
 //  Created by Jérémy Grosjean on 28/09/2017.
-//  Copyright © 2017 Jérémy Grosjean. All rights reserved.
+//  Copyright © 2018 Teads. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                                 ("inRead WKWebView in TableView", true),
                                                 ("inRead WKWebView in CollectionView", true),
                                                 ("inRead Top", false),
-                                                ("inRead Top implementation", true)]
+                                                ("inRead Top implementation", true),
+                                                ("Additional sample", false),
+                                                ("AdMob Mediation", true)]
     
     let demoCellIdentifier = "DemoCell"
     
