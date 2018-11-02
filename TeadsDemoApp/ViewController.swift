@@ -10,8 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    
     let demoCellsInfoArray: [(String, Bool)] = [("inRead", false),
                                                 ("inRead ScrollView", true),
+                                                ("inRead Programmatic ScrollView", true),
                                                 ("inRead WKWebView", true),
                                                 ("inRead TableView", true),
                                                 ("inRead CollectionView", true),
