@@ -19,6 +19,7 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     var isLoaded = false
     var adViewConstraints = [NSLayoutConstraint]()
     var adViewHeightConstraint: NSLayoutConstraint?
+    var adRatio: CGFloat = 16/9.0
     
     public init(webView: WKWebView, selector: String, adView: TFACustomAdView, adSettings: TeadsAdSettings? = nil) {
         self.webViewHelper = WebViewHelper(webView: webView, selector: selector)
@@ -43,10 +44,8 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     }
     
     @objc func rotationDetected() {
-        if let adView = self.adView {
-            //update the slot when the rotation occurs
-            self.webViewHelper.updateSlot(adRatio: adView.creativeRatio)
-        }
+        //update the slot when the rotation occurs
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
     }
     
     // MARK: WebViewHelperDelegate
@@ -97,8 +96,9 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     // MARK: TeadsAdDelegate
     
     public func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+        self.adRatio = adRatio
         //update slot with the right ratio
-        self.webViewHelper.updateSlot(adRatio: adRatio)
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
         //open the slot
         self.webViewHelper.openSlot()
     }
@@ -129,6 +129,6 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     
     public func adDidCloseFullscreen(_ ad: TFACustomAdView) {
         //update the slot in case there was a rotation or a layout change to be sure that the ad has the right layout
-        self.webViewHelper.updateSlot(adRatio: ad.adRatio)
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
     }
 }
