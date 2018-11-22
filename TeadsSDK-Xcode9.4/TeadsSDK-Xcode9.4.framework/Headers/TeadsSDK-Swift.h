@@ -206,6 +206,15 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, CommanderWebViewState) {
+  CommanderWebViewStateError = -1,
+  CommanderWebViewStateIdle = 0,
+  CommanderWebViewStateLoading = 1,
+  CommanderWebViewStateLoaded = 2,
+  CommanderWebViewStateEngineLoaded = 3,
+  CommanderWebViewStateCommanderReady = 4,
+};
+
 
 
 
