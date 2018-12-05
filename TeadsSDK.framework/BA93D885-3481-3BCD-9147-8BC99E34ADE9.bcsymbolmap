@@ -1188,10 +1188,10 @@ _$SSo21NSLayoutFormatOptionsVMB
 _$SSo26SCNetworkReachabilityFlagsVMB
 _$SSo29AVAudioSessionCategoryOptionsVMB
 Apple LLVM version 10.0.0 (clang-1000.11.45.1)
--emit-bc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Libs/ViewVisibility.swift "/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Remote Config/RemoteConfig.swift" /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderPool/CommanderWebViewPool.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPAIDEvents.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SimpleComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Unzip(DataExtention).swift "/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Remote Config/RemoteConfigManager.swift" /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsSafariViewController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPaidPlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TimingObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/StudioAPIConstant.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ErrorObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Utils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/GlobalConstants.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/OM/OMWrapper.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerObserver.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DonutProgressView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/FullscreenController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderCallRequest.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsAdSettings.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/JSEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/WebBridge.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/CompoundScreenComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Sumo/SumoLogManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Model/DeviceInfo.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFAInterstitialAdView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ScrollerPlugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/WarningObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ConstraintFactory.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFARewardedAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/NativeVideoPlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/UIEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderNotice.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/LogManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ApplicationStatesDispatcher.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFAInterstitialAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/EventBus.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/ComponentData.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TimingCalculator.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/Plugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/HtmlComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/IABConsent.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/VisibilityTimer.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SlotBoundsPlugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/TeadsWeakTarget.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ContextUtils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/SoundHandling/SoundHandler.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/LabelComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/AdFailReason.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ImageComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/CommanderWebView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/EndscreenCenteredViewController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFACustomAdView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ProgressBarComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PluginsManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/EventBusProtocol.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/NetworkUtils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentViewFactory.swift -supplementary-output-file-map <temporary-file> -target armv7-apple-ios9.0 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk -I /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK -g -import-underlying-module -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-generated-files.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-own-target-headers.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-project-headers.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos/include -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources/armv7 -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/jgrosjean/GIT/service-format-ios/TeadsSDK -module-name TeadsSDK -num-threads 8 -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ViewVisibility.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfig.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebViewPool.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPAIDEvents.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SimpleComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Unzip(DataExtention).bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfigManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsSafariViewController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPaidPlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/StudioAPIConstant.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ErrorObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Utils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/GlobalConstants.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/OMWrapper.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerObserver.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngineAssetManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DonutProgressView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/FullscreenController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderCallRequest.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAdSettings.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WebBridge.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CompoundScreenComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SumoLogManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DeviceInfo.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAdView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ScrollerPlugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WarningObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ConstraintFactory.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFARewardedAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NativeVideoPlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/UIEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderNotice.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LogManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ApplicationStatesDispatcher.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBus.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentData.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingCalculator.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Plugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/HtmlComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/IABConsent.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VisibilityTimer.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SlotBoundsPlugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsWeakTarget.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ContextUtils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SoundHandler.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LabelComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/AdFailReason.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ImageComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EndscreenCenteredViewController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFACustomAdView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ProgressBarComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PluginsManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBusProtocol.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkUtils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentViewFactory.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+-emit-bc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Libs/ViewVisibility.swift "/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Remote Config/RemoteConfig.swift" /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderPool/CommanderWebViewPool.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPAIDEvents.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SimpleComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Unzip(DataExtention).swift "/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Remote Config/RemoteConfigManager.swift" /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsSafariViewController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPaidPlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TimingObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/StudioAPIConstant.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ErrorObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Utils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/GlobalConstants.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/OM/OMWrapper.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerObserver.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DonutProgressView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/FullscreenController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderCallRequest.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsAdSettings.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/JSEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/WebBridge.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/CompoundScreenComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/Sumo/SumoLogManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Model/DeviceInfo.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFAInterstitialAdView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ScrollerPlugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/WarningObject.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ConstraintFactory.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFARewardedAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/NativeVideoPlayerView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/UIEngine.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/CommanderNotice.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/LogManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ApplicationStatesDispatcher.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFAInterstitialAd.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/EventBus.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/ComponentData.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TimingCalculator.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/Plugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/HtmlComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/IABConsent.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/VisibilityTimer.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SlotBoundsPlugin.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/TeadsWeakTarget.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/ContextUtils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/SoundHandling/SoundHandler.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/LabelComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/AdFailReason.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ImageComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/CommanderWebView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/EndscreenCenteredViewController.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFACustomAdView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ProgressBarComponentView.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PluginsManager.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/EventBusProtocol.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/NetworkUtils.swift /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentViewFactory.swift -supplementary-output-file-map <temporary-file> -target armv7-apple-ios9.0 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK -F /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK -g -import-underlying-module -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-generated-files.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-own-target-headers.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-project-headers.hmap -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/Release-iphoneos/include -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources/armv7 -Xcc -I/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/jgrosjean/GIT/service-format-ios/TeadsSDK -module-name TeadsSDK -num-threads 8 -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ViewVisibility.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfig.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebViewPool.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPAIDEvents.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SimpleComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Unzip(DataExtention).bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfigManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsSafariViewController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPaidPlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/StudioAPIConstant.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ErrorObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Utils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/GlobalConstants.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/OMWrapper.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerObserver.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngineAssetManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DonutProgressView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/FullscreenController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderCallRequest.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAdSettings.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WebBridge.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CompoundScreenComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SumoLogManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DeviceInfo.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAdView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ScrollerPlugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WarningObject.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ConstraintFactory.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFARewardedAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NativeVideoPlayerView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/UIEngine.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderNotice.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LogManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ApplicationStatesDispatcher.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAd.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBus.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentData.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingCalculator.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Plugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/HtmlComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/IABConsent.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VisibilityTimer.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SlotBoundsPlugin.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsWeakTarget.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ContextUtils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SoundHandler.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LabelComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/AdFailReason.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ImageComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EndscreenCenteredViewController.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFACustomAdView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ProgressBarComponentView.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PluginsManager.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBusProtocol.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkUtils.bc -o /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentViewFactory.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
 <swift-imported-modules>
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK
-Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)
+Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsUIEngine/Libs/ViewVisibility.swift
 init
 <compiler-generated>
@@ -2404,6 +2404,7 @@ _$S8TeadsSDK20CommanderWebViewPoolCfDTo
 _$S8TeadsSDK20CommanderWebViewPoolCfETo
 _$S8TeadsSDK20CommanderWebViewPoolCACyc33_E53F3DDB9A122069FDAA14CB84A49BDELlfc
 _$S8TeadsSDK20CommanderWebViewPoolCACyc33_E53F3DDB9A122069FDAA14CB84A49BDELlfcTo
+_$S8TeadsSDK20CommanderWebViewPoolC03getcdE0AA0cdE0CyF
 _$S8TeadsSDK20CommanderWebViewPoolC09commanderde2InF0AA0cdE0CSgyF
 _$S8TeadsSDK20CommanderWebViewPoolC09commanderde2InF0AA0cdE0CSgyFyyXEfU_
 _$SIg_Ieg_TR
@@ -2451,6 +2452,7 @@ _$SIeyB_Ieg_TRTA
 _$S8TeadsSDK20CommanderWebViewPoolCfdyycfU_TA
 _$SSo26InlineRefCountsPlaceholderaMa
 _$S8TeadsSDK20CommanderWebViewPoolC04fillF8IfNeeded17completionHandleryyycSg_tFyycfU_yycfU_TA
+_$Ss24_VariantDictionaryBufferOyxq_GSHRzr0_lWOe
 _block_destroy_helper.8
 _block_destroy_helper.17
 _block_destroy_helper.29
@@ -2576,6 +2578,7 @@ $Ss16_NativeSetBufferV10startIndexs01_abE0VyxGvg8TeadsSDK16CommanderWebViewC_Tg5
 $Ss16_NativeSetBufferV5index5afters01_aB5IndexVyxGAG_tF8TeadsSDK16CommanderWebViewC_Tg5
 $Ss17_VariantSetBufferO8asNatives01_ebC0VyxGvg8TeadsSDK16CommanderWebViewC_Tg5
 commanderWebViewInPool
+getCommanderWebView
 $S8TeadsSDK20CommanderWebViewPoolC010updateConfF5Value12userDefaultsySo06NSUserK0C_tFfA_
 deinit
 $S8TeadsSDK20CommanderWebViewPoolCfdyycfU_
@@ -2694,7 +2697,6 @@ _$S8TeadsSDK0A2AdC11requestLoadyyFySbcfU_yycfU_TA
 _$S8TeadsSDK07PrivateA10AdDelegate_pSgXwWOh
 _$S8TeadsSDK0A2AdC5cleanyyFyycfU_TA
 _$S8TeadsSDK19RemoteConfigManagerCMa
-_$Ss24_VariantDictionaryBufferOyxq_GSHRzr0_lWOe
 _$S8TeadsSDK0A2AdC11requestLoadyyFyycfU0_
 _block_destroy_helper.7
 _block_destroy_helper.22
@@ -3006,8 +3008,6 @@ _$SypSgWOh
 ___swift_destroy_boxed_opaque_existential_0
 _$S10Foundation4DataVSgWOe
 _$S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
-_$S8TeadsSDK12NetworkUtilsV22networkResponseIsValid4data8responseSb10Foundation4DataVSg_So13NSURLResponseCSgtFZTf4nnd_n
-_$S10Foundation4DataVSgWOy
 _$S8TeadsSDK19RemoteConfigManagerC05parseC8ConfData4data8eventBusAA0cD0VSg10Foundation0H0V_AA05EventK0CSgtFTf4ndd_n
 _$S8TeadsSDK19RemoteConfigManagerC19defaultSumoSamplingSdvpZ
 _$S8TeadsSDK19RemoteConfigManagerC22defaultCommanderUpdateSbvpZ
@@ -3069,6 +3069,7 @@ $S8TeadsSDK19RemoteConfigManagerCAA0cdE8ProtocolAAWa
 $S8TeadsSDK19RemoteConfigManagerCMa
 $S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
 networkResponseIsValid
+NetworkUtils.swift
 updateConfFile
 globalinit_33_898B58A38E57AF444CE082639FBEFAC1_func12
 _allocateUninitializedArray
@@ -3306,6 +3307,7 @@ _$S8TeadsSDK10PlayerViewC8delegateAA0cD8Delegate_pSgXwvpWvd
 _$S8TeadsSDK10PlayerViewC11creativeUrl10Foundation3URLVSgvpWvd
 _$S8TeadsSDK12CreativeTypeV08creativeD5VpaidSSvpZ
 _$S8TeadsSDK11ErrorObjectC04vastC4CodeSivpWvd
+_$S8TeadsSDK14PluginsManagerC06pluginD5Timer33_8F22141AFF014239CD51A8B614F6F246LLSo24OS_dispatch_source_timer_pSgvpWvd
 _block_descriptor.13
 _block_descriptor.19
 _$S8TeadsSDK10PlayerViewC19creativeShouldStartSbvpWvd
@@ -3335,7 +3337,6 @@ _$S8TeadsSDK17StudioAPIConstantV20errorInvalidImageUrlSSvpZ
 _$S8TeadsSDK8ConstantV22sdkVPaidBridgeProtocolSSvpZ
 _$SSDySSSdGML
 _block_descriptor.73
-_$S8TeadsSDK14PluginsManagerC06pluginD5Timer33_8F22141AFF014239CD51A8B614F6F246LLSo24OS_dispatch_source_timer_pSgvpWvd
 _$S8TeadsSDK27ApplicationStatesDispatcherC14sharedInstanceACvpZ
 _$S8TeadsSDK10PlayerViewCAA25ApplicationStatesProtocolAAWP
 _$S8TeadsSDK22PluginsManagerDelegateMp
@@ -3362,7 +3363,7 @@ adVideoMetadata
 PlayerView.swift
 mediaFileSize.set
 __CGSizeEqualToSize
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
 mediaFileSize.get
 $SSDySSSdGMa
 isLoaded.get
@@ -3426,6 +3427,9 @@ $S8TeadsSDK15VPaidPlayerViewC011handleVpaidD5Error4line5error5fatal7message4code
 $S8TeadsSDK15VPaidPlayerViewC31pluginNeedsToEvaluateJavaScript8jsString6prefixySS_SSSgtFyypSg_s5Error_pSgtcfU_TA
 objectdestroy.33
 $S8TeadsSDK15VPaidPlayerViewC5pauseyyFyypSg_s5Error_pSgtcfU_TA
+pluginManagerTimer.set
+pluginManagerTimer.get
+plugins.materialize
 removeOptional
 $S8TeadsSDK15VPaidPlayerViewC9didRotateyyFyycfU_TA
 __swift_project_boxed_opaque_existential_0
@@ -3492,9 +3496,6 @@ replay
 cleanUp
 $S8TeadsSDK27ApplicationStatesDispatcherC14sharedInstanceACvau
 ApplicationStatesDispatcher.swift
-pluginManagerTimer.set
-pluginManagerTimer.get
-plugins.materialize
 wkWebView.set
 adViewDidMoveToSuperView
 layoutSubviews
@@ -3506,8 +3507,8 @@ scrollerTimer.set
 scrollerTimer.get
 timerPaused.get
 timerPaused.set
-scrollerEngineWeakTarget.get
 $S8TeadsSDK0A10WeakTargetCSgMa
+scrollerEngineWeakTarget.get
 scrollerEngineWeakTarget.set
 TeadsWeakTarget.swift
 $S8TeadsSDK15VPaidPlayerViewC6loadAdyyFyypSg_s5Error_pSgtcfU_
@@ -3865,6 +3866,7 @@ _globalinit_33_A9BD51CAFB068A6018825819252106F6_func49
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_func50
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_func51
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_func52
+_$SSiSLsSL1loiySbx_xtFZTW
 _$Ss16_UnmanagedStringVys5UInt8VGS2iIgyyd_AES2iIegynr_TR035$SSS7_stride2ofSiSS5IndexV_tFSis16_ab4Vys5C11VG_SitXEfU_Tf3nnnpf_n
 _$Ss16_UnmanagedStringVys6UInt16VGS2iIgyyd_AES2iIegynr_TR035$SSS7_stride2ofSiSS5IndexV_tFSis16_ab4Vys6C12VG_SitXEfU0_Tf3nnnpf_n
 _$SSS7_stride2ofSiSS5IndexV_tFSis22_UnmanagedOpaqueStringV_SitXEfU1_
@@ -4119,6 +4121,7 @@ $Ss16_UnmanagedStringVys6UInt16VGS2iIgyyd_AES2iIegynr_TR035$SSS7_stride2ofSiSS5I
 $SSS7_stride2ofSiSS5IndexV_tFSis16_UnmanagedStringVys6UInt16VG_SitXEfU0_
 $Ss16_UnmanagedStringVys5UInt8VGS2iIgyyd_AES2iIegynr_TR035$SSS7_stride2ofSiSS5IndexV_tFSis16_ab4Vys5C11VG_SitXEfU_Tf3nnnpf_n
 $SSS7_stride2ofSiSS5IndexV_tFSis16_UnmanagedStringVys5UInt8VG_SitXEfU_
+$SSiSLsSL1loiySbx_xtFZTW
 _$Ss2eeoiySbx_xts16RawRepresentableRzs9Equatable0B5ValueRpzlF8TeadsSDK10HTTPMethodO_Tgq5
 _$S8TeadsSDK3KeyV14teadsDebugModeSSvau
 _$S8TeadsSDK16UITestsArgumentsV20httpServerMockEnvVarSSvau
@@ -4542,27 +4545,26 @@ _$S8TeadsSDK14PlayerObserverMp
 _$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus8delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA0cdE8Delegate_pSgtcfc
 _$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
 _$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyF
-_$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_
 _$S8TeadsSDK20JSEngineAssetManagerC26shouldUseEmbeddedCommanderSbyF
 _$S8TeadsSDK20JSEngineAssetManagerC21getUpdatedCommanderJsSSSgyF
 _$S8TeadsSDK20JSEngineAssetManagerC20getDocumentDirectory6create10Foundation3URLVSb_tKF
 _$S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_
 _$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZ
-_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
-_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yALcfU_
+_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
+_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yAKcfU_
 _$S8TeadsSDK20JSEngineAssetManagerCACycfcTo
 _$S8TeadsSDK20JSEngineAssetManagerCfD
 _$S8TeadsSDK20JSEngineAssetManagerCfETo
 _$S8TeadsSDK20JSEngineAssetManagerCMa
-_$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD26NetworkEngineInPutProtocol_p_Tg5
 _$S8TeadsSDK20JSEngineAssetManagerC23getBundleFileContentFor8fileName6ofTypeSSSgSS_SStFTf4nnd_n
 _$S8TeadsSDK20JSEngineAssetManagerC25unzipBundleFileContentFor8fileName9extentionSSSgSS_SStFTf4nnd_n
 _$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFTf4nd_n
 _$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 _$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_TA
 _$S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_TA
-_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_TA
-_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
+_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
+_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZTf4nnd_n
+_$S10Foundation4DataVSgWOy
 _$S8TeadsSDK28JSEngineAssetManagerDelegate_pSgWOe
 _$S8TeadsSDK28JSEngineAssetManagerDelegate_pSgXwWOh
 _symbolic $S8TeadsSDK28JSEngineAssetManagerDelegateP
@@ -4584,40 +4586,34 @@ _symbolic So13NSFileManagerC
 _$S8TeadsSDK20JSEngineAssetManagerCMF
 _symbolic SSSgIegg_
 _symbolic 8TeadsSDK20JSEngineAssetManagerC
-_$S8TeadsSDK34EventBusNetworkEngineInPutProtocol_pML
-_$S8TeadsSDK34EventBusNetworkEngineInPutProtocolMp
 _$SSo13NSFileManagerCMF
 _$S8TeadsSDK20JSEngineAssetManagerCN
 _OBJC_CLASS_$__TtC8TeadsSDK20JSEngineAssetManager
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift
 $S8TeadsSDK28JSEngineAssetManagerDelegate_pSgXwWOh
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_TA
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_
-JSEngineAssetManager.swift
-/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs
+$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
 $S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_TA
 $S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_TA
+$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_
+JSEngineAssetManager.swift
+/Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs
+updateCommander
+downloadAsset
 $S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 directDownloadCommander
 unzipBundleFileContentFor
 $S8TeadsSDK20JSEngineAssetManagerCMa
 getBundleFileContentFor
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yALcfU_
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFyAA34EventBusNetworkEngineInPutProtocol_pcfU_y10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
-writeFile
+$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yAKcfU_
 jsEngineUserDefaults.get
+$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
+writeFile
 $S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_
 getDocumentDirectory
 jsEngineFileManager.get
 getUpdatedCommanderJs
 readFile
 shouldUseEmbeddedCommander
-$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_
-updateCommander
-notify
-$S8TeadsSDK34EventBusNetworkEngineInPutProtocol_pMa
-eventBus.get
 getCommander
 checkForCommanderUpdate
 allowCommanderUpdate.get
@@ -4938,6 +4934,7 @@ _globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func135
 _globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func136
 _$S8TeadsSDK8EventBusC3add10subscriber3for7optionsyx_xmAA7OptionsVtlFAA0cD27NetworkEngineOutPutProtocol_p_Tg5
 _$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD16JsEngineProtocol_p_Tg5
+_$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD26NetworkEngineInPutProtocol_p_Tg5
 _$S8TeadsSDK13ComponentDataC14withDictionaryACSgSo12NSDictionaryC_tcfc
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func153
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func154
@@ -5016,6 +5013,8 @@ _$S8TeadsSDK8JSEngineCAA17WebBridgeDelegateAAMc
 _$S8TeadsSDK8JSEngineCAA17WebBridgeDelegateAAWP
 _$S8TeadsSDK3apiSSvp
 _symbolic 8TeadsSDK8JSEngineC
+_$S8TeadsSDK34EventBusNetworkEngineInPutProtocol_pML
+_$S8TeadsSDK34EventBusNetworkEngineInPutProtocolMp
 _symbolic 8TeadsSDK20CommanderCallRequestV
 _symbolic 8TeadsSDK13ComponentDataC
 _$SyXlSgML
@@ -5085,6 +5084,8 @@ $S8TeadsSDK9WebBridgeC16onFormatExpanded17completionHandleryySbc_tFySbcfU_TA
 objectdestroy.6
 $S8TeadsSDK8JSEngineC14formatExpandedyyFySbcfU_TA
 $S8TeadsSDK8JSEngineC14formatExpandedyyFySbcfU_
+notify
+eventBus.get
 touchOnCreative
 onFormatPlayerClicked
 $S8TeadsSDK3apiSSvau
@@ -5172,6 +5173,7 @@ $S8TeadsSDK8JSEngineC12httpResponse8responseyAA15CommanderNoticeV_tFySbcfU_
 _dictionaryDownCastConditional
 $Ss24_CocoaDictionaryIteratorCyABs13_NSDictionary_pcfc
 handleHttpCall
+$S8TeadsSDK34EventBusNetworkEngineInPutProtocol_pMa
 handleSetVolume
 $S8TeadsSDK8JSEngineC15handleCloseSlot13variablesDictySDySSypGSg_tFyAA24EventBusJsEngineProtocol_pcfU_
 $S8TeadsSDK8JSEngineC14handleOpenSlot13variablesDictySDySSypGSg_tFyAA24EventBusJsEngineProtocol_pcfU_
@@ -5335,7 +5337,6 @@ $S8TeadsSDK9WebBridgeC13onMediaLoaded17completionHandleryySbc_tFySbcfU_03$S8a4SD
 $S8TeadsSDK10DeviceInfoCACSEAAWl
 errorHandling
 commanderViewDelegate.set
-getCommanderWebView
 globalinit_33_DE8149AACAA9BCC8F8BC5CA254DF6D07_func133
 _$S8TeadsSDK27CompoundScreenComponentViewC06updateE013componentDatayAA0eI0C_tF
 _$S8TeadsSDK27CompoundScreenComponentViewC5coderACSgSo7NSCoderC_tcfC
@@ -5735,7 +5736,7 @@ $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSo18NSLay
 $Ss23_ContiguousArrayStorageCySo18NSLayoutConstraintCGMa
 containerView.get
 UIDeviceOrientationIsLandscape
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIDevice.h
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIDevice.h
 layoutConstraint
 setUpViews
 _$S8TeadsSDK14ScrollerPluginCfE
@@ -5980,19 +5981,17 @@ _$S8TeadsSDK13NetworkEngineCfDTo
 _$S8TeadsSDK13NetworkEngineCfETo
 _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tF
 _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
-_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctF
-_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFyAL_So13NSURLResponseCSgAOtcfU_
+_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_
 _$S8TeadsSDK13NetworkEngineCACycfcTo
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolA2aDP8httpCall11callRequestyAA09CommanderkM0V_tFTW
-_$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolA2aDP13downloadAsset2at10completiony10Foundation3URLV_yAI4DataVSg_SSSgs5Error_pSgtctFTW
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAWa
-_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFyAL_So13NSURLResponseCSgAOtcfU_TA
 _$S8TeadsSDK8EventBusC3add10subscriber3for7optionsyx_xmAA7OptionsVtlFAA0cD26NetworkEngineInPutProtocol_p_Tg5
 _$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD27NetworkEngineOutPutProtocol_p_Tg5
 _$S8TeadsSDK12NetworkUtilsV17urlIfTestsEnabled0E010Foundation3URLVAH_tFZTf4nd_n
-_$S8TeadsSDK12NetworkUtilsV17getHeaderValueFor11urlResponse11headerFieldSSSgSo13NSURLResponseCSg_SStFZTf4nxd_n
 _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_TA
+_$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_TA
+_$S8TeadsSDK12NetworkUtilsV17getHeaderValueFor11urlResponse11headerFieldSSSgSo13NSURLResponseCSg_SStFZTf4nxd_n
 _OBJC_METACLASS_$__TtC8TeadsSDK13NetworkEngine
 _$S8TeadsSDK13NetworkEngineC8eventBusAA05EventF0CSgXwvpWvd
 _$S8TeadsSDK13NetworkEngineC7sessionSo12NSURLSessionCvpWvd
@@ -6003,25 +6002,24 @@ _symbolic ____ 8TeadsSDK13NetworkEngineC
 _$S8TeadsSDK13NetworkEngineCMF
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAMc
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAWP
-_symbolic 10Foundation4DataVSgSSSgs5Error_pSgIegggg_
 _symbolic 8TeadsSDK15CommanderNoticeV
+_symbolic 10Foundation4DataVSgSSSgs5Error_pSgIegggg_
 _$S8TeadsSDK13NetworkEngineCN
 _OBJC_CLASS_$__TtC8TeadsSDK13NetworkEngine
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift
+$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_TA
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_TA
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 $Ss23_NativeDictionaryBufferV5index5afters01_aB5IndexVyxq_GAG_tFSS_SSTg5
-$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFyAL_So13NSURLResponseCSgAOtcfU_TA
 $S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAWa
-downloadAsset
 httpCall
 $S8TeadsSDK13NetworkEngineCMa
-$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFyAL_So13NSURLResponseCSgAOtcfU_
+$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_
 getHeaderValueFor
-session.get
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
 CommanderNotice.swift
+session.get
 urlIfTestsEnabled
 _$SSq16debugDescriptionSSvgSo7NSErrorC_Tg5
 _$S8TeadsSDK21NativeVideoPlayerViewC5coderACSgSo7NSCoderC_tcfC
@@ -7045,6 +7043,7 @@ _$S8TeadsSDK8EventBusCAA0C9ChainableA2aDP15detachAllChainsyyFTW
 _$S8TeadsSDK8EventBusC11descriptionSSvgSSSPyACGXEfU_
 _$S8TeadsSDK8EventBusC11descriptionSSvgSSSPyACGXEfU_S2SXEfU_
 _$S8TeadsSDK8EventBusCs23CustomStringConvertibleAAsADP11descriptionSSvgTW
+_$SSis35_ExpressibleByBuiltinIntegerLiteralssAAP08_builtindE0xBi2048__tcfCTW
 _$Ss17_VariantSetBufferO18nativeRemoveObject6forKeyxSgx_tF8TeadsSDK8EventBusC7WeakBoxV_Tg5
 _$Ss17_VariantSetBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tF8TeadsSDK8EventBusC7WeakBoxV_Tg5
 _$Ss17_VariantSetBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tFSO_Tg5
@@ -7573,6 +7572,7 @@ $Ss17_VariantSetBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_S
 $Ss17_VariantSetBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tF8TeadsSDK8EventBusC7WeakBoxV_Tg5
 $Ss26_forceBridgeFromObjectiveCyxyXl_xmtlF8TeadsSDK8EventBusC7WeakBoxV_Tg5
 $Ss17_VariantSetBufferO18nativeRemoveObject6forKeyxSgx_tF8TeadsSDK8EventBusC7WeakBoxV_Tg5
+$SSis35_ExpressibleByBuiltinIntegerLiteralssAAP08_builtindE0xBi2048__tcfCTW
 $SSPy8TeadsSDK8EventBusCGSSs5Error_pIgyozo_ADSSsAE_pIegyrzo_TR
 $S8TeadsSDK8EventBusC11descriptionSSvgSSSPyACGXEfU_S2SXEfU_
 $S8TeadsSDK8EventBusC11descriptionSSvgSSSPyACGXEfU_
@@ -8795,7 +8795,6 @@ _$S8TeadsSDK15TFACustomAdViewC0aD13PlaybackStateOSYAAMA
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/TFACustomAdView.swift
 $Ss17FixedWidthIntegerPsE19_parseASCIISlowPath9codeUnits5radixqd_0_Sgqd__z_qd_0_ts16IteratorProtocolRd__sAARd_0_s08UnsignedC07ElementRpd__r0_lFZSi_s22_UnmanagedOpaqueStringV0J0VSiTg5Tf4nnd_n
 $Ss22_UnmanagedOpaqueStringV8IteratorVStsSt4next7ElementQzSgyFTW
-$SSiSLsSL1loiySbx_xtFZTW
 $SSis13BinaryIntegersSz18truncatingIfNeededxqd___tcsAARd__lufCTWs6UInt16V_Tg5
 $Ss17FixedWidthIntegerPsE18truncatingIfNeededxqd___tcs06BinaryC0Rd__lufCqd__SiXMTS2iRszsADRd__r__lIetMiyd_Tpq5s6UInt16V_Tg5
 $Ss6UInt16VSzsSz8_lowWordSuvgTW
@@ -8838,7 +8837,6 @@ $SSP1loiySbSPyxG_ABtFZs6UInt16V_Tg5
 $SSPyxGs10ComparablesSL2leoiySbx_xtFZTWs6UInt16V_Tg5
 $SSLsE2leoiySbx_xtFZSPys6UInt16VG_Tg5
 $SSPyxGs9EquatablesSQ2eeoiySbx_xtFZTWs6UInt16V_Tg5
-$SSis35_ExpressibleByBuiltinIntegerLiteralssAAP08_builtindE0xBi2048__tcfCTW
 $Ss16_UnmanagedStringVyxGs10CollectionsSl8endIndex0E0QzvgTWs6UInt16V_Tg5
 $Ss16_UnmanagedStringV8endIndexSPyxGvgs6UInt16V_Tg5
 $Ss20_ArrayBufferProtocolPsE20_arrayAppendSequenceyyqd__s0F0Rd__7ElementQyd__AERtzlFs01_aB0VySo18NSLayoutConstraintCG_s08IteratorF0Vys08IndexingJ0VySayAKGGGTg5Tf4xn_n
@@ -9102,36 +9100,31 @@ _$S8TeadsSDK24EventBusJsEngineProtocolWR
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/EventBusProtocol.swift
 jsEngineSlotRequest
 _$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZyAG4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
-_$SSiSLsSL1loiySbx_xtFZTW
-_$SSis35_ExpressibleByBuiltinIntegerLiteralssAAP08_builtindE0xBi2048__tcfCTW
 _$Ss11AnyHashableVyABxcs0B0RzlufCSS_Tg5
+_$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZyAG4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 _$Ss11AnyHashableVWOh
 _$Ss11AnyHashableVWOc
 _$Ss11AnyHashableVSgWOh
 _$Ss11AnyHashableVWOb
-_$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZyAG4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 _$Ss15_AnyHashableBox_pWOb
 _$Ss35_HasCustomAnyHashableRepresentation_pSgWOh
 _$Ss15_AnyHashableBox_pWOc
 _symbolic ____ 8TeadsSDK12NetworkUtilsV
 _$S8TeadsSDK12NetworkUtilsVMF
 _$S8TeadsSDK12NetworkUtilsVMn
+_symbolic 10Foundation4DateVSgIegy_
 _$Ss35_HasCustomAnyHashableRepresentation_pML
 _$Ss20_ConcreteHashableBoxVySbGML
-_symbolic 10Foundation4DateVSgIegy_
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/TeadsSDK/NetworkUtils.swift
-$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZyAG4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 $Ss11AnyHashableVWOb
 $Ss11AnyHashableVSgWOh
 $Ss11AnyHashableVWOc
 $Ss11AnyHashableVWOh
-NetworkUtils.swift
 $Ss11AnyHashableVSQsSQ2eeoiySbx_xtFZTW
 $Ss11AnyHashableV2eeoiySbAB_ABtFZ
 $Ss11AnyHashableVSHsSH4hash4intoys6HasherVz_tFTW
 _convertToAnyHashable
-$Ss5Int64Vs13BinaryIntegersSz18truncatingIfNeededxqd___tcsACRd__lufCTWSi_Tg5
-$Ss17FixedWidthIntegerPsE18truncatingIfNeededxqd___tcs06BinaryC0Rd__lufCqd__s5Int64VXMTA2FRszsADRd__r__lIetMiyd_Tpq5Si_Tg5
+$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZyAG4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 $Ss11AnyHashableVyABxcs0B0RzlufCSS_Tg5
 $Ss20_ConcreteHashableBoxVySbGMa
 $Ss35_HasCustomAnyHashableRepresentation_pMa
@@ -9190,7 +9183,7 @@ $SSa16_copyToNewBuffer8oldCountySi_tF8TeadsSDK13ComponentViewC_Tg5
 $Ss20_ArrayBufferProtocolPsE22_arrayOutOfPlaceUpdateyys011_ContiguousaB0Vy7ElementQzGz_S2iqd__ts16_PointerFunctionRd__AFQyd__AGRSlFs01_aB0Vy8TeadsSDK13ComponentViewCG_s07_IgnoreK0VyAOGTg5
 $SSa36_reserveCapacityAssumingUniqueBuffer8oldCountySi_tF8TeadsSDK13ComponentViewC_Tg5
 $Ss12_ArrayBufferV19_getElementSlowPathyyXlSiF8TeadsSDK13ComponentDataC_Tg5
-Apple LLVM version 10.0.0 (clang-1000.11.45.2)
+Apple LLVM version 10.0.0 (clang-1000.11.45.5)
 /Users/jgrosjean/GIT/service-format-ios/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources/TeadsSDK_vers.c
 +[OMIDTeadstvMethodInvoker performSelectorAsync:target:]
 ___56+[OMIDTeadstvMethodInvoker performSelectorAsync:target:]_block_invoke
