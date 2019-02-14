@@ -17,8 +17,8 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
     let reuseTeadsIdentifier = "teadsAdCell"
     let adRowNumber = 16
     var webView: WKWebView!
-    var webSync: SyncWebViewTFACustomAdView?
-    var adView: TFACustomAdView?
+    var webSync: SyncWebViewTFInReadAdView?
+    var adView: TFAInReadAdView?
     var webViewHeight: CGFloat?
     var contentSizeObserver: NSKeyValueObservation?
     
@@ -36,15 +36,15 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
         self.webView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.webView.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
+        self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
         
         self.collectionView!.register(TeadsAdEmbededCollectionViewCell.self, forCellWithReuseIdentifier: self.reuseTeadsIdentifier)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if self.isMovingFromParentViewController || self.isBeingDismissed {
+        if self.isMovingFromParent || self.isBeingDismissed {
             self.stopObservingContentSize()
         }
     }

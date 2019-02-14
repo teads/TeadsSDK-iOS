@@ -15,8 +15,8 @@ class WebViewEmbededInScrollViewController: UIViewController, WKNavigationDelega
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topView: UIView!
     var webView: WKWebView?
-    var webSync: SyncWebViewTFACustomAdView?
-    var adView: TFACustomAdView?
+    var webSync: SyncWebViewTFInReadAdView?
+    var adView: TFAInReadAdView?
     var contentSizeObserver: NSKeyValueObservation?
 
     override func viewDidLoad() {
@@ -34,15 +34,15 @@ class WebViewEmbededInScrollViewController: UIViewController, WKNavigationDelega
         self.scrollView.addSubview(self.webView!)
         self.webView?.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
+        self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
         
         self.startObservingContentSize()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if self.isMovingFromParentViewController || self.isBeingDismissed {
+        if self.isMovingFromParent || self.isBeingDismissed {
             self.stopObservingContentSize()
         }
     }
