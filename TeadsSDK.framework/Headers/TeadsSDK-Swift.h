@@ -219,7 +219,7 @@ typedef SWIFT_ENUM(NSInteger, CommanderWebViewState, closed) {
 
 
 
-@class TFACustomAdView;
+@class TFAAdView;
 enum TeadsAdPlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
@@ -229,61 +229,61 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 /// \param adRatio ratio of the ad
 ///
-- (void)didReceiveAd:(TFACustomAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
+- (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 /// Called when you did not get and ad
 /// \param ad The teadsAd object
 ///
 /// \param adFailReason AdFailReason object that contains an error code and an error message
 ///
-- (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
+- (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 /// Called when the ad should be closed
 /// \param ad The teadsAd object
 ///
 /// \param userAction is the close an action from the user or an automatic one
 ///
-- (void)adClose:(TFACustomAdView * _Nonnull)ad userAction:(BOOL)userAction;
+- (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
 /// Called when the teads SDK encounter an error
-/// \param ad The TFACustomAdView
+/// \param ad The teadsAd object
 ///
 /// \param errorMessage error message related to the error
 ///
-- (void)adError:(TFACustomAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
+- (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 @optional
 /// Called when the modal browser is open
 /// \param ad The teadsAd object
 ///
-- (void)adBrowserDidOpen:(TFACustomAdView * _Nonnull)ad;
+- (void)adBrowserDidOpen:(TFAAdView * _Nonnull)ad;
 /// Called when the modal browser is closed
 /// \param ad The teadsAd object
 ///
-- (void)adBrowserDidClose:(TFACustomAdView * _Nonnull)ad;
+- (void)adBrowserDidClose:(TFAAdView * _Nonnull)ad;
 /// Called when ad is shown in fullscreen
 /// \param ad The teadsAd object
 ///
-- (void)adDidOpenFullscreen:(TFACustomAdView * _Nonnull)ad;
+- (void)adDidOpenFullscreen:(TFAAdView * _Nonnull)ad;
 /// Called when ad leaves the fullscreen mode
 /// \param ad The teadsAd object
 ///
-- (void)adDidCloseFullscreen:(TFACustomAdView * _Nonnull)ad;
+- (void)adDidCloseFullscreen:(TFAAdView * _Nonnull)ad;
 /// Called when ad start
 /// \param ad The teadsAd object
 ///
-- (void)adPlaybackChange:(TFACustomAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
+- (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
 /// @deprecated since 4.1.x please use TFASoundDelegate instead
 /// \param ad The teadsAd object
 ///
 /// \param muted true if the sound is off false otherwise
 ///
-- (void)adDidChangeVolume:(TFACustomAdView * _Nonnull)ad muted:(BOOL)muted;
+- (void)adDidChangeVolume:(TFAAdView * _Nonnull)ad muted:(BOOL)muted;
 @end
 
 @protocol TFASoundDelegate;
 @class NSCoder;
 @class TeadsAdSettings;
 
-SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
-@interface TFACustomAdView : UIView
+SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
+@interface TFAAdView : UIView
 /// Ad loading state
 @property (nonatomic, readonly) BOOL isLoading;
 /// Ad loaded state
@@ -300,6 +300,35 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 - (void)awakeFromNib;
 - (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
 - (void)didMoveToSuperview;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFAAdDelegate> _Nullable)delegate SWIFT_DEPRECATED_MSG("use init(withPid: andDelegate:)");
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/// Request an ad from Teads ad server
+/// \param teadsAdSettings Optionnal <code>TeadsAdSettings</code> to define custom settings
+///
+- (void)loadWithTeadsAdSettings:(TeadsAdSettings * _Nullable)teadsAdSettings;
+/// Enables debug for TFAAdView instance
+/// Will provide logs about what is going on
+- (void)enableDebug;
+/// Set the ad container, allow you to monitor your inventory
+/// \param container the container which will contain the adView
+///
+- (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container;
+/// Reset ad loading
+- (void)reset;
+/// Call that method when you did not add the TFAAdView to your to your view hierarchy or if Teads view has width/height of 0 and the container view reached the spot where the ad was supposed to be
+- (void)slotReached SWIFT_DEPRECATED_MSG("Use setAdContainerView instead");
+@end
+
+typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
+  TeadsAdPlaybackStatePlaybackStateCompleted = 0,
+  TeadsAdPlaybackStatePlaybackStateStarted = 1,
+  TeadsAdPlaybackStatePlaybackStatePaused = 2,
+};
+
+
+SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
+@interface TFACustomAdView : TFAAdView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 /// Init TFACustomAdView by prodiving the pId and optional parameters
 /// \param pid The Placement ID
@@ -310,32 +339,23 @@ SWIFT_CLASS("_TtC8TeadsSDK15TFACustomAdView")
 /// returns:
 /// TeadsAd instance
 - (nonnull instancetype)initWithPid:(NSInteger)pid andDelegate:(id <TFAAdDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFAAdDelegate> _Nullable)delegate SWIFT_DEPRECATED_MSG("use init(withPid: andDelegate:)");
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-/// Request an ad from Teads ad server
-/// \param teadsAdSettings Optionnal <code>TeadsAdSettings</code> to define custom settings
-///
-- (void)loadWithTeadsAdSettings:(TeadsAdSettings * _Nullable)teadsAdSettings;
-/// Enables debug for TFACustomAdView instance
-/// Will provide logs about what is going on
-- (void)enableDebug;
-/// Reset ad loading
-- (void)reset;
-/// Request ad to pause
-- (void)requestPause SWIFT_DEPRECATED_MSG("It is not supported anymore");
-/// Request ad to resume
-- (void)requestStart SWIFT_DEPRECATED_MSG("It is not supported anymore");
-/// Request ad to resume
-- (void)requestResume SWIFT_DEPRECATED_MSG("It is not supported anymore");
-/// Call that method when you did not add the TFACustomAdView to your to your view hierarchy or if Teads view has width/height of 0 and the container view reached the spot where the ad was supposed to be
-- (void)slotReached;
 @end
 
-typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
-  TeadsAdPlaybackStatePlaybackStateCompleted = 0,
-  TeadsAdPlaybackStatePlaybackStateStarted = 1,
-  TeadsAdPlaybackStatePlaybackStatePaused = 2,
-};
+
+SWIFT_CLASS("_TtC8TeadsSDK15TFAInReadAdView")
+@interface TFAInReadAdView : TFAAdView
+/// Init TFACustomAdView by prodiving the pId and optional parameters
+/// \param pid The Placement ID
+///
+/// \param delegate The TeadsAdDelegate object
+///
+///
+/// returns:
+/// TeadsAd instance
+- (nonnull instancetype)initWithPid:(NSInteger)pid andDelegate:(id <TFAAdDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @protocol TFAInterstitialAdDelegate;
 
@@ -349,12 +369,12 @@ SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 - (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFAInterstitialAdDelegate> _Nullable)delegate SWIFT_DEPRECATED_MSG("use init(withPid: andDelegate:)");
 - (void)loadWithSettings:(TeadsAdSettings * _Nullable)settings;
 - (void)show;
-- (void)didReceiveAd:(TFACustomAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
-- (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
-- (void)adClose:(TFACustomAdView * _Nonnull)ad userAction:(BOOL)userAction;
-- (void)adError:(TFACustomAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
-- (void)adBrowserDidOpen:(TFACustomAdView * _Nonnull)ad;
-- (void)adBrowserDidClose:(TFACustomAdView * _Nonnull)ad;
+- (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
+- (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
+- (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
+- (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
+- (void)adBrowserDidOpen:(TFAAdView * _Nonnull)ad;
+- (void)adBrowserDidClose:(TFAAdView * _Nonnull)ad;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -395,13 +415,13 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 - (nonnull instancetype)initWithPid:(NSString * _Nonnull)pid delegate:(id <TFARewardedAdDelegate> _Nullable)delegate SWIFT_DEPRECATED_MSG("use init(withPid: andDelegate:)");
 - (void)loadWithSettings:(TeadsAdSettings * _Nullable)settings;
 - (void)show;
-- (void)didReceiveAd:(TFACustomAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
-- (void)didFailToReceiveAd:(TFACustomAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
-- (void)adClose:(TFACustomAdView * _Nonnull)ad userAction:(BOOL)userAction;
-- (void)adError:(TFACustomAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
-- (void)adPlaybackChange:(TFACustomAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
-- (void)adBrowserDidOpen:(TFACustomAdView * _Nonnull)ad;
-- (void)adBrowserDidClose:(TFACustomAdView * _Nonnull)ad;
+- (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
+- (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
+- (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
+- (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
+- (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
+- (void)adBrowserDidOpen:(TFAAdView * _Nonnull)ad;
+- (void)adBrowserDidClose:(TFAAdView * _Nonnull)ad;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -426,9 +446,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TFARewardedAdDelegate_")
 SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 @protocol TFASoundDelegate
 /// Called when the ad will start playing audio
-- (void)adWillStartPlayingAudio:(TFACustomAdView * _Nonnull)ad;
+- (void)adWillStartPlayingAudio:(TFAAdView * _Nonnull)ad;
 /// Called when the ad will stop playing audio
-- (void)adDidStopPlayingAudio:(TFACustomAdView * _Nonnull)ad;
+- (void)adDidStopPlayingAudio:(TFAAdView * _Nonnull)ad;
 @end
 
 
