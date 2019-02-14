@@ -24,6 +24,7 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
         let teadsAdSettings = TeadsAdSettings(build: { (settings) in
             settings.enableDebug()
         })
+        self.teadsAdView.setAdContainerView(container: self.teadsAdView)
         self.teadsAdView.load(teadsAdSettings: teadsAdSettings)
         
         // We use an observer to know when a rotation happened, to resize the ad
