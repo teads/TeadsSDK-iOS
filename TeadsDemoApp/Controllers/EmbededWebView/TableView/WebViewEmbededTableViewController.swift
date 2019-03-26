@@ -16,14 +16,14 @@ class WebViewEmbededTableViewController: UITableViewController, WKNavigationDele
     let webViewCellIdentifier = "WebViewCell"
     let adRowNumber = 16
     var webView: WKWebView!
-    var webSync: SyncWebViewTFACustomAdView?
-    var adView: TFACustomAdView?
+    var webSync: SyncWebViewTFInReadAdView?
+    var adView: TFAInReadAdView?
     var webViewHeight: CGFloat?
     var contentSizeObserver: NSKeyValueObservation?
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if self.isMovingFromParentViewController || self.isBeingDismissed {
+        if self.isMovingFromParent || self.isBeingDismissed {
             self.stopObservingContentSize()
         }
     }
@@ -46,8 +46,8 @@ class WebViewEmbededTableViewController: UITableViewController, WKNavigationDele
         self.webView?.scrollView.isScrollEnabled = false
         self.webView?.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
+        self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
                
         self.startObservingContentSize()
     }

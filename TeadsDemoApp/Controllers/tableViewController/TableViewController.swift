@@ -18,18 +18,18 @@ class TableViewController: UITableViewController, TFAAdDelegate {
     var adHeight: CGFloat?
     var adRatio: CGFloat?
     var teadsAdIsLoaded = false
-    var teadsAdView: TFACustomAdView?
+    var teadsAdView: TFAInReadAdView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.teadsAdView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
+        self.teadsAdView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
         self.teadsAdView?.load()
         self.teadsAdView?.translatesAutoresizingMaskIntoConstraints = false
         
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     deinit {
@@ -84,6 +84,7 @@ class TableViewController: UITableViewController, TFAAdDelegate {
                 allConstraints += adVerticalConstraints
                 NSLayoutConstraint.activate(allConstraints)
             }
+            self.teadsAdView?.setAdContainerView(container: cellAd!)
             return cellAd!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.classicCellIdentifier, for: indexPath)
@@ -105,22 +106,22 @@ class TableViewController: UITableViewController, TFAAdDelegate {
     
     // MARK: - TFAAdDelegate
     
-    func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio
         self.resizeTeadsAd(adRatio: adRatio)
     }
     
-    func didFailToReceiveAd(_ ad: TFACustomAdView, adFailReason: AdFailReason) {
+    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         self.closeSlot()
     }
     
-    func adClose(_ ad: TFACustomAdView, userAction: Bool) {
+    func adClose(_ ad: TFAAdView, userAction: Bool) {
         self.closeSlot()
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func adError(_ ad: TFACustomAdView, errorMessage: String) {
+    public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }

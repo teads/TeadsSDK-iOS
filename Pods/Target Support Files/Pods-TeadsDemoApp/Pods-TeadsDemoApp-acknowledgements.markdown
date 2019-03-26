@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Google-Mobile-Ads-SDK
 
-Copyright 2018 Google
+Copyright 2019 Google
 
 ## TeadsSDK
 

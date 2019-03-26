@@ -11,7 +11,7 @@ import TeadsSDK
 
 class ScrollViewController: UIViewController, TFAAdDelegate {
 
-    @IBOutlet weak var teadsAdView: TFACustomAdView!
+    @IBOutlet weak var teadsAdView: TFAInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: CGFloat?
     override func viewDidLoad() {
@@ -24,11 +24,12 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
         let teadsAdSettings = TeadsAdSettings(build: { (settings) in
             settings.enableDebug()
         })
+        self.teadsAdView.setAdContainerView(container: self.teadsAdView)
         self.teadsAdView.load(teadsAdSettings: teadsAdSettings)
         
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -48,23 +49,23 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
     
     // MARK: TFAAdDelegate
     
-    func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio
         self.resizeTeadsAd(adRatio: adRatio)
     }
     
-    func didFailToReceiveAd(_ ad: TFACustomAdView, adFailReason: AdFailReason) {
+    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         self.adRatio = 0
         self.teadsAdHeightConstraint.constant = 0
     }
     
-    func adClose(_ ad: TFACustomAdView, userAction: Bool) {
+    func adClose(_ ad: TFAAdView, userAction: Bool) {
         self.teadsAdHeightConstraint.constant = 0
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func adError(_ ad: TFACustomAdView, errorMessage: String) {
+    public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }

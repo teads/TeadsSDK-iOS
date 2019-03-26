@@ -3,7 +3,7 @@
 //  TeadsSDK
 //
 //  Created by Jérémy Grosjean on 14/09/2017.
-//  Copyright © 2018 Teads. All rights reserved.
+//  Copyright © 2017 Teads. All rights reserved.
 //
 
 import UIKit
@@ -111,7 +111,13 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
         if let webView = self.webView {
             //add a timeout in case we are not able to find the slot
             self.noSlotTimer = Timer(timeInterval: 4, target: self, selector: #selector(self.noSlotTimeout), userInfo: nil, repeats: false)
-            RunLoop.main.add(self.noSlotTimer!, forMode: RunLoopMode.commonModes)
+            
+            #if swift(>=4.2)
+                RunLoop.main.add(self.noSlotTimer!, forMode: RunLoop.Mode.common)
+            #else
+                RunLoop.main.add(self.noSlotTimer!, forMode: RunLoopMode.commonModes)
+            #endif
+            
             let openSlotWithSelectorMethod = String(format: WebViewHelper.insertSlotJSMethod, self.selector)
             webView.evaluateJavaScript(openSlotWithSelectorMethod) { (_, error) in
                 if error != nil {
@@ -132,7 +138,16 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
     ///   - adRatio: ratio of the ad
     public func updateSlot(adRatio: CGFloat) {
         if let webView = self.webView {
-            let updateSlotMethod = String(format: WebViewHelper.updateSlotJSMethod, 0.0, adRatio)
+            
+            //prevent the ad from being bigger than the screen or the webview
+            var correctedRatio = adRatio
+            let visibleHeight = min(UIScreen.main.bounds.height, webView.frame.height)
+            let heightWithRatio = webView.frame.width/adRatio
+            if heightWithRatio > visibleHeight {
+                correctedRatio = webView.frame.width/visibleHeight
+            }
+            
+            let updateSlotMethod = String(format: WebViewHelper.updateSlotJSMethod, 0.0, correctedRatio)
             webView.evaluateJavaScript(updateSlotMethod) { (_, error) in
                 if error != nil {
                     self.delegate?.webViewHelperOnError(error: "updateSlot failed")
@@ -198,7 +213,7 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
             self.noSlotTimer?.invalidate()
             self.delegate?.webViewHelperUpdatedSlot(left: left, top: top, right: right, bottom: bottom)
         } else {
-            print("The json is malformed")
+            self.delegate?.webViewHelperOnError(error: "The json is malformed")
         }
     }
     

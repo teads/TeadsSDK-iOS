@@ -40,7 +40,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         // 4. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()
         let teadsExtras = GADMAdapterTeadsExtras()
-        
+        teadsExtras.adContainer = self.view
         // Needed by european regulation
         // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
         teadsExtras.subjectToGDPR = "1"

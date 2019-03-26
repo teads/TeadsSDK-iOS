@@ -10,17 +10,18 @@ import UIKit
 import WebKit
 import TeadsSDK
 
-public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdDelegate {
+public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDelegate {
     
     weak var webView: WKWebView?
     var webViewHelper: WebViewHelper
-    weak var adView: TFACustomAdView?
+    weak var adView: TFAInReadAdView?
     var teadsAdSettings: TeadsAdSettings?
     var isLoaded = false
     var adViewConstraints = [NSLayoutConstraint]()
     var adViewHeightConstraint: NSLayoutConstraint?
+    var adRatio: CGFloat = 16/9.0
     
-    public init(webView: WKWebView, selector: String, adView: TFACustomAdView, adSettings: TeadsAdSettings? = nil) {
+    public init(webView: WKWebView, selector: String, adView: TFAInReadAdView, adSettings: TeadsAdSettings? = nil) {
         self.webViewHelper = WebViewHelper(webView: webView, selector: selector)
         self.adView = adView
         super.init()
@@ -29,7 +30,8 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
         self.webView = webView
         self.teadsAdSettings = adSettings
         //We use the observer to know when the rotation happen to resize the ad
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+        self.adView?.setAdContainerView(container: adView)
     }
     
     deinit {
@@ -43,10 +45,8 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     }
     
     @objc func rotationDetected() {
-        if let adView = self.adView {
-            //update the slot when the rotation occurs
-            self.webViewHelper.updateSlot(adRatio: adView.creativeRatio)
-        }
+        //update the slot when the rotation occurs
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
     }
     
     // MARK: WebViewHelperDelegate
@@ -96,18 +96,19 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
     
     // MARK: TeadsAdDelegate
     
-    public func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+    public func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
+        self.adRatio = adRatio
         //update slot with the right ratio
-        self.webViewHelper.updateSlot(adRatio: adRatio)
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
         //open the slot
         self.webViewHelper.openSlot()
     }
     
-    public func didFailToReceiveAd(_ ad: TFACustomAdView, adFailReason: AdFailReason) {
+    public func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         
     }
     
-    public func adClose(_ ad: TFACustomAdView, userAction: Bool) {
+    public func adClose(_ ad: TFAAdView, userAction: Bool) {
         //close the slot
         self.webViewHelper.closeSlot()
         //hide the ad too
@@ -122,13 +123,13 @@ public class SyncWebViewTFACustomAdView: NSObject, WebViewHelperDelegate, TFAAdD
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func adError(_ ad: TFACustomAdView, errorMessage: String) {
+    public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func adDidCloseFullscreen(_ ad: TFACustomAdView) {
+    public func adDidCloseFullscreen(_ ad: TFAAdView) {
         //update the slot in case there was a rotation or a layout change to be sure that the ad has the right layout
-        self.webViewHelper.updateSlot(adRatio: ad.adRatio)
+        self.webViewHelper.updateSlot(adRatio: self.adRatio)
     }
 }

@@ -11,12 +11,12 @@ import TeadsSDK
 
 class InReadTopViewController: UIViewController, TFAAdDelegate {
 
-    @IBOutlet weak var teadsAdView: TFACustomAdView!
+    @IBOutlet weak var teadsAdView: TFAInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.teadsAdView.delegate = self
-        // PID can also be defined on storyboard/xib on TFACustomAdView in `User defined attributes` with following:
+        // PID can also be defined on storyboard/xib on TFAAdView in `User defined attributes` with following:
         // Key Path: pid
         // Type: String
         // Value: 84242 (<- to be replaced by your production PID)
@@ -37,19 +37,19 @@ class InReadTopViewController: UIViewController, TFAAdDelegate {
 
     // MARK: - Navigation TFAAdDelegate
     
-    func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.resizeTeadsAd(adRatio: CGFloat(adRatio))
     }
     
-    func didFailToReceiveAd(_ ad: TFACustomAdView, adFailReason: AdFailReason) {
+    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         
     }
     
-    func adClose(_ ad: TFACustomAdView, userAction: Bool) {
+    func adClose(_ ad: TFAAdView, userAction: Bool) {
         self.teadsAdHeightConstraint.constant = 0
     }
     
-    public func adError(_ ad: TFACustomAdView, errorMessage: String) {
+    public func adError(_ ad: TFAAdView, errorMessage: String) {
     }
 
 }

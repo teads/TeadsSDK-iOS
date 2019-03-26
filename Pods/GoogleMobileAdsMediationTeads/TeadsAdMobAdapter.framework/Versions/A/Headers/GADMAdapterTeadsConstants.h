@@ -14,8 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// Constants used by Teads adapter.
-static NSString * const TeadsAdapterErrorDomain = @"tv.teads.adapter.admob";
-
+static NSString* const TeadsAdapterErrorDomain = @"tv.teads.adapter.admob";
+static NSString* const TeadsAdContainerKey = @"adContainer";
 /// Enumeration defining possible errors in Teads adapter.
 enum {
     PIDNotFound,

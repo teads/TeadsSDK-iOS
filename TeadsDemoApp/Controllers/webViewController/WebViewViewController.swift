@@ -13,8 +13,8 @@ import TeadsSDK
 class WebViewViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView?
-    var webSync: SyncWebViewTFACustomAdView?
-    var adView: TFACustomAdView?
+    var webSync: SyncWebViewTFInReadAdView?
+    var adView: TFAInReadAdView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ class WebViewViewController: UIViewController, WKNavigationDelegate {
         self.view.addSubview(self.webView!)
         self.webView?.loadHTMLString(contentString, baseURL: nil)
         
-        self.adView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFACustomAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
+        self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
     }
     
     // MARK: -

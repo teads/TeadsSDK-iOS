@@ -15,14 +15,14 @@ private let reuseIdentifierAd = "teadsAdCell"
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, TFAAdDelegate {
 
     private var adIndexPath: IndexPath!
-    var teadsAdView: TFACustomAdView?
+    var teadsAdView: TFAInReadAdView?
     private var adRatio: CGFloat?
     private var shouldCloseAd = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.adIndexPath = IndexPath(row: 21, section: 0)
 
-        self.teadsAdView = TFACustomAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
+        self.teadsAdView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
         self.teadsAdView?.load()
         self.teadsAdView?.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -42,7 +42,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if indexPath == self.adIndexPath {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierAd, for: indexPath)
             if let cellAd = cell as? TeadsAdCollectionViewCell {
-                
                 if self.teadsAdView != nil {
                     cellAd.teadsAdContainerView.addSubview(self.teadsAdView!)
                     var allConstraints = [NSLayoutConstraint]()
@@ -61,6 +60,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
                     allConstraints += adVerticalConstraints
                     NSLayoutConstraint.activate(allConstraints)
                 }
+                self.teadsAdView?.setAdContainerView(container: cellAd)
             }
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
@@ -102,29 +102,29 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         return 1.0
     }
     
-    // MARK: TFACustomAdView Delegate
+    // MARK: TFAAdView Delegate
     
-    func didReceiveAd(_ ad: TFACustomAdView, adRatio: CGFloat) {
+    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = CGFloat(adRatio)
         self.collectionView?.performBatchUpdates({
             self.collectionView?.collectionViewLayout.invalidateLayout()
         }, completion: nil)
     }
     
-    func didFailToReceiveAd(_ ad: TFACustomAdView, adFailReason: AdFailReason) {
+    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         self.shouldCloseAd = true
         self.collectionView?.performBatchUpdates({
             self.collectionView?.collectionViewLayout.invalidateLayout()
         }, completion: nil)
     }
     
-    func adClose(_ ad: TFACustomAdView, userAction: Bool) {
+    func adClose(_ ad: TFAAdView, userAction: Bool) {
         self.shouldCloseAd = true
         self.collectionView?.performBatchUpdates({
             self.collectionView?.collectionViewLayout.invalidateLayout()
         }, completion: nil)
     }
 
-    public func adError(_ ad: TFACustomAdView, errorMessage: String) {
+    public func adError(_ ad: TFAAdView, errorMessage: String) {
     }
 }

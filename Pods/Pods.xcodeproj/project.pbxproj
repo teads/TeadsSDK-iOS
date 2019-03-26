@@ -6,102 +6,164 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		6F9E776CB9407B5E17683535751FF912 /* GoogleMobileAdsMediationTeads */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6C28F46F6F700498D7F29B22E7A105F9 /* Build configuration list for PBXAggregateTarget "GoogleMobileAdsMediationTeads" */;
+			buildPhases = (
+			);
+			dependencies = (
+				5ADED3A8731EA25B2D761318AAD78E27 /* PBXTargetDependency */,
+				FC5EA905E2C4385BA2E867695A9BDFB5 /* PBXTargetDependency */,
+			);
+			name = GoogleMobileAdsMediationTeads;
+		};
+		9B87A55A62D71DAA020FFD508E41DF5B /* TeadsSDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 04A70E460F548240B553BA82C9E8BE04 /* Build configuration list for PBXAggregateTarget "TeadsSDK" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = TeadsSDK;
+		};
+		DC088F3B3B063EFAF50EE146E8FDB914 /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C2B2B15116B36833C2E7CAD413BE215C /* Build configuration list for PBXAggregateTarget "Google-Mobile-Ads-SDK" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "Google-Mobile-Ads-SDK";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		6A0C81BB245A3DC8940E9270217D9F46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		908002A4D7C3A9234E3E4B40D4254FFD /* Pods-TeadsDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4D99D835F6EAECF60E2DBA8FCF6D1 /* Pods-TeadsDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EB86838BF0F22D27BAD6D95F4CC75EA /* Pods-TeadsDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B75BEB466EB427CFB50431E6A1D6F /* Pods-TeadsDemoApp-dummy.m */; };
+		3D64994C338397B127330D7A0F63A60E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		424BEC2D75F19A29A09B8ED9569FFE46 /* Pods-TeadsDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2EE1799DFCA2A1B4FE027F74A3494B /* Pods-TeadsDemoApp-dummy.m */; };
+		C269861AE7FD80BB0EA1A4A5D3C2C924 /* Pods-TeadsDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FAFD2A746B74E1AFAAD42A91385A77 /* Pods-TeadsDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		23AF970AF7B202DDF408620B52EA155D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F9E776CB9407B5E17683535751FF912;
+			remoteInfo = GoogleMobileAdsMediationTeads;
+		};
+		305894FA7075C70A3397786E54ED4454 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B87A55A62D71DAA020FFD508E41DF5B;
+			remoteInfo = TeadsSDK;
+		};
+		728AB0F74EF6A1393EBE42B6ED1CC490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC088F3B3B063EFAF50EE146E8FDB914;
+			remoteInfo = "Google-Mobile-Ads-SDK";
+		};
+		B7489E011839346D595E5BCF09A75E41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B87A55A62D71DAA020FFD508E41DF5B;
+			remoteInfo = TeadsSDK;
+		};
+		C323EBA3A0AF0D079B68F6E78E2734EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC088F3B3B063EFAF50EE146E8FDB914;
+			remoteInfo = "Google-Mobile-Ads-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		40E4D99D835F6EAECF60E2DBA8FCF6D1 /* Pods-TeadsDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeadsDemoApp-umbrella.h"; sourceTree = "<group>"; };
-		45944E9C391C2674691367E2EA4E8C37 /* libGoogleMobileAds.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleMobileAds.a; path = Libraries/libGoogleMobileAds.a; sourceTree = "<group>"; };
-		4E8B75BEB466EB427CFB50431E6A1D6F /* Pods-TeadsDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeadsDemoApp-dummy.m"; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6530833AC49726FD66888B0174EF935D /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1587271A9FA226B5C42E3317120075C7 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		15F5C6368BD3CE3B2A61B13F9DB26F8F /* Google-Mobile-Ads-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.xcconfig"; sourceTree = "<group>"; };
+		1648EB46C70D2EDB2E9070A1D33F38DA /* libGoogleMobileAds.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleMobileAds.a; path = Libraries/libGoogleMobileAds.a; sourceTree = "<group>"; };
+		179FE4AB2980ED0D6F97CA78096BA157 /* TeadsSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TeadsSDK.xcconfig; sourceTree = "<group>"; };
+		23B5FD5B321B26EAA18C72592BBB13E5 /* Pods-TeadsDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeadsDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		261AA83FB357B7D5A6813D2CBBCE01AE /* TeadsAdMobAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsAdMobAdapter.framework; sourceTree = "<group>"; };
+		38FAFD2A746B74E1AFAAD42A91385A77 /* Pods-TeadsDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeadsDemoApp-umbrella.h"; sourceTree = "<group>"; };
+		54FD7177646D02CEB967246D5DEFDCD3 /* GoogleMobileAdsMediationTeads.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMobileAdsMediationTeads.xcconfig; sourceTree = "<group>"; };
+		5E2EE1799DFCA2A1B4FE027F74A3494B /* Pods-TeadsDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeadsDemoApp-dummy.m"; sourceTree = "<group>"; };
+		9B3A8D7939A665FF1056A730D6F1309C /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E9D4412C5E6C8BCAB38A222948CCE33 /* Pods_TeadsDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TeadsDemoApp.framework; path = "Pods-TeadsDemoApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A490CA89A07EC37DC6E1FC0E0984D60B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A79BDDDA942B7525C8D8B02370F99F19 /* Pods-TeadsDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeadsDemoApp.modulemap"; sourceTree = "<group>"; };
-		B30DD9C2E9331B76F6BFE024968B1105 /* Pods-TeadsDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeadsDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		D344F2A9CFB951BD65F01200CE23F17A /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
-		DD5E5B093F56A3B02E0323345BCF31C5 /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		DFFA75D05B0E41A5DEC9BAAA441DF96A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		EBA28A24AEDA9C816F7413B9585AF3BF /* TeadsAdMobAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsAdMobAdapter.framework; sourceTree = "<group>"; };
-		F35A053BF42AECB65940084F9967C335 /* Pods-TeadsDemoApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeadsDemoApp-resources.sh"; sourceTree = "<group>"; };
-		F8D541D285AFE1BF2431E40B0282E649 /* Pods-TeadsDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeadsDemoApp-frameworks.sh"; sourceTree = "<group>"; };
-		FB09E78FB661BAA62A46FD84305EBB92 /* Pods-TeadsDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeadsDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9EEB995738138B98E05912614CF328A2 /* Pods-TeadsDemoApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeadsDemoApp-Info.plist"; sourceTree = "<group>"; };
+		A288555ECAC0232E15A4F19BAB847BBA /* Pods-TeadsDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeadsDemoApp.modulemap"; sourceTree = "<group>"; };
+		A911F0F8CB3540C58F6B5FEC4BE2AFAA /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		AA98BCC54085211EC54E60DBEDE15680 /* Pods-TeadsDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeadsDemoApp-frameworks.sh"; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C5C550108633F5D71E74FE19A928CC34 /* Pods-TeadsDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeadsDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		D2454ED5EDCDC008A30C8F41A81EA68A /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
+		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4043950F1926A66950630FD35E6408C7 /* Frameworks */ = {
+		E4398DFD95428A2FC10A09B811290816 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A0C81BB245A3DC8940E9270217D9F46 /* Foundation.framework in Frameworks */,
+				3D64994C338397B127330D7A0F63A60E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0699C676E6755C1F711B3378F4290355 /* Pods-TeadsDemoApp */ = {
+		06E6B52C0B55C76647A8FDA93ECF1591 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A490CA89A07EC37DC6E1FC0E0984D60B /* Info.plist */,
-				A79BDDDA942B7525C8D8B02370F99F19 /* Pods-TeadsDemoApp.modulemap */,
-				FB09E78FB661BAA62A46FD84305EBB92 /* Pods-TeadsDemoApp-acknowledgements.markdown */,
-				B30DD9C2E9331B76F6BFE024968B1105 /* Pods-TeadsDemoApp-acknowledgements.plist */,
-				4E8B75BEB466EB427CFB50431E6A1D6F /* Pods-TeadsDemoApp-dummy.m */,
-				F8D541D285AFE1BF2431E40B0282E649 /* Pods-TeadsDemoApp-frameworks.sh */,
-				F35A053BF42AECB65940084F9967C335 /* Pods-TeadsDemoApp-resources.sh */,
-				40E4D99D835F6EAECF60E2DBA8FCF6D1 /* Pods-TeadsDemoApp-umbrella.h */,
-				DD5E5B093F56A3B02E0323345BCF31C5 /* Pods-TeadsDemoApp.debug.xcconfig */,
-				6530833AC49726FD66888B0174EF935D /* Pods-TeadsDemoApp.release.xcconfig */,
-			);
-			name = "Pods-TeadsDemoApp";
-			path = "Target Support Files/Pods-TeadsDemoApp";
-			sourceTree = "<group>";
-		};
-		3B22E52636E51DC4E06634E0CC95A3E5 /* GoogleMobileAdsMediationTeads */ = {
-			isa = PBXGroup;
-			children = (
-				93D9959E3A67E55F59F8779157C275FE /* Frameworks */,
-			);
-			name = GoogleMobileAdsMediationTeads;
-			path = GoogleMobileAdsMediationTeads;
-			sourceTree = "<group>";
-		};
-		437A841023634AA11CC88CA2211B78A9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DFFA75D05B0E41A5DEC9BAAA441DF96A /* GoogleMobileAds.framework */,
-				45944E9C391C2674691367E2EA4E8C37 /* libGoogleMobileAds.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5B516F2B0BE85020D4C3ED73612C0818 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FD4CA613BA6D640A1C1E7D8C55558BF2 /* Google-Mobile-Ads-SDK */,
-				3B22E52636E51DC4E06634E0CC95A3E5 /* GoogleMobileAdsMediationTeads */,
-				C7919ED821DF8C42E162BA6827A2B94E /* TeadsSDK */,
+				DC75518BAF80EB94B4A5DE9D11D621D4 /* Google-Mobile-Ads-SDK */,
+				B24E7C0A1AB90185A356EDB49EFFC02E /* GoogleMobileAdsMediationTeads */,
+				95208C6E41FB8A390BCA83D81CE60E47 /* TeadsSDK */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+		4037F9720A02C388809E8B720E40E08B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+				A911F0F8CB3540C58F6B5FEC4BE2AFAA /* GoogleMobileAds.framework */,
+				1648EB46C70D2EDB2E9070A1D33F38DA /* libGoogleMobileAds.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4051EA65916BF673079A0B7535C0E6F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2454ED5EDCDC008A30C8F41A81EA68A /* TeadsSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7498204861A1E00504B5749D9A14928E /* Frameworks */ = {
+		7442B75F04F17F1599D8606B9ED0D42E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D344F2A9CFB951BD65F01200CE23F17A /* TeadsSDK.framework */,
+				179FE4AB2980ED0D6F97CA78096BA157 /* TeadsSDK.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TeadsSDK";
+			sourceTree = "<group>";
+		};
+		7A071117997E96D2A91858628C064B70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				261AA83FB357B7D5A6813D2CBBCE01AE /* TeadsAdMobAdapter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,45 +171,85 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5B516F2B0BE85020D4C3ED73612C0818 /* Pods */,
+				06E6B52C0B55C76647A8FDA93ECF1591 /* Pods */,
 				F8DEE746A48053C510E5DE7EE7D3A44F /* Products */,
-				D7A2234CBC68FBA4282100D9CD8E68CC /* Targets Support Files */,
+				FAE6FAE2F30EB4939894E381373BD3C5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		93D9959E3A67E55F59F8779157C275FE /* Frameworks */ = {
+		95208C6E41FB8A390BCA83D81CE60E47 /* TeadsSDK */ = {
 			isa = PBXGroup;
 			children = (
-				EBA28A24AEDA9C816F7413B9585AF3BF /* TeadsAdMobAdapter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C7919ED821DF8C42E162BA6827A2B94E /* TeadsSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7498204861A1E00504B5749D9A14928E /* Frameworks */,
+				4051EA65916BF673079A0B7535C0E6F7 /* Frameworks */,
+				7442B75F04F17F1599D8606B9ED0D42E /* Support Files */,
 			);
 			name = TeadsSDK;
 			path = TeadsSDK;
 			sourceTree = "<group>";
 		};
-		D7A2234CBC68FBA4282100D9CD8E68CC /* Targets Support Files */ = {
+		A226783DABA645B0810F5820E2D8EFED /* Pods-TeadsDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				0699C676E6755C1F711B3378F4290355 /* Pods-TeadsDemoApp */,
+				A288555ECAC0232E15A4F19BAB847BBA /* Pods-TeadsDemoApp.modulemap */,
+				23B5FD5B321B26EAA18C72592BBB13E5 /* Pods-TeadsDemoApp-acknowledgements.markdown */,
+				C5C550108633F5D71E74FE19A928CC34 /* Pods-TeadsDemoApp-acknowledgements.plist */,
+				5E2EE1799DFCA2A1B4FE027F74A3494B /* Pods-TeadsDemoApp-dummy.m */,
+				AA98BCC54085211EC54E60DBEDE15680 /* Pods-TeadsDemoApp-frameworks.sh */,
+				9EEB995738138B98E05912614CF328A2 /* Pods-TeadsDemoApp-Info.plist */,
+				38FAFD2A746B74E1AFAAD42A91385A77 /* Pods-TeadsDemoApp-umbrella.h */,
+				9B3A8D7939A665FF1056A730D6F1309C /* Pods-TeadsDemoApp.debug.xcconfig */,
+				1587271A9FA226B5C42E3317120075C7 /* Pods-TeadsDemoApp.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-TeadsDemoApp";
+			path = "Target Support Files/Pods-TeadsDemoApp";
+			sourceTree = "<group>";
+		};
+		B24E7C0A1AB90185A356EDB49EFFC02E /* GoogleMobileAdsMediationTeads */ = {
+			isa = PBXGroup;
+			children = (
+				7A071117997E96D2A91858628C064B70 /* Frameworks */,
+				C0A21E1A0C5F721853EECA9F39D53539 /* Support Files */,
+			);
+			name = GoogleMobileAdsMediationTeads;
+			path = GoogleMobileAdsMediationTeads;
+			sourceTree = "<group>";
+		};
+		BA6CC6DEBE16280C94DF172B85B2A7E8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15F5C6368BD3CE3B2A61B13F9DB26F8F /* Google-Mobile-Ads-SDK.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D5347904CF754D6785B84253F2574A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0A21E1A0C5F721853EECA9F39D53539 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				54FD7177646D02CEB967246D5DEFDCD3 /* GoogleMobileAdsMediationTeads.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMobileAdsMediationTeads";
+			sourceTree = "<group>";
+		};
+		DC75518BAF80EB94B4A5DE9D11D621D4 /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				4037F9720A02C388809E8B720E40E08B /* Frameworks */,
+				BA6CC6DEBE16280C94DF172B85B2A7E8 /* Support Files */,
+			);
+			name = "Google-Mobile-Ads-SDK";
+			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
 		F8DEE746A48053C510E5DE7EE7D3A44F /* Products */ = {
@@ -158,41 +260,43 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FD4CA613BA6D640A1C1E7D8C55558BF2 /* Google-Mobile-Ads-SDK */ = {
+		FAE6FAE2F30EB4939894E381373BD3C5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				437A841023634AA11CC88CA2211B78A9 /* Frameworks */,
+				A226783DABA645B0810F5820E2D8EFED /* Pods-TeadsDemoApp */,
 			);
-			name = "Google-Mobile-Ads-SDK";
-			path = "Google-Mobile-Ads-SDK";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5450E88353114A969CFC107F45827FEB /* Headers */ = {
+		99AE86E6053B520A1A1C1C2EAE0CF318 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908002A4D7C3A9234E3E4B40D4254FFD /* Pods-TeadsDemoApp-umbrella.h in Headers */,
+				C269861AE7FD80BB0EA1A4A5D3C2C924 /* Pods-TeadsDemoApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		45FBA03EF57A7B101E1438F628BBB1E4 /* Pods-TeadsDemoApp */ = {
+		300055BC391E786E7D83F273D8168181 /* Pods-TeadsDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEFA507BEEE2BFA0BD376AF882187F27 /* Build configuration list for PBXNativeTarget "Pods-TeadsDemoApp" */;
+			buildConfigurationList = E3D3436480B4942D103B6457FC9C4873 /* Build configuration list for PBXNativeTarget "Pods-TeadsDemoApp" */;
 			buildPhases = (
-				5450E88353114A969CFC107F45827FEB /* Headers */,
-				981063969E8EAB25C89C6DD45F4E4C09 /* Sources */,
-				4043950F1926A66950630FD35E6408C7 /* Frameworks */,
-				0604B40BFECA35D1896CF5618620FB29 /* Resources */,
+				99AE86E6053B520A1A1C1C2EAE0CF318 /* Headers */,
+				2EF915ADD3A1D645BA2C780414A54C78 /* Sources */,
+				E4398DFD95428A2FC10A09B811290816 /* Frameworks */,
+				243663B8F454657645C790B11195BE1F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3218EA73E82E2D5F98A4469A1B64081A /* PBXTargetDependency */,
+				D1B1D9E7F2B3E242BF1EA5228532F1C1 /* PBXTargetDependency */,
+				6CEA2A514D5AA87609B25AC93FB238BA /* PBXTargetDependency */,
 			);
 			name = "Pods-TeadsDemoApp";
 			productName = "Pods-TeadsDemoApp";
@@ -220,13 +324,16 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45FBA03EF57A7B101E1438F628BBB1E4 /* Pods-TeadsDemoApp */,
+				DC088F3B3B063EFAF50EE146E8FDB914 /* Google-Mobile-Ads-SDK */,
+				6F9E776CB9407B5E17683535751FF912 /* GoogleMobileAdsMediationTeads */,
+				300055BC391E786E7D83F273D8168181 /* Pods-TeadsDemoApp */,
+				9B87A55A62D71DAA020FFD508E41DF5B /* TeadsSDK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0604B40BFECA35D1896CF5618620FB29 /* Resources */ = {
+		243663B8F454657645C790B11195BE1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,51 +343,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		981063969E8EAB25C89C6DD45F4E4C09 /* Sources */ = {
+		2EF915ADD3A1D645BA2C780414A54C78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EB86838BF0F22D27BAD6D95F4CC75EA /* Pods-TeadsDemoApp-dummy.m in Sources */,
+				424BEC2D75F19A29A09B8ED9569FFE46 /* Pods-TeadsDemoApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin XCBuildConfiguration section */
-		1AA19C22940710418F65EA4B82A54947 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD5E5B093F56A3B02E0323345BCF31C5 /* Pods-TeadsDemoApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TeadsDemoApp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
+/* Begin PBXTargetDependency section */
+		3218EA73E82E2D5F98A4469A1B64081A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Google-Mobile-Ads-SDK";
+			target = DC088F3B3B063EFAF50EE146E8FDB914 /* Google-Mobile-Ads-SDK */;
+			targetProxy = 728AB0F74EF6A1393EBE42B6ED1CC490 /* PBXContainerItemProxy */;
 		};
-		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
+		5ADED3A8731EA25B2D761318AAD78E27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Google-Mobile-Ads-SDK";
+			target = DC088F3B3B063EFAF50EE146E8FDB914 /* Google-Mobile-Ads-SDK */;
+			targetProxy = C323EBA3A0AF0D079B68F6E78E2734EE /* PBXContainerItemProxy */;
+		};
+		6CEA2A514D5AA87609B25AC93FB238BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TeadsSDK;
+			target = 9B87A55A62D71DAA020FFD508E41DF5B /* TeadsSDK */;
+			targetProxy = B7489E011839346D595E5BCF09A75E41 /* PBXContainerItemProxy */;
+		};
+		D1B1D9E7F2B3E242BF1EA5228532F1C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMobileAdsMediationTeads;
+			target = 6F9E776CB9407B5E17683535751FF912 /* GoogleMobileAdsMediationTeads */;
+			targetProxy = 23AF970AF7B202DDF408620B52EA155D /* PBXContainerItemProxy */;
+		};
+		FC5EA905E2C4385BA2E867695A9BDFB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TeadsSDK;
+			target = 9B87A55A62D71DAA020FFD508E41DF5B /* TeadsSDK */;
+			targetProxy = 305894FA7075C70A3397786E54ED4454 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08B0394D5F17A9F046DC0719C25BA452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -312,8 +419,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -340,13 +445,70 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6A8B053C8FDB910020A9CA11A2C89CBB /* Release */ = {
+		1698DFFD7D1C17496F393E584D8991D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6530833AC49726FD66888B0174EF935D /* Pods-TeadsDemoApp.release.xcconfig */;
+			baseConfigurationReference = 179FE4AB2980ED0D6F97CA78096BA157 /* TeadsSDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D450117E72B39EC42636BCC25879BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54FD7177646D02CEB967246D5DEFDCD3 /* GoogleMobileAdsMediationTeads.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52C34BB0D7994B2269576C28C787EFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54FD7177646D02CEB967246D5DEFDCD3 /* GoogleMobileAdsMediationTeads.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADD5ED5AFEE53983FC20D85592D071D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F5C6368BD3CE3B2A61B13F9DB26F8F /* Google-Mobile-Ads-SDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B73BED56041F08731C4FE913AAD8694C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B3A8D7939A665FF1056A730D6F1309C /* Pods-TeadsDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -358,7 +520,40 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TeadsDemoApp/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C54011C8039856CAE5DB59B3B19D9BB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1587271A9FA226B5C42E3317120075C7 /* Pods-TeadsDemoApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,7 +573,20 @@
 			};
 			name = Release;
 		};
-		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
+		D1AD600A54C1F30F2C1468A3BF917CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 179FE4AB2980ED0D6F97CA78096BA157 /* TeadsSDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E82C56363775B4EF468FF2AD9A2F5414 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,8 +618,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -433,27 +639,70 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
+		E8899A522C9B6820C8CB32FDE9E4C91B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F5C6368BD3CE3B2A61B13F9DB26F8F /* Google-Mobile-Ads-SDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		04A70E460F548240B553BA82C9E8BE04 /* Build configuration list for PBXAggregateTarget "TeadsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
-				C4EAA84F44D044E108500A81C635F21E /* Release */,
+				D1AD600A54C1F30F2C1468A3BF917CE9 /* Debug */,
+				1698DFFD7D1C17496F393E584D8991D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEFA507BEEE2BFA0BD376AF882187F27 /* Build configuration list for PBXNativeTarget "Pods-TeadsDemoApp" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1AA19C22940710418F65EA4B82A54947 /* Debug */,
-				6A8B053C8FDB910020A9CA11A2C89CBB /* Release */,
+				08B0394D5F17A9F046DC0719C25BA452 /* Debug */,
+				E82C56363775B4EF468FF2AD9A2F5414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C28F46F6F700498D7F29B22E7A105F9 /* Build configuration list for PBXAggregateTarget "GoogleMobileAdsMediationTeads" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D450117E72B39EC42636BCC25879BFC /* Debug */,
+				52C34BB0D7994B2269576C28C787EFFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2B2B15116B36833C2E7CAD413BE215C /* Build configuration list for PBXAggregateTarget "Google-Mobile-Ads-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8899A522C9B6820C8CB32FDE9E4C91B /* Debug */,
+				ADD5ED5AFEE53983FC20D85592D071D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D3436480B4942D103B6457FC9C4873 /* Build configuration list for PBXNativeTarget "Pods-TeadsDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73BED56041F08731C4FE913AAD8694C /* Debug */,
+				C54011C8039856CAE5DB59B3B19D9BB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
