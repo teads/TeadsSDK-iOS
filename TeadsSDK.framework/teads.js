@@ -1,6 +1,6 @@
 ;
 (function() {
- 
+
  window.teads = {
  
  };
@@ -170,6 +170,19 @@
  window.webkit.messageHandlers.openBrowser.postMessage(jsonString);
  }
  
+ window.teads.openDialog = function openDialog(id, title, description, cancelButton, cancelButtonId, okButton, okButtonId) {
+ var jsonVariables = {
+ "id": id,
+ "title": title,
+ "description": description,
+ "cancelButton": cancelButton,
+ "cancelButtonId": cancelButtonId,
+ "okButton": okButton,
+ "okButtonId": okButtonId
+ };
+ var jsonString = JSON.stringify(jsonVariables);
+ window.webkit.messageHandlers.openDialog.postMessage(jsonString);
+ }
  
  window.teads.reward = function reward(value, type) {
  var jsonVariables = {
@@ -178,6 +191,10 @@
  };
  var jsonString = JSON.stringify(jsonVariables);
  window.webkit.messageHandlers.reward.postMessage(jsonString);
+ }
+ 
+ window.teads.closeDialog = function closeDialog() {
+ window.webkit.messageHandlers.closeDialog.postMessage("");
  }
  
  window.teads.debug = function debug(message) {
