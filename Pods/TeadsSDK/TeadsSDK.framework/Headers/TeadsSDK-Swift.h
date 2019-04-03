@@ -314,6 +314,8 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 /// \param container the container which will contain the adView
 ///
 - (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container;
+/// dismiss ad fullscreen
+- (void)dismissFullscreen;
 /// Reset ad loading
 - (void)reset;
 /// Call that method when you did not add the TFAAdView to your to your view hierarchy or if Teads view has width/height of 0 and the container view reached the spot where the ad was supposed to be

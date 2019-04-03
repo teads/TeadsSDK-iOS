@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// A set of methods to inform the delegate of video controller events.
-@protocol GADVideoControllerDelegate<NSObject>
+/// The GADVideoControllerDelegate protocol defines methods that are called by the video controller
+/// object in response to the video events that occurred throughout the lifetime of the video
+/// rendered by an ad.
+@protocol GADVideoControllerDelegate <NSObject>
 
 @optional
 
