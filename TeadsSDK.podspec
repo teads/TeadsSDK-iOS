@@ -18,7 +18,7 @@ s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch 
 s.requires_arc = true
 s.preserve_paths = 'TeadsSDK.framework'
 s.vendored_frameworks = 'TeadsSDK.framework'
-s.ios.frameworks = 'AdSupport', 'AVFoundation', 'CoreLocation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
+s.ios.frameworks = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
 s.framework = 'TeadsSDK'
 
 end
