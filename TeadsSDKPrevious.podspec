@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-s.name         = "TeadsSDK-Previous"
+s.name         = "TeadsSDKPrevious"
 s.version      = "4.1.0"
 s.summary      = "Teads' iOS SDK"
 
@@ -16,8 +16,8 @@ s.author       = { "Teads" => "support-sdk@teads.tv" }
 s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "v#{s.version}Previous"}
 
 s.requires_arc = true
-s.preserve_paths = 'TeadsSDK-Previous/TeadsSDK.framework'
-s.vendored_frameworks = 'TeadsSDK-Previous/TeadsSDK.framework'
+s.preserve_paths = 'TeadsSDKPrevious/TeadsSDK.framework'
+s.vendored_frameworks = 'TeadsSDKPrevious/TeadsSDK.framework'
 s.ios.frameworks = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
 s.framework = 'TeadsSDK'
 
