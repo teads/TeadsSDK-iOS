@@ -41,13 +41,15 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         let request = GADRequest()
         let teadsExtras = GADMAdapterTeadsExtras()
         teadsExtras.adContainer = self.view
+        teadsExtras.debugMode = true
+        teadsExtras.reportLocation = false
         // Needed by european regulation
         // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
-        teadsExtras.subjectToGDPR = "1"
-        teadsExtras.consent = "0001100101010101"
+//        teadsExtras.subjectToGDPR = "1"
+//        teadsExtras.consent = "0001100101010101"
         
         // The article url if you are a news publisher
-        teadsExtras.pageUrl = "http://page.com/article1"
+        //teadsExtras.pageUrl = "http://page.com/article1"
         
         request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "Teads"))
         

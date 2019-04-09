@@ -7,8 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 /// Provides media content information. Interact with instances of this class on the main queue
 /// only.
 @interface GADMediaContent : NSObject
@@ -21,5 +19,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, nullable) UIImage *mainImage;
 
 @end
-
-NS_ASSUME_NONNULL_END
