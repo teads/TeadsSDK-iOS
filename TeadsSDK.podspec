@@ -8,7 +8,7 @@ s.description  = <<-DESC
                  Teads allows you to integrate a single SDK into your app, and serve premium branded ads from Teads' SSP.
                  DESC
 
-s.ios.deployment_target     = "10.0"
+s.ios.deployment_target     = "9.0"
 
 s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
 s.license      = "Apache 2.0"
