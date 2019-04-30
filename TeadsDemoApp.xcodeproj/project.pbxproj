@@ -14,7 +14,7 @@
 		B502B9F01F826842008257EC /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = B501EC751F823BA8002909B9 /* bootstrap.js */; };
 		B502BA131F827D5C008257EC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* TableViewController.swift */; };
 		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
-		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
+		B502BA191F836D3E008257EC /* WebViewEmbeddedInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbeddedInScrollViewController.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A371F7CDF80007406D4 /* ViewController.swift */; };
@@ -23,11 +23,11 @@
 		B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */; };
 		B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A471F7CE4C7007406D4 /* DemoTableViewCell.swift */; };
 		B5555A4E1F7D3177007406D4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A4D1F7D3177007406D4 /* ScrollViewController.swift */; };
-		B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */; };
+		B56102971F83B5C200E59C76 /* WebViewEmbeddedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102961F83B5C200E59C76 /* WebViewEmbeddedTableViewController.swift */; };
 		B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561029B1F83C18400E59C76 /* WebViewTableViewCell.swift */; };
-		B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */; };
+		B561029F1F84C3DD00E59C76 /* WebViewEmbeddedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561029E1F84C3DD00E59C76 /* WebViewEmbeddedCollectionViewController.swift */; };
 		B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */; };
-		B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */; };
+		B56102A41F84DB3000E59C76 /* TeadsAdEmbeddedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A31F84DB3000E59C76 /* TeadsAdEmbeddedCollectionViewCell.swift */; };
 		B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56102A81F853B0000E59C76 /* InReadTopViewController.swift */; };
 		B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57FB1EA1FC5D5C600609036 /* images.xcassets */; };
 		B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1EE1FC5E07E00609036 /* SettingsViewController.swift */; };
@@ -52,7 +52,7 @@
 		B501EC771F823BA8002909B9 /* WebViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelper.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
-		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
+		B502BA181F836D3E008257EC /* WebViewEmbeddedInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbeddedInScrollViewController.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncWebViewTFInReadAdView.swift; path = TeadsDemoApp/Controllers/webViewController/webViewHelper/SyncWebViewTFInReadAdView.swift; sourceTree = SOURCE_ROOT; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,11 +63,11 @@
 		B5555A411F7CDF80007406D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5555A471F7CE4C7007406D4 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		B5555A4D1F7D3177007406D4 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededTableViewController.swift; sourceTree = "<group>"; };
+		B56102961F83B5C200E59C76 /* WebViewEmbeddedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbeddedTableViewController.swift; sourceTree = "<group>"; };
 		B561029B1F83C18400E59C76 /* WebViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTableViewCell.swift; sourceTree = "<group>"; };
-		B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededCollectionViewController.swift; sourceTree = "<group>"; };
+		B561029E1F84C3DD00E59C76 /* WebViewEmbeddedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbeddedCollectionViewController.swift; sourceTree = "<group>"; };
 		B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
-		B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdEmbededCollectionViewCell.swift; sourceTree = "<group>"; };
+		B56102A31F84DB3000E59C76 /* TeadsAdEmbeddedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdEmbeddedCollectionViewCell.swift; sourceTree = "<group>"; };
 		B56102A81F853B0000E59C76 /* InReadTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadTopViewController.swift; sourceTree = "<group>"; };
 		B5660B78207FAEA700406869 /* TeadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeadsSDK.framework; sourceTree = "<group>"; };
 		B57FB1EA1FC5D5C600609036 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 				1A3E9BF4CCFBBBA8DDA5D5FF /* Pods-TeadsDemoApp.debug.xcconfig */,
 				93A1EE72A1E78FFE141F1A33 /* Pods-TeadsDemoApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,7 +127,7 @@
 			path = collectionViewController;
 			sourceTree = "<group>";
 		};
-		B501EC681F8232A4002909B9 /* Ressources */ = {
+		B501EC681F8232A4002909B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				B502B9F11F827C35008257EC /* Images */,
@@ -136,7 +135,7 @@
 				B501EC6B1F8232B3002909B9 /* index.html */,
 				B501EC691F8232B3002909B9 /* js */,
 			);
-			path = Ressources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B501EC691F8232B3002909B9 /* js */ = {
@@ -231,7 +230,7 @@
 		B5555A341F7CDF80007406D4 /* TeadsDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				B501EC681F8232A4002909B9 /* Ressources */,
+				B501EC681F8232A4002909B9 /* Resources */,
 				B5555A4C1F7D3153007406D4 /* Controllers */,
 				B5555A4B1F7CEF1C007406D4 /* Cells */,
 				B5555A351F7CDF80007406D4 /* AppDelegate.swift */,
@@ -261,28 +260,28 @@
 				B50159921FB1B6C6007399A0 /* collectionViewController */,
 				B50159911FB1B6A0007399A0 /* scrollViewController */,
 				B56102A51F8533CF00E59C76 /* inRead Top */,
-				B56102981F83BFCB00E59C76 /* EmbededWebView */,
+				B56102981F83BFCB00E59C76 /* EmbeddedWebView */,
 				B502BA141F8282B8008257EC /* tableViewController */,
 				B501EC781F823C2A002909B9 /* webViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B56102981F83BFCB00E59C76 /* EmbededWebView */ = {
+		B56102981F83BFCB00E59C76 /* EmbeddedWebView */ = {
 			isa = PBXGroup;
 			children = (
 				B561029D1F84C3B700E59C76 /* CollectionView */,
 				B56102991F83BFD900E59C76 /* TableView */,
-				B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */,
+				B502BA181F836D3E008257EC /* WebViewEmbeddedInScrollViewController.swift */,
 			);
-			path = EmbededWebView;
+			path = EmbeddedWebView;
 			sourceTree = "<group>";
 		};
 		B56102991F83BFD900E59C76 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
 				B561029A1F83BFE700E59C76 /* Cell */,
-				B56102961F83B5C200E59C76 /* WebViewEmbededTableViewController.swift */,
+				B56102961F83B5C200E59C76 /* WebViewEmbeddedTableViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -299,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				B56102A01F84D22600E59C76 /* Cell */,
-				B561029E1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift */,
+				B561029E1F84C3DD00E59C76 /* WebViewEmbeddedCollectionViewController.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -308,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				B56102A11F84D24400E59C76 /* RandomCollectionViewCell.swift */,
-				B56102A31F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift */,
+				B56102A31F84DB3000E59C76 /* TeadsAdEmbeddedCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -481,16 +480,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */,
-				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
+				B56102A41F84DB3000E59C76 /* TeadsAdEmbeddedCollectionViewCell.swift in Sources */,
 				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
 				DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */,
 				B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */,
 				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
-				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
+				B56102971F83B5C200E59C76 /* WebViewEmbeddedTableViewController.swift in Sources */,
 				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
 				B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */,
-				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
-				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
+				B561029F1F84C3DD00E59C76 /* WebViewEmbeddedCollectionViewController.swift in Sources */,
+				B502BA191F836D3E008257EC /* WebViewEmbeddedInScrollViewController.swift in Sources */,
 				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
 				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,

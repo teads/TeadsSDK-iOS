@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import TeadsSDK
 
-class WebViewEmbededInScrollViewController: UIViewController, WKNavigationDelegate {
+class WebViewEmbeddedInScrollViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topView: UIView!

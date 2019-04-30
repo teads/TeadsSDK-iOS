@@ -423,10 +423,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="2701.5999999999999" y="117.39130434782609"/>
         </scene>
-        <!--Web View Embeded In Scroll View Controller-->
+        <!--Web View Embedded In Scroll View Controller-->
         <scene sceneID="jqo-Yt-DjU">
             <objects>
-                <viewController storyboardIdentifier="inRead WKWebView in ScrollView" id="Ydj-Cx-91X" customClass="WebViewEmbededInScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inRead WKWebView in ScrollView" id="Ydj-Cx-91X" customClass="WebViewEmbeddedInScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lCP-nD-PAf"/>
                         <viewControllerLayoutGuide type="bottom" id="5hl-6u-zjs"/>
@@ -483,10 +483,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="3510" y="117"/>
         </scene>
-        <!--Web View Embeded Table View Controller-->
+        <!--Web View Embedded Table View Controller-->
         <scene sceneID="T2R-cI-y5h">
             <objects>
-                <tableViewController storyboardIdentifier="inRead WKWebView in TableView" id="nxi-B9-Smd" customClass="WebViewEmbededTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inRead WKWebView in TableView" id="nxi-B9-Smd" customClass="WebViewEmbeddedTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cXi-8L-esB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -595,10 +595,10 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="4329" y="116"/>
         </scene>
-        <!--Web View Embeded Collection View Controller-->
+        <!--Web View Embedded Collection View Controller-->
         <scene sceneID="l5L-rn-Zyx">
             <objects>
-                <collectionViewController storyboardIdentifier="inRead WKWebView in CollectionView" id="IbT-2c-UFp" customClass="WebViewEmbededCollectionViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="inRead WKWebView in CollectionView" id="IbT-2c-UFp" customClass="WebViewEmbeddedCollectionViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="k9c-Bt-0Da">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

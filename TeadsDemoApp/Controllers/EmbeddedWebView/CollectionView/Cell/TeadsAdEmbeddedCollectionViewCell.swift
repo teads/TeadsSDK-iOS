@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class TeadsAdEmbededCollectionViewCell: UICollectionViewCell {
+class TeadsAdEmbeddedCollectionViewCell: UICollectionViewCell {
     
     weak var webView: WKWebView? {
         didSet {

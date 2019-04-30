@@ -12,7 +12,7 @@ import TeadsSDK
 
 private let reuseIdentifier = "Cell"
 
-class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavigationDelegate, UICollectionViewDelegateFlowLayout {
+class WebViewEmbeddedCollectionViewController: UICollectionViewController, WKNavigationDelegate, UICollectionViewDelegateFlowLayout {
     let reuseIdentifier = "teadsCell"
     let reuseTeadsIdentifier = "teadsAdCell"
     let adRowNumber = 16
@@ -39,7 +39,7 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
         self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
         self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
         
-        self.collectionView!.register(TeadsAdEmbededCollectionViewCell.self, forCellWithReuseIdentifier: self.reuseTeadsIdentifier)
+        self.collectionView!.register(TeadsAdEmbeddedCollectionViewCell.self, forCellWithReuseIdentifier: self.reuseTeadsIdentifier)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,7 +90,7 @@ class WebViewEmbededCollectionViewController: UICollectionViewController, WKNavi
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: UICollectionViewCell?
         if self.adRowNumber == indexPath.row {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseTeadsIdentifier, for: indexPath) as? TeadsAdEmbededCollectionViewCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseTeadsIdentifier, for: indexPath) as? TeadsAdEmbeddedCollectionViewCell
             self.webView.removeFromSuperview()
             cell!.contentView.addSubview(self.webView)
             self.startObservingContentSize()

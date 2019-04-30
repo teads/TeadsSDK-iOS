@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 import WebKit
-class WebViewEmbededTableViewController: UITableViewController, WKNavigationDelegate {
+class WebViewEmbeddedTableViewController: UITableViewController, WKNavigationDelegate {
 
     let teadsTextCellIdentifier = "TeadsFirstCell"
     let teadsGrayedCellidentifier = "TeadsGrayedCell"
