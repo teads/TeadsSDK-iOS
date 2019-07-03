@@ -22,7 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                                 ("inRead Top", false),
                                                 ("inRead Top implementation", true),
                                                 ("Additional sample", false),
-                                                ("AdMob Mediation", true)]
+                                                ("AdMob Mediation", true),
+                                                ("AdMob Mediation in WKWebView", true)]
     
     let demoCellIdentifier = "DemoCell"
     

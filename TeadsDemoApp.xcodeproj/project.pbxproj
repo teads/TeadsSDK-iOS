@@ -15,6 +15,8 @@
 		B502BA131F827D5C008257EC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* TableViewController.swift */; };
 		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
 		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
+		B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */; };
+		B50C184D22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A371F7CDF80007406D4 /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 		B502BA121F827D5C008257EC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
 		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
+		B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobInWebViewController.swift; sourceTree = "<group>"; };
+		B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewGoogleAdView.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncWebViewTFInReadAdView.swift; path = TeadsDemoApp/Controllers/webViewController/webViewHelper/SyncWebViewTFInReadAdView.swift; sourceTree = SOURCE_ROOT; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +111,6 @@
 				1A3E9BF4CCFBBBA8DDA5D5FF /* Pods-TeadsDemoApp.debug.xcconfig */,
 				93A1EE72A1E78FFE141F1A33 /* Pods-TeadsDemoApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +211,14 @@
 				B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		B50C184A22CCDF35004F2360 /* WebViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */,
+			);
+			path = WebViewHelper;
 			sourceTree = "<group>";
 		};
 		B5555A291F7CDF80007406D4 = {
@@ -333,7 +344,9 @@
 		DB4660D82181B718003A6CF5 /* adMobController */ = {
 			isa = PBXGroup;
 			children = (
+				B50C184A22CCDF35004F2360 /* WebViewHelper */,
 				DB4660DB2181B865003A6CF5 /* AdMobController.swift */,
+				B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */,
 			);
 			path = adMobController;
 			sourceTree = "<group>";
@@ -452,8 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -461,8 +472,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
@@ -491,6 +500,7 @@
 				B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */,
 				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
+				B50C184D22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
 				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
@@ -499,6 +509,7 @@
 				B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */,
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
 				B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */,
+				B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */,
 				B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5555A4E1F7D3177007406D4 /* ScrollViewController.swift in Sources */,
@@ -653,7 +664,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeadsDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -675,7 +686,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeadsDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
