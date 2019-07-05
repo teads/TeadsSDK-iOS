@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BFFD13D57384F15E38D3011 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC736DFB4240D9325AD4D91C /* Pods_TeadsDemoApp.framework */; };
 		B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* WebViewViewController.swift */; };
 		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
 		B501EC7C1F823F8A002909B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B501EC6B1F8232B3002909B9 /* index.html */; };
@@ -41,8 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A3E9BF4CCFBBBA8DDA5D5FF /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		93A1EE72A1E78FFE141F1A33 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		B501EC6A1F8232B3002909B9 /* ie10-viewport-bug-workaround.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "ie10-viewport-bug-workaround.js"; sourceTree = "<group>"; };
 		B501EC6B1F8232B3002909B9 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		B501EC6D1F8232B3002909B9 /* bootstrap-theme.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "bootstrap-theme.css"; sourceTree = "<group>"; };
@@ -80,7 +77,6 @@
 		B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
-		BC736DFB4240D9325AD4D91C /* Pods_TeadsDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4660DB2181B865003A6CF5 /* AdMobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFFD13D57384F15E38D3011 /* Pods_TeadsDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				B5660B78207FAEA700406869 /* TeadsSDK.framework */,
-				BC736DFB4240D9325AD4D91C /* Pods_TeadsDemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,8 +102,6 @@
 		9C4C2A8CC3AEB01218414AF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1A3E9BF4CCFBBBA8DDA5D5FF /* Pods-TeadsDemoApp.debug.xcconfig */,
-				93A1EE72A1E78FFE141F1A33 /* Pods-TeadsDemoApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -358,12 +350,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsDemoApp" */;
 			buildPhases = (
-				9589E279B6B2806BBFB4F16A /* [CP] Check Pods Manifest.lock */,
 				B5555A2E1F7CDF80007406D4 /* Sources */,
 				B5555A2F1F7CDF80007406D4 /* Frameworks */,
 				B5555A301F7CDF80007406D4 /* Resources */,
 				913FE1D31FEC291B003C6E5E /* ShellScript */,
-				EAD77F54B4B30B8C09FB61BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -437,50 +427,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
-		};
-		9589E279B6B2806BBFB4F16A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeadsDemoApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAD77F54B4B30B8C09FB61BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${PODS_ROOT}/TeadsSDK/TeadsSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -653,7 +599,6 @@
 		};
 		B5555A451F7CDF80007406D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A3E9BF4CCFBBBA8DDA5D5FF /* Pods-TeadsDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -675,7 +620,6 @@
 		};
 		B5555A461F7CDF80007406D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93A1EE72A1E78FFE141F1A33 /* Pods-TeadsDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
