@@ -1,5 +1,5 @@
 //
-//  SyncWebViewAdmobView.swift
+//  SyncWebViewGoogleAdView.swift
 //  TeadsApp
 //
 //  Created by Jérémy Grosjean on 20/05/2019.
