@@ -224,7 +224,8 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
         switch message.name {
         case WebViewHelper.onTeadsJsLibReady:
             self.teadsJSIsLibReady()
-            
+            self.delegate?.webViewHelperJSIsReady()
+
         case WebViewHelper.handleError:
             guard let errorString = message.body as? String else {
                 return

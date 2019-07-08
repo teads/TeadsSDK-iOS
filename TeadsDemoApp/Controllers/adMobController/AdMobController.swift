@@ -12,7 +12,6 @@ import UIKit
 class AdMobController: UIViewController, GADBannerViewDelegate {
     
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_APP_ID = "ca-app-pub-3570580224725271~8055914490"
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3570580224725271/5615499706"
     
     var bannerView: GADBannerView!
@@ -21,10 +20,8 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1. Init AdMob (could be done in your Application class)
-        GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
 
-        // 2. Create AdMob view and add it to hierarchy
+        // 1. Create AdMob view and add it to hierarchy
         self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
         self.bannerView.translatesAutoresizingMaskIntoConstraints = false
         self.slotView.addSubview(bannerView)
@@ -32,12 +29,12 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
             [self.bannerView.centerXAnchor.constraint(equalTo: self.slotView.centerXAnchor),
              self.bannerView.centerYAnchor.constraint(equalTo: self.slotView.centerYAnchor)])
 
-        // 3. Attach Delegate (will include Teads events)
+        // 2. Attach Delegate (will include Teads events)
         bannerView.adUnitID = ADMOB_AD_UNIT_ID
         bannerView.rootViewController = self
         bannerView.delegate = self
 
-        // 4. Load a new ad (this will call AdMob and Teads afterward)
+        // 3. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()
         let teadsExtras = GADMAdapterTeadsExtras()
         teadsExtras.adContainer = self.view
