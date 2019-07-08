@@ -13,7 +13,7 @@ import TeadsAdMobAdapter
 class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBannerViewDelegate {
 
     @IBOutlet weak var webView: WKWebView!
-    var webSync: SyncWebViewGoogleAdView!
+    var webSync: SyncWebViewAdView!
     var bannerView: GADBannerView!
 
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
@@ -47,7 +47,7 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
         
         request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "Teads"))
         self.bannerView.load(request)
-        self.webSync = SyncWebViewGoogleAdView(webView: self.webView, selector: "#my-placement-id", admobBannerView: self.bannerView, bannerSize: kGADAdSizeMediumRectangle)
+        self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#my-placement-id", adView: self.bannerView)
     }
     
     // MARK: - GADBannerViewDelegate Protocol

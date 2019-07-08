@@ -15,7 +15,7 @@
 		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
 		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
 		B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */; };
-		B50C184D22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */; };
+		B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A371F7CDF80007406D4 /* ViewController.swift */; };
@@ -53,7 +53,7 @@
 		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
 		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
 		B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobInWebViewController.swift; sourceTree = "<group>"; };
-		B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewGoogleAdView.swift; sourceTree = "<group>"; };
+		B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncWebViewTFInReadAdView.swift; path = TeadsDemoApp/Controllers/webViewController/webViewHelper/SyncWebViewTFInReadAdView.swift; sourceTree = SOURCE_ROOT; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		B50C184A22CCDF35004F2360 /* WebViewHelper */ = {
 			isa = PBXGroup;
 			children = (
-				B50C184B22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift */,
+				B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */,
 			);
 			path = WebViewHelper;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 				B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */,
 				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
-				B50C184D22CCDF49004F2360 /* SyncWebViewGoogleAdView.swift in Sources */,
+				B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
 				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
