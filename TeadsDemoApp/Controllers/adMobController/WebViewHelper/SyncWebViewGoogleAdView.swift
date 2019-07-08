@@ -21,29 +21,29 @@ class SyncWebViewGoogleAdView: NSObject, WebViewHelperDelegate {
     var bannerSize: GADAdSize
     
     public init(webView: WKWebView, selector: String, admobBannerView: GADBannerView, bannerSize: GADAdSize) {
-        self.webViewHelper = WebViewHelper(webView: webView, selector: selector)
+        webViewHelper = WebViewHelper(webView: webView, selector: selector)
         self.admobBannerView = admobBannerView
         self.webView = webView
         self.bannerSize = bannerSize
         super.init()
-        self.webViewHelper.delegate = self
+        webViewHelper.delegate = self
     }
     
     deinit {
-        self.webViewHelper.clean()
+        webViewHelper.clean()
     }
     
     public func injectJS() {
         //Inject the js in your webview when the webview is ready
-        self.webViewHelper.injectJS()
+        webViewHelper.injectJS()
     }
     
     // MARK: WebViewHelperDelegate
     
     public func webViewHelperJSIsReady() {
-        self.webViewHelper.openSlot()
+        webViewHelper.openSlot()
         // Landscape ads are 16/9, setting the ratio to 16/10 give more space to display the ads and result in a better looking square ads
-        self.webViewHelper.updateSlot(adRatio: 16/10)
+        webViewHelper.updateSlot(adRatio: 16/10)
     }
     public func webViewHelperSlotStartToShow() {
         
@@ -63,26 +63,26 @@ class SyncWebViewGoogleAdView: NSObject, WebViewHelperDelegate {
     
     public func webViewHelperUpdatedSlot(left: Int, top: Int, right: Int, bottom: Int) {
         // if the adView is not already loaded load it and add it to the scrollView of your webview
-        if let admobBannerView = self.admobBannerView, let webView = self.webView {
-            if !self.isLoaded {
-                self.isLoaded = true
+        if let admobBannerView = admobBannerView, let webView = webView {
+            if !isLoaded {
+                isLoaded = true
                 webView.scrollView.addSubview(admobBannerView)
                 admobBannerView.translatesAutoresizingMaskIntoConstraints = false
             }
             //change the constraint according to coordonate that the delegate send us
-            self.customAdViewConstraint(left: left, top: top, right: right, bottom: bottom)
+            customAdViewConstraint(left: left, top: top, right: right, bottom: bottom)
         }
     }
     
     /// change the constraint of the ad so it follows what the bootstrap ask
     func customAdViewConstraint(left: Int, top: Int, right: Int, bottom: Int) {
-        if let admobBannerView = self.admobBannerView, let webView = self.webView {
-            NSLayoutConstraint.deactivate(self.adViewConstraints)
-            self.adViewConstraints.removeAll()
-            self.adViewConstraints.append(admobBannerView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: CGFloat(left)))
-            self.adViewConstraints.append(admobBannerView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: CGFloat(top)))
-            self.adViewConstraints.append(admobBannerView.widthAnchor.constraint(equalToConstant: CGFloat(right-left)))
-            NSLayoutConstraint.activate(self.adViewConstraints)
+        if let admobBannerView = admobBannerView, let webView = webView {
+            NSLayoutConstraint.deactivate(adViewConstraints)
+            adViewConstraints.removeAll()
+            adViewConstraints.append(admobBannerView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: CGFloat(left)))
+            adViewConstraints.append(admobBannerView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: CGFloat(top)))
+            adViewConstraints.append(admobBannerView.widthAnchor.constraint(equalToConstant: CGFloat(right-left)))
+            NSLayoutConstraint.activate(adViewConstraints)
         }
     }
 }
