@@ -285,6 +285,11 @@ _$SSo23NSHTTPCookiePropertyKeyaSYSCSY8rawValuexSg03RawE0Qz_tcfCTW
 _$SSo13NSRunLoopModeaSYSCSY8rawValuexSg03RawE0Qz_tcfCTW
 _$SSo22AVAudioSessionCategoryaSYSCSY8rawValuexSg03RawE0Qz_tcfCTW
 _$SSo18AVAudioSessionModeaSYSCSY8rawValuexSg03RawE0Qz_tcfCTW
+_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo20NSJSONReadingOptionsV_Tgq5Tf4gd_n
+_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo21NSLayoutFormatOptionsV_Tgq5Tf4gd_n
+_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo26SCNetworkReachabilityFlagsV_Tgq5Tf4gd_n
+_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo23WKAudiovisualMediaTypesV_Tgq5Tf4gd_n
+_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo29AVAudioSessionCategoryOptionsV_Tgq5Tf4gd_n
 _$SSo20NSJSONReadingOptionsVs10SetAlgebraSCsACP6insertySb8inserted_7ElementQz17memberAfterInserttAHFTW
 _$SSo21NSLayoutFormatOptionsVs10SetAlgebraSCsACP6insertySb8inserted_7ElementQz17memberAfterInserttAHFTW
 _$SSo26SCNetworkReachabilityFlagsVs10SetAlgebraSCsACP6insertySb8inserted_7ElementQz17memberAfterInserttAHFTW
@@ -367,11 +372,6 @@ _$SSo20NSJSONReadingOptionsVSYSCSY8rawValue03RawD0QzvgTW
 _$SSo21NSLayoutFormatOptionsVSYSCSY8rawValue03RawE0QzvgTW
 _$SSo23WKAudiovisualMediaTypesVSYSCSY8rawValue03RawE0QzvgTW
 _$SSo29AVAudioSessionCategoryOptionsVSYSCSY8rawValue03RawF0QzvgTW
-_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo20NSJSONReadingOptionsV_Tgq5Tf4gd_n
-_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo21NSLayoutFormatOptionsV_Tgq5Tf4gd_n
-_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo26SCNetworkReachabilityFlagsV_Tgq5Tf4gd_n
-_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo23WKAudiovisualMediaTypesV_Tgq5Tf4gd_n
-_$Ss10SetAlgebraPs7ElementQz012ArrayLiteralC0RtzrlE05arrayE0xAFd_tcfCSo29AVAudioSessionCategoryOptionsV_Tgq5Tf4gd_n
 _$SSo20NSJSONReadingOptionsVs10SetAlgebraSCsACP5unionyxxFTW
 _$SSo21NSLayoutFormatOptionsVs10SetAlgebraSCsACP5unionyxxFTW
 _$SSo26SCNetworkReachabilityFlagsVs10SetAlgebraSCsACP5unionyxxFTW
@@ -493,15 +493,15 @@ _globalinit_33_A9BD51CAFB068A6018825819252106F6_token112
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_token113
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_token114
 _globalinit_33_DE8149AACAA9BCC8F8BC5CA254DF6D07_token138
-_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_token140
+_globalinit_33_398FA9065CAAB0848E3D7C1A53C077AA_token140
 _globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_token141
-_globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_token142
-_globalinit_33_1D2AB11273C3962B5987F10773554237_token147
-_globalinit_33_964510E524415EA257E2E4E23E628023_token149
+_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_token142
+_globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_token143
+_globalinit_33_1D2AB11273C3962B5987F10773554237_token148
 _globalinit_33_964510E524415EA257E2E4E23E628023_token150
-_globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_token151
+_globalinit_33_964510E524415EA257E2E4E23E628023_token151
 _globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_token152
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token153
+_globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_token153
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token154
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token155
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token156
@@ -535,6 +535,7 @@ _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token183
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token184
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token185
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token186
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_token187
 _$S8TeadsSDK12SoundHandlerC24shouldHandleAudioSession14sumoLogManagerACSb_AA04SumojK0CSgtcfcTv_
 _$SSo8NSObjectC8TeadsSDKE18currentNetworkType5flags8testModeAbCE10ConnectionOSo26SCNetworkReachabilityFlagsV_SbtFZTv_
 _$S8TeadsSDK13ComponentViewC13componentDataAcA0cF0C_tcfcTv_
@@ -1093,7 +1094,7 @@ _$SSo26SCNetworkReachabilityFlagsVMB
 _$SSo23WKAudiovisualMediaTypesVMB
 _$SSo29AVAudioSessionCategoryOptionsVMB
 Apple LLVM version 10.0.0 (clang-1000.11.45.1)
--emit-bc /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Libs/ViewVisibility.swift "/Users/vagrant/git/TeadsSDK/TeadsSDK/Remote Config/RemoteConfig.swift" /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderPool/CommanderWebViewPool.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPAIDEvents.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SimpleComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Unzip(DataExtention).swift "/Users/vagrant/git/TeadsSDK/TeadsSDK/Remote Config/RemoteConfigManager.swift" /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsSafariViewController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPaidPlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TimingObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/StudioAPIConstant.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ErrorObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Utils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/GlobalConstants.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/OM/OMWrapper.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerObserver.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DonutProgressView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/FullscreenController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderCallRequest.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsAdSettings.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/JSEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/WebBridge.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/CompoundScreenComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Sumo/SumoLogManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Model/DeviceInfo.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInterstitialAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ScrollerPlugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/DialogData.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Utils/CommanderViewHierarchyHandler.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/WarningObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ConstraintFactory.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFARewardedAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/NativeVideoPlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/UIEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderNotice.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/LogManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ApplicationStatesDispatcher.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInterstitialAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DialogComponentController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/EventBus.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/ComponentData.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TimingCalculator.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/Plugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/HtmlComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/IABConsent.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/VisibilityTimer.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SlotBoundsPlugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/TeadsWeakTarget.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ContextUtils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/SoundHandling/SoundHandler.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/LabelComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/AdFailReason.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ImageComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/CommanderWebView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/EndscreenCenteredViewController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFACustomAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ProgressBarComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PluginsManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/EventBusProtocol.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/NetworkUtils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInReadAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentViewFactory.swift -supplementary-output-file-map <temporary-file> -target armv7-apple-ios9.0 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/vagrant/git/TeadsSDK/build/Release-iphoneos -F /Users/vagrant/git/TeadsSDK/build/Release-iphoneos -F /Users/vagrant/git/TeadsSDK -F /Users/vagrant/git/TeadsSDK/TeadsSDK -g -import-underlying-module -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-generated-files.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-own-target-headers.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-project-headers.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/Release-iphoneos/include -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources/armv7 -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/vagrant/git/TeadsSDK -module-name TeadsSDK -num-threads 4 -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ViewVisibility.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfig.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebViewPool.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPAIDEvents.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SimpleComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Unzip(DataExtention).bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/RemoteConfigManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsSafariViewController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VPaidPlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/StudioAPIConstant.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ErrorObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Utils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/GlobalConstants.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/OMWrapper.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PlayerObserver.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngineAssetManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DonutProgressView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/FullscreenController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderCallRequest.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsAdSettings.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/JSEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WebBridge.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CompoundScreenComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SumoLogManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DeviceInfo.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ScrollerPlugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DialogData.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderViewHierarchyHandler.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/WarningObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ConstraintFactory.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFARewardedAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NativeVideoPlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/UIEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderNotice.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LogManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ApplicationStatesDispatcher.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInterstitialAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/DialogComponentController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBus.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentData.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TimingCalculator.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/Plugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/HtmlComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/IABConsent.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/VisibilityTimer.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SlotBoundsPlugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TeadsWeakTarget.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ContextUtils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/SoundHandler.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/LabelComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/AdFailReason.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ImageComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/CommanderWebView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EndscreenCenteredViewController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFACustomAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ProgressBarComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/PluginsManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/EventBusProtocol.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/NetworkUtils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/TFAInReadAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7/ComponentViewFactory.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+-emit-bc /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Libs/ViewVisibility.swift "/Users/vagrant/git/TeadsSDK/TeadsSDK/Remote Config/RemoteConfig.swift" /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderPool/CommanderWebViewPool.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPAIDEvents.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SimpleComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Unzip(DataExtention).swift "/Users/vagrant/git/TeadsSDK/TeadsSDK/Remote Config/RemoteConfigManager.swift" /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsSafariViewController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/VPaidPlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TimingObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/StudioAPIConstant.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ErrorObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Utils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/GlobalConstants.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/OM/OMWrapper.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerObserver.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DonutProgressView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/FullscreenController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderCallRequest.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsAdSettings.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/JSEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/WebBridge.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Extensions/UIDevice-extension.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/CompoundScreenComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsSDKInstanceRecorder.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/Sumo/SumoLogManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Model/DeviceInfo.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInterstitialAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ScrollerPlugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/DialogData.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Utils/CommanderViewHierarchyHandler.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/WarningObject.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ConstraintFactory.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFARewardedAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/NativeVideoPlayerView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/UIEngine.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderNotice.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/LogManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ApplicationStatesDispatcher.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/String+SVG.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInterstitialAd.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/DialogComponentController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/EventBus.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Data/ComponentData.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TimingCalculator.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/Plugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/HtmlComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/IABConsent.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/VisibilityTimer.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/SlotBoundsPlugin.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/TeadsWeakTarget.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/ContextUtils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/SoundHandling/SoundHandler.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/LabelComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/AdFailReason.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ImageComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/CommanderWebView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/EndscreenCenteredViewController.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFACustomAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ProgressBarComponentView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PluginsManager.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/EventBusProtocol.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/NetworkUtils.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TFAInReadAdView.swift /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ComponentViewFactory.swift -supplementary-output-file-map <temporary-file> -target armv7s-apple-ios9.0 -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/vagrant/git/TeadsSDK/build/Release-iphoneos -F /Users/vagrant/git/TeadsSDK/build/Release-iphoneos -F /Users/vagrant/git/TeadsSDK -F /Users/vagrant/git/TeadsSDK/TeadsSDK -g -import-underlying-module -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-generated-files.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-own-target-headers.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/TeadsSDK-project-headers.hmap -Xcc -I/Users/vagrant/git/TeadsSDK/build/Release-iphoneos/include -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources/armv7s -Xcc -I/Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/vagrant/git/TeadsSDK -module-name TeadsSDK -num-threads 4 -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ViewVisibility.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/RemoteConfig.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CommanderWebViewPool.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/VPAIDEvents.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TeadsAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/SimpleComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/Unzip(DataExtention).bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/RemoteConfigManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TeadsSafariViewController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/VPaidPlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TimingObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/StudioAPIConstant.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/PlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ErrorObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/Utils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/GlobalConstants.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/OMWrapper.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/PlayerObserver.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/JSEngineAssetManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/DonutProgressView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/FullscreenController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CommanderCallRequest.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TeadsAdSettings.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/JSEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/WebBridge.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/UIDevice-extension.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CompoundScreenComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TeadsSDKInstanceRecorder.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/SumoLogManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFAAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/DeviceInfo.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFAInterstitialAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ScrollerPlugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/DialogData.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CommanderViewHierarchyHandler.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/WarningObject.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ConstraintFactory.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFARewardedAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/NetworkEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/NativeVideoPlayerView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/UIEngine.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CommanderNotice.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/LogManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ApplicationStatesDispatcher.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/String+SVG.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFAInterstitialAd.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/DialogComponentController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/EventBus.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ComponentData.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TimingCalculator.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/Plugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/HtmlComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/IABConsent.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/VisibilityTimer.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/SlotBoundsPlugin.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TeadsWeakTarget.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ContextUtils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/SoundHandler.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/LabelComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/AdFailReason.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ImageComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/CommanderWebView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/EndscreenCenteredViewController.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFACustomAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ProgressBarComponentView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/PluginsManager.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/EventBusProtocol.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/NetworkUtils.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/TFAInReadAdView.bc -o /Users/vagrant/git/TeadsSDK/build/TeadsSDK.build/Release-iphoneos/TeadsSDK.build/Objects-normal/armv7s/ComponentViewFactory.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
 <swift-imported-modules>
 /Users/vagrant/git/TeadsSDK
 Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
@@ -1336,6 +1337,7 @@ $S8TeadsSDK9TFAAdViewC04bodyD11ConstraintsSaySo18NSLayoutConstraintCGvpfi
 $S8TeadsSDK9TFAAdViewC04bodyD0So6UIViewCvpfi
 $S8TeadsSDK9TFAAdViewC04slotD0So6UIViewCSgXwvpfi
 $S8TeadsSDK9TFAAdViewC2adAA0A2AdCSgvpfi
+$S8TeadsSDK0A10AdSettingsC23enableBatteryMonitoringSbvpfi
 $S8TeadsSDK0A10AdSettingsC21validationModeEnabledSbvpfi
 $S8TeadsSDK0A10AdSettingsC13subjectToGDPRSSSgvpfi
 $S8TeadsSDK0A10AdSettingsC7consentSSSgvpfi
@@ -1396,6 +1398,7 @@ _$Ss9CodingKeyPsE11descriptionSSvg8TeadsSDK17DisabledAppConfigV0A4Keys33_904B7DE
 _$Ss9CodingKeyPsE11descriptionSSvg8TeadsSDK18DisabledSDKsConfigV0A4Keys33_904B7DEE1D1E169AC516EC5005B0CFFBLLO_Tg5
 _$Ss9CodingKeyPsE11descriptionSSvg8TeadsSDK10DisabledOSV0A4Keys33_904B7DEE1D1E169AC516EC5005B0CFFBLLO_Tg5Tm
 _$S8TeadsSDK12RemoteConfigV6encode2toys7Encoder_p_tKF
+_$S8TeadsSDK15SumologicConfigV6encode2toys7Encoder_p_tKF
 _$S8TeadsSDK18DisabledSDKsConfigV6encode2toys7Encoder_p_tKF
 _$S8TeadsSDK17DisabledAppConfigV6encode2toys7Encoder_p_tKF
 _$S8TeadsSDK10DisabledOSV6encode2toys7Encoder_p_tKF
@@ -1466,7 +1469,6 @@ _$S8TeadsSDK12RemoteConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLO11s
 _$S8TeadsSDK12RemoteConfigV4fromACs7Decoder_p_tKcfCTf4nd_n
 _$S8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLO11stringValueAFSgSS_tcfCTf4gXd_n
 _$S8TeadsSDK15SumologicConfigV4fromACs7Decoder_p_tKcfCTf4nd_n
-_$S8TeadsSDK15SumologicConfigV6encode2toys7Encoder_p_tKFTf4nx_n
 _$S8TeadsSDK18DisabledSDKsConfigV4fromACs7Decoder_p_tKcfCTf4nd_n
 _$S8TeadsSDK17DisabledAppConfigV4fromACs7Decoder_p_tKcfCTf4nd_n
 _$S8TeadsSDK10DisabledOSV4fromACs7Decoder_p_tKcfCTf4nd_n
@@ -1506,7 +1508,7 @@ _$S8TeadsSDK10DisabledOSVMa
 _$S8TeadsSDK15SumologicConfigVwxx
 _$S8TeadsSDK15SumologicConfigVwcp
 _$S8TeadsSDK15SumologicConfigVwca
-___swift_memcpy24_8
+___swift_memcpy32_8
 _$S8TeadsSDK15SumologicConfigVwta
 ___swift_copy_outline_existential_box_pointer8
 _$S8TeadsSDK15SumologicConfigVwet
@@ -1515,7 +1517,7 @@ _$S8TeadsSDK12RemoteConfigVwCP
 _$S8TeadsSDK12RemoteConfigVwxx
 _$S8TeadsSDK12RemoteConfigVwcp
 _$S8TeadsSDK12RemoteConfigVwca
-___swift_memcpy54_8
+___swift_memcpy62_8
 _$S8TeadsSDK12RemoteConfigVwta
 _$S8TeadsSDK12RemoteConfigVwet
 _$S8TeadsSDK12RemoteConfigVwst
@@ -2125,7 +2127,7 @@ $S8TeadsSDK12RemoteConfigVwxs
 $S8TeadsSDK12RemoteConfigVwst
 $S8TeadsSDK12RemoteConfigVwet
 $S8TeadsSDK12RemoteConfigVwta
-__swift_memcpy54_8
+__swift_memcpy62_8
 $S8TeadsSDK12RemoteConfigVwca
 $S8TeadsSDK12RemoteConfigVwcp
 $S8TeadsSDK12RemoteConfigVwxx
@@ -2134,7 +2136,7 @@ $S8TeadsSDK15SumologicConfigVwst
 $S8TeadsSDK15SumologicConfigVwet
 __swift_copy_outline_existential_box_pointer8
 $S8TeadsSDK15SumologicConfigVwta
-__swift_memcpy24_8
+__swift_memcpy32_8
 $S8TeadsSDK15SumologicConfigVwca
 $S8TeadsSDK15SumologicConfigVwcp
 $S8TeadsSDK15SumologicConfigVwxx
@@ -2213,9 +2215,8 @@ $SSaySSGSayxGSesSeRzlWl
 $SSaySSGMa
 $Ss27_KeyedDecodingContainerBaseCy8TeadsSDK18DisabledSDKsConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOGMa
 $S8TeadsSDK18DisabledSDKsConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOAFs0F3KeyAAWl
-$Ss27_KeyedEncodingContainerBaseCy8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOGMa
-$S8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOAFs0E3KeyAAWl
 $Ss27_KeyedDecodingContainerBaseCy8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOGMa
+$S8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOAFs0E3KeyAAWl
 $S8TeadsSDK14PoolOSSettingsVACSeAAWl
 $S8TeadsSDK10DisabledOSVACSeAAWl
 $S8TeadsSDK17DisabledAppConfigVACSeAAWl
@@ -2250,6 +2251,7 @@ $S8TeadsSDK12PoolSettingsVACSEAAWl
 debugDescription.get
 $SSaySSGSayxGSEsSERzlWl
 $Ss27_KeyedEncodingContainerBaseCy8TeadsSDK18DisabledSDKsConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOGMa
+$Ss27_KeyedEncodingContainerBaseCy8TeadsSDK15SumologicConfigV10CodingKeys33_904B7DEE1D1E169AC516EC5005B0CFFBLLOGMa
 $S8TeadsSDK14PoolOSSettingsVACSEAAWl
 $S8TeadsSDK10DisabledOSVACSEAAWl
 $S8TeadsSDK17DisabledAppConfigVACSEAAWl
@@ -2298,7 +2300,7 @@ _$Ss17_VariantSetBufferO12nativeDelete_11idealBucket6offsetys07_NativebC0VyxG_S2
 _$Ss16_NativeSetBufferVss8HashableRzlE12unsafeAddNew3keyyx_tF8TeadsSDK16CommanderWebViewC_Tg5
 _$Ss17_VariantSetBufferO12nativeInsert_6forKeySb8inserted_x011memberAfterE0tx_xtF8TeadsSDK16CommanderWebViewC_Tg5
 _$Ss10SetAlgebraPsEyxqd__cs8SequenceRd__7ElementQyd__ADRtzlufC8Dispatch0E13WorkItemFlagsV_SayAIGTgq5Tf4gd_n
-_$S8TeadsSDK19RemoteConfigManagerC16getConfiguration12userDefaults8eventBusAA0cD0VSgSo06NSUserI0C_AA05EventK0CSgtFZTf4nnd_n
+_$S8TeadsSDK19RemoteConfigManagerC16getConfiguration12userDefaults8eventBusAA0cD0VSgSo06NSUserI0C_AA05EventK0CSgtFZTf4ndd_n
 _$S8TeadsSDK16CommanderWebViewC5frame13configuration14messageHandlerACSo6CGRectV_So05WKWebE13ConfigurationCSo015WKScriptMessageI0_pSgtcfcTf4dnnn_n
 _$S8TeadsSDK20CommanderWebViewPoolC04fillF017completionHandleryyycSg_tFyycfU_yycfU_TA
 _$Ss17_VariantSetBufferOyxGSHRzlWOe
@@ -2488,6 +2490,9 @@ _$S8TeadsSDK0A2AdC5cleanyyF
 _$S8TeadsSDK0A2AdC5cleanyyFyycfU_
 _$S8TeadsSDK0A2AdC11slotReachedyyF
 _$S8TeadsSDK0A2AdC11slotReachedyyFySbcfU_
+_$S8TeadsSDK0A2AdC9adStartedyyF
+_$S8TeadsSDK0A2AdC02noC0yyF
+_$S8TeadsSDK0A2AdC9adStartedyyFTm
 _$S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tF
 _$S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_
 _$S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_ySbcfU_
@@ -2558,22 +2563,28 @@ _$S8TeadsSDK9WebBridgeC18onVisibilityChange10visibility7adWidth0I6Height17comple
 _$S8TeadsSDK9WebBridgeC13onLoadRequest3pid16publisherSlotUrl17integrationFormat11contextInfo17completionHandlerySi_S2SSDyS2SGySbctF
 _$S8TeadsSDK9WebBridgeC12identifyUser6userId8isOptout4gdpr17completionHandlerySS_SbAA10IABConsentCSgySbctFySbcfU_
 _$S8TeadsSDK9WebBridgeC22onSDKValidationRequest17completionHandleryySbc_tFySbcfU_03$S8a39SDK0A2AdC17jsEngineInitiatedyyFySbcfU_yr3U_yR2U_Tf3npf_n
+_globalinit_33_398FA9065CAAB0848E3D7C1A53C077AA_func140
 _$S8TeadsSDK14SumoLogManagerC04sendd2ToC03logSbAA0D8Protocol_p_tF
 _$S8TeadsSDK10DeviceInfoCACycfc
-_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctF03$S8a14SDK0A2AdC13setC75Info33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_AA0aT0CACSbIegy_Tf1nnncn_n
-_$S8TeadsSDK13NetworkEngineC8eventBus10urlSessionAcA05EventF0CSg_So12NSURLSessionCtcfc
+_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctF03$S8a14SDK0A2AdC13setC75Info33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_AA0aX0CACSbIegy_Tf1nnnncn_n
+_$S8TeadsSDK13NetworkEngineC8eventBus14sumoLogManager10urlSessionAcA05EventF0CSg_AA04SumohI0CSo12NSURLSessionCtcfc
 _$S8TeadsSDK8UIEngineC8eventBus6adViewAcA05EventE0C_AA05TFAAdG0Ctcfc
 _$S8TeadsSDK8UIEngineC13setAdSettingsyyAA0aeF0CSgF
 _$S8TeadsSDK8UIEngineC5cleanyyF
 _$S8TeadsSDK8EventBusC7options5label5queueAcA7OptionsVSg_SSSgSo012OS_dispatch_G0Ctcfc
 _$S8TeadsSDK8EventBusC3add10subscriber3for7optionsyx_xmAA7OptionsVtlFAA0cD16JsEngineProtocol_p_Tg5
 _$S8TeadsSDK8EventBusC3add10subscriber3for7optionsyx_xmAA7OptionsVtlFAA0cD22UIEngineOutPutProtocol_p_Tg5
-_globalinit_33_1D2AB11273C3962B5987F10773554237_func147
+_globalinit_33_1D2AB11273C3962B5987F10773554237_func148
 _$S8TeadsSDK16TimingCalculatorC11loadRequestyyF
 _$S8TeadsSDK16CommanderWebViewC08evaluateC10JavaScript_4line015canBeEvaluateIfC8NotReady17completionHandlerySS_SiSbySbctF
-_$S8TeadsSDK14SumoLogManagerC12allowNetwork11errorEventsACSb_SayAA11ErrorObjectCGtcfcTf4ngn_n
+_$Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tg5
+_$Ss24_VariantDictionaryBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tFSS_8TeadsSDK11SDKInstanceCTg5
+_$Ss24_VariantDictionaryBufferO12nativeDelete_11idealBucket6offsetys07_NativebC0Vyxq_G_S2itFSS_8TeadsSDK11SDKInstanceCTg5
+_$S8TeadsSDK14SumoLogManagerC12allowNetwork11errorEvents13samplingToUseACSb_SayAA11ErrorObjectCGSdtcfcTf4ngnn_n
 _$Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSS_SSTg5Tf4xxn_n
-_$S8TeadsSDK19RemoteConfigManagerC11allowSDKUse12userDefaults8eventBusSbSo06NSUserI0C_AA05EventK0CSgtFZTf4nnd_n
+_$S8TeadsSDK19RemoteConfigManagerC11allowSDKUse12userDefaults8eventBusSbSo06NSUserI0C_AA05EventK0CSgtFZTf4ndd_n
+_$Ss24_VariantDictionaryBufferO18nativeRemoveObject6forKeyq_Sgx_tFSS_8TeadsSDK11SDKInstanceCTg5Tf4xn_n
+_$S8TeadsSDK0A19SDKInstanceRecorderC14updateInstance9reference5stateySS_AA0F6StatesOtFTf4xnn_n
 _$S8TeadsSDK0A2AdC04withC4ViewAcA05TFAAdE0C_tcfcTf4gn_n
 _$S8TeadsSDK8JSEngineC10adSettingsAA0a2AdE0CSgXwvsTf4gn_n
 _$S8TeadsSDK12ContextUtilsC10getConsent11userdefaultAA10IABConsentCSgSo14NSUserDefaultsC_tFZTf4nd_n
@@ -2595,6 +2606,7 @@ _$S8TeadsSDK0A2AdC11requestLoadyyFySbcfU_TA
 _$Ss24_VariantDictionaryBufferOyxq_GSHRzr0_lWOy
 _$S8TeadsSDK0A2AdC11requestLoadyyFySbcfU_yycfU_TA
 _$S8TeadsSDK07PrivateA10AdDelegate_pSgXwWOh
+_$S8TeadsSDK11SDKInstanceCMa
 _$S8TeadsSDK19RemoteConfigManagerCMa
 _$S8TeadsSDK20FullscreenControllerC03setC010fullscreenySb_tFyycfU0_TA
 _$S8TeadsSDK0A2AdC5cleanyyFyycfU_TA
@@ -2670,13 +2682,15 @@ _$S8TeadsSDK0A10AdSettingsC13subjectToGDPRSSSgvpWvd
 _$S8TeadsSDK10IABConsentC13subjectToGDPRSSvpWvd
 _$S8TeadsSDK10IABConsentC13consentStringSSvpWvd
 _$S8TeadsSDK3apiSSvp
+_$S8TeadsSDK0A10AdSettingsC23enableBatteryMonitoringSbvpWvd
 _$S8TeadsSDK12ContextUtilsCAA0cD8ProtocolAAWP
+_$S8TeadsSDK0A19SDKInstanceRecorderC6sharedACvpZ
 _block_descriptor.26
 _$S8TeadsSDK16TimingCalculatorC6sharedACvpZ
 _block_descriptor.35
+_$S8TeadsSDK0A19SDKInstanceRecorderC12SDKInstancesSDySSAA0C0CGvpWvd
 _$S8TeadsSDK9TFAAdViewC06playerD0AA06PlayerD0CSgXwvpWvd
 _$S8TeadsSDK8ConstantV18teadsConfigJsonUrl10Foundation3URLVvpZ
-_$S8TeadsSDK16TimingCalculatorC14sumologManagerAA07SumoLogF0CSgXwvpWvd
 _$S8TeadsSDK16TimingCalculatorC14sdkStartedDate10Foundation0G0VSgvpWvd
 _$S8TeadsSDK3KeyV14teadsDebugModeSSvpZ
 _$S8TeadsSDK0A10AdSettingsC13debugsEnabledSbvpWvd
@@ -2698,7 +2712,7 @@ _block_descriptor.41
 _block_descriptor.47
 _$S8TeadsSDK8JSEngineC20commanderViewHandlerAA09Commandere9HierarchyF0CSgvpWvd
 _$S8TeadsSDK29CommanderViewHierarchyHandlerC03topD033_2DB922044FC1347ECC018D0AEB85375DLLSo6UIViewCSgvpWvd
-_$S8TeadsSDK14SumoLogManagerC3pidSivpWvd
+_$S8TeadsSDK14SumoLogManagerC3pidSiSgvpWvd
 _$S8TeadsSDK14SumoLogManagerC9debugModeSbvpWvd
 _$S8TeadsSDK16TimingCalculatorC8loadDate10Foundation0F0VSgvpWvd
 _$S8TeadsSDK0A2AdCN
@@ -2729,6 +2743,11 @@ adView.get
 UIEngine.swift
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine
 uiEngine.get
+updateInstance
+_allocateUninitializedArray
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSS_Tg5
+$S8TeadsSDK0A19SDKInstanceRecorderC6sharedACvau
+TeadsSDKInstanceRecorder.swift
 JSEngine.swift
 add
 EventBus.swift
@@ -2741,19 +2760,26 @@ RemoteConfigManager.swift
 $S8TeadsSDK0A2AdCMa
 NetworkEngine.swift
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsNTEngine
-$S8TeadsSDK13NetworkEngineC8eventBus10urlSessionAcA05EventF0CSg_So12NSURLSessionCtcfcfA0_
+$S8TeadsSDK13NetworkEngineC8eventBus14sumoLogManager10urlSessionAcA05EventF0CSg_AA04SumohI0CSo12NSURLSessionCtcfcfA1_
 $S8TeadsSDK3KeyV14teadsDebugModeSSvau
+$S8TeadsSDK14SumoLogManagerC12allowNetwork11errorEvents13samplingToUseACSb_SayAA11ErrorObjectCGSdtcfcfA1_
+SumoLogManager.swift
+/Users/vagrant/git/TeadsSDK/TeadsSDK/Sumo
+getSumoLogSampling
 sdkDidStart
 TimingCalculator.swift
 sdkStartedDate.set
-sumologManager.set
 $S8TeadsSDK16TimingCalculatorC6sharedACvau
 $S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFfA0_
 $S8TeadsSDK8ConstantV18teadsConfigJsonUrl10Foundation3URLVvau
 $S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFfA_
-SumoLogManager.swift
-/Users/vagrant/git/TeadsSDK/TeadsSDK/Sumo
+$S8TeadsSDK14SumoLogManagerC12allowNetwork11errorEvents13samplingToUseACSb_SayAA11ErrorObjectCGSdtcfcfA_
+$S8TeadsSDK19RemoteConfigManagerC18getSumoLogSampling12userDefaultsSdSo06NSUserK0C_tFZfA_
 $S8TeadsSDK8EventBusC7options5label5queueAcA7OptionsVSg_SSSgSo012OS_dispatch_G0CtcfcfA1_
+$Ss24_VariantDictionaryBufferO18nativeRemoveObject6forKeyq_Sgx_tFSS_8TeadsSDK11SDKInstanceCTg5Tf4xn_n
+$Ss24_VariantDictionaryBufferO12nativeDelete_11idealBucket6offsetys07_NativebC0Vyxq_G_S2itFSS_8TeadsSDK11SDKInstanceCTg5
+$SSp12deinitialize5countSvSi_tF8TeadsSDK11SDKInstanceC_Tg5
+$SSp12deinitialize5countSvSi_tFSS_Tg5
 $S8TeadsSDK0A2AdCAA24EventBusJsEngineProtocolAAWa
 $S8TeadsSDK0A2AdCAA30EventBusUIEngineOutPutProtocolAAWa
 jsEngineReward
@@ -2793,10 +2819,12 @@ $S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completio
 $S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_
 $S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_Tf4dnnn_n
 setDeviceInfo
-$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFfA1_
+$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFfA1_
 DeviceInfo.swift
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Model
-$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFfA0_
+$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFfA0_
+enableBatteryMonitoring.get
+adStarted
 $S8TeadsSDK0A2AdC11slotReachedyyFySbcfU_
 slotReached
 playerView.get
@@ -2844,6 +2872,10 @@ fullscreen.set
 fullscreen.get
 fullscreenView.get
 fullscreenController.get
+removeInstance
+removeValue
+$Ss24_VariantDictionaryBufferO18nativeRemoveObject6forKeyq_Sgx_tFSS_8TeadsSDK11SDKInstanceCTg5
+SDKInstances.materialize
 $SIeg_IeyB_TR
 _$S8TeadsSDK19SimpleComponentViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK19SimpleComponentViewC5coderACSgSo7NSCoderC_tcfcTo
@@ -2933,7 +2965,6 @@ _$S8TeadsSDK19RemoteConfigManagerC16getConfiguration12userDefaults8eventBusAA0cD
 _globalinit_33_898B58A38E57AF444CE082639FBEFAC1_func12
 _$S8TeadsSDK19RemoteConfigManagerC07defaultaD0SSvau
 _$SSq16debugDescriptionSSvgs5Error_p_Tg5
-_$S8TeadsSDK19RemoteConfigManagerC11handleError5error07sumoLogE08eventBusyAA13WarningObjectC_AA04SumojE0CAA05EventL0CSgtFZ
 _$S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
 _$S10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIegggg_So6NSDataCSgAGSo7NSErrorCSgIeyByyy_TR
 _$S8TeadsSDK19RemoteConfigManagerCfD
@@ -2941,12 +2972,10 @@ _$S8TeadsSDK19RemoteConfigManagerCAA0cdE8ProtocolAAWa
 _$S8TeadsSDK13WarningObjectC9className7message4line4infoACSS_SSSiSSSgtcfc
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_func41
 _globalinit_33_A9BD51CAFB068A6018825819252106F6_func74
-_$Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tg5
 _$Ss26_toStringReadOnlyPrintableySSxs06CustomB11ConvertibleRzlFSd_Tg5
 _$S8TeadsSDK12ContextUtilsC10sdkVersion6bundleSSSgSo8NSBundleC_tFZTf4nd_n
 _$S8TeadsSDK19RemoteConfigManagerC16defaultCollectorSSvgZTf4d_n
-_$S8TeadsSDK19RemoteConfigManagerC04savecD006remoteD012userDefaults8eventBusyAA0cD0V_So06NSUserI0CAA05EventK0CSgtFZTf4nnnd_n
-_$S8TeadsSDK19RemoteConfigManagerC11handleError5error07sumoLogE08eventBusyAA13WarningObjectC_AA04SumojE0CAA05EventL0CSgtFZTf4nndd_n
+_$S8TeadsSDK19RemoteConfigManagerC04savecD006remoteD012userDefaults8eventBusyAA0cD0V_So06NSUserI0CAA05EventK0CSgtFZTf4nndd_n
 _$S8TeadsSDK19RemoteConfigManagerC010getDefaultD08eventBusAA0cD0VSgAA05EventI0CSg_tFZTf4dd_n
 _$SypSgWOb
 _$SypSgWOh
@@ -2983,21 +3012,21 @@ _$S8TeadsSDK19RemoteConfigManagerCN
 /Users/vagrant/git/TeadsSDK/TeadsSDK/Remote Config/RemoteConfigManager.swift
 parseRemoteConfData
 $S8TeadsSDK12RemoteConfigVACSeAAWl
-handleError
-$S8TeadsSDK19RemoteConfigManagerC11handleError5error07sumoLogE08eventBusyAA13WarningObjectC_AA04SumojE0CAA05EventL0CSgtFZfA0_
-createWarning
+$S8TeadsSDK19RemoteConfigManagerC13handleWarning7message4info07sumoLogE08eventBusySS_SSSgAA04SumokE0CAA05EventM0CSgtFZfA1_
+handleWarning
+sendWarningToSumo
 $Ss23_ContiguousArrayStorageCfDyp_Tg5
 $Ss5Error_pMa
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZyp_Tgq5
 $Ss23_ContiguousArrayStorageCyypGMa
 $S8TeadsSDK19RemoteConfigManagerC14updateConfFile12userDefaults6forUrl8eventBusySo06NSUserJ0C_10Foundation3URLVAA05EventN0CSgtFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
-__swift_destroy_boxed_opaque_existential_0
-$SypSgWOh
-$SypSgWOb
 $S8TeadsSDK12RemoteConfigV23disableCurrentOSVersion_9osVersionSbAA20ContextUtilsProtocol_pXp_SStFfA0_
 allowCurrentSDKVersion
 sdkVersion
 $S8TeadsSDK12RemoteConfigV15allowCurrentAppySbAA20ContextUtilsProtocol_pXpFfA_
+__swift_destroy_boxed_opaque_existential_0
+$SypSgWOh
+$SypSgWOb
 setDefaultConfigIfNeeded
 saveRemoteConfig
 getDefaultConfig
@@ -3005,9 +3034,9 @@ $S8TeadsSDK19RemoteConfigManagerC010setDefaultD8IfNeeded12userDefaults5reset8eve
 _bridgeAnyObjectToAny
 $S8TeadsSDK8ConstantV20teadsConfigLocalJsonSSvau
 $S8TeadsSDK19RemoteConfigManagerC07defaultaD0SSvau
-$S8TeadsSDK16UITestsArgumentsV20httpServerMockEnvVarSSvau
 $S8TeadsSDK12RemoteConfigVACSEAAWl
 defaultCollector.get
+$S8TeadsSDK16UITestsArgumentsV20httpServerMockEnvVarSSvau
 $Ss26_toStringReadOnlyPrintableySSxs06CustomB11ConvertibleRzlFSd_Tg5
 $SSds23CustomStringConvertiblessAAP11descriptionSSvgTW
 $S8TeadsSDK19RemoteConfigManagerCAA0cdE8ProtocolAAWa
@@ -3019,8 +3048,6 @@ $SSiSLsSL2leoiySbx_xtFZTW
 $SSiSLsSL2geoiySbx_xtFZTW
 updateConfFile
 globalinit_33_898B58A38E57AF444CE082639FBEFAC1_func12
-_allocateUninitializedArray
-$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSS_Tg5
 _$S8TeadsSDK0A20SafariViewControllerC3url23entersReaderIfAvailableAC10Foundation3URLV_SbtcfcTo
 _$S8TeadsSDK0A20SafariViewControllerC11viewDidLoadyyFTo
 _$S8TeadsSDK0A20SafariViewControllerC23didReceiveMemoryWarningyyFTo
@@ -3132,7 +3159,7 @@ _globalinit_33_3A2A85C6994CFAC574ECBBFB538821A5_func19
 _$S8TeadsSDK14ScrollerPluginC8imageUrl10playerViewAC10Foundation3URLV_AA011VPaidPlayerH0Ctcfc
 _$S8TeadsSDK14ScrollerPluginC06resizeC0yyF
 _$S8TeadsSDK29CommanderViewHierarchyHandlerC03addC11ToTopWindow09commanderD0yAA0c3WebD0C_tF
-_globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_func142
+_globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_func143
 _$S8TeadsSDK27ApplicationStatesDispatcherC11unsubscribe10subscriberyAA0cD8Protocol_p_tF
 _$S8TeadsSDK14PluginsManagerC9addPluginyyAA0F0CF
 _$S8TeadsSDK14PluginsManagerC020adViewDidMoveToSuperF0yyF
@@ -3804,10 +3831,6 @@ _$Ss16_UnmanagedStringVys5UInt8VGSJIgyo_AESJIegyr_TR029$SSJ11_unverified5rangeSJ
 _$Ss16_UnmanagedStringVys6UInt16VGSJIgyo_AESJIegyr_TR029$SSJ11_unverified5rangeSJs11_b23GutsV_SnySiGtcfcSJs010_a6C0Vys6C8VGXEfU0_Tf3nnpf_n
 _$Ss22_UnmanagedOpaqueStringVSJIgyo_ABSJIegyr_TR029$SSJ11_unverified5rangeSJs11_c23GutsV_SnySiGtcfcSJs016_aB9C0VXEfU1_Tf3nnpf_n
 _$SSiSHsSH4hash4intoys6HasherVz_tFTW
-_$SSKsE8dropLasty11SubSequenceQzSiFSS_Tgq5
-_$Ss16_UnmanagedStringV21UnicodeScalarIteratorV4nexts0C0O0D0VSgyFs6UInt16V_Tgq5
-_$Ss11_StringGutsV19_unmanagedUTF16Views010_UnmanagedA0Vys6UInt16VGvgTf4x_n
-_$SSSySSs7UnicodeO6ScalarVcfCTf4nd_n
 _$SSo8NSObjectC8TeadsSDKE10ConnectionOSHACWI
 _$SSo8NSObjectC8TeadsSDK9UtilitiesACWa
 _$SSo8NSObjectC8TeadsSDKE10ConnectionOwet
@@ -3819,6 +3842,9 @@ _$SSo8NSObjectC8TeadsSDKE10ConnectionOwup
 _$SSo8NSObjectC8TeadsSDKE10ConnectionOwui
 _$S8TeadsSDK5UtilsCMa
 _$S8TeadsSDK5UtilsCAA0C8ProtocolAAWa
+_$SSKsE8dropLasty11SubSequenceQzSiFSS_Tgq5
+_$Ss16_UnmanagedStringV21UnicodeScalarIteratorV4nexts0C0O0D0VSgyFs6UInt16V_Tgq5
+_$Ss11_StringGutsV19_unmanagedUTF16Views010_UnmanagedA0Vys6UInt16VGvgTf4x_n
 _$SSo8NSObjectC8TeadsSDKE18currentNetworkType5flags8testModeAbCE10ConnectionOSo26SCNetworkReachabilityFlagsV_SbtFZTf4nnd_n
 _$SSo8NSObjectC8TeadsSDKE13getConnectionAbCE0E0OyFZTf4d_n
 _$SSo8NSObjectC8TeadsSDKE25currentReachabilityStatusSSvgZTf4d_n
@@ -3844,9 +3870,6 @@ _$SSo11sockaddr_inVwCP
 ___swift_memcpy16_4
 _$SSo11sockaddr_inVwet
 _$SSo11sockaddr_inVwst
-_$Ss4Int8V_A255BtMa
-_$Ss6MirrorVWOh
-_$SSSSg5label_yp5valuetWOh
 _$SSo7in_addrVMa
 _$S8TeadsSDK17isRunningOnDevice33_071EA5B9BFB490E01728CA3577EC916CLLSbvp
 _$SSo8NSObjectC8TeadsSDKE10ConnectionOSQACWp
@@ -3895,13 +3918,6 @@ _$SSo11sockaddr_inVWV
 _$SSo11sockaddr_inVMn
 _$SSo11sockaddr_inVN
 _$Ss23_ContiguousArrayStorageCySo26SCNetworkReachabilityFlagsVGML
-_$Ss4Int8V_A255BtML
-_symbolic s4Int8V_A255Bt
-_$Ss17_AnyCollectionBoxCySSSg5label_yp5valuetGML
-_$SSSSg5label_yp5valuetML
-_$SSSSgML
-_$Ss19_AnyIteratorBoxBaseCySSSg5label_yp5valuetGML
-_$Ss19_SwiftStringStorageCys5UInt8VGML
 _$SSo7in_addrVML
 _$SSo7in_addrVMn
 _$SSo7in_addrVN
@@ -3916,9 +3932,6 @@ _$SSo7in_addrVMB
 _$S8TeadsSDK5UtilsCN
 /Users/vagrant/git/TeadsSDK/TeadsSDK/Utils.swift
 $SSo7in_addrVMa
-$SSSSg5label_yp5valuetWOh
-$Ss6MirrorVWOh
-$Ss4Int8V_A255BtMa
 $SSo11sockaddr_inVwst
 $SSo11sockaddr_inVwet
 __swift_memcpy16_4
@@ -3997,6 +4010,8 @@ $SSo8NSObjectC8TeadsSDKE13getConnectionAbCE0E0OyFZSo24SCNetworkReachabilityRefaS
 $Ss6UInt32VSQsSQ2eeoiySbx_xtFZTW
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSo26SCNetworkReachabilityFlagsV_Tg5
 $Ss23_ContiguousArrayStorageCySo26SCNetworkReachabilityFlagsVGMa
+$Ss16_UnmanagedStringV21UnicodeScalarIteratorV4nexts0C0O0D0VSgyFs6UInt16V_Tgq5
+$SSKsE8dropLasty11SubSequenceQzSiFSS_Tgq5
 $S8TeadsSDK5UtilsCAA0C8ProtocolAAWa
 $S8TeadsSDK5UtilsCMa
 $SSo8NSObjectC8TeadsSDKE10ConnectionOMa
@@ -4013,23 +4028,6 @@ $SSo8NSObjectC8TeadsSDKE10ConnectionOSHACWI
 $SSo8NSObjectC8TeadsSDKE10ConnectionOAESQACWl
 $SSo8NSObjectC8TeadsSDKE10ConnectionOSQACWa
 $SSo8NSObjectC8TeadsSDKE10ConnectionOSHACWa
-$SS2SSgypSSs5Error_pIgggnozo_SSAA5label_yp5valuetSSsAB_pIegnnrzo_TR
-$SSo8UIDeviceC8TeadsSDKE9modelNameSSvgS2S_SSSg5label_yp5valuettXEfU_
-$Ss11AnyIteratorVyxGs0B8ProtocolsSt4next7ElementQzSgyFTWSSSg5label_yp5valuet_Tg5
-$Ss11AnyIteratorV4nextxSgyFSSSg5label_yp5valuet_Tg5
-$Ss13AnyCollectionVyxGs8SequencesST12makeIterator0E0QzyFTWSSSg5label_yp5valuet_Tg5
-$Ss13AnyCollectionV12makeIterators0aD0VyxGyFSSSg5label_yp5valuet_Tg5
-$Ss4Int8VSLsSL2geoiySbx_xtFZTW
-$Ss19_AnyIteratorBoxBaseCySSSg5label_yp5valuetGMa
-$SSSSg5label_yp5valuetMa
-$SSSSgMa
-$Ss17_AnyCollectionBoxCySSSg5label_yp5valuetGMa
-$Ss19_SwiftStringStorageCys5UInt8VGMa
-$Ss7UnicodeO5UTF16O6encodeys11_UIntBufferVys6UInt32Vs6UInt16VGSgAB6ScalarVFZ
-$Ss7UnicodeO5UTF16O16transcodedLength2of9decodedAs27repairingIllFormedSequencesSi5count_Sb7isASCIItSgx_q_mSbts16IteratorProtocolRzs01_A8EncodingR_8CodeUnitQy_7ElementRtzr0_lFZs0O7OverOneVys6UInt32VG_AB5UTF32OTgq5
-$Ss7UnicodeO5UTF16O16transcodedLength2of9decodedAs27repairingIllFormedSequencesSi5count_Sb7isASCIItSgx_q_mSbts16IteratorProtocolRzs01_A8EncodingR_8CodeUnitQy_7ElementRtzr0_lFZs0O7OverOneVys6UInt32VG_AB5UTF32OTgq5Tf4nnnd_n
-$Ss16_UnmanagedStringV21UnicodeScalarIteratorV4nexts0C0O0D0VSgyFs6UInt16V_Tgq5
-$SSKsE8dropLasty11SubSequenceQzSiFSS_Tgq5
 $Ss22_UnmanagedOpaqueStringVSJIgyo_ABSJIegyr_TR029$SSJ11_unverified5rangeSJs11_c23GutsV_SnySiGtcfcSJs016_aB9C0VXEfU1_Tf3nnpf_n
 $SSJ11_unverified5rangeSJs11_StringGutsV_SnySiGtcfcSJs016_UnmanagedOpaqueC0VXEfU1_
 $Ss16_UnmanagedStringVys6UInt16VGSJIgyo_AESJIegyr_TR029$SSJ11_unverified5rangeSJs11_b23GutsV_SnySiGtcfcSJs010_a6C0Vys6C8VGXEfU0_Tf3nnpf_n
@@ -4487,40 +4485,37 @@ _$S8TeadsSDK14PlayerObserver_pMF
 _$S8TeadsSDK14PlayerObserverWR
 _$S8TeadsSDK14PlayerObserverMp
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/PlayerObserver.swift
-_$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus8delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA0cdE8Delegate_pSgtcfc
+_$S8TeadsSDK20JSEngineAssetManagerC23getBundleFileContentFor8fileName6ofTypeSSSgSS_SStF
+_$S8TeadsSDK20JSEngineAssetManagerC25unzipBundleFileContentFor8fileName9extentionSSSgSS_SStF
+_$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tF
 _$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
 _$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyF
 _$S8TeadsSDK20JSEngineAssetManagerC26shouldUseEmbeddedCommanderSbyF
-_$S8TeadsSDK20JSEngineAssetManagerC21getUpdatedCommanderJsSSSgyF
+_$S8TeadsSDK20JSEngineAssetManagerC8readFile8fileNameSSSgSS_tF
 _$S8TeadsSDK20JSEngineAssetManagerC20getDocumentDirectory6create10Foundation3URLVSb_tKF
 _$S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_
 _$S8TeadsSDK12NetworkUtilsV21getHeaderLastModified2at10completiony10Foundation3URLV_yAG4DateVSgctFZ
 _$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
-_$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yAKcfU_
-_$S8TeadsSDK20JSEngineAssetManagerCACycfcTo
 _$S8TeadsSDK20JSEngineAssetManagerCfD
-_$S8TeadsSDK20JSEngineAssetManagerCfETo
 _$S8TeadsSDK20JSEngineAssetManagerCMa
-_$S8TeadsSDK20JSEngineAssetManagerC23getBundleFileContentFor8fileName6ofTypeSSSgSS_SStFTf4nnd_n
-_$S8TeadsSDK20JSEngineAssetManagerC25unzipBundleFileContentFor8fileName9extentionSSSgSS_SStFTf4nnd_n
-_$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFTf4nd_n
-_$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
-_$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_TA
+_$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus07sumoLogE08delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA04SumolE0CAA0cdE8Delegate_pSgtcfcTf4gggngn_n
+_$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU_TA
 _$S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_TA
 _$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
 _$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZTf4nnd_n
 _$S10Foundation4DataVSgWOy
-_$S8TeadsSDK28JSEngineAssetManagerDelegate_pSgWOe
+_$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 _$S8TeadsSDK28JSEngineAssetManagerDelegate_pSgXwWOh
 _symbolic $S8TeadsSDK28JSEngineAssetManagerDelegateP
 _$S8TeadsSDK28JSEngineAssetManagerDelegate_pMF
 _$S8TeadsSDK28JSEngineAssetManagerDelegateWR
 _$S8TeadsSDK28JSEngineAssetManagerDelegateMp
-_OBJC_METACLASS_$__TtC8TeadsSDK20JSEngineAssetManager
+_$S8TeadsSDK20JSEngineAssetManagerCMm
 _$S8TeadsSDK20JSEngineAssetManagerC8delegateAA0cdE8Delegate_pSgXwvpWvd
 _$S8TeadsSDK20JSEngineAssetManagerC20jsEngineUserDefaults33_AD501A7C3D9D741423E1DD793E60BBB2LLSo06NSUserI0CvpWvd
 _$S8TeadsSDK20JSEngineAssetManagerC012jsEngineFileE033_AD501A7C3D9D741423E1DD793E60BBB2LLSo06NSFileE0CvpWvd
 _$S8TeadsSDK20JSEngineAssetManagerC8eventBus33_AD501A7C3D9D741423E1DD793E60BBB2LLAA05EventG0CSgXwvpWvd
+_$S8TeadsSDK20JSEngineAssetManagerC07sumoLogE033_AD501A7C3D9D741423E1DD793E60BBB2LLAA04SumogE0CvpWvd
 _$S8TeadsSDK20JSEngineAssetManagerC20allowCommanderUpdateSbvpWvd
 _$S8TeadsSDK20JSEngineAssetManagerCMn
 _$S8TeadsSDK20JSEngineAssetManagerCML
@@ -4529,43 +4524,38 @@ _symbolic ____ 8TeadsSDK20JSEngineAssetManagerC
 _symbolic 8TeadsSDK28JSEngineAssetManagerDelegate_pSgXw
 _symbolic So13NSFileManagerC
 _$S8TeadsSDK20JSEngineAssetManagerCMF
-_symbolic SSSgIegg_
 _symbolic 8TeadsSDK20JSEngineAssetManagerC
+_symbolic 8TeadsSDK20JSEngineAssetManagerCSgXw
+_symbolic SSSgIegg_
+_symbolic 8TeadsSDK20JSEngineAssetManagerCSgXwXb
 _$SSo13NSFileManagerCMF
 _$S8TeadsSDK20JSEngineAssetManagerCN
-_OBJC_CLASS_$__TtC8TeadsSDK20JSEngineAssetManager
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs/JSEngineAssetManager.swift
 $S8TeadsSDK28JSEngineAssetManagerDelegate_pSgXwWOh
+$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
 $S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_TA
 $S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_TA
-$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_TA
-$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU0_
+$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU_TA
+$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFySbcfU_
 JSEngineAssetManager.swift
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsJSEngine/Libs
 updateCommander
 downloadAsset
-$S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
-directDownloadCommander
-unzipBundleFileContentFor
+allowCommanderUpdate
 $S8TeadsSDK20JSEngineAssetManagerCMa
-getBundleFileContentFor
-$S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_yAKcfU_
-jsEngineUserDefaults.get
 $S8TeadsSDK20JSEngineAssetManagerC15updateCommanderyyFy10Foundation4DataVSg_SSSgs5Error_pSgtcfU_
 writeFile
 $S8TeadsSDK20JSEngineAssetManagerC23checkForCommanderUpdate10completionyySbc_tFy10Foundation4DateVSgcfU_
 getDocumentDirectory
-jsEngineFileManager.get
-getUpdatedCommanderJs
 readFile
 shouldUseEmbeddedCommander
 getCommander
 checkForCommanderUpdate
-allowCommanderUpdate.get
-$S8TeadsSDK20JSEngineAssetManagerC12getCommanderSSSgyFys5Error_pSgcfU_
+getUpdatedCommanderJs
 $S8TeadsSDK20JSEngineAssetManagerC23directDownloadCommander10completionyySSSgc_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_
-allowCommanderUpdate
-$S10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIegggg_So6NSDataCSgAGSo7NSErrorCSgIeyByyy_TR
+directDownloadCommander
+unzipBundleFileContentFor
+getBundleFileContentFor
 _$S8TeadsSDK17DonutProgressViewC5frameACSo6CGRectV_tcfcTo
 _$S8TeadsSDK17DonutProgressViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK17DonutProgressViewC5coderACSgSo7NSCoderC_tcfcTo
@@ -4758,6 +4748,7 @@ _$S8TeadsSDK0A10AdSettingsC19enableLigtEndScreenyyFTo
 _$S8TeadsSDK0A10AdSettingsC19disableMediaPreloadyyFTo
 _$S8TeadsSDK0A10AdSettingsC7pageUrlyySSFTo
 _$S8TeadsSDK0A10AdSettingsC11userConsent13subjectToGDPR7consentySS_SStFTo
+_$S8TeadsSDK0A10AdSettingsC24disableBatteryMonitoringyyFTo
 _$S8TeadsSDK0A10AdSettingsC5buildACyACXE_tcfcTo
 _$S8TeadsSDK0A10AdSettingsCACycfc
 _$S8TeadsSDK0A10AdSettingsCACycfcTo
@@ -4770,6 +4761,8 @@ _$S8TeadsSDK0A10AdSettingsCMF
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsAdSettings.swift
 $S8TeadsSDK0A10AdSettingsCIyBy_ACIegg_TR
 $S8TeadsSDK0A10AdSettingsCMa
+disableBatteryMonitoring
+enableBatteryMonitoring.set
 userConsent
 consent.set
 subjectToGDPR.set
@@ -4875,12 +4868,11 @@ _$S8TeadsSDK9WebBridgeC13onPlayerError7message4code17completionHandlerySS_SiySbc
 _$S8TeadsSDK9WebBridgeC16otherVpaidEvents9eventName12jsonElements17completionHandlerySS_SSSgySbctF
 _$S8TeadsSDK9WebBridgeC15onBrowserOpened9urlString17completionHandlerySS_ySbctF
 _$S8TeadsSDK9WebBridgeC15onBrowserClosed9urlString17completionHandlerySS_ySbctF
-_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func140
+_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func141
 _$S8TeadsSDK8EventBusC3add10subscriber3for7optionsyx_xmAA7OptionsVtlFAA0cD27NetworkEngineOutPutProtocol_p_Tg5
 _$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD16JsEngineProtocol_p_Tg5
 _$S8TeadsSDK8EventBusC6notify_10mainThread7options7closureSbxm_SbAA7OptionsVyxctlFAA0cD26NetworkEngineInPutProtocol_p_Tg5
 _$S8TeadsSDK13ComponentDataC14withDictionaryACSgSo12NSDictionaryC_tcfc
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func158
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func159
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func160
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func161
@@ -4896,16 +4888,17 @@ _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func170
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func171
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func172
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func173
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func176
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func174
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func177
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func178
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func179
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func180
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func181
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func182
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func184
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func183
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func185
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func186
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func187
 _$S8TeadsSDK16CommanderWebViewC14loadContentUrlyyF
 _$SSa36_reserveCapacityAssumingUniqueBuffer8oldCountySi_tF8TeadsSDK13ComponentDataC_Tg5
 _$SSa16_copyToNewBuffer8oldCountySi_tF8TeadsSDK13ComponentDataC_Tg5
@@ -5164,6 +5157,7 @@ handleOpenFullscreen
 $S8TeadsSDK8JSEngineC21handleCloseFullscreen13variablesDictySDySSypGSg_tFyAA24EventBusJsEngineProtocol_pcfU_
 handleOpenBrowser
 handleNoAd
+handleError
 $S8TeadsSDK11ErrorObjectC9className7message4line14exceptionTrace9mediaFile4type12adParametersACSS_SSSiS4StcfcfA4_
 $S8TeadsSDK11ErrorObjectC9className7message4line14exceptionTrace9mediaFile4type12adParametersACSS_SSSiS4StcfcfA3_
 handleReward
@@ -5316,6 +5310,40 @@ $S8TeadsSDK9WebBridgeC13onMediaLoaded17completionHandleryySbc_tFySbcfU_03$S8a4SD
 $S8TeadsSDK10DeviceInfoCACSEAAWl
 commanderViewDelegate.set
 globalinit_33_DE8149AACAA9BCC8F8BC5CA254DF6D07_func138
+_$SSo8UIDeviceC8TeadsSDKE15getBatteryLevelySiSbF
+_$SSSySSs7UnicodeO6ScalarVcfCTf4nd_n
+_$Ss4Int8V_A255BtMa
+_$Ss6MirrorVWOh
+_$SSSSg5label_yp5valuetWOh
+_$Ss4Int8V_A255BtML
+_symbolic s4Int8V_A255Bt
+_$Ss17_AnyCollectionBoxCySSSg5label_yp5valuetGML
+_$SSSSg5label_yp5valuetML
+_$SSSSgML
+_$Ss19_AnyIteratorBoxBaseCySSSg5label_yp5valuetGML
+_$Ss19_SwiftStringStorageCys5UInt8VGML
+/Users/vagrant/git/TeadsSDK/TeadsSDK/Extensions/UIDevice-extension.swift
+$SSSSg5label_yp5valuetWOh
+$Ss6MirrorVWOh
+$Ss4Int8V_A255BtMa
+UIDevice-extension.swift
+/Users/vagrant/git/TeadsSDK/TeadsSDK/Extensions
+$SS2SSgypSSs5Error_pIgggnozo_SSAA5label_yp5valuetSSsAB_pIegnnrzo_TR
+$SSo8UIDeviceC8TeadsSDKE9modelNameSSvgS2S_SSSg5label_yp5valuettXEfU_
+$Ss11AnyIteratorVyxGs0B8ProtocolsSt4next7ElementQzSgyFTWSSSg5label_yp5valuet_Tg5
+$Ss11AnyIteratorV4nextxSgyFSSSg5label_yp5valuet_Tg5
+$Ss13AnyCollectionVyxGs8SequencesST12makeIterator0E0QzyFTWSSSg5label_yp5valuet_Tg5
+$Ss13AnyCollectionV12makeIterators0aD0VyxGyFSSSg5label_yp5valuet_Tg5
+$Ss4Int8VSLsSL2geoiySbx_xtFZTW
+$Ss19_AnyIteratorBoxBaseCySSSg5label_yp5valuetGMa
+$SSSSg5label_yp5valuetMa
+$SSSSgMa
+$Ss17_AnyCollectionBoxCySSSg5label_yp5valuetGMa
+$Ss19_SwiftStringStorageCys5UInt8VGMa
+$Ss7UnicodeO5UTF16O6encodeys11_UIntBufferVys6UInt32Vs6UInt16VGSgAB6ScalarVFZ
+$Ss7UnicodeO5UTF16O16transcodedLength2of9decodedAs27repairingIllFormedSequencesSi5count_Sb7isASCIItSgx_q_mSbts16IteratorProtocolRzs01_A8EncodingR_8CodeUnitQy_7ElementRtzr0_lFZs0O7OverOneVys6UInt32VG_AB5UTF32OTgq5
+$Ss7UnicodeO5UTF16O16transcodedLength2of9decodedAs27repairingIllFormedSequencesSi5count_Sb7isASCIItSgx_q_mSbts16IteratorProtocolRzs01_A8EncodingR_8CodeUnitQy_7ElementRtzr0_lFZs0O7OverOneVys6UInt32VG_AB5UTF32OTgq5Tf4nnnd_n
+getBatteryLevel
 _$S8TeadsSDK27CompoundScreenComponentViewC06updateE013componentDatayAA0eI0C_tF
 _$S8TeadsSDK27CompoundScreenComponentViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK27CompoundScreenComponentViewC5coderACSgSo7NSCoderC_tcfcTo
@@ -5333,6 +5361,7 @@ _$SSa16_copyToNewBuffer8oldCountySi_tFyp_Tg5
 _$Ss12_ArrayBufferV19_getElementSlowPathyyXlSiF8TeadsSDK13ComponentViewC_Tg5
 _$Ss23_NativeDictionaryBufferV5index5afters01_aB5IndexVyxq_GAG_tFSS_Say8TeadsSDK13ComponentViewCGTg5
 _$SSa6append10contentsOfyqd___t7ElementQyd__Rszs8SequenceRd__lFSo18NSLayoutConstraintC_SayAGGTg5
+_$S8TeadsSDK27CompoundScreenComponentViewC13componentDataAcA0eH0C_tcfcTf4gn_n
 _$S8TeadsSDK17ConstraintFactoryV03getC15ToComponentView03newgH009containerH0SaySo08NSLayoutC0CGSgAA0gH0C_So6UIViewCtFZTf4nnd_n
 _OBJC_METACLASS_$__TtC8TeadsSDK27CompoundScreenComponentView
 _$S8TeadsSDK27CompoundScreenComponentViewC14componentViewsSDySSSayAA0eF0CGGvpWvd
@@ -5343,14 +5372,14 @@ _$S8TeadsSDK27CompoundScreenComponentViewCMf
 _symbolic ____ 8TeadsSDK27CompoundScreenComponentViewC
 _symbolic SDySSSay8TeadsSDK13ComponentViewCGG
 _$S8TeadsSDK27CompoundScreenComponentViewCMF
-_$SSo7UIColorCML
 _$S8TeadsSDK13ComponentViewC8positionAA0C8PositionOSgvpWvd
 _$SSo18NSLayoutConstraintCML
 _$S8TeadsSDK27CompoundScreenComponentViewCN
 _OBJC_CLASS_$__TtC8TeadsSDK27CompoundScreenComponentView
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/CompoundScreenComponentView.swift
-$S8TeadsSDK27CompoundScreenComponentViewCMa
 CompoundScreenComponentView.swift
+updateComponent
+$S8TeadsSDK27CompoundScreenComponentViewCMa
 endScreenLayout
 $SSa36_reserveCapacityAssumingUniqueBuffer8oldCountySi_tFSo18NSLayoutConstraintC_Tg5
 $SSa37_appendElementAssumeUniqueAndCapacity_03newB0ySi_xtFSo18NSLayoutConstraintC_Tg5
@@ -5395,8 +5424,168 @@ $SSD6ValuesV10startIndexSD0C0Vyxq__GvgSS_Say8TeadsSDK13ComponentViewCGTg5
 $Ss24_VariantDictionaryBufferO10startIndexSD0E0Vyxq__GvgSS_Say8TeadsSDK13ComponentViewCGTg5
 componentViews.get
 getAttachedComponent
-updateComponent
-$SSo7UIColorCMa
+_$S8TeadsSDK0A19SDKInstanceRecorderC6sharedACvau
+_$S8TeadsSDK14InstanceStatesOSQAASQ2eeoiySbx_xtFZTW
+_$S8TeadsSDK14InstanceStatesOSHAASH9hashValueSivgTW
+_$S8TeadsSDK14InstanceStatesOSHAASH4hash4intoys6HasherVz_tFTW
+_$S8TeadsSDK14InstanceStatesOSYAASY8rawValuexSg03RawF0Qz_tcfCTW
+_$S8TeadsSDK14InstanceStatesOSYAASY8rawValue03RawF0QzvgTW
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAsADP8allCases03AllH0QzvgZTW
+_$S8TeadsSDK11SDKInstanceCACycfcTo
+_$S8TeadsSDK11SDKInstanceCfD
+_$S8TeadsSDK0A19SDKInstanceRecorderCACyc33_398FA9065CAAB0848E3D7C1A53C077AALlfc
+_$S8TeadsSDK0A19SDKInstanceRecorderCACyc33_398FA9065CAAB0848E3D7C1A53C077AALlfcTo
+_$S8TeadsSDK0A19SDKInstanceRecorderC12generateDictSDyS2SGyF
+_$S8TeadsSDK0A19SDKInstanceRecorderCfD
+_$S8TeadsSDK11SDKInstanceCfDTm
+_$S8TeadsSDK0A19SDKInstanceRecorderCfETo
+_$S8TeadsSDK0A19SDKInstanceRecorderCMa
+_$S8TeadsSDK11SDKInstanceCMaTm
+_$S8TeadsSDK14InstanceStatesOMa
+_$S8TeadsSDK14InstanceStatesOwet
+_$S8TeadsSDK14InstanceStatesOwst
+_$S8TeadsSDK14InstanceStatesOwxs
+_$S8TeadsSDK14InstanceStatesOwxg
+_$S8TeadsSDK14InstanceStatesOwug
+_$S8TeadsSDK14InstanceStatesOwup
+_$S8TeadsSDK14InstanceStatesOwui
+_$SSay8TeadsSDK14InstanceStatesOGMa
+_$SSay8TeadsSDK14InstanceStatesOGSayxGSlsWl
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAWa
+_$S8TeadsSDK14InstanceStatesOSYAAWa
+_$S8TeadsSDK14InstanceStatesOSHAAWa
+_$S8TeadsSDK14InstanceStatesOSHAAWI
+_$S8TeadsSDK14InstanceStatesOSQAAWa
+_$S8TeadsSDK0A19SDKInstanceRecorderCAA11LogProtocolA2aDP12generateDictSDyS2SGyFTW
+_$S8TeadsSDK0A19SDKInstanceRecorderCAA11LogProtocolAAWa
+_$Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7StorageCtcfCSS_8TeadsSDK11SDKInstanceCTg5Tf4nnd_n
+_$Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_8TeadsSDK11SDKInstanceCTg5Tf4xnn_n
+_$Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSS_8TeadsSDK11SDKInstanceCTg5Tf4nxn_n
+_$S8TeadsSDK0A19SDKInstanceRecorderC20generateInstancesLog13instancesDictSSSDySSAA0C0CG_tFTf4nd_n
+_$Ss23_NativeDictionaryBufferVss8HashableRzrlE9fromArrayyAByxq_GSayx_q_tGFZSS_SSTg5Tf4nd_n
+_$Ss32DictionaryIteratorRepresentationOySS8TeadsSDK11SDKInstanceCGWOe
+_symbolic ____ 8TeadsSDK14InstanceStatesO
+_$S8TeadsSDK14InstanceStatesOMF
+_OBJC_METACLASS_$__TtC8TeadsSDK11SDKInstance
+_$S8TeadsSDK11SDKInstanceC5stateAA14InstanceStatesOvpWvd
+_$S8TeadsSDK11SDKInstanceCMn
+_$S8TeadsSDK11SDKInstanceCML
+_$S8TeadsSDK11SDKInstanceCMf
+_symbolic ____ 8TeadsSDK11SDKInstanceC
+_$S8TeadsSDK11SDKInstanceCMF
+_OBJC_METACLASS_$__TtC8TeadsSDK24TeadsSDKInstanceRecorder
+_$S8TeadsSDK0A19SDKInstanceRecorderC14sumoLogManagerAA04SumofG0CvpWvd
+_$S8TeadsSDK0A19SDKInstanceRecorderC9sessionIdSSvpWvd
+_$S8TeadsSDK0A19SDKInstanceRecorderCMn
+_$S8TeadsSDK0A19SDKInstanceRecorderCML
+_$S8TeadsSDK0A19SDKInstanceRecorderCMf
+_symbolic ____ 8TeadsSDK0A19SDKInstanceRecorderC
+_symbolic SDySS____G 8TeadsSDK11SDKInstanceC
+_$S8TeadsSDK0A19SDKInstanceRecorderCMF
+_$S8TeadsSDK14InstanceStatesOWV
+_$S8TeadsSDK14InstanceStatesOMn
+_$S8TeadsSDK14InstanceStatesOMf
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAMc
+_$SSay8TeadsSDK14InstanceStatesOGML
+_$SSay8TeadsSDK14InstanceStatesOGSayxGSlsWL
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAWp
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAWG
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAWr
+_$S8TeadsSDK14InstanceStatesOSYAAMc
+_$S8TeadsSDK14InstanceStatesOSYAAWp
+_$S8TeadsSDK14InstanceStatesOSYAAWG
+_$S8TeadsSDK14InstanceStatesOSYAAWr
+_$S8TeadsSDK14InstanceStatesOSHAAMc
+_$S8TeadsSDK14InstanceStatesOSHAAWp
+_$S8TeadsSDK14InstanceStatesOSHAAWG
+_$S8TeadsSDK14InstanceStatesOACSQAAWL
+_$S8TeadsSDK14InstanceStatesOSHAAWr
+_$S8TeadsSDK14InstanceStatesOSQAAMc
+_$S8TeadsSDK14InstanceStatesOSQAAWp
+_$S8TeadsSDK14InstanceStatesOSQAAWG
+_$S8TeadsSDK14InstanceStatesOSQAAWr
+_$S8TeadsSDK0A19SDKInstanceRecorderCAA11LogProtocolAAMc
+_$S8TeadsSDK0A19SDKInstanceRecorderCAA11LogProtocolAAWP
+_$Ss23_ContiguousArrayStorageCy8TeadsSDK14InstanceStatesOGML
+_$Ss23_ContiguousArrayStorageCySS_SStGML
+_$SSS_SStML
+_$Ss37_HashableTypedNativeDictionaryStorageCyS2SGML
+_$Ss37_HashableTypedNativeDictionaryStorageCySS8TeadsSDK11SDKInstanceCGML
+_symbolic 8TeadsSDK14InstanceStatesO
+_symbolic $Ss12CaseIterableP
+_symbolic Say8TeadsSDK14InstanceStatesOG
+_$S8TeadsSDK14InstanceStatesOs12CaseIterableAAMA
+_$S8TeadsSDK14InstanceStatesOSYAAMA
+_$S8TeadsSDK11SDKInstanceCN
+_OBJC_CLASS_$__TtC8TeadsSDK11SDKInstance
+_$S8TeadsSDK0A19SDKInstanceRecorderCN
+_OBJC_CLASS_$__TtC8TeadsSDK24TeadsSDKInstanceRecorder
+_$S8TeadsSDK14InstanceStatesON
+/Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsSDKInstanceRecorder.swift
+state.set
+$S8TeadsSDK0A19SDKInstanceRecorderCMa
+sumoLogManager.get
+$Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSS_8TeadsSDK11SDKInstanceCTg5
+$S8TeadsSDK11SDKInstanceCMa
+SDKInstances.get
+$Ss23_NativeDictionaryBufferVss8HashableRzrlE9fromArrayyAByxq_GSayx_q_tGFZSS_SSTg5Tf4nd_n
+$SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtFSS_SSt_Tg5
+$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtFSS_SSt_Tg5
+$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtFSS_SSt_Tg5
+$Ss37_HashableTypedNativeDictionaryStorageCyS2SGMa
+$SSa9_getCountSiyFSS_SSt_Tg5
+generateInstancesLog
+filter
+$Ss18DictionaryIteratorV11_nativeNextx3key_q_5valuetSgyFSS_8TeadsSDK11SDKInstanceCTg5
+$Ss23_NativeDictionaryBufferV12assertingGetyx3key_q_5valuets01_aB5IndexVyxq_GFSS_8TeadsSDK11SDKInstanceCTg5
+$SSayxGs10CollectionsSly7ElementQz5IndexQzcigTW8TeadsSDK14InstanceStatesO_Tg5
+$SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtF8TeadsSDK14InstanceStatesO_Tg5
+$SSayxGs10CollectionsSl9formIndex5aftery0C0Qzz_tFTW8TeadsSDK14InstanceStatesO_Tg5
+$SSa9formIndex5afterySiz_tF8TeadsSDK14InstanceStatesO_Tg5
+$SSS8TeadsSDK11SDKInstanceCSbs5Error_pIgggdzo_SSACSbsAD_pIegnndzo_TR
+$S8TeadsSDK0A19SDKInstanceRecorderC20generateInstancesLog13instancesDictSSSDySSAA0C0CG_tFSbSS3key_AG5valuet_tXEfU_
+state.get
+allCases.get
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZ8TeadsSDK14InstanceStatesO_Tg5
+$Ss23_ContiguousArrayStorageCy8TeadsSDK14InstanceStatesOGMa
+$Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSS_8TeadsSDK11SDKInstanceCTg5Tf4nxn_n
+$Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_8TeadsSDK11SDKInstanceCTg5Tf4xnn_n
+$Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7StorageCtcfCSS_8TeadsSDK11SDKInstanceCTg5Tf4nnd_n
+$Ss13_UnsafeBitMapV11sizeInWords07forSizeE4BitsS2i_tFZ
+$Ss24_VariantDictionaryBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tFSS_8TeadsSDK11SDKInstanceCTg5
+$Ss26_forceBridgeFromObjectiveCyxyXl_xmtlFSS_Tg5
+$Ss24_CocoaDictionaryIteratorC4nextyXl_yXltSgyF
+$Ss24_UnmanagedAnyObjectArrayVyyXlSicig
+$Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_8TeadsSDK11SDKInstanceCTg5
+$Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7StorageCtcfCSS_8TeadsSDK11SDKInstanceCTg5
+$Ss37_HashableTypedNativeDictionaryStorageCySS8TeadsSDK11SDKInstanceCGMa
+$Ss26_forceBridgeFromObjectiveCyxyXl_xmtlF8TeadsSDK11SDKInstanceC_Tg5
+$S8TeadsSDK0A19SDKInstanceRecorderCAA11LogProtocolAAWa
+$S8TeadsSDK14InstanceStatesOSQAAWa
+$S8TeadsSDK14InstanceStatesOSHAAWI
+$S8TeadsSDK14InstanceStatesOACSQAAWl
+$S8TeadsSDK14InstanceStatesOSHAAWa
+$S8TeadsSDK14InstanceStatesOSYAAWa
+$S8TeadsSDK14InstanceStatesOs12CaseIterableAAWa
+$SSay8TeadsSDK14InstanceStatesOGSayxGSlsWl
+$SSay8TeadsSDK14InstanceStatesOGMa
+$S8TeadsSDK14InstanceStatesOwui
+$S8TeadsSDK14InstanceStatesOwup
+$S8TeadsSDK14InstanceStatesOwug
+$S8TeadsSDK14InstanceStatesOwxg
+$S8TeadsSDK14InstanceStatesOwxs
+$S8TeadsSDK14InstanceStatesOwst
+$S8TeadsSDK14InstanceStatesOwet
+$S8TeadsSDK14InstanceStatesOMa
+$Ss23_ContiguousArrayStorageCfDSS_SSt_Tg5
+$SSS_SStMa
+$Ss23_NativeDictionaryBufferVss8HashableRzrlE9fromArrayyAByxq_GSayx_q_tGFZSS_SSTg5
+sessionId.get
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSS_SSt_Tg5
+$Ss23_ContiguousArrayStorageCySS_SStGMa
+getSumoLogStatsEventsSampling
+$S8TeadsSDK19RemoteConfigManagerC29getSumoLogStatsEventsSampling12userDefaultsSdSo06NSUserM0C_tFZfA_
+globalinit_33_398FA9065CAAB0848E3D7C1A53C077AA_func140
 _$S8TeadsSDK14SumoLogManagerCfD
 _$S8TeadsSDK14SumoLogManagerCfDTo
 _$S8TeadsSDK14SumoLogManagerCfETo
@@ -5424,12 +5613,17 @@ _$Ss12_ArrayBufferV13_copyContents8subRange12initializingSpyxGSnySiG_AFtF8TeadsS
 _$Ss20_ArrayBufferProtocolPsE22_arrayOutOfPlaceUpdateyys011_ContiguousaB0Vy7ElementQzGz_S2iqd__ts16_PointerFunctionRd__AFQyd__AGRSlFs01_aB0Vy8TeadsSDK11ErrorObjectCG_s07_IgnoreK0VyAOGTg5Tf4nnndn_n
 _$S8TeadsSDK14SumoLogManagerC09sendErrord2ToC16WithNetworkCheck33_EB3C0481E8AE9CDF0A099181FD90B5EFLL5erroryAA0G6ObjectC_tFy10Foundation4DataVSg_So13NSURLResponseCSgs0G0_pSgtcfU_TA
 _$S8TeadsSDK11LogProtocol_pWOc
+_$S8TeadsSDK14SumoLogManagerC09sendErrord2ToC16WithNetworkCheck33_EB3C0481E8AE9CDF0A099181FD90B5EFLL5erroryAA0G6ObjectC_tFy10Foundation4DataVSg_So13NSURLResponseCSgs0G0_pSgtcfU_TA.7
 _block_destroy_helper.2
+_block_destroy_helper.9
 _block_copy_helper.1
+_block_copy_helper.8
 _OBJC_METACLASS_$__TtC8TeadsSDK14SumoLogManager
 _$S8TeadsSDK14SumoLogManagerC7sessionSo12NSURLSessionCvpWvd
 _$S8TeadsSDK14SumoLogManagerC16allowNetworkCallSbvpWvd
+_$S8TeadsSDK14SumoLogManagerC0031sessionCanSendLogsstorage_wFFIi33_EB3C0481E8AE9CDF0A099181FD90B5EFLLSbSgvpWvd
 _$S8TeadsSDK14SumoLogManagerC11errorEventsSayAA11ErrorObjectCGvpWvd
+_$S8TeadsSDK14SumoLogManagerC13samplingToUse33_EB3C0481E8AE9CDF0A099181FD90B5EFLLSdvpWvd
 _$S8TeadsSDK14SumoLogManagerCMn
 _$S8TeadsSDK14SumoLogManagerCML
 _$S8TeadsSDK14SumoLogManagerCMf
@@ -5440,6 +5634,7 @@ _$S8TeadsSDK14SumoLogManagerCMF
 _$Ss23_ContiguousArrayStorageCy8TeadsSDK11ErrorObjectCGML
 _block_descriptor.3
 _$S8TeadsSDK11LogProtocol_pML
+_block_descriptor.10
 _$SSo12NSURLSessionCMF
 _$S8TeadsSDK14SumoLogManagerCN
 _OBJC_CLASS_$__TtC8TeadsSDK14SumoLogManager
@@ -5470,7 +5665,6 @@ $S8TeadsSDK14SumoLogManagerCMa
 $Ss20_ArrayBufferProtocolPsE22_arrayOutOfPlaceUpdateyys011_ContiguousaB0Vy7ElementQzGz_S2iqd__ts16_PointerFunctionRd__AFQyd__AGRSlFs01_aB0VySSG_s07_IgnoreK0VySSGTg5Tf4nnndn_n
 $Ss12_ArrayBufferVyxGs01_aB8ProtocolssADP13_copyContents8subRange12initializingSpy7ElementQzGSnySiG_AKtFTWSS_Tg5
 $Ss12_ArrayBufferV13_copyContents8subRange12initializingSpyxGSnySiG_AFtFSS_Tg5
-$SSp12deinitialize5countSvSi_tFSS_Tg5
 $SSp8distance2toSiSpyxG_tFSS_Tg5
 $SSp14moveInitialize4from5countySpyxG_SitFSS_Tg5
 $Ss12_ArrayBufferVyxGs01_aB8ProtocolssADP19firstElementAddressSpy0E0QzGvgTWSS_Tg5
@@ -5531,8 +5725,9 @@ allowNetworkCall.get
 sendErrorLogToSumoWithNetworkCheck
 sendLogToSumo
 $S8TeadsSDK11LogProtocol_pMa
-getSumoLogSampling
-$S8TeadsSDK19RemoteConfigManagerC18getSumoLogSampling12userDefaultsSdSo06NSUserK0C_tFZfA_
+sessionCanSendLogs.get
+$S8TeadsSDK14SumoLogManagerC18sessionCanSendLogsSbvgSbyXEfU_
+samplingToUse.get
 sendErrorLogToSumo
 occurrences.set
 processAllStoredErrorEvents
@@ -5678,7 +5873,6 @@ _symbolic 8TeadsSDK13TFAAdDelegate_pSgXw
 _symbolic 8TeadsSDK16TFASoundDelegate_pSgXw
 _$S8TeadsSDK9TFAAdViewCMF
 _$Ss23_ContiguousArrayStorageCySo18NSLayoutConstraintCGML
-_$Ss37_HashableTypedNativeDictionaryStorageCyS2SGML
 _$SSiSgML
 _$S8TeadsSDK8UIEngineC14commanderReadySbvpWvd
 _symbolic 8TeadsSDK9TFAAdViewC0A15AdPlaybackStateO
@@ -5746,7 +5940,6 @@ ad.get
 $Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSS_SSTg5Tf4xxn_n
 $Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_SSTg5Tf4xnn_n
 $Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7StorageCtcfCSS_SSTg5Tf4nnd_n
-$Ss13_UnsafeBitMapV11sizeInWords07forSizeE4BitsS2i_tFZ
 $Ss17FixedWidthIntegerPsE_5radixxSgqd___Sitcs14StringProtocolRd__lufcADs016_UnmanagedOpaqueE0V_xtXEfU1_Si_SSTG5
 $Ss17FixedWidthIntegerPsE_5radixxSgqd___Sitcs14StringProtocolRd__lufcADs016_UnmanagedOpaqueE0V_xtXEfU1_Si_SSTg5
 $Ss22_UnmanagedOpaqueStringV12makeIteratorAB0E0VyF
@@ -5756,12 +5949,8 @@ $Ss17FixedWidthIntegerPsE_5radixxSgqd___Sitcs14StringProtocolRd__lufcADs010_Unma
 $Ss17FixedWidthIntegerPsE_5radixxSgqd___Sitcs14StringProtocolRd__lufcADs010_UnmanagedE0Vys5UInt8VG_xtXEfU_Si_SSTG5
 $Ss17FixedWidthIntegerPsE_5radixxSgqd___Sitcs14StringProtocolRd__lufcADs010_UnmanagedE0Vys5UInt8VG_xtXEfU_Si_SSTg5
 $Ss24_VariantDictionaryBufferO018ensureUniqueNativeC015withBucketCountSb11reallocated_Sb15capacityChangedtSi_tFSS_SSTg5
-$Ss26_forceBridgeFromObjectiveCyxyXl_xmtlFSS_Tg5
-$Ss24_CocoaDictionaryIteratorC4nextyXl_yXltSgyF
-$Ss24_UnmanagedAnyObjectArrayVyyXlSicig
 $Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_SSTg5
 $Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7StorageCtcfCSS_SSTg5
-$Ss37_HashableTypedNativeDictionaryStorageCyS2SGMa
 resizeBodyViewConstraint
 $SSa24reserveCapacityForAppend16newElementsCountySi_tFSo18NSLayoutConstraintC_Tg5
 bodyViewConstraints.get
@@ -5821,7 +6010,7 @@ isLoading.get
 isLoading
 $S8TeadsSDK9TFAAdViewC9isLoadingSbvgTo
 _$Ss9CodingKeyPsE11descriptionSSvg8TeadsSDK10DeviceInfoC0A4Keys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLO_Tg5
-_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFySSSgcfU_
+_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFySSSgcfU_
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLO11stringValueSSvg
 _$S8TeadsSDK10DeviceInfoC4fromACs7Decoder_p_tKcfc
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOs0E3KeyAAsAGP11stringValueSSvgTW
@@ -5840,7 +6029,7 @@ _$S8TeadsSDK10DeviceInfoCSEAASE6encode2toys7Encoder_p_tKFTW
 _$S8TeadsSDK10DeviceInfoCSeAAWa
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOs0E3KeyAAWa
 _$S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_TA
-_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFySSSgcfU_TA
+_$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFySSSgcfU_TA
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwet
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwst
 _$S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwxs
@@ -5875,6 +6064,8 @@ _$S8TeadsSDK10DeviceInfoC12screenHeightSSvpWvd
 _$S8TeadsSDK10DeviceInfoC10sdkVersionSSvpWvd
 _$S8TeadsSDK10DeviceInfoC9userAgentSSvpWvd
 _$S8TeadsSDK10DeviceInfoC8locationSSvpWvd
+_$S8TeadsSDK10DeviceInfoC12batteryLevelSivpWvd
+_$S8TeadsSDK10DeviceInfoC18batteryPowerSaveOnSbvpWvd
 _$S8TeadsSDK10DeviceInfoC7isDebugSbvpWvd
 _$S8TeadsSDK10DeviceInfoCMn
 _$S8TeadsSDK10DeviceInfoCML
@@ -5942,7 +6133,7 @@ $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwxg
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwxs
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwst
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOwet
-$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFySSSgcfU_TA
+$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFySSSgcfU_TA
 $S8TeadsSDK0A2AdC13setDeviceInfo33_F2892323F2DC6101EFC126F454748B6FLL17completionHandleryySbc_tFySbcfU_TA
 $Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tgq5
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOs0E3KeyAAWa
@@ -5952,7 +6143,7 @@ $S8TeadsSDK10DeviceInfoCSEAAWa
 $Ss27_KeyedEncodingContainerBaseCy8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOGMa
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOAFs0E3KeyAAWl
 $Ss27_KeyedDecodingContainerBaseCy8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOGMa
-$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCySbctFySSSgcfU_
+$S8TeadsSDK10DeviceInfoC06gatherC5Infos9wkWebView__25isBatteryMonitoringEnable17completionHandlerySo05WKWebI0CSg_AA20ContextUtilsProtocol_pXpSo8NSBundleCSbSgySbctFySSSgcfU_
 buildSDKUserAgent
 gatherDeviceInfos
 $S8TeadsSDK10DeviceInfoC10CodingKeys33_F3B4FB2FA906C12D4F6ACFFFC698311DLLOmMa
@@ -6230,9 +6421,12 @@ _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Founda
 _$S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_TA
 _$S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_TA
 _$S8TeadsSDK12NetworkUtilsV17getHeaderValueFor11urlResponse11headerFieldSSSgSo13NSURLResponseCSg_SStFZTf4nxd_n
+_block_destroy_helper.11
+_block_copy_helper.10
 _OBJC_METACLASS_$__TtC8TeadsSDK13NetworkEngine
 _$S8TeadsSDK13NetworkEngineC8eventBusAA05EventF0CSgXwvpWvd
 _$S8TeadsSDK13NetworkEngineC7sessionSo12NSURLSessionCvpWvd
+_$S8TeadsSDK13NetworkEngineC14sumoLogManagerAA04SumofG0CvpWvd
 _$S8TeadsSDK13NetworkEngineCMn
 _$S8TeadsSDK13NetworkEngineCML
 _$S8TeadsSDK13NetworkEngineCMf
@@ -6240,12 +6434,16 @@ _symbolic ____ 8TeadsSDK13NetworkEngineC
 _$S8TeadsSDK13NetworkEngineCMF
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAMc
 _$S8TeadsSDK13NetworkEngineCAA08EventBuscD13InPutProtocolAAWP
+_symbolic 8TeadsSDK13NetworkEngineCSgXw
+_symbolic 8TeadsSDK13NetworkEngineCSgXwXb
 _symbolic 8TeadsSDK15CommanderNoticeV
 _symbolic 10Foundation4DataVSgSSSgs5Error_pSgIegggg_
+_block_descriptor.12
 _$S8TeadsSDK13NetworkEngineCN
 _OBJC_CLASS_$__TtC8TeadsSDK13NetworkEngine
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsNTEngine/NetworkEngine.swift
 $S8TeadsSDK13NetworkEngineC13downloadAsset2at10completiony10Foundation3URLV_yAG4DataVSg_SSSgs5Error_pSgtctFZyAL_So13NSURLResponseCSgAOtcfU_TA
+objectdestroy.8
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_TA
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_yAA08EventBuscD14OutPutProtocol_pcfU_
 $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgtcfU_TA
@@ -6259,6 +6457,7 @@ $S8TeadsSDK13NetworkEngineC8httpCall11callRequestyAA09CommanderfH0V_tFy10Foundat
 CommanderNotice.swift
 session.get
 urlIfTestsEnabled
+$S10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIegggg_So6NSDataCSgAGSo7NSErrorCSgIeyByyy_TR
 _$SSq16debugDescriptionSSvgSo7NSErrorC_Tg5
 _$S8TeadsSDK21NativeVideoPlayerViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK21NativeVideoPlayerViewC5coderACSgSo7NSCoderC_tcfcTo
@@ -6312,8 +6511,6 @@ _$Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7Sto
 _$Ss23_NativeDictionaryBufferVss8HashableRzrlE12unsafeAddNew3key5valueyx_q_tFSS_ypTg5Tf4xnn_n
 _$SypSgWOc
 _$S8TeadsSDK21NativeVideoPlayerViewC5coderACSgSo7NSCoderC_tcfcTf4dn_n
-_block_destroy_helper.9
-_block_copy_helper.8
 _$SSo7CGPointVwet
 _$SSo7CGPointVwst
 _OBJC_METACLASS_$__TtC8TeadsSDK21NativeVideoPlayerView
@@ -6347,7 +6544,6 @@ _symbolic Sd_Sdt
 _symbolic 8TeadsSDK21NativeVideoPlayerViewCSgXw
 _symbolic 8TeadsSDK21NativeVideoPlayerViewC
 _symbolic So7AVAssetC
-_block_descriptor.10
 _symbolic So7NSErrorCSg
 _symbolic So7NSErrorCSgXb
 _$SSo12AVAssetTrackCML
@@ -6565,8 +6761,8 @@ _$S8TeadsSDK8UIEngineCAA18PlayerViewDelegateAAWa
 _$S8TeadsSDK16TimingCalculatorC12loadResponseyyF
 _$S8TeadsSDK15VisibilityTimerC04stopD0yyF
 _$S8TeadsSDK12SoundHandlerC24stopAudioSessionHandlingyyF
-_$S8TeadsSDK18LabelComponentViewC06updateD013componentDatayAA0dH0C_tF
-_$S8TeadsSDK18ImageComponentViewC06updateD013componentDatayAA0dH0C_tF
+_$S8TeadsSDK18LabelComponentViewC19layoutFollowingSizeyyAA0dH0VF
+_$S8TeadsSDK18ImageComponentViewC09transformD8DataHtml09componentG0yAA0dG0C_tF
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_
 _$S8TeadsSDK13ComponentViewC15updateCountdown9tickValueySf_tFyycfU_
 _$SSa36_reserveCapacityAssumingUniqueBuffer8oldCountySi_tF8TeadsSDK13ComponentViewC_Tg5
@@ -6639,7 +6835,7 @@ _$S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB
 _$S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_yAA08EventBusC14OutPutProtocol_pcfU_TA
 _$S8TeadsSDK8UIEngineC21checkAdViewVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LLyyFyycfU_TA
 _$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA
-_objectdestroy.46Tm
+_objectdestroy.112Tm
 _$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yAA08EventBusC14OutPutProtocol_pcfU0_TA
 _$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yycfU_TA
 _$S8TeadsSDK8UIEngineC16cleanUIComponentyyFyycfU_TA
@@ -6652,18 +6848,20 @@ _block_destroy_helper.74
 _block_destroy_helper.81
 _block_destroy_helper.88
 _block_destroy_helper.95
-_block_destroy_helper.101
-_block_destroy_helper.107
-_block_destroy_helper.114
-_block_destroy_helper.123
-_block_destroy_helper.129
-_block_destroy_helper.136
+_block_destroy_helper.102
+_block_destroy_helper.109
+_block_destroy_helper.115
+_block_destroy_helper.121
+_block_destroy_helper.128
+_block_destroy_helper.137
 _block_destroy_helper.143
 _block_destroy_helper.150
-_block_destroy_helper.163
-_block_destroy_helper.172
-_block_destroy_helper.178
-_block_destroy_helper.184
+_block_destroy_helper.157
+_block_destroy_helper.164
+_block_destroy_helper.177
+_block_destroy_helper.186
+_block_destroy_helper.192
+_block_destroy_helper.198
 _block_copy_helper.42
 _block_copy_helper.48
 _block_copy_helper.60
@@ -6672,28 +6870,32 @@ _block_copy_helper.73
 _block_copy_helper.80
 _block_copy_helper.87
 _block_copy_helper.94
-_block_copy_helper.100
-_block_copy_helper.106
-_block_copy_helper.113
-_block_copy_helper.122
-_block_copy_helper.128
-_block_copy_helper.135
+_block_copy_helper.101
+_block_copy_helper.108
+_block_copy_helper.114
+_block_copy_helper.120
+_block_copy_helper.127
+_block_copy_helper.136
 _block_copy_helper.142
 _block_copy_helper.149
-_block_copy_helper.162
-_block_copy_helper.171
-_block_copy_helper.177
-_block_copy_helper.183
+_block_copy_helper.156
+_block_copy_helper.163
+_block_copy_helper.176
+_block_copy_helper.185
+_block_copy_helper.191
+_block_copy_helper.197
 _$S8TeadsSDK8UIEngineC5cleanyyFyycfU_TA
 _$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yycfU_yAA08EventBusC14OutPutProtocol_pcfU_TA
-_$S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_TA.112
+_$S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_TA.126
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.72
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.79
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.86
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.93
-_$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA.134
-_$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA.141
+_$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.100
+_$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA.107
 _$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA.148
+_$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA.155
+_$S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA.162
 _OBJC_METACLASS_$__TtC8TeadsSDK8UIEngine
 _$S8TeadsSDK8UIEngineC19playerObserverArray33_09789BBBD6ACED1AB5A10E9BE61AAAB7LLSayAA06PlayerE0_pGvpWvd
 _$S8TeadsSDK8UIEngineC14fullscreenViewSo6UIViewCSgvpWvd
@@ -6755,43 +6957,48 @@ _block_descriptor.50
 _block_descriptor.62
 _$S8TeadsSDK17HtmlComponentViewCN
 _$S8TeadsSDK18LabelComponentViewCN
-_$S8TeadsSDK18ImageComponentViewCN
 _$S8TeadsSDK24ProgressBarComponentViewCN
+_$S8TeadsSDK18ImageComponentViewCN
 _$S8TeadsSDK13ComponentViewC8delegateAA0cD8Delegate_pSgXwvpWvd
 _$S8TeadsSDK13ComponentViewC15countdownStructAA0C9CountdownVSgvpWvd
 _$S8TeadsSDK13ComponentViewCAA14PlayerObserverAAWP
 _$Ss23_ContiguousArrayStorageCy8TeadsSDK14PlayerObserver_pGML
 _$S8TeadsSDK13ComponentDataC11componentIdSSSgvpWvd
 _block_descriptor.68
-_block_descriptor.75
-_$S8TeadsSDK13ComponentDataC11defaultHtmlSSSgvpWvd
-_$S8TeadsSDK17HtmlComponentViewC07defaultC6StringSSSgvpWvd
-_$S8TeadsSDK13ComponentDataC10activeHtmlSSSgvpWvd
-_$S8TeadsSDK17HtmlComponentViewC06activeC6StringSSSgvpWvd
 _$S8TeadsSDK13ComponentDataC8isActiveSbSgvpWvd
-_$S8TeadsSDK17HtmlComponentViewC8isActive33_333C1D30E2F21FC1DB8129AA5767F09ALLSbSgvpWvd
+_$S8TeadsSDK17HtmlComponentViewC8isActiveSbSgvpWvd
+_$S8TeadsSDK17HtmlComponentViewC07defaultC6StringSSSgvpWvd
 _$S8TeadsSDK17HtmlComponentViewC012containerWebE0So05WKWebE0CvpWvd
+_$S8TeadsSDK17HtmlComponentViewC06activeC6StringSSSgvpWvd
+_block_descriptor.75
+_$S8TeadsSDK13ComponentDataC4textSSSgvpWvd
 _block_descriptor.82
+_$S8TeadsSDK18LabelComponentViewC5labelSo7UILabelCSgvpWvd
+_$S8TeadsSDK13ComponentDataC8textSize12CoreGraphics7CGFloatVvpWvd
 _block_descriptor.89
+_$S8TeadsSDK13ComponentDataC11defaultHtmlSSSgvpWvd
+_$S8TeadsSDK13ComponentDataC10activeHtmlSSSgvpWvd
 _block_descriptor.96
+_block_descriptor.103
+_block_descriptor.110
 _$Ss23_ContiguousArrayStorageCySS_yptGML
 _$SSS_yptML
 _$S8TeadsSDK13ComponentDataC8positionAA0C8PositionOSgvpWvd
 _$S8TeadsSDK13ComponentViewC11componentIdSSvpWvd
-_block_descriptor.102
-_block_descriptor.108
-_block_descriptor.115
-_block_descriptor.124
-_block_descriptor.130
-_block_descriptor.137
+_block_descriptor.116
+_block_descriptor.122
+_block_descriptor.129
+_block_descriptor.138
 _block_descriptor.144
 _block_descriptor.151
+_block_descriptor.158
+_block_descriptor.165
 _symbolic SiXb
-_block_descriptor.164
-_block_descriptor.173
+_block_descriptor.178
+_block_descriptor.187
 _$Ss37_HashableTypedNativeDictionaryStorageCySSSay8TeadsSDK13ComponentViewCGGML
-_block_descriptor.179
-_block_descriptor.185
+_block_descriptor.193
+_block_descriptor.199
 _$S8TeadsSDK18VisibilityProtocolMp
 _$S8TeadsSDK21ComponentViewDelegateMp
 _$S8TeadsSDK8UIEngineCN
@@ -6800,25 +7007,25 @@ _OBJC_CLASS_$__TtC8TeadsSDK8UIEngine
 $S8TeadsSDK13ComponentViewC15updateCountdown9tickValueySf_tFyycfU_TA
 $S8TeadsSDK8UIEngineC16cleanUIComponentyyFyycfU_TA
 $S8TeadsSDK8UIEngineC16cleanUIComponentyyFyycfU_
-objectdestroy.169
+objectdestroy.183
 $S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yycfU_TA
-objectdestroy.160
+objectdestroy.174
 $S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yAA08EventBusC14OutPutProtocol_pcfU0_TA
 $S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_yAA08EventBusC14OutPutProtocol_pcfU0_
 currentVisibility.get
-objectdestroy.46
-objectdestroy.153
+objectdestroy.112
+objectdestroy.167
 $S8TeadsSDK8UIEngineC18dispatchVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibilityySf_tFyycfU_TA
-objectdestroy.126
+objectdestroy.140
 $S8TeadsSDK8UIEngineC21checkAdViewVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LLyyFyycfU_TA
-objectdestroy.120
 $S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_yAA08EventBusC14OutPutProtocol_pcfU_TA
 $S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_yAA08EventBusC14OutPutProtocol_pcfU_
-objectdestroy.117
+objectdestroy.131
 $S8TeadsSDK8UIEngineC22dispatchSlotVisibility33_09789BBBD6ACED1AB5A10E9BE61AAAB7LL10visibility9slotWidth0O6HeightySf_S2itFyycfU_TA
-objectdestroy.104
+objectdestroy.118
 $S8TeadsSDK8UIEngineC11openBrowser3urly10Foundation3URLV_tFyycfU_TA
 $SSS_yptWOc
+objectdestroy.105
 $S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFyycfU_TA
 $S8TeadsSDK8UIEngineC11openBrowser3urly10Foundation3URLV_tFyycfU_yAA08EventBusC14OutPutProtocol_pcfU_yycfU_TA
 $S8TeadsSDK8UIEngineC11openBrowser3urly10Foundation3URLV_tFyycfU_yAA08EventBusC14OutPutProtocol_pcfU_yycfU_
@@ -6866,7 +7073,6 @@ $Ss12_ArrayBufferV20isUniquelyReferencedSbyFyp_Tg5
 $Ss12_ArrayBufferVyxGs01_aB8ProtocolssADP5countSivgTWyp_Tg5
 $Ss12_ArrayBufferV5countSivgyp_Tg5
 jsEngineOpenBrowser
-filter
 $SSTsE6filterySay7ElementQzGSbACKXEKFs14LazyCollectionVySSG_Tg5
 $Ss16IndexingIteratorVyxGs0B8ProtocolsSt4next7ElementQzSgyFTWSS_Tg5
 $SSSSlsSl8endIndex0B0QzvgTW
@@ -6943,8 +7149,8 @@ playerViewNeedsTobeResized
 playerViewDidFinishPlaying
 $S8TeadsSDK9TFAAdViewCAC0A15AdPlaybackStateOIegyy_AcEIeggy_TR
 isCompleted.set
-isPlaying.set
 playerViewDidStop
+isPlaying.set
 playerViewDidStart
 isPaused.set
 playerViewDidChangeCurrentTime
@@ -7007,11 +7213,11 @@ $Ss37_HashableTypedNativeDictionaryStorageCySSSay8TeadsSDK13ComponentViewCGGMa
 $SSay8TeadsSDK13ComponentViewCGMa
 $SSa16_copyToNewBuffer8oldCountySi_tFyp_Tg5
 $Ss20_ArrayBufferProtocolPsE22_arrayOutOfPlaceUpdateyys011_ContiguousaB0Vy7ElementQzGz_S2iqd__ts16_PointerFunctionRd__AFQyd__AGRSlFs01_aB0VyypG_s07_IgnoreK0VyypGTg5
+$Ss23_NativeDictionaryBufferV5index5afters01_aB5IndexVyxq_GAG_tFSS_Say8TeadsSDK13ComponentViewCGTg5
 $Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tg5
 $SSSs20TextOutputStreamablessAAP5write2toyqd__z_ts0aB6StreamRd__lFTWSS_Tg5
 $SSS5write2toyxz_ts16TextOutputStreamRzlFSS_Tg5
 $SSSs16TextOutputStreamssAAP5writeyySSFTW
-$Ss23_NativeDictionaryBufferV5index5afters01_aB5IndexVyxq_GAG_tFSS_Say8TeadsSDK13ComponentViewCGTg5
 $Ss12_ArrayBufferV19_getElementSlowPathyyXlSiFSo18NSLayoutConstraintC_Tg5
 $Ss12_ArrayBufferV19_getElementSlowPathyyXlSiF8TeadsSDK13ComponentViewC_Tg5
 $Ss20_ArrayBufferProtocolPsE025_forceCreateUniqueMutableB0011countForNewB003minJ8Capacitys011_ContiguousaB0Vy7ElementQzGSi_SitFs01_aB0Vy8TeadsSDK14PlayerObserver_pG_Tg5
@@ -7117,6 +7323,7 @@ playerObserverArray.materialize
 countdownStruct.get
 getComponentView
 handleUpdateComponentView
+LabelComponentView.swift
 HtmlComponentView.swift
 setActive
 isActive.set
@@ -7125,10 +7332,14 @@ defaultHtmlString.get
 isActive.get
 activeHtmlString.get
 $SSbSQsSQ2eeoiySbx_xtFZTW
-activeHtml.get
+label.get
+textSize.get
+text.get
+transformComponentDataHtml
 activeHtmlString.set
-defaultHtml.get
+activeHtml.get
 defaultHtmlString.set
+defaultHtml.get
 componentDictionnary.get
 componentId.get
 handleFullscreenDatas
@@ -7160,7 +7371,6 @@ $SSayxGs10CollectionsSl10startIndex0C0QzvgTW8TeadsSDK13ComponentDataC_Tg5
 $SSa10startIndexSivg8TeadsSDK13ComponentDataC_Tg5
 addComponentViewsToComponentDictionnary
 $SSa37_appendElementAssumeUniqueAndCapacity_03newB0ySi_xtF8TeadsSDK13ComponentViewC_Tg5
-$SSD11removeValue6forKeyq_Sgx_tFSS_Say8TeadsSDK13ComponentViewCGTg5
 $Ss24_VariantDictionaryBufferO18nativeRemoveObject6forKeyq_Sgx_tFSS_Say8TeadsSDK13ComponentViewCGTg5
 $SSD4KeysVyxq__Gs10CollectionsSl8endIndex0D0QzvgTWSS_Say8TeadsSDK13ComponentViewCGTg5
 $SSD4KeysV8endIndexSD0C0Vyxq__GvgSS_Say8TeadsSDK13ComponentViewCGTg5
@@ -7211,7 +7421,7 @@ _$S8TeadsSDK15CommanderNoticeVMF
 _$S8TeadsSDK15CommanderNoticeVMn
 /Users/vagrant/git/TeadsSDK/TeadsSDK/CommanderNotice.swift
 _$S8TeadsSDK10LogManagerC14sharedInstanceACvau
-_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func141
+_globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func142
 _$S8TeadsSDK10LogManagerCACyc33_6E27146FD113B1D2F18487B65ED0B7BCLlfcTo
 _$S8TeadsSDK10LogManagerCfD
 _$S8TeadsSDK10LogManagerCfETo
@@ -7228,8 +7438,8 @@ _OBJC_CLASS_$__TtC8TeadsSDK10LogManager
 /Users/vagrant/git/TeadsSDK/TeadsSDK/LogManager.swift
 $S8TeadsSDK10LogManagerC11blockedLogs33_6E27146FD113B1D2F18487B65ED0B7BCLLSaySSGvau
 $S8TeadsSDK10LogManagerCMa
+globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func142
 globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func141
-globalinit_33_6E27146FD113B1D2F18487B65ED0B7BC_func140
 _$S8TeadsSDK27ApplicationStatesDispatcherC14sharedInstanceACvau
 _$S8TeadsSDK25ApplicationStatesProtocolPAAE23applicationBecomeActiveyyF
 _$S8TeadsSDK25ApplicationStatesProtocolPAAE23applicationResignActiveyyF
@@ -7246,10 +7456,10 @@ _$S8TeadsSDK27ApplicationStatesDispatcherC20appMovedToBackground33_DFAD637EBD544
 _$S8TeadsSDK27ApplicationStatesDispatcherCfD
 _$S8TeadsSDK27ApplicationStatesDispatcherCfETo
 _$S8TeadsSDK27ApplicationStatesDispatcherCMa
-_$SSo8NSObjectCSQ10ObjectiveCSQ2eeoiySbx_xtFZTW
 _$Ss12_ArrayBufferV19_getElementSlowPathyyXlSiFSo8NSObjectC_Tg5
 _$S8TeadsSDK25ApplicationStatesProtocol_pSgWOh
 _$S8TeadsSDK25ApplicationStatesProtocol_pWOb
+_$SSo8NSObjectCSQ10ObjectiveCSQ2eeoiySbx_xtFZTW
 _symbolic $S8TeadsSDK25ApplicationStatesProtocolP
 _$S8TeadsSDK25ApplicationStatesProtocol_pMF
 _$S8TeadsSDK25ApplicationStatesProtocolWR
@@ -7283,7 +7493,11 @@ $S8TeadsSDK27ApplicationStatesDispatcherCMa
 rotationDetected
 UIDeviceOrientationIsPortrait
 appMoveToForeground
-globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_func142
+globalinit_33_DFAD637EBD5449E74E73078FE3364FAF_func143
+_$SSS8TeadsSDKE7svgHTML9withColorS2S_tF
+/Users/vagrant/git/TeadsSDK/TeadsSDK/String+SVG.swift
+svgHTML
+String+SVG.swift
 _$S8TeadsSDK17TFAInterstitialAdC8delegateAA0cD8Delegate_pSgXwvgTo
 _$S8TeadsSDK17TFAInterstitialAdC8delegateAA0cD8Delegate_pSgXwvsTo
 _$S8TeadsSDK17TFAInterstitialAdC8delegateAA0cD8Delegate_pSgXwvmytfU_
@@ -7574,6 +7788,7 @@ _block_destroy_helper.51
 _block_destroy_helper.71
 _block_destroy_helper.87
 _block_destroy_helper.100
+_block_destroy_helper.114
 _block_destroy_helper.127
 _block_destroy_helper.138
 _block_destroy_helper.145
@@ -7583,6 +7798,7 @@ _block_copy_helper.50
 _block_copy_helper.70
 _block_copy_helper.86
 _block_copy_helper.99
+_block_copy_helper.113
 _block_copy_helper.126
 _block_copy_helper.137
 _block_copy_helper.144
@@ -7772,6 +7988,7 @@ _block_descriptor.101
 _$S8TeadsSDK34EventBusNetworkEngineInPutProtocol_pmML
 _symbolic 8TeadsSDK34EventBusNetworkEngineInPutProtocol_pIegn_
 _symbolic 8TeadsSDK34EventBusNetworkEngineInPutProtocol_pXb
+_block_descriptor.115
 _$Ss23_ContiguousArrayStorageCy8TeadsSDK34EventBusNetworkEngineInPutProtocol_pGML
 _symbolic 8TeadsSDK30EventBusUIEngineOutPutProtocol_p
 _symbolic 8TeadsSDK30EventBusUIEngineOutPutProtocol_pXMT
@@ -7811,6 +8028,8 @@ $S8TeadsSDK8EventBusC20removeAllSubscribersyyFyyXEfU_
 $Ss23_NativeDictionaryBufferVss8HashableRzrlE9fromArrayyAByxq_GSayx_q_tGFZSO_Shy8TeadsSDK8EventBusC7WeakBoxVGTg5
 objectdestroy.134
 objectdestroy.123
+objectdestroy.120
+objectdestroy.117
 objectdestroy.111
 objectdestroy.106
 objectdestroy.96
@@ -8006,7 +8225,6 @@ detachAllChains
 detach
 attach
 $S8TeadsSDK8EventBusC6detach5chainyAA0C10Notifiable_p_tFyyXEfU_
-$SSD11removeValue6forKeyq_Sgx_tFSO_Shy8TeadsSDK8EventBusC7WeakBoxVGTg5
 $S8TeadsSDK8EventBusC6detach5chainyAA0C10Notifiable_p_tFyyXEfU_yShyAC7WeakBoxVGzXEfU_
 $S8TeadsSDK8EventBusC6detach5chain3for7optionsyAA0C10Notifiable_p_xmAA7OptionsVtlFyyXEfU_
 updateChains
@@ -8176,7 +8394,6 @@ _$S8TeadsSDK18ComponentCountdownVwCP
 _symbolic ____ 8TeadsSDK17ComponentPositionO
 _$S8TeadsSDK17ComponentPositionOMF
 _symbolic ____ 8TeadsSDK14ComponentStyleV
-_symbolic So7UIColorC
 _symbolic So7UIColorCSg
 _$S8TeadsSDK14ComponentStyleVMF
 _symbolic ____ 8TeadsSDK13ComponentSizeV
@@ -8192,8 +8409,6 @@ _$S8TeadsSDK13ComponentDataC7opacitySfvpWvd
 _$S8TeadsSDK13ComponentDataC7buttonsSayACGSgvpWvd
 _$S8TeadsSDK13ComponentDataC12defaultAssetSSSgvpWvd
 _$S8TeadsSDK13ComponentDataC11activeAssetSSSgvpWvd
-_$S8TeadsSDK13ComponentDataC4textSSSgvpWvd
-_$S8TeadsSDK13ComponentDataC8textSize12CoreGraphics7CGFloatVvpWvd
 _$S8TeadsSDK13ComponentDataCMn
 _$S8TeadsSDK13ComponentDataCML
 _$S8TeadsSDK13ComponentDataCMf
@@ -8202,6 +8417,7 @@ _symbolic ____Sg 8TeadsSDK17ComponentPositionO
 _symbolic ____Sg 8TeadsSDK14ComponentStyleV
 _symbolic ____Sg 8TeadsSDK13ComponentSizeV
 _symbolic ____Sg 8TeadsSDK18ComponentCountdownV
+_symbolic So7UIColorC
 _symbolic Say____GSg 8TeadsSDK13ComponentDataC
 _$S8TeadsSDK13ComponentDataCMF
 _$S8TeadsSDK14ComponentStyleVWV
@@ -8322,12 +8538,12 @@ _$S8TeadsSDK16TimingCalculatorC16getCommanderDate10Foundation0G0VSgvpWvd
 _$S8TeadsSDK16TimingCalculatorC18commanderReadyDate10Foundation0G0VSgvpWvd
 _$S8TeadsSDK16TimingCalculatorC15loadRequestDate10Foundation0G0VSgvpWvd
 _$S8TeadsSDK16TimingCalculatorC16loadResponseDate10Foundation0G0VSgvpWvd
+_$S8TeadsSDK16TimingCalculatorC14sumoLogManagerAA04SumofG0CvpWvd
 _$S8TeadsSDK16TimingCalculatorCMn
 _$S8TeadsSDK16TimingCalculatorCML
 _$S8TeadsSDK16TimingCalculatorCMf
 _symbolic ____ 8TeadsSDK16TimingCalculatorC
 _symbolic 10Foundation4DateVSg
-_symbolic 8TeadsSDK14SumoLogManagerCSgXw
 _$S8TeadsSDK16TimingCalculatorCMF
 _$S8TeadsSDK16TimingCalculatorCN
 _OBJC_CLASS_$__TtC8TeadsSDK16TimingCalculator
@@ -8335,13 +8551,12 @@ _OBJC_CLASS_$__TtC8TeadsSDK16TimingCalculator
 calculateTimingDifference
 $S8TeadsSDK16TimingCalculatorCMa
 bridgeFinishToLoad
-sumologManager.get
 bridgeInitDate.get
 bridgeFinishToLoadDate.set
 bridgeInit
 sdkStartedDate.get
 bridgeInitDate.set
-globalinit_33_1D2AB11273C3962B5987F10773554237_func147
+globalinit_33_1D2AB11273C3962B5987F10773554237_func148
 _$S8TeadsSDK6PluginCACycfc
 _$S8TeadsSDK6PluginC021adViewWillMoveToSuperE012newSuperviewySo6UIViewCSg_tF
 _$S8TeadsSDK6PluginC020adViewDidMoveToSuperE0yyF
@@ -8364,6 +8579,7 @@ $S8TeadsSDK6PluginCMa
 tick
 _$S8TeadsSDK17HtmlComponentViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK17HtmlComponentViewC5coderACSgSo7NSCoderC_tcfcTo
+_$S8TeadsSDK17HtmlComponentViewC09transformd4DataC009componentG0yAA0dG0C_tF
 _$S8TeadsSDK17HtmlComponentViewC06updateD013componentDatayAA0dH0C_tF
 _$S8TeadsSDK17HtmlComponentViewC9setActive6activeySb_tF
 _$S8TeadsSDK17HtmlComponentViewC15countdownIsOveryyF
@@ -8390,9 +8606,9 @@ countdownIsOver
 countdownLabel.get
 $S8TeadsSDK13ComponentViewC14countdownLabelSo7UILabelCvgAFyXEfU_
 donutsProgressView.get
-_globalinit_33_964510E524415EA257E2E4E23E628023_func149
-_$S8TeadsSDK3IABV13subjectToGDPRSSvau
 _globalinit_33_964510E524415EA257E2E4E23E628023_func150
+_$S8TeadsSDK3IABV13subjectToGDPRSSvau
+_globalinit_33_964510E524415EA257E2E4E23E628023_func151
 _$S8TeadsSDK3IABV13consentStringSSvau
 _$S8TeadsSDK10IABConsentCACycfcTo
 _$S8TeadsSDK10IABConsentCfD
@@ -8414,9 +8630,9 @@ _OBJC_CLASS_$__TtC8TeadsSDK10IABConsent
 /Users/vagrant/git/TeadsSDK/TeadsSDK/IABConsent.swift
 $S8TeadsSDK10IABConsentCMa
 $S8TeadsSDK3IABV13consentStringSSvau
-globalinit_33_964510E524415EA257E2E4E23E628023_func150
+globalinit_33_964510E524415EA257E2E4E23E628023_func151
 $S8TeadsSDK3IABV13subjectToGDPRSSvau
-globalinit_33_964510E524415EA257E2E4E23E628023_func149
+globalinit_33_964510E524415EA257E2E4E23E628023_func150
 _$S8TeadsSDK15VisibilityTimerC06createD033_7F74B3B95A0A95FA66478642B7B3736BLLyyF
 _$S8TeadsSDK15VisibilityTimerC04stopD0yyFyycfU_
 _$S8TeadsSDK15VisibilityTimerCACycfcTo
@@ -8466,8 +8682,8 @@ createTimer
 makeTimerSource
 $Ss10SetAlgebraPsEyxqd__cs8SequenceRd__7ElementQyd__ADRtzlufCSo18OS_dispatch_sourceC8DispatchE10TimerFlagsV_SayAKGTgq5
 $SSo18OS_dispatch_sourceCMa
-_globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func151
 _globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func152
+_globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func153
 _$S8TeadsSDK16SlotBoundsPluginC4tickyyF
 _$S8TeadsSDK16SlotBoundsPluginC4tickyyFyycfU_
 _$S8TeadsSDK16SlotBoundsPluginCACycfc
@@ -8497,8 +8713,8 @@ $S8TeadsSDK16SlotBoundsPluginC03setcD8JSMethod33_B415AA2ACA235CCA4CF520A0B0BE4D2
 $S8TeadsSDK16SlotBoundsPluginCMa
 $S8TeadsSDK16SlotBoundsPluginC4tickyyFyycfU_
 $S8TeadsSDK16SlotBoundsPluginC03setcD6Method33_B415AA2ACA235CCA4CF520A0B0BE4D26LLSSvau
+globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func153
 globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func152
-globalinit_33_B415AA2ACA235CCA4CF520A0B0BE4D26_func151
 _$S8TeadsSDK0A10WeakTargetC12timerDidFire0E0ySo7NSTimerC_tF
 _$S8TeadsSDK0A10WeakTargetC12timerDidFire0E0ySo7NSTimerC_tFTo
 _$S8TeadsSDK0A10WeakTargetCACycfcTo
@@ -8565,6 +8781,7 @@ _$S8TeadsSDK12SoundHandlerCMn
 _$S8TeadsSDK12SoundHandlerCML
 _$S8TeadsSDK12SoundHandlerCMf
 _symbolic ____ 8TeadsSDK12SoundHandlerC
+_symbolic 8TeadsSDK14SumoLogManagerCSgXw
 _$S8TeadsSDK12SoundHandlerCMF
 _$Ss23_ContiguousArrayStorageCySo29AVAudioSessionCategoryOptionsVGML
 _$S8TeadsSDK12SoundHandlerCN
@@ -8585,9 +8802,9 @@ stopAudioSessionHandling
 sessionActive.set
 sessionActive.get
 _$Ss17_dictionaryUpCastySDyq0_q1_GSDyxq_Gs8HashableRzsADR0_r2_lFSo21NSAttributedStringKeya_So6UIFontCAFypTg5
+_$S8TeadsSDK18LabelComponentViewC06updateD013componentDatayAA0dH0C_tF
 _$S8TeadsSDK18LabelComponentViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK18LabelComponentViewC5coderACSgSo7NSCoderC_tcfcTo
-_$S8TeadsSDK18LabelComponentViewC19layoutFollowingSizeyyAA0dH0VF
 _$S8TeadsSDK18LabelComponentViewC15countdownIsOveryyF
 _$S8TeadsSDK18LabelComponentViewCfE
 _$S8TeadsSDK18LabelComponentViewCfD
@@ -8603,7 +8820,6 @@ _$Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7Sto
 _$Ss37_HashableTypedNativeDictionaryStorageCySo21NSAttributedStringKeyaSo6UIFontCGMa
 _$S8TeadsSDK18LabelComponentViewC13componentDataAcA0dG0C_tcfcTf4gn_n
 _OBJC_METACLASS_$__TtC8TeadsSDK18LabelComponentView
-_$S8TeadsSDK18LabelComponentViewC5labelSo7UILabelCSgvpWvd
 _$S8TeadsSDK18LabelComponentViewCMn
 _$S8TeadsSDK18LabelComponentViewCML
 _$S8TeadsSDK18LabelComponentViewCMf
@@ -8621,7 +8837,6 @@ _symbolic So7UILabelC
 _$SSo7UILabelCMF
 _OBJC_CLASS_$__TtC8TeadsSDK18LabelComponentView
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/LabelComponentView.swift
-LabelComponentView.swift
 $Ss37_HashableTypedNativeDictionaryStorageCySo21NSAttributedStringKeyaSo6UIFontCGMa
 $SSo21NSAttributedStringKeyaABSHSCWl
 $SSo6UIFontCMa
@@ -8639,18 +8854,14 @@ $Ss23_NativeDictionaryBufferV17_exactBucketCount7storageAByxq_GSi_s04_RawaB7Stor
 $Ss37_HashableTypedNativeDictionaryStorageCySo21NSAttributedStringKeyaypGMa
 $Ss24_VariantDictionaryBufferO17nativeUpdateValue_6forKeyq_Sgq__xtFSo018NSAttributedStringH0a_ypTg5
 $S8TeadsSDK18LabelComponentViewCMa
-label.get
 layoutFollowingSize
 componentConstraints.get
 $Ss23_ContiguousArrayStorageCfDSo21NSAttributedStringKeya_So6UIFontCt_Tg5
 $Ss23_NativeDictionaryBufferVss8HashableRzrlE9fromArrayyAByxq_GSayx_q_tGFZSo21NSAttributedStringKeya_So6UIFontCTg5
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSo21NSAttributedStringKeya_So6UIFontCt_Tg5
 $Ss23_ContiguousArrayStorageCySo21NSAttributedStringKeya_So6UIFontCtGMa
-textSize.get
-text.get
 _dictionaryUpCast
 $Ss23_NativeDictionaryBufferV12assertingGetyx3key_q_5valuets01_aB5IndexVyxq_GFSo21NSAttributedStringKeya_So6UIFontCTg5
-$SSD5countSivgSo21NSAttributedStringKeya_So6UIFontCTg5
 _$S8TeadsSDK11AdErrorCodeOSQAASQ2eeoiySbx_xtFZTW
 _$S8TeadsSDK11AdErrorCodeOSHAASH9hashValueSivgTW
 _$S8TeadsSDK11AdErrorCodeOSHAASH4hash4intoys6HasherVz_tFTW
@@ -8713,36 +8924,25 @@ errorCode.get
 $S8TeadsSDK12AdFailReasonC9errorCodeAA0c5ErrorG0OvgTo
 _$S8TeadsSDK18ImageComponentViewC5coderACSgSo7NSCoderC_tcfC
 _$S8TeadsSDK18ImageComponentViewC5coderACSgSo7NSCoderC_tcfcTo
-_$S8TeadsSDK18ImageComponentViewC9setActive6activeySb_tF
-_$S8TeadsSDK18ImageComponentViewC15countdownIsOveryyF
 _$S8TeadsSDK18ImageComponentViewCfE
 _$S8TeadsSDK18ImageComponentViewCfD
 _$S8TeadsSDK18ImageComponentViewCfETo
 _$S8TeadsSDK18ImageComponentViewCMa
-_$S8TeadsSDK18ImageComponentViewC7svgHtml0F05colorS2S_SStFTf4nnd_n
 _$S8TeadsSDK18ImageComponentViewC13componentDataAcA0dG0C_tcfcTf4gn_n
 _OBJC_METACLASS_$__TtC8TeadsSDK18ImageComponentView
-_$S8TeadsSDK18ImageComponentViewC012containerWebE0So05WKWebE0CvpWvd
-_$S8TeadsSDK18ImageComponentViewC07defaultC033_492CC37336DC8D3B24072CE9205797C2LLSSSgvpWvd
-_$S8TeadsSDK18ImageComponentViewC06activeC033_492CC37336DC8D3B24072CE9205797C2LLSSSgvpWvd
-_$S8TeadsSDK18ImageComponentViewC8isActive33_492CC37336DC8D3B24072CE9205797C2LLSbSgvpWvd
 _$S8TeadsSDK18ImageComponentViewC8colorHex33_492CC37336DC8D3B24072CE9205797C2LLSSvpWvd
 _$S8TeadsSDK18ImageComponentViewCMn
 _$S8TeadsSDK18ImageComponentViewCML
 _$S8TeadsSDK18ImageComponentViewCMf
 _symbolic ____ 8TeadsSDK18ImageComponentViewC
+_symbolic 8TeadsSDK17HtmlComponentViewC
 _$S8TeadsSDK18ImageComponentViewCMF
 _OBJC_CLASS_$__TtC8TeadsSDK18ImageComponentView
 /Users/vagrant/git/TeadsSDK/TeadsSDK/TeadsUIEngine/Cores/ImageComponentView.swift
 ImageComponentView.swift
-svgHtml
 $S8TeadsSDK18ImageComponentViewCMa
-defaultImage.get
-activeImage.get
-activeImage.set
 colorHex.get
 activeAsset.get
-defaultImage.set
 colorHex.set
 _$S8TeadsSDK13ComponentViewC06updateC013componentDatayAA0cG0C_tFTm
 _$S8TeadsSDK13ComponentViewC015updateCountdownC013componentDatayAA0cH0C_tFyycfU_
@@ -8843,21 +9043,21 @@ _$S8TeadsSDK15BridgeInterfaceV11closeDialogSSvau
 _$S8TeadsSDK17VpaidApiInterfaceV6loadedSSvau
 _$S8TeadsSDK17VpaidApiInterfaceV9loadErrorSSvau
 _$S8TeadsSDK17VpaidApiInterfaceV11handleEventSSvau
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func153
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func154
 _$S8TeadsSDK15BridgeInterfaceV7preloadSSvau
 _$S8TeadsSDK15BridgeInterfaceV12engineLoadedSSvau
 _$S8TeadsSDK15BridgeInterfaceV15engineInitiatedSSvau
 _$S8TeadsSDK29commanderInitInterfaceMethodsSaySSGvau
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func154
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func155
 _$S8TeadsSDK15BridgeInterfaceV13showEndScreenSSvau
 _$S8TeadsSDK15BridgeInterfaceV13hideEndScreenSSvau
 _$S8TeadsSDK25webBridgeInterfaceMethodsSaySSGvau
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func155
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func156
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func157
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func174
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func158
 _globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func175
-_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func183
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func176
+_globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func184
 _$S8TeadsSDK24vpaidApiInterfaceMethodsSaySSGvau
 _$S8TeadsSDK21CommanderWebViewStateOSQAASQ2eeoiySbx_xtFZTW
 _$S8TeadsSDK21CommanderWebViewStateOSHAASH9hashValueSivgTW
@@ -8951,6 +9151,7 @@ _$S8TeadsSDK16CommanderWebViewC10controllerSo23WKUserContentControllerCSgXwvpWvd
 _$S8TeadsSDK16CommanderWebViewC14messageHandlerSo015WKScriptMessageG0_pSgXwvpWvd
 _$S8TeadsSDK16CommanderWebViewC5stateAA0cdE5StateOvpWvd
 _$S8TeadsSDK16CommanderWebViewC12pendingErrorAA0G6ObjectCSgvpWvd
+_$S8TeadsSDK16CommanderWebViewC14sumoLogManagerAA04SumogH0CvpWvd
 _$S8TeadsSDK16CommanderWebViewCMn
 _$S8TeadsSDK16CommanderWebViewCML
 _$S8TeadsSDK16CommanderWebViewCMf
@@ -8990,7 +9191,6 @@ $S8TeadsSDK16CommanderWebViewC04loadA2JS17completionHandleryySbc_tFySbcfU_
 $S8TeadsSDK16CommanderWebViewC08evaluatec9JSAndInitC015commanderString17completionHandlerySS_ySbctFySbcfU_TA
 pendingError.set
 commanderViewDelegate.get
-state.set
 objectdestroy.24
 $S8TeadsSDK16CommanderWebViewC04initC012withJSString17completionHandlerySS_ySbctFyycfU_TA
 getMethodName
@@ -9057,7 +9257,6 @@ $S8TeadsSDK16CommanderWebViewC08evaluateC10JavaScript_4line015canBeEvaluateIfC8N
 $S8TeadsSDK16CommanderWebViewC08evaluateC10JavaScript_4line015canBeEvaluateIfC8NotReady17completionHandlerySS_SiSbySbctFyycfU_
 debugMode.get
 evaluateCommanderJavaScript
-state.get
 startUsingCommander
 setVpaidApiInterfaceMethod
 setBridgeInterfaceMethod
@@ -9075,8 +9274,8 @@ evaluateCommanderJSAndInitCommander
 initCommander
 $S8TeadsSDK16CommanderWebViewC011loadAndInitC2JS17completionHandleryySbc_tFySSSgcfU_
 loadTeadsJS
-$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus8delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA0cdE8Delegate_pSgtcfcfA0_
-$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus8delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA0cdE8Delegate_pSgtcfcfA_
+$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus07sumoLogE08delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA04SumolE0CAA0cdE8Delegate_pSgtcfcfA0_
+$S8TeadsSDK20JSEngineAssetManagerC12userDefaults04fileE08eventBus07sumoLogE08delegateACSo06NSUserG0C_So06NSFileE0CAA05EventJ0CSgAA04SumolE0CAA0cdE8Delegate_pSgtcfcfA_
 $S8TeadsSDK16CommanderWebViewC15initializeAllJS17completionHandleryySbc_tFySbcfU_
 loadAndInitCommanderJS
 $S8TeadsSDK16CommanderWebViewC15initializeAllJS17completionHandleryySbc_tFySbcfU_ySbcfU_
@@ -9084,6 +9283,7 @@ cleanScriptHandler
 $S8TeadsSDK16CommanderWebViewC18cleanScriptHandleryyFySSXEfU1_
 $S8TeadsSDK16CommanderWebViewC18cleanScriptHandleryyFySSXEfU0_
 $S8TeadsSDK16CommanderWebViewC18cleanScriptHandleryyFySSXEfU_
+globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func187
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func186
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func185
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func184
@@ -9115,12 +9315,11 @@ globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func159
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func158
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func157
 globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func156
-globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func155
 $S8TeadsSDK15BridgeInterfaceV13hideEndScreenSSvau
 $S8TeadsSDK15BridgeInterfaceV13showEndScreenSSvau
-globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func154
+globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func155
 $S8TeadsSDK15BridgeInterfaceV7preloadSSvau
-globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func153
+globalinit_33_7B2E3BAF7CE5186A9E2DFF8B7CB1E7DA_func154
 _$S8TeadsSDK31EndscreenCenteredViewControllerC06bottomE0So6UIViewCSgXwvgTo
 _$S8TeadsSDK31EndscreenCenteredViewControllerC06bottomE0So6UIViewCSgXwvsTo
 _$S8TeadsSDK31EndscreenCenteredViewControllerC03topE0So6UIViewCSgXwvgTo
