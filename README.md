@@ -25,7 +25,7 @@ $ pod install --repo-update
 
 ## Integration Documentation
 
-Integration instructions are available on [Teads SDK Documentation](http://mobile.teads.tv/sdk/documentation/).
+Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).
 
 ## Changelog
 
