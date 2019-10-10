@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "TeadsSDK"
-s.version      = "4.3.1"
+s.version      = "4.3.2"
 s.summary      = "Teads' iOS SDK"
 
 s.description  = <<-DESC

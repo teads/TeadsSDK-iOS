@@ -331,7 +331,7 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 /// Set the ad container, allow you to monitor your inventory
 /// \param container the container which will contain the adView
 ///
-- (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container;
+- (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
 /// dismiss ad fullscreen
@@ -493,6 +493,8 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
+
+
 
 
 
