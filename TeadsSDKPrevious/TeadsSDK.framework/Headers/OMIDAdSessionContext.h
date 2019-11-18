@@ -6,17 +6,17 @@
 #import "OMIDPartner.h"
 #import "OMIDVerificationScriptResource.h"
 
-/*!
- * @discussion This class will provide the ad session both details of the partner and whether this is considered HTML or native.
+/**
+ *  This class will provide the ad session both details of the partner and whether this is considered HTML or native.
  */
 @interface OMIDTeadstvAdSessionContext : NSObject
 
 - (null_unspecified instancetype)init NS_UNAVAILABLE;
 
-/*!
- * @abstract Initializes a new ad session context providing reference to partner and web view where OMID JS has been injected.
+/**
+ *  Initializes a new ad session context providing reference to partner and web view where OMID JS has been injected.
  *
- * @discussion Calling this method will set the ad session type to “html”.
+ *  Calling this method will set the ad session type to “html”.
  * <p>
  * NOTE: any attempt to create a new ad session will fail if OMID has not been activated (see {@link OMIDSDK} class for more information).
  *
@@ -30,10 +30,10 @@
                customReferenceIdentifier:(nullable NSString *)customReferenceIdentifier
                                    error:(NSError *_Nullable *_Nullable)error;
 
-/*!
- * @abstract Initializes a new ad session context providing reference to partner and a list of script resources which should be managed by OMID.
+/**
+ *  Initializes a new ad session context providing reference to partner and a list of script resources which should be managed by OMID.
  *
- * @discussion Calling this method will set the ad session type to “native”.
+ *  Calling this method will set the ad session type to “native”.
  * <p>
  * NOTE: any attempt to create a new ad session will fail if OMID has not been activated (see {@link OMIDSDK} class for more information).
  *
