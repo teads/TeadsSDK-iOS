@@ -7,18 +7,18 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @discussion Details about the integration partner which will be supplied to the ad session.
+/**
+ *  Details about the integration partner which will be supplied to the ad session.
  */
 @interface OMIDTeadstvPartner : NSObject
 
 @property(nonatomic, readonly, nonnull) NSString *name;
 @property(nonatomic, readonly, nonnull) NSString *versionString;
 
-/*!
- * @abstract Initializes new partner instance providing both name and versionString.
+/**
+ *  Initializes new partner instance providing both name and versionString.
  *
- * @discussion Both name and version are mandatory.
+ *  Both name and version are mandatory.
  *
  * @param name It is used to uniquely identify the integration partner.
  * @param versionString It is used to uniquely identify the integration partner.

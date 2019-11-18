@@ -14,23 +14,23 @@ typedef NS_ENUM(NSUInteger, OMIDErrorType) {
     OMIDErrorVideo = 2 // will translate into "VIDEO" when published to the OMID JS service.
 };
 
-/*!
- * @discussion Ad session API enabling the integration partner to notify OMID of key state relating to viewability calculations.
+/**
+ *  Ad session API enabling the integration partner to notify OMID of key state relating to viewability calculations.
  * In addition to viewability this API will also notify all verification providers of key ad session lifecycle events.
  */
 @interface OMIDTeadstvAdSession : NSObject
 
-/*!
- * @abstract The AdSession configuration is used for check owners.
+/**
+ *  The AdSession configuration is used for check owners.
  */
 @property(nonatomic, readonly, nonnull) OMIDTeadstvAdSessionConfiguration *configuration;
-/*!
- * @abstract The native view which is used for viewability tracking.
+/**
+ *  The native view which is used for viewability tracking.
  */
 @property(nonatomic, weak, nullable) UIView *mainAdView;
 
-/*!
- * @abstract Initializes new ad session supplying the context.
+/**
+ *  Initializes new ad session supplying the context.
  *
  * Note that creating an OMIDAdSession sends a message to the OM SDK JS Service running in the
  * webview.  If the OM SDK JS Service has not loaded before the ad session is created, the
@@ -51,17 +51,17 @@ typedef NS_ENUM(NSUInteger, OMIDErrorType) {
                                          error:(NSError *_Nullable *_Nullable)error;
 
 
-/*!
- * @abstract Notifies all verification providers that the ad session has started and ad view tracking will begin.
+/**
+ *  Notifies all verification providers that the ad session has started and ad view tracking will begin.
  * 
- * @discussion This method will have no affect if called after the ad session has finished.
+ *  This method will have no affect if called after the ad session has finished.
  */
 - (void)start;
 
-/*!
- * @abstract Notifies all verification providers that the ad session has finished and all ad view tracking will stop.
+/**
+ *  Notifies all verification providers that the ad session has finished and all ad view tracking will stop.
  *
- * @discussion This method will have no affect if called after the ad session has finished.
+ *  This method will have no affect if called after the ad session has finished.
  *
  * Note that ending an OMID ad session sends a message to the verification scripts running inside
  * the webview supplied by the integration.  So that the verification scripts have enough time to
@@ -70,35 +70,35 @@ typedef NS_ENUM(NSUInteger, OMIDErrorType) {
  */
 - (void)finish;
 
-/*!
- * @abstract Adds friendly obstruction which should then be excluded from all ad session viewability calculations.
+/**
+ *  Adds friendly obstruction which should then be excluded from all ad session viewability calculations.
  *
- * @discussion This method will have no affect if called after the ad session has finished.
+ *  This method will have no affect if called after the ad session has finished.
  *
  * @param friendlyObstruction The view to be excluded from all ad session viewability calculations.
  */
 - (void)addFriendlyObstruction:(nonnull UIView *)friendlyObstruction;
 
-/*!
- * @abstract Removes registered friendly obstruction.
+/**
+ *  Removes registered friendly obstruction.
  *
- * @discussion This method will have no affect if called after the ad session has finished.
+ *  This method will have no affect if called after the ad session has finished.
  *
  * @param friendlyObstruction The view to be removed from the list of registered friendly obstructions.
  */
 - (void)removeFriendlyObstruction:(nonnull UIView *)friendlyObstruction;
 
-/*!
- * @abstract Utility method to remove all registered friendly obstructions.
+/**
+ *  Utility method to remove all registered friendly obstructions.
  *
- * @discussion This method will have no affect if called after the ad session has finished.
+ *  This method will have no affect if called after the ad session has finished.
  */
 - (void)removeAllFriendlyObstructions;
 
-/*!
- * @abstract Notifies the ad session that an error has occurred.
+/**
+ *  Notifies the ad session that an error has occurred.
  *
- * @discussion When triggered all registered verification providers will be notified of this event.
+ *  When triggered all registered verification providers will be notified of this event.
  *
  * @param errorType The type of error.
  * @param message The message containing details of the error.

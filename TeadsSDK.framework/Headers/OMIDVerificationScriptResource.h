@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @discussion Details about the verification provider which will be supplied to the ad session.
+/**
+ *  Details about the verification provider which will be supplied to the ad session.
  */
 @interface OMIDTeadstvVerificationScriptResource : NSObject
 
@@ -16,10 +16,10 @@
 @property(nonatomic, readonly, nullable) NSString *vendorKey;
 @property(nonatomic, readonly, nullable) NSString *parameters;
 
-/*!
- * @abstract Initializes new verification script resource instance which requires vendor specific verification parameters.
+/**
+ *  Initializes new verification script resource instance which requires vendor specific verification parameters.
  *
- * @discussion When calling this method all arguments are mandatory.
+ *  When calling this method all arguments are mandatory.
  *
  * @param vendorKey It is used to uniquely identify the verification provider.
  * @param URL The URL to be injected into the OMID managed JavaScript execution environment.
@@ -30,10 +30,10 @@
                            vendorKey:(nonnull NSString *)vendorKey
                           parameters:(nonnull NSString *)parameters;
 
-/*!
- * @abstract Initializes new verification script resource instance which does not require any vendor specific verification parameters.
+/**
+ *  Initializes new verification script resource instance which does not require any vendor specific verification parameters.
  *
- * @discussion When calling this method all arguments are mandatory.
+ *  When calling this method all arguments are mandatory.
  *
  * @param URL The URL to be injected into the OMID managed JavaScript execution environment.
  * @return A new verification script resource instance, or nil if URL is nil or blank.
