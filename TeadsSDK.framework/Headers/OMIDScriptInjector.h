@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- *  Utility class which enables integration partners to use a standard approach for injecting OM SDK JS into the served tag HTML content.
+/*!
+ * @discussion Utility class which enables integration partners to use a standard approach for injecting OM SDK JS into the served tag HTML content.
  */
 @interface OMIDTeadstvScriptInjector : NSObject
 

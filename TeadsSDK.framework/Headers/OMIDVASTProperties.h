@@ -7,8 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- *  List of supported video player positions.
+/*!
+ * @abstract List of supported video player positions.
  */
 typedef NS_ENUM(NSUInteger, OMIDPosition) {
     OMIDPositionPreroll,
@@ -17,8 +17,8 @@ typedef NS_ENUM(NSUInteger, OMIDPosition) {
     OMIDPositionStandalone
 };
 
-/**
- *  This object is used to capture key VAST properties so this can be shared with all registered verification providers.
+/*!
+ * @discussion This object is used to capture key VAST properties so this can be shared with all registered verification providers.
  */
 @interface OMIDTeadstvVASTProperties : NSObject
 
@@ -27,8 +27,8 @@ typedef NS_ENUM(NSUInteger, OMIDPosition) {
 @property(nonatomic, readonly, getter = isAutoPlay) BOOL autoPlay;
 @property(nonatomic, readonly) OMIDPosition position;
 
-/**
- *  This method enables the video player to create a new VAST properties instance for skippable video ad placement.
+/*!
+ * @abstract This method enables the video player to create a new VAST properties instance for skippable video ad placement.
  *
  * @param skipOffset The number of seconds before the skip button is presented.
  * @param autoPlay Determines whether the video will auto-play content.
@@ -39,8 +39,8 @@ typedef NS_ENUM(NSUInteger, OMIDPosition) {
                                   autoPlay:(BOOL)autoPlay
                                   position:(OMIDPosition)position;
 
-/**
- *  This method enables the video player to create a new VAST properties instance for non-skippable video ad placement.
+/*!
+ * @abstract This method enables the video player to create a new VAST properties instance for non-skippable video ad placement.
  *
  * @param autoPlay Determines whether the video will auto-play content.
  * @param position The position of the video in relation to other content.
