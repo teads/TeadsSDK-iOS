@@ -462,6 +462,7 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)disableMediaPreload;
 - (void)pageUrl:(NSString * _Nonnull)urlString;
 - (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+- (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 - (void)disableBatteryMonitoring;
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

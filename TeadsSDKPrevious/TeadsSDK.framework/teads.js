@@ -18,10 +18,6 @@
  return false;
  };
  
- window.teads.stopSlotVisibility = function stopSlotVisibility(){
- window.webkit.messageHandlers.stopSlotVisibility.postMessage("");
- };
- 
  window.teads.error = function error(errorJson) {
  window.webkit.messageHandlers.error.postMessage(errorJson);
  };
