@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "TeadsSDKPrevious"
-s.version      = "4.5.0"
+s.version      = "4.6.0"
 s.summary      = "Teads' iOS SDK"
 
 s.description  = <<-DESC
@@ -11,7 +11,7 @@ s.description  = <<-DESC
 s.ios.deployment_target     = "9.0"
 
 s.homepage     = "https://github.com/teads/TeadsSDK-iOS"
-s.license      = "Apache 2.0"
+s.license      = { :type => 'Copyright', :text => 'Copyright Teads 2020' }
 s.author       = { "Teads" => "support-sdk@teads.tv" }
 s.source       = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'master', :tag => "v#{s.version}Previous"}
 
