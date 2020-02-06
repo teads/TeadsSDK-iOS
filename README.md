@@ -7,13 +7,15 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 
 Clone this repository, open it with Xcode, and run project.
 
-## Download the Teads SDK iOS library
+## Install the Teads SDK iOS library
 
 Teads SDK is currently distributed through CocoaPods. It include everything you need to serve "outstream" video ads.
 
+### Cocoapods
+
 ```
 target 'YourProject' do
-    pod 'TeadsSDK', '4.1.2'
+    pod 'TeadsSDK', '4.6.0'
 end
 ```
 
@@ -21,6 +23,14 @@ In terminal in the directory containing your project's `.xcodeproj` file and the
 
 ```
 $ pod install --repo-update
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate TeadsSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "teads/TeadsSDK-iOS" "4.6.0"
 ```
 
 ## Integration Documentation
