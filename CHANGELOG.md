@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.6.2
+_2020-04-21_
+- Enable [ABI](https://swift.org/blog/abi-stability-and-more/)
+
 ### v4.6.1
 _2020-03-09_
 - Enable bitcode build
@@ -133,4 +137,3 @@ _2019-08-29_
 - GDPR support
 - Improvements and bug fixes
 - Dedicated build to support Xcode 10 & Swift 4.2
-

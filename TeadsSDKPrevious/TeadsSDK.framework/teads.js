@@ -59,8 +59,9 @@
  window.webkit.messageHandlers.slotRequest.postMessage("");
  };
  
- window.teads.noAd = function noAd(message) {
+ window.teads.noAd = function noAd(code, message) {
  var jsonVariables = {
+ "code": code,
  "message": message
  }
  var jsonString = JSON.stringify(jsonVariables);
@@ -122,10 +123,11 @@
  window.webkit.messageHandlers.closeSlot.postMessage(jsonString)
  }
  
- window.teads.setVolume = function setVolume(volume, transitionDuration) {
+ window.teads.setVolume = function setVolume(volume, transitionDuration, isForcedByUser) {
  var jsonVariables = {
  "volume": volume,
- "transitionDuration": transitionDuration
+ "transitionDuration": transitionDuration,
+ "isForcedByUser": isForcedByUser
  };
  var jsonString = JSON.stringify(jsonVariables);
  window.webkit.messageHandlers.setVolume.postMessage(jsonString);
@@ -189,8 +191,12 @@
  window.webkit.messageHandlers.reward.postMessage(jsonString);
  }
  
- window.teads.closeDialog = function closeDialog() {
- window.webkit.messageHandlers.closeDialog.postMessage("");
+ window.teads.closeDialog = function closeDialog(identifier) {
+ var jsonVariables = {
+ "identifier": identifier
+ };
+ var jsonString = JSON.stringify(jsonVariables);
+ window.webkit.messageHandlers.closeDialog.postMessage(jsonString);
  }
  
  window.teads.debug = function debug(message) {
