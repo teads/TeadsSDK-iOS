@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
     s.vendored_frameworks   = 'TeadsSDK.framework'
     s.ios.frameworks        = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
     s.framework             = 'TeadsSDK'
-    s.user_target_xcconfig  = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
 
 end
