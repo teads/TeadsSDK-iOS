@@ -21,6 +21,5 @@ Pod::Spec.new do |s|
     s.vendored_frameworks   = 'TeadsSDKPrevious/TeadsSDK.framework'
 
     s.framework             = 'TeadsSDK'
-    s.user_target_xcconfig  = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
 
 end
