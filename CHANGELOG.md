@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.6.3
+_2020-05-05_
+- support bitcode on adapters (https://github.com/teads/TeadsSDK-adapter-admob-ios)
+
 ### v4.6.2
 _2020-04-21_
 - Enable [ABI](https://swift.org/blog/abi-stability-and-more/)
