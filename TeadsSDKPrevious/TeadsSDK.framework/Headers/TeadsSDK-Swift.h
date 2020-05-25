@@ -228,6 +228,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 @class TFAAdView;
+@class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
@@ -257,6 +258,16 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 @optional
+/// Called when ad wants to present safariViewController (Click to action)
+/// ChildViewController integration could lead to not find with accuracy topViewController, publisher can specify it
+/// note:
+/// event is not triggered when ad displayed on full screen
+/// \param ad The teadsAd object
+///
+///
+/// returns:
+/// UIViewController to present SFSafariViewController
+- (UIViewController * _Nullable)adBrowserWillOpen:(TFAAdView * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 /// Called when the modal browser is open
 /// \param ad The teadsAd object
 ///
@@ -304,7 +315,9 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 @property (nonatomic, readonly) BOOL isPlaying;
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
+/// implement delegate to follow ad lifecycle
 @property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
+/// implement delegate to follow ad audio lifecycle
 @property (nonatomic, weak) id <TFASoundDelegate> _Nullable soundDelegate;
 @property (nonatomic) NSInteger pid;
 @property (nonatomic) CGRect bounds;
@@ -326,6 +339,10 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 ///
 - (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 /// Add Context info
+/// \param infoKey context information key
+///
+/// \param infoValue context information value
+///
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
 /// dismiss ad fullscreen
 - (void)dismissFullscreen;
@@ -335,6 +352,7 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 - (void)slotReached SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 @end
 
+/// Ad playback states
 typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
   TeadsAdPlaybackStatePlaybackStateCompleted = 0,
   TeadsAdPlaybackStatePlaybackStateStarted = 1,
@@ -472,22 +490,82 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC8TeadsSDK5Teads")
+@interface Teads : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Teads (SWIFT_EXTENSION(TeadsSDK))
+/// Crash monitoring
+/// TeadsSDK monitors for crash that only appears in framework
+/// note:
+/// TeadsSDK does not disturb third party crash handler/reporter such as Crashlytics
++ (void)configure;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
+/// Prevent TeadsSDK to automatically handle/monitor crashes
+- (void)disableCrashMonitoring;
+/// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented. It is also useful during integration iterations
+/// note:
+/// follow <a href="https://support.teads.tv/support/solutions/articles/36000209100-5-validate-your-integration-with-the-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
+/// By default, the Teads inApp SDK handles the audio session by setting its category to ambient.
+/// This means that all the audio played by other apps will simply mix with the ad sound.
+/// note:
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code>
 - (void)disableTeadsAudioSessionManagement;
+/// Enable all TeadsSDK Log for debugging purpose
 - (void)enableDebug;
 - (void)disableLocation;
 - (void)enableLigtEndScreen SWIFT_DEPRECATED_MSG("use enableLightEndScreen");
+/// When the ad playback is finished, we display an endscreen with light color (Dark color by default).
 - (void)enableLightEndScreen;
 - (void)disableMediaPreload;
+/// Set the publisher http page url that matches the content where Teads Ad will be loaded into.
+/// \param urlString publisher url page
+///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// The user consent following the IAB specifications.
+/// note:
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
+/// `“0” if it is not, null if it’s unknown.
+///
+/// \param consent Which vendors and purposes did the user give consent for
+///
 - (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// The US privacy CCPA user consent following IAB specifications
+/// \param consent The CCPA consent string
+///
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
+/// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Instance settings builder
+/// \param build closure to tune settings
+///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface TeadsAdSettings (SWIFT_EXTENSION(TeadsSDK))
+/// Return a dictionary representation of the current TeadsAdSettings object.
+///
+/// returns:
+/// A <code>[AnyHashable: Any]</code> representing the object.
+- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Create an instance from <code>[AnyHashable: Any]</code>
+/// \param dictionary representation of TeadsAdSettings instance
+///
+///
+/// returns:
+/// A <code>TeadsAsSettings</code> object instance.
++ (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -732,6 +810,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 @class TFAAdView;
+@class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
@@ -761,6 +840,16 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 @optional
+/// Called when ad wants to present safariViewController (Click to action)
+/// ChildViewController integration could lead to not find with accuracy topViewController, publisher can specify it
+/// note:
+/// event is not triggered when ad displayed on full screen
+/// \param ad The teadsAd object
+///
+///
+/// returns:
+/// UIViewController to present SFSafariViewController
+- (UIViewController * _Nullable)adBrowserWillOpen:(TFAAdView * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 /// Called when the modal browser is open
 /// \param ad The teadsAd object
 ///
@@ -808,7 +897,9 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 @property (nonatomic, readonly) BOOL isPlaying;
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
+/// implement delegate to follow ad lifecycle
 @property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
+/// implement delegate to follow ad audio lifecycle
 @property (nonatomic, weak) id <TFASoundDelegate> _Nullable soundDelegate;
 @property (nonatomic) NSInteger pid;
 @property (nonatomic) CGRect bounds;
@@ -830,6 +921,10 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 ///
 - (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 /// Add Context info
+/// \param infoKey context information key
+///
+/// \param infoValue context information value
+///
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
 /// dismiss ad fullscreen
 - (void)dismissFullscreen;
@@ -839,6 +934,7 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 - (void)slotReached SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 @end
 
+/// Ad playback states
 typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
   TeadsAdPlaybackStatePlaybackStateCompleted = 0,
   TeadsAdPlaybackStatePlaybackStateStarted = 1,
@@ -976,22 +1072,82 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC8TeadsSDK5Teads")
+@interface Teads : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Teads (SWIFT_EXTENSION(TeadsSDK))
+/// Crash monitoring
+/// TeadsSDK monitors for crash that only appears in framework
+/// note:
+/// TeadsSDK does not disturb third party crash handler/reporter such as Crashlytics
++ (void)configure;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
+/// Prevent TeadsSDK to automatically handle/monitor crashes
+- (void)disableCrashMonitoring;
+/// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented. It is also useful during integration iterations
+/// note:
+/// follow <a href="https://support.teads.tv/support/solutions/articles/36000209100-5-validate-your-integration-with-the-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
+/// By default, the Teads inApp SDK handles the audio session by setting its category to ambient.
+/// This means that all the audio played by other apps will simply mix with the ad sound.
+/// note:
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code>
 - (void)disableTeadsAudioSessionManagement;
+/// Enable all TeadsSDK Log for debugging purpose
 - (void)enableDebug;
 - (void)disableLocation;
 - (void)enableLigtEndScreen SWIFT_DEPRECATED_MSG("use enableLightEndScreen");
+/// When the ad playback is finished, we display an endscreen with light color (Dark color by default).
 - (void)enableLightEndScreen;
 - (void)disableMediaPreload;
+/// Set the publisher http page url that matches the content where Teads Ad will be loaded into.
+/// \param urlString publisher url page
+///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// The user consent following the IAB specifications.
+/// note:
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
+/// `“0” if it is not, null if it’s unknown.
+///
+/// \param consent Which vendors and purposes did the user give consent for
+///
 - (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// The US privacy CCPA user consent following IAB specifications
+/// \param consent The CCPA consent string
+///
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
+/// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Instance settings builder
+/// \param build closure to tune settings
+///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface TeadsAdSettings (SWIFT_EXTENSION(TeadsSDK))
+/// Return a dictionary representation of the current TeadsAdSettings object.
+///
+/// returns:
+/// A <code>[AnyHashable: Any]</code> representing the object.
+- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Create an instance from <code>[AnyHashable: Any]</code>
+/// \param dictionary representation of TeadsAdSettings instance
+///
+///
+/// returns:
+/// A <code>TeadsAsSettings</code> object instance.
++ (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1240,6 +1396,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 @class TFAAdView;
+@class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
@@ -1269,6 +1426,16 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 @optional
+/// Called when ad wants to present safariViewController (Click to action)
+/// ChildViewController integration could lead to not find with accuracy topViewController, publisher can specify it
+/// note:
+/// event is not triggered when ad displayed on full screen
+/// \param ad The teadsAd object
+///
+///
+/// returns:
+/// UIViewController to present SFSafariViewController
+- (UIViewController * _Nullable)adBrowserWillOpen:(TFAAdView * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 /// Called when the modal browser is open
 /// \param ad The teadsAd object
 ///
@@ -1316,7 +1483,9 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 @property (nonatomic, readonly) BOOL isPlaying;
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
+/// implement delegate to follow ad lifecycle
 @property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
+/// implement delegate to follow ad audio lifecycle
 @property (nonatomic, weak) id <TFASoundDelegate> _Nullable soundDelegate;
 @property (nonatomic) NSInteger pid;
 @property (nonatomic) CGRect bounds;
@@ -1338,6 +1507,10 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 ///
 - (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 /// Add Context info
+/// \param infoKey context information key
+///
+/// \param infoValue context information value
+///
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
 /// dismiss ad fullscreen
 - (void)dismissFullscreen;
@@ -1347,6 +1520,7 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 - (void)slotReached SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 @end
 
+/// Ad playback states
 typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
   TeadsAdPlaybackStatePlaybackStateCompleted = 0,
   TeadsAdPlaybackStatePlaybackStateStarted = 1,
@@ -1484,22 +1658,82 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC8TeadsSDK5Teads")
+@interface Teads : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Teads (SWIFT_EXTENSION(TeadsSDK))
+/// Crash monitoring
+/// TeadsSDK monitors for crash that only appears in framework
+/// note:
+/// TeadsSDK does not disturb third party crash handler/reporter such as Crashlytics
++ (void)configure;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
+/// Prevent TeadsSDK to automatically handle/monitor crashes
+- (void)disableCrashMonitoring;
+/// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented. It is also useful during integration iterations
+/// note:
+/// follow <a href="https://support.teads.tv/support/solutions/articles/36000209100-5-validate-your-integration-with-the-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
+/// By default, the Teads inApp SDK handles the audio session by setting its category to ambient.
+/// This means that all the audio played by other apps will simply mix with the ad sound.
+/// note:
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code>
 - (void)disableTeadsAudioSessionManagement;
+/// Enable all TeadsSDK Log for debugging purpose
 - (void)enableDebug;
 - (void)disableLocation;
 - (void)enableLigtEndScreen SWIFT_DEPRECATED_MSG("use enableLightEndScreen");
+/// When the ad playback is finished, we display an endscreen with light color (Dark color by default).
 - (void)enableLightEndScreen;
 - (void)disableMediaPreload;
+/// Set the publisher http page url that matches the content where Teads Ad will be loaded into.
+/// \param urlString publisher url page
+///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// The user consent following the IAB specifications.
+/// note:
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
+/// `“0” if it is not, null if it’s unknown.
+///
+/// \param consent Which vendors and purposes did the user give consent for
+///
 - (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// The US privacy CCPA user consent following IAB specifications
+/// \param consent The CCPA consent string
+///
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
+/// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Instance settings builder
+/// \param build closure to tune settings
+///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface TeadsAdSettings (SWIFT_EXTENSION(TeadsSDK))
+/// Return a dictionary representation of the current TeadsAdSettings object.
+///
+/// returns:
+/// A <code>[AnyHashable: Any]</code> representing the object.
+- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Create an instance from <code>[AnyHashable: Any]</code>
+/// \param dictionary representation of TeadsAdSettings instance
+///
+///
+/// returns:
+/// A <code>TeadsAsSettings</code> object instance.
++ (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1744,6 +1978,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 @class TFAAdView;
+@class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
@@ -1773,6 +2008,16 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 ///
 - (void)adError:(TFAAdView * _Nonnull)ad errorMessage:(NSString * _Nonnull)errorMessage;
 @optional
+/// Called when ad wants to present safariViewController (Click to action)
+/// ChildViewController integration could lead to not find with accuracy topViewController, publisher can specify it
+/// note:
+/// event is not triggered when ad displayed on full screen
+/// \param ad The teadsAd object
+///
+///
+/// returns:
+/// UIViewController to present SFSafariViewController
+- (UIViewController * _Nullable)adBrowserWillOpen:(TFAAdView * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 /// Called when the modal browser is open
 /// \param ad The teadsAd object
 ///
@@ -1820,7 +2065,9 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 @property (nonatomic, readonly) BOOL isPlaying;
 /// Ad sound enabled state
 @property (nonatomic, readonly) BOOL isSoundActive;
+/// implement delegate to follow ad lifecycle
 @property (nonatomic, weak) id <TFAAdDelegate> _Nullable delegate;
+/// implement delegate to follow ad audio lifecycle
 @property (nonatomic, weak) id <TFASoundDelegate> _Nullable soundDelegate;
 @property (nonatomic) NSInteger pid;
 @property (nonatomic) CGRect bounds;
@@ -1842,6 +2089,10 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 ///
 - (void)setAdContainerViewWithContainer:(UIView * _Nonnull)container SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 /// Add Context info
+/// \param infoKey context information key
+///
+/// \param infoValue context information value
+///
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
 /// dismiss ad fullscreen
 - (void)dismissFullscreen;
@@ -1851,6 +2102,7 @@ SWIFT_CLASS("_TtC8TeadsSDK9TFAAdView")
 - (void)slotReached SWIFT_DEPRECATED_MSG("it is no longer needed to monitor your inventory.");
 @end
 
+/// Ad playback states
 typedef SWIFT_ENUM(NSInteger, TeadsAdPlaybackState, closed) {
   TeadsAdPlaybackStatePlaybackStateCompleted = 0,
   TeadsAdPlaybackStatePlaybackStateStarted = 1,
@@ -1988,22 +2240,82 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC8TeadsSDK5Teads")
+@interface Teads : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Teads (SWIFT_EXTENSION(TeadsSDK))
+/// Crash monitoring
+/// TeadsSDK monitors for crash that only appears in framework
+/// note:
+/// TeadsSDK does not disturb third party crash handler/reporter such as Crashlytics
++ (void)configure;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
+/// Prevent TeadsSDK to automatically handle/monitor crashes
+- (void)disableCrashMonitoring;
+/// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented. It is also useful during integration iterations
+/// note:
+/// follow <a href="https://support.teads.tv/support/solutions/articles/36000209100-5-validate-your-integration-with-the-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
+/// By default, the Teads inApp SDK handles the audio session by setting its category to ambient.
+/// This means that all the audio played by other apps will simply mix with the ad sound.
+/// note:
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code>
 - (void)disableTeadsAudioSessionManagement;
+/// Enable all TeadsSDK Log for debugging purpose
 - (void)enableDebug;
 - (void)disableLocation;
 - (void)enableLigtEndScreen SWIFT_DEPRECATED_MSG("use enableLightEndScreen");
+/// When the ad playback is finished, we display an endscreen with light color (Dark color by default).
 - (void)enableLightEndScreen;
 - (void)disableMediaPreload;
+/// Set the publisher http page url that matches the content where Teads Ad will be loaded into.
+/// \param urlString publisher url page
+///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// The user consent following the IAB specifications.
+/// note:
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
+/// `“0” if it is not, null if it’s unknown.
+///
+/// \param consent Which vendors and purposes did the user give consent for
+///
 - (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// The US privacy CCPA user consent following IAB specifications
+/// \param consent The CCPA consent string
+///
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
+/// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Instance settings builder
+/// \param build closure to tune settings
+///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface TeadsAdSettings (SWIFT_EXTENSION(TeadsSDK))
+/// Return a dictionary representation of the current TeadsAdSettings object.
+///
+/// returns:
+/// A <code>[AnyHashable: Any]</code> representing the object.
+- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Create an instance from <code>[AnyHashable: Any]</code>
+/// \param dictionary representation of TeadsAdSettings instance
+///
+///
+/// returns:
+/// A <code>TeadsAsSettings</code> object instance.
++ (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

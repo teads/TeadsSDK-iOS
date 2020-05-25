@@ -1,8 +1,9 @@
 # Changelog
 
-### v4.6.3
-_2020-05-05_
-- support bitcode on adapters (https://github.com/teads/TeadsSDK-adapter-admob-ios)
+### v4.7.0
+_2020-05-25_
+- New Crash monitor for Teads SDK
+- fix & improvements
 
 ### v4.6.2
 _2020-04-21_
