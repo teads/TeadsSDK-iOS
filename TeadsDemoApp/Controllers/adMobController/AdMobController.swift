@@ -7,6 +7,7 @@
 
 import GoogleMobileAds
 import TeadsAdMobAdapter
+import TeadsSDK
 import UIKit
 
 class AdMobController: UIViewController, GADBannerViewDelegate {
@@ -36,19 +37,19 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()
-        let teadsExtras = GADMAdapterTeadsExtras()
-        teadsExtras.adContainer = self.view
-        teadsExtras.debugMode = true
-        teadsExtras.reportLocation = false
-        // Needed by european regulation
-        // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
-//        teadsExtras.subjectToGDPR = "1"
-//        teadsExtras.consent = "0001100101010101"
+        let adSettings = TeadsAdSettings { (settings) in
+            settings.enableDebug()
+            settings.disableLocation()
+            
+            // Needed by european regulation
+            // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
+            //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
+            
+            // The article url if you are a news publisher
+            //settings.pageUrl("http://page.com/article1")
+        }
         
-        // The article url if you are a news publisher
-        //teadsExtras.pageUrl = "http://page.com/article1"
-        
-        request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "Teads"))
+        request.register(teadsAdSettings: adSettings, for: "Teads")
         
         bannerView.load(request)
     }

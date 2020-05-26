@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import GoogleMobileAds
 import TeadsAdMobAdapter
+import TeadsSDK
 
 class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBannerViewDelegate {
 
@@ -37,16 +38,17 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
         self.bannerView.delegate = self
         
         let request = GADRequest()
-        let teadsExtras = GADMAdapterTeadsExtras()
-        // Needed by european regulation
-        // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
-        //        teadsExtras.subjectToGDPR = "1"
-        //        teadsExtras.consent = "0001100101010101"
+        let adSettings = TeadsAdSettings { (settings) in
+            // Needed by european regulation
+            // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
+            //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
+            
+            // The article url if you are a news publisher
+            //settings.pageUrl("http://page.com/article1")
+        }
         
-        // The article url if you are a news publisher
-        //teadsExtras.pageUrl = "http://page.com/article1"
-        
-        request.register(teadsExtras.getCustomEventExtras(forCustomEventLabel: "Teads"))
+        request.register(teadsAdSettings: adSettings, for: "Teads")
+
         self.bannerView.load(request)
         self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#my-placement-id", adView: self.bannerView)
     }
