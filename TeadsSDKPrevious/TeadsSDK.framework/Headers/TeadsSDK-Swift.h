@@ -227,6 +227,12 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+/// Transparency & Consent Framework versions
+typedef SWIFT_ENUM(NSInteger, TCFVersion, closed) {
+  TCFVersionV1 = 1,
+  TCFVersionV2 = 2,
+};
+
 @class TFAAdView;
 @class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
@@ -531,13 +537,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)pageUrl:(NSString * _Nonnull)urlString;
 /// The user consent following the IAB specifications.
 /// note:
-/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation
 /// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
 /// `“0” if it is not, null if it’s unknown.
 ///
 /// \param consent Which vendors and purposes did the user give consent for
 ///
-- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// \param tcfVersion Transparency and Consent Framework version
+///
+/// \param cmpSdkID Consent Manager unique ID
+///
+- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent tcfVersion:(enum TCFVersion)tcfVersion cmpSdkID:(NSInteger)cmpSdkID;
 /// The US privacy CCPA user consent following IAB specifications
 /// \param consent The CCPA consent string
 ///
@@ -567,6 +577,8 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -809,6 +821,12 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+/// Transparency & Consent Framework versions
+typedef SWIFT_ENUM(NSInteger, TCFVersion, closed) {
+  TCFVersionV1 = 1,
+  TCFVersionV2 = 2,
+};
+
 @class TFAAdView;
 @class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
@@ -1113,13 +1131,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)pageUrl:(NSString * _Nonnull)urlString;
 /// The user consent following the IAB specifications.
 /// note:
-/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation
 /// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
 /// `“0” if it is not, null if it’s unknown.
 ///
 /// \param consent Which vendors and purposes did the user give consent for
 ///
-- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// \param tcfVersion Transparency and Consent Framework version
+///
+/// \param cmpSdkID Consent Manager unique ID
+///
+- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent tcfVersion:(enum TCFVersion)tcfVersion cmpSdkID:(NSInteger)cmpSdkID;
 /// The US privacy CCPA user consent following IAB specifications
 /// \param consent The CCPA consent string
 ///
@@ -1149,6 +1171,8 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -1395,6 +1419,12 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+/// Transparency & Consent Framework versions
+typedef SWIFT_ENUM(NSInteger, TCFVersion, closed) {
+  TCFVersionV1 = 1,
+  TCFVersionV2 = 2,
+};
+
 @class TFAAdView;
 @class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
@@ -1699,13 +1729,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)pageUrl:(NSString * _Nonnull)urlString;
 /// The user consent following the IAB specifications.
 /// note:
-/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation
 /// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
 /// `“0” if it is not, null if it’s unknown.
 ///
 /// \param consent Which vendors and purposes did the user give consent for
 ///
-- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// \param tcfVersion Transparency and Consent Framework version
+///
+/// \param cmpSdkID Consent Manager unique ID
+///
+- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent tcfVersion:(enum TCFVersion)tcfVersion cmpSdkID:(NSInteger)cmpSdkID;
 /// The US privacy CCPA user consent following IAB specifications
 /// \param consent The CCPA consent string
 ///
@@ -1735,6 +1769,8 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -1977,6 +2013,12 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+/// Transparency & Consent Framework versions
+typedef SWIFT_ENUM(NSInteger, TCFVersion, closed) {
+  TCFVersionV1 = 1,
+  TCFVersionV2 = 2,
+};
+
 @class TFAAdView;
 @class UIViewController;
 enum TeadsAdPlaybackState : NSInteger;
@@ -2281,13 +2323,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)pageUrl:(NSString * _Nonnull)urlString;
 /// The user consent following the IAB specifications.
 /// note:
-/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Mobile%20In-App%20Consent%20APIs%20v1.0%20Final.md">GDPR Transparency and Consent Framework </a> IAB documentation
+/// <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation
 /// \param subjectToGDPR <code>"1"</code> if the traffic or the publisher is in the EEA (European Economic Area),
 /// `“0” if it is not, null if it’s unknown.
 ///
 /// \param consent Which vendors and purposes did the user give consent for
 ///
-- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent;
+/// \param tcfVersion Transparency and Consent Framework version
+///
+/// \param cmpSdkID Consent Manager unique ID
+///
+- (void)userConsentWithSubjectToGDPR:(NSString * _Nonnull)subjectToGDPR consent:(NSString * _Nonnull)consent tcfVersion:(enum TCFVersion)tcfVersion cmpSdkID:(NSInteger)cmpSdkID;
 /// The US privacy CCPA user consent following IAB specifications
 /// \param consent The CCPA consent string
 ///
@@ -2317,6 +2363,8 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 

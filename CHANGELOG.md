@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.7.2
+_2020-06-03_
+- support [GDPR Transparency and Consent Framework v2](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md) specifications
+
 ### v4.7.0
 _2020-05-25_
 - New Crash monitor for Teads SDK
