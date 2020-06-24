@@ -17,19 +17,19 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.teadsAdView.delegate = self
+        teadsAdView.delegate = self
         // the PID has been set in the storyboard
-        self.teadsAdView.pid = UserDefaults.standard.integer(forKey: "PID")
+        teadsAdView.pid = UserDefaults.standard.integer(forKey: "PID")
         
         let teadsAdSettings = TeadsAdSettings(build: { (settings) in
             settings.enableDebug()
         })
-        self.teadsAdView.setAdContainerView(container: self.teadsAdView)
-        self.teadsAdView.load(teadsAdSettings: teadsAdSettings)
+        
+        teadsAdView.load(teadsAdSettings: teadsAdSettings)
         
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -37,26 +37,26 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
     }
     
     @objc func rotationDetected() {
-        if self.adRatio != nil {
-            self.resizeTeadsAd(adRatio: self.adRatio!)
+        if adRatio != nil {
+            resizeTeadsAd(adRatio: adRatio!)
         }
     }
     
     func resizeTeadsAd(adRatio: CGFloat) {
-        let adHeight = self.view.frame.width/adRatio
-        self.teadsAdHeightConstraint.constant = adHeight
+        let adHeight = view.frame.width/adRatio
+        teadsAdHeightConstraint.constant = adHeight
     }
     
     // MARK: TFAAdDelegate
     
     func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio
-        self.resizeTeadsAd(adRatio: adRatio)
+        resizeTeadsAd(adRatio: adRatio)
     }
     
     func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
-        self.adRatio = 0
-        self.teadsAdHeightConstraint.constant = 0
+        adRatio = 0
+        teadsAdHeightConstraint.constant = 0
     }
     
     func adClose(_ ad: TFAAdView, userAction: Bool) {
@@ -68,5 +68,10 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
     public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
+        adRatio = ratio
+        resizeTeadsAd(adRatio: ratio)
     }
 }

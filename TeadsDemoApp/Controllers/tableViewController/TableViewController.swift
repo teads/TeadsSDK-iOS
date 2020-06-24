@@ -121,6 +121,12 @@ class TableViewController: UITableViewController, TFAAdDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
+    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
+        adRatio = ratio
+        //update slot with the right ratio
+        resizeTeadsAd(adRatio: ratio)
+    }
+    
     public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
