@@ -111,6 +111,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }, completion: nil)
     }
     
+    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
+        adRatio = ratio
+        self.collectionView?.performBatchUpdates({
+            self.collectionView?.collectionViewLayout.invalidateLayout()
+        }, completion: nil)
+    }
+    
     func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
         self.shouldCloseAd = true
         self.collectionView?.performBatchUpdates({
@@ -125,6 +132,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }, completion: nil)
     }
 
+    
     public func adError(_ ad: TFAAdView, errorMessage: String) {
     }
 }

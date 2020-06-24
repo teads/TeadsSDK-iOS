@@ -108,6 +108,7 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
         
     }
     
+    
     public func adClose(_ ad: TFAAdView, userAction: Bool) {
         //close the slot
         self.webViewHelper.closeSlot()
@@ -126,6 +127,12 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     public func adError(_ ad: TFAAdView, errorMessage: String) {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
+        self.adRatio = ratio
+        //update slot with the right ratio
+        self.webViewHelper.updateSlot(adRatio: ratio)
     }
     
     public func adDidCloseFullscreen(_ ad: TFAAdView) {
