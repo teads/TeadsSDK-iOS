@@ -217,6 +217,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
   AdErrorCodeErrorUserIdMissing = 6,
   AdErrorCodeErrorInternal = 7,
   AdErrorCodeDisabledApp = 8,
+  AdErrorCodeErrorAdRequest = 9,
 };
 
 
@@ -231,6 +232,8 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
@@ -525,6 +528,45 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 + (void)configure;
 @end
 
+@protocol TeadsAdPlacementDelegate;
+@class TeadsAdRequest;
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
+@interface TeadsAdPlacement : NSObject
+- (nullable instancetype)initWithPlacementId:(NSInteger)placementId delegate:(id <TeadsAdPlacementDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)requestAd:(TeadsAdRequest * _Nonnull)request;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+@class TeadsNativeAd;
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate
+/// Called when you get an ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param nativeAd The native associate to a native ad request
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didReceiveNativeAd:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when you did not get and ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param adFailReason AdFailReason object that contains an error code and an error message
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didFailToReceiveAd:(AdFailReason * _Nonnull)adFailReason;
+@end
+
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsAdRequest")
+@interface TeadsAdRequest : NSObject
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
@@ -569,6 +611,12 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Add extra informations to settings
+/// \param value extra value
+///
+/// \param key extra key
+///
+- (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
@@ -592,6 +640,131 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
+@interface TeadsMediaView : UIView
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class TeadsNativeAsset;
+
+@interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
++ (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
+- (void)addImageFromUrl:(NSString * _Nonnull)url;
+@end
+
+@protocol TeadsNativeAdDelegate;
+
+SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
+@interface TeadsNativeAd : NSObject
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable rating;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable price;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable adChoices;
+@property (nonatomic, weak) id <TeadsNativeAdDelegate> _Nullable delegate;
+@property (nonatomic, readonly, copy) NSArray<TeadsNativeAsset *> * _Nullable assets;
+- (void)registerContainerIn:(UIView * _Nonnull)view;
+- (void)registerWithAsset:(TeadsNativeAsset * _Nonnull)asset in:(UIView * _Nonnull)view;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsNativeAdDelegate_")
+@protocol TeadsNativeAdDelegate
+@optional
+/// Called when a valid impression is triggered on this native ad.
+/// \param nativeAd The nativeAd instance on which an impression is recorded
+///
+- (void)nativeAdDidRecordAdImpression:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when a click is recorded on this native ad
+/// \param nativeAd The nativeAd instance on which a click is recorded
+///
+- (void)nativeAdDidRecordAdClick:(TeadsNativeAd * _Nonnull)nativeAd;
+@end
+
+enum Template : NSInteger;
+
+SWIFT_CLASS("_TtC8TeadsSDK20TeadsNativeAdRequest")
+@interface TeadsNativeAdRequest : TeadsAdRequest
+- (nonnull instancetype)initWithTemplate:(enum Template)template_ settings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings SWIFT_UNAVAILABLE;
+@end
+
+@class UILabel;
+@class UIImageView;
+@class UIButton;
+
+SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
+@interface TeadsNativeAdView : UIView
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) TeadsNativeAd * _Nullable nativeAd;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Template, open) {
+  TemplateMopub = -2,
+  TemplateAdmob = -1,
+  TemplateFeedArticle = 0,
+};
+
+
+
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
+@interface TeadsNativeAsset : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable text;
+@property (nonatomic, readonly, copy) NSString * _Nullable url;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
++ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+@end
+
+
 
 
 
@@ -826,6 +999,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
   AdErrorCodeErrorUserIdMissing = 6,
   AdErrorCodeErrorInternal = 7,
   AdErrorCodeDisabledApp = 8,
+  AdErrorCodeErrorAdRequest = 9,
 };
 
 
@@ -840,6 +1014,8 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
@@ -1134,6 +1310,45 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 + (void)configure;
 @end
 
+@protocol TeadsAdPlacementDelegate;
+@class TeadsAdRequest;
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
+@interface TeadsAdPlacement : NSObject
+- (nullable instancetype)initWithPlacementId:(NSInteger)placementId delegate:(id <TeadsAdPlacementDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)requestAd:(TeadsAdRequest * _Nonnull)request;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+@class TeadsNativeAd;
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate
+/// Called when you get an ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param nativeAd The native associate to a native ad request
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didReceiveNativeAd:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when you did not get and ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param adFailReason AdFailReason object that contains an error code and an error message
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didFailToReceiveAd:(AdFailReason * _Nonnull)adFailReason;
+@end
+
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsAdRequest")
+@interface TeadsAdRequest : NSObject
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
@@ -1178,6 +1393,12 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Add extra informations to settings
+/// \param value extra value
+///
+/// \param key extra key
+///
+- (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
@@ -1201,6 +1422,131 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
+@interface TeadsMediaView : UIView
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class TeadsNativeAsset;
+
+@interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
++ (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
+- (void)addImageFromUrl:(NSString * _Nonnull)url;
+@end
+
+@protocol TeadsNativeAdDelegate;
+
+SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
+@interface TeadsNativeAd : NSObject
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable rating;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable price;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable adChoices;
+@property (nonatomic, weak) id <TeadsNativeAdDelegate> _Nullable delegate;
+@property (nonatomic, readonly, copy) NSArray<TeadsNativeAsset *> * _Nullable assets;
+- (void)registerContainerIn:(UIView * _Nonnull)view;
+- (void)registerWithAsset:(TeadsNativeAsset * _Nonnull)asset in:(UIView * _Nonnull)view;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsNativeAdDelegate_")
+@protocol TeadsNativeAdDelegate
+@optional
+/// Called when a valid impression is triggered on this native ad.
+/// \param nativeAd The nativeAd instance on which an impression is recorded
+///
+- (void)nativeAdDidRecordAdImpression:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when a click is recorded on this native ad
+/// \param nativeAd The nativeAd instance on which a click is recorded
+///
+- (void)nativeAdDidRecordAdClick:(TeadsNativeAd * _Nonnull)nativeAd;
+@end
+
+enum Template : NSInteger;
+
+SWIFT_CLASS("_TtC8TeadsSDK20TeadsNativeAdRequest")
+@interface TeadsNativeAdRequest : TeadsAdRequest
+- (nonnull instancetype)initWithTemplate:(enum Template)template_ settings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings SWIFT_UNAVAILABLE;
+@end
+
+@class UILabel;
+@class UIImageView;
+@class UIButton;
+
+SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
+@interface TeadsNativeAdView : UIView
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) TeadsNativeAd * _Nullable nativeAd;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Template, open) {
+  TemplateMopub = -2,
+  TemplateAdmob = -1,
+  TemplateFeedArticle = 0,
+};
+
+
+
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
+@interface TeadsNativeAsset : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable text;
+@property (nonatomic, readonly, copy) NSString * _Nullable url;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
++ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+@end
+
+
 
 
 
@@ -1439,6 +1785,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
   AdErrorCodeErrorUserIdMissing = 6,
   AdErrorCodeErrorInternal = 7,
   AdErrorCodeDisabledApp = 8,
+  AdErrorCodeErrorAdRequest = 9,
 };
 
 
@@ -1453,6 +1800,8 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
@@ -1747,6 +2096,45 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 + (void)configure;
 @end
 
+@protocol TeadsAdPlacementDelegate;
+@class TeadsAdRequest;
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
+@interface TeadsAdPlacement : NSObject
+- (nullable instancetype)initWithPlacementId:(NSInteger)placementId delegate:(id <TeadsAdPlacementDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)requestAd:(TeadsAdRequest * _Nonnull)request;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+@class TeadsNativeAd;
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate
+/// Called when you get an ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param nativeAd The native associate to a native ad request
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didReceiveNativeAd:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when you did not get and ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param adFailReason AdFailReason object that contains an error code and an error message
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didFailToReceiveAd:(AdFailReason * _Nonnull)adFailReason;
+@end
+
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsAdRequest")
+@interface TeadsAdRequest : NSObject
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
@@ -1791,6 +2179,12 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Add extra informations to settings
+/// \param value extra value
+///
+/// \param key extra key
+///
+- (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
@@ -1814,6 +2208,131 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
+@interface TeadsMediaView : UIView
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class TeadsNativeAsset;
+
+@interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
++ (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
+- (void)addImageFromUrl:(NSString * _Nonnull)url;
+@end
+
+@protocol TeadsNativeAdDelegate;
+
+SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
+@interface TeadsNativeAd : NSObject
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable rating;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable price;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable adChoices;
+@property (nonatomic, weak) id <TeadsNativeAdDelegate> _Nullable delegate;
+@property (nonatomic, readonly, copy) NSArray<TeadsNativeAsset *> * _Nullable assets;
+- (void)registerContainerIn:(UIView * _Nonnull)view;
+- (void)registerWithAsset:(TeadsNativeAsset * _Nonnull)asset in:(UIView * _Nonnull)view;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsNativeAdDelegate_")
+@protocol TeadsNativeAdDelegate
+@optional
+/// Called when a valid impression is triggered on this native ad.
+/// \param nativeAd The nativeAd instance on which an impression is recorded
+///
+- (void)nativeAdDidRecordAdImpression:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when a click is recorded on this native ad
+/// \param nativeAd The nativeAd instance on which a click is recorded
+///
+- (void)nativeAdDidRecordAdClick:(TeadsNativeAd * _Nonnull)nativeAd;
+@end
+
+enum Template : NSInteger;
+
+SWIFT_CLASS("_TtC8TeadsSDK20TeadsNativeAdRequest")
+@interface TeadsNativeAdRequest : TeadsAdRequest
+- (nonnull instancetype)initWithTemplate:(enum Template)template_ settings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings SWIFT_UNAVAILABLE;
+@end
+
+@class UILabel;
+@class UIImageView;
+@class UIButton;
+
+SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
+@interface TeadsNativeAdView : UIView
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) TeadsNativeAd * _Nullable nativeAd;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Template, open) {
+  TemplateMopub = -2,
+  TemplateAdmob = -1,
+  TemplateFeedArticle = 0,
+};
+
+
+
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
+@interface TeadsNativeAsset : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable text;
+@property (nonatomic, readonly, copy) NSString * _Nullable url;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
++ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+@end
+
+
 
 
 
@@ -2048,6 +2567,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
   AdErrorCodeErrorUserIdMissing = 6,
   AdErrorCodeErrorInternal = 7,
   AdErrorCodeDisabledApp = 8,
+  AdErrorCodeErrorAdRequest = 9,
 };
 
 
@@ -2062,6 +2582,8 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
@@ -2356,6 +2878,45 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 + (void)configure;
 @end
 
+@protocol TeadsAdPlacementDelegate;
+@class TeadsAdRequest;
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
+@interface TeadsAdPlacement : NSObject
+- (nullable instancetype)initWithPlacementId:(NSInteger)placementId delegate:(id <TeadsAdPlacementDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (void)requestAd:(TeadsAdRequest * _Nonnull)request;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+@class TeadsNativeAd;
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate
+/// Called when you get an ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param nativeAd The native associate to a native ad request
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didReceiveNativeAd:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when you did not get and ad
+/// \param adPlacement The teads placement which triggered the request ad
+///
+/// \param adFailReason AdFailReason object that contains an error code and an error message
+///
+- (void)adPlacement:(TeadsAdPlacement * _Nonnull)adPlacement didFailToReceiveAd:(AdFailReason * _Nonnull)adFailReason;
+@end
+
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsAdRequest")
+@interface TeadsAdRequest : NSObject
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 @interface TeadsAdSettings : NSObject
@@ -2400,6 +2961,12 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Add extra informations to settings
+/// \param value extra value
+///
+/// \param key extra key
+///
+- (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
@@ -2423,6 +2990,131 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 /// A <code>TeadsAsSettings</code> object instance.
 + (TeadsAdSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
+@interface TeadsMediaView : UIView
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class TeadsNativeAsset;
+
+@interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
++ (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
+- (void)addImageFromUrl:(NSString * _Nonnull)url;
+@end
+
+@protocol TeadsNativeAdDelegate;
+
+SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
+@interface TeadsNativeAd : NSObject
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable rating;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable price;
+@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable adChoices;
+@property (nonatomic, weak) id <TeadsNativeAdDelegate> _Nullable delegate;
+@property (nonatomic, readonly, copy) NSArray<TeadsNativeAsset *> * _Nullable assets;
+- (void)registerContainerIn:(UIView * _Nonnull)view;
+- (void)registerWithAsset:(TeadsNativeAsset * _Nonnull)asset in:(UIView * _Nonnull)view;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsNativeAdDelegate_")
+@protocol TeadsNativeAdDelegate
+@optional
+/// Called when a valid impression is triggered on this native ad.
+/// \param nativeAd The nativeAd instance on which an impression is recorded
+///
+- (void)nativeAdDidRecordAdImpression:(TeadsNativeAd * _Nonnull)nativeAd;
+/// Called when a click is recorded on this native ad
+/// \param nativeAd The nativeAd instance on which a click is recorded
+///
+- (void)nativeAdDidRecordAdClick:(TeadsNativeAd * _Nonnull)nativeAd;
+@end
+
+enum Template : NSInteger;
+
+SWIFT_CLASS("_TtC8TeadsSDK20TeadsNativeAdRequest")
+@interface TeadsNativeAdRequest : TeadsAdRequest
+- (nonnull instancetype)initWithTemplate:(enum Template)template_ settings:(TeadsAdSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSettings:(TeadsAdSettings * _Nullable)settings SWIFT_UNAVAILABLE;
+@end
+
+@class UILabel;
+@class UIImageView;
+@class UIButton;
+
+SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
+@interface TeadsNativeAdView : UIView
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) TeadsNativeAd * _Nullable nativeAd;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Template, open) {
+  TemplateMopub = -2,
+  TemplateAdmob = -1,
+  TemplateFeedArticle = 0,
+};
+
+
+
+
+SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
+@interface TeadsNativeAsset : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable text;
+@property (nonatomic, readonly, copy) NSString * _Nullable url;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
++ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+@end
+
+
 
 
 
