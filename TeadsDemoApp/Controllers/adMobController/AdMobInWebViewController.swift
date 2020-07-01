@@ -19,7 +19,7 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
     var bannerView: GADBannerView!
 
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3570580224725271/5615499706"
+    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
     private var currentBanner: GADBannerView!
     override func viewDidLoad() {
@@ -47,7 +47,11 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
             //settings.pageUrl("http://page.com/article1")
         }
         
-        request.register(teadsAdSettings: adSettings, for: "Teads")
+        let extras = try? adSettings.toDictionary()
+        let customEventExtras = GADCustomEventExtras()
+        customEventExtras.setExtras(extras, forLabel: "Teads")
+
+        request.register(customEventExtras)
 
         self.bannerView.load(request)
         self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#my-placement-id", adView: self.bannerView)

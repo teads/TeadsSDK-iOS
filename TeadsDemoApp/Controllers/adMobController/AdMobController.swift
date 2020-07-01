@@ -13,7 +13,7 @@ import UIKit
 class AdMobController: UIViewController, GADBannerViewDelegate {
     
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3570580224725271/5615499706"
+    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
     var bannerView: GADBannerView!
     @IBOutlet weak var slotView: UIView!
@@ -49,7 +49,11 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        request.register(teadsAdSettings: adSettings, for: "Teads")
+        let extras = try? adSettings.toDictionary()
+        let customEventExtras = GADCustomEventExtras()
+        customEventExtras.setExtras(extras, forLabel: "Teads")
+
+        request.register(customEventExtras)
         
         bannerView.load(request)
     }

@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>GADIsAdManagerApp</key>
-    <true/>
-    <key>GADApplicationIdentifier</key>
-    <string>ca-app-pub-3570580224725271~8055914490</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -50,6 +50,5 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-    
 </dict>
 </plist>
