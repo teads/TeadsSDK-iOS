@@ -51,5 +51,9 @@ class InReadTopViewController: UIViewController, TFAAdDelegate {
     
     public func adError(_ ad: TFAAdView, errorMessage: String) {
     }
+    
+    func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
+        resizeTeadsAd(adRatio: ratio)
+    }
 
 }
