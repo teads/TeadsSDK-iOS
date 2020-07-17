@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.7.4
+_2020-07-17_
+- fix issue https://github.com/teads/TeadsSDK-iOS/issues/124
+
 ### v4.7.3
 _2020-06-29_
 - Fixes and improvements

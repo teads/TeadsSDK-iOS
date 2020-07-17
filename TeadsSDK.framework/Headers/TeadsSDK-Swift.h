@@ -311,6 +311,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when ad start
 /// \param ad The teadsAd object
 ///
+/// \param state playback state
+///
 - (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
 /// @deprecated since 4.1.x please use TFASoundDelegate instead
@@ -319,8 +321,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// \param muted true if the sound is off false otherwise
 ///
 - (void)adDidChangeVolume:(TFAAdView * _Nonnull)ad muted:(BOOL)muted;
+@required
 /// Called when the ad ratio was updated
-/// \param adRatio ratio of the ad
+/// <h1>Example:</h1>
+/// resize view slot according to ratio
+/// \code
+/// let adHeight = view.frame.width/adRatio
+/// teadsAdViewHeightConstraint.constant = adHeight
+///
+/// \endcode\param ad Teads Ad View
+///
+/// \param ratio ratio of the ad
 ///
 - (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 @end
@@ -429,6 +440,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -477,6 +489,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -1093,6 +1106,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when ad start
 /// \param ad The teadsAd object
 ///
+/// \param state playback state
+///
 - (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
 /// @deprecated since 4.1.x please use TFASoundDelegate instead
@@ -1101,8 +1116,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// \param muted true if the sound is off false otherwise
 ///
 - (void)adDidChangeVolume:(TFAAdView * _Nonnull)ad muted:(BOOL)muted;
+@required
 /// Called when the ad ratio was updated
-/// \param adRatio ratio of the ad
+/// <h1>Example:</h1>
+/// resize view slot according to ratio
+/// \code
+/// let adHeight = view.frame.width/adRatio
+/// teadsAdViewHeightConstraint.constant = adHeight
+///
+/// \endcode\param ad Teads Ad View
+///
+/// \param ratio ratio of the ad
 ///
 - (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 @end
@@ -1211,6 +1235,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -1259,6 +1284,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -1879,6 +1905,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when ad start
 /// \param ad The teadsAd object
 ///
+/// \param state playback state
+///
 - (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
 /// @deprecated since 4.1.x please use TFASoundDelegate instead
@@ -1887,8 +1915,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// \param muted true if the sound is off false otherwise
 ///
 - (void)adDidChangeVolume:(TFAAdView * _Nonnull)ad muted:(BOOL)muted;
+@required
 /// Called when the ad ratio was updated
-/// \param adRatio ratio of the ad
+/// <h1>Example:</h1>
+/// resize view slot according to ratio
+/// \code
+/// let adHeight = view.frame.width/adRatio
+/// teadsAdViewHeightConstraint.constant = adHeight
+///
+/// \endcode\param ad Teads Ad View
+///
+/// \param ratio ratio of the ad
 ///
 - (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 @end
@@ -1997,6 +2034,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -2045,6 +2083,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -2661,6 +2700,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// Called when ad start
 /// \param ad The teadsAd object
 ///
+/// \param state playback state
+///
 - (void)adPlaybackChange:(TFAAdView * _Nonnull)ad state:(enum TeadsAdPlaybackState)state;
 /// Called when ad changes volume state
 /// @deprecated since 4.1.x please use TFASoundDelegate instead
@@ -2669,8 +2710,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK13TFAAdDelegate_")
 /// \param muted true if the sound is off false otherwise
 ///
 - (void)adDidChangeVolume:(TFAAdView * _Nonnull)ad muted:(BOOL)muted;
+@required
 /// Called when the ad ratio was updated
-/// \param adRatio ratio of the ad
+/// <h1>Example:</h1>
+/// resize view slot according to ratio
+/// \code
+/// let adHeight = view.frame.width/adRatio
+/// teadsAdViewHeightConstraint.constant = adHeight
+///
+/// \endcode\param ad Teads Ad View
+///
+/// \param ratio ratio of the ad
 ///
 - (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 @end
@@ -2779,6 +2829,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TFAInterstitialAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;
@@ -2827,6 +2878,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TFARewardedAd")
 - (void)show;
 /// Add Context info
 - (void)addContextInfoWithInfoKey:(NSString * _Nonnull)infoKey infoValue:(NSString * _Nonnull)infoValue;
+- (void)didUpdateRatio:(TFAAdView * _Nonnull)ad ratio:(CGFloat)ratio;
 - (void)didReceiveAd:(TFAAdView * _Nonnull)ad adRatio:(CGFloat)adRatio;
 - (void)didFailToReceiveAd:(TFAAdView * _Nonnull)ad adFailReason:(AdFailReason * _Nonnull)adFailReason;
 - (void)adClose:(TFAAdView * _Nonnull)ad userAction:(BOOL)userAction;

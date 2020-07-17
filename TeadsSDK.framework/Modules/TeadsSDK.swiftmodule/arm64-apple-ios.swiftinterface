@@ -83,7 +83,7 @@ extension TeadsMediaView {
   @objc optional func adDidCloseFullscreen(_ ad: TeadsSDK.TFAAdView)
   @objc optional func adPlaybackChange(_ ad: TeadsSDK.TFAAdView, state: TeadsSDK.TFAAdView.TeadsAdPlaybackState)
   @objc optional func adDidChangeVolume(_ ad: TeadsSDK.TFAAdView, muted: Swift.Bool)
-  @objc optional func didUpdateRatio(_ ad: TeadsSDK.TFAAdView, ratio: CoreGraphics.CGFloat)
+  @objc func didUpdateRatio(_ ad: TeadsSDK.TFAAdView, ratio: CoreGraphics.CGFloat)
 }
 @objc public class TFAAdView : UIKit.UIView {
   @objc public enum TeadsAdPlaybackState : Swift.Int {
@@ -181,6 +181,7 @@ extension URLSession {
   @objc public func load(settings: TeadsSDK.TeadsAdSettings? = nil)
   @objc public func show()
   @objc public func addContextInfo(infoKey: Swift.String, infoValue: Swift.String)
+  @objc public func didUpdateRatio(_ ad: TeadsSDK.TFAAdView, ratio: CoreGraphics.CGFloat)
   @objc public func didReceiveAd(_ ad: TeadsSDK.TFAAdView, adRatio: CoreGraphics.CGFloat)
   @objc public func didFailToReceiveAd(_ ad: TeadsSDK.TFAAdView, adFailReason: TeadsSDK.AdFailReason)
   @objc public func adClose(_ ad: TeadsSDK.TFAAdView, userAction: Swift.Bool)
@@ -229,6 +230,7 @@ extension UIView {
   @objc public func load(settings: TeadsSDK.TeadsAdSettings? = nil)
   @objc public func show()
   @objc public func addContextInfo(infoKey: Swift.String, infoValue: Swift.String)
+  @objc public func didUpdateRatio(_ ad: TeadsSDK.TFAAdView, ratio: CoreGraphics.CGFloat)
   @objc public func didReceiveAd(_ ad: TeadsSDK.TFAAdView, adRatio: CoreGraphics.CGFloat)
   @objc public func didFailToReceiveAd(_ ad: TeadsSDK.TFAAdView, adFailReason: TeadsSDK.AdFailReason)
   @objc public func adClose(_ ad: TeadsSDK.TFAAdView, userAction: Swift.Bool)
