@@ -467,6 +467,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAInterstitialAdDelegate_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAMediatedAdViewDelegate_")
+@protocol TFAMediatedAdViewDelegate
+/// Called when the ad ratio is udpated.
+/// \param adView The adView in which the ad is being played.
+///
+/// \param ratio The ratio you should use to update your adView height.
+///
+- (void)didUpdateRatio:(UIView * _Nonnull)adView ratio:(CGFloat)ratio;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK9TFAReward")
 @interface TFAReward : NSObject
 @property (nonatomic, copy) NSString * _Nullable type;
@@ -624,6 +635,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Subscribe a delegate class which will be in charge of resizing your ad size.
+/// warning:
+/// To be used only in case your ads are running through mediation !
+/// \param delegate The class conforming to TFAMediatedAdViewDelegate where adView resizing will be done.
+///
+/// \param adView Your mediated ad view which contains your ad.
+///
+///
+/// throws:
+/// Error if given adView is not resizable.
+- (BOOL)subscribeAdResizeDelegate:(id <TFAMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error;
 /// Add extra informations to settings
 /// \param value extra value
 ///
@@ -771,11 +793,11 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 
 
 
-
-
 @interface UIImage (SWIFT_EXTENSION(TeadsSDK))
 + (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
 @end
+
+
 
 
 
@@ -1262,6 +1284,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAInterstitialAdDelegate_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAMediatedAdViewDelegate_")
+@protocol TFAMediatedAdViewDelegate
+/// Called when the ad ratio is udpated.
+/// \param adView The adView in which the ad is being played.
+///
+/// \param ratio The ratio you should use to update your adView height.
+///
+- (void)didUpdateRatio:(UIView * _Nonnull)adView ratio:(CGFloat)ratio;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK9TFAReward")
 @interface TFAReward : NSObject
 @property (nonatomic, copy) NSString * _Nullable type;
@@ -1419,6 +1452,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Subscribe a delegate class which will be in charge of resizing your ad size.
+/// warning:
+/// To be used only in case your ads are running through mediation !
+/// \param delegate The class conforming to TFAMediatedAdViewDelegate where adView resizing will be done.
+///
+/// \param adView Your mediated ad view which contains your ad.
+///
+///
+/// throws:
+/// Error if given adView is not resizable.
+- (BOOL)subscribeAdResizeDelegate:(id <TFAMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error;
 /// Add extra informations to settings
 /// \param value extra value
 ///
@@ -1566,11 +1610,11 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 
 
 
-
-
 @interface UIImage (SWIFT_EXTENSION(TeadsSDK))
 + (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
 @end
+
+
 
 
 
@@ -2061,6 +2105,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAInterstitialAdDelegate_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAMediatedAdViewDelegate_")
+@protocol TFAMediatedAdViewDelegate
+/// Called when the ad ratio is udpated.
+/// \param adView The adView in which the ad is being played.
+///
+/// \param ratio The ratio you should use to update your adView height.
+///
+- (void)didUpdateRatio:(UIView * _Nonnull)adView ratio:(CGFloat)ratio;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK9TFAReward")
 @interface TFAReward : NSObject
 @property (nonatomic, copy) NSString * _Nullable type;
@@ -2218,6 +2273,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Subscribe a delegate class which will be in charge of resizing your ad size.
+/// warning:
+/// To be used only in case your ads are running through mediation !
+/// \param delegate The class conforming to TFAMediatedAdViewDelegate where adView resizing will be done.
+///
+/// \param adView Your mediated ad view which contains your ad.
+///
+///
+/// throws:
+/// Error if given adView is not resizable.
+- (BOOL)subscribeAdResizeDelegate:(id <TFAMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error;
 /// Add extra informations to settings
 /// \param value extra value
 ///
@@ -2365,11 +2431,11 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 
 
 
-
-
 @interface UIImage (SWIFT_EXTENSION(TeadsSDK))
 + (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
 @end
+
+
 
 
 
@@ -2856,6 +2922,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAInterstitialAdDelegate_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP8TeadsSDK25TFAMediatedAdViewDelegate_")
+@protocol TFAMediatedAdViewDelegate
+/// Called when the ad ratio is udpated.
+/// \param adView The adView in which the ad is being played.
+///
+/// \param ratio The ratio you should use to update your adView height.
+///
+- (void)didUpdateRatio:(UIView * _Nonnull)adView ratio:(CGFloat)ratio;
+@end
+
+
 SWIFT_CLASS("_TtC8TeadsSDK9TFAReward")
 @interface TFAReward : NSObject
 @property (nonatomic, copy) NSString * _Nullable type;
@@ -3013,6 +3090,17 @@ SWIFT_CLASS("_TtC8TeadsSDK15TeadsAdSettings")
 - (void)setUsPrivacyWithConsent:(NSString * _Nonnull)consent;
 /// Prevent to automatically set UIDevice.current.isBatteryMonitoringEnabled
 - (void)disableBatteryMonitoring;
+/// Subscribe a delegate class which will be in charge of resizing your ad size.
+/// warning:
+/// To be used only in case your ads are running through mediation !
+/// \param delegate The class conforming to TFAMediatedAdViewDelegate where adView resizing will be done.
+///
+/// \param adView Your mediated ad view which contains your ad.
+///
+///
+/// throws:
+/// Error if given adView is not resizable.
+- (BOOL)subscribeAdResizeDelegate:(id <TFAMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error;
 /// Add extra informations to settings
 /// \param value extra value
 ///
@@ -3160,11 +3248,11 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 
 
 
-
-
 @interface UIImage (SWIFT_EXTENSION(TeadsSDK))
 + (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
 @end
+
+
 
 
 

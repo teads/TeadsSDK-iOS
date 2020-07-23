@@ -1,9 +1,12 @@
 # Changelog
 
+### v4.7.5
+_2020-07-23_
+- add method to resize view in mediation
+
 ### v4.7.4
 _2020-07-17_
 - fix issue https://github.com/teads/TeadsSDK-iOS/issues/124
-- `TFAAdDelegate.didUpdateRatio` becomes [mandatory](https://support.teads.tv/support/solutions/articles/36000165919-standard-integration-ios#ad_resizing)
 
 ### v4.7.3
 _2020-06-29_

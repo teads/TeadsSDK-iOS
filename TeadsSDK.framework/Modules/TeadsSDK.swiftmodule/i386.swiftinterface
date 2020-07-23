@@ -44,12 +44,13 @@ extension TeadsMediaView {
   @objc public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v1, cmpSdkID: Swift.Int = 0)
   @objc public func setUsPrivacy(consent: Swift.String)
   @objc public func disableBatteryMonitoring()
+  @objc public func subscribeAdResizeDelegate(_ delegate: TeadsSDK.TFAMediatedAdViewDelegate, forAdView adView: UIKit.UIView) throws
   @objc public func addExtras(_ value: Swift.String, for key: Swift.String)
   public typealias BuildTeadsAdSettings = (TeadsSDK.TeadsAdSettings) -> Swift.Void
   @objc public init(build: (TeadsSDK.TeadsAdSettings) -> Swift.Void)
   required public init(from decoder: Swift.Decoder) throws
-  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
 }
 @objc extension TeadsAdSettings {
   @objc dynamic public func toDictionary() throws -> [Swift.AnyHashable : Any]
@@ -66,6 +67,9 @@ extension TeadsMediaView {
   @objc override dynamic public init()
   public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
+}
+@objc public protocol TFAMediatedAdViewDelegate : AnyObject {
+  @objc func didUpdateRatio(_ adView: UIKit.UIView, ratio: CoreGraphics.CGFloat)
 }
 @objc public protocol TFASoundDelegate {
   @objc func adWillStartPlayingAudio(_ ad: TeadsSDK.TFAAdView)
