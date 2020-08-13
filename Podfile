@@ -9,5 +9,6 @@ target 'TeadsDemoApp' do
 
   # Pods for TeadsDemoApp
   pod 'GoogleMobileAdsMediationTeads', '4.7.5'
+  pod 'MoPub-Teads-Adapters', '4.7.6'
 
 end

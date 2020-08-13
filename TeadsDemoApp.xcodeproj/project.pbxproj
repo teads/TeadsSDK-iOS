@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AFAF671587558D46AE2EAC8 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B79512963E77F97E0E9430D /* Pods_TeadsDemoApp.framework */; };
 		B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* WebViewViewController.swift */; };
 		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
 		B501EC7C1F823F8A002909B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B501EC6B1F8232B3002909B9 /* index.html */; };
@@ -37,13 +36,15 @@
 		B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */; };
 		B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */; };
 		B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */; };
+		B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */; };
+		D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */; };
 		DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* AdMobController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48B8DFE05488E339B96E8286 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		4B79512963E77F97E0E9430D /* Pods_TeadsDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91867719F32F3DB45575394B /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B501EC6A1F8232B3002909B9 /* ie10-viewport-bug-workaround.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "ie10-viewport-bug-workaround.js"; sourceTree = "<group>"; };
 		B501EC6B1F8232B3002909B9 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		B501EC6D1F8232B3002909B9 /* bootstrap-theme.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "bootstrap-theme.css"; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* AdMobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,17 +90,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFAF671587558D46AE2EAC8 /* Pods_TeadsDemoApp.framework in Frameworks */,
+				D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2592708B5E82C5A12C737F0B /* Frameworks */ = {
+		874FCA9D677F77A0CE9CCE96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B79512963E77F97E0E9430D /* Pods_TeadsDemoApp.framework */,
+				3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,8 +108,8 @@
 		9C4C2A8CC3AEB01218414AF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				91867719F32F3DB45575394B /* Pods-TeadsDemoApp.debug.xcconfig */,
-				48B8DFE05488E339B96E8286 /* Pods-TeadsDemoApp.release.xcconfig */,
+				9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */,
+				4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -224,8 +226,8 @@
 			children = (
 				B5555A341F7CDF80007406D4 /* TeadsDemoApp */,
 				B5555A331F7CDF80007406D4 /* Products */,
-				2592708B5E82C5A12C737F0B /* Frameworks */,
 				9C4C2A8CC3AEB01218414AF6 /* Pods */,
+				874FCA9D677F77A0CE9CCE96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +268,7 @@
 		B5555A4C1F7D3153007406D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5D8037524E3E51C00C0AAF6 /* mopubController */,
 				DB4660D82181B718003A6CF5 /* adMobController */,
 				B50159921FB1B6C6007399A0 /* collectionViewController */,
 				B50159911FB1B6A0007399A0 /* scrollViewController */,
@@ -339,6 +342,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		B5D8037524E3E51C00C0AAF6 /* mopubController */ = {
+			isa = PBXGroup;
+			children = (
+				B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */,
+			);
+			path = mopubController;
+			sourceTree = "<group>";
+		};
 		DB4660D82181B718003A6CF5 /* adMobController */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,12 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsDemoApp" */;
 			buildPhases = (
-				4DE9DEBFE2E1DD64624F7CA5 /* [CP] Check Pods Manifest.lock */,
+				A2D3C8E3E10EE071717EF2F0 /* [CP] Check Pods Manifest.lock */,
 				B5555A2E1F7CDF80007406D4 /* Sources */,
 				B5555A2F1F7CDF80007406D4 /* Frameworks */,
 				B5555A301F7CDF80007406D4 /* Resources */,
 				913FE1D31FEC291B003C6E5E /* ShellScript */,
-				FBFB355C3083F93449930B2F /* [CP] Embed Pods Frameworks */,
+				3EC69DF198424DA10DD39A97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,7 +434,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DE9DEBFE2E1DD64624F7CA5 /* [CP] Check Pods Manifest.lock */ = {
+		3EC69DF198424DA10DD39A97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TeadsSDK/TeadsSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		913FE1D31FEC291B003C6E5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
+		};
+		A2D3C8E3E10EE071717EF2F0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,43 +493,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		913FE1D31FEC291B003C6E5E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
-		};
-		FBFB355C3083F93449930B2F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${PODS_ROOT}/TeadsSDK/TeadsSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,6 +516,7 @@
 				B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
 				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
+				B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
 				B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */,
 				B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */,
@@ -653,7 +667,7 @@
 		};
 		B5555A451F7CDF80007406D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91867719F32F3DB45575394B /* Pods-TeadsDemoApp.debug.xcconfig */;
+			baseConfigurationReference = 9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";
@@ -677,7 +691,7 @@
 		};
 		B5555A461F7CDF80007406D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48B8DFE05488E339B96E8286 /* Pods-TeadsDemoApp.release.xcconfig */;
+			baseConfigurationReference = 4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";
