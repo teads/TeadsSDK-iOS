@@ -60,7 +60,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
                     allConstraints += adVerticalConstraints
                     NSLayoutConstraint.activate(allConstraints)
                 }
-                self.teadsAdView?.setAdContainerView(container: cellAd)
             }
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)

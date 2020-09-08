@@ -31,7 +31,6 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
         self.teadsAdSettings = adSettings
         //We use the observer to know when the rotation happen to resize the ad
         NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-        self.adView?.setAdContainerView(container: adView)
     }
     
     deinit {

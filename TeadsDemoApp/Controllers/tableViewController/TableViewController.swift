@@ -84,7 +84,6 @@ class TableViewController: UITableViewController, TFAAdDelegate {
                 allConstraints += adVerticalConstraints
                 NSLayoutConstraint.activate(allConstraints)
             }
-            self.teadsAdView?.setAdContainerView(container: cellAd!)
             return cellAd!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.classicCellIdentifier, for: indexPath)
