@@ -24,7 +24,6 @@ import WebKit
 }
 extension TeadsMediaView {
   @objc public static func fromAsset(asset: TeadsSDK.TeadsNativeAsset) -> TeadsSDK.TeadsMediaView
-  @objc dynamic public func addImage(fromUrl url: Swift.String)
 }
 @objc public class TeadsAdSettings : ObjectiveC.NSObject, Swift.Codable {
   public static let integrationAdmob: Swift.String
@@ -243,9 +242,6 @@ extension UIView {
   @objc public func adBrowserDidClose(_ ad: TeadsSDK.TFAAdView)
   @objc override dynamic public init()
 }
-extension UIImage {
-  @objc public static func loadSync(url: Swift.String, callback: @escaping (UIKit.UIImage) -> Swift.Void)
-}
 @objc public enum TCFVersion : Swift.Int, Swift.Codable {
   case v1 = 1
   case v2 = 2
@@ -254,6 +250,11 @@ extension UIImage {
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc public class TeadsNativeImageAsset : TeadsSDK.TeadsNativeAsset {
+  required public init(from decoder: Swift.Decoder) throws
+  public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)? = nil, failure: ((Swift.Error) -> Swift.Void)? = nil)
+  @objc deinit
 }
 extension Dictionary where Key == Swift.String, Value == Swift.String {
   public typealias RawValue = Swift.String
@@ -328,8 +329,8 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
 @objc public class TeadsNativeAd : ObjectiveC.NSObject {
   @objc final public let title: TeadsSDK.TeadsNativeAsset?
   @objc final public let content: TeadsSDK.TeadsNativeAsset?
-  @objc final public let imageUrl: TeadsSDK.TeadsNativeAsset?
-  @objc final public let iconUrl: TeadsSDK.TeadsNativeAsset?
+  @objc final public let imageUrl: TeadsSDK.TeadsNativeImageAsset?
+  @objc final public let iconUrl: TeadsSDK.TeadsNativeImageAsset?
   @objc final public let sponsored: TeadsSDK.TeadsNativeAsset?
   @objc final public let callToAction: TeadsSDK.TeadsNativeAsset?
   @objc final public let video: TeadsSDK.TeadsNativeAsset?
@@ -346,8 +347,8 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
   @objc override dynamic public init()
 }
 @objc public class Teads : ObjectiveC.NSObject {
-  public static var sdkVersion: Swift.String {
-    get
+  @objc public static var sdkVersion: Swift.String {
+    @objc get
   }
   @objc override dynamic public init()
   @objc deinit

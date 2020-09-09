@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.7.7
+_2020-09-09_
+- Fix issue https://github.com/teads/TeadsSDK-iOS/issues/128 \n- Improve performance management \n- Fix a rare case when some VPAID were not starting
+
 ### v4.7.5
 _2020-07-23_
 - add method to resize view in mediation

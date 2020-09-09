@@ -540,6 +540,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
+/// Current sdkVersion
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
++ (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -685,23 +688,21 @@ SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class TeadsNativeAsset;
 
 @interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
 + (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
-- (void)addImageFromUrl:(NSString * _Nonnull)url;
 @end
 
+@class TeadsNativeImageAsset;
 @protocol TeadsNativeAdDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : NSObject
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable iconUrl;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
@@ -785,17 +786,17 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 @end
 
 
-
-
-
-
-
-
-
-
-@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
-+ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+SWIFT_CLASS("_TtC8TeadsSDK21TeadsNativeImageAsset")
+@interface TeadsNativeImageAsset : TeadsNativeAsset
 @end
+
+
+
+
+
+
+
+
 
 
 
@@ -1357,6 +1358,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
+/// Current sdkVersion
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
++ (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1502,23 +1506,21 @@ SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class TeadsNativeAsset;
 
 @interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
 + (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
-- (void)addImageFromUrl:(NSString * _Nonnull)url;
 @end
 
+@class TeadsNativeImageAsset;
 @protocol TeadsNativeAdDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : NSObject
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable iconUrl;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
@@ -1602,17 +1604,17 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 @end
 
 
-
-
-
-
-
-
-
-
-@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
-+ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+SWIFT_CLASS("_TtC8TeadsSDK21TeadsNativeImageAsset")
+@interface TeadsNativeImageAsset : TeadsNativeAsset
 @end
+
+
+
+
+
+
+
+
 
 
 
@@ -2178,6 +2180,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
+/// Current sdkVersion
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
++ (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2323,23 +2328,21 @@ SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class TeadsNativeAsset;
 
 @interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
 + (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
-- (void)addImageFromUrl:(NSString * _Nonnull)url;
 @end
 
+@class TeadsNativeImageAsset;
 @protocol TeadsNativeAdDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : NSObject
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable iconUrl;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
@@ -2423,17 +2426,17 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 @end
 
 
-
-
-
-
-
-
-
-
-@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
-+ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+SWIFT_CLASS("_TtC8TeadsSDK21TeadsNativeImageAsset")
+@interface TeadsNativeImageAsset : TeadsNativeAsset
 @end
+
+
+
+
+
+
+
+
 
 
 
@@ -2995,6 +2998,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK16TFASoundDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
+/// Current sdkVersion
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
++ (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -3140,23 +3146,21 @@ SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class TeadsNativeAsset;
 
 @interface TeadsMediaView (SWIFT_EXTENSION(TeadsSDK))
 + (TeadsMediaView * _Nonnull)fromAssetWithAsset:(TeadsNativeAsset * _Nonnull)asset SWIFT_WARN_UNUSED_RESULT;
-- (void)addImageFromUrl:(NSString * _Nonnull)url;
 @end
 
+@class TeadsNativeImageAsset;
 @protocol TeadsNativeAdDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : NSObject
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable title;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable content;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable imageUrl;
-@property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable iconUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable imageUrl;
+@property (nonatomic, readonly, strong) TeadsNativeImageAsset * _Nullable iconUrl;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable sponsored;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable callToAction;
 @property (nonatomic, readonly, strong) TeadsNativeAsset * _Nullable video;
@@ -3240,17 +3244,17 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsNativeAsset")
 @end
 
 
-
-
-
-
-
-
-
-
-@interface UIImage (SWIFT_EXTENSION(TeadsSDK))
-+ (void)loadSyncWithUrl:(NSString * _Nonnull)url callback:(void (^ _Nonnull)(UIImage * _Nonnull))callback;
+SWIFT_CLASS("_TtC8TeadsSDK21TeadsNativeImageAsset")
+@interface TeadsNativeImageAsset : TeadsNativeAsset
 @end
+
+
+
+
+
+
+
+
 
 
 
