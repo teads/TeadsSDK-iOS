@@ -161,10 +161,12 @@
    **************************/
 
   var getPlatformType = function() {
+    const hasTouchPoints = !!(navigator.maxTouchPoints && navigator.maxTouchPoints > 0)
+    const userAgent = navigator.userAgent.toLowerCase()
     return tryOrLog(function() {
-      if (/android/i.test(navigator.userAgent.toLowerCase())) {
+      if (/android/i.test(userAgent)) {
         return ANDROID_OS;
-      } else if (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())) {
+      } else if (/iphone|ipad|ipod/i.test(userAgent) || (/mac\s+os/i.test(userAgent) && hasTouchPoints)) {
         return IOS_OS;
       } else return UNKNOWN_OS;
     }, 'getPlatformType')
