@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.7.8
+_2020-09-21_
+- Ensuring ratio update is made on main thread \n - Fixing player to have a better creative rendering \n - Improving memory footprint and performance
+
 ### v4.7.7
 _2020-09-09_
 - Fix issue https://github.com/teads/TeadsSDK-iOS/issues/128 \n- Improve performance management \n- Fix a rare case when some VPAID were not starting
