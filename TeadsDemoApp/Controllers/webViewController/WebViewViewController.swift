@@ -31,7 +31,7 @@ class WebViewViewController: UIViewController, WKNavigationDelegate {
         self.webView?.loadHTMLString(contentString, baseURL: nil)
         
         self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!)
+        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#my-placement-id", adView: self.adView!, viewController: self)
     }
     
     // MARK: -

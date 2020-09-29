@@ -130,4 +130,8 @@ class TableViewController: UITableViewController, TFAAdDelegate {
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }
+    
+    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+        return self
+    }
 }
