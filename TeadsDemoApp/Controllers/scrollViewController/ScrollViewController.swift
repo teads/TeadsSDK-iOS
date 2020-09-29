@@ -74,4 +74,8 @@ class ScrollViewController: UIViewController, TFAAdDelegate {
         adRatio = ratio
         resizeTeadsAd(adRatio: ratio)
     }
+    
+    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+        return self
+    }
 }

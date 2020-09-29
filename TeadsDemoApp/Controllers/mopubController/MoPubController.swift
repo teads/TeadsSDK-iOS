@@ -25,6 +25,7 @@ class MoPubController: UIViewController {
         
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         bannerView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)
+        bannerView.delegate = self
         config.loggingLevel = .debug
         
         if MoPub.sharedInstance().isSdkInitialized {
@@ -88,6 +89,12 @@ class MoPubController: UIViewController {
                                multiplier: 1,
                                constant: 0)
         ])
+    }
+}
+
+extension MoPubController: MPAdViewDelegate {
+    func viewControllerForPresentingModalView() -> UIViewController! {
+        return self
     }
 }
 

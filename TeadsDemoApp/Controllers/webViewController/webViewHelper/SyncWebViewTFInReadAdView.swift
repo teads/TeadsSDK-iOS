@@ -20,14 +20,16 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     var adViewConstraints = [NSLayoutConstraint]()
     var adViewHeightConstraint: NSLayoutConstraint?
     var adRatio: CGFloat = 16/9.0
+    weak var viewController: UIViewController?
     
-    public init(webView: WKWebView, selector: String, adView: TFAInReadAdView, adSettings: TeadsAdSettings? = nil) {
+    public init(webView: WKWebView, selector: String, adView: TFAInReadAdView, viewController: UIViewController, adSettings: TeadsAdSettings? = nil) {
         self.webViewHelper = WebViewHelper(webView: webView, selector: selector)
         self.adView = adView
         super.init()
         self.adView?.delegate = self
         self.webViewHelper.delegate = self
         self.webView = webView
+        self.viewController = viewController
         self.teadsAdSettings = adSettings
         //We use the observer to know when the rotation happen to resize the ad
         NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -137,5 +139,9 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     public func adDidCloseFullscreen(_ ad: TFAAdView) {
         //update the slot in case there was a rotation or a layout change to be sure that the ad has the right layout
         self.webViewHelper.updateSlot(adRatio: self.adRatio)
+    }
+    
+    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+        return viewController
     }
 }

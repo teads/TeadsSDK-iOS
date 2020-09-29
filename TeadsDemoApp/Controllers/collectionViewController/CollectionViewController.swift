@@ -134,4 +134,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     public func adError(_ ad: TFAAdView, errorMessage: String) {
     }
+    
+    func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+        return self
+    }
 }

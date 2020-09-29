@@ -203,11 +203,11 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
     func onSlotUpdated(position: String?) {
         if let positionString = position,
             let data = positionString.data(using: .utf8),
-            let positionDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-            guard let top = positionDict?["top"] as? Int,
-                let bottom = positionDict?["bottom"] as? Int,
-                let right = positionDict?["right"] as? Int,
-                let left = positionDict?["left"] as? Int else {
+            let positionDict = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] {
+            guard let top = positionDict["top"] as? Int,
+                let bottom = positionDict["bottom"] as? Int,
+                let right = positionDict["right"] as? Int,
+                let left = positionDict["left"] as? Int else {
                     return
             }
             self.noSlotTimer?.invalidate()

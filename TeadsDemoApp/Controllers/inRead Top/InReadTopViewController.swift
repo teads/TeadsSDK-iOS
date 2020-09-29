@@ -55,5 +55,9 @@ class InReadTopViewController: UIViewController, TFAAdDelegate {
     func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
         resizeTeadsAd(adRatio: ratio)
     }
+    
+    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+        return self
+    }
 
 }
