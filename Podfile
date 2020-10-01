@@ -8,7 +8,7 @@ target 'TeadsDemoApp' do
   use_frameworks!
 
   # Pods for TeadsDemoApp
-  pod 'GoogleMobileAdsMediationTeads', '4.7.7'
-  pod 'MoPub-Teads-Adapters', '4.7.7'
+  pod 'GoogleMobileAdsMediationTeads', '4.7.8'
+  pod 'MoPub-Teads-Adapters', '4.7.8'
 
 end
