@@ -30,12 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
+        navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
     }
     
     // MARK: UITableViewDelegate

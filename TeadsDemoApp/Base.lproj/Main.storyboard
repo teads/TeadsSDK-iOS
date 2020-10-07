@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHy-s9-zGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHy-s9-zGX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-844" y="136"/>
         </scene>
-        <!--Teads SDK Demo-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,6 +68,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8nj-3d-Xfa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Fg-pU-IlR"/>
@@ -75,9 +76,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8nj-3d-Xfa" secondAttribute="bottom" id="X5X-lO-dug"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8nj-3d-Xfa" secondAttribute="trailing" id="e2p-m8-ljR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Teads SDK Demo" id="JVR-GK-c9w">
+                    <navigationItem key="navigationItem" id="JVR-GK-c9w">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="VYm-xb-SMg">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Exi-Kd-0rJ">
                                 <rect key="frame" x="282" y="0.0" width="77" height="44"/>
@@ -147,6 +147,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="yXc-BU-Vqw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i66-If-iBd" firstAttribute="leading" secondItem="yXc-BU-Vqw" secondAttribute="leading" id="NUa-Nt-6YH"/>
@@ -157,7 +158,6 @@
                             <constraint firstItem="i66-If-iBd" firstAttribute="top" secondItem="yXc-BU-Vqw" secondAttribute="top" id="tk4-Df-KO2"/>
                             <constraint firstItem="i66-If-iBd" firstAttribute="trailing" secondItem="yXc-BU-Vqw" secondAttribute="trailing" id="wjs-ql-zoc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yXc-BU-Vqw"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="i66-If-iBd" id="lvO-Ar-uja"/>
@@ -179,24 +179,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooK-3e-jRz" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1519.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1520.5"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-Fu-cZD">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="laE-Ag-uIE">
-                                                <rect key="frame" x="8" y="20" width="359" height="26.5"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="125"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="uI4-b4-Ewn"/>
+                                                    <constraint firstAttribute="height" constant="125" id="s62-Oq-v5J"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="uI4-b4-Ewn"/>
-                                                    </mask>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0a-pb-GE1">
-                                                <rect key="frame" x="8" y="80.5" width="359" height="629"/>
+                                                <rect key="frame" x="8" y="120" width="359" height="568"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="568" id="vYC-YH-3IV"/>
+                                                </constraints>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.
 
 In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.
@@ -208,7 +209,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at tortor consectetur, vestibulum nunc ut, placerat odio. Vestibulum volutpat erat porta erat pharetra congue. Cras at porta turpis, ac condimentum eros. Vivamus et erat posuere, ultricies felis in, pulvinar dui. Integer tempor tristique placerat. Phasellus ut magna malesuada sapien luctus euismod in id nibh. Nunc facilisis arcu ex, id cursus sem dignissim vel.  In hac habitasse platea dictumst. Nunc neque nisi, pellentesque vitae sodales vel, rutrum ac enim. In quis pharetra ligula. Duis tempus id est eu faucibus. Proin imperdiet, mauris quis vehicula laoreet, est justo tristique quam, et molestie nulla tortor a dui. Aenean posuere, tortor sit amet dignissim accumsan, velit tortor molestie ligula, vel semper metus urna ac nulla. Suspendisse id mattis magna. Nullam bibendum urna diam, sit amet mollis massa iaculis et.  Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendisse potenti. Morbi et ornare mi, nec ornare risus. Aliquam elementum ante ac augue tincidunt, eget finibus quam consequat. Proin egestas molestie metus in consequat. Aliquam id sodales dolor, et posuere sem. Curabitur non luctus magna, vel rutrum quam.</string>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgm-5a-Yc8" customClass="TFACustomAdView" customModule="TeadsSDK">
-                                                <rect key="frame" x="8" y="717.5" width="359" height="250"/>
+                                                <rect key="frame" x="8" y="718.5" width="359" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="syf-b1-sPv"/>
@@ -220,7 +221,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-gs-w2n">
-                                                <rect key="frame" x="8" y="975.5" width="359" height="507.5"/>
+                                                <rect key="frame" x="8" y="976.5" width="359" height="507.5"/>
                                                 <string key="text">Aliquam lobortis in orci eget facilisis. Nunc aliquam lacus vel porttitor cursus. Maecenas vel tempor orci. Donec elementum velit eget nulla luctus, fermentum malesuada metus vulputate. Duis sodales lacus massa, varius sollicitudin ipsum ultrices et. Pellentesque ipsum libero, feugiat ac gravida nec, convallis in augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vel augue faucibus neque dapibus vehicula at bibendum felis. Nulla scelerisque neque eget eleifend consectetur. In nec condimentum libero. In hac habitasse platea dictumst. Donec quis ante auctor, laoreet tellus posuere, varius nulla. Aenean finibus sed erat aliquet iaculis.
 
 Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque velit tristique. Suspendisse eget nisl sollicitudin, ornare metus at, volutpat odio. Morbi sapien tortor, faucibus eget libero et, pellentesque sagittis odio. Aenean nec justo cursus, ultrices est tincidunt, malesuada elit. Suspendisse et rutrum felis. Quisque faucibus eu sem sed rutrum.</string>
@@ -231,17 +232,22 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="top" secondItem="ooK-3e-jRz" secondAttribute="top" constant="20" id="6QM-M9-dut"/>
-                                            <constraint firstAttribute="trailing" secondItem="g0a-pb-GE1" secondAttribute="trailing" constant="8" id="96f-0v-R2K"/>
+                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="leading" secondItem="g0a-pb-GE1" secondAttribute="leading" id="0ku-IZ-eB4"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g0a-pb-GE1" secondAttribute="trailing" constant="8" id="3qR-LC-mJf"/>
                                             <constraint firstAttribute="trailing" secondItem="bgm-5a-Yc8" secondAttribute="trailing" constant="8" id="9vs-Sv-27i"/>
-                                            <constraint firstAttribute="trailing" secondItem="laE-Ag-uIE" secondAttribute="trailing" constant="8" id="DLe-ip-2Kt"/>
+                                            <constraint firstItem="fEP-Fu-cZD" firstAttribute="top" secondItem="ooK-3e-jRz" secondAttribute="top" id="BhD-go-6Qt"/>
+                                            <constraint firstItem="bgm-5a-Yc8" firstAttribute="top" secondItem="g0a-pb-GE1" secondAttribute="bottom" constant="30.5" id="C4f-AD-7nf"/>
+                                            <constraint firstItem="fEP-Fu-cZD" firstAttribute="width" secondItem="laE-Ag-uIE" secondAttribute="width" multiplier="1.04457" id="HHm-9Z-WeS"/>
                                             <constraint firstItem="OZQ-gs-w2n" firstAttribute="top" secondItem="bgm-5a-Yc8" secondAttribute="bottom" constant="8" id="JLb-Qd-SSa"/>
                                             <constraint firstAttribute="bottom" secondItem="OZQ-gs-w2n" secondAttribute="bottom" constant="36.5" id="MTk-YO-wLQ"/>
-                                            <constraint firstItem="g0a-pb-GE1" firstAttribute="top" secondItem="laE-Ag-uIE" secondAttribute="bottom" constant="34" id="eYn-jo-0Cw"/>
-                                            <constraint firstItem="bgm-5a-Yc8" firstAttribute="top" secondItem="g0a-pb-GE1" secondAttribute="bottom" constant="8" id="hNv-oO-0dY"/>
+                                            <constraint firstItem="fEP-Fu-cZD" firstAttribute="top" secondItem="laE-Ag-uIE" secondAttribute="bottom" constant="-125" id="adr-xU-ggk"/>
+                                            <constraint firstItem="fEP-Fu-cZD" firstAttribute="leading" secondItem="laE-Ag-uIE" secondAttribute="trailing" constant="-367" id="c3s-Az-kxh"/>
+                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="leading" secondItem="bgm-5a-Yc8" secondAttribute="leading" id="ee6-d1-Hpb"/>
+                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="top" secondItem="ooK-3e-jRz" secondAttribute="top" id="gHT-Xk-vpv"/>
                                             <constraint firstItem="OZQ-gs-w2n" firstAttribute="leading" secondItem="ooK-3e-jRz" secondAttribute="leading" constant="8" id="hrp-JJ-7xA"/>
-                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="leading" secondItem="ooK-3e-jRz" secondAttribute="leading" constant="8" id="iI1-A5-HaY"/>
-                                            <constraint firstItem="g0a-pb-GE1" firstAttribute="leading" secondItem="ooK-3e-jRz" secondAttribute="leading" constant="8" id="iNi-n8-Zzr"/>
+                                            <constraint firstItem="laE-Ag-uIE" firstAttribute="trailing" secondItem="g0a-pb-GE1" secondAttribute="trailing" id="iQ3-Ki-cDL"/>
+                                            <constraint firstItem="fEP-Fu-cZD" firstAttribute="height" secondItem="laE-Ag-uIE" secondAttribute="height" id="ioj-2s-AlJ"/>
+                                            <constraint firstItem="g0a-pb-GE1" firstAttribute="top" secondItem="ooK-3e-jRz" secondAttribute="top" constant="120" id="kbN-Je-7ot"/>
                                             <constraint firstAttribute="trailing" secondItem="OZQ-gs-w2n" secondAttribute="trailing" constant="8" id="qom-1P-yr9"/>
                                             <constraint firstItem="bgm-5a-Yc8" firstAttribute="leading" secondItem="ooK-3e-jRz" secondAttribute="leading" constant="8" id="ycN-Cg-LyD"/>
                                         </constraints>
@@ -255,6 +261,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="szR-Bi-lEN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="szR-Bi-lEN" firstAttribute="trailing" secondItem="ooK-3e-jRz" secondAttribute="trailing" id="2WO-eI-Z55"/>
@@ -265,13 +272,15 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <constraint firstItem="UjE-xM-W3b" firstAttribute="width" secondItem="o84-ze-Dfl" secondAttribute="width" id="i9r-ej-iQl"/>
                             <constraint firstItem="szR-Bi-lEN" firstAttribute="trailing" secondItem="UjE-xM-W3b" secondAttribute="trailing" id="k7J-sf-u8t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="szR-Bi-lEN"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="scrollDownImageView" destination="fEP-Fu-cZD" id="HWv-pu-54K"/>
+                        <outlet property="scrollDownLabelView" destination="laE-Ag-uIE" id="ECd-JL-fuY"/>
                         <outlet property="teadsAdHeightConstraint" destination="syf-b1-sPv" id="8LG-OY-QUN"/>
                         <outlet property="teadsAdView" destination="bgm-5a-Yc8" id="pOQ-UV-OrD"/>
+                        <outlet property="topArticleText" destination="g0a-pb-GE1" id="R9P-z8-oxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBB-TJ-3hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,8 +294,8 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                     <view key="view" contentMode="scaleToFill" id="xMM-RJ-3aK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Rr3-S0-ETN"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn1-51-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,6 +471,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PkK-DA-0fj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="7GW-CO-P9C" secondAttribute="trailing" constant="-16" id="Glo-02-lsw"/>
@@ -469,7 +479,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <constraint firstItem="7GW-CO-P9C" firstAttribute="leading" secondItem="cop-Ub-C4E" secondAttribute="leadingMargin" constant="-16" id="dM2-0s-iqJ"/>
                             <constraint firstItem="5hl-6u-zjs" firstAttribute="top" secondItem="7GW-CO-P9C" secondAttribute="bottom" id="evt-Nl-eX8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PkK-DA-0fj"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="7GW-CO-P9C" id="G8F-h7-UBc"/>
@@ -683,6 +692,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="BVm-vQ-2bW"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BVm-vQ-2bW" firstAttribute="trailing" secondItem="57U-2B-Yed" secondAttribute="trailing" id="5SD-E0-MGk"/>
@@ -693,7 +703,6 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                             <constraint firstItem="57U-2B-Yed" firstAttribute="top" secondItem="6wZ-WC-EXs" secondAttribute="bottom" id="mcH-9t-9lH"/>
                             <constraint firstItem="BVm-vQ-2bW" firstAttribute="trailing" secondItem="6wZ-WC-EXs" secondAttribute="trailing" id="yC0-rR-Cn3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="BVm-vQ-2bW"/>
                     </view>
                     <connections>
                         <outlet property="teadsAdHeightConstraint" destination="nTT-ME-VzQ" id="GEz-az-3iw"/>
@@ -868,6 +877,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GSX-9a-zaw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="efL-Q5-19a" firstAttribute="leading" secondItem="GSX-9a-zaw" secondAttribute="leading" id="35Y-mR-VDU"/>
@@ -878,7 +888,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <constraint firstItem="efL-Q5-19a" firstAttribute="width" secondItem="wbj-C5-e3q" secondAttribute="width" id="mg3-hJ-gPm"/>
                             <constraint firstItem="GSX-9a-zaw" firstAttribute="trailing" secondItem="efL-Q5-19a" secondAttribute="trailing" id="qEn-SU-t9B"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GSX-9a-zaw"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
@@ -907,6 +916,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="W5s-2E-QRf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Cj-dz-E0u" firstAttribute="top" secondItem="W5s-2E-QRf" secondAttribute="top" id="OJj-zA-VKR"/>
@@ -914,7 +924,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <constraint firstItem="9Cj-dz-E0u" firstAttribute="trailing" secondItem="W5s-2E-QRf" secondAttribute="trailing" id="hUX-yQ-dHl"/>
                             <constraint firstAttribute="bottom" secondItem="9Cj-dz-E0u" secondAttribute="bottom" id="y7c-RM-daS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="W5s-2E-QRf"/>
                     </view>
                     <connections>
                         <outlet property="webView" destination="9Cj-dz-E0u" id="2eb-gc-jev"/>
@@ -1007,6 +1016,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FAS-0b-dAx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ys7-yN-lqs" firstAttribute="top" secondItem="IwE-rn-HYC" secondAttribute="top" id="HNo-cn-0FF"/>
@@ -1017,7 +1027,6 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                             <constraint firstItem="tYQ-AI-N5D" firstAttribute="leading" secondItem="FAS-0b-dAx" secondAttribute="leading" id="qwf-GB-cq3"/>
                             <constraint firstItem="Ys7-yN-lqs" firstAttribute="width" secondItem="IwE-rn-HYC" secondAttribute="width" id="zLO-Rg-iFi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FAS-0b-dAx"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
