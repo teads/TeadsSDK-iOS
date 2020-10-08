@@ -11,9 +11,7 @@ import TeadsSDK
 
 class ScrollViewController: TeadsArticleViewController, TFAAdDelegate {
 
-    @IBOutlet weak var topArticleText: UILabel!
     @IBOutlet weak var scrollDownImageView: UIImageView!
-    @IBOutlet weak var scrollDownLabelView: UILabel!
     @IBOutlet weak var teadsAdView: TFAInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: CGFloat?
@@ -99,27 +97,6 @@ extension ScrollViewController {
         gradient.endPoint = CGPoint(x: 1, y: 1)
         
         scrollDownImageView.layer.addSublayer(gradient)
-        
-       
-        let httmlString =
-        """
-<html>
-             "  <head>"
-             "    <style type='text/css'>"
-             "      body { font: 16pt 'Gill Sans'; color: #1a004b; }"
-             "      i { color: #822; }"
-             "    </style>"
-             "  </head>"
-             "  <body><h2>Creative that cuts through the noise…but respects the user.</h2>
-        
-        <p class="desc">
-                        Holding attention in a mobile driven world is no easy challenge. At Teads, we embrace the swipes, the
-                        scrolls, the pinches and the taps to build ad experiences that delight the user and deliver business
-                        results for brands.
-                    </p></body>"
-             "</html>";
-"""
-        topArticleText.attributedText = httmlString.htmlAttributedString()
     }
-    
+     
 }

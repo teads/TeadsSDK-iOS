@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    static let appText = UIColor(named: "AppTextColor") ?? UIColor.clear
+    static let appBackground = UIColor(named: "AppBackgroundColor") ?? UIColor.clear
     static let primary = UIColor(named: "PrimaryColor") ?? UIColor.clear
     static let lightBlue = UIColor(named: "LightBlueColor") ?? UIColor.clear
     static let teadsBlue = UIColor(named: "TeadsBlueColor") ?? UIColor.clear
     static let teadsPurple = UIColor(named: "TeadsPurpleColor") ?? UIColor.clear
+    static let teadsGray = UIColor(named: "TeadsGrayColor") ?? UIColor.clear
+    static let fakeArticle = UIColor(named: "FakeArticleColor") ?? UIColor.clear
     
     
     func getRedValue() -> CGFloat {

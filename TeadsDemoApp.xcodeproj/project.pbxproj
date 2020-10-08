@@ -16,6 +16,9 @@
 		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
 		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
 		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
+		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
+		B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */ = {isa = PBXBuildFile; fileRef = B50425F3252F436000ABF07D /* coffeeDesk2.png */; };
+		B50425F6252F436000ABF07D /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = B50425F4252F436000ABF07D /* demo.html */; };
 		B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */; };
 		B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
@@ -38,7 +41,6 @@
 		B5CCB65F1FB20D8C00BA4B72 /* TeadsAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */; };
 		B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */; };
 		B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */; };
-		B5CF15B3252DB66800B12F83 /* TeadsNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15B2252DB66800B12F83 /* TeadsNavigationBar.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */; };
 		B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */; };
 		D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */; };
@@ -63,6 +65,9 @@
 		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
 		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
 		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B50425D2252E134E00ABF07D /* FakeArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArticleView.swift; sourceTree = "<group>"; };
+		B50425F3252F436000ABF07D /* coffeeDesk2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeeDesk2.png; sourceTree = "<group>"; };
+		B50425F4252F436000ABF07D /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobInWebViewController.swift; sourceTree = "<group>"; };
 		B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncWebViewTFInReadAdView.swift; path = TeadsDemoApp/Controllers/webViewController/webViewHelper/SyncWebViewTFInReadAdView.swift; sourceTree = SOURCE_ROOT; };
@@ -87,7 +92,6 @@
 		B5CCB65B1FB1C51900BA4B72 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B5CCB65D1FB1C56D00BA4B72 /* TeadsAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5CCB65E1FB1C56D00BA4B72 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
-		B5CF15B2252DB66800B12F83 /* TeadsNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsNavigationBar.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsArticleViewController.swift; sourceTree = "<group>"; };
 		B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* AdMobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		B501EC681F8232A4002909B9 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				B50425F2252F436000ABF07D /* DemoWebsite */,
 				B502B9F11F827C35008257EC /* Images */,
 				B501EC6C1F8232B3002909B9 /* css */,
 				B501EC6B1F8232B3002909B9 /* index.html */,
@@ -228,6 +233,15 @@
 				B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		B50425F2252F436000ABF07D /* DemoWebsite */ = {
+			isa = PBXGroup;
+			children = (
+				B50425F3252F436000ABF07D /* coffeeDesk2.png */,
+				B50425F4252F436000ABF07D /* demo.html */,
+			);
+			path = DemoWebsite;
 			sourceTree = "<group>";
 		};
 		B50C184A22CCDF35004F2360 /* WebViewHelper */ = {
@@ -365,7 +379,7 @@
 		B5CF159C252CC0FA00B12F83 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5CF15B2252DB66800B12F83 /* TeadsNavigationBar.swift */,
+				B50425D2252E134E00ABF07D /* FakeArticleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,10 +466,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
+				B50425F6252F436000ABF07D /* demo.html in Resources */,
 				B501EC7C1F823F8A002909B9 /* index.html in Resources */,
 				B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */,
 				B502B9F01F826842008257EC /* bootstrap.js in Resources */,
 				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
+				B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */,
 				B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,10 +550,10 @@
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
 				B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */,
 				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
+				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
 				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
 				DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */,
 				B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */,
-				B5CF15B3252DB66800B12F83 /* TeadsNavigationBar.swift in Sources */,
 				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
 				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
 				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
