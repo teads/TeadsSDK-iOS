@@ -10,7 +10,7 @@ import UIKit
 import TeadsSDK
 
 class TeadsAdTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var adContentView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

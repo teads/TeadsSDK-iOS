@@ -11,14 +11,13 @@ import TeadsSDK
 
 class ScrollViewController: TeadsArticleViewController, TFAAdDelegate {
 
-    @IBOutlet weak var scrollDownImageView: UIImageView!
+    @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
     @IBOutlet weak var teadsAdView: TFAInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        teadsDesign()
         teadsAdView.delegate = self
         // the PID has been set in the storyboard
         teadsAdView.pid = UserDefaults.standard.integer(forKey: "PID")
@@ -80,23 +79,4 @@ class ScrollViewController: TeadsArticleViewController, TFAAdDelegate {
     public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
         return self
     }
-}
-
-
-extension ScrollViewController {
-    
-    func teadsDesign() {
-        let image = UIImage(named: "coffeeDesk")
-        scrollDownImageView.image = image
-        scrollDownImageView.contentMode = .scaleAspectFill
-        let gradient = CAGradientLayer()
-        gradient.frame = scrollDownImageView.bounds
-
-        gradient.colors = [CGColor(red: UIColor.teadsPurple.getRedValue(), green: UIColor.teadsPurple.getGreenValue(), blue: UIColor.teadsPurple.getBlueValue(), alpha: 0.65), CGColor(red: UIColor.teadsBlue.getRedValue(), green: UIColor.teadsBlue.getGreenValue(), blue: UIColor.teadsBlue.getBlueValue(), alpha: 0.65)]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        
-        scrollDownImageView.layer.addSublayer(gradient)
-    }
-     
 }

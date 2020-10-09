@@ -189,7 +189,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-4k-kAd" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-Fu-cZD">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-Fu-cZD" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="laE-Ag-uIE">
@@ -309,7 +309,7 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="scrollDownImageView" destination="fEP-Fu-cZD" id="HWv-pu-54K"/>
+                        <outlet property="scrollDownImageView" destination="fEP-Fu-cZD" id="ue9-YP-U3j"/>
                         <outlet property="teadsAdHeightConstraint" destination="vLI-WC-g6W" id="58R-uK-yI2"/>
                         <outlet property="teadsAdView" destination="bgm-5a-Yc8" id="pOQ-UV-OrD"/>
                     </connections>
@@ -337,7 +337,7 @@
         <scene sceneID="Kjd-DY-5JK">
             <objects>
                 <tableViewController storyboardIdentifier="inRead TableView" id="V99-9a-zd6" userLabel="inRead Table View Controller" customClass="TableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IqQ-mH-dYv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="IqQ-mH-dYv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -349,85 +349,102 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teads" translatesAutoresizingMaskIntoConstraints="NO" id="NWN-d7-HGD">
-                                            <rect key="frame" x="23" y="13" width="70" height="64"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSn-GO-Wa2" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="BFJ-ba-6Z1"/>
+                                                <constraint firstAttribute="width" constant="375" id="8eB-ej-cch"/>
+                                                <constraint firstAttribute="height" constant="90" id="JkD-o2-AKH"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teads inRead in a TableView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Y94-73-9tc">
-                                            <rect key="frame" x="108" y="13" width="251" height="14"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulj-Xq-EEv">
+                                            <rect key="frame" x="66.5" y="34.5" width="242.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="eWN-Bt-31O"/>
+                                            </constraints>
+                                            <string key="text">Scroll down to see your creative
+</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGray6Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to display inRead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TuP-nY-AOi">
-                                            <rect key="frame" x="108" y="37" width="251" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="c3P-eu-m2S">
-                                            <rect key="frame" x="140" y="62" width="16" height="16"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-lc-yog">
-                                            <rect key="frame" x="250" y="62" width="16" height="16"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="TuP-nY-AOi" secondAttribute="bottom" constant="14" id="2gK-ZZ-BsY"/>
-                                        <constraint firstItem="TuP-nY-AOi" firstAttribute="leading" secondItem="Y94-73-9tc" secondAttribute="leading" id="3Re-QO-BkC"/>
-                                        <constraint firstItem="MFp-lc-yog" firstAttribute="bottom" secondItem="Rz5-8T-jum" secondAttribute="bottomMargin" constant="-1" id="4Xh-22-2Cj"/>
-                                        <constraint firstAttribute="trailing" secondItem="MFp-lc-yog" secondAttribute="trailing" constant="109" id="4cP-zL-IJZ"/>
-                                        <constraint firstItem="MFp-lc-yog" firstAttribute="top" secondItem="c3P-eu-m2S" secondAttribute="top" id="7ZW-9R-AYE"/>
-                                        <constraint firstItem="NWN-d7-HGD" firstAttribute="top" secondItem="Rz5-8T-jum" secondAttribute="topMargin" constant="2" id="9cM-wO-nhH"/>
-                                        <constraint firstItem="TuP-nY-AOi" firstAttribute="top" secondItem="Y94-73-9tc" secondAttribute="bottom" constant="10" id="Bbr-S3-DRe"/>
-                                        <constraint firstItem="Y94-73-9tc" firstAttribute="trailing" secondItem="TuP-nY-AOi" secondAttribute="trailing" id="CKv-11-mKL"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="NWN-d7-HGD" secondAttribute="bottom" constant="2" id="J3K-XY-NZg"/>
-                                        <constraint firstItem="c3P-eu-m2S" firstAttribute="bottom" secondItem="MFp-lc-yog" secondAttribute="bottom" id="J5n-K4-iKf"/>
-                                        <constraint firstItem="Y94-73-9tc" firstAttribute="top" secondItem="NWN-d7-HGD" secondAttribute="top" id="Lie-DD-h3Y"/>
-                                        <constraint firstItem="NWN-d7-HGD" firstAttribute="leading" secondItem="Rz5-8T-jum" secondAttribute="leadingMargin" constant="7" id="MrI-H6-O1r"/>
-                                        <constraint firstItem="c3P-eu-m2S" firstAttribute="top" secondItem="Y94-73-9tc" secondAttribute="bottom" constant="35" id="SZe-dC-cLT"/>
-                                        <constraint firstItem="c3P-eu-m2S" firstAttribute="leading" secondItem="NWN-d7-HGD" secondAttribute="trailing" constant="47" id="Xzn-XJ-gNc"/>
-                                        <constraint firstItem="TuP-nY-AOi" firstAttribute="trailing" secondItem="Rz5-8T-jum" secondAttribute="trailingMargin" id="d95-B6-DIm"/>
-                                        <constraint firstItem="Y94-73-9tc" firstAttribute="leading" secondItem="NWN-d7-HGD" secondAttribute="trailing" constant="15" id="dJP-k5-tfp"/>
+                                        <constraint firstItem="ulj-Xq-EEv" firstAttribute="centerX" secondItem="Rz5-8T-jum" secondAttribute="centerX" id="317-DD-pp3"/>
+                                        <constraint firstAttribute="bottom" secondItem="fSn-GO-Wa2" secondAttribute="bottom" id="6gO-S7-jUn"/>
+                                        <constraint firstItem="fSn-GO-Wa2" firstAttribute="top" secondItem="Rz5-8T-jum" secondAttribute="top" id="DW4-li-JgN"/>
+                                        <constraint firstItem="fSn-GO-Wa2" firstAttribute="leading" secondItem="Rz5-8T-jum" secondAttribute="leading" id="luU-wb-a6g"/>
+                                        <constraint firstAttribute="trailing" secondItem="fSn-GO-Wa2" secondAttribute="trailing" id="mzF-Bl-oHm"/>
+                                        <constraint firstItem="ulj-Xq-EEv" firstAttribute="centerY" secondItem="Rz5-8T-jum" secondAttribute="centerY" id="v5z-BA-zIz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TeadsGrayedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeadsGrayedCell" textLabel="Kum-JB-5uL" detailTextLabel="dfa-Np-NNx" imageView="Zya-MA-F1O" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="4Bb-IU-ZhY">
-                                <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeadsArticleCell" id="8a6-rJ-66W">
+                                <rect key="frame" x="0.0" y="118" width="375" height="80.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Bb-IU-ZhY" id="8J4-We-Yel">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8a6-rJ-66W" id="kQP-GS-FM9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kum-JB-5uL">
-                                            <rect key="frame" x="101" y="13" width="258" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTICLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-hM-b1d">
+                                            <rect key="frame" x="10" y="30" width="73.5" height="20.5"/>
+                                            <color key="backgroundColor" name="LightBlueColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <color key="textColor" name="AppBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dfa-Np-NNx">
-                                            <rect key="frame" x="101" y="35.5" width="254" height="39.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Integer maximus lacus non venenatis dapibus. Nullam non justo molestie, iaculis nisl ultricies, ornare enim. Donec malesuada id mauris sed condimentum. Donec venenatis tincidunt justo, quis posuere odio feugiat vel. Aliquam in viverra velit, id tincidunt purus. Aliquam bibendum tortor non blandit scelerisque. Nulla sodales feugiat diam, nec ornare urna consectetur et.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="teads_grayed.png" id="Zya-MA-F1O">
-                                            <rect key="frame" x="16" y="10" width="70" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a9Q-hM-b1d" secondAttribute="trailing" constant="20" symbolic="YES" id="LKp-HV-b5k"/>
+                                        <constraint firstAttribute="bottom" secondItem="a9Q-hM-b1d" secondAttribute="bottom" constant="30" id="Orv-8G-0DR"/>
+                                        <constraint firstItem="a9Q-hM-b1d" firstAttribute="top" secondItem="kQP-GS-FM9" secondAttribute="top" constant="30" id="wuP-iE-fRO"/>
+                                        <constraint firstItem="a9Q-hM-b1d" firstAttribute="leading" secondItem="kQP-GS-FM9" secondAttribute="leading" constant="10" id="zSz-84-RDx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeadsContentCell" id="F3P-Wz-qL7">
+                                <rect key="frame" x="0.0" y="198.5" width="375" height="305.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F3P-Wz-qL7" id="Xrl-Am-TC1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="305.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Eb6-gX-HxJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="305.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative that cuts through the noise…but respects the user." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-Gg-CGL" userLabel="title">
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="118.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                                    <color key="textColor" name="AppTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vck-3C-fcD">
+                                                    <rect key="frame" x="10" y="148.5" width="355" height="157"/>
+                                                    <string key="text">Holding attention in a mobile driven world is no easy challenge. At Teads, we embrace the swipes, the scrolls, the pinches and the taps to build ad experiences that delight the user and deliver business results for brands.</string>
+                                                    <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
+                                                    <color key="textColor" name="AppTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vck-3C-fcD" firstAttribute="leading" secondItem="Eb6-gX-HxJ" secondAttribute="leading" constant="10" id="0Jc-D3-0f6"/>
+                                                <constraint firstItem="LLA-Gg-CGL" firstAttribute="leading" secondItem="Eb6-gX-HxJ" secondAttribute="leading" constant="10" id="6Rm-i5-EwI"/>
+                                                <constraint firstItem="vck-3C-fcD" firstAttribute="top" secondItem="LLA-Gg-CGL" secondAttribute="bottom" constant="30" id="Q1C-Yy-2YE"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Eb6-gX-HxJ" secondAttribute="trailing" id="Exx-oN-yfb"/>
+                                        <constraint firstAttribute="bottom" secondItem="Eb6-gX-HxJ" secondAttribute="bottom" id="Fvf-B6-3QD"/>
+                                        <constraint firstItem="Eb6-gX-HxJ" firstAttribute="top" secondItem="Xrl-Am-TC1" secondAttribute="top" id="GKp-y4-JaP"/>
+                                        <constraint firstItem="Eb6-gX-HxJ" firstAttribute="leading" secondItem="Xrl-Am-TC1" secondAttribute="leading" id="gRb-BO-xJE"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeadsAdCell" rowHeight="181" id="Bjz-lF-aWa" customClass="TeadsAdTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="208" width="375" height="181"/>
+                                <rect key="frame" x="0.0" y="504" width="375" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bjz-lF-aWa" id="QtM-1m-wlQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
@@ -448,6 +465,29 @@
                                 <connections>
                                     <outlet property="adContentView" destination="vct-Zc-LvH" id="KeI-Ef-Gt5"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fakeArticleCell" id="lbL-dD-MFp">
+                                <rect key="frame" x="0.0" y="685" width="375" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbL-dD-MFp" id="Nkb-c7-5Oz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-Ol-HvM" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="vxS-DV-byJ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lSp-Ol-HvM" firstAttribute="leading" secondItem="Nkb-c7-5Oz" secondAttribute="leading" id="Nkj-Sq-Liv"/>
+                                        <constraint firstAttribute="bottom" secondItem="lSp-Ol-HvM" secondAttribute="bottom" id="OPv-NH-ZIn"/>
+                                        <constraint firstItem="lSp-Ol-HvM" firstAttribute="top" secondItem="Nkb-c7-5Oz" secondAttribute="top" id="Vhm-oG-NIM"/>
+                                        <constraint firstAttribute="trailing" secondItem="lSp-Ol-HvM" secondAttribute="trailing" id="cmq-UJ-ZUP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1073,6 +1113,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
     </scenes>
     <resources>
         <image name="arrow_down" width="16" height="16"/>
+        <image name="coffeeDesk2.png" width="1666" height="833"/>
         <image name="settings" width="23" height="24"/>
         <image name="teads" width="70" height="70"/>
         <image name="teads_grayed.png" width="70" height="70"/>
@@ -1087,6 +1128,9 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
