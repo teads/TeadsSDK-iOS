@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
+		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
+		4079F256252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */; };
+		4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */; };
+		4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */; };
+		4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */; };
+		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		B501EC721F823541002909B9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* WebViewViewController.swift */; };
 		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
 		B501EC7C1F823F8A002909B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B501EC6B1F8232B3002909B9 /* index.html */; };
@@ -52,6 +58,12 @@
 /* Begin PBXFileReference section */
 		3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSegmentedControlsTableViewCell.swift; sourceTree = "<group>"; };
+		4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootButtonIconLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelButtonView.swift; sourceTree = "<group>"; };
+		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B501EC6A1F8232B3002909B9 /* ie10-viewport-bug-workaround.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "ie10-viewport-bug-workaround.js"; sourceTree = "<group>"; };
@@ -298,6 +310,12 @@
 				B5555A3C1F7CDF80007406D4 /* Assets.xcassets */,
 				B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */,
 				B5555A411F7CDF80007406D4 /* Info.plist */,
+				4079F252252CC1EF00B0AC31 /* RootViewController.swift */,
+				4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */,
+				4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */,
+				4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */,
+				4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */,
+				40DCC3C825306FA00012407C /* Format.swift */,
 			);
 			path = TeadsDemoApp;
 			sourceTree = "<group>";
@@ -566,6 +584,7 @@
 				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
 				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
 				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
+				4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */,
 				DB4660DC2181B865003A6CF5 /* AdMobController.swift in Sources */,
 				B57FB1EF1FC5E07E00609036 /* SettingsViewController.swift in Sources */,
 				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
@@ -579,14 +598,19 @@
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
 				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
 				B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */,
+				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
+				4079F256252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift in Sources */,
 				B5CCB6611FB20D9000BA4B72 /* CollectionViewController.swift in Sources */,
 				B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */,
 				B504260B25305A1E00ABF07D /* Utils.swift in Sources */,
 				B5CCB6601FB20D8E00BA4B72 /* TestCollectionViewCell.swift in Sources */,
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
+				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B5555A381F7CDF80007406D4 /* ViewController.swift in Sources */,
 				B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */,
+				4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */,
+				4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */,
 				B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5555A4E1F7D3177007406D4 /* ScrollViewController.swift in Sources */,

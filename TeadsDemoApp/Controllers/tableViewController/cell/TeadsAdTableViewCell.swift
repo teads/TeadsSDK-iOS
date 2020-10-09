@@ -12,6 +12,7 @@ import TeadsSDK
 class TeadsAdTableViewCell: UITableViewCell {
     
     @IBOutlet weak var adContentView: UIView!
+    @IBOutlet weak var adContentViewHeightConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

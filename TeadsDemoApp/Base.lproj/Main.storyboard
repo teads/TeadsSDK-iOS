@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHy-s9-zGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl2-U1-KRo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZ3-6x-uOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="136"/>
+            <point key="canvasLocation" x="-143" y="-879"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="746" y="-879"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7w7-cX-jVj">
@@ -170,12 +170,158 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6L-C1-D8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="806.44677661169419"/>
+            <point key="canvasLocation" x="1604" y="-879"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="LrE-ua-TGd">
+            <objects>
+                <viewController id="wtO-oW-ro4" customClass="RootViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ljf-Q4-M4N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-6G-z89">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootHeaderTableViewCell" id="6bo-EO-OiT" customClass="RootHeaderTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="51.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bo-EO-OiT" id="7yZ-27-uPR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyL-UR-tIf">
+                                                    <rect key="frame" x="16" y="15" width="343" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qyL-UR-tIf" firstAttribute="leading" secondItem="7yZ-27-uPR" secondAttribute="leadingMargin" id="0K0-gl-R0v"/>
+                                                <constraint firstItem="qyL-UR-tIf" firstAttribute="top" secondItem="7yZ-27-uPR" secondAttribute="topMargin" constant="4" id="9pf-cX-6ub"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qyL-UR-tIf" secondAttribute="bottom" constant="4" id="O1C-kA-zwX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qyL-UR-tIf" secondAttribute="trailing" id="Q4U-h0-rrN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="qyL-UR-tIf" id="mPg-6r-R32"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootSegmentedControlsTableViewCell" id="g1r-1F-SXJ" customClass="RootSegmentedControlsTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="79.5" width="375" height="24"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1r-1F-SXJ" id="czQ-VE-994">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-Gu-wPE">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="0.0"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CCY-Gu-wPE" firstAttribute="top" secondItem="czQ-VE-994" secondAttribute="top" id="ke5-2v-Txh"/>
+                                                <constraint firstItem="CCY-Gu-wPE" firstAttribute="leading" secondItem="czQ-VE-994" secondAttribute="leadingMargin" id="mYO-IT-4Fl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CCY-Gu-wPE" secondAttribute="trailing" id="nVL-Vo-Zn2"/>
+                                                <constraint firstAttribute="bottom" secondItem="CCY-Gu-wPE" secondAttribute="bottom" constant="24" id="nhy-vl-cvQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="horrizontalStackView" destination="CCY-Gu-wPE" id="6L6-ye-Zrr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootButtonIconLabelTableViewCell" id="8fX-qg-pcS" customClass="RootButtonIconLabelTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="103.5" width="375" height="179.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8fX-qg-pcS" id="sBI-oE-cXc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-Qn-g8c">
+                                                    <rect key="frame" x="16" y="8" width="343" height="163.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-Oq-hUo" customClass="ImageLabelButtonView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="163.5"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" name="TeadsGrayColor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ul-ax-V30" customClass="ImageLabelButtonView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                            <rect key="frame" x="179.5" y="0.0" width="163.5" height="163.5"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" name="TeadsGrayColor"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0Ul-ax-V30" firstAttribute="leading" secondItem="dmF-Oq-hUo" secondAttribute="trailing" constant="16" id="Ixc-qT-xIm"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="K8S-Qn-g8c" firstAttribute="top" secondItem="sBI-oE-cXc" secondAttribute="top" constant="8" id="APf-gQ-0BH"/>
+                                                <constraint firstAttribute="bottom" secondItem="K8S-Qn-g8c" secondAttribute="bottom" constant="8" id="EBi-6O-IMb"/>
+                                                <constraint firstItem="K8S-Qn-g8c" firstAttribute="leading" secondItem="sBI-oE-cXc" secondAttribute="leadingMargin" id="X5D-TR-sre"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="K8S-Qn-g8c" secondAttribute="trailing" id="vUN-oe-GNa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstCard" destination="dmF-Oq-hUo" id="IwN-PN-YxE"/>
+                                            <outlet property="secondCard" destination="0Ul-ax-V30" id="iUm-OJ-Scq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wtO-oW-ro4" id="pRS-iG-B3M"/>
+                                    <outlet property="delegate" destination="wtO-oW-ro4" id="chf-HT-xCo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zrU-hQ-hnq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hDz-6G-z89" firstAttribute="trailing" secondItem="zrU-hQ-hnq" secondAttribute="trailing" id="eUZ-0M-Kh6"/>
+                            <constraint firstItem="hDz-6G-z89" firstAttribute="top" secondItem="zrU-hQ-hnq" secondAttribute="top" id="idX-7t-cXv"/>
+                            <constraint firstItem="hDz-6G-z89" firstAttribute="bottom" secondItem="zrU-hQ-hnq" secondAttribute="bottom" id="tCV-KR-SL8"/>
+                            <constraint firstItem="hDz-6G-z89" firstAttribute="leading" secondItem="zrU-hQ-hnq" secondAttribute="leading" id="u9n-sH-BrV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MnA-s8-PkB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="07u-Py-L4Z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hDz-6G-z89" id="QtH-bE-2OV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="72"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="LYm-z1-cCp">
             <objects>
-                <viewController storyboardIdentifier="inRead ScrollView" id="OdH-gn-eeS" customClass="ScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-direct-scrollview" id="OdH-gn-eeS" customClass="ScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o84-ze-Dfl" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,7 +467,7 @@
         <!--Web View View Controller-->
         <scene sceneID="oRR-op-b8b">
             <objects>
-                <viewController storyboardIdentifier="inRead WKWebView" id="CNW-ac-jlI" customClass="WebViewViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-direct-webview" id="CNW-ac-jlI" customClass="WebViewViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xMM-RJ-3aK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,12 +477,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn1-51-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744.8" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1759" y="72"/>
         </scene>
         <!--inRead Table View Controller-->
         <scene sceneID="Kjd-DY-5JK">
             <objects>
-                <tableViewController storyboardIdentifier="inRead TableView" id="V99-9a-zd6" userLabel="inRead Table View Controller" customClass="TableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inread-direct-tableview" id="V99-9a-zd6" userLabel="inRead Table View Controller" customClass="TableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="IqQ-mH-dYv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,6 +599,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vct-Zc-LvH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" id="6pU-xZ-UJG"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -464,6 +613,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="adContentView" destination="vct-Zc-LvH" id="KeI-Ef-Gt5"/>
+                                    <outlet property="adContentViewHeightConstraint" destination="6pU-xZ-UJG" id="g3f-lJ-QBw"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fakeArticleCell" id="lbL-dD-MFp">
@@ -498,7 +648,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDy-vd-44k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701.5999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2698" y="72"/>
         </scene>
         <!--Web View Embeded In Scroll View Controller-->
         <scene sceneID="jqo-Yt-DjU">
@@ -1110,6 +1260,24 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
             </objects>
             <point key="canvasLocation" x="7174" y="484"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZzH-1f-HQq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jl2-U1-KRo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YS7-Gh-sKI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wtO-oW-ro4" kind="relationship" relationship="rootViewController" id="Avk-QW-MUr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4b-Le-tdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-956" y="72"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow_down" width="16" height="16"/>
@@ -1125,6 +1293,9 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </namedColor>
         <namedColor name="LightBlueColor">
             <color red="0.41200000047683716" green="0.66299998760223389" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TeadsGrayColor">
+            <color red="0.65499997138977051" green="0.72500002384185791" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

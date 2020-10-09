@@ -27,7 +27,6 @@ class TableViewController: UITableViewController, TFAAdDelegate {
         
         self.teadsAdView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
         self.teadsAdView?.load()
-        self.teadsAdView?.translatesAutoresizingMaskIntoConstraints = false
         
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
@@ -79,26 +78,16 @@ class TableViewController: UITableViewController, TFAAdDelegate {
         } else if indexPath.row == adRowNumber {
             //need to create a cell and just add a teadsAd to it, so we have only one teads ad
             let cellAd = tableView.dequeueReusableCell(withIdentifier: self.teadsAdCellIndentifier, for: indexPath) as! TeadsAdTableViewCell
-            if self.teadsAdView != nil {
-                cellAd.adContentView.addSubview(self.teadsAdView!)
-                var allConstraints = [NSLayoutConstraint]()
-                let viewsDictionary: [String: UIView] = ["adView": self.teadsAdView!]
-                let adHorizontalConstraints = NSLayoutConstraint.constraints(
-                    withVisualFormat: "H:|[adView]|",
-                    options: [],
-                    metrics: nil,
-                    views: viewsDictionary)
-                allConstraints += adHorizontalConstraints
-                let adVerticalConstraints = NSLayoutConstraint.constraints(
-                    withVisualFormat: "V:|[adView]|",
-                    options: [],
-                    metrics: nil,
-                    views: viewsDictionary)
-                allConstraints += adVerticalConstraints
-                NSLayoutConstraint.activate(allConstraints)
-                teadsAdView?.frame = CGRect(x: 0, y: 0, width: teadsAdView!.bounds.width, height: adHeight ?? 250)
-                cellAd.adContentView.layoutIfNeeded()
-                
+            if let teadsAdView = teadsAdView {
+                cellAd.adContentView.addSubview(teadsAdView)
+                teadsAdView.translatesAutoresizingMaskIntoConstraints = false
+                let margins = cellAd.adContentView.layoutMarginsGuide
+                teadsAdView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+                teadsAdView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0).isActive = true
+                teadsAdView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+                teadsAdView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
+                cellAd.adContentViewHeightConstraint.constant = adHeight ?? 250
+
             }
             return cellAd
         } else {
