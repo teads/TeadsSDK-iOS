@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHy-s9-zGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl2-U1-KRo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZ3-6x-uOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="136"/>
+            <point key="canvasLocation" x="-143" y="-879"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="746" y="-879"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7w7-cX-jVj">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6L-C1-D8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="806.44677661169419"/>
+            <point key="canvasLocation" x="1604" y="-879"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="LrE-ua-TGd">
@@ -305,19 +305,23 @@
                             <constraint firstItem="hDz-6G-z89" firstAttribute="leading" secondItem="zrU-hQ-hnq" secondAttribute="leading" id="u9n-sH-BrV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MnA-s8-PkB"/>
+                    <navigationItem key="navigationItem" id="MnA-s8-PkB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="07u-Py-L4Z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hDz-6G-z89" id="QtH-bE-2OV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="1652.9235382308848"/>
+            <point key="canvasLocation" x="-17" y="72"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="LYm-z1-cCp">
             <objects>
-                <viewController storyboardIdentifier="inRead ScrollView" id="OdH-gn-eeS" customClass="ScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-direct-scrollview" id="OdH-gn-eeS" customClass="ScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o84-ze-Dfl" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +467,7 @@
         <!--Web View View Controller-->
         <scene sceneID="oRR-op-b8b">
             <objects>
-                <viewController storyboardIdentifier="inRead WKWebView" id="CNW-ac-jlI" customClass="WebViewViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-direct-webview" id="CNW-ac-jlI" customClass="WebViewViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xMM-RJ-3aK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,12 +477,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn1-51-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744.8" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1759" y="72"/>
         </scene>
         <!--inRead Table View Controller-->
         <scene sceneID="Kjd-DY-5JK">
             <objects>
-                <tableViewController storyboardIdentifier="inRead TableView" id="V99-9a-zd6" userLabel="inRead Table View Controller" customClass="TableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="inread-direct-tableview" id="V99-9a-zd6" userLabel="inRead Table View Controller" customClass="TableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="IqQ-mH-dYv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -640,7 +644,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDy-vd-44k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701.5999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2698" y="72"/>
         </scene>
         <!--Web View Embeded In Scroll View Controller-->
         <scene sceneID="jqo-Yt-DjU">
@@ -1268,7 +1272,7 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4b-Le-tdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-863.20000000000005" y="1652.9235382308848"/>
+            <point key="canvasLocation" x="-956" y="72"/>
         </scene>
     </scenes>
     <resources>
@@ -1285,6 +1289,9 @@ Aenean ac imperdiet nibh. Cras maximus libero ut tortor gravida, et pellentesque
         </namedColor>
         <namedColor name="LightBlueColor">
             <color red="0.41200000047683716" green="0.66299998760223389" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TeadsGrayColor">
+            <color red="0.65499997138977051" green="0.72500002384185791" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

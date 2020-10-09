@@ -12,27 +12,28 @@ import UIKit
 class RootViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    private var selectionList: [Format] = [
-        Format(header: "Format", values: [
-            FormatValue(label: "inRead", isSelected: true),
-            FormatValue(label: "Native", isSelected: false)
-        ]),
-        Format(header: "Provider", values: [
-            FormatValue(label: "Direct", isSelected: true),
-            FormatValue(label: "Admob", isSelected: false),
-            FormatValue(label: "Mopub", isSelected: false)
-        ]),
-        Format(header: "Integration", values: [
-            FormatValue(label: "ScrollView", isSelected: false),
-            FormatValue(label: "TableView", isSelected: false),
-            FormatValue(label: "CollectionView", isSelected: false),
-            FormatValue(label: "WebView", isSelected: false)
-        ])
-    ]
+    private var selectionList = [Format]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        selectionList = [
+            Format(header: "Format", values: [
+                FormatValue(label: "inRead", isSelected: true),
+                FormatValue(label: "Native", isSelected: false)
+            ]),
+            Format(header: "Provider", values: [
+                FormatValue(label: "Direct", isSelected: true),
+                FormatValue(label: "Admob", isSelected: false),
+                FormatValue(label: "Mopub", isSelected: false)
+            ]),
+            Format(header: "Integration", values: [
+                FormatValue(label: "ScrollView", isSelected: false),
+                FormatValue(label: "TableView", isSelected: false),
+                FormatValue(label: "CollectionView", isSelected: false),
+                FormatValue(label: "WebView", isSelected: false)
+            ])
+        ]
         setNavigationBarImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -75,10 +76,11 @@ class RootViewController: UIViewController {
             buttons.append(button)
         }
         cell.didSelectValue = { [weak self] index in
-            let pastIndex: Int = self?.selectionList[indexPath.section].values.firstIndex(where: {$0.isSelected == true}) ?? 0
-            self?.selectionList[indexPath.section].values[pastIndex].isSelected = false
-            cell.resetNormalStyle(button: buttons[pastIndex])
-            self?.selectionList[indexPath.section].values[index].isSelected = true
+            if let pastIndex: Int = self?.selectionList[indexPath.section].values.firstIndex(where: {$0.isSelected == true}), pastIndex != index {
+                self?.selectionList[indexPath.section].values[pastIndex].isSelected = false
+                cell.resetNormalStyle(button: buttons[pastIndex])
+                self?.selectionList[indexPath.section].values[index].isSelected = true
+            }
         }
     }
     
