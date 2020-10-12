@@ -36,9 +36,11 @@ class TableViewController: UIViewController {
             return
         }
         Utils.teadsNavigationBar(navigationBar: navigationBar, navigationItem: navigationItem)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         tableViewAdCellWidth = tableView.frame.width - 20
-
     }
 
     deinit {
