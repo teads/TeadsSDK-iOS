@@ -19,7 +19,6 @@
 		B501EC7C1F823F8A002909B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B501EC6B1F8232B3002909B9 /* index.html */; };
 		B502B9F01F826842008257EC /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = B501EC751F823BA8002909B9 /* bootstrap.js */; };
 		B502BA131F827D5C008257EC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* TableViewController.swift */; };
-		B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */; };
 		B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */; };
 		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
 		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
@@ -76,7 +75,6 @@
 		B501EC751F823BA8002909B9 /* bootstrap.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
 		B501EC771F823BA8002909B9 /* WebViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelper.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsAdTableViewCell.swift; sourceTree = "<group>"; };
 		B502BA181F836D3E008257EC /* WebViewEmbededInScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEmbededInScrollViewController.swift; sourceTree = "<group>"; };
 		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B50425D2252E134E00ABF07D /* FakeArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArticleView.swift; sourceTree = "<group>"; };
@@ -238,18 +236,9 @@
 		B502BA141F8282B8008257EC /* tableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B502BA151F8282C4008257EC /* cell */,
 				B502BA121F827D5C008257EC /* TableViewController.swift */,
 			);
 			path = tableViewController;
-			sourceTree = "<group>";
-		};
-		B502BA151F8282C4008257EC /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				B502BA161F8282DB008257EC /* TeadsAdTableViewCell.swift */,
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		B50425F2252F436000ABF07D /* DemoWebsite */ = {
@@ -596,7 +585,6 @@
 				B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* TableViewController.swift in Sources */,
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
-				B502BA171F8282DB008257EC /* TeadsAdTableViewCell.swift in Sources */,
 				B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */,
 				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,

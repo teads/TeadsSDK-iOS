@@ -20,10 +20,9 @@ class WebViewViewController: TeadsArticleViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         guard let content = Bundle.main.path(forResource: "demo", ofType: "html"),
-            var contentString = try? String(contentsOfFile: content) else {
+            let contentString = try? String(contentsOfFile: content) else {
                 return
         }
-        contentString = contentString.replacingOccurrences(of: "[SCREENWIDTH]", with: "\(UIScreen.main.bounds.width)")
         self.webView = WKWebView(frame: self.view.bounds)
         self.webView?.navigationDelegate = self
         self.webView!.autoresizingMask = [.flexibleBottomMargin, .flexibleHeight, .flexibleWidth, .flexibleLeftMargin, .flexibleTopMargin, .flexibleTopMargin]
