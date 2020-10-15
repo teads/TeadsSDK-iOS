@@ -15,6 +15,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
+    @IBOutlet weak var slotHeightConstraint: NSLayoutConstraint!
     var bannerView: GADBannerView!
     @IBOutlet weak var slotView: UIView!
     
@@ -40,7 +41,7 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         let adSettings = TeadsAdSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
-            
+            try? settings.subscribeAdResizeDelegate(self, forAdView: bannerView)
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
             //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
@@ -95,4 +96,13 @@ class AdMobController: UIViewController, GADBannerViewDelegate {
         // not used
     }
 
+}
+
+extension AdMobController: TFAMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
+        let width = slotView.frame.width
+        slotHeightConstraint.constant = width / ratio
+    }
+    
 }

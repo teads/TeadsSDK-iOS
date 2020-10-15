@@ -24,12 +24,12 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
     private var currentBanner: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let content = Bundle.main.path(forResource: "index", ofType: "html"),
+        guard let content = Bundle.main.path(forResource: "demo", ofType: "html"),
             let contentString = try? String(contentsOfFile: content) else {
                 return
         }
         self.webView.navigationDelegate = self
-        self.webView.loadHTMLString(contentString, baseURL: nil)
+        self.webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
         
         self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
         self.bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
         request.register(customEventExtras)
 
         self.bannerView.load(request)
-        self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#my-placement-id", adView: self.bannerView)
+        self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#teads-placement-slot", adView: self.bannerView)
     }
     
     // MARK: - GADBannerViewDelegate Protocol
