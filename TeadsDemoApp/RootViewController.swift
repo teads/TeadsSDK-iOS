@@ -37,6 +37,7 @@ class RootViewController: UIViewController {
         setNavigationBarImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        tableView.reloadData()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
