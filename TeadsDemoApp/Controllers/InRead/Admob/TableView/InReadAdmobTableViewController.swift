@@ -11,7 +11,7 @@ import GoogleMobileAds
 import TeadsAdMobAdapter
 import TeadsSDK
 
-class InReadAdmobTableViewController: UIViewController {
+class InReadAdmobTableViewController: TeadsArticleViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,6 +31,7 @@ class InReadAdmobTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Be sure to use DFPBannerView instead of GADBannerView
         admobAdView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
         
         // 2. Attach Delegate (will include Teads events)
@@ -65,10 +66,6 @@ class InReadAdmobTableViewController: UIViewController {
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-        guard let navigationBar = navigationController?.navigationBar else {
-            return
-        }
-        Utils.teadsNavigationBar(navigationBar: navigationBar, navigationItem: navigationItem)
     }
     
     override func viewDidLayoutSubviews() {

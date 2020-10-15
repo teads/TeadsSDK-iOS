@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class InReadDirectTableViewController: UIViewController {
+class InReadDirectTableViewController: TeadsArticleViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,10 +32,6 @@ class InReadDirectTableViewController: UIViewController {
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-        guard let navigationBar = navigationController?.navigationBar else {
-            return
-        }
-        Utils.teadsNavigationBar(navigationBar: navigationBar, navigationItem: navigationItem)
     }
     
     override func viewDidLayoutSubviews() {
