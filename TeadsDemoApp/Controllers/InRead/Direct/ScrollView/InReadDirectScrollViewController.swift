@@ -1,5 +1,5 @@
 //
-//  ScrollViewController.swift
+//  InReadDirectScrollViewController.swift
 //  TeadsDemoApp
 //
 //  Created by Jérémy Grosjean on 28/09/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class ScrollViewController: TeadsArticleViewController, TFAAdDelegate {
+class InReadDirectScrollViewController: TeadsArticleViewController, TFAAdDelegate {
 
     @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
     @IBOutlet weak var teadsAdView: TFAInReadAdView!

@@ -10,7 +10,7 @@ import TeadsAdMobAdapter
 import TeadsSDK
 import UIKit
 
-class AdMobController: UIViewController, GADBannerViewDelegate {
+class AdMobController: TeadsArticleViewController, GADBannerViewDelegate {
     
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"

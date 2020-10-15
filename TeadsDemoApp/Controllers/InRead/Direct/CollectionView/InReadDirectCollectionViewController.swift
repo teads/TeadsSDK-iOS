@@ -1,27 +1,28 @@
 //
-//  TableViewController.swift
+//  InReadDirectCollectionViewController.swift
 //  TeadsDemoApp
 //
-//  Created by Jérémy Grosjean on 02/10/2017.
-//  Copyright © 2018 Teads. All rights reserved.
+//  Created by Thibaud Saint-Etienne on 12/10/2020.
+//  Copyright © 2020 Teads. All rights reserved.
 //
 
 import UIKit
 import TeadsSDK
 
-class TableViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+class InReadDirectCollectionViewController: TeadsArticleViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let adRowNumber = 2
+    let adItemNumber = 2
     var adHeight: CGFloat?
     var adRatio: CGFloat?
     var teadsAdIsLoaded = false
     var teadsAdView: TFAInReadAdView?
-    var tableViewAdCellWidth: CGFloat!
+    var collectionViewAdCellWidth: CGFloat!
+    var fakeArticleCellHeight: CGFloat = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,81 +33,87 @@ class TableViewController: UIViewController {
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-        guard let navigationBar = navigationController?.navigationBar else {
-            return
-        }
-        Utils.teadsNavigationBar(navigationBar: navigationBar, navigationItem: navigationItem)
+                        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableViewAdCellWidth = tableView.frame.width - 20
+        collectionViewAdCellWidth = collectionView.frame.width - 20
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     @objc func rotationDetected() {
         if adRatio != nil {
             resizeTeadsAd(adRatio: adRatio!)
         }
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     func resizeTeadsAd(adRatio: CGFloat) {
         if adRatio > 0 {
-            adHeight = tableViewAdCellWidth/adRatio
+            adHeight = collectionViewAdCellWidth/adRatio
         }
         updateAdCellHeight()
     }
-  
+    
     func closeSlot() {
         adHeight = 0
         updateAdCellHeight()
     }
     
     func updateAdCellHeight() {
-        tableView.reloadRows(at: [IndexPath(row: adRowNumber, section: 0)], with: .automatic)
+        collectionView.reloadItems(at: [IndexPath(row: adItemNumber, section: 0)])
+        collectionView.collectionViewLayout.invalidateLayout()
     }
-
+    
 }
 
-extension TableViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension InReadDirectCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.item {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCell, for: indexPath)
+            cell.contentView.translatesAutoresizingMaskIntoConstraints = false
+            cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.bounds.width).isActive = true
             return cell
-        case adRowNumber:
+        case adItemNumber:
             //need to create a cell and just add a teadsAd to it, so we have only one teads ad
-            let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
+            let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath)
             if let teadsAdView = teadsAdView {
                 cellAd.addSubview(teadsAdView)
-                teadsAdView.frame = CGRect(x: 10, y: 0, width: tableViewAdCellWidth, height: adHeight ?? 250)
+                teadsAdView.frame = CGRect(x: 0, y: 0, width: collectionViewAdCellWidth, height: adHeight ?? 250)
             }
             return cellAd
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == adRowNumber {
-            return adHeight ?? 0
-        } else {
-            return UITableView.automaticDimension
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.item {
+        case 0:
+            let cell = collectionView.cellForItem(at: indexPath)
+            guard let bounds = cell?.bounds else {
+                return CGSize.zero
+            }
+            return CGSize(width: collectionView.bounds.width, height: bounds.height)
+        case adItemNumber:
+            return CGSize(width: collectionViewAdCellWidth, height: adHeight ?? 0)
+        default:
+            return CGSize(width: collectionView.bounds.width, height: fakeArticleCellHeight)
         }
     }
-    
 }
 
-extension TableViewController: TFAAdDelegate {
+extension InReadDirectCollectionViewController: TFAAdDelegate {
     
     func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio

@@ -63,9 +63,7 @@ class RootViewController: UIViewController {
         let selectedFormats = selectionList.flatMap({$0.values.filter({$0.isSelected})})
         let selectedFormatsLabels = selectedFormats.map({$0.label.lowercased()})
         let identifier = selectedFormatsLabels.joined(separator: "-")
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: identifier)
-        self.navigationController?.pushViewController(controller, animated: true)
+        performSegue(withIdentifier: identifier, sender: self)
     }
     
     func setupRootSegmentedControlsTableViewCell(cell: RootSegmentedControlsTableViewCell, indexPath: IndexPath) {

@@ -1,5 +1,5 @@
 //
-//  WebViewViewController.swift
+//  InReadDirectWebViewController.swift
 //  TeadsDemoApp
 //
 //  Created by Jérémy Grosjean on 02/10/2017.
@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import TeadsSDK
 
-class WebViewViewController: TeadsArticleViewController, WKNavigationDelegate {
+class InReadDirectWebViewController: TeadsArticleViewController, WKNavigationDelegate {
 
     var webView: WKWebView?
     var webSync: SyncWebViewTFInReadAdView?
