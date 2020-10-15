@@ -1,5 +1,5 @@
 //
-//  MoPubController.swift
+//  InReadMopubScrollViewController.swift
 //  TeadsDemoApp
 //
 //  Copyright © 2020 Teads. All rights reserved.
@@ -10,10 +10,10 @@ import UIKit
 import MoPub
 import TeadsMoPubAdapter
 
-class MoPubController: UIViewController {
+class InReadMopubScrollViewController: TeadsArticleViewController {
     
     // FIXME This ids should be replaced by your own MoPub id
-    let MOPUB_AD_UNIT_ID = "1d055042d1fc4d5d8240e4dec026f910"
+    let MOPUB_AD_UNIT_ID = "252412d5e9364a05ab77d9396346d73d"
     
     @IBOutlet weak var slotHeight: NSLayoutConstraint!
     var bannerView: MPAdView!
@@ -26,7 +26,6 @@ class MoPubController: UIViewController {
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         bannerView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)
         bannerView.delegate = self
-        config.loggingLevel = .debug
         
         if MoPub.sharedInstance().isSdkInitialized {
             loadAd()
@@ -59,46 +58,22 @@ class MoPubController: UIViewController {
         }
         slotView.addSubview(adView)
         adView.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraints([
-            NSLayoutConstraint(item: adView,
-                               attribute: .top,
-                               relatedBy: .equal,
-                               toItem: slotView,
-                               attribute: .top,
-                               multiplier: 1,
-                               constant: 0),
-            NSLayoutConstraint(item: adView,
-                               attribute: .leading,
-                               relatedBy: .equal,
-                               toItem: slotView,
-                               attribute: .leading,
-                               multiplier: 1,
-                               constant: 0),
-            NSLayoutConstraint(item: adView,
-                               attribute: .trailing,
-                               relatedBy: .equal,
-                               toItem: slotView,
-                               attribute: .trailing,
-                               multiplier: 1,
-                               constant: 0),
-            NSLayoutConstraint(item: adView,
-                               attribute: .bottom,
-                               relatedBy: .equal,
-                               toItem: slotView,
-                               attribute: .bottom,
-                               multiplier: 1,
-                               constant: 0)
-        ])
+        
+        let margins = slotView.layoutMarginsGuide
+        adView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+        adView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0).isActive = true
+        adView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+        adView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
     }
 }
 
-extension MoPubController: MPAdViewDelegate {
+extension InReadMopubScrollViewController: MPAdViewDelegate {
     func viewControllerForPresentingModalView() -> UIViewController! {
         return self
     }
 }
 
-extension MoPubController: TFAMediatedAdViewDelegate {
+extension InReadMopubScrollViewController: TFAMediatedAdViewDelegate {
     
     func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
         let width = slotView.frame.width

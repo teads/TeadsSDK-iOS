@@ -46,7 +46,7 @@
 		B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57FB1EA1FC5D5C600609036 /* images.xcassets */; };
 		B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */; };
-		B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */; };
+		B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */; };
 		D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */; };
 		DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */; };
 /* End PBXBuildFile section */
@@ -101,7 +101,7 @@
 		B57FB1EA1FC5D5C600609036 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidTableViewCell.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsArticleViewController.swift; sourceTree = "<group>"; };
-		B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubController.swift; sourceTree = "<group>"; };
+		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +211,7 @@
 		40D289F425384F2F0031A64D /* Mopub */ = {
 			isa = PBXGroup;
 			children = (
+				40D28A4D25388F270031A64D /* ScrollView */,
 			);
 			path = Mopub;
 			sourceTree = "<group>";
@@ -236,6 +237,14 @@
 			isa = PBXGroup;
 			children = (
 				DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		40D28A4D25388F270031A64D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -391,7 +400,6 @@
 			children = (
 				40D289ED25384E980031A64D /* InRead */,
 				40D289EA25384E5A0031A64D /* RootController */,
-				B5D8037524E3E51C00C0AAF6 /* mopubController */,
 				B56102A51F8533CF00E59C76 /* inRead Top */,
 				B56102981F83BFCB00E59C76 /* EmbededWebView */,
 				B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */,
@@ -460,14 +468,6 @@
 				B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B5D8037524E3E51C00C0AAF6 /* mopubController */ = {
-			isa = PBXGroup;
-			children = (
-				B5D8037824E3E6C800C0AAF6 /* MoPubController.swift */,
-			);
-			path = mopubController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,7 +632,7 @@
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
 				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
-				B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */,
+				B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */,
 				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
 				4079F256252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift in Sources */,

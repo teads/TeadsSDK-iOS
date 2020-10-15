@@ -1143,10 +1143,10 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
             </objects>
             <point key="canvasLocation" x="988" y="72"/>
         </scene>
-        <!--Mo Pub Controller-->
+        <!--In Read Mopub Scroll View Controller-->
         <scene sceneID="YfC-Dg-LqP">
             <objects>
-                <viewController storyboardIdentifier="inread-mopub-scrollview" id="gRu-4b-MAN" customClass="MoPubController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gRu-4b-MAN" customClass="InReadMopubScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6CR-PG-bIc" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
