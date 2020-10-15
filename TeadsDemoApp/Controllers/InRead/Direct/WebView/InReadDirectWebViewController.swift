@@ -12,9 +12,9 @@ import TeadsSDK
 
 class InReadDirectWebViewController: TeadsArticleViewController, WKNavigationDelegate {
 
-    var webView: WKWebView?
+    @IBOutlet weak var webView: WKWebView!
     var webSync: SyncWebViewTFInReadAdView?
-    var adView: TFAInReadAdView?
+    var adView: TFAInReadAdView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,11 @@ class InReadDirectWebViewController: TeadsArticleViewController, WKNavigationDel
             let contentString = try? String(contentsOfFile: content) else {
                 return
         }
-        self.webView = WKWebView(frame: self.view.bounds)
-        self.webView?.navigationDelegate = self
-        self.webView!.autoresizingMask = [.flexibleBottomMargin, .flexibleHeight, .flexibleWidth, .flexibleLeftMargin, .flexibleTopMargin, .flexibleTopMargin]
-        self.view.addSubview(self.webView!)
-        self.webView?.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
+        webView.navigationDelegate = self
+        webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
         
-        self.adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
-        self.webSync = SyncWebViewTFInReadAdView(webView: self.webView!, selector: "#teads-placement-slot", adView: self.adView!, viewController: self)
+        adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        webSync = SyncWebViewTFInReadAdView(webView: webView, selector: "#teads-placement-slot", adView: adView, viewController: self)
     }
     
     // MARK: -
@@ -38,6 +35,6 @@ class InReadDirectWebViewController: TeadsArticleViewController, WKNavigationDel
     // MARK: -
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webSync?.injectJS()
+        webSync?.injectJS()
     }
 }

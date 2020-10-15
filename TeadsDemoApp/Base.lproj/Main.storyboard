@@ -315,6 +315,7 @@
                         <segue destination="CNW-ac-jlI" kind="show" identifier="inread-direct-webview" id="ldC-uv-KRe"/>
                         <segue destination="ZBl-Dd-REC" kind="show" identifier="inread-direct-tableview" id="28g-jn-PIX"/>
                         <segue destination="Y21-KT-Xbn" kind="show" identifier="inread-admob-tableview" id="Lxd-4R-foO"/>
+                        <segue destination="Y9t-tl-bra" kind="show" identifier="inread-admob-webview" id="Iw7-ec-eI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -638,10 +639,28 @@
                     <view key="view" contentMode="scaleToFill" id="xMM-RJ-3aK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJZ-b8-lzq">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Rr3-S0-ETN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rr3-S0-ETN" firstAttribute="trailing" secondItem="SJZ-b8-lzq" secondAttribute="trailing" id="CLm-27-YGL"/>
+                            <constraint firstItem="SJZ-b8-lzq" firstAttribute="bottom" secondItem="Rr3-S0-ETN" secondAttribute="bottom" id="LKt-Rs-GQE"/>
+                            <constraint firstItem="SJZ-b8-lzq" firstAttribute="top" secondItem="Rr3-S0-ETN" secondAttribute="top" id="LXk-Hu-6Uu"/>
+                            <constraint firstItem="SJZ-b8-lzq" firstAttribute="leading" secondItem="Rr3-S0-ETN" secondAttribute="leading" id="e2H-ng-S2A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="grd-4z-qsp"/>
+                    <connections>
+                        <outlet property="webView" destination="SJZ-b8-lzq" id="bhY-7U-xba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn1-51-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -931,17 +950,16 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
             </objects>
             <point key="canvasLocation" x="2974" y="2164"/>
         </scene>
-        <!--Ad Mob In Web View Controller-->
+        <!--In Read Admob Web View Controller-->
         <scene sceneID="Umv-ro-kXq">
             <objects>
-                <viewController storyboardIdentifier="inread-admob-webview" id="Y9t-tl-bra" customClass="AdMobInWebViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-admob-webview" id="Y9t-tl-bra" customClass="InReadAdmobWebViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPU-J5-NvJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cj-dz-E0u">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -957,13 +975,14 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                             <constraint firstAttribute="bottom" secondItem="9Cj-dz-E0u" secondAttribute="bottom" id="y7c-RM-daS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="AAo-ow-Ebi"/>
                     <connections>
                         <outlet property="webView" destination="9Cj-dz-E0u" id="2eb-gc-jev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EF-gJ-xNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="2168"/>
+            <point key="canvasLocation" x="2686" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZzH-1f-HQq">

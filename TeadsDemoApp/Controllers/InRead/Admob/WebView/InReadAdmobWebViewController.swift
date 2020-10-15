@@ -1,5 +1,5 @@
 //
-//  AdMobInWebViewController.swift
+//  InReadAdmobWebViewController.swift
 //  TeadsDemoApp
 //
 //  Created by Jérémy Grosjean on 03/07/2019.
@@ -12,11 +12,11 @@ import GoogleMobileAds
 import TeadsAdMobAdapter
 import TeadsSDK
 
-class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBannerViewDelegate {
+class InReadAdmobWebViewController: TeadsArticleViewController {
 
     @IBOutlet weak var webView: WKWebView!
     var webSync: SyncWebViewAdView!
-    var bannerView: GADBannerView!
+    var bannerView: DFPBannerView!
 
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
@@ -24,21 +24,27 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
     private var currentBanner: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         guard let content = Bundle.main.path(forResource: "demo", ofType: "html"),
             let contentString = try? String(contentsOfFile: content) else {
                 return
         }
-        self.webView.navigationDelegate = self
-        self.webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
+        webView.navigationDelegate = self
+        webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
         
-        self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-        self.bannerView.translatesAutoresizingMaskIntoConstraints = false
-        self.bannerView.adUnitID = ADMOB_AD_UNIT_ID
-        self.bannerView.rootViewController = self
-        self.bannerView.delegate = self
+        bannerView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
+        bannerView.adUnitID = ADMOB_AD_UNIT_ID
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        webSync = SyncWebViewAdView(webView: webView, selector: "#teads-placement-slot", adView: bannerView)
         
         let request = GADRequest()
         let adSettings = TeadsAdSettings { (settings) in
+            settings.enableDebug()
+            settings.disableLocation()
+            try? settings.subscribeAdResizeDelegate(webSync, forAdView: bannerView)
+
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
             //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
@@ -53,11 +59,12 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
 
         request.register(customEventExtras)
 
-        self.bannerView.load(request)
-        self.webSync = SyncWebViewAdView(webView: self.webView, selector: "#teads-placement-slot", adView: self.bannerView)
+        bannerView.load(request)
     }
-    
-    // MARK: - GADBannerViewDelegate Protocol
+
+}
+
+extension InReadAdmobWebViewController: GADBannerViewDelegate {
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("DemoApp: banner is loaded.")
@@ -65,8 +72,8 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print("DemoApp: banner failed to load with error: \(error)")
-        self.currentBanner = nil
-        self.webSync.webViewHelper.closeSlot()
+        currentBanner = nil
+        webSync.webViewHelper.closeSlot()
     }
     
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
@@ -85,12 +92,12 @@ class AdMobInWebViewController: UIViewController, WKNavigationDelegate, GADBanne
         print("DemoApp: banner will leave application.")
     }
     
-    // MARK: -
-    // MARK: WKNavigationDelegate
-    // MARK: -
+}
+
+extension InReadAdmobWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webSync?.injectJS()
+        webSync?.injectJS()
     }
-
+    
 }

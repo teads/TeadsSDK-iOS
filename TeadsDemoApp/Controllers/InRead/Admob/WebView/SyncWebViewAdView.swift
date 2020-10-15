@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import TeadsAdMobAdapter
+import TeadsSDK
 import WebKit
 
 class SyncWebViewAdView: NSObject, WebViewHelperDelegate {
@@ -83,4 +84,17 @@ class SyncWebViewAdView: NSObject, WebViewHelperDelegate {
             NSLayoutConstraint.activate(adViewConstraints)
         }
     }
+}
+
+extension SyncWebViewAdView: TFAMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
+        guard let adView = adView as? DFPBannerView else {
+            return
+        }
+        let width = adView.frame.width
+        adView.resize(GADAdSizeFromCGSize(CGSize(width: width, height: width / ratio)))
+        webViewHelper.updateSlot(adRatio: ratio)
+    }
+    
 }

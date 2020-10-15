@@ -15,6 +15,7 @@
 		4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */; };
 		4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */; };
 		40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
+		40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A46253883F80031A64D /* SyncWebViewAdView.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
 		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
@@ -28,8 +29,7 @@
 		B50425F6252F436000ABF07D /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = B50425F4252F436000ABF07D /* demo.html */; };
 		B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */; };
 		B504260B25305A1E00ABF07D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504260A25305A1E00ABF07D /* Utils.swift */; };
-		B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */; };
-		B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */; };
+		B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
@@ -61,6 +61,7 @@
 		4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootButtonIconLabelTableViewCell.swift; sourceTree = "<group>"; };
 		4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelButtonView.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
+		40D28A46253883F80031A64D /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,9 +82,8 @@
 		B50425F4252F436000ABF07D /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsGradientImageView.swift; sourceTree = "<group>"; };
 		B504260A25305A1E00ABF07D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobInWebViewController.swift; sourceTree = "<group>"; };
-		B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
-		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncWebViewTFInReadAdView.swift; path = TeadsDemoApp/Controllers/InRead/Direct/WebView/webViewHelper/SyncWebViewTFInReadAdView.swift; sourceTree = SOURCE_ROOT; };
+		B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewController.swift; sourceTree = "<group>"; };
+		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewTFInReadAdView.swift; sourceTree = "<group>"; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5555A3A1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -202,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				40D28A25253853450031A64D /* TableView */,
+				40D28A41253879140031A64D /* WebView */,
 			);
 			path = Admob;
 			sourceTree = "<group>";
@@ -219,6 +220,15 @@
 				40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		40D28A41253879140031A64D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				40D28A46253883F80031A64D /* SyncWebViewAdView.swift */,
+				B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		874FCA9D677F77A0CE9CCE96 /* Frameworks */ = {
@@ -270,14 +280,13 @@
 			path = css;
 			sourceTree = "<group>";
 		};
-		B501EC731F823BA8002909B9 /* webViewHelper */ = {
+		B501EC731F823BA8002909B9 /* WebViewHelper */ = {
 			isa = PBXGroup;
 			children = (
 				B501EC741F823BA8002909B9 /* Ressources */,
 				B501EC771F823BA8002909B9 /* WebViewHelper.swift */,
-				B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */,
 			);
-			path = webViewHelper;
+			path = WebViewHelper;
 			sourceTree = "<group>";
 		};
 		B501EC741F823BA8002909B9 /* Ressources */ = {
@@ -291,7 +300,7 @@
 		B501EC781F823C2A002909B9 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				B501EC731F823BA8002909B9 /* webViewHelper */,
+				B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */,
 				B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */,
 			);
 			path = WebView;
@@ -322,14 +331,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B50C184A22CCDF35004F2360 /* WebViewHelper */ = {
-			isa = PBXGroup;
-			children = (
-				B50C184B22CCDF49004F2360 /* SyncWebViewAdView.swift */,
-			);
-			path = WebViewHelper;
-			sourceTree = "<group>";
-		};
 		B5555A291F7CDF80007406D4 = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +352,7 @@
 		B5555A341F7CDF80007406D4 /* TeadsDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B501EC731F823BA8002909B9 /* WebViewHelper */,
 				40D289EC25384E7B0031A64D /* Models */,
 				B5CF159C252CC0FA00B12F83 /* Views */,
 				4079F241252CBE7300B0AC31 /* Extensions */,
@@ -463,9 +465,7 @@
 		DB4660D82181B718003A6CF5 /* adMobController */ = {
 			isa = PBXGroup;
 			children = (
-				B50C184A22CCDF35004F2360 /* WebViewHelper */,
 				DB4660DB2181B865003A6CF5 /* AdMobController.swift */,
-				B50C184822CCDC65004F2360 /* AdMobInWebViewController.swift */,
 			);
 			path = adMobController;
 			sourceTree = "<group>";
@@ -615,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */,
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
 				40077B432534AABF00D53197 /* InReadDirectCollectionViewController.swift in Sources */,
 				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
@@ -629,7 +630,6 @@
 				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
 				40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */,
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
-				B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
 				B5D8037924E3E6C800C0AAF6 /* MoPubController.swift in Sources */,
@@ -640,7 +640,7 @@
 				B504260B25305A1E00ABF07D /* Utils.swift in Sources */,
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
-				B50C184922CCDC65004F2360 /* AdMobInWebViewController.swift in Sources */,
+				B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */,
 				4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */,
 				4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */,
 				B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */,

@@ -23,16 +23,16 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     weak var viewController: UIViewController?
     
     public init(webView: WKWebView, selector: String, adView: TFAInReadAdView, viewController: UIViewController, adSettings: TeadsAdSettings? = nil) {
-        self.webViewHelper = WebViewHelper(webView: webView, selector: selector)
+        webViewHelper = WebViewHelper(webView: webView, selector: selector)
         self.adView = adView
         super.init()
         self.adView?.delegate = self
-        self.webViewHelper.delegate = self
+        webViewHelper.delegate = self
         self.webView = webView
         self.viewController = viewController
-        self.teadsAdSettings = adSettings
+        teadsAdSettings = adSettings
         //We use the observer to know when the rotation happen to resize the ad
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -42,19 +42,19 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     
     public func injectJS() {
         //Inject the js in your webview when the webview is ready
-        self.webViewHelper.injectJS()
+        webViewHelper.injectJS()
     }
     
     @objc func rotationDetected() {
         //update the slot when the rotation occurs
-        self.webViewHelper.updateSlot(adRatio: self.adRatio)
+        webViewHelper.updateSlot(adRatio: adRatio)
     }
     
     // MARK: WebViewHelperDelegate
     
     public func webViewHelperJSIsReady() {
         //insert the slot when the webview helper is ready
-        self.webViewHelper.insertSlot()
+        webViewHelper.insertSlot()
     }
     public func webViewHelperSlotStartToShow() {
     }
@@ -64,28 +64,28 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     public func webViewHelperUpdatedSlot(left: Int, top: Int, right: Int, bottom: Int) {
         // if the adView is not already loaded load it and add it to the scrollView of your webview
         if let adView = self.adView, let webView = self.webView {
-            if !self.isLoaded {
-                self.isLoaded = true
-                adView.load(teadsAdSettings: self.teadsAdSettings)
+            if !isLoaded {
+                isLoaded = true
+                adView.load(teadsAdSettings: teadsAdSettings)
                 webView.scrollView.addSubview(adView)
                 adView.translatesAutoresizingMaskIntoConstraints = false
             }
             //change the constraint according to coordonate that the delegate send us
-            self.customAdViewConstraint(left: left, top: top, right: right, bottom: bottom)
+            customAdViewConstraint(left: left, top: top, right: right, bottom: bottom)
         }
     }
     
     /// change the constraint of the ad so it follows what the bootstrap ask
     func customAdViewConstraint(left: Int, top: Int, right: Int, bottom: Int) {
         if let adView = self.adView, let webView = self.webView {
-            NSLayoutConstraint.deactivate(self.adViewConstraints)
-            self.adViewConstraints.removeAll()
-            self.adViewConstraints.append(adView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: CGFloat(left)))
-            self.adViewConstraints.append(adView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: CGFloat(top)))
-            self.adViewConstraints.append(adView.widthAnchor.constraint(equalToConstant: CGFloat(right-left)))
-            self.adViewHeightConstraint = adView.heightAnchor.constraint(equalToConstant: CGFloat(bottom-top))
-            self.adViewConstraints.append(self.adViewHeightConstraint!)
-            NSLayoutConstraint.activate(self.adViewConstraints)
+            NSLayoutConstraint.deactivate(adViewConstraints)
+            adViewConstraints.removeAll()
+            adViewConstraints.append(adView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: CGFloat(left)))
+            adViewConstraints.append(adView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: CGFloat(top)))
+            adViewConstraints.append(adView.widthAnchor.constraint(equalToConstant: CGFloat(right-left)))
+            adViewHeightConstraint = adView.heightAnchor.constraint(equalToConstant: CGFloat(bottom-top))
+            adViewConstraints.append(adViewHeightConstraint!)
+            NSLayoutConstraint.activate(adViewConstraints)
         }
     }
     
@@ -100,9 +100,9 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     public func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio
         //update slot with the right ratio
-        self.webViewHelper.updateSlot(adRatio: self.adRatio)
+        webViewHelper.updateSlot(adRatio: self.adRatio)
         //open the slot
-        self.webViewHelper.openSlot()
+        webViewHelper.openSlot()
     }
     
     public func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
@@ -112,7 +112,7 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     
     public func adClose(_ ad: TFAAdView, userAction: Bool) {
         //close the slot
-        self.webViewHelper.closeSlot()
+        webViewHelper.closeSlot()
         //hide the ad too
         if let heightConstraint = self.adViewHeightConstraint {
             heightConstraint.constant = 0
@@ -131,14 +131,14 @@ public class SyncWebViewTFInReadAdView: NSObject, WebViewHelperDelegate, TFAAdDe
     }
     
     public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
-        self.adRatio = ratio
+        adRatio = ratio
         //update slot with the right ratio
-        self.webViewHelper.updateSlot(adRatio: ratio)
+        webViewHelper.updateSlot(adRatio: ratio)
     }
     
     public func adDidCloseFullscreen(_ ad: TFAAdView) {
         //update the slot in case there was a rotation or a layout change to be sure that the ad has the right layout
-        self.webViewHelper.updateSlot(adRatio: self.adRatio)
+        webViewHelper.updateSlot(adRatio: adRatio)
     }
     
     public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
