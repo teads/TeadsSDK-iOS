@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class InReadDirectScrollViewController: TeadsArticleViewController, TFAAdDelegate {
+class InReadDirectScrollViewController: TeadsArticleViewController {
 
     @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
     @IBOutlet weak var teadsAdView: TFAInReadAdView!
@@ -47,8 +47,9 @@ class InReadDirectScrollViewController: TeadsArticleViewController, TFAAdDelegat
         let adHeight = view.frame.width/adRatio
         teadsAdHeightConstraint.constant = adHeight
     }
-    
-    // MARK: TFAAdDelegate
+}
+
+extension InReadDirectScrollViewController: TFAAdDelegate {
     
     func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
         self.adRatio = adRatio
@@ -61,7 +62,7 @@ class InReadDirectScrollViewController: TeadsArticleViewController, TFAAdDelegat
     }
     
     func adClose(_ ad: TFAAdView, userAction: Bool) {
-        self.teadsAdHeightConstraint.constant = 0
+        teadsAdHeightConstraint.constant = 0
         //be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
     }
@@ -79,4 +80,5 @@ class InReadDirectScrollViewController: TeadsArticleViewController, TFAAdDelegat
     public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
         return self
     }
+    
 }

@@ -1,5 +1,5 @@
 //
-//  AdMobController.swift
+//  InReadAdmobScrollViewController.swift
 //  TeadsDemoApp
 //
 //  Copyright © 2018 Teads. All rights reserved.
@@ -10,26 +10,25 @@ import TeadsAdMobAdapter
 import TeadsSDK
 import UIKit
 
-class AdMobController: TeadsArticleViewController, GADBannerViewDelegate {
+class InReadAdmobScrollViewController: TeadsArticleViewController {
     
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
-    @IBOutlet weak var slotHeightConstraint: NSLayoutConstraint!
-    var bannerView: GADBannerView!
+    var bannerView: DFPBannerView!
     @IBOutlet weak var slotView: UIView!
+    @IBOutlet weak var slotViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // 1. Create AdMob view and add it to hierarchy
-        self.bannerView = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-        self.bannerView.translatesAutoresizingMaskIntoConstraints = false
-        self.slotView.addSubview(bannerView)
-        NSLayoutConstraint.activate(
-            [self.bannerView.centerXAnchor.constraint(equalTo: self.slotView.centerXAnchor),
-             self.bannerView.centerYAnchor.constraint(equalTo: self.slotView.centerYAnchor)])
+        bannerView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
+        slotView.addSubview(bannerView)
+        
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.centerXAnchor.constraint(equalTo: slotView.centerXAnchor).isActive = true
+        bannerView.centerYAnchor.constraint(equalTo: slotView.centerYAnchor).isActive = true
 
         // 2. Attach Delegate (will include Teads events)
         bannerView.adUnitID = ADMOB_AD_UNIT_ID
@@ -59,18 +58,25 @@ class AdMobController: TeadsArticleViewController, GADBannerViewDelegate {
         bannerView.load(request)
     }
     
-    // MARK: GADBannerViewDelegate
+    private func resizeAd(height: CGFloat) {
+        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
+        slotViewHeightConstraint.constant = height
+    }
+
+}
+
+extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
-        NSLayoutConstraint.activate([self.slotView.heightAnchor.constraint(equalToConstant: 250)])
+        resizeAd(height: bannerView.adSize.size.height)
     }
     
     /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
-        NSLayoutConstraint.activate([self.slotView.heightAnchor.constraint(equalToConstant: 0)])
+        resizeAd(height: 0)
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
@@ -95,14 +101,13 @@ class AdMobController: TeadsArticleViewController, GADBannerViewDelegate {
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         // not used
     }
-
+    
 }
 
-extension AdMobController: TFAMediatedAdViewDelegate {
+extension InReadAdmobScrollViewController: TFAMediatedAdViewDelegate {
     
     func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        let width = slotView.frame.width
-        slotHeightConstraint.constant = width / ratio
+        resizeAd(height: slotView.frame.width / ratio)
     }
     
 }

@@ -16,7 +16,7 @@ class InReadAdmobTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716" //ca-app-pub-3068786746829754/2411019030
+    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"

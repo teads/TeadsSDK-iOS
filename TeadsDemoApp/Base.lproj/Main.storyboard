@@ -1002,10 +1002,10 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
             </objects>
             <point key="canvasLocation" x="-956" y="72"/>
         </scene>
-        <!--Ad Mob Controller-->
+        <!--In Read Admob Scroll View Controller-->
         <scene sceneID="GdI-iD-Zka">
             <objects>
-                <viewController storyboardIdentifier="inread-admob-scrollview" id="84V-4d-h7P" customClass="AdMobController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-admob-scrollview" id="84V-4d-h7P" customClass="InReadAdmobScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRY-no-fl8" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1014,7 +1014,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuB-Fv-3Vz" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1359"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1148.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSX-3a-7d2" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -1052,7 +1052,7 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="S6p-LH-qo4">
-                                                <rect key="frame" x="10" y="240.5" width="355" height="1118.5"/>
+                                                <rect key="frame" x="10" y="240.5" width="355" height="908"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative that cuts through the noise…but respects the user." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNh-wH-CPJ" userLabel="title">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="118.5"/>
@@ -1075,14 +1075,14 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFz-ac-jkV" userLabel="Slot view">
-                                                        <rect key="frame" x="0.0" y="558.5" width="355" height="250"/>
+                                                        <rect key="frame" x="0.0" y="598" width="355" height="0.0"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="250" id="7LJ-s6-q3T"/>
+                                                            <constraint firstAttribute="height" id="siL-dX-mS1"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ0-jm-Sav" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="818.5" width="355" height="300"/>
+                                                        <rect key="frame" x="0.0" y="608" width="355" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="ATR-wq-E8t"/>
@@ -1135,8 +1135,8 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                     <navigationItem key="navigationItem" id="rBu-v3-Qn8"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="slotHeightConstraint" destination="7LJ-s6-q3T" id="mNz-7o-TMY"/>
                         <outlet property="slotView" destination="LFz-ac-jkV" id="onV-Lf-02T"/>
+                        <outlet property="slotViewHeightConstraint" destination="siL-dX-mS1" id="cQe-NS-KtF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8Q-7E-hy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
