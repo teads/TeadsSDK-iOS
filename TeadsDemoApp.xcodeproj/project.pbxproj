@@ -14,6 +14,7 @@
 		4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */; };
 		4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */; };
 		4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */; };
+		40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
 		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
@@ -59,6 +60,7 @@
 		4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSegmentedControlsTableViewCell.swift; sourceTree = "<group>"; };
 		4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootButtonIconLabelTableViewCell.swift; sourceTree = "<group>"; };
 		4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelButtonView.swift; sourceTree = "<group>"; };
+		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		4F34C10021C20FBD3897D8B9 /* Pods-TeadsDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		9049E99B853FFD3E844A5506 /* Pods-TeadsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		40D289F325384F240031A64D /* Admob */ = {
 			isa = PBXGroup;
 			children = (
+				40D28A25253853450031A64D /* TableView */,
 			);
 			path = Admob;
 			sourceTree = "<group>";
@@ -208,6 +211,14 @@
 			children = (
 			);
 			path = Mopub;
+			sourceTree = "<group>";
+		};
+		40D28A25253853450031A64D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		874FCA9D677F77A0CE9CCE96 /* Frameworks */ = {
@@ -616,6 +627,7 @@
 				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
 				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
 				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
+				40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */,
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
 				B50C184D22CCDF49004F2360 /* SyncWebViewAdView.swift in Sources */,
 				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,

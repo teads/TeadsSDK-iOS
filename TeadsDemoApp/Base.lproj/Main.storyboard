@@ -314,6 +314,7 @@
                         <segue destination="gRu-4b-MAN" kind="show" identifier="inread-mopub-scrollview" id="r0M-Tu-qjv"/>
                         <segue destination="CNW-ac-jlI" kind="show" identifier="inread-direct-webview" id="ldC-uv-KRe"/>
                         <segue destination="ZBl-Dd-REC" kind="show" identifier="inread-direct-tableview" id="28g-jn-PIX"/>
+                        <segue destination="Y21-KT-Xbn" kind="show" identifier="inread-admob-tableview" id="Lxd-4R-foO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1263,6 +1264,163 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvj-c6-aSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988" y="1162"/>
+        </scene>
+        <!--inread-direct-tableview-->
+        <scene sceneID="qMb-v5-8Sz">
+            <objects>
+                <viewController title="inread-direct-tableview" id="Y21-KT-Xbn" customClass="InReadAdmobTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZO-MS-VEm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-v8-YVA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeadsContentCell" id="Vc4-n2-tBo">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="549.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vc4-n2-tBo" id="W1n-cE-a33">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="549.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oNd-Zg-fqs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="549.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-JX-unZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-YV-Fvz" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNt-ny-RJQ">
+                                                                    <rect key="frame" x="66.5" y="65" width="242.5" height="20.5"/>
+                                                                    <string key="text">Scroll down to see your creative
+</string>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" systemColor="systemGray6Color"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="uNt-ny-RJQ" firstAttribute="centerX" secondItem="g7N-JX-unZ" secondAttribute="centerX" id="5Kp-zw-Ssi"/>
+                                                                <constraint firstAttribute="trailing" secondItem="FSR-YV-Fvz" secondAttribute="trailing" id="9Yx-3U-Lgc"/>
+                                                                <constraint firstItem="FSR-YV-Fvz" firstAttribute="leading" secondItem="g7N-JX-unZ" secondAttribute="leading" id="DbX-VQ-dby"/>
+                                                                <constraint firstItem="uNt-ny-RJQ" firstAttribute="centerY" secondItem="g7N-JX-unZ" secondAttribute="centerY" id="W00-P2-htc"/>
+                                                                <constraint firstItem="FSR-YV-Fvz" firstAttribute="top" secondItem="g7N-JX-unZ" secondAttribute="top" id="ahk-DY-cvs"/>
+                                                                <constraint firstAttribute="bottom" secondItem="FSR-YV-Fvz" secondAttribute="bottom" id="g4N-Ds-RaM"/>
+                                                                <constraint firstAttribute="height" constant="150" id="lnd-4m-Q3h"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUc-gU-f6i">
+                                                            <rect key="frame" x="10" y="190" width="355" height="24"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTICLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sk-sN-egU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="24"/>
+                                                                    <color key="backgroundColor" name="LightBlueColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                    <color key="textColor" name="AppBackgroundColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="9zg-I0-ML6"/>
+                                                                <constraint firstItem="5sk-sN-egU" firstAttribute="leading" secondItem="RUc-gU-f6i" secondAttribute="leading" id="A6Q-ba-CCW"/>
+                                                                <constraint firstItem="5sk-sN-egU" firstAttribute="top" secondItem="RUc-gU-f6i" secondAttribute="top" id="TJw-x0-n8P"/>
+                                                                <constraint firstAttribute="bottom" secondItem="5sk-sN-egU" secondAttribute="bottom" id="ifj-wN-esJ"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative that cuts through the noise…but respects the user." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-QF-M0f" userLabel="title">
+                                                            <rect key="frame" x="10" y="244" width="355" height="118.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                                            <color key="textColor" name="AppTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96b-nA-HUR">
+                                                            <rect key="frame" x="10" y="392.5" width="355" height="157"/>
+                                                            <string key="text">Holding attention in a mobile driven world is no easy challenge. At Teads, we embrace the swipes, the scrolls, the pinches and the taps to build ad experiences that delight the user and deliver business results for brands.</string>
+                                                            <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
+                                                            <color key="textColor" name="AppTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="96b-nA-HUR" firstAttribute="leading" secondItem="oNd-Zg-fqs" secondAttribute="leading" constant="10" id="0gS-c7-YI2"/>
+                                                        <constraint firstItem="fx0-QF-M0f" firstAttribute="leading" secondItem="oNd-Zg-fqs" secondAttribute="leading" constant="10" id="0s0-D5-LnZ"/>
+                                                        <constraint firstItem="fx0-QF-M0f" firstAttribute="top" secondItem="RUc-gU-f6i" secondAttribute="bottom" constant="30" id="IXO-P3-UEv"/>
+                                                        <constraint firstItem="RUc-gU-f6i" firstAttribute="leading" secondItem="oNd-Zg-fqs" secondAttribute="leading" constant="10" id="KYd-KB-V6T"/>
+                                                        <constraint firstItem="96b-nA-HUR" firstAttribute="top" secondItem="fx0-QF-M0f" secondAttribute="bottom" constant="30" id="Mna-gY-Y3s"/>
+                                                        <constraint firstAttribute="trailing" secondItem="96b-nA-HUR" secondAttribute="trailing" constant="10" id="MwQ-Rl-nYx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fx0-QF-M0f" secondAttribute="trailing" constant="10" id="hM7-Nb-hXf"/>
+                                                        <constraint firstItem="RUc-gU-f6i" firstAttribute="top" secondItem="g7N-JX-unZ" secondAttribute="bottom" constant="40" id="tyL-iZ-Mow"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oNd-Zg-fqs" secondAttribute="trailing" id="GZE-tA-P52"/>
+                                                <constraint firstItem="oNd-Zg-fqs" firstAttribute="top" secondItem="W1n-cE-a33" secondAttribute="top" id="HXa-hu-Oai"/>
+                                                <constraint firstAttribute="bottom" secondItem="oNd-Zg-fqs" secondAttribute="bottom" id="Ia7-p8-eyu"/>
+                                                <constraint firstItem="oNd-Zg-fqs" firstAttribute="leading" secondItem="W1n-cE-a33" secondAttribute="leading" id="V7N-hl-8lv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeadsAdCell" rowHeight="250" id="VKl-Lq-hz4" customClass="TeadsAdTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="577.5" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKl-Lq-hz4" id="6sp-Wm-hmW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fakeArticleCell" id="zUu-tN-C7h">
+                                        <rect key="frame" x="0.0" y="827.5" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zUu-tN-C7h" id="AG7-YS-oNN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-61-Eq2" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="300"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="0R1-5u-938"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ggV-61-Eq2" secondAttribute="bottom" id="5Cr-Z7-ucy"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggV-61-Eq2" secondAttribute="trailing" constant="10" id="Q6r-9Q-rzh"/>
+                                                <constraint firstItem="ggV-61-Eq2" firstAttribute="leading" secondItem="AG7-YS-oNN" secondAttribute="leading" constant="10" id="aPY-7d-tMa"/>
+                                                <constraint firstItem="ggV-61-Eq2" firstAttribute="top" secondItem="AG7-YS-oNN" secondAttribute="top" id="oq5-Lw-tyP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y21-KT-Xbn" id="74J-RW-PfQ"/>
+                                    <outlet property="delegate" destination="Y21-KT-Xbn" id="yPk-Hy-h6u"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uIj-9H-zqO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aUf-v8-YVA" firstAttribute="leading" secondItem="uIj-9H-zqO" secondAttribute="leading" id="39q-pI-INw"/>
+                            <constraint firstItem="uIj-9H-zqO" firstAttribute="trailing" secondItem="aUf-v8-YVA" secondAttribute="trailing" id="NND-Bz-JnK"/>
+                            <constraint firstItem="aUf-v8-YVA" firstAttribute="top" secondItem="uIj-9H-zqO" secondAttribute="top" id="YQE-Jj-Cxa"/>
+                            <constraint firstItem="uIj-9H-zqO" firstAttribute="bottom" secondItem="aUf-v8-YVA" secondAttribute="bottom" id="imS-Mb-cYU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tH0-As-8jB"/>
+                    <connections>
+                        <outlet property="tableView" destination="aUf-v8-YVA" id="ffS-Oe-VIk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVl-Hc-hEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="72"/>
         </scene>
     </scenes>
     <resources>
