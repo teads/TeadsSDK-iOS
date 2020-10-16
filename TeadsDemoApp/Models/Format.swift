@@ -25,20 +25,28 @@ struct Integration {
     let imageName: String
 }
 
-var inReadDirectProvider = Provider(name: "Direct", integrations: [Integration(name: "scrollView", imageName: "scrollView"),
-    Integration(name: "webView", imageName: "webView"),
-    Integration(name: "tableView", imageName: "tableView"),
-    Integration(name: "collectionView", imageName: "collectionView")
+let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollView")
+let tableViewIntegration = Integration(name: "TableView", imageName: "TableView")
+let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
+let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
+
+var inReadDirectProvider = Provider(name: "Direct", integrations: [
+    scrollViewIntegration,
+    tableViewIntegration,
+    collectionViewIntegration,
+    webViewIntegration
 ], isSelected: true)
 
-var admobDirectProvider = Provider(name: "Admob", integrations: [Integration(name: "scrollView", imageName: "scrollView"),
-    Integration(name: "webView", imageName: "webView"),
-    Integration(name: "tableView", imageName: "tableView"),
+var admobDirectProvider = Provider(name: "Admob", integrations: [
+    scrollViewIntegration,
+    tableViewIntegration,
+    webViewIntegration
 ], isSelected: false)
 
-var mopubDirectProvider = Provider(name: "MoPub", integrations: [Integration(name: "scrollView", imageName: "scrollView"),
-    Integration(name: "webView", imageName: "webView"),
-    Integration(name: "tableView", imageName: "tableView"),
+var mopubDirectProvider = Provider(name: "MoPub", integrations: [
+    scrollViewIntegration,
+    tableViewIntegration,
+    webViewIntegration
 ], isSelected: false)
 
 var inReadFormat = Format(name: "inRead", providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider], isSelected: true)

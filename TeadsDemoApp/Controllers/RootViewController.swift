@@ -10,13 +10,22 @@ import Foundation
 import UIKit
 
 class RootViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    private var selectionList = [Format]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    private var selectionList = [inReadFormat, nativeFormat]
+    
+    private let headerCell = "RootHeaderCollectionReusableView"
+    private let buttonCell = "RootButtonCollectionViewCell"
+    private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.allowsMultipleSelection = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        selectionList = [inReadFormat, nativeFormat]
         setNavigationBarImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -41,160 +50,141 @@ class RootViewController: UIViewController {
         navigationItem.titleView = imageView
     }
     
-    func showDemoController() {
-        let selectedFormats = selectionList.flatMap({$0.providers.filter({$0.isSelected})})
-        let selectedFormatsLabels = selectedFormats.map({$0.name.lowercased()})
-        let identifier = selectedFormatsLabels.joined(separator: "-")
-        performSegue(withIdentifier: identifier, sender: self)
-    }
-    
-    func setupRootSegmentedControlsTableViewCell(cell: RootSegmentedControlsTableViewCell, indexPath: IndexPath) {
-        var buttons = [UIButton]()
-        selectionList[indexPath.section].providers.enumerated().forEach { (index, value) in
-            let button = UIButton()
-            button.setTitle(value.name, for: .normal)
-            cell.addButtonToStackViewWithStyle(button: button, index: index, isButtonSelected: value.isSelected)
-            buttons.append(button)
-        }
-        cell.didSelectValue = { [weak self] index in
-            if let pastIndex: Int = self?.selectionList[indexPath.section].providers.firstIndex(where: {$0.isSelected == true}), pastIndex != index {
-                self?.selectionList[indexPath.section].providers[pastIndex].isSelected = false
-                cell.resetNormalStyle(button: buttons[pastIndex])
-                self?.selectionList[indexPath.section].providers[index].isSelected = true
-            }
-        }
-    }
-    
-    func setupRootButtonIconLabelTableViewCell(cell: RootButtonIconLabelTableViewCell, indexPath: IndexPath) {
-        guard let integrations = selectionList[indexPath.section].providers.filter({$0.isSelected}).first?.integrations else {
+    func showDemoController(withIntegration integration: String) {
+        guard let selectedFormat = selectionList.first(where: {$0.isSelected})?.name,
+              let selectedProvider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.name else {
             return
         }
-        let firstCardIndex = indexPath.row + indexPath.row
-        let secondCardIndex = firstCardIndex + 1
-        let firstCardValue = integrations[firstCardIndex]
-        cell.firstCard.label.text = firstCardValue.name
-        cell.firstCard.imageView.image = UIImage(named: firstCardValue.imageName)
-        cell.firstCard.tag = firstCardIndex
-        cell.firstCard.delegate = self
-        
-        if integrations.indices.contains(secondCardIndex) {
-            let secondCardValue = integrations[secondCardIndex]
-            cell.secondCard.label.text = secondCardValue.name
-            cell.secondCard.imageView.image = UIImage(named: secondCardValue.imageName)
-            cell.secondCard.tag = secondCardIndex
-            cell.secondCard.delegate = self
-        } else {
-            cell.secondCard.isHidden = true
-        }
+        let identifier = "\(selectedFormat)-\(selectedProvider)-\(integration)"
+        performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
 
 }
 
-extension RootViewController: UICollectionViewDelegate {
+extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-}
-
-extension RootViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        switch section {
+        case 0:
+            return selectionList.count
+        case 1:
+            return selectionList.first(where: {$0.isSelected})?.providers.count ?? 0
+        case 2:
+            return selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath) as? RootHeaderCollectionReusableView else {
+            return UICollectionReusableView()
+        }
+        switch indexPath.section {
+        case 0:
+            cell.label.text = "Format"
+        case 1:
+            cell.label.text = "Providers"
+        case 2:
+            cell.label.text = "Integration"
+        default:
+            break
+        }
+        return cell
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.item {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rootCell", for: indexPath) as! RootSectionCollectionViewCell
-            cell.cellLabel.text = "Format"
-            cell.buttonsStackView.subviews.forEach { (view) in
-                view.removeFromSuperview()
+        switch indexPath.section {
+        case 0, 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
+                return UICollectionViewCell()
             }
-            selectionList.enumerated().forEach { (index, format) in
-                let button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
-                button.backgroundColor = format.isSelected ? .primary : .white
-                button.layer.borderColor = UIColor.primary.cgColor
-                button.layer.cornerRadius = 10
-                button.layer.borderWidth = 1
-                button.setTitle(format.name, for: .normal)
-                button.setTitleColor(format.isSelected ? .teadsGray: .primary, for: .normal)
-                button.tag = index
-                button.addTarget(self, action: #selector(formatButtonClicked), for: .touchUpInside)
-                cell.buttonsStackView.addArrangedSubview(button)
+            if indexPath.section == 0 {
+                let cellValue = selectionList[indexPath.item]
+                cell.label.text = cellValue.name
+                cell.isSelected = cellValue.isSelected
+            } else {
+                if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
+                    cell.label.text = cellValue.name
+                    cell.isSelected = cellValue.isSelected
+                }
             }
             return cell
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rootCell", for: indexPath) as! RootSectionCollectionViewCell
-            cell.cellLabel.text = "Provider"
-            cell.buttonsStackView.subviews.forEach { (view) in
-                view.removeFromSuperview()
+        case 2:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
+                return UICollectionViewCell()
             }
-            let formatSelected = selectionList.filter({$0.isSelected}).first
-            formatSelected?.providers.enumerated().forEach { (index, provider) in
-                let button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 30))
-                button.tag = index
-                button.backgroundColor = provider.isSelected ? .primary : .white
-                button.layer.borderColor = UIColor.primary.cgColor
-                button.setTitleColor(provider.isSelected ? .teadsGray: .primary, for: .normal)
-                button.layer.cornerRadius = 10
-                button.layer.borderWidth = 1
-                button.setTitle(provider.name, for: .normal)
-                button.addTarget(self, action: #selector(providerButtonClicked), for: .touchUpInside)
-                cell.buttonsStackView.addArrangedSubview(button)
+            if let cellValue = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations[indexPath.item] {
+                cell.imageView.image = UIImage(named: cellValue.imageName)
+                cell.label.text = cellValue.name
             }
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rootCell", for: indexPath) as! RootSectionCollectionViewCell
-            cell.cellLabel.text = ""
-            cell.buttonsStackView.subviews.forEach { (view) in
-                view.removeFromSuperview()
-            }
-            guard let integrationsSelected = selectionList.filter({$0.isSelected}).first?.providers.filter({$0.isSelected}).first?.integrations else {
-                return cell
-            }
-            cell.backgroundColor = .blue
-            let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: cell.buttonsStackView.bounds.height))
-            cell.buttonsStackView.addSubview(scrollView)
-            scrollView.backgroundColor = .green
-            let height = ceilf(Float(integrationsSelected.count/2)) * 100
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloat(height))
-            integrationsSelected.enumerated().forEach({ (index, integration) in
-                let integrationView = UIView(frame: CGRect(x: (index % 2) * Int(scrollView.bounds.width)/2 , y: Int(floor(Double(index/2))) * 110, width: 150, height: 100))
-                integrationView.backgroundColor = .red
-                scrollView.addSubview(integrationView)
-            })
-            return cell
+            return UICollectionViewCell()
         }
     }
     
-    @objc func formatButtonClicked(_ sender: UIButton) {
-        for j in 0..<selectionList.count {
-            selectionList[j].isSelected = sender.tag == j
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            for i in 0..<selectionList.count {
+                selectionList[i].isSelected = indexPath.item == i
+            }
+        case 1:
+            for j in 0..<selectionList.count where selectionList[j].isSelected {
+                for i in 0..<selectionList[j].providers.count {
+                    selectionList[j].providers[i].isSelected = indexPath.item == i
+                }
+            }
+        case 2:
+            for j in 0..<selectionList.count where selectionList[j].isSelected {
+                for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
+                    for h in 0..<selectionList[j].providers[i].integrations.count {
+                        if indexPath.item == h {
+                            showDemoController(withIntegration: selectionList[j].providers[i].integrations[h].name)
+                        }
+                    }
+                }
+            }
+        default:
+            break
         }
         collectionView.reloadData()
     }
     
-    @objc func providerButtonClicked(_ sender: UIButton) {
-        for j in 0..<selectionList.count where selectionList[j].isSelected {
-            for i in 0..<selectionList[j].providers.count {
-                selectionList[j].providers[i].isSelected = sender.tag == i
-            }
-        }
-        collectionView.reloadData()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 60)
     }
+    
 }
 
 extension RootViewController: UICollectionViewDelegateFlowLayout {
-    //MARK: - UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.item == 2 {
-            return CGSize(width: UIScreen.main.bounds.width, height: 400)
+        
+        switch indexPath.section {
+        case 0:
+            let spacing: CGFloat = 8
+            let count: CGFloat = CGFloat(selectionList.count)
+            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
+            return CGSize(width: width, height: 40)
+        case 1:
+            let spacing: CGFloat = 8
+            let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
+            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
+            return CGSize(width: width, height: 40)
+        case 2:
+            let spacing: CGFloat = 16
+            let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
+            return CGSize(width: width, height: width)
+        default:
+            return CGSize.zero
         }
-        return CGSize(width: UIScreen.main.bounds.width, height: 100.0)
     }
-}
-
-extension RootViewController: ImageLabelButtonViewDelegate {
-    func didTap(button: ImageLabelButtonView) {
-        selectionList[2].providers[button.tag].isSelected = true
-        showDemoController()
-    }
+    
 }
