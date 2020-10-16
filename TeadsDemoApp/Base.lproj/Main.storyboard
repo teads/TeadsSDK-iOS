@@ -196,129 +196,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-6G-z89">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-A3-NhJ">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootHeaderTableViewCell" id="6bo-EO-OiT" customClass="RootHeaderTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="51.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bo-EO-OiT" id="7yZ-27-uPR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1yj-UH-d6A">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rootCell" id="21r-GB-ShE" customClass="RootSectionCollectionViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fQE-8c-L9E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyL-UR-tIf">
-                                                    <rect key="frame" x="16" y="15" width="343" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="rootCell" text="CellLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-Hv-Y1x">
+                                                    <rect key="frame" x="8" y="8" width="71" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qyL-UR-tIf" firstAttribute="leading" secondItem="7yZ-27-uPR" secondAttribute="leadingMargin" id="0K0-gl-R0v"/>
-                                                <constraint firstItem="qyL-UR-tIf" firstAttribute="top" secondItem="7yZ-27-uPR" secondAttribute="topMargin" constant="4" id="9pf-cX-6ub"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="qyL-UR-tIf" secondAttribute="bottom" constant="4" id="O1C-kA-zwX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qyL-UR-tIf" secondAttribute="trailing" id="Q4U-h0-rrN"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="label" destination="qyL-UR-tIf" id="mPg-6r-R32"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootSegmentedControlsTableViewCell" id="g1r-1F-SXJ" customClass="RootSegmentedControlsTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="79.5" width="375" height="24"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1r-1F-SXJ" id="czQ-VE-994">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-Gu-wPE">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="0.0"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Eg4-N0-KWj">
+                                                    <rect key="frame" x="8" y="49" width="359" height="71"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CCY-Gu-wPE" firstAttribute="top" secondItem="czQ-VE-994" secondAttribute="top" id="ke5-2v-Txh"/>
-                                                <constraint firstItem="CCY-Gu-wPE" firstAttribute="leading" secondItem="czQ-VE-994" secondAttribute="leadingMargin" id="mYO-IT-4Fl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CCY-Gu-wPE" secondAttribute="trailing" id="nVL-Vo-Zn2"/>
-                                                <constraint firstAttribute="bottom" secondItem="CCY-Gu-wPE" secondAttribute="bottom" constant="24" id="nhy-vl-cvQ"/>
+                                                <constraint firstItem="Eg4-N0-KWj" firstAttribute="top" secondItem="3Q6-Hv-Y1x" secondAttribute="bottom" constant="20" id="Ags-zo-Iqy"/>
+                                                <constraint firstAttribute="bottom" secondItem="Eg4-N0-KWj" secondAttribute="bottom" constant="8" id="Aic-Jn-hac"/>
+                                                <constraint firstItem="3Q6-Hv-Y1x" firstAttribute="top" secondItem="fQE-8c-L9E" secondAttribute="top" constant="8" id="Dp7-ly-US2"/>
+                                                <constraint firstItem="3Q6-Hv-Y1x" firstAttribute="leading" secondItem="fQE-8c-L9E" secondAttribute="leading" constant="8" id="IUf-6O-a5q"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Q6-Hv-Y1x" secondAttribute="trailing" constant="20" symbolic="YES" id="L7d-bL-Wvy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Eg4-N0-KWj" secondAttribute="trailing" constant="8" id="p6H-sf-9T0"/>
+                                                <constraint firstItem="Eg4-N0-KWj" firstAttribute="leading" secondItem="fQE-8c-L9E" secondAttribute="leading" constant="8" id="xQm-uy-dtS"/>
                                             </constraints>
-                                        </tableViewCellContentView>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="375" height="128"/>
                                         <connections>
-                                            <outlet property="horrizontalStackView" destination="CCY-Gu-wPE" id="6L6-ye-Zrr"/>
+                                            <outlet property="buttonsStackView" destination="Eg4-N0-KWj" id="9ks-QE-aAZ"/>
+                                            <outlet property="cellLabel" destination="3Q6-Hv-Y1x" id="t2H-YK-TbD"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootButtonIconLabelTableViewCell" id="8fX-qg-pcS" customClass="RootButtonIconLabelTableViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103.5" width="375" height="179.5"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FwN-K5-W7k">
+                                        <rect key="frame" x="123.5" y="138" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8fX-qg-pcS" id="sBI-oE-cXc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Hr4-x2-Rg2">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-Qn-g8c">
-                                                    <rect key="frame" x="16" y="8" width="343" height="163.5"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-Oq-hUo" customClass="ImageLabelButtonView" customModule="TeadsDemoApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="163.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" name="TeadsGrayColor"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ul-ax-V30" customClass="ImageLabelButtonView" customModule="TeadsDemoApp" customModuleProvider="target">
-                                                            <rect key="frame" x="179.5" y="0.0" width="163.5" height="163.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" name="TeadsGrayColor"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="0Ul-ax-V30" firstAttribute="leading" secondItem="dmF-Oq-hUo" secondAttribute="trailing" constant="16" id="Ixc-qT-xIm"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="K8S-Qn-g8c" firstAttribute="top" secondItem="sBI-oE-cXc" secondAttribute="top" constant="8" id="APf-gQ-0BH"/>
-                                                <constraint firstAttribute="bottom" secondItem="K8S-Qn-g8c" secondAttribute="bottom" constant="8" id="EBi-6O-IMb"/>
-                                                <constraint firstItem="K8S-Qn-g8c" firstAttribute="leading" secondItem="sBI-oE-cXc" secondAttribute="leadingMargin" id="X5D-TR-sre"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="K8S-Qn-g8c" secondAttribute="trailing" id="vUN-oe-GNa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="firstCard" destination="dmF-Oq-hUo" id="IwN-PN-YxE"/>
-                                            <outlet property="secondCard" destination="0Ul-ax-V30" id="iUm-OJ-Scq"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="wtO-oW-ro4" id="pRS-iG-B3M"/>
-                                    <outlet property="delegate" destination="wtO-oW-ro4" id="chf-HT-xCo"/>
+                                    <outlet property="dataSource" destination="wtO-oW-ro4" id="zLs-x9-FFd"/>
+                                    <outlet property="delegate" destination="wtO-oW-ro4" id="gLf-OC-Did"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zrU-hQ-hnq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hDz-6G-z89" firstAttribute="trailing" secondItem="zrU-hQ-hnq" secondAttribute="trailing" id="eUZ-0M-Kh6"/>
-                            <constraint firstItem="hDz-6G-z89" firstAttribute="top" secondItem="zrU-hQ-hnq" secondAttribute="top" id="idX-7t-cXv"/>
-                            <constraint firstItem="hDz-6G-z89" firstAttribute="bottom" secondItem="zrU-hQ-hnq" secondAttribute="bottom" id="tCV-KR-SL8"/>
-                            <constraint firstItem="hDz-6G-z89" firstAttribute="leading" secondItem="zrU-hQ-hnq" secondAttribute="leading" id="u9n-sH-BrV"/>
+                            <constraint firstItem="vdk-A3-NhJ" firstAttribute="top" secondItem="zrU-hQ-hnq" secondAttribute="top" id="4mh-Bs-sg9"/>
+                            <constraint firstItem="vdk-A3-NhJ" firstAttribute="bottom" secondItem="zrU-hQ-hnq" secondAttribute="bottom" id="WQ7-CE-Btj"/>
+                            <constraint firstItem="vdk-A3-NhJ" firstAttribute="leading" secondItem="zrU-hQ-hnq" secondAttribute="leading" id="obf-O0-HEQ"/>
+                            <constraint firstAttribute="trailing" secondItem="vdk-A3-NhJ" secondAttribute="trailing" id="vQ3-pC-YD5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MnA-s8-PkB">
@@ -327,7 +269,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="hDz-6G-z89" id="QtH-bE-2OV"/>
+                        <outlet property="collectionView" destination="vdk-A3-NhJ" id="ka8-u5-Yzg"/>
                         <segue destination="OdH-gn-eeS" kind="show" identifier="inread-direct-scrollview" id="LWj-xD-ZLw"/>
                         <segue destination="jfH-au-QIY" kind="show" identifier="inread-direct-collectionview" id="AnV-Y6-due"/>
                         <segue destination="84V-4d-h7P" kind="show" identifier="inread-admob-scrollview" id="iBs-z7-c0a"/>
@@ -341,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="72"/>
+            <point key="canvasLocation" x="-60" y="71.514242878560722"/>
         </scene>
         <!--In Read Direct Scroll View Controller-->
         <scene sceneID="LYm-z1-cCp">
@@ -1747,9 +1689,6 @@ Mauris non posuere justo. Nunc placerat blandit libero eget hendrerit. Suspendis
         </namedColor>
         <namedColor name="LightBlueColor">
             <color red="0.41200000047683716" green="0.66299998760223389" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="TeadsGrayColor">
-            <color red="0.65499997138977051" green="0.72500002384185791" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
