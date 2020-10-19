@@ -10,10 +10,9 @@
 		40077B432534AABF00D53197 /* InReadDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */; };
 		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
 		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
-		4079F256252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */; };
-		4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */; };
-		4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */; };
-		4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */; };
+		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
+		408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */; };
+		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
 		40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
 		40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A46253883F80031A64D /* SyncWebViewAdView.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
@@ -56,10 +55,9 @@
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSegmentedControlsTableViewCell.swift; sourceTree = "<group>"; };
-		4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootButtonIconLabelTableViewCell.swift; sourceTree = "<group>"; };
-		4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelButtonView.swift; sourceTree = "<group>"; };
+		408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootImageViewLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
 		40D28A46253883F80031A64D /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
@@ -145,9 +143,9 @@
 		40D289EB25384E6A0031A64D /* RootControllerCells */ = {
 			isa = PBXGroup;
 			children = (
-				4079F255252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift */,
-				4079F258252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift */,
-				4079F25B252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift */,
+				408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */,
+				408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */,
+				408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */,
 			);
 			path = RootControllerCells;
 			sourceTree = "<group>";
@@ -471,7 +469,6 @@
 		B5CF159C252CC0FA00B12F83 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4079F25E252CC92000B0AC31 /* ImageLabelButtonView.swift */,
 				B50425D2252E134E00ABF07D /* FakeArticleView.swift */,
 				B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */,
 			);
@@ -625,32 +622,31 @@
 			files = (
 				40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */,
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
+				408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */,
 				40077B432534AABF00D53197 /* InReadDirectCollectionViewController.swift in Sources */,
 				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
 				B56102A41F84DB3000E59C76 /* TeadsAdEmbededCollectionViewCell.swift in Sources */,
 				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
 				B56102A21F84D24400E59C76 /* RandomCollectionViewCell.swift in Sources */,
-				4079F25C252CC82400B0AC31 /* RootButtonIconLabelTableViewCell.swift in Sources */,
+				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
 				DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */,
 				B561029C1F83C18400E59C76 /* WebViewTableViewCell.swift in Sources */,
 				B56102971F83B5C200E59C76 /* WebViewEmbededTableViewController.swift in Sources */,
 				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
 				B561029F1F84C3DD00E59C76 /* WebViewEmbededCollectionViewController.swift in Sources */,
 				40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */,
+				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
 				B502BA191F836D3E008257EC /* WebViewEmbededInScrollViewController.swift in Sources */,
 				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
 				B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */,
 				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
-				4079F256252CC7ED00B0AC31 /* RootHeaderTableViewCell.swift in Sources */,
 				B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */,
 				B504260B25305A1E00ABF07D /* Utils.swift in Sources */,
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */,
-				4079F25F252CC92000B0AC31 /* ImageLabelButtonView.swift in Sources */,
-				4079F259252CC7FE00B0AC31 /* RootSegmentedControlsTableViewCell.swift in Sources */,
 				B56102A91F853B0000E59C76 /* InReadTopViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */,

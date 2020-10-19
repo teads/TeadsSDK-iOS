@@ -10,34 +10,25 @@ import Foundation
 import UIKit
 
 class RootViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-    private var selectionList = [Format]()
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    private var selectionList = [inReadFormat, nativeFormat]
+    
+    private let headerCell = "RootHeaderCollectionReusableView"
+    private let buttonCell = "RootButtonCollectionViewCell"
+    private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.allowsMultipleSelection = true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        selectionList = [
-            Format(header: "Format", values: [
-                FormatValue(label: "inRead", isSelected: true),
-                FormatValue(label: "Native", isSelected: false)
-            ]),
-            Format(header: "Provider", values: [
-                FormatValue(label: "Direct", isSelected: true),
-                FormatValue(label: "Admob", isSelected: false),
-                FormatValue(label: "Mopub", isSelected: false)
-            ]),
-            Format(header: "Integration", values: [
-                FormatValue(label: "ScrollView", isSelected: false),
-                FormatValue(label: "TableView", isSelected: false),
-                FormatValue(label: "CollectionView", isSelected: false),
-                FormatValue(label: "WebView", isSelected: false)
-            ])
-        ]
         setNavigationBarImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        tableView.reloadData()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -59,108 +50,157 @@ class RootViewController: UIViewController {
         navigationItem.titleView = imageView
     }
     
-    func showDemoController() {
-        let selectedFormats = selectionList.flatMap({$0.values.filter({$0.isSelected})})
-        let selectedFormatsLabels = selectedFormats.map({$0.label.lowercased()})
-        let identifier = selectedFormatsLabels.joined(separator: "-")
-        performSegue(withIdentifier: identifier, sender: self)
-    }
-    
-    func setupRootSegmentedControlsTableViewCell(cell: RootSegmentedControlsTableViewCell, indexPath: IndexPath) {
-        var buttons = [UIButton]()
-        selectionList[indexPath.section].values.enumerated().forEach { (index, value) in
-            let button = UIButton()
-            button.setTitle(value.label, for: .normal)
-            cell.addButtonToStackViewWithStyle(button: button, index: index, isButtonSelected: value.isSelected)
-            buttons.append(button)
+    func showDemoController(withIntegration integration: String) {
+        guard let selectedFormat = selectionList.first(where: {$0.isSelected})?.name,
+              let selectedProvider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.name else {
+            return
         }
-        cell.didSelectValue = { [weak self] index in
-            if let pastIndex: Int = self?.selectionList[indexPath.section].values.firstIndex(where: {$0.isSelected == true}), pastIndex != index {
-                self?.selectionList[indexPath.section].values[pastIndex].isSelected = false
-                cell.resetNormalStyle(button: buttons[pastIndex])
-                self?.selectionList[indexPath.section].values[index].isSelected = true
-            }
-        }
-    }
-    
-    func setupRootButtonIconLabelTableViewCell(cell: RootButtonIconLabelTableViewCell, indexPath: IndexPath) {
-        let values = selectionList[indexPath.section].values
-        let firstCardIndex = indexPath.row + indexPath.row
-        let secondCardIndex = firstCardIndex + 1
-        let firstCardValue = values[firstCardIndex]
-        cell.firstCard.label.text = firstCardValue.label
-        cell.firstCard.imageView.image = UIImage(named: firstCardValue.label)
-        cell.firstCard.tag = firstCardIndex
-        cell.firstCard.delegate = self
-        
-        if values.indices.contains(secondCardIndex) {
-            let secondCardValue = values[secondCardIndex]
-            cell.secondCard.label.text = secondCardValue.label
-            cell.secondCard.imageView.image = UIImage(named: secondCardValue.label)
-            cell.secondCard.tag = secondCardIndex
-            cell.secondCard.delegate = self
-        } else {
-            cell.secondCard.isHidden = true
-        }
+        let identifier = "\(selectedFormat)-\(selectedProvider)-\(integration)"
+        performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
 
 }
 
-extension RootViewController: UITableViewDelegate, UITableViewDataSource {
+extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return selectionList.count
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        var numberOfSections = 0
+        numberOfSections += selectionList.count > 0 ? 1 : 0
+        numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.count ?? 0) > 0 ? 1 : 0
+        numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0) > 0 ? 1 : 0
+        return numberOfSections
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "RootHeaderTableViewCell") as? RootHeaderTableViewCell else {
-            return nil
-        }
-        headerCell.label.text = selectionList[section].header
-        return headerCell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
-        case 0, 1:
-            return 1
+        case 0:
+            return selectionList.count
+        case 1:
+            return selectionList.first(where: {$0.isSelected})?.providers.count ?? 0
         case 2:
-            let count: Double = ceil(Double(selectionList[section].values.count) / 2)
-            return Int(count)
+            return selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0
         default:
             return 0
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath) as? RootHeaderCollectionReusableView else {
+            return UICollectionReusableView()
+        }
         switch indexPath.section {
-        case 0, 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RootSegmentedControlsTableViewCell") as? RootSegmentedControlsTableViewCell else {
-                return UITableViewCell()
+        case 0:
+            cell.label.text = "Formats"
+        case 1:
+            cell.label.text = "Providers"
+        case 2:
+            cell.label.text = "Integrations"
+        default:
+            break
+        }
+        return cell
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
+                return UICollectionViewCell()
             }
-            setupRootSegmentedControlsTableViewCell(cell: cell, indexPath: indexPath)
+            let cellValue = selectionList[indexPath.item]
+            cell.label.text = cellValue.name
+            cell.isSelected = cellValue.isSelected
+            return cell
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
+                cell.label.text = cellValue.name
+                cell.isSelected = cellValue.isSelected
+            }
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RootButtonIconLabelTableViewCell") as? RootButtonIconLabelTableViewCell else {
-                return UITableViewCell()
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
+                return UICollectionViewCell()
             }
-            setupRootButtonIconLabelTableViewCell(cell: cell, indexPath: indexPath)
-            
+            if let cellValue = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations[indexPath.item] {
+                cell.imageView.image = UIImage(named: cellValue.imageName)
+                cell.label.text = cellValue.name
+            }
             return cell
         default:
-            return UITableViewCell()
+            return UICollectionViewCell()
         }
-        
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            for i in 0..<selectionList.count {
+                selectionList[i].isSelected = indexPath.item == i
+            }
+            collectionView.reloadData()
+            if selectionList.first(where: {$0.isSelected})?.providers.count == 0 {
+                let alert = UIAlertController(title: "Coming soon", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    let indexPath = IndexPath(item: 0, section: 0)
+                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+                    self.collectionView(collectionView, didSelectItemAt: indexPath)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        case 1:
+            for j in 0..<selectionList.count where selectionList[j].isSelected {
+                for i in 0..<selectionList[j].providers.count {
+                    selectionList[j].providers[i].isSelected = indexPath.item == i
+                }
+            }
+            collectionView.reloadData()
+        case 2:
+            for j in 0..<selectionList.count where selectionList[j].isSelected {
+                for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
+                    for h in 0..<selectionList[j].providers[i].integrations.count {
+                        if indexPath.item == h {
+                            showDemoController(withIntegration: selectionList[j].providers[i].integrations[h].name)
+                        }
+                    }
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 80)
+    }
+    
 }
 
-extension RootViewController: ImageLabelButtonViewDelegate {
-    func didTap(button: ImageLabelButtonView) {
-        selectionList[2].values[button.tag].isSelected = true
-        showDemoController()
+extension RootViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        switch indexPath.section {
+        case 0:
+            let spacing: CGFloat = 4
+            let count: CGFloat = CGFloat(selectionList.count)
+            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
+            return CGSize(width: width, height: 32)
+        case 1:
+            let spacing: CGFloat = 4
+            let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
+            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
+            return CGSize(width: width, height: 32)
+        case 2:
+            let spacing: CGFloat = 16
+            let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
+            return CGSize(width: width, height: width)
+        default:
+            return CGSize.zero
+        }
     }
+    
 }
