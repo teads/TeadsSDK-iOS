@@ -31,5 +31,17 @@ class RootButtonCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.1) {
+                if self.isHighlighted && !self.isSelected {
+                    self.alpha = 0.5
+                } else {
+                    self.alpha = 1
+                }
+            }
+        }
+    }
 
 }

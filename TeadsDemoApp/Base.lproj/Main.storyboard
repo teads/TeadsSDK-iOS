@@ -199,7 +199,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-A3-NhJ">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="1yj-UH-d6A">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="4" id="1yj-UH-d6A">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -233,7 +233,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootImageViewLabelCollectionViewCell" id="9Ki-ch-jyv" customClass="RootImageViewLabelCollectionViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="50" width="128" height="128"/>
+                                        <rect key="frame" x="188" y="50" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IwT-6W-8If">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>

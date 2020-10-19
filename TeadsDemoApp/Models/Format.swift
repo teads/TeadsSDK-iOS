@@ -43,7 +43,7 @@ var admobDirectProvider = Provider(name: "Admob", integrations: [
     webViewIntegration
 ], isSelected: false)
 
-var mopubDirectProvider = Provider(name: "MoPub", integrations: [
+var mopubDirectProvider = Provider(name: "Mopub", integrations: [
     scrollViewIntegration,
     tableViewIntegration,
     webViewIntegration
@@ -51,5 +51,5 @@ var mopubDirectProvider = Provider(name: "MoPub", integrations: [
 
 var inReadFormat = Format(name: "inRead", providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider], isSelected: true)
 
-var nativeFormat = Format(name: "native", providers: [], isSelected: false)
+var nativeFormat = Format(name: "Native", providers: [], isSelected: false)
 

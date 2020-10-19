@@ -22,5 +22,17 @@ class RootImageViewLabelCollectionViewCell: UICollectionViewCell {
         
         label.textColor = .teadsGray
     }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.1) {
+                if self.isHighlighted {
+                    self.alpha = 0.5
+                } else {
+                    self.alpha = 1
+                }
+            }
+        }
+    }
 
 }

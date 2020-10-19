@@ -64,7 +64,11 @@ class RootViewController: UIViewController {
 extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        var numberOfSections = 0
+        numberOfSections += selectionList.count > 0 ? 1 : 0
+        numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.count ?? 0) > 0 ? 1 : 0
+        numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0) > 0 ? 1 : 0
+        return numberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,11 +90,11 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         switch indexPath.section {
         case 0:
-            cell.label.text = "Format"
+            cell.label.text = "Formats"
         case 1:
             cell.label.text = "Providers"
         case 2:
-            cell.label.text = "Integration"
+            cell.label.text = "Integrations"
         default:
             break
         }
@@ -100,19 +104,21 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
-        case 0, 1:
+        case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            if indexPath.section == 0 {
-                let cellValue = selectionList[indexPath.item]
+            let cellValue = selectionList[indexPath.item]
+            cell.label.text = cellValue.name
+            cell.isSelected = cellValue.isSelected
+            return cell
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
                 cell.label.text = cellValue.name
                 cell.isSelected = cellValue.isSelected
-            } else {
-                if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
-                    cell.label.text = cellValue.name
-                    cell.isSelected = cellValue.isSelected
-                }
             }
             return cell
         case 2:
@@ -135,12 +141,23 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             for i in 0..<selectionList.count {
                 selectionList[i].isSelected = indexPath.item == i
             }
+            collectionView.reloadData()
+            if selectionList.first(where: {$0.isSelected})?.providers.count == 0 {
+                let alert = UIAlertController(title: "Coming soon", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    let indexPath = IndexPath(item: 0, section: 0)
+                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+                    self.collectionView(collectionView, didSelectItemAt: indexPath)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
         case 1:
             for j in 0..<selectionList.count where selectionList[j].isSelected {
                 for i in 0..<selectionList[j].providers.count {
                     selectionList[j].providers[i].isSelected = indexPath.item == i
                 }
             }
+            collectionView.reloadData()
         case 2:
             for j in 0..<selectionList.count where selectionList[j].isSelected {
                 for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
@@ -154,11 +171,10 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default:
             break
         }
-        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 60)
+        return CGSize(width: collectionView.bounds.width, height: 80)
     }
     
 }
@@ -169,15 +185,15 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
         
         switch indexPath.section {
         case 0:
-            let spacing: CGFloat = 8
+            let spacing: CGFloat = 4
             let count: CGFloat = CGFloat(selectionList.count)
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-            return CGSize(width: width, height: 40)
+            return CGSize(width: width, height: 32)
         case 1:
-            let spacing: CGFloat = 8
+            let spacing: CGFloat = 4
             let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-            return CGSize(width: width, height: 40)
+            return CGSize(width: width, height: 32)
         case 2:
             let spacing: CGFloat = 16
             let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
