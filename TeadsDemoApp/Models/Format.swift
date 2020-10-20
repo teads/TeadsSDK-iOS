@@ -45,8 +45,7 @@ var admobDirectProvider = Provider(name: "Admob", integrations: [
 
 var mopubDirectProvider = Provider(name: "Mopub", integrations: [
     scrollViewIntegration,
-    tableViewIntegration,
-    webViewIntegration
+    tableViewIntegration
 ], isSelected: false)
 
 var inReadFormat = Format(name: "inRead", providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider], isSelected: true)

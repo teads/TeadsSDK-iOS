@@ -21,7 +21,6 @@ class InReadAdmobWebViewController: TeadsArticleViewController {
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
     
-    private var currentBanner: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +71,6 @@ extension InReadAdmobWebViewController: GADBannerViewDelegate {
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print("DemoApp: banner failed to load with error: \(error)")
-        currentBanner = nil
         webSync.webViewHelper.closeSlot()
     }
     
