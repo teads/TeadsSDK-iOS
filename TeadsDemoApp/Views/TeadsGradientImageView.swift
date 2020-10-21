@@ -8,7 +8,15 @@
 
 import UIKit
 
-class TeadsGradientImageView: UIImageView {
+@IBDesignable class TeadsGradientImageView: UIImageView {
+    
+    private lazy var gradientLayer: CAGradientLayer = {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [CGColor(red: UIColor.teadsPurple.getRedValue(), green: UIColor.teadsPurple.getGreenValue(), blue: UIColor.teadsPurple.getBlueValue(), alpha: 0.65), CGColor(red: UIColor.teadsBlue.getRedValue(), green: UIColor.teadsBlue.getGreenValue(), blue: UIColor.teadsBlue.getBlueValue(), alpha: 0.65)]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        return gradientLayer
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,21 +28,15 @@ class TeadsGradientImageView: UIImageView {
         addGradient()
     }
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
         addGradient()
     }
     
-    
     func addGradient() {
-        let gradient = CAGradientLayer()
-        gradient.frame = bounds
-
-        gradient.colors = [CGColor(red: UIColor.teadsPurple.getRedValue(), green: UIColor.teadsPurple.getGreenValue(), blue: UIColor.teadsPurple.getBlueValue(), alpha: 0.65), CGColor(red: UIColor.teadsBlue.getRedValue(), green: UIColor.teadsBlue.getGreenValue(), blue: UIColor.teadsBlue.getBlueValue(), alpha: 0.65)]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        layer.addSublayer(gradient)
+        gradientLayer.frame = bounds
+        if !(layer.sublayers?.contains(gradientLayer) ?? false) {
+            layer.addSublayer(gradientLayer)
+        }
     }
     
 }
