@@ -28,8 +28,9 @@ class InReadAdmobWebViewController: TeadsViewController {
             let contentString = try? String(contentsOfFile: content) else {
                 return
         }
+        let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Admob WebView Integration")
         webView.navigationDelegate = self
-        webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
+        webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
         
         bannerView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
         bannerView.adUnitID = ADMOB_AD_UNIT_ID

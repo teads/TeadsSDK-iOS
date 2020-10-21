@@ -16,12 +16,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             text-align: center;
             font-size: 20px;
             color: white;
             font-weight: 300;
             background-image: linear-gradient(to right, rgba(171, 65, 149, .7), rgb(33, 87, 152, .7)), url('coffeeDesk2.png');
             background-size: cover;
+        }
+        .header p {
+        	margin: 0;
+        	padding: 4px; 
+        }
+        .header .header-integration-type {
+        	font-weight: 400;
+			font-size: 22px;
+        }
+        .header .header-scroll-text {
+        	font-weight: 200;
+			font-size: 20px;
         }
         .demo-title {
             padding: 0 0 20px 0;
@@ -64,7 +77,10 @@
 </head>
 <body>
     <header>
-        <div class="header">Scroll down to see your creative</div>
+        <div class="header">
+        	<p class="header-integration-type">{INTEGRATION_TYPE}</p>
+        	<p class="header-scroll-text">Scroll down to see your creative</p>
+        </div>
     </header>
     <main>
         <div class="demo-title"></div>

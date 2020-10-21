@@ -23,8 +23,9 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
             let contentString = try? String(contentsOfFile: content) else {
                 return
         }
+        let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Direct WebView Integration")
         webView.navigationDelegate = self
-        webView.loadHTMLString(contentString, baseURL: Bundle.main.bundleURL)
+        webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
         
         adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
         webSync = SyncWebViewTFInReadAdView(webView: webView, selector: "#teads-placement-slot", adView: adView, viewController: self)
