@@ -27,7 +27,6 @@
 		B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */ = {isa = PBXBuildFile; fileRef = B50425F3252F436000ABF07D /* coffeeDesk2.png */; };
 		B50425F6252F436000ABF07D /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = B50425F4252F436000ABF07D /* demo.html */; };
 		B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */; };
-		B504260B25305A1E00ABF07D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504260A25305A1E00ABF07D /* Utils.swift */; };
 		B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
@@ -38,7 +37,7 @@
 		B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */; };
 		B57FB1EB1FC5D5C600609036 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57FB1EA1FC5D5C600609036 /* images.xcassets */; };
 		B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */; };
-		B5CF15BF252DC47000B12F83 /* TeadsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */; };
+		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
 		B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */; };
 		D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */; };
 		DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */; };
@@ -73,7 +72,6 @@
 		B50425F3252F436000ABF07D /* coffeeDesk2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeeDesk2.png; sourceTree = "<group>"; };
 		B50425F4252F436000ABF07D /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsGradientImageView.swift; sourceTree = "<group>"; };
-		B504260A25305A1E00ABF07D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewController.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewTFInReadAdView.swift; sourceTree = "<group>"; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,7 @@
 		B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectScrollViewController.swift; sourceTree = "<group>"; };
 		B57FB1EA1FC5D5C600609036 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidTableViewCell.swift; sourceTree = "<group>"; };
-		B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsArticleViewController.swift; sourceTree = "<group>"; };
+		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
 		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,7 +262,6 @@
 		B501EC681F8232A4002909B9 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				B504260925305A0D00ABF07D /* Utils */,
 				B50425F2252F436000ABF07D /* DemoWebsite */,
 				B502B9F11F827C35008257EC /* Images */,
 				B501EC6C1F8232B3002909B9 /* css */,
@@ -336,14 +333,6 @@
 			path = DemoWebsite;
 			sourceTree = "<group>";
 		};
-		B504260925305A0D00ABF07D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B504260A25305A1E00ABF07D /* Utils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		B5555A291F7CDF80007406D4 = {
 			isa = PBXGroup;
 			children = (
@@ -395,7 +384,7 @@
 			children = (
 				40D289ED25384E980031A64D /* InRead */,
 				40D289EA25384E5A0031A64D /* RootController */,
-				B5CF15BE252DC47000B12F83 /* TeadsArticleViewController.swift */,
+				B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -572,13 +561,12 @@
 				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
 				B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */,
-				B504260B25305A1E00ABF07D /* Utils.swift in Sources */,
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */,
-				B5CF15BF252DC47000B12F83 /* TeadsArticleViewController.swift in Sources */,
+				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

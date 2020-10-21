@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class InReadDirectScrollViewController: TeadsArticleViewController {
+class InReadDirectScrollViewController: TeadsViewController {
 
     @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
     @IBOutlet weak var teadsAdView: TFAInReadAdView!

@@ -10,7 +10,7 @@ import UIKit
 import MoPub
 import TeadsMoPubAdapter
 
-class InReadMopubScrollViewController: TeadsArticleViewController {
+class InReadMopubScrollViewController: TeadsViewController {
     
     // FIXME This ids should be replaced by your own MoPub id
     let MOPUB_AD_UNIT_ID = "252412d5e9364a05ab77d9396346d73d"

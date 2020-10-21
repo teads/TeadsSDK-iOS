@@ -11,7 +11,7 @@ import MoPub
 import TeadsMoPubAdapter
 import TeadsSDK
 
-class InReadMopubTableViewController: TeadsArticleViewController {
+class InReadMopubTableViewController: TeadsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     

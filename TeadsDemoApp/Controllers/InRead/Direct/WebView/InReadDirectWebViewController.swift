@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import TeadsSDK
 
-class InReadDirectWebViewController: TeadsArticleViewController, WKNavigationDelegate {
+class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
     var webSync: SyncWebViewTFInReadAdView?

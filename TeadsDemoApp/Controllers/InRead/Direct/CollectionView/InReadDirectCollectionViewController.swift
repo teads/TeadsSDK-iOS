@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class InReadDirectCollectionViewController: TeadsArticleViewController {
+class InReadDirectCollectionViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

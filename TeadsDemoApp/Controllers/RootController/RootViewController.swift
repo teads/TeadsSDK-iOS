@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var selectionList = [inReadFormat, nativeFormat]
@@ -20,34 +20,9 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.allowsMultipleSelection = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        setNavigationBarImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        setNavigationBarImage()
-    }
-    
-    func setNavigationBarImage() {
-        var image = "Teads-Demo-App-black"
-        if #available(iOS 12.0, *) {
-            if traitCollection.userInterfaceStyle == .dark {
-                image = "Teads-Demo-App-white"
-            }
-        }
-        let logo = UIImage(named: image)
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        navigationItem.titleView = imageView
+        hasTeadsArticleNavigationBar = false
+        collectionView.allowsMultipleSelection = true
     }
     
     func showDemoController(withIntegration integration: String) {

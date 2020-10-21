@@ -12,7 +12,7 @@ import GoogleMobileAds
 import TeadsAdMobAdapter
 import TeadsSDK
 
-class InReadAdmobWebViewController: TeadsArticleViewController {
+class InReadAdmobWebViewController: TeadsViewController {
 
     @IBOutlet weak var webView: WKWebView!
     var webSync: SyncWebViewAdView!

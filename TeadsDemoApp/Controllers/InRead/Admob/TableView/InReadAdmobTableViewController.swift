@@ -11,7 +11,7 @@ import GoogleMobileAds
 import TeadsAdMobAdapter
 import TeadsSDK
 
-class InReadAdmobTableViewController: TeadsArticleViewController {
+class InReadAdmobTableViewController: TeadsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     

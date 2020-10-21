@@ -9,7 +9,7 @@
 import UIKit
 import TeadsSDK
 
-class InReadDirectTableViewController: TeadsArticleViewController {
+class InReadDirectTableViewController: TeadsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
