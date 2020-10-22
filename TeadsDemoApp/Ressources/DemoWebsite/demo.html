@@ -4,11 +4,23 @@
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, shrink-to-fit=YES, initial-scale=1, user-scalable=0">
     <style type="text/css">
+        :root {
+          color-scheme: light dark;
+          --text-color: #000000;
+          --background-color: #ffffff;
+        }
+        @media screen and (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #ffffff;
+                --background-color: #000000;
+            }
+        }
         body {
               font-family: 'Roboto', sans-serif;
               margin: 0;
               padding: 0;
               overflow-x: hidden;
+              background-color: var(--background-color);
         }
         .header {
             width: 100%;
@@ -41,7 +53,7 @@
             word-break: break-all;
             text-align: justify;
             font-size: 14px;
-            color: #AAAAAA;
+            color: var(--text-color);
         }
         main {
             padding-left: 10px;
