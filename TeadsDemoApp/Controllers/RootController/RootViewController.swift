@@ -13,6 +13,7 @@ class RootViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var selectionList = [inReadFormat, nativeFormat]
+    private var creativesTypeList = [landscape, vertical, square, carousel]
     
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
@@ -33,6 +34,56 @@ class RootViewController: TeadsViewController {
         let identifier = "\(selectedFormat)-\(selectedProvider)-\(integration)"
         performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? TeadsViewController else {
+            return
+        }
+        destination.pid = pidForCreative()
+    }
+    
+    private func pidForCreative() -> PID {
+        guard let provider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected}),
+              let type = creativesTypeList.first(where: {$0.isSelected}) else {
+            return PID.directLandscape
+        }
+        switch provider.name {
+        case .direct:
+            switch type.name {
+            case .landscape:
+                return PID.directLandscape
+            case .vertical:
+                return PID.directVertical
+            case .square:
+                return PID.directSquare
+            case .carousel:
+                return PID.directCarousel
+            }
+        case .admob:
+            switch type.name {
+            case .landscape:
+                return PID.admobLandscape
+            case .vertical:
+                return PID.admobVertical
+            case .square:
+                return PID.admobSquare
+            case .carousel:
+                return PID.admobCarousel
+            }
+        case .mopub:
+            switch type.name {
+            case .landscape:
+                return PID.mopubLandscape
+            case .vertical:
+                return PID.mopubVertical
+            case .square:
+                return PID.mopubSquare
+            case .carousel:
+                return PID.mopubCarousel
+            }
+        }
+        
+    }
 
 }
 
@@ -43,6 +94,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         numberOfSections += selectionList.count > 0 ? 1 : 0
         numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.count ?? 0) > 0 ? 1 : 0
         numberOfSections += (selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0) > 0 ? 1 : 0
+        numberOfSections = numberOfSections == 1 ? 1 : numberOfSections + 1
         return numberOfSections
     }
     
@@ -53,6 +105,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 1:
             return selectionList.first(where: {$0.isSelected})?.providers.count ?? 0
         case 2:
+            return creativesTypeList.count
+        case 3:
             return selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0
         default:
             return 0
@@ -69,6 +123,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 1:
             cell.label.text = "Providers"
         case 2:
+            cell.label.text = "Creative size"
+        case 3:
             cell.label.text = "Integrations"
         default:
             break
@@ -84,7 +140,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return UICollectionViewCell()
             }
             let cellValue = selectionList[indexPath.item]
-            cell.label.text = cellValue.name
+            cell.label.text = cellValue.name.rawValue
             cell.isSelected = cellValue.isSelected
             return cell
         case 1:
@@ -92,11 +148,19 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return UICollectionViewCell()
             }
             if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
-                cell.label.text = cellValue.name
+                cell.label.text = cellValue.name.rawValue
                 cell.isSelected = cellValue.isSelected
             }
             return cell
         case 2:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            let cellValue = creativesTypeList[indexPath.item]
+            cell.label.text = cellValue.name.rawValue
+            cell.isSelected = cellValue.isSelected
+            return cell
+        case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
                 return UICollectionViewCell()
             }
@@ -134,6 +198,11 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             collectionView.reloadData()
         case 2:
+            for i in 0..<creativesTypeList.count {
+                creativesTypeList[i].isSelected = indexPath.item == i
+            }
+            collectionView.reloadData()
+        case 3:
             for j in 0..<selectionList.count where selectionList[j].isSelected {
                 for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
                     for h in 0..<selectionList[j].providers[i].integrations.count {
@@ -170,6 +239,19 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 2:
+            let item = creativesTypeList[indexPath.item]
+            let spacing: CGFloat = 4
+            let minWidth: CGFloat = item.name.rawValue.size(withAttributes: [
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
+            ]).width + 32
+            let count: CGFloat = CGFloat(creativesTypeList.count)
+            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
+            if width > minWidth {
+                return CGSize(width: width, height: 32)
+            } else {
+                return CGSize(width: minWidth, height: 32)
+            }
+        case 3:
             let spacing: CGFloat = 16
             let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
             return CGSize(width: width, height: width)

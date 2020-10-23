@@ -11,18 +11,9 @@ import UIKit
 class TeadsViewController: UIViewController {
     
     var hasTeadsArticleNavigationBar: Bool = true
-    fileprivate var isDarkMode: Bool {
-        get {
-            if #available(iOS 12.0, *) {
-                if traitCollection.userInterfaceStyle == .dark {
-                    return true
-                }
-            }
-            return false
-        }
-    }
-    fileprivate let teadsLogoWhite = UIImage(named: "Teads-Demo-App-white")
-    fileprivate let teadsLogoBlack = UIImage(named: "Teads-Demo-App-black")
+    var pid: PID = .directLandscape
+    fileprivate let teadsLogo = UIImage(named: "Teads-Demo-App")
+    fileprivate let teadsLogoWhite = UIImage(named: "Teads-Demo-App-White")
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,20 +50,20 @@ class TeadsViewController: UIViewController {
         let backgroundImage = imageFromLayer(layer: gradientLayer)
         navigationBar.setBackgroundImage(backgroundImage, for: .default)
         
-        let imageView = UIImageView(image: isDarkMode ? teadsLogoBlack : teadsLogoWhite)
+        let imageView = UIImageView(image: teadsLogoWhite)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         navigationItem.titleView = imageView
         
-        navigationBar.tintColor = isDarkMode ? .black : .white
+        navigationBar.tintColor = .white
     }
     
     fileprivate func applyDefaultNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        let imageView = UIImageView(image: isDarkMode ? teadsLogoWhite : teadsLogoBlack)
+        let imageView = UIImageView(image: teadsLogo)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true

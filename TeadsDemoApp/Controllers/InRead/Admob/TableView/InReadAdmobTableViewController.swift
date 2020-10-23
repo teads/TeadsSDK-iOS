@@ -35,7 +35,7 @@ class InReadAdmobTableViewController: TeadsViewController {
         admobAdView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
         
         // 2. Attach Delegate (will include Teads events)
-        admobAdView?.adUnitID = ADMOB_AD_UNIT_ID
+        admobAdView?.adUnitID = pid.rawValue // Replace with your adunit
         admobAdView?.rootViewController = self
         admobAdView?.delegate = self
 

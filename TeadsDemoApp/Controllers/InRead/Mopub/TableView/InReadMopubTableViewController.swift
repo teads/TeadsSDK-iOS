@@ -15,9 +15,6 @@ class InReadMopubTableViewController: TeadsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    // FIXME This ids should be replaced by your own MoPub id
-    let MOPUB_AD_UNIT_ID = "252412d5e9364a05ab77d9396346d73d"
-    
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
@@ -30,6 +27,9 @@ class InReadMopubTableViewController: TeadsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // FIXME This ids should be replaced by your own MoPub id
+        let MOPUB_AD_UNIT_ID = pid.rawValue
         
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         mopubAdView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)

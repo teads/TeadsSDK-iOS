@@ -11,10 +11,7 @@ import TeadsSDK
 import UIKit
 
 class InReadAdmobScrollViewController: TeadsViewController {
-    
-    // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
-    
+        
     var bannerView: DFPBannerView!
     @IBOutlet weak var slotView: UIView!
     @IBOutlet weak var slotViewHeightConstraint: NSLayoutConstraint!
@@ -31,7 +28,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         bannerView.centerYAnchor.constraint(equalTo: slotView.centerYAnchor).isActive = true
 
         // 2. Attach Delegate (will include Teads events)
-        bannerView.adUnitID = ADMOB_AD_UNIT_ID
+        bannerView.adUnitID = pid.rawValue // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
 

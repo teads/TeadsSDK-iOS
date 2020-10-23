@@ -12,9 +12,6 @@ import TeadsMoPubAdapter
 
 class InReadMopubScrollViewController: TeadsViewController {
     
-    // FIXME This ids should be replaced by your own MoPub id
-    let MOPUB_AD_UNIT_ID = "252412d5e9364a05ab77d9396346d73d"
-    
     @IBOutlet weak var slotHeight: NSLayoutConstraint!
     var bannerView: MPAdView!
     
@@ -22,6 +19,9 @@ class InReadMopubScrollViewController: TeadsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // FIXME This ids should be replaced by your own MoPub id
+        let MOPUB_AD_UNIT_ID = pid.rawValue
         
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         bannerView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)

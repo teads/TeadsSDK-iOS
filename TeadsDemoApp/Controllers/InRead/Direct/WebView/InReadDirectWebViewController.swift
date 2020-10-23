@@ -27,7 +27,7 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
         
-        adView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"))
+        adView = TFAInReadAdView(withPid: Int(pid.rawValue) ?? 0)
         webSync = SyncWebViewTFInReadAdView(webView: webView, selector: "#teads-placement-slot", adView: adView, viewController: self)
     }
     

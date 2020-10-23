@@ -27,7 +27,7 @@ class InReadDirectCollectionViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        teadsAdView = TFAInReadAdView(withPid: UserDefaults.standard.integer(forKey: "PID"), andDelegate: self)
+        teadsAdView = TFAInReadAdView(withPid: Int(pid.rawValue) ?? 0, andDelegate: self)
         teadsAdView?.load()
         
         // We use an observer to know when a rotation happened, to resize the ad
