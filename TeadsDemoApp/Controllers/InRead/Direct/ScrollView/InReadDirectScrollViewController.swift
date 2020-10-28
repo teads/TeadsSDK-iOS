@@ -20,7 +20,7 @@ class InReadDirectScrollViewController: TeadsViewController {
         super.viewDidLoad()
         teadsAdView.delegate = self
         // the PID has been set in the storyboard
-        teadsAdView.pid = Int(pid.rawValue) ?? 0
+        teadsAdView.pid = Int(pid) ?? 0
         
         let teadsAdSettings = TeadsAdSettings(build: { (settings) in
             settings.enableDebug()

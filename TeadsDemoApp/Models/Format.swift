@@ -56,6 +56,7 @@ var landscape = CreativeType(name: .landscape, isSelected: true)
 var vertical = CreativeType(name: .vertical, isSelected: false)
 var square = CreativeType(name: .square, isSelected: false)
 var carousel = CreativeType(name: .carousel, isSelected: false)
+var custom = CreativeType(name: .custom, isSelected: false)
 
 // Integration
 let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollView")
@@ -63,21 +64,31 @@ let tableViewIntegration = Integration(name: "TableView", imageName: "TableView"
 let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
 let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
 
-enum PID: String {
-    case directLandscape = "84242"
-    case directVertical = "127546"
-    case directSquare = "127547"
-    case directCarousel = "128779"
+struct PID {
+    
+    static let directLandscape = "84242"
+    static let directVertical = "127546"
+    static let directSquare = "127547"
+    static let directCarousel = "128779"
+    static var custom: String {
+        get {
+            return (UserDefaults.standard.string(forKey: "PID") ?? PID.directLandscape)
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "PID")
+        }
+        
+    }
 
-    case admobLandscape = "ca-app-pub-3068786746829754/2411019030"
-    case admobVertical = "ca-app-pub-3068786746829754/5776283742"
-    case admobSquare = "ca-app-pub-3068786746829754/1034598116"
-    case admobCarousel = "ca-app-pub-3068786746829754/5832124062"
+    static let admobLandscape = "ca-app-pub-3068786746829754/2411019030"
+    static let admobVertical = "ca-app-pub-3068786746829754/5776283742"
+    static let admobSquare = "ca-app-pub-3068786746829754/1034598116"
+    static let admobCarousel = "ca-app-pub-3068786746829754/5832124062"
 
-    case mopubLandscape = "1d055042d1fc4d5d8240e4dec026f910"
-    case mopubVertical = "ffb910cb8192456f99ae362430a5aa84"
-    case mopubSquare = "d017b5f3e0284a3f8be15e78df49a005"
-    case mopubCarousel = "639e0c172c944f82a61599d8b7a6de4f"
+    static let mopubLandscape = "1d055042d1fc4d5d8240e4dec026f910"
+    static let mopubVertical = "ffb910cb8192456f99ae362430a5aa84"
+    static let mopubSquare = "d017b5f3e0284a3f8be15e78df49a005"
+    static let mopubCarousel = "639e0c172c944f82a61599d8b7a6de4f"
 }
 
 enum FormatName: String {
@@ -96,6 +107,7 @@ enum CreativeTypeName: String {
     case vertical = "Vertical"
     case square = "Square"
     case carousel = "Carousel"
+    case custom = "Custom"
 }
 
 

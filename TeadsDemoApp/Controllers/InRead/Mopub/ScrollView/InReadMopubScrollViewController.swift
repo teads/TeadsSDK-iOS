@@ -21,7 +21,7 @@ class InReadMopubScrollViewController: TeadsViewController {
         super.viewDidLoad()
         
         // FIXME This ids should be replaced by your own MoPub id
-        let MOPUB_AD_UNIT_ID = pid.rawValue
+        let MOPUB_AD_UNIT_ID = pid
         
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         bannerView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)

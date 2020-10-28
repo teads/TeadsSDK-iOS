@@ -13,7 +13,7 @@ class RootViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var selectionList = [inReadFormat, nativeFormat]
-    private var creativesTypeList = [landscape, vertical, square, carousel]
+    private var creativesTypeList = [landscape, vertical, square, carousel, custom]
     
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
@@ -42,7 +42,7 @@ class RootViewController: TeadsViewController {
         destination.pid = pidForCreative()
     }
     
-    private func pidForCreative() -> PID {
+    private func pidForCreative() -> String {
         guard let provider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected}),
               let type = creativesTypeList.first(where: {$0.isSelected}) else {
             return PID.directLandscape
@@ -58,6 +58,8 @@ class RootViewController: TeadsViewController {
                 return PID.directSquare
             case .carousel:
                 return PID.directCarousel
+            case .custom:
+                return PID.custom
             }
         case .admob:
             switch type.name {
@@ -69,6 +71,8 @@ class RootViewController: TeadsViewController {
                 return PID.admobSquare
             case .carousel:
                 return PID.admobCarousel
+            case .custom:
+                return PID.custom
             }
         case .mopub:
             switch type.name {
@@ -80,6 +84,8 @@ class RootViewController: TeadsViewController {
                 return PID.mopubSquare
             case .carousel:
                 return PID.mopubCarousel
+            case .custom:
+                return PID.custom
             }
         }
         
@@ -199,7 +205,11 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             collectionView.reloadData()
         case 2:
             for i in 0..<creativesTypeList.count {
-                creativesTypeList[i].isSelected = indexPath.item == i
+                let isSelected = indexPath.item == i
+                if isSelected  && creativesTypeList[i].name == .custom {
+                    pidAlert()
+                }
+                creativesTypeList[i].isSelected = isSelected
             }
             collectionView.reloadData()
         case 3:
@@ -239,18 +249,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 2:
-            let item = creativesTypeList[indexPath.item]
-            let spacing: CGFloat = 4
-            let minWidth: CGFloat = item.name.rawValue.size(withAttributes: [
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
-            ]).width + 32
-            let count: CGFloat = CGFloat(creativesTypeList.count)
-            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-            if width > minWidth {
-                return CGSize(width: width, height: 32)
-            } else {
-                return CGSize(width: minWidth, height: 32)
-            }
+            return getButtonButtonSize(buttonValues: creativesTypeList)
         case 3:
             let spacing: CGFloat = 16
             let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
@@ -260,4 +259,42 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    func pidAlert() {
+        let alert = UIAlertController(title: "", message: "Enter your custom pid", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.text = PID.custom
+            textField.keyboardType = .numberPad
+        }
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            if let text = textField?.text, !text.isEmpty {
+                PID.custom = text
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func getButtonWidth(buttonValues: [CreativeType]) -> Int {
+        
+        var width = 0
+        buttonValues.forEach { (item) in
+            width = max(width, Int(item.name.rawValue.size(withAttributes: [
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
+            ]).width))
+        }
+        return width + 16
+    }
+    
+    func getButtonButtonSize(buttonValues: [CreativeType]) -> CGSize {
+        
+        let spacing: CGFloat = 4
+        let availableWidth = Int(collectionView.bounds.width - 32)
+        let buttonWidth =  min(getButtonWidth(buttonValues: buttonValues), availableWidth)
+       
+        let numberOfButtonOnRow = max(availableWidth / (buttonWidth+Int(spacing)), 1)
+        let optimButtonWidth = availableWidth/numberOfButtonOnRow-numberOfButtonOnRow*Int(spacing)
+        return CGSize(width: max(buttonWidth, optimButtonWidth), height: 32)
+    }
 }

@@ -28,7 +28,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         bannerView.centerYAnchor.constraint(equalTo: slotView.centerYAnchor).isActive = true
 
         // 2. Attach Delegate (will include Teads events)
-        bannerView.adUnitID = pid.rawValue // Replace with your adunit
+        bannerView.adUnitID = pid // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
 

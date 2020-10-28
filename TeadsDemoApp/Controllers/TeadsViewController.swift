@@ -11,7 +11,7 @@ import UIKit
 class TeadsViewController: UIViewController {
     
     var hasTeadsArticleNavigationBar: Bool = true
-    var pid: PID = .directLandscape
+    var pid: String = PID.directLandscape
     fileprivate let teadsLogo = UIImage(named: "Teads-Demo-App")
     fileprivate let teadsLogoWhite = UIImage(named: "Teads-Demo-App-White")
     
