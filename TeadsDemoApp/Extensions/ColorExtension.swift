@@ -18,6 +18,7 @@ extension UIColor {
     static let teadsPurple = UIColor(named: "TeadsPurpleColor") ?? UIColor.clear
     static let teadsGray = UIColor(named: "TeadsGrayColor") ?? UIColor.clear
     static let fakeArticle = UIColor(named: "FakeArticleColor") ?? UIColor.clear
+    static let cellBorder = UIColor(named: "CellBorderColor") ?? UIColor.clear
     
     
     func getRedValue() -> CGFloat {

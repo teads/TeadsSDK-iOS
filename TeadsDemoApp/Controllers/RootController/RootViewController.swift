@@ -26,6 +26,11 @@ class RootViewController: TeadsViewController {
         collectionView.allowsMultipleSelection = true
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        collectionView.reloadData()
+    }
+    
     func showDemoController(withIntegration integration: String) {
         guard let selectedFormat = selectionList.first(where: {$0.isSelected})?.name,
               let selectedProvider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.name else {
@@ -129,7 +134,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 1:
             cell.label.text = "Providers"
         case 2:
-            cell.label.text = "Creative size"
+            cell.label.text = "Creative sizes"
         case 3:
             cell.label.text = "Integrations"
         default:
