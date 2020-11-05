@@ -112,11 +112,7 @@ public class WebViewHelper: NSObject, WKScriptMessageHandler {
             //add a timeout in case we are not able to find the slot
             self.noSlotTimer = Timer(timeInterval: 4, target: self, selector: #selector(self.noSlotTimeout), userInfo: nil, repeats: false)
             
-            #if swift(>=4.2)
-                RunLoop.main.add(self.noSlotTimer!, forMode: RunLoop.Mode.common)
-            #else
-                RunLoop.main.add(self.noSlotTimer!, forMode: RunLoopMode.commonModes)
-            #endif
+            RunLoop.main.add(self.noSlotTimer!, forMode: .common)
             
             let openSlotWithSelectorMethod = String(format: WebViewHelper.insertSlotJSMethod, self.selector)
             webView.evaluateJavaScript(openSlotWithSelectorMethod) { (_, error) in
