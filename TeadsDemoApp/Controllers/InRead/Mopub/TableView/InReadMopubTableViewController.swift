@@ -59,6 +59,7 @@ class InReadMopubTableViewController: TeadsViewController {
             try? settings.subscribeAdResizeDelegate(self, forAdView: mopubAdView)
         }
         mopubAdView.register(teadsAdSettings: settings)
+        mopubAdView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
         mopubAdView.loadAd(withMaxAdSize: kMPPresetMaxAdSizeMatchFrame)
 
     }

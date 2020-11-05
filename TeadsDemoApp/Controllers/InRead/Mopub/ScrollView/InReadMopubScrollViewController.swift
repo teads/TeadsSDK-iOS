@@ -48,6 +48,7 @@ class InReadMopubScrollViewController: TeadsViewController {
             try? settings.subscribeAdResizeDelegate(self, forAdView: bannerView)
         }
         bannerView.register(teadsAdSettings: settings)
+        bannerView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
         bannerView.loadAd(withMaxAdSize: kMPPresetMaxAdSizeMatchFrame)
         addConstraints()
 
