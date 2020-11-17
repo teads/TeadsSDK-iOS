@@ -7,7 +7,7 @@
   // global context.
   } else {
     var exports = {};
-    var versions = ['1.2.20-iab1793'];
+    var versions = ['1.3.12-iab2330'];
     var additionalVersionString = 'default';
     if (!!additionalVersionString) {
        versions.push(additionalVersionString);
@@ -207,11 +207,12 @@ $jscomp.polyfill = function(a, b, c, d) {
     b != d && null != b && $jscomp.defineProperty(c, a, {configurable:!0, writable:!0, value:b});
   }
 };
-var module$exports$omid$common$constants = {AdEventType:{IMPRESSION:"impression", STATE_CHANGE:"stateChange", GEOMETRY_CHANGE:"geometryChange", SESSION_START:"sessionStart", SESSION_ERROR:"sessionError", SESSION_FINISH:"sessionFinish", VIDEO:"video", LOADED:"loaded", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", 
-PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction"}, VideoEventType:{LOADED:"loaded", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction"}, ErrorType:{GENERIC:"generic", VIDEO:"video"}, 
-AdSessionType:{NATIVE:"native", HTML:"html"}, EventOwner:{NATIVE:"native", JAVASCRIPT:"javascript", NONE:"none"}, AccessMode:{FULL:"full", LIMITED:"limited"}, AppState:{BACKGROUNDED:"backgrounded", FOREGROUNDED:"foregrounded"}, Environment:{APP:"app", WEB:"web"}, InteractionType:{CLICK:"click", INVITATION_ACCEPT:"invitationAccept"}, MediaType:{DISPLAY:"display", VIDEO:"video"}, Reason:{NOT_FOUND:"notFound", HIDDEN:"hidden", BACKGROUNDED:"backgrounded", VIEWPORT:"viewport", OBSTRUCTED:"obstructed", 
-CLIPPED:"clipped"}, SupportedFeatures:{CONTAINER:"clid", VIDEO:"vlid"}, VideoPosition:{PREROLL:"preroll", MIDROLL:"midroll", POSTROLL:"postroll", STANDALONE:"standalone"}, VideoPlayerState:{MINIMIZED:"minimized", COLLAPSED:"collapsed", NORMAL:"normal", EXPANDED:"expanded", FULLSCREEN:"fullscreen"}, NativeViewKeys:{X:"x", LEFT:"left", Y:"y", TOP:"top", WIDTH:"width", HEIGHT:"height", AD_SESSION_ID:"adSessionId", IS_FRIENDLY_OBSTRUCTION_FOR:"isFriendlyObstructionFor", CLIPS_TO_BOUNDS:"clipsToBounds", 
-CHILD_VIEWS:"childViews", END_X:"endX", END_Y:"endY", OBSTRUCTIONS:"obstructions"}, MeasurementStateChangeSource:{CONTAINER:"container", CREATIVE:"creative"}, ElementMarkup:{OMID_ELEMENT_CLASS_NAME:"omid-element"}, CommunicationType:{NONE:"NONE", DIRECT:"DIRECT", POST_MESSAGE:"POST_MESSAGE"}, OmidImplementer:{OMSDK:"omsdk"}};
+var module$exports$omid$common$constants = {AdEventType:{IMPRESSION:"impression", LOADED:"loaded", GEOMETRY_CHANGE:"geometryChange", SESSION_START:"sessionStart", SESSION_ERROR:"sessionError", SESSION_FINISH:"sessionFinish", MEDIA:"media", VIDEO:"video", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", 
+PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction", STATE_CHANGE:"stateChange"}, MediaEventType:{LOADED:"loaded", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction"}, ImpressionType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", 
+UNSPECIFIED:"unspecified", LOADED:"loaded", BEGIN_TO_RENDER:"beginToRender", ONE_PIXEL:"onePixel", VIEWABLE:"viewable", AUDIBLE:"audible", OTHER:"other"}, ErrorType:{GENERIC:"generic", VIDEO:"video", MEDIA:"media"}, AdSessionType:{NATIVE:"native", HTML:"html", JAVASCRIPT:"javascript"}, EventOwner:{NATIVE:"native", JAVASCRIPT:"javascript", NONE:"none"}, AccessMode:{FULL:"full", LIMITED:"limited"}, AppState:{BACKGROUNDED:"backgrounded", FOREGROUNDED:"foregrounded"}, Environment:{APP:"app", WEB:"web"}, 
+InteractionType:{CLICK:"click", INVITATION_ACCEPT:"invitationAccept"}, CreativeType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", HTML_DISPLAY:"htmlDisplay", NATIVE_DISPLAY:"nativeDisplay", VIDEO:"video", AUDIO:"audio"}, MediaType:{DISPLAY:"display", VIDEO:"video"}, Reason:{NOT_FOUND:"notFound", HIDDEN:"hidden", BACKGROUNDED:"backgrounded", VIEWPORT:"viewport", OBSTRUCTED:"obstructed", CLIPPED:"clipped"}, SupportedFeatures:{CONTAINER:"clid", VIDEO:"vlid"}, VideoPosition:{PREROLL:"preroll", MIDROLL:"midroll", 
+POSTROLL:"postroll", STANDALONE:"standalone"}, VideoPlayerState:{MINIMIZED:"minimized", COLLAPSED:"collapsed", NORMAL:"normal", EXPANDED:"expanded", FULLSCREEN:"fullscreen"}, NativeViewKeys:{X:"x", LEFT:"left", Y:"y", TOP:"top", WIDTH:"width", HEIGHT:"height", AD_SESSION_ID:"adSessionId", IS_FRIENDLY_OBSTRUCTION_FOR:"isFriendlyObstructionFor", CLIPS_TO_BOUNDS:"clipsToBounds", CHILD_VIEWS:"childViews", END_X:"endX", END_Y:"endY", OBSTRUCTIONS:"obstructions", OBSTRUCTION_CLASS:"obstructionClass", OBSTRUCTION_PURPOSE:"obstructionPurpose", 
+OBSTRUCTION_REASON:"obstructionReason", PIXELS:"pixels"}, MeasurementStateChangeSource:{CONTAINER:"container", CREATIVE:"creative"}, ElementMarkup:{OMID_ELEMENT_CLASS_NAME:"omid-element"}, CommunicationType:{NONE:"NONE", DIRECT:"DIRECT", POST_MESSAGE:"POST_MESSAGE"}, OmidImplementer:{OMSDK:"omsdk"}};
 var module$contents$omid$common$InternalMessage_GUID_KEY = "omid_message_guid", module$contents$omid$common$InternalMessage_METHOD_KEY = "omid_message_method", module$contents$omid$common$InternalMessage_VERSION_KEY = "omid_message_version", module$contents$omid$common$InternalMessage_ARGS_KEY = "omid_message_args", module$exports$omid$common$InternalMessage = function(a, b, c, d) {
   this.guid = a;
   this.method = b;
@@ -247,6 +248,9 @@ module$exports$omid$common$Communication.prototype.serialize = function(a) {
 };
 module$exports$omid$common$Communication.prototype.deserialize = function(a) {
   return JSON.parse(a);
+};
+module$exports$omid$common$Communication.prototype.isDirectCommunication = function() {
+  return this.communicationType_ === module$exports$omid$common$constants.CommunicationType.DIRECT;
 };
 module$exports$omid$common$Communication.prototype.isCrossOrigin = function() {
 };
@@ -311,12 +315,19 @@ var module$exports$omid$sessionClient$VerificationScriptResource = function(a, b
   this.vendorKey = b;
   this.verificationParameters = c;
 };
+module$exports$omid$sessionClient$VerificationScriptResource.prototype.toJSON = function() {
+  return {resourceUrl:this.resourceUrl, vendorKey:this.vendorKey, verificationParameters:this.verificationParameters};
+};
 (0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.VerificationScriptResource", module$exports$omid$sessionClient$VerificationScriptResource);
-var module$exports$omid$sessionClient$Context = function(a, b) {
+var module$exports$omid$sessionClient$Context = function(a, b, c, d) {
+  c = void 0 === c ? null : c;
+  d = void 0 === d ? null : d;
   module$exports$omid$common$argsChecker.assertNotNullObject("Context.partner", a);
   this.partner = a;
   this.verificationScriptResources = b;
   this.videoElement = this.slotElement = null;
+  this.contentUrl = c;
+  this.customReferenceData = d;
 };
 module$exports$omid$sessionClient$Context.prototype.setVideoElement = function(a) {
   module$exports$omid$common$argsChecker.assertNotNullObject("Context.videoElement", a);
@@ -344,8 +355,8 @@ function module$contents$omid$common$OmidGlobalProvider_getOmidGlobal() {
   throw Error("Could not determine global object context.");
 }
 module$exports$omid$common$OmidGlobalProvider.omidGlobal = module$contents$omid$common$OmidGlobalProvider_getOmidGlobal();
-var module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys = {ROOT:"omidSessionInterface", AD_EVENTS:"adEvents", VIDEO_EVENTS:"videoEvents"}, module$contents$omid$sessionClient$OmidJsSessionInterface_MethodNameMap = {sessionError:"reportError"}, module$contents$omid$sessionClient$OmidJsSessionInterface_VideoEventMethodNames = Object.keys(module$exports$omid$common$constants.VideoEventType).map(function(a) {
-  return module$exports$omid$common$constants.VideoEventType[a];
+var module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys = {ROOT:"omidSessionInterface", AD_EVENTS:"adEvents", MEDIA_EVENTS:"mediaEvents"}, module$contents$omid$sessionClient$OmidJsSessionInterface_MethodNameMap = {sessionError:"reportError"}, module$contents$omid$sessionClient$OmidJsSessionInterface_MediaEventMethodNames = Object.keys(module$exports$omid$common$constants.MediaEventType).map(function(a) {
+  return module$exports$omid$common$constants.MediaEventType[a];
 }), module$contents$omid$sessionClient$OmidJsSessionInterface_AdEventMethodNames = ["impressionOccurred"], module$exports$omid$sessionClient$OmidJsSessionInterface = function(a) {
   a = void 0 === a ? module$exports$omid$common$OmidGlobalProvider.omidGlobal : a;
   this.interfaceRoot_ = a[module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys.ROOT];
@@ -358,7 +369,7 @@ module$exports$omid$sessionClient$OmidJsSessionInterface.prototype.sendMessage =
   module$contents$omid$sessionClient$OmidJsSessionInterface_MethodNameMap[a] && (a = module$contents$omid$sessionClient$OmidJsSessionInterface_MethodNameMap[a]);
   b = this.interfaceRoot_;
   0 <= module$contents$omid$sessionClient$OmidJsSessionInterface_AdEventMethodNames.indexOf(a) && (b = b[module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys.AD_EVENTS]);
-  0 <= module$contents$omid$sessionClient$OmidJsSessionInterface_VideoEventMethodNames.indexOf(a) && (b = b[module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys.VIDEO_EVENTS]);
+  0 <= module$contents$omid$sessionClient$OmidJsSessionInterface_MediaEventMethodNames.indexOf(a) && (b = b[module$contents$omid$sessionClient$OmidJsSessionInterface_ExportedNodeKeys.MEDIA_EVENTS]);
   b = b[a];
   if (!b) {
     throw Error("Unrecognized method name: " + a + ".");
@@ -393,7 +404,7 @@ function module$contents$omid$common$logger_executeLog(a, b) {
   "undefined" !== typeof jasmine && jasmine ? a() : "undefined" !== typeof console && console && console.error && b();
 }
 ;var module$exports$omid$common$eventTypedefs = {};
-var module$exports$omid$common$version = {ApiVersion:"1.0", Version:"1.2.20-iab1793"};
+var module$exports$omid$common$version = {ApiVersion:"1.0", Version:"1.3.12-iab2330"};
 var module$exports$omid$common$VersionUtils = {}, module$contents$omid$common$VersionUtils_SEMVER_DIGITS_NUMBER = 3;
 module$exports$omid$common$VersionUtils.isValidVersion = function(a) {
   return /\d+\.\d+\.\d+(-.*)?/.test(a);
@@ -454,6 +465,17 @@ module$exports$omid$common$windowUtils.resolveGlobalContext = function(a) {
 };
 module$exports$omid$common$windowUtils.resolveTopWindowContext = function(a) {
   return module$contents$omid$common$windowUtils_isValidWindow(a) ? a.top : module$exports$omid$common$OmidGlobalProvider.omidGlobal;
+};
+module$exports$omid$common$windowUtils.evaluatePageUrl = function(a) {
+  if (!module$contents$omid$common$windowUtils_isValidWindow(a)) {
+    return null;
+  }
+  try {
+    var b = a.top;
+    return (0,module$exports$omid$common$windowUtils.isCrossOrigin)(b) ? null : b.location.href;
+  } catch (c) {
+    return null;
+  }
 };
 var module$exports$omid$common$DirectCommunication = function(a) {
   module$exports$omid$common$Communication.call(this, a);
@@ -525,7 +547,7 @@ var module$exports$omid$common$DetectOmid = {OMID_PRESENT_FRAME_NAME:"omid_v1_pr
   });
   b.observe(a.document.documentElement, {childList:!0});
 }};
-var module$exports$omid$common$serviceCommunication = {}, module$contents$omid$common$serviceCommunication_EXPORTED_SESSION_COMMUNICATION_NAME = ["omid", "v1_SessionServiceCommunication"], module$contents$omid$common$serviceCommunication_EXPORTED_VERIFICATION_COMMUNICATION_NAME = ["omid", "v1_VerificationServiceCommunication"], module$contents$omid$common$serviceCommunication_EXPORTED_SERVICE_WINDOW_NAME = ["omid", "serviceWindow"];
+var module$exports$omid$common$serviceCommunication = {}, module$contents$omid$common$serviceCommunication_EXPORTED_SESSION_COMMUNICATION_NAME = ["omid", "v1_SessionServiceCommunication"], module$contents$omid$common$serviceCommunication_EXPORTED_VERIFICATION_COMMUNICATION_NAME = ["omid", "v1_VerificationServiceCommunication"], module$contents$omid$common$serviceCommunication_EXPORTED_SERVICE_WINDOW_NAME = ["omidVerificationProperties", "serviceWindow"];
 function module$contents$omid$common$serviceCommunication_getValueForKeypath(a, b) {
   return b.reduce(function(a, b) {
     return a && a[b];
@@ -571,20 +593,61 @@ var module$contents$omid$sessionClient$AdSession_SESSION_CLIENT_VERSION = module
   this.impressionOccurred_ = !1;
   this.communication_ = b || (0,module$exports$omid$common$serviceCommunication.startSessionServiceCommunication)((0,module$exports$omid$common$windowUtils.resolveGlobalContext)());
   this.sessionInterface_ = c || new module$exports$omid$sessionClient$OmidJsSessionInterface;
-  this.isSessionRunning_ = this.hasVideoEvents_ = this.hasAdEvents_ = !1;
+  this.isSessionRunning_ = this.hasMediaEvents_ = this.hasAdEvents_ = !1;
+  this.impressionType_ = this.creativeType_ = null;
+  this.creativeLoaded_ = !1;
   this.callbackMap_ = {};
   this.communication_ && (this.communication_.onMessage = this.handleInternalMessage_.bind(this));
   this.setClientInfo_();
   this.injectVerificationScripts_(a.verificationScriptResources);
   this.sendSlotElement_(a.slotElement);
   this.sendVideoElement_(a.videoElement);
+  this.sendContentUrl_(a.contentUrl);
   this.watchSessionEvents_();
+};
+module$exports$omid$sessionClient$AdSession.prototype.setCreativeType = function(a) {
+  if (a === module$exports$omid$common$constants.CreativeType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Creative type cannot be redefined with value " + module$exports$omid$common$constants.CreativeType.DEFINED_BY_JAVASCRIPT);
+  }
+  if (this.impressionOccurred_) {
+    throw Error("Impression has already occurred");
+  }
+  if (this.creativeLoaded_) {
+    throw Error("Creative has already loaded");
+  }
+  if (this.creativeType_ && this.creativeType_ !== module$exports$omid$common$constants.CreativeType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Creative type cannot be redefined");
+  }
+  if (void 0 === this.creativeType_) {
+    throw Error("Native integration is using OMID 1.2 or earlier");
+  }
+  this.sendOneWayMessage("setCreativeType", a);
+  this.creativeType_ = a;
+};
+module$exports$omid$sessionClient$AdSession.prototype.setImpressionType = function(a) {
+  if (a === module$exports$omid$common$constants.ImpressionType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Impression type cannot be redefined with value " + module$exports$omid$common$constants.ImpressionType.DEFINED_BY_JAVASCRIPT);
+  }
+  if (this.impressionOccurred_) {
+    throw Error("Impression has already occurred");
+  }
+  if (this.creativeLoaded_) {
+    throw Error("Creative has already loaded");
+  }
+  if (this.impressionType_ && this.impressionType_ !== module$exports$omid$common$constants.ImpressionType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Impression type cannot be redefined");
+  }
+  if (void 0 === this.impressionType_) {
+    throw Error("Native integration is using OMID 1.2 or earlier");
+  }
+  this.sendOneWayMessage("setImpressionType", a);
+  this.impressionType_ = a;
 };
 module$exports$omid$sessionClient$AdSession.prototype.isSupported = function() {
   return !!this.communication_ || this.sessionInterface_.isSupported();
 };
 module$exports$omid$sessionClient$AdSession.prototype.isSendingElementsSupported_ = function() {
-  return this.communication_ ? !this.communication_.isCrossOrigin() : this.sessionInterface_.isSupported();
+  return this.communication_ ? this.communication_.isDirectCommunication() : this.sessionInterface_.isSupported();
 };
 module$exports$omid$sessionClient$AdSession.prototype.registerSessionObserver = function(a) {
   this.sendMessage("registerSessionObserver", a);
@@ -599,12 +662,12 @@ module$exports$omid$sessionClient$AdSession.prototype.registerAdEvents = functio
   this.hasAdEvents_ = !0;
   this.sendOneWayMessage("registerAdEvents");
 };
-module$exports$omid$sessionClient$AdSession.prototype.registerVideoEvents = function() {
-  if (this.hasVideoEvents_) {
-    throw Error("VideoEvents already registered.");
+module$exports$omid$sessionClient$AdSession.prototype.registerMediaEvents = function() {
+  if (this.hasMediaEvents_) {
+    throw Error("MediaEvents already registered.");
   }
-  this.hasVideoEvents_ = !0;
-  this.sendOneWayMessage("registerVideoEvents");
+  this.hasMediaEvents_ = !0;
+  this.sendOneWayMessage("registerMediaEvents");
 };
 module$exports$omid$sessionClient$AdSession.prototype.sendOneWayMessage = function(a, b) {
   for (var c = [], d = 1; d < arguments.length; ++d) {
@@ -647,14 +710,29 @@ module$exports$omid$sessionClient$AdSession.prototype.assertSessionRunning = fun
   }
 };
 module$exports$omid$sessionClient$AdSession.prototype.impressionOccurred = function() {
+  if (this.creativeType_ === module$exports$omid$common$constants.CreativeType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Creative type has not been redefined");
+  }
+  if (this.impressionType_ === module$exports$omid$common$constants.ImpressionType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Impression type has not been redefined");
+  }
   this.impressionOccurred_ = !0;
+};
+module$exports$omid$sessionClient$AdSession.prototype.creativeLoaded = function() {
+  if (this.creativeType_ === module$exports$omid$common$constants.CreativeType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Creative type has not been redefined");
+  }
+  if (this.impressionType_ === module$exports$omid$common$constants.ImpressionType.DEFINED_BY_JAVASCRIPT) {
+    throw Error("Impression type has not been redefined");
+  }
+  this.creativeLoaded_ = !0;
 };
 module$exports$omid$sessionClient$AdSession.prototype.setClientInfo_ = function() {
   this.sendOneWayMessage("setClientInfo", module$contents$omid$sessionClient$AdSession_SESSION_CLIENT_VERSION, this.context_.partner.name, this.context_.partner.version);
 };
 module$exports$omid$sessionClient$AdSession.prototype.injectVerificationScripts_ = function(a) {
   a && (a = a.map(function(a) {
-    return {resourceUrl:a.resourceUrl, vendorKey:a.vendorKey, verificationParameters:a.verificationParameters};
+    return a.toJSON();
   }), this.sendOneWayMessage("injectVerificationScriptResources", a));
 };
 module$exports$omid$sessionClient$AdSession.prototype.sendSlotElement_ = function(a) {
@@ -666,6 +744,9 @@ module$exports$omid$sessionClient$AdSession.prototype.sendVideoElement_ = functi
 module$exports$omid$sessionClient$AdSession.prototype.sendElement_ = function(a, b) {
   a && (this.isSendingElementsSupported_() ? this.sendOneWayMessage(b, a) : this.error(module$exports$omid$common$constants.ErrorType.GENERIC, "Session Client " + b + " called when communication is cross-origin"));
 };
+module$exports$omid$sessionClient$AdSession.prototype.sendContentUrl_ = function(a) {
+  a && this.sendOneWayMessage("setContentUrl", a);
+};
 module$exports$omid$sessionClient$AdSession.prototype.setElementBounds = function(a) {
   module$exports$omid$common$argsChecker.assertNotNullObject("AdSession.elementBounds", a);
   this.sendOneWayMessage("setElementBounds", a);
@@ -673,11 +754,20 @@ module$exports$omid$sessionClient$AdSession.prototype.setElementBounds = functio
 module$exports$omid$sessionClient$AdSession.prototype.watchSessionEvents_ = function() {
   var a = this;
   this.registerSessionObserver(function(b) {
-    b.type === module$exports$omid$common$constants.AdEventType.SESSION_START && (a.isSessionRunning_ = !0);
+    b.type === module$exports$omid$common$constants.AdEventType.SESSION_START && (a.isSessionRunning_ = !0, a.creativeType_ = b.data.creativeType, a.impressionType_ = b.data.impressionType);
     b.type === module$exports$omid$common$constants.AdEventType.SESSION_FINISH && (a.isSessionRunning_ = !1);
   });
 };
 (0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.AdSession", module$exports$omid$sessionClient$AdSession);
+var module$exports$omid$common$VastProperties = function(a, b, c, d) {
+  this.isSkippable = a;
+  this.skipOffset = b;
+  this.isAutoPlay = c;
+  this.position = d;
+};
+module$exports$omid$common$VastProperties.prototype.toJSON = function() {
+  return {isSkippable:this.isSkippable, skipOffset:this.skipOffset, isAutoPlay:this.isAutoPlay, position:this.position};
+};
 var module$exports$omid$sessionClient$AdEvents = function(a) {
   module$exports$omid$common$argsChecker.assertNotNullObject("AdEvents.adSession", a);
   try {
@@ -691,77 +781,72 @@ module$exports$omid$sessionClient$AdEvents.prototype.impressionOccurred = functi
   this.adSession.impressionOccurred();
   this.adSession.sendOneWayMessage("impressionOccurred");
 };
+module$exports$omid$sessionClient$AdEvents.prototype.loaded = function(a) {
+  a = void 0 === a ? null : a;
+  this.adSession.creativeLoaded();
+  a ? this.adSession.sendOneWayMessage("loaded", a.toJSON()) : this.adSession.sendOneWayMessage("loaded");
+};
 (0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.AdEvents", module$exports$omid$sessionClient$AdEvents);
+var module$exports$omid$sessionClient$MediaEvents = function(a) {
+  module$exports$omid$common$argsChecker.assertNotNullObject("MediaEvents.adSession", a);
+  try {
+    a.registerMediaEvents(), this.adSession = a;
+  } catch (b) {
+    throw Error("AdSession already has a media events instance registered");
+  }
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.start = function(a, b) {
+  module$exports$omid$common$argsChecker.assertNumber("MediaEvents.start.duration", a);
+  module$exports$omid$common$argsChecker.assertNumberBetween("MediaEvents.start.mediaPlayerVolume", b, 0, 1);
+  this.adSession.sendOneWayMessage("start", a, b);
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.firstQuartile = function() {
+  this.adSession.sendOneWayMessage("firstQuartile");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.midpoint = function() {
+  this.adSession.sendOneWayMessage("midpoint");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.thirdQuartile = function() {
+  this.adSession.sendOneWayMessage("thirdQuartile");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.complete = function() {
+  this.adSession.sendOneWayMessage("complete");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.pause = function() {
+  this.adSession.sendOneWayMessage("pause");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.resume = function() {
+  this.adSession.sendOneWayMessage("resume");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.bufferStart = function() {
+  this.adSession.sendOneWayMessage("bufferStart");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.bufferFinish = function() {
+  this.adSession.sendOneWayMessage("bufferFinish");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.skipped = function() {
+  this.adSession.sendOneWayMessage("skipped");
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.volumeChange = function(a) {
+  module$exports$omid$common$argsChecker.assertNumberBetween("MediaEvents.volumeChange.mediaPlayerVolume", a, 0, 1);
+  this.adSession.sendOneWayMessage("volumeChange", a);
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.playerStateChange = function(a) {
+  module$exports$omid$common$argsChecker.assertNotNullObject("MediaEvents.playerStateChange.playerState", a);
+  this.adSession.sendOneWayMessage("playerStateChange", a);
+};
+module$exports$omid$sessionClient$MediaEvents.prototype.adUserInteraction = function(a) {
+  module$exports$omid$common$argsChecker.assertNotNullObject("MediaEvents.adUserInteraction.interactionType", a);
+  this.adSession.sendOneWayMessage("adUserInteraction", a);
+};
+(0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.MediaEvents", module$exports$omid$sessionClient$MediaEvents);
 var module$exports$omid$sessionClient$OmidVersion = function(a, b) {
   module$exports$omid$common$argsChecker.assertTruthyString("OmidVersion.semanticVersion", a);
   module$exports$omid$common$argsChecker.assertTruthyString("OmidVersion.apiLevel", b);
 };
 (0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.OmidVersion", module$exports$omid$sessionClient$OmidVersion);
-var module$exports$omid$common$VastProperties = function(a, b, c, d) {
-  this.isSkippable = a;
-  this.skipOffset = b;
-  this.isAutoPlay = c;
-  this.position = d;
-};
 var module$exports$omid$sessionClient$VastPropertiesExports = {};
 (0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.VastProperties", module$exports$omid$common$VastProperties);
-var module$exports$omid$sessionClient$VideoEvents = function(a) {
-  module$exports$omid$common$argsChecker.assertNotNullObject("VideoEvents.adSession", a);
-  try {
-    a.registerVideoEvents(), this.adSession = a;
-  } catch (b) {
-    throw Error("AdSession already has a video events instance registered");
-  }
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.loaded = function(a) {
-  module$exports$omid$common$argsChecker.assertNotNullObject("VideoEvents.loaded.vastProperties", a);
-  this.adSession.sendOneWayMessage("loaded", a);
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.start = function(a, b) {
-  module$exports$omid$common$argsChecker.assertNumber("VideoEvents.start.duration", a);
-  module$exports$omid$common$argsChecker.assertNumberBetween("VideoEvents.start.videoPlayerVolume", b, 0, 1);
-  this.adSession.sendOneWayMessage("start", a, b);
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.firstQuartile = function() {
-  this.adSession.sendOneWayMessage("firstQuartile");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.midpoint = function() {
-  this.adSession.sendOneWayMessage("midpoint");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.thirdQuartile = function() {
-  this.adSession.sendOneWayMessage("thirdQuartile");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.complete = function() {
-  this.adSession.sendOneWayMessage("complete");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.pause = function() {
-  this.adSession.sendOneWayMessage("pause");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.resume = function() {
-  this.adSession.sendOneWayMessage("resume");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.bufferStart = function() {
-  this.adSession.sendOneWayMessage("bufferStart");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.bufferFinish = function() {
-  this.adSession.sendOneWayMessage("bufferFinish");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.skipped = function() {
-  this.adSession.sendOneWayMessage("skipped");
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.volumeChange = function(a) {
-  module$exports$omid$common$argsChecker.assertNumberBetween("VideoEvents.volumeChange.videoPlayerVolume", a, 0, 1);
-  this.adSession.sendOneWayMessage("volumeChange", a);
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.playerStateChange = function(a) {
-  module$exports$omid$common$argsChecker.assertNotNullObject("VideoEvents.playerStateChange.playerState", a);
-  this.adSession.sendOneWayMessage("playerStateChange", a);
-};
-module$exports$omid$sessionClient$VideoEvents.prototype.adUserInteraction = function(a) {
-  module$exports$omid$common$argsChecker.assertNotNullObject("VideoEvents.adUserInteraction.interactionType", a);
-  this.adSession.sendOneWayMessage("adUserInteraction", a);
-};
-(0,module$exports$omid$common$exporter.packageExport)("OmidSessionClient.VideoEvents", module$exports$omid$sessionClient$VideoEvents);
 
 }, typeof exports === 'undefined' ? undefined : exports));
 

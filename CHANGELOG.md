@@ -1,5 +1,12 @@
 # Changelog
 
+### v4.8.0
+_2020-11-17_
+- Latest OM SDK version
+- SmartAd adapter support
+- ValidationTool: validate resize implementation (direct and mediation)
+- Remove UIWebView iOS
+
 ### v4.7.8
 _2020-09-21_
 - Ensuring ratio update is made on main thread \n - Fixing player to have a better creative rendering \n - Improving memory footprint and performance

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target x86_64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TeadsSDK
 import AVKit
 import AdSupport
@@ -14,18 +14,19 @@ import SystemConfiguration
 @_exported import TeadsSDK
 import UIKit
 import WebKit
-@objc public class TeadsNativeAsset : ObjectiveC.NSObject, Swift.Codable {
+@_hasMissingDesignatedInitializers @objc public class TeadsNativeAsset : ObjectiveC.NSObject, Swift.Codable {
   @objc final public let text: Swift.String?
   @objc final public let url: Swift.String?
   required public init(from decoder: Swift.Decoder) throws
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension TeadsMediaView {
   @objc public static func fromAsset(asset: TeadsSDK.TeadsNativeAsset) -> TeadsSDK.TeadsMediaView
 }
-@objc public class TeadsAdSettings : ObjectiveC.NSObject, Swift.Codable {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TeadsAdSettings : ObjectiveC.NSObject, Swift.Codable {
+  public static let integrationSAS: Swift.String
   public static let integrationAdmob: Swift.String
   public static let integrationMopub: Swift.String
   public static let integrationTypeKey: Swift.String
@@ -58,8 +59,8 @@ extension TeadsMediaView {
 @objc public class TeadsNativeAdRequest : TeadsSDK.TeadsAdRequest {
   @objc public init(template: TeadsSDK.TeadsNativeAdView.Template, settings: TeadsSDK.TeadsAdSettings?)
   override public func encode(to encoder: Swift.Encoder) throws
-  @objc override public init(settings: TeadsSDK.TeadsAdSettings?)
   @objc deinit
+  @objc override public init(settings: TeadsSDK.TeadsAdSettings?)
 }
 @objc public class TeadsAdRequest : ObjectiveC.NSObject, Swift.Encodable {
   @objc public init(settings: TeadsSDK.TeadsAdSettings?)
@@ -88,7 +89,7 @@ extension TeadsMediaView {
   @objc optional func adDidChangeVolume(_ ad: TeadsSDK.TFAAdView, muted: Swift.Bool)
   @objc func didUpdateRatio(_ ad: TeadsSDK.TFAAdView, ratio: CoreGraphics.CGFloat)
 }
-@objc public class TFAAdView : UIKit.UIView {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TFAAdView : UIKit.UIView {
   @objc public enum TeadsAdPlaybackState : Swift.Int {
     case playbackStateCompleted = 0
     case playbackStateStarted = 1
@@ -141,7 +142,7 @@ extension TeadsMediaView {
   @available(*, deprecated, message: "it is no longer needed to monitor your inventory.")
   @objc public func slotReached()
 }
-@objc @IBDesignable public class TeadsMediaView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @IBDesignable public class TeadsMediaView : UIKit.UIView {
   @objc @IBInspectable public var placeholderImage: UIKit.UIImage?
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -162,11 +163,11 @@ extension URLSession {
   @objc optional func rewardedAdBrowserDidClose(_ rewardedAd: TeadsSDK.TFARewardedAd)
   @objc optional func rewardedAdWillLeaveApplication(_ rewardedAd: TeadsSDK.TFARewardedAd)
 }
-@objc public class TFAReward : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc public class TFAReward : ObjectiveC.NSObject {
   @objc public var type: Swift.String?
   @objc public var amount: Swift.Double
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc public class TFARewardedAd : ObjectiveC.NSObject, TeadsSDK.TFAAdDelegate {
   @objc weak public var delegate: TeadsSDK.TFARewardedAdDelegate?
@@ -251,7 +252,7 @@ extension UIView {
     get
   }
 }
-@objc public class TeadsNativeImageAsset : TeadsSDK.TeadsNativeAsset {
+@_hasMissingDesignatedInitializers @objc public class TeadsNativeImageAsset : TeadsSDK.TeadsNativeAsset {
   required public init(from decoder: Swift.Decoder) throws
   public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)? = nil, failure: ((Swift.Error) -> Swift.Void)? = nil)
   @objc deinit
@@ -289,7 +290,7 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @IBDesignable public class TeadsNativeAdView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @IBDesignable public class TeadsNativeAdView : UIKit.UIView {
   @objc @IBOutlet weak public var titleLabel: UIKit.UILabel?
   @objc @IBOutlet weak public var contentLabel: UIKit.UILabel?
   @objc @IBOutlet weak public var mediaView: TeadsSDK.TeadsMediaView?
@@ -312,11 +313,11 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
     @objc get
     @objc set
   }
+  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
-@objc @IBDesignable public class TFACustomAdView : TeadsSDK.TFAAdView {
+@objc @_hasMissingDesignatedInitializers @IBDesignable public class TFACustomAdView : TeadsSDK.TFAAdView {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc public init(withPid pid: Swift.Int, andDelegate delegate: TeadsSDK.TFAAdDelegate? = nil)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -326,7 +327,7 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
   @objc optional func nativeAdDidRecordAdImpression(_ nativeAd: TeadsSDK.TeadsNativeAd)
   @objc optional func nativeAdDidRecordAdClick(_ nativeAd: TeadsSDK.TeadsNativeAd)
 }
-@objc public class TeadsNativeAd : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc public class TeadsNativeAd : ObjectiveC.NSObject {
   @objc final public let title: TeadsSDK.TeadsNativeAsset?
   @objc final public let content: TeadsSDK.TeadsNativeAsset?
   @objc final public let imageUrl: TeadsSDK.TeadsNativeImageAsset?
@@ -340,27 +341,27 @@ extension Dictionary where Key == Swift.String, Value == Swift.String {
   @objc weak public var delegate: TeadsSDK.TeadsNativeAdDelegate?
   @objc public var assets: [TeadsSDK.TeadsNativeAsset]? {
     get
-    }
+  }
   @objc deinit
   @objc public func registerContainer(in view: UIKit.UIView)
   @objc public func register(asset: TeadsSDK.TeadsNativeAsset, in view: UIKit.UIView)
   @objc override dynamic public init()
 }
-@objc public class Teads : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class Teads : ObjectiveC.NSObject {
   @objc public static var sdkVersion: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 extension Teads {
   @objc dynamic public class func configure()
 }
-@objc @IBDesignable public class TFAInReadAdView : TeadsSDK.TFAAdView {
+@objc @_hasMissingDesignatedInitializers @IBDesignable public class TFAInReadAdView : TeadsSDK.TFAAdView {
   @objc public init(withPid pid: Swift.Int, andDelegate delegate: TeadsSDK.TFAAdDelegate? = nil)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 extension TeadsSDK.TFAAdView.TeadsAdPlaybackState : Swift.Equatable {}
 extension TeadsSDK.TFAAdView.TeadsAdPlaybackState : Swift.Hashable {}
@@ -368,6 +369,7 @@ extension TeadsSDK.TFAAdView.TeadsAdPlaybackState : Swift.RawRepresentable {}
 extension TeadsSDK.TCFVersion : Swift.Equatable {}
 extension TeadsSDK.TCFVersion : Swift.Hashable {}
 extension TeadsSDK.TCFVersion : Swift.RawRepresentable {}
+extension TeadsSDK.AdErrorCode : Swift.Equatable {}
 extension TeadsSDK.AdErrorCode : Swift.Hashable {}
 extension TeadsSDK.AdErrorCode : Swift.RawRepresentable {}
 extension TeadsSDK.TeadsNativeAdView.Template : Swift.Equatable {}
