@@ -31,7 +31,7 @@ struct Integration {
 }
 
 // Formats
-var inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider], isSelected: true)
+var inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider, sasProvider], isSelected: true)
 var nativeFormat = Format(name: .native, providers: [], isSelected: false)
 
 // Providers
@@ -49,6 +49,10 @@ var admobDirectProvider = Provider(name: .admob, integrations: [
 var mopubDirectProvider = Provider(name: .mopub, integrations: [
     scrollViewIntegration,
     tableViewIntegration
+], isSelected: false) 
+
+var sasProvider = Provider(name: .sas, integrations: [
+    scrollViewIntegration
 ], isSelected: false)
 
 // CreativeType
@@ -100,6 +104,7 @@ enum ProviderName: String {
     case direct = "Direct"
     case admob = "Admob"
     case mopub = "Mopub"
+    case sas = "Smart"
 }
 
 enum CreativeTypeName: String {

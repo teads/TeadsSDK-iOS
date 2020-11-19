@@ -92,7 +92,10 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             }
+        case .sas:
+         return "84242"
         }
+        
         
     }
 

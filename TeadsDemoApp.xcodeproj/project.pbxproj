@@ -37,6 +37,7 @@
 		B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
 		B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */; };
+		B5EBAF6025655A1300B0DAFA /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
 		D822AE1F658F3E8B193836D6 /* Pods_TeadsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A00B2DB925EAF9FCC9B791B /* Pods_TeadsDemoApp.framework */; };
 		DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidTableViewCell.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
 		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
+		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				40D289EE25384E9E0031A64D /* Direct */,
 				40D289F325384F240031A64D /* Admob */,
 				40D289F425384F2F0031A64D /* Mopub */,
+				B5EBAF5D256559A900B0DAFA /* SAS */,
 			);
 			path = InRead;
 			sourceTree = "<group>";
@@ -358,6 +361,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B5EBAF5D256559A900B0DAFA /* SAS */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBAF6225655A2400B0DAFA /* ScrollView */,
+			);
+			path = SAS;
+			sourceTree = "<group>";
+		};
+		B5EBAF6225655A2400B0DAFA /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -442,6 +461,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-TeadsDemoApp/Pods-TeadsDemoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/Smart-Core-SDK/SCSCoreKit.framework",
+				"${PODS_ROOT}/Smart-Display-SDK/SASDisplayKit.framework",
 				"${PODS_ROOT}/TeadsSDK/TeadsSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -450,6 +471,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SASDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -522,6 +545,7 @@
 				B5555A491F7CE4C7007406D4 /* DemoTableViewCell.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */,
+				B5EBAF6025655A1300B0DAFA /* InReadSASScrollViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
