@@ -29,7 +29,6 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
             try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
         }
         
-        //385317 / 1331331 / 96445
         let webSiteId = 385317
         let pageId = 1331331
         let formatId = Int(pid) ?? 96445

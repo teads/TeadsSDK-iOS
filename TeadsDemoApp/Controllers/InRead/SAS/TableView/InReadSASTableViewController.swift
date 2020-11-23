@@ -35,7 +35,7 @@ class InReadSASTableViewController: TeadsViewController {
         }
         let webSiteId = 383302
         let pageId = 1318382
-        let formatId = 69325
+        let formatId = Int(pid) ?? 96445
         var keywordsTargetting = "yourkw=titi"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
         

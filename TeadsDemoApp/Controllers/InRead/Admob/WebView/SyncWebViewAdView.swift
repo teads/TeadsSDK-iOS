@@ -65,7 +65,6 @@ class SyncWebViewAdView: NSObject, WebViewHelperDelegate {
         if let adView = adView, let webView = webView {
             if !isLoaded {
                 isLoaded = true
-                adView.backgroundColor = .red
                 webView.scrollView.addSubview(adView)
                 adView.translatesAutoresizingMaskIntoConstraints = false
             }
