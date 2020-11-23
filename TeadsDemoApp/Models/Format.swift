@@ -31,7 +31,7 @@ struct Integration {
 }
 
 // Formats
-var inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider, sasProvider], isSelected: true)
+var inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider, sasDirectProvider], isSelected: true)
 var nativeFormat = Format(name: .native, providers: [], isSelected: false)
 
 // Providers
@@ -51,7 +51,7 @@ var mopubDirectProvider = Provider(name: .mopub, integrations: [
     tableViewIntegration
 ], isSelected: false) 
 
-var sasProvider = Provider(name: .sas, integrations: [
+var sasDirectProvider = Provider(name: .sas, integrations: [
     scrollViewIntegration,
     tableViewIntegration
 ], isSelected: false)
