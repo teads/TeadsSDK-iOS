@@ -1,7 +1,7 @@
 # TeadsSDK-ios
 
 
-Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This demo app includes Teads iOS library and is showing integration examples.
+Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS library and is showing integration examples.
 
 ## Run the sample app
 
