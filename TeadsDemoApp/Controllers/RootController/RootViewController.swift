@@ -92,7 +92,21 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             }
+        case .sas:
+            switch type.name {
+            case .landscape:
+                return PID.sasLandscape
+            case .vertical:
+                return PID.sasVertical
+            case .square:
+                return PID.sasSquare
+            case .carousel:
+                return PID.sasCarousel
+            case .custom:
+                return PID.custom
+            }
         }
+        
         
     }
 
