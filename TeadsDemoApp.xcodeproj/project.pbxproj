@@ -28,6 +28,7 @@
 		B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */; };
 		B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */; };
 		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
+		B52A5AC32566B4A7007CFA73 /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
 		B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3C1F7CDF80007406D4 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsGradientImageView.swift; sourceTree = "<group>"; };
 		B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewController.swift; sourceTree = "<group>"; };
 		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewTFInReadAdView.swift; sourceTree = "<group>"; };
+		B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASTableViewController.swift; sourceTree = "<group>"; };
 		B5555A321F7CDF80007406D4 /* TeadsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5555A3A1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 			path = DemoWebsite;
 			sourceTree = "<group>";
 		};
+		B52A5AB12566B3F1007CFA73 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		B5555A291F7CDF80007406D4 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EBAF6225655A2400B0DAFA /* ScrollView */,
+				B52A5AB12566B3F1007CFA73 /* TableView */,
 			);
 			path = SAS;
 			sourceTree = "<group>";
@@ -535,6 +546,7 @@
 				DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */,
 				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
 				40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */,
+				B52A5AC32566B4A7007CFA73 /* InReadSASTableViewController.swift in Sources */,
 				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
 				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,
 				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,

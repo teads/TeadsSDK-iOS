@@ -52,7 +52,8 @@ var mopubDirectProvider = Provider(name: .mopub, integrations: [
 ], isSelected: false) 
 
 var sasProvider = Provider(name: .sas, integrations: [
-    scrollViewIntegration
+    scrollViewIntegration,
+    tableViewIntegration
 ], isSelected: false)
 
 // CreativeType
@@ -93,6 +94,11 @@ struct PID {
     static let mopubVertical = "ffb910cb8192456f99ae362430a5aa84"
     static let mopubSquare = "d017b5f3e0284a3f8be15e78df49a005"
     static let mopubCarousel = "639e0c172c944f82a61599d8b7a6de4f"
+    
+    static let sasLandscape = "96445"
+    static let sasVertical = "96469"
+    static let sasSquare = "96468"
+    static let sasCarousel = "96470"
 }
 
 enum FormatName: String {

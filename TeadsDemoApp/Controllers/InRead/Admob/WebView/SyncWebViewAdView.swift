@@ -62,11 +62,12 @@ class SyncWebViewAdView: NSObject, WebViewHelperDelegate {
     
     public func webViewHelperUpdatedSlot(left: Int, top: Int, right: Int, bottom: Int) {
         // if the adView is not already loaded load it and add it to the scrollView of your webview
-        if let admobBannerView = adView, let webView = webView {
+        if let adView = adView, let webView = webView {
             if !isLoaded {
                 isLoaded = true
-                webView.scrollView.addSubview(admobBannerView)
-                admobBannerView.translatesAutoresizingMaskIntoConstraints = false
+                adView.backgroundColor = .red
+                webView.scrollView.addSubview(adView)
+                adView.translatesAutoresizingMaskIntoConstraints = false
             }
             //change the constraint according to coordonate that the delegate send us
             customAdViewConstraint(left: left, top: top, right: right, bottom: bottom)

@@ -28,10 +28,12 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
             settings.pageUrl("https://toto.com")
             try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
         }
-        let webSiteId = 383302
-        let pageId = 1318382
-        let formatId = 69325
-        var keywordsTargetting = "lemondekw=titi"
+        
+        //385317 / 1331331 / 96445
+        let webSiteId = 385317
+        let pageId = 1331331
+        let formatId = Int(pid) ?? 96445
+        var keywordsTargetting = "yourkw=titi"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
         
         // Create a placement
