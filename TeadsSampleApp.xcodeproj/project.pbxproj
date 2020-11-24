@@ -1,0 +1,933 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40077B432534AABF00D53197 /* InReadDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */; };
+		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
+		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
+		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
+		408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */; };
+		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
+		408A2D51253DC5A200CCFF44 /* InReadMopubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */; };
+		40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
+		40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A46253883F80031A64D /* SyncWebViewAdView.swift */; };
+		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
+		AEA8175DB4A0D8AB0204A970 /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5902616A875DF1762D65DC /* Pods_TeadsSampleApp.framework */; };
+		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
+		B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC771F823BA8002909B9 /* WebViewHelper.swift */; };
+		B502B9F01F826842008257EC /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = B501EC751F823BA8002909B9 /* bootstrap.js */; };
+		B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */; };
+		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
+		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
+		B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */ = {isa = PBXBuildFile; fileRef = B50425F3252F436000ABF07D /* coffeeDesk2.png */; };
+		B50425F6252F436000ABF07D /* sample.html in Resources */ = {isa = PBXBuildFile; fileRef = B50425F4252F436000ABF07D /* sample.html */; };
+		B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */; };
+		B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */; };
+		B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */; };
+		B52A5AC32566B4A7007CFA73 /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
+		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
+		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
+		B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3C1F7CDF80007406D4 /* Assets.xcassets */; };
+		B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */; };
+		B5555A491F7CE4C7007406D4 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A471F7CE4C7007406D4 /* SampleTableViewCell.swift */; };
+		B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */; };
+		B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */; };
+		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
+		B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */; };
+		B5EBAF6025655A1300B0DAFA /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
+		DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11435DCE5558CB0BCBCB42B4 /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
+		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootImageViewLabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadMopubTableViewController.swift; sourceTree = "<group>"; };
+		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
+		40D28A46253883F80031A64D /* SyncWebViewAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewAdView.swift; sourceTree = "<group>"; };
+		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		779514ABCA9BA1F2BD44F86E /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		9B5902616A875DF1762D65DC /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
+		B501EC751F823BA8002909B9 /* bootstrap.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
+		B501EC771F823BA8002909B9 /* WebViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelper.swift; sourceTree = "<group>"; };
+		B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectTableViewController.swift; sourceTree = "<group>"; };
+		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B50425D2252E134E00ABF07D /* FakeArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArticleView.swift; sourceTree = "<group>"; };
+		B50425F3252F436000ABF07D /* coffeeDesk2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeeDesk2.png; sourceTree = "<group>"; };
+		B50425F4252F436000ABF07D /* sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
+		B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsGradientImageView.swift; sourceTree = "<group>"; };
+		B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewController.swift; sourceTree = "<group>"; };
+		B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWebViewTFInReadAdView.swift; sourceTree = "<group>"; };
+		B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASTableViewController.swift; sourceTree = "<group>"; };
+		B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5555A351F7CDF80007406D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5555A3A1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5555A3C1F7CDF80007406D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5555A3F1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5555A411F7CDF80007406D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5555A471F7CE4C7007406D4 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectScrollViewController.swift; sourceTree = "<group>"; };
+		B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidTableViewCell.swift; sourceTree = "<group>"; };
+		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
+		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
+		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
+		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5555A2F1F7CDF80007406D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA8175DB4A0D8AB0204A970 /* Pods_TeadsSampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4079F241252CBE7300B0AC31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4079F242252CBE7F00B0AC31 /* ColorExtension.swift */,
+				B50425CF252E078B00ABF07D /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40B9A0C525398B0400A1D9DF /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		40D289EA25384E5A0031A64D /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				40D289EB25384E6A0031A64D /* RootControllerCells */,
+				4079F252252CC1EF00B0AC31 /* RootViewController.swift */,
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		40D289EB25384E6A0031A64D /* RootControllerCells */ = {
+			isa = PBXGroup;
+			children = (
+				408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */,
+				408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */,
+				408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */,
+			);
+			path = RootControllerCells;
+			sourceTree = "<group>";
+		};
+		40D289EC25384E7B0031A64D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40DCC3C825306FA00012407C /* Format.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40D289ED25384E980031A64D /* InRead */ = {
+			isa = PBXGroup;
+			children = (
+				40D289EE25384E9E0031A64D /* Direct */,
+				40D289F325384F240031A64D /* Admob */,
+				40D289F425384F2F0031A64D /* Mopub */,
+				B5EBAF5D256559A900B0DAFA /* SAS */,
+			);
+			path = InRead;
+			sourceTree = "<group>";
+		};
+		40D289EE25384E9E0031A64D /* Direct */ = {
+			isa = PBXGroup;
+			children = (
+				40D289F125384ED90031A64D /* ScrollView */,
+				40D289EF25384EB00031A64D /* TableView */,
+				40D289F225384EEF0031A64D /* CollectionView */,
+				B501EC781F823C2A002909B9 /* WebView */,
+			);
+			path = Direct;
+			sourceTree = "<group>";
+		};
+		40D289EF25384EB00031A64D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		40D289F125384ED90031A64D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		40D289F225384EEF0031A64D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		40D289F325384F240031A64D /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				40D28A49253887720031A64D /* ScrollView */,
+				40D28A25253853450031A64D /* TableView */,
+				40D28A41253879140031A64D /* WebView */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		40D289F425384F2F0031A64D /* Mopub */ = {
+			isa = PBXGroup;
+			children = (
+				40B9A0C525398B0400A1D9DF /* TableView */,
+				40D28A4D25388F270031A64D /* ScrollView */,
+			);
+			path = Mopub;
+			sourceTree = "<group>";
+		};
+		40D28A25253853450031A64D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		40D28A41253879140031A64D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				40D28A46253883F80031A64D /* SyncWebViewAdView.swift */,
+				B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		40D28A49253887720031A64D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		40D28A4D25388F270031A64D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		874FCA9D677F77A0CE9CCE96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B5902616A875DF1762D65DC /* Pods_TeadsSampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C4C2A8CC3AEB01218414AF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11435DCE5558CB0BCBCB42B4 /* Pods-TeadsSampleApp.debug.xcconfig */,
+				779514ABCA9BA1F2BD44F86E /* Pods-TeadsSampleApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B501EC681F8232A4002909B9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B50425F2252F436000ABF07D /* SampleWebsite */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		B501EC731F823BA8002909B9 /* WebViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC741F823BA8002909B9 /* Ressources */,
+				B501EC771F823BA8002909B9 /* WebViewHelper.swift */,
+			);
+			path = WebViewHelper;
+			sourceTree = "<group>";
+		};
+		B501EC741F823BA8002909B9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC751F823BA8002909B9 /* bootstrap.js */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		B501EC781F823C2A002909B9 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				B52842252213284A00025E97 /* SyncWebViewTFInReadAdView.swift */,
+				B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		B50425F2252F436000ABF07D /* SampleWebsite */ = {
+			isa = PBXGroup;
+			children = (
+				B50425F3252F436000ABF07D /* coffeeDesk2.png */,
+				B50425F4252F436000ABF07D /* sample.html */,
+			);
+			path = SampleWebsite;
+			sourceTree = "<group>";
+		};
+		B52A5AB12566B3F1007CFA73 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		B5555A291F7CDF80007406D4 = {
+			isa = PBXGroup;
+			children = (
+				B5555A341F7CDF80007406D4 /* TeadsSampleApp */,
+				B5555A331F7CDF80007406D4 /* Products */,
+				9C4C2A8CC3AEB01218414AF6 /* Pods */,
+				874FCA9D677F77A0CE9CCE96 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5555A331F7CDF80007406D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5555A341F7CDF80007406D4 /* TeadsSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				B501EC731F823BA8002909B9 /* WebViewHelper */,
+				40D289EC25384E7B0031A64D /* Models */,
+				B5CF159C252CC0FA00B12F83 /* Views */,
+				4079F241252CBE7300B0AC31 /* Extensions */,
+				B501EC681F8232A4002909B9 /* Ressources */,
+				B5555A4C1F7D3153007406D4 /* Controllers */,
+				B5555A4B1F7CEF1C007406D4 /* Cells */,
+				B5555A351F7CDF80007406D4 /* AppDelegate.swift */,
+				B5555A391F7CDF80007406D4 /* Main.storyboard */,
+				B5555A3C1F7CDF80007406D4 /* Assets.xcassets */,
+				B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */,
+				B5555A411F7CDF80007406D4 /* Info.plist */,
+			);
+			path = TeadsSampleApp;
+			sourceTree = "<group>";
+		};
+		B5555A4B1F7CEF1C007406D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5555A471F7CE4C7007406D4 /* SampleTableViewCell.swift */,
+				B57FB1F01FC5E21F00609036 /* PidTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B5555A4C1F7D3153007406D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40D289ED25384E980031A64D /* InRead */,
+				40D289EA25384E5A0031A64D /* RootController */,
+				B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5CF159C252CC0FA00B12F83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B50425D2252E134E00ABF07D /* FakeArticleView.swift */,
+				B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5EBAF5D256559A900B0DAFA /* SAS */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBAF6225655A2400B0DAFA /* ScrollView */,
+				B52A5AB12566B3F1007CFA73 /* TableView */,
+			);
+			path = SAS;
+			sourceTree = "<group>";
+		};
+		B5EBAF6225655A2400B0DAFA /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5555A311F7CDF80007406D4 /* TeadsSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsSampleApp" */;
+			buildPhases = (
+				A2D3C8E3E10EE071717EF2F0 /* [CP] Check Pods Manifest.lock */,
+				B5555A2E1F7CDF80007406D4 /* Sources */,
+				B5555A2F1F7CDF80007406D4 /* Frameworks */,
+				B5555A301F7CDF80007406D4 /* Resources */,
+				913FE1D31FEC291B003C6E5E /* ShellScript */,
+				3EC69DF198424DA10DD39A97 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeadsSampleApp;
+			productName = TeadsDemoApp;
+			productReference = B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5555A2A1F7CDF80007406D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Teads;
+				TargetAttributes = {
+					B5555A311F7CDF80007406D4 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1170;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B5555A2D1F7CDF80007406D4 /* Build configuration list for PBXProject "TeadsSampleApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5555A291F7CDF80007406D4;
+			productRefGroup = B5555A331F7CDF80007406D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5555A311F7CDF80007406D4 /* TeadsSampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5555A301F7CDF80007406D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
+				B50425F6252F436000ABF07D /* sample.html in Resources */,
+				B502B9F01F826842008257EC /* bootstrap.js in Resources */,
+				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
+				B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */,
+				B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EC69DF198424DA10DD39A97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/Smart-Core-SDK/SCSCoreKit.framework",
+				"${PODS_ROOT}/Smart-Display-SDK/SASDisplayKit.framework",
+				"${PODS_ROOT}/TeadsSDK/TeadsSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SASDisplayKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		913FE1D31FEC291B003C6E5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
+		};
+		A2D3C8E3E10EE071717EF2F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeadsSampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5555A2E1F7CDF80007406D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D28A47253883F80031A64D /* SyncWebViewAdView.swift in Sources */,
+				B50425D0252E078B00ABF07D /* String.swift in Sources */,
+				408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */,
+				40077B432534AABF00D53197 /* InReadDirectCollectionViewController.swift in Sources */,
+				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
+				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
+				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
+				408A2D51253DC5A200CCFF44 /* InReadMopubTableViewController.swift in Sources */,
+				DB4660DC2181B865003A6CF5 /* InReadAdmobScrollViewController.swift in Sources */,
+				B501EC791F823F6C002909B9 /* WebViewHelper.swift in Sources */,
+				40D28A27253853710031A64D /* InReadAdmobTableViewController.swift in Sources */,
+				B52A5AC32566B4A7007CFA73 /* InReadSASTableViewController.swift in Sources */,
+				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
+				B502BA131F827D5C008257EC /* InReadDirectTableViewController.swift in Sources */,
+				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
+				B5D8037924E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift in Sources */,
+				40DCC3C925306FA00012407C /* Format.swift in Sources */,
+				B57FB1F11FC5E21F00609036 /* PidTableViewCell.swift in Sources */,
+				B52842262213284A00025E97 /* SyncWebViewTFInReadAdView.swift in Sources */,
+				B5555A491F7CE4C7007406D4 /* SampleTableViewCell.swift in Sources */,
+				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
+				B50C184922CCDC65004F2360 /* InReadAdmobWebViewController.swift in Sources */,
+				B5EBAF6025655A1300B0DAFA /* InReadSASScrollViewController.swift in Sources */,
+				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
+				B5555A4E1F7D3177007406D4 /* InReadDirectScrollViewController.swift in Sources */,
+				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
+				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5555A391F7CDF80007406D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5555A3A1F7CDF80007406D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5555A3F1F7CDF80007406D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5555A421F7CDF80007406D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B5555A431F7CDF80007406D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5555A451F7CDF80007406D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11435DCE5558CB0BCBCB42B4 /* Pods-TeadsSampleApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSampleApp",
+					"$(PROJECT_DIR)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AVKit\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MoPub\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TeadsAdMobAdapter\"",
+					"-framework",
+					"\"TeadsMoPubAdapter\"",
+					"-framework",
+					"\"TeadsSDK\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+					"-weak_framework",
+					"\"WebKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5555A461F7CDF80007406D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779514ABCA9BA1F2BD44F86E /* Pods-TeadsSampleApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TeadsSampleApp",
+					"$(PROJECT_DIR)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AVKit\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MoPub\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TeadsAdMobAdapter\"",
+					"-framework",
+					"\"TeadsMoPubAdapter\"",
+					"-framework",
+					"\"TeadsSDK\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+					"-weak_framework",
+					"\"WebKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Teads.TeadsSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5555A2D1F7CDF80007406D4 /* Build configuration list for PBXProject "TeadsSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5555A421F7CDF80007406D4 /* Debug */,
+				B5555A431F7CDF80007406D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5555A451F7CDF80007406D4 /* Debug */,
+				B5555A461F7CDF80007406D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5555A2A1F7CDF80007406D4 /* Project object */;
+}
