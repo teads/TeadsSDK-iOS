@@ -1,13 +1,13 @@
-project 'TeadsDemoApp.xcodeproj'
+project 'TeadsSampleApp.xcodeproj'
 
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '10.0'
 
-target 'TeadsDemoApp' do
+target 'TeadsSampleApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TeadsDemoApp
+  # Pods for TeadsSampleApp
   pod 'GoogleMobileAdsMediationTeads', '4.8.0'
   pod 'MoPub-Teads-Adapters', '4.8.0'
   pod 'TeadsSASAdapter', '4.8.0'
