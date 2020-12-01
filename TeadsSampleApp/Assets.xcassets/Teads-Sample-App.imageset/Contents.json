@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Teads-Demo-App-black.png",
+      "filename" : "Teads-Sample-App-black.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "Teads-Demo-App-black-1.png",
+      "filename" : "Teads-Sample-App-black-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,7 +23,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Teads-Demo-App-white.png",
+      "filename" : "Teads-Sample-App-white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
