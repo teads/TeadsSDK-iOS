@@ -15,9 +15,10 @@ Teads SDK is currently distributed through CocoaPods. It include everything you 
 
 ```
 target 'YourProject' do
-    pod 'TeadsSDK', '4.8.0'
+    pod 'TeadsSDK', 'X.Y.Z'
 end
 ```
+Replace the X.Y.Z above with the [latest release version](https://github.com/teads/TeadsSDK-iOS/releases/latest).
 
 In terminal in the directory containing your project's `.xcodeproj` file and the Podfile, run `pod install` command. This will install Teads SDK along with our needed dependencies.
 
@@ -30,8 +31,9 @@ $ pod install --repo-update
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate TeadsSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "teads/TeadsSDK-iOS" "4.8.0"
+github "teads/TeadsSDK-iOS" "X.Y.Z"
 ```
+Replace the X.Y.Z above with the [latest release version](https://github.com/teads/TeadsSDK-iOS/releases/latest).
 
 ## Integration Documentation
 
