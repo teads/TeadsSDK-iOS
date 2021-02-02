@@ -3,6 +3,10 @@
  * @author RonanDrouglazet <ronan.drouglazet@ebuzzing.com>
  * @date 10-2014
  * @copyright Teads <http://www.teads.tv>
+ *
+ * ⚠️ This bootstrap has been provided to give you a hand in your integration webview.
+ * It's not designed to work on every integration, it needs to be customised to suit your needs
+ *
  */
 
 (function() {
