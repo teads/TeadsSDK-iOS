@@ -5,7 +5,7 @@
  * @copyright Teads <http://www.teads.tv>
  *
  * ⚠️ This bootstrap has been provided to give you a hand in your integration webview.
- * It's not designed to work on every integration, it needs to be customised to suit your needs
+ * It's not designed to work on every integration, it may need to be customised to suit your needs
  *
  */
 
