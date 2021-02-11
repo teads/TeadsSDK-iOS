@@ -1,5 +1,10 @@
 # Changelog
 
+### v4.8.3
+_2021-02-11_
+- arm64 support for simulator 🎉
+- [Mediation] fix possible crash using `TeadsAdSettings.subscribeAdResizeDelegate(_ delegate: TFAMediatedAdViewDelegate, forAdView adView: UIView)
+
 ### v4.8.0
 _2020-11-17_
 - Latest OM SDK version

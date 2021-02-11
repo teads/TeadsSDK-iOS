@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = "TeadsSDK"
-    s.version               = "4.8.0"
+    s.version               = "4.8.3"
     s.summary               = "Teads' iOS SDK"
     s.module_name           = s.name
     s.description           = <<-DESC
@@ -11,14 +11,18 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "9.0"
 
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
-    s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2020' }
+    s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.author                = { "Teads" => "support-sdk@teads.tv" }
     s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'master', :tag => "v#{s.version}"}
-
+    
     s.requires_arc          = true
-    s.preserve_paths        = 'TeadsSDK.framework'
-    s.vendored_frameworks   = 'TeadsSDK.framework'
-    s.ios.frameworks        = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
-    s.framework             = 'TeadsSDK'
+    
+    s.frameworks            = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
 
+    s.default_subspec     = 'Core'
+
+    s.subspec 'Core' do |core|
+      core.preserve_paths        = "#{s.name}.framework", "OMSDK_Teadstv.xcframework"
+      core.vendored_frameworks   = "#{s.name}.xcframework", "OMSDK_Teadstv.xcframework"
+    end
 end
