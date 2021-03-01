@@ -25,6 +25,16 @@ In terminal in the directory containing your project's `.xcodeproj` file and the
 $ pod install --repo-update
 ```
 
+### Swift Package Manager
+
+[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url :
+
+```
+https://github.com/teads/TeadsSDK-iOS
+```
+
+Then select latest version available
+
 ### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate TeadsSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
@@ -36,12 +46,6 @@ github "teads/TeadsSDK-iOS"
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).
-
-## Known Issue
-
-### Xcode 12 Excluded Architecture
-
-[#142](https://github.com/teads/TeadsSDK-iOS/issues/142) Our third party viewability solution is unfortunately not yet compatible with ARM Simulator Architecture.
 
 ## Changelog
 
