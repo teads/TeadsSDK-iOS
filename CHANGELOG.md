@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.8.5
+_2021-03-23_
+- Fixing issue with Google Mobile Ads SDK v8\n- Correct a crash reported issue\n- Adding some minor improvements
+
 ### v4.8.4
 _2021-02-12_
 - arm64 support for simulator 🎉

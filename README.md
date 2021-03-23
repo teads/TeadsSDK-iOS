@@ -1,13 +1,13 @@
 # TeadsSDK-ios
 
 
-Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS library and is showing integration examples.
+Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
 
 ## Run the sample app
 
 Clone this repository, open it with Xcode, and run project.
 
-## Install the Teads SDK iOS library
+## Install the Teads SDK iOS framework
 
 Teads SDK is currently distributed through CocoaPods. It include everything you need to serve "outstream" video ads.
 
@@ -46,6 +46,12 @@ github "teads/TeadsSDK-iOS"
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).
+
+## Known Issue
+
+### Xcode 12 Excluded Architecture
+
+[#142](https://github.com/teads/TeadsSDK-iOS/issues/142) Our third party viewability solution is unfortunately not yet compatible with ARM Simulator Architecture.
 
 ## Changelog
 
