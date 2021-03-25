@@ -58,7 +58,6 @@ PODS:
 
 DEPENDENCIES:
   - GoogleMobileAdsMediationTeads
-  - mopub-ios-sdk
   - MoPub-Teads-Adapters
   - TeadsSASAdapter
 
@@ -93,6 +92,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 980ba558522b6d3cb15ed245db96efcc98f97400
   TeadsSDK: 38a7fa794ef660ef95cae5ae8cc6f5952a5be3e6
 
-PODFILE CHECKSUM: f82daf0191968d231a4607b348ac5accf872491d
+PODFILE CHECKSUM: b4da9a01e5010189e3fbacfbf3575829e5721a7d
 
 COCOAPODS: 1.10.1

@@ -38,6 +38,7 @@ class InReadMopubTableViewController: TeadsViewController {
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         mopubAdView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)
         mopubAdView?.delegate = self
+        mopubAdView?.frame = view.bounds
         
         if MoPub.sharedInstance().isSdkInitialized {
             loadAd()

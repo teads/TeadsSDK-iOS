@@ -11,5 +11,4 @@ target 'TeadsSampleApp' do
   pod 'GoogleMobileAdsMediationTeads'
   pod 'MoPub-Teads-Adapters'
   pod 'TeadsSASAdapter'
-  pod 'mopub-ios-sdk'
 end
