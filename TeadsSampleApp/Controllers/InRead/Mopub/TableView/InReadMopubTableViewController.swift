@@ -7,7 +7,11 @@
 //
 
 import UIKit
+#if canImport(MoPubSDK)
 import MoPubSDK
+#else
+import MoPub
+#endif
 import TeadsMoPubAdapter
 import TeadsSDK
 

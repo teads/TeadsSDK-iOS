@@ -57,11 +57,10 @@ PODS:
   - TeadsSDK/Core (4.8.5)
 
 DEPENDENCIES:
-  - GoogleMobileAdsMediationTeads (= 4.8.5)
+  - GoogleMobileAdsMediationTeads
   - mopub-ios-sdk
-  - MoPub-Teads-Adapters (= 4.8.5)
-  - TeadsSASAdapter (= 4.8.5)
-  - TeadsSDK (= 4.8.5)
+  - MoPub-Teads-Adapters
+  - TeadsSASAdapter
 
 SPEC REPOS:
   trunk:
@@ -94,6 +93,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 980ba558522b6d3cb15ed245db96efcc98f97400
   TeadsSDK: 38a7fa794ef660ef95cae5ae8cc6f5952a5be3e6
 
-PODFILE CHECKSUM: 27ba3481b9d6db1b2e65bafc1b95209a73ecb9da
+PODFILE CHECKSUM: f82daf0191968d231a4607b348ac5accf872491d
 
 COCOAPODS: 1.10.1
