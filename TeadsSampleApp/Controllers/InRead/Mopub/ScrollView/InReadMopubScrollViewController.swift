@@ -7,7 +7,11 @@
 
 import TeadsSDK
 import UIKit
+#if canImport(MoPubSDK)
+import MoPubSDK
+#else
 import MoPub
+#endif
 import TeadsMoPubAdapter
 
 class InReadMopubScrollViewController: TeadsViewController {
@@ -26,6 +30,7 @@ class InReadMopubScrollViewController: TeadsViewController {
         let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
         bannerView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)
         bannerView.delegate = self
+        bannerView.frame = slotView.bounds
         
         if MoPub.sharedInstance().isSdkInitialized {
             loadAd()

@@ -89,7 +89,7 @@ class SyncWebViewAdView: NSObject, WebViewHelperDelegate {
 extension SyncWebViewAdView: TFAMediatedAdViewDelegate {
     
     func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        guard let adView = adView as? DFPBannerView else {
+        guard let adView = adView as? GAMBannerView else {
             return
         }
         let width = adView.frame.width

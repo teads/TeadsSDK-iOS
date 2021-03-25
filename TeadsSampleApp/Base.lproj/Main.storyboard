@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl2-U1-KRo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl2-U1-KRo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +14,7 @@
         <!--inread-direct-tableview-->
         <scene sceneID="sca-t3-jXF">
             <objects>
-                <viewController title="inread-direct-tableview" id="ZBl-Dd-REC" customClass="InReadDirectTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="inread-direct-tableview" id="ZBl-Dd-REC" customClass="InReadDirectTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayQ-Sm-sXk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,19 +36,19 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCD-Tr-67A">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSn-GO-Wa2" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSn-GO-Wa2" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80u-jD-Bwf">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-Xl-dJO">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-Xl-dJO">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="23G-ts-bP1">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="23G-ts-bP1">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,7 +147,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-Ol-HvM" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-Ol-HvM" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="300"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -191,7 +191,7 @@
         <!--Root View Controller-->
         <scene sceneID="LrE-ua-TGd">
             <objects>
-                <viewController id="wtO-oW-ro4" customClass="RootViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wtO-oW-ro4" customClass="RootViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljf-Q4-M4N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,7 +206,7 @@
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootButtonCollectionViewCell" id="hpR-tI-YvL" customClass="RootButtonCollectionViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootButtonCollectionViewCell" id="hpR-tI-YvL" customClass="RootButtonCollectionViewCell" customModule="TeadsSampleApp" customModuleProvider="target">
                                         <rect key="frame" x="16" y="87.5" width="168" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SYV-aZ-eBU">
@@ -232,7 +232,7 @@
                                             <outlet property="label" destination="dNz-n6-Ejs" id="m4S-eZ-AT1"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootImageViewLabelCollectionViewCell" id="9Ki-ch-jyv" customClass="RootImageViewLabelCollectionViewCell" customModule="TeadsDemoApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootImageViewLabelCollectionViewCell" id="9Ki-ch-jyv" customClass="RootImageViewLabelCollectionViewCell" customModule="TeadsSampleApp" customModuleProvider="target">
                                         <rect key="frame" x="188" y="50" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IwT-6W-8If">
@@ -267,7 +267,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RootHeaderCollectionReusableView" id="IJV-im-Q2q" customClass="RootHeaderCollectionReusableView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RootHeaderCollectionReusableView" id="IJV-im-Q2q" customClass="RootHeaderCollectionReusableView" customModule="TeadsSampleApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -328,7 +328,7 @@
         <!--In Read Direct Scroll View Controller-->
         <scene sceneID="LYm-z1-cCp">
             <objects>
-                <viewController id="OdH-gn-eeS" customClass="InReadDirectScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OdH-gn-eeS" customClass="InReadDirectScrollViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o84-ze-Dfl" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +342,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-4k-kAd" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-Fu-cZD" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-Fu-cZD" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zID-6a-8GX">
@@ -408,7 +408,7 @@
                                                         <color key="textColor" name="AppTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2x-4I-aY1" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2x-4I-aY1" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="308.5" width="355" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -427,7 +427,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24l-c4-vfG" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24l-c4-vfG" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="818.5" width="355" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -493,7 +493,7 @@
         <!--In Read Direct Collection View Controller-->
         <scene sceneID="uaG-q0-HB3">
             <objects>
-                <viewController id="jfH-au-QIY" customClass="InReadDirectCollectionViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jfH-au-QIY" customClass="InReadDirectCollectionViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1xc-lh-kE3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,7 +521,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34a-jX-qWE">
                                                             <rect key="frame" x="0.0" y="0.0" width="1666" height="150"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-e7-e9g" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-e7-e9g" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1666" height="150"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THQ-rE-NLy">
@@ -632,7 +632,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLX-sT-Slb" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLX-sT-Slb" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="800"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -676,7 +676,7 @@
         <!--In Read Direct Web View Controller-->
         <scene sceneID="oRR-op-b8b">
             <objects>
-                <viewController id="CNW-ac-jlI" customClass="InReadDirectWebViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CNW-ac-jlI" customClass="InReadDirectWebViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xMM-RJ-3aK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -711,7 +711,7 @@
         <!--In Read Admob Web View Controller-->
         <scene sceneID="Umv-ro-kXq">
             <objects>
-                <viewController storyboardIdentifier="inread-admob-webview" id="Y9t-tl-bra" customClass="InReadAdmobWebViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-admob-webview" id="Y9t-tl-bra" customClass="InReadAdmobWebViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPU-J5-NvJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,7 +764,7 @@
         <!--In Read Admob Scroll View Controller-->
         <scene sceneID="GdI-iD-Zka">
             <objects>
-                <viewController storyboardIdentifier="inread-admob-scrollview" id="84V-4d-h7P" customClass="InReadAdmobScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inread-admob-scrollview" id="84V-4d-h7P" customClass="InReadAdmobScrollViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRY-no-fl8" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,7 +778,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSX-3a-7d2" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-b5-ntE" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-b5-ntE" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vm-mP-VUM">
@@ -844,7 +844,7 @@
                                                         <color key="textColor" name="AppTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQj-t1-V7z" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQj-t1-V7z" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="308.5" width="355" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -858,7 +858,7 @@
                                                             <constraint firstAttribute="height" id="siL-dX-mS1"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ0-jm-Sav" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ0-jm-Sav" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="608" width="355" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -923,7 +923,7 @@
         <!--In Read Mopub Scroll View Controller-->
         <scene sceneID="YfC-Dg-LqP">
             <objects>
-                <viewController id="gRu-4b-MAN" customClass="InReadMopubScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gRu-4b-MAN" customClass="InReadMopubScrollViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6CR-PG-bIc" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -937,7 +937,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-Hd-acD" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-f8-AO2" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-f8-AO2" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-Ea-Rxe">
@@ -1003,7 +1003,7 @@
                                                         <color key="textColor" name="AppTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-qu-13t" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-qu-13t" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="308.5" width="355" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1017,7 +1017,7 @@
                                                             <constraint firstAttribute="height" constant="250" id="ZYr-wu-wJt"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-sF-RwS" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-sF-RwS" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="818.5" width="355" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1082,7 +1082,7 @@
         <!--In Read Admob Table View Controller-->
         <scene sceneID="qMb-v5-8Sz">
             <objects>
-                <viewController id="Y21-KT-Xbn" customClass="InReadAdmobTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y21-KT-Xbn" customClass="InReadAdmobTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NZO-MS-VEm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1104,7 +1104,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-JX-unZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-YV-Fvz" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-YV-Fvz" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKl-dF-Skq">
@@ -1215,7 +1215,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-61-Eq2" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-61-Eq2" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="300"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -1259,7 +1259,7 @@
         <!--In Read Mopub Table View Controller-->
         <scene sceneID="Dgs-11-be8">
             <objects>
-                <viewController id="V1o-vP-K52" customClass="InReadMopubTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V1o-vP-K52" customClass="InReadMopubTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t55-tX-AK0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1281,19 +1281,19 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-1j-i5W">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="StG-gD-qRb" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="StG-gD-qRb" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHN-Zg-bXP">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="57g-ag-daH">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="57g-ag-daH">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Mopub TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="17h-YO-SmB">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Mopub TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="17h-YO-SmB">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1392,7 +1392,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAp-CV-eHP" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAp-CV-eHP" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="300"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -1436,7 +1436,7 @@
         <!--In ReadSAS Scroll View Controller-->
         <scene sceneID="EQF-ts-GuK">
             <objects>
-                <viewController id="rF9-1J-4yH" customClass="InReadSASScrollViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rF9-1J-4yH" customClass="InReadSASScrollViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YnW-pB-Scx" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1450,7 +1450,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHL-br-hES" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-Xi-3oT" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-Xi-3oT" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrt-rN-flr">
@@ -1516,7 +1516,7 @@
                                                         <color key="textColor" name="AppTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IJ-7X-0XU" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IJ-7X-0XU" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="308.5" width="355" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1530,7 +1530,7 @@
                                                             <constraint firstAttribute="height" constant="250" id="jLP-Hv-VWs"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zed-5O-9IX" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zed-5O-9IX" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="818.5" width="355" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1595,7 +1595,7 @@
         <!--inread-direct-tableview-->
         <scene sceneID="x94-bG-CCX">
             <objects>
-                <viewController title="inread-direct-tableview" id="XJI-gd-yGm" customClass="InReadSASTableViewController" customModule="TeadsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="inread-direct-tableview" id="XJI-gd-yGm" customClass="InReadSASTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgQ-0w-vYZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1617,19 +1617,19 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rT-Dg-a7f">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3r-qp-dk7" customClass="TeadsGradientImageView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3r-qp-dk7" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJm-OU-v2c">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-7T-qdp">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-7T-qdp">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-XK-5gn">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-XK-5gn">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1728,7 +1728,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQa-gg-zSZ" customClass="FakeArticleView" customModule="TeadsDemoApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQa-gg-zSZ" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="300"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>

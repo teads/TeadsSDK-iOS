@@ -12,7 +12,7 @@ import UIKit
 
 class InReadAdmobScrollViewController: TeadsViewController {
         
-    var bannerView: DFPBannerView!
+    var bannerView: GAMBannerView!
     @IBOutlet weak var slotView: UIView!
     @IBOutlet weak var slotViewHeightConstraint: NSLayoutConstraint!
     
@@ -20,7 +20,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         super.viewDidLoad()
 
         // 1. Create AdMob view and add it to hierarchy
-        bannerView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
+        bannerView = GAMBannerView(adSize: kGADAdSizeFluid)
         slotView.addSubview(bannerView)
         
         bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,38 +64,30 @@ class InReadAdmobScrollViewController: TeadsViewController {
 
 extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
         resizeAd(height: bannerView.adSize.size.height)
     }
     
     /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         resizeAd(height: 0)
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
     /// Tells the delegate that a full-screen view will be presented in response
     /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         // not used
     }
     
     /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
         // not used
     }
     
     /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        // not used
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         // not used
     }
     

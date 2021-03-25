@@ -16,7 +16,7 @@ class InReadAdmobWebViewController: TeadsViewController {
 
     @IBOutlet weak var webView: WKWebView!
     var webSync: SyncWebViewAdView!
-    var bannerView: DFPBannerView!
+    var bannerView: GAMBannerView!
 
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
@@ -32,7 +32,7 @@ class InReadAdmobWebViewController: TeadsViewController {
         webView.navigationDelegate = self
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
         
-        bannerView = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
+        bannerView = GAMBannerView(adSize: kGADAdSizeMediumRectangle)
         bannerView.adUnitID = pid // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
@@ -66,29 +66,25 @@ class InReadAdmobWebViewController: TeadsViewController {
 
 extension InReadAdmobWebViewController: GADBannerViewDelegate {
     
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("SampleApp: banner is loaded.")
     }
     
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("SampleApp: banner failed to load with error: \(error)")
         webSync.webViewHelper.closeSlot()
     }
     
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         print("SampleApp: banner will present screen.")
     }
     
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
         print("SampleApp: banner will dismiss screen.")
     }
     
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         print("SampleApp: banner did dismiss screen.")
-    }
-    
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("SampleApp: banner will leave application.")
     }
     
 }
