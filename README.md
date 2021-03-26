@@ -47,12 +47,6 @@ github "teads/TeadsSDK-iOS"
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).
 
-## Known Issue
-
-### Xcode 12 Excluded Architecture
-
-[#142](https://github.com/teads/TeadsSDK-iOS/issues/142) Our third party viewability solution is unfortunately not yet compatible with ARM Simulator Architecture.
-
 ## Changelog
 
 See [changelog here](CHANGELOG.md). 
