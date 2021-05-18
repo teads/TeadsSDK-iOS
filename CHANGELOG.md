@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.8.7
+_2021-05-18_
+- Updated OMSDK to 1.3.19
+
 ### v4.8.6
 _2021-05-05_
 - Fix issue causing first ad experience stopping when using the SDK for the first time
