@@ -10,24 +10,22 @@ import UIKit
 import TeadsSDK
 
 class InReadDirectScrollViewController: TeadsViewController {
-
+    
     @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
-    @IBOutlet weak var teadsAdView: TFAInReadAdView!
+    @IBOutlet weak var teadsAdView: TeadsInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: CGFloat?
+    var placement: TeadsInReadAdPlacement?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        teadsAdView.delegate = self
-        // the PID has been set in the storyboard
-        teadsAdView.pid = Int(pid) ?? 0
-        
-        let teadsAdSettings = TeadsAdSettings(build: { (settings) in
+        let pSettings = TeadsAdPlacementSettings { (settings) in
             settings.enableDebug()
-        })
-        
-        teadsAdView.load(teadsAdSettings: teadsAdSettings)
-        
+        }
+        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
+            settings.pageUrl("https://www.teads.tv")
+        }))
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -47,38 +45,55 @@ class InReadDirectScrollViewController: TeadsViewController {
         let adHeight = view.frame.width/adRatio
         teadsAdHeightConstraint.constant = adHeight
     }
+    
+    func closeAd() {
+        //be careful if you want to load another ad in the same page don't remove the observer
+        NotificationCenter.default.removeObserver(self)
+        teadsAdHeightConstraint.constant = 0
+    }
+    
 }
 
-extension InReadDirectScrollViewController: TFAAdDelegate {
-    
-    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
-        self.adRatio = adRatio
-        resizeTeadsAd(adRatio: adRatio)
+extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
+    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+        teadsAdView.addSubview(trackerView)
     }
     
-    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
-        adRatio = 0
-        teadsAdHeightConstraint.constant = 0
+    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        teadsAdView.bind(ad)
+        ad.delegate = self
+        resizeTeadsAd(adRatio: adRatio.creativeRatio)
     }
     
-    func adClose(_ ad: TFAAdView, userAction: Bool) {
-        teadsAdHeightConstraint.constant = 0
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
+    func didFailToReceiveAd(reason: AdFailReason) {
+        closeAd()
     }
     
-    public func adError(_ ad: TFAAdView, errorMessage: String) {
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
+    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        resizeTeadsAd(adRatio: adRatio.creativeRatio)
     }
     
-    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
-        adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+}
+
+extension InReadDirectScrollViewController: TeadsAdDelegate {
+    func didRecordImpression(ad: TeadsAd) {
+        
     }
     
-    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+    func didRecordClick(ad: TeadsAd) {
+    
+    }
+    
+    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return self
+    }
+    
+    func didCatchError(ad: TeadsAd, error: Error) {
+        closeAd()
+    }
+    
+    func didCloseAd(ad: TeadsAd) {
+        closeAd()
     }
     
 }

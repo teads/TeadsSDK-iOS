@@ -11,7 +11,7 @@ import SASDisplayKit
 import TeadsSDK
 import TeadsSASAdapter
 
-class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDelegate {
+class InReadSASScrollViewController: TeadsViewController {
     
     @IBOutlet weak var slotView: UIView!
     
@@ -23,10 +23,10 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
         super.viewDidLoad()
         banner = SASBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200), loader: .activityIndicatorStyleWhite)
         banner?.modalParentViewController = self
-        let teadsAdSettings = TeadsAdSettings { (settings) in
+        let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.pageUrl("https://toto.com")
-            try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
+            settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317
@@ -81,8 +81,12 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
         ])
     }
 
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        adViewHeightConstraint.constant =  adView.bounds.width / ratio
+}
+
+extension InReadSASScrollViewController: TeadsMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+        adViewHeightConstraint.constant =  adView.bounds.width / ratio.creativeRatio
     }
     
 }

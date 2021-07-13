@@ -20,15 +20,23 @@ class InReadDirectCollectionViewController: TeadsViewController {
     var adHeight: CGFloat?
     var adRatio: CGFloat?
     var teadsAdIsLoaded = false
-    var teadsAdView: TFAInReadAdView?
+    var teadsAdView: TeadsInReadAdView?
     var collectionViewAdCellWidth: CGFloat!
     var fakeArticleCellHeight: CGFloat = 300
-    
+    var placement: TeadsInReadAdPlacement?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let placementSettings = TeadsAdPlacementSettings { (settings) in
+            settings.enableDebug()
+        }
+        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
         
-        teadsAdView = TFAInReadAdView(withPid: Int(pid) ?? 0, andDelegate: self)
-        teadsAdView?.load()
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
+            settings.pageUrl("https://www.teads.tv")
+        }))
+        
+        teadsAdView = TeadsInReadAdView()
         
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
@@ -113,36 +121,51 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
     }
 }
 
-extension InReadDirectCollectionViewController: TFAAdDelegate {
+extension InReadDirectCollectionViewController: TeadsAdDelegate {
     
-    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
-        self.adRatio = adRatio
-        resizeTeadsAd(adRatio: adRatio)
+    func didRecordImpression(ad: TeadsAd) {
+        
     }
     
-    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
-        closeSlot()
+    func didRecordClick(ad: TeadsAd) {
+        
     }
     
-    func adClose(_ ad: TFAAdView, userAction: Bool) {
-        closeSlot()
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
-        adRatio = ratio
-        //update slot with the right ratio
-        resizeTeadsAd(adRatio: ratio)
-    }
-    
-    public func adError(_ ad: TFAAdView, errorMessage: String) {
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return self
+    }
+    
+    func didCatchError(ad: TeadsAd, error: Error) {
+        closeSlot()
+    }
+    
+    func didCloseAd(ad: TeadsAd) {
+        closeSlot()
+    }
+    
+}
+
+extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
+    
+    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        teadsAdView?.bind(ad)
+        ad.delegate = self
+        let creativeRatio = adRatio.creativeRatio
+        self.adRatio = creativeRatio
+        resizeTeadsAd(adRatio: creativeRatio)
+    }
+    
+    func didFailToReceiveAd(reason: AdFailReason) {
+        closeSlot()
+    }
+    
+    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        updateAdCellHeight()
+        self.adRatio = adRatio.creativeRatio
+    }
+    
+    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+        teadsAdView?.addSubview(trackerView)
     }
     
 }

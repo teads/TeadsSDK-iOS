@@ -48,9 +48,9 @@ class InReadMopubScrollViewController: TeadsViewController {
     }
     
     func loadAd() {
-        let settings = TeadsAdSettings { (settings) in
+        let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            try? settings.subscribeAdResizeDelegate(self, forAdView: bannerView)
+            settings.registerAdView(bannerView, delegate: self)
         }
         bannerView.register(teadsAdSettings: settings)
         bannerView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
@@ -79,11 +79,11 @@ extension InReadMopubScrollViewController: MPAdViewDelegate {
     }
 }
 
-extension InReadMopubScrollViewController: TFAMediatedAdViewDelegate {
+extension InReadMopubScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
         let width = slotView.frame.width
-        slotHeight.constant = width / ratio
+        slotHeight.constant = width / ratio.creativeRatio
     }
     
 }

@@ -28,10 +28,10 @@ class InReadSASTableViewController: TeadsViewController {
         super.viewDidLoad()
         banner = SASBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200), loader: .activityIndicatorStyleWhite)
         banner?.modalParentViewController = self
-        let teadsAdSettings = TeadsAdSettings { (settings) in
+        let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.pageUrl("https://toto.com")
-            try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
+            settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317
@@ -112,9 +112,9 @@ extension InReadSASTableViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 
-extension InReadSASTableViewController: TFAMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        self.adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+extension InReadSASTableViewController: TeadsMediatedAdViewDelegate {
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+        self.adRatio = ratio.creativeRatio
+        resizeTeadsAd(adRatio: ratio.creativeRatio)
     }
 }

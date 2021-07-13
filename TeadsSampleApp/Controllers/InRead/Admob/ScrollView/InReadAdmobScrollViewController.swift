@@ -34,10 +34,10 @@ class InReadAdmobScrollViewController: TeadsViewController {
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()
-        let adSettings = TeadsAdSettings { (settings) in
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
-            try? settings.subscribeAdResizeDelegate(self, forAdView: bannerView)
+            settings.registerAdView(bannerView, delegate: self)
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
             //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
@@ -93,10 +93,9 @@ extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
 }
 
-extension InReadAdmobScrollViewController: TFAMediatedAdViewDelegate {
+extension InReadAdmobScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        resizeAd(height: slotView.frame.width / ratio)
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+        resizeAd(height: slotView.frame.width / ratio.creativeRatio)
     }
-    
 }

@@ -41,11 +41,11 @@ class InReadAdmobTableViewController: TeadsViewController {
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
         let request = GADRequest()
-        let adSettings = TeadsAdSettings { (settings) in
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
             if let admobAdView = admobAdView {
-                try? settings.subscribeAdResizeDelegate(self, forAdView: admobAdView)
+                settings.registerAdView(admobAdView, delegate: self)
             }
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
@@ -174,9 +174,11 @@ extension InReadAdmobTableViewController: GADBannerViewDelegate {
 
 }
 
-extension InReadAdmobTableViewController: TFAMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        self.adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+extension InReadAdmobTableViewController: TeadsMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+        adRatio = ratio.creativeRatio
+        resizeTeadsAd(adRatio: ratio.creativeRatio)
     }
+    
 }

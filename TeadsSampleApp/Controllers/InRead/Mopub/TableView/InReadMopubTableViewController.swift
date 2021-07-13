@@ -59,9 +59,9 @@ class InReadMopubTableViewController: TeadsViewController {
         guard let mopubAdView = mopubAdView else {
             return
         }
-        let settings = TeadsAdSettings { (settings) in
+        let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            try? settings.subscribeAdResizeDelegate(self, forAdView: mopubAdView)
+            settings.registerAdView(mopubAdView, delegate: self)
         }
         mopubAdView.register(teadsAdSettings: settings)
         mopubAdView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
@@ -122,6 +122,7 @@ extension InReadMopubTableViewController: UITableViewDelegate, UITableViewDataSo
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
             if let mopubAdView = mopubAdView {
                 cellAd.addSubview(mopubAdView)
+                mopubAdView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                 mopubAdView.frame = CGRect(x: 10, y: 0, width: tableViewAdCellWidth, height: adHeight ?? 250)
             }
             return cellAd
@@ -150,10 +151,10 @@ extension InReadMopubTableViewController: MPAdViewDelegate {
     }
 }
 
-extension InReadMopubTableViewController: TFAMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        self.adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+extension InReadMopubTableViewController: TeadsMediatedAdViewDelegate {
+    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+        self.adRatio = ratio.creativeRatio
+        resizeTeadsAd(adRatio: ratio.creativeRatio)
     }
 }
 
