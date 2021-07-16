@@ -43,6 +43,10 @@ Then select latest version available
 github "teads/TeadsSDK-iOS"
 ```
 
+## Requirements
+For mopub mediation integration Xcode 12.5 or upper is mandatory due to mopub release (https://github.com/mopub/mopub-ios-sdk/issues/390#issuecomment-843304858)
+
+
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).

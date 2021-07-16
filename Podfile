@@ -7,15 +7,10 @@ target 'TeadsSampleApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'TeadsSDK', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/'
-  # pod 'TeadsSDK/Admob', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/'
-  # pod 'TeadsSDK/Mopub', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/'
-  # pod 'TeadsSDK/Smart', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/'
-
+  pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
   
- pod 'TeadsSASAdapter', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/MediationAdapters/MediationAdapters/TeadsSASAdapter.podspec'
- pod 'TeadsMoPubAdapter', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/MediationAdapters/MediationAdapters/TeadsMoPubAdapter.podspec'
- pod 'TeadsAdMobAdapter', :path => '../internal/service-inapp-sdk-ios/v5/TeadsSDK/MediationAdapters/MediationAdapters/TeadsAdMobAdapter.podspec'
-
+  pod 'TeadsSASAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
+  pod 'TeadsMoPubAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
+  pod 'TeadsAdMobAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
 
 end
