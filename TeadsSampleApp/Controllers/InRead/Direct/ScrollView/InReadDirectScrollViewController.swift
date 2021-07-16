@@ -14,7 +14,7 @@ class InReadDirectScrollViewController: TeadsViewController {
     @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
     @IBOutlet weak var teadsAdView: TeadsInReadAdView!
     @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var placement: TeadsInReadAdPlacement?
     
     override func viewDidLoad() {
@@ -41,9 +41,8 @@ class InReadDirectScrollViewController: TeadsViewController {
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        let adHeight = view.frame.width/adRatio
-        teadsAdHeightConstraint.constant = adHeight
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        teadsAdHeightConstraint.constant = adRatio.calculateHeight(for: view.frame.width)
     }
     
     func closeAd() {
@@ -62,7 +61,7 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         teadsAdView.bind(ad)
         ad.delegate = self
-        resizeTeadsAd(adRatio: adRatio.creativeRatio)
+        resizeTeadsAd(adRatio: adRatio)
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
@@ -70,7 +69,7 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        resizeTeadsAd(adRatio: adRatio.creativeRatio)
+        resizeTeadsAd(adRatio: adRatio)
     }
     
 }

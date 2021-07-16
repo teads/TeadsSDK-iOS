@@ -20,7 +20,7 @@ class InReadSASTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var tableViewAdCellWidth: CGFloat!
     
@@ -59,10 +59,8 @@ class InReadSASTableViewController: TeadsViewController {
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = tableViewAdCellWidth/adRatio
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        adHeight = adRatio.calculateHeight(for: tableViewAdCellWidth)
         updateAdCellHeight()
     }
     
@@ -113,8 +111,8 @@ extension InReadSASTableViewController: UITableViewDelegate, UITableViewDataSour
 }
 
 extension InReadSASTableViewController: TeadsMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
-        self.adRatio = ratio.creativeRatio
-        resizeTeadsAd(adRatio: ratio.creativeRatio)
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
 }

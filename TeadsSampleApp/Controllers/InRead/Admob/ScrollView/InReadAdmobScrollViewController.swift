@@ -95,7 +95,7 @@ extension InReadAdmobScrollViewController: GADBannerViewDelegate {
 
 extension InReadAdmobScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
-        resizeAd(height: slotView.frame.width / ratio.creativeRatio)
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        resizeAd(height: adRatio.calculateHeight(for: slotView.frame.width))
     }
 }

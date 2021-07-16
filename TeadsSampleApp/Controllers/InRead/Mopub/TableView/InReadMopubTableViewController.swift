@@ -12,7 +12,6 @@ import MoPubSDK
 #else
 import MoPub
 #endif
-import TeadsMoPubAdapter
 import TeadsSDK
 
 class InReadMopubTableViewController: TeadsViewController {
@@ -24,7 +23,7 @@ class InReadMopubTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var mopubAdView: MPAdView?
     var tableViewAdCellWidth: CGFloat!
@@ -84,10 +83,8 @@ class InReadMopubTableViewController: TeadsViewController {
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            resizeAd(height: tableViewAdCellWidth/adRatio)
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        resizeAd(height: adRatio.calculateHeight(for: tableViewAdCellWidth))
     }
     
     func resizeAd(height: CGFloat) {
@@ -152,9 +149,9 @@ extension InReadMopubTableViewController: MPAdViewDelegate {
 }
 
 extension InReadMopubTableViewController: TeadsMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
-        self.adRatio = ratio.creativeRatio
-        resizeTeadsAd(adRatio: ratio.creativeRatio)
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
 }
 

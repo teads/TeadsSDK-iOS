@@ -9,7 +9,6 @@
 import UIKit
 import WebKit
 import GoogleMobileAds
-import TeadsAdMobAdapter
 import TeadsSDK
 
 class InReadAdmobWebViewController: TeadsViewController {
@@ -66,12 +65,12 @@ class InReadAdmobWebViewController: TeadsViewController {
 }
 
 extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
-    public func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+    public func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
         guard let webViewHelper = webViewHelper else {
             return
         }
-        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: ratio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
-       webViewHelper.updateSlot(adRatio: ratio)
+        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
+       webViewHelper.updateSlot(adRatio: adRatio)
     }
 }
 

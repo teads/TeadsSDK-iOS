@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import TeadsAdMobAdapter
 import TeadsSDK
 
 class InReadAdmobTableViewController: TeadsViewController {
@@ -23,7 +22,7 @@ class InReadAdmobTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var admobAdView: GAMBannerView?
     var tableViewAdCellWidth: CGFloat!
@@ -83,10 +82,8 @@ class InReadAdmobTableViewController: TeadsViewController {
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            resizeAd(height: tableViewAdCellWidth/adRatio)
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        resizeAd(height: adRatio.calculateHeight(for: tableViewAdCellWidth))
     }
     
     func resizeAd(height: CGFloat) {
@@ -176,9 +173,9 @@ extension InReadAdmobTableViewController: GADBannerViewDelegate {
 
 extension InReadAdmobTableViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
-        adRatio = ratio.creativeRatio
-        resizeTeadsAd(adRatio: ratio.creativeRatio)
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
     
 }

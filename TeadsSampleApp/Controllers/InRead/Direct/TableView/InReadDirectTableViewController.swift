@@ -18,7 +18,7 @@ class InReadDirectTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var teadsAdView: TeadsInReadAdView?
     var placement: TeadsInReadAdPlacement?
@@ -57,10 +57,8 @@ class InReadDirectTableViewController: TeadsViewController {
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = tableViewAdCellWidth/adRatio
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        adHeight = adRatio.calculateHeight(for: tableViewAdCellWidth)
         updateAdCellHeight()
     }
   
@@ -115,9 +113,8 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         teadsAdView?.bind(ad)
         ad.delegate = self
-        let creativeRatio = adRatio.creativeRatio
-        self.adRatio = creativeRatio
-        resizeTeadsAd(adRatio: creativeRatio)
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
@@ -126,7 +123,7 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         updateAdCellHeight()
-        self.adRatio = adRatio.creativeRatio
+        self.adRatio = adRatio
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

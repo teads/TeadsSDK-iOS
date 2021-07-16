@@ -81,9 +81,9 @@ extension InReadMopubScrollViewController: MPAdViewDelegate {
 
 extension InReadMopubScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
         let width = slotView.frame.width
-        slotHeight.constant = width / ratio.creativeRatio
+        slotHeight.constant = adRatio.calculateHeight(for: width)
     }
     
 }

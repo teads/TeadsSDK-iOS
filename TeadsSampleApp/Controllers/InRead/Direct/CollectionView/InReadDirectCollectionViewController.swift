@@ -18,7 +18,7 @@ class InReadDirectCollectionViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var teadsAdView: TeadsInReadAdView?
     var collectionViewAdCellWidth: CGFloat!
@@ -57,13 +57,12 @@ class InReadDirectCollectionViewController: TeadsViewController {
         if adRatio != nil {
             resizeTeadsAd(adRatio: adRatio!)
         }
+        
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = collectionViewAdCellWidth/adRatio
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        adHeight = adRatio.calculateHeight(for: collectionViewAdCellWidth)
         updateAdCellHeight()
     }
     
@@ -150,7 +149,7 @@ extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         teadsAdView?.bind(ad)
         ad.delegate = self
-        let creativeRatio = adRatio.creativeRatio
+        let creativeRatio = adRatio
         self.adRatio = creativeRatio
         resizeTeadsAd(adRatio: creativeRatio)
     }
@@ -161,7 +160,7 @@ extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         updateAdCellHeight()
-        self.adRatio = adRatio.creativeRatio
+        self.adRatio = adRatio
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

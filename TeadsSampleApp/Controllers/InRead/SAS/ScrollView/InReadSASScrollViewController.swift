@@ -85,8 +85,8 @@ class InReadSASScrollViewController: TeadsViewController {
 
 extension InReadSASScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: TeadsAdRatio) {
-        adViewHeightConstraint.constant =  adView.bounds.width / ratio.creativeRatio
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        adViewHeightConstraint.constant = adRatio.calculateHeight(for: adView.bounds.width)
     }
     
 }
