@@ -97,16 +97,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TeadsAdMobAdapter:
-    :commit: 7e700c5ef2f4c4216c0128d3338cc78025660bcf
+    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsMoPubAdapter:
-    :commit: 7e700c5ef2f4c4216c0128d3338cc78025660bcf
+    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSASAdapter:
-    :commit: 7e700c5ef2f4c4216c0128d3338cc78025660bcf
+    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSDK:
-    :commit: 4b078fcba894f831ffe4e56bdbface426fe06f5b
+    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
     :git: https://github.com/teads/TeadsSDK-iOS.git
 
 SPEC CHECKSUMS:
@@ -121,9 +121,9 @@ SPEC CHECKSUMS:
   Smart-Display-SDK: 7fccb0a15bb820adea66e31fff937888811e2529
   TeadsAdMobAdapter: ed9486c743768f6a9dfceb5f520745772e8c0270
   TeadsMoPubAdapter: bb55525853b9703dd83686921ae11089df17baca
-  TeadsSASAdapter: be6601857879448572cc69dba5b5337901353b2f
-  TeadsSDK: bfef150ce43046c77e082b97c7c12f222fd283db
+  TeadsSASAdapter: 27498ce3d5be61c025feb4fafe4c6cb28031a21a
+  TeadsSDK: 36aeff773ee7a5c16270615c38f2f765af4934ce
 
-PODFILE CHECKSUM: dd964c7a48553ecf5a789840a8e200deab2fec3e
+PODFILE CHECKSUM: e7e822402b5d57e2af5b96e48ded6db3010b3179
 
 COCOAPODS: 1.10.1
