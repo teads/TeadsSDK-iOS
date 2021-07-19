@@ -18,25 +18,20 @@ class RootViewController: TeadsViewController {
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
     private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
+    var adSelection: AdSelection = AdSelection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hasTeadsArticleNavigationBar = false
-        collectionView.allowsMultipleSelection = true
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         collectionView.reloadData()
     }
-    
-    func showSampleController(withIntegration integration: String) {
-        guard let selectedFormat = selectionList.first(where: {$0.isSelected})?.name,
-              let selectedProvider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.name else {
-            return
-        }
-        let identifier = "\(selectedFormat)-\(selectedProvider)-\(integration)"
+    func showSampleController(for adSelection: AdSelection) {
+        let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(adSelection.integration.name)"
+        print(identifier)
         performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
     
@@ -48,13 +43,9 @@ class RootViewController: TeadsViewController {
     }
     
     private func pidForCreative() -> String {
-        guard let provider = selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected}),
-              let type = creativesTypeList.first(where: {$0.isSelected}) else {
-            return PID.directLandscape
-        }
-        switch provider.name {
+        switch adSelection.provider.name {
         case .direct:
-            switch type.name {
+            switch adSelection.creation.name {
             case .landscape:
                 return PID.directLandscape
             case .vertical:
@@ -67,7 +58,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             }
         case .admob:
-            switch type.name {
+            switch adSelection.creation.name {
             case .landscape:
                 return PID.admobLandscape
             case .vertical:
@@ -80,7 +71,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             }
         case .mopub:
-            switch type.name {
+            switch adSelection.creation.name {
             case .landscape:
                 return PID.mopubLandscape
             case .vertical:
@@ -93,7 +84,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             }
         case .sas:
-            switch type.name {
+            switch adSelection.creation.name {
             case .landscape:
                 return PID.sasLandscape
             case .vertical:
@@ -204,6 +195,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 0:
             for i in 0..<selectionList.count {
                 selectionList[i].isSelected = indexPath.item == i
+                if indexPath.item == i {
+                    self.adSelection.format = selectionList[i]
+                }
             }
             collectionView.reloadData()
             if selectionList.first(where: {$0.isSelected})?.providers.count == 0 {
@@ -219,6 +213,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             for j in 0..<selectionList.count where selectionList[j].isSelected {
                 for i in 0..<selectionList[j].providers.count {
                     selectionList[j].providers[i].isSelected = indexPath.item == i
+                    if indexPath.item == i {
+                        self.adSelection.provider = selectionList[j].providers[i]
+                    }
                 }
             }
             collectionView.reloadData()
@@ -229,6 +226,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     pidAlert()
                 }
                 creativesTypeList[i].isSelected = isSelected
+                if isSelected {
+                    self.adSelection.creation = creativesTypeList[i]
+                }
             }
             collectionView.reloadData()
         case 3:
@@ -236,7 +236,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
                     for h in 0..<selectionList[j].providers[i].integrations.count {
                         if indexPath.item == h {
-                            showSampleController(withIntegration: selectionList[j].providers[i].integrations[h].name)
+                            adSelection.integration = selectionList[j].providers[i].integrations[h]
+                            showSampleController(for: self.adSelection)
                         }
                     }
                 }

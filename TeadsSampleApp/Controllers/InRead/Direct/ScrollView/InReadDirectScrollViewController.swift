@@ -75,13 +75,6 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
 }
 
 extension InReadDirectScrollViewController: TeadsAdDelegate {
-    func didRecordImpression(ad: TeadsAd) {
-        
-    }
-    
-    func didRecordClick(ad: TeadsAd) {
-    
-    }
     
     func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return self
@@ -93,6 +86,14 @@ extension InReadDirectScrollViewController: TeadsAdDelegate {
     
     func didCloseAd(ad: TeadsAd) {
         closeAd()
+    }
+
+    func didRecordImpression(ad: TeadsAd) {
+        
+    }
+    
+    func didRecordClick(ad: TeadsAd) {
+    
     }
     
 }

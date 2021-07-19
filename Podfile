@@ -8,7 +8,7 @@ target 'TeadsSampleApp' do
   use_frameworks!
 
   pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
-  
+
   pod 'TeadsSASAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
   pod 'TeadsMoPubAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
   pod 'TeadsAdMobAdapter', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'

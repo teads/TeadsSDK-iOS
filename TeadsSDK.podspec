@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
     s.default_subspec       = 'Core'
 
     s.subspec 'Core' do |core|
-      core.preserve_paths        = "#{s.name}.xcframework", "OMSDK_Teadstv.xcframework"
-      core.vendored_frameworks   = "#{s.name}.xcframework", "OMSDK_Teadstv.xcframework"
+      core.preserve_paths        = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
+      core.vendored_frameworks   = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
     end
     
 end

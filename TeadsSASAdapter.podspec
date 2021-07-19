@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
     s.source                    = { :git => 'https://github.com/teads/TeadsSDK-adapter-sas-ios.git', :tag => "v#{s.version}"}
     s.platform                  = 'ios'
-    s.ios.deployment_target     = '9.0'
+    s.ios.deployment_target     = '10.0'
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = [ 'MediationAdapters/TeadsSASAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']

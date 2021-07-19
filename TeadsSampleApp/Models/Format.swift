@@ -8,6 +8,22 @@
 
 import Foundation
 
+struct AdSelection {
+    
+    var format: Format
+    var provider: Provider
+    var creation: CreativeType
+    var integration: Integration
+    
+    init() {
+        format = Formats.inRead.format()
+        provider = inReadDirectProvider
+        creation = landscape
+        integration = scrollViewIntegration
+    }
+    
+}
+
 struct Format {
     let name: FormatName
     var providers: [Provider]
@@ -30,7 +46,19 @@ struct Integration {
     let imageName: String
 }
 
+
 // Formats
+enum Formats {
+    case inRead, native
+    func format() -> Format {
+        switch self {
+        case .inRead: return inReadFormat
+        case .native: return nativeFormat
+        }
+    }
+    
+}
+
 var inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, admobDirectProvider, mopubDirectProvider, sasDirectProvider], isSelected: true)
 var nativeFormat = Format(name: .native, providers: [], isSelected: false)
 
