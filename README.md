@@ -188,7 +188,7 @@ Note: didRecordImpression and didRecordClick are for your analytics if you have 
 
 You are all set! You can now display Teads ads inside your app. 🎉
 
-### Valitdate your integration
+### Validate your integration
 
 In order to be sure that your integration is well done you can use our validation tool.
 
@@ -202,6 +202,7 @@ let adSettings = TeadsAdRequestSettings(build: { (settings) in
  })
 placement?.requestAd(requestSettings: adSettings)
 ```
+
 Compile, then go to the controller that contains your ad and you just have to follow along with the instructions.
 
 **Note: ⚠️ don't forget to remove this setting before going in production!**
@@ -219,3 +220,4 @@ When you request an ad with the adPlacement you can pass customs settings.
 * `disableCrashMonitoring()`, disallows the SDK to add battery informations to our logs.
 * `disableBatteryMonitoring()`, disallows the SDK to send crash logs to our servers.
 * `disableTeadsAudioSessionManagement()`, if you have custom sound session management you need to disable our audio sessio management and implement the TeadsSoundDelegate. 
+{"mode":"full","isActive":false}

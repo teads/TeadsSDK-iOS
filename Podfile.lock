@@ -97,16 +97,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TeadsAdMobAdapter:
-    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
+    :commit: f87198a67cd3fc9e0cb29be22511c1e3f50f569d
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsMoPubAdapter:
-    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
+    :commit: f87198a67cd3fc9e0cb29be22511c1e3f50f569d
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSASAdapter:
-    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
+    :commit: f87198a67cd3fc9e0cb29be22511c1e3f50f569d
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSDK:
-    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
+    :commit: f87198a67cd3fc9e0cb29be22511c1e3f50f569d
     :git: https://github.com/teads/TeadsSDK-iOS.git
 
 SPEC CHECKSUMS:
