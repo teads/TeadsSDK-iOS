@@ -54,10 +54,9 @@ class InReadDirectCollectionViewController: TeadsViewController {
     }
     
     @objc func rotationDetected() {
-        if adRatio != nil {
-            resizeTeadsAd(adRatio: adRatio!)
+        if let adRatio = self.adRatio {
+            resizeTeadsAd(adRatio: adRatio)
         }
-        
         collectionView.collectionViewLayout.invalidateLayout()
     }
     

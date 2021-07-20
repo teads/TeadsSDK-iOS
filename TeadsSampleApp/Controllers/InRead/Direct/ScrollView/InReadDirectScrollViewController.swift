@@ -36,7 +36,7 @@ class InReadDirectScrollViewController: TeadsViewController {
     }
     
     @objc func rotationDetected() {
-        if adRatio != nil {
+        if let adRatio = self.adRatio {
             resizeTeadsAd(adRatio: adRatio!)
         }
     }
@@ -70,6 +70,7 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         resizeTeadsAd(adRatio: adRatio)
+        self.adRatio = adRatio
     }
     
 }

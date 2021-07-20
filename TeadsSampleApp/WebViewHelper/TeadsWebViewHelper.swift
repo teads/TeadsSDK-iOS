@@ -48,6 +48,8 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     // only webView.scrollView should retain adView as subView
     weak var adView: UIView?
     
+    var adOpportunityTrackerView: TeadsAdOpportunityTrackerView?
+    
     private var adViewConstraints = [NSLayoutConstraint]()
     
     // width of element in Web content, needed to compute ratio
@@ -165,7 +167,9 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             self.adView?.removeFromSuperview()
 
             self.adView = adView
-
+            if let adOpportunityTrackerView = self.adOpportunityTrackerView {
+                self.adView?.addSubview(adOpportunityTrackerView)
+            }
             self.webView?.scrollView.addSubview(adView)
             self.adView?.translatesAutoresizingMaskIntoConstraints = false
             

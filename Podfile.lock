@@ -97,16 +97,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TeadsAdMobAdapter:
-    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
+    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsMoPubAdapter:
-    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
+    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSASAdapter:
-    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
+    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
     :git: https://github.com/teads/TeadsSDK-iOS.git
   TeadsSDK:
-    :commit: f34c60343bcd0f738a5f06b57ec1f8c12af9ca53
+    :commit: 3c981fd0ab2a4b6cb3cae94fb7b429dbe1a2b1c6
     :git: https://github.com/teads/TeadsSDK-iOS.git
 
 SPEC CHECKSUMS:
@@ -124,6 +124,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 27498ce3d5be61c025feb4fafe4c6cb28031a21a
   TeadsSDK: 36aeff773ee7a5c16270615c38f2f765af4934ce
 
-PODFILE CHECKSUM: e7e822402b5d57e2af5b96e48ded6db3010b3179
+PODFILE CHECKSUM: 902698c0ea123adb1dd6887448b3e15ade8c4946
 
 COCOAPODS: 1.10.1

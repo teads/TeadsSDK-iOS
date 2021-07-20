@@ -315,14 +315,6 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 @protocol TeadsAdDelegate
-/// Called when Teads has recorded an impression for the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
-/// Called when Teads has recorded a click on the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when ad wants to present viewController modally e.g: safariViewController (Click to action)
 /// note:
 /// event is not triggered on Main Thread
@@ -341,6 +333,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// /// - parameters:
 /// - ad: The teadsAd object
 - (void)didCloseAdWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded an impression for the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded a click on the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
 @class NSCoder;
@@ -1026,14 +1026,6 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 @protocol TeadsAdDelegate
-/// Called when Teads has recorded an impression for the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
-/// Called when Teads has recorded a click on the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when ad wants to present viewController modally e.g: safariViewController (Click to action)
 /// note:
 /// event is not triggered on Main Thread
@@ -1052,6 +1044,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// /// - parameters:
 /// - ad: The teadsAd object
 - (void)didCloseAdWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded an impression for the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded a click on the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
 @class NSCoder;
@@ -1737,14 +1737,6 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 @protocol TeadsAdDelegate
-/// Called when Teads has recorded an impression for the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
-/// Called when Teads has recorded a click on the current ad
-/// \param ad The teadsAd object
-///
-- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when ad wants to present viewController modally e.g: safariViewController (Click to action)
 /// note:
 /// event is not triggered on Main Thread
@@ -1763,6 +1755,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// /// - parameters:
 /// - ad: The teadsAd object
 - (void)didCloseAdWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded an impression for the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when Teads has recorded a click on the current ad
+/// \param ad The teadsAd object
+///
+- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
 @class NSCoder;

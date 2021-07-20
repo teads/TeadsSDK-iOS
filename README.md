@@ -10,7 +10,7 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 
 ### Run the sample app and discover how we integrate our SDK
 
-The best way to see the working integration is to clone this repository, open it with Xcode, and run project. The sample contains multiples kind of integrations from direct integration to integrations using mediations partners such as AdMob, Mopub, Smart.
+The best way to see the working integration is to clone this repository, open it with Xcode, and run the project. The sample contains multiples kinds of integrations from direct integration to integrations using mediations partners such as AdMob, Mopub, Smart.
 
 --
 
@@ -21,40 +21,29 @@ The best way to see the working integration is to clone this repository, open it
 
 ## Install the Teads SDK iOS framework
 
-
-Teads SDK is currently distributed through CocoaPods. It includes everything you need to serve "outstream" video ads.
-
+Teads SDK is currently distributed through CocoaPods. It includes everything you need to serve "outstream" video ads. 
 
 ### Cocoapods
 
-```
-target 'YourProject' do
-    pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
-end
+For installing TeadsSDK just put this on your podfile, if you never use cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
+
+```ruby
+pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
 ```
 
-In terminal in the directory containing your project's `.xcodeproj` file and the Podfile, run `pod install` command. This will install Teads SDK along with our needed dependencies.
+Go to the directory containing your project's `.xcodeproj` file and the Podfile,  on the terminal and run `pod install` command. This will install Teads SDK along with our needed dependencies.
 
 ```
 $ pod install
 ```
 
+## Migrating from v4 to v5
 
-### Swift Package Manager (coming soon)
-
-[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url:
-
-```
-https://github.com/teads/TeadsSDK-iOS
-```
-
-## Migration from v4 to v5
-
-In the v5 of the SDK, we've introduced a new class called `TeadsInReadAdPlacement` which is responsible of configuring the ad request and then make it
+In the v5 of the SDK, we've introduced a new class called `TeadsInReadAdPlacement` which is responsible of configuring the ad request and then make the call.
 
 ### Rename your ad view 
 
-For now on, we have replaced the old class `TFAInReadAdView` by a new one called `TeadsInReadAdView`. So you just need to rename it, in code and do not forget your storyboards if you are using it.
+From now on, we have replaced the old class `TFAInReadAdView` with a new one called `TeadsInReadAdView`. So you just need to rename it, in code and do not forget your storyboards if you are using it.
 
 ```swift
 var teadsAdView: TeadsInReadAdView
@@ -75,7 +64,7 @@ teadsAdView.load(teadsAdSettings: teadsAdSettings)
 
 ### Create an AdPlacement 
 
-Keep a reference of the adPlacement by declarating it as a class variable.
+Keep a reference of the adPlacement by declaring it as a class variable.
 
 ```swift
 var placement: TeadsInReadAdPlacement?
@@ -89,7 +78,7 @@ placement = Teads.createInReadPlacement(pid: <#YOUR_PID#>, delegate: self)
 ```
 
 --
-**(Optional)** Pass configurations to the adPlacement:
+**(Optional)** Pass configurations to the adPlacement, note this could be mandatory if your app have to manage the privacies consent, more details about [TeadsAdPlacementSettings](#teadsadplacementsettings).
 
 ```swift
 let pSettings = TeadsAdPlacementSettings { (settings) in
@@ -97,10 +86,13 @@ let pSettings = TeadsAdPlacementSettings { (settings) in
 }
 placement = Teads.createInReadPlacement(pid: <#YOUR_PID#>, settings: pSettings, delegate: self)
 ```
+
+For more information about the user privacies consent, see this [documentation] (https://support.teads.tv/support/solutions/articles/36000166727-privacy-consent-management-gdpr-ccpa-).
+
 --
 ### Request an Ad
 
-You can then request an ad using the placement you have just created. Do not forget the adSettings with your article url (if applicable). To know more about TeadsAdRequestSettings parameters check [this](). 
+You can then request an ad using the placement you have just created. Do not forget to provide your article url (if applicable) through `TeadsAdRequestSettings`. To know more about `TeadsAdRequestSettings` parameters check [this](#teadsadrequestsettings). 
 
 ```swift
 let adSettings = TeadsAdRequestSettings(build: { (settings) in
@@ -112,11 +104,11 @@ placement?.requestAd(requestSettings: adSettings)
 
 ### Implement the new delegates
 
-The old `TFAAdDelegate` has been replaced by two new delegates `TeadsInReadAdPlacementDelegate` and `TeadsAdDelegate`.
+The old `TFAAdDelegate` has been replaced by two new delegates `TeadsInReadAdPlacementDelegate` and `TeadsAdDelegate`. 
 
 #### Implement the TeadsInReadAdPlacementDelegate
 
-The TeadsInReadAdPlacementDelegate have 4 methods that you need to implement.
+The TeadsInReadAdPlacementDelegate has 4 methods that you need to implement. This delegate responsability is the ad loading process, for example to tell the app when it received an ad or when the ad server failed to deliver one.
 
 ```swift
 extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
@@ -145,10 +137,24 @@ extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
 }
 ```
 
+#### adOpportunityTrackerView
+
+The adOpportunityTrackerView is a view that you will need to add to your slot view. You should add it in the origin of your slot (x: 0, y: 0) 
+Its function is to monitor the inventory.
+
+Once the TeadsAdOpportunityTrackerView is visible, it will automatically removed. 
+
+```swift
+func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+    slotView.addSubview(trackerView)
+}
+```
+
+**Note: if you don't use your own ad slot you can add it directly to your teadsAdView.**
+
 ### Implement the TeadsAdDelegate
 
-The TeadsAdDelegate have 5 methods that you need to implement.
-
+The TeadsAdDelegate has 5 methods that you need to implement. It is responsible for following the lifecycle of an ad, the impression, when the user taps on it when an ad it shows and even when the user closes the ad. 
 
 ```swift
 extension <#YOURViewController#>: TeadsAdDelegate {
@@ -168,25 +174,48 @@ extension <#YOURViewController#>: TeadsAdDelegate {
     }
 
     func didRecordImpression(ad: TeadsAd) {
-        
+        //you may want to use this callback for your own analytics
     }
     
     func didRecordClick(ad: TeadsAd) {
-    
+       //you may want to use this callback for your own analytics
     }
     
 }
 ```
 
+Note: didRecordImpression and didRecordClick are for your analytics if you have some, otherwise it could be empty.
+
 You are all set! You can now display Teads ads inside your app. 🎉
 
-# Setup for mediations
+### Valitdate your integration
 
-### Extra requirements for mopub
-For mopub mediation integration Xcode 12.5 or upper is mandatory due to mopub release (https://github.com/mopub/mopub-ios-sdk/issues/390#issuecomment-843304858)
+In order to be sure that your integration is well done you can use our validation tool.
 
+To do that you just have to enable it in the `TeadsAdRequestSettings` like that:
 
+```swift
+let adSettings = TeadsAdRequestSettings(build: { (settings) in
+   let articleUrlString = <#https://www.YOURWEBSITE.COM/YOUR_ARTICLE_ID#>
+   settings.pageUrl(articleUrlString)
+   settings.enableValidationMode()
+ })
+placement?.requestAd(requestSettings: adSettings)
+```
+Compile, then go to the controller that contains your ad and you just have to follow along with the instructions.
 
-## Changelog
+**Note: ⚠️ don't forget to remove this setting before going in production!**
 
-See [changelog here](CHANGELOG.md). 
+## TeadsAdRequestSettings 
+
+When you request an ad with the adPlacement you can pass customs settings.
+
+* `enableValidationMode()`, this is the best way to ensure all basic features and prerequisites are correctly implemented. It is also useful during integration iterations.
+
+* `pageUrl(String)` Setting up the page url, to tell the SDK in which content the ad will be shown.
+
+## TeadsAdPlacementSettings
+
+* `disableCrashMonitoring()`, disallows the SDK to add battery informations to our logs.
+* `disableBatteryMonitoring()`, disallows the SDK to send crash logs to our servers.
+* `disableTeadsAudioSessionManagement()`, if you have custom sound session management you need to disable our audio sessio management and implement the TeadsSoundDelegate. 

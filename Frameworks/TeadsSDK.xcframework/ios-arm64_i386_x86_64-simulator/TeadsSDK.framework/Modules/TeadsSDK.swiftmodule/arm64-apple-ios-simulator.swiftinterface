@@ -76,8 +76,8 @@ public typealias TeadsAdSettings = TeadsSDK.TeadsAdapterSettings
   @objc public static var sdkVersion: Swift.String {
     @objc get
   }
-  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings, delegate: TeadsSDK.TeadsNativeAdPlacementDelegate) -> TeadsSDK.TeadsNativeAdPlacement?
-  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings, delegate: TeadsSDK.TeadsInReadAdPlacementDelegate) -> TeadsSDK.TeadsInReadAdPlacement?
+  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsNativeAdPlacementDelegate) -> TeadsSDK.TeadsNativeAdPlacement?
+  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsInReadAdPlacementDelegate) -> TeadsSDK.TeadsInReadAdPlacement?
   @objc deinit
   @objc override dynamic public init()
 }
@@ -244,11 +244,11 @@ extension FileManager {
   @objc deinit
 }
 @objc public protocol TeadsAdDelegate : AnyObject {
-  @objc func didRecordImpression(ad: TeadsSDK.TeadsAd)
-  @objc func didRecordClick(ad: TeadsSDK.TeadsAd)
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
   @objc func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
   @objc func didCloseAd(ad: TeadsSDK.TeadsAd)
+  @objc func didRecordImpression(ad: TeadsSDK.TeadsAd)
+  @objc func didRecordClick(ad: TeadsSDK.TeadsAd)
 }
 @objc public protocol TeadsSoundDelegate {
   @objc func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)

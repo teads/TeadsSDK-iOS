@@ -64,7 +64,6 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         //open the slot
         webViewHelper?.openSlot(ad: ad, adRatio: adRatio)
-        
         print("didReceiveAd")
         ad.soundDelegate = self
         ad.delegate = self
@@ -75,7 +74,7 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        
+        self.webViewHelper?.adOpportunityTrackerView = trackerView
     }
 }
 
