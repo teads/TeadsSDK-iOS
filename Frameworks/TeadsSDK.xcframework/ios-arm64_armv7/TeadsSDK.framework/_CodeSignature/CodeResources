@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		MueiU0GsbzZ28a2KXJht72PZ/RU=
+		zDVj1voGcThgJlafwxIJGTiSrUE=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		IFSP1G8tVUzaPJUytBolZRJv/H8=
+		kg+zcwq0KaTsIyUKUYyXy0m2emY=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		IFSP1G8tVUzaPJUytBolZRJv/H8=
+		kg+zcwq0KaTsIyUKUYyXy0m2emY=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		MueiU0GsbzZ28a2KXJht72PZ/RU=
+		zDVj1voGcThgJlafwxIJGTiSrUE=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/armv7.swiftdoc</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		MueiU0GsbzZ28a2KXJht72PZ/RU=
+		zDVj1voGcThgJlafwxIJGTiSrUE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -90,11 +90,11 @@
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
-		DtOXdQOko854Jjy1FGxiga6KusU=
+		Z3odPHSt1yQfZzQGMT3CRDzytKk=
 		</data>
 		<key>omsdk-v1.js</key>
 		<data>
-		5+IWbqMjM48G9EKp3uWgtKLDWi0=
+		K7QdC3akmhslEfV3ozoihIPQeqw=
 		</data>
 		<key>wkMessageHandlerScript.js</key>
 		<data>
@@ -162,11 +162,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MueiU0GsbzZ28a2KXJht72PZ/RU=
+			zDVj1voGcThgJlafwxIJGTiSrUE=
 			</data>
 			<key>hash2</key>
 			<data>
-			rvIgNcRZY6MoaJlNdTMh20RlRC5IGVOngQZ0Nb57ua4=
+			QK9IRkv9t70A2kFPsEF2FTfIAj17Eg1kApYgMasVFW0=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -195,11 +195,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IFSP1G8tVUzaPJUytBolZRJv/H8=
+			kg+zcwq0KaTsIyUKUYyXy0m2emY=
 			</data>
 			<key>hash2</key>
 			<data>
-			82UCuD+SWNLALP4mSFjR7MuU5Y8jrB4/reHLOwOP+pY=
+			m3yo6+fl68zMzw6bX3l2J3svmimCRiWta1OfrUiG8vU=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftdoc</key>
@@ -228,11 +228,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IFSP1G8tVUzaPJUytBolZRJv/H8=
+			kg+zcwq0KaTsIyUKUYyXy0m2emY=
 			</data>
 			<key>hash2</key>
 			<data>
-			82UCuD+SWNLALP4mSFjR7MuU5Y8jrB4/reHLOwOP+pY=
+			m3yo6+fl68zMzw6bX3l2J3svmimCRiWta1OfrUiG8vU=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -261,11 +261,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MueiU0GsbzZ28a2KXJht72PZ/RU=
+			zDVj1voGcThgJlafwxIJGTiSrUE=
 			</data>
 			<key>hash2</key>
 			<data>
-			rvIgNcRZY6MoaJlNdTMh20RlRC5IGVOngQZ0Nb57ua4=
+			QK9IRkv9t70A2kFPsEF2FTfIAj17Eg1kApYgMasVFW0=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/armv7.swiftdoc</key>
@@ -294,11 +294,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MueiU0GsbzZ28a2KXJht72PZ/RU=
+			zDVj1voGcThgJlafwxIJGTiSrUE=
 			</data>
 			<key>hash2</key>
 			<data>
-			rvIgNcRZY6MoaJlNdTMh20RlRC5IGVOngQZ0Nb57ua4=
+			QK9IRkv9t70A2kFPsEF2FTfIAj17Eg1kApYgMasVFW0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -327,22 +327,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DtOXdQOko854Jjy1FGxiga6KusU=
+			Z3odPHSt1yQfZzQGMT3CRDzytKk=
 			</data>
 			<key>hash2</key>
 			<data>
-			OUPeyV0/PE98I/v+SD9hIv+BL89vQUi/9I4jbLO6tMQ=
+			le2IkUBj+7RHRW4LTbD9jvwjwgwuGsBzZEJ4y3YMvTU=
 			</data>
 		</dict>
 		<key>omsdk-v1.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5+IWbqMjM48G9EKp3uWgtKLDWi0=
+			K7QdC3akmhslEfV3ozoihIPQeqw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZDaq3cMWQq187DYrGGSYVIu76aRPl7c64Z3z9DxDjRw=
+			+Nx1nTb6DQfQ39MgVLsoRJV3VTPhsgAogkLz0zk8C5M=
 			</data>
 		</dict>
 		<key>wkMessageHandlerScript.js</key>
