@@ -131,18 +131,21 @@ extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        <#your_ad_container_view#>.addSubview(trackerView)
+        <#your_ad_container_view#>.addSubview(trackerView)  // See TeadsAdOpportunityTrackerView documentation for more information
     }
     
 }
 ```
 
-#### adOpportunityTrackerView
+#### TeadsAdOpportunityTrackerView
 
-The adOpportunityTrackerView is a view that you will need to add to your slot view. You should add it in the origin of your slot (x: 0, y: 0) 
-Its function is to monitor the inventory.
+The `TeadsAdOpportunityTrackerView` is a view that you will need to add to your slot view *(e.g. the view where you will display the ad)*. 
+This view will be provided during the ad request process and will allow Teads to monitor precisely ad opportunities on [**Teads for Publisher**](https://publishers.teads.tv/).
 
-Once the TeadsAdOpportunityTrackerView is visible, it will automatically removed. 
+You should add it where the ad will be displayed, even if you don't received an ad from our SDK. 
+This view needs to be at the origin of your ad slot `(x:0, y:0)`.
+
+Once the `TeadsAdOpportunityTrackerView` is visible, it will be automatically removed by the SDK. 
 
 ```swift
 func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
@@ -151,6 +154,7 @@ func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
 ```
 
 **Note: if you don't use your own ad slot you can add it directly to your teadsAdView.**
+
 
 ### Implement the TeadsAdDelegate
 
