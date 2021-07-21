@@ -47,38 +47,13 @@ class InReadSASScrollViewController: TeadsViewController {
         guard let adView = banner else {
             return
         }
-        view.addSubview(adView)
+        slotView.addSubview(adView)
         adView.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraints([
-            NSLayoutConstraint(item: adView,
-                attribute: .top,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .top,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .leading,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .leading,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .trailing,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .trailing,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .bottom,
-                multiplier: 1,
-                constant: 0)
-        ])
+        let margins = slotView.layoutMarginsGuide
+        adView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+        adView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0).isActive = true
+        adView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+        adView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
     }
 
 }
