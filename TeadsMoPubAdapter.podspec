@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 
-    s.source                    = { :git => 'https://github.com/teads/TeadsSDK-adapter-mopub-ios.git', :tag => "v#{s.version}"}
+    s.source                    = { :git => 'https://github.com/teads/TeadsSDK-adapter-mopub-ios.git', :branch => "v5"}
     s.platform                  = 'ios'
     s.ios.deployment_target     = '10.0'
     s.static_framework          = true
