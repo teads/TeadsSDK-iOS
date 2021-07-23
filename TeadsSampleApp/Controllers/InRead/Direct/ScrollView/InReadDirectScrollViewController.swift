@@ -42,7 +42,8 @@ class InReadDirectScrollViewController: TeadsViewController {
     }
     
     func resizeTeadsAd(adRatio: TeadsAdRatio) {
-        teadsAdHeightConstraint.constant = adRatio.calculateHeight(for: view.frame.width)
+        self.adRatio = adRatio
+        teadsAdHeightConstraint.constant = adRatio.calculateHeight(for: teadsAdView.frame.width)
     }
     
     func closeAd() {
@@ -70,7 +71,6 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         resizeTeadsAd(adRatio: adRatio)
-        self.adRatio = adRatio
     }
     
 }

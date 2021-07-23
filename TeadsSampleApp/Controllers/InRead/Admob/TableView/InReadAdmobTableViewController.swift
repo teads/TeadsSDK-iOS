@@ -143,8 +143,7 @@ extension InReadAdmobTableViewController: GADBannerViewDelegate {
     
     /// Tells the delegate an ad request loaded an ad.
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
-        resizeAd(height: bannerView.adSize.size.height)
+        // not used
     }
     
     /// Tells the delegate an ad request failed.

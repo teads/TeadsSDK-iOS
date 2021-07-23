@@ -56,8 +56,8 @@ class InReadAdmobScrollViewController: TeadsViewController {
     }
     
     private func resizeAd(height: CGFloat) {
-        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
         slotViewHeightConstraint.constant = height
+        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
     }
 
 }
@@ -65,8 +65,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
 extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
-        resizeAd(height: bannerView.adSize.size.height)
+        // not used
     }
     
     /// Tells the delegate an ad request failed.
