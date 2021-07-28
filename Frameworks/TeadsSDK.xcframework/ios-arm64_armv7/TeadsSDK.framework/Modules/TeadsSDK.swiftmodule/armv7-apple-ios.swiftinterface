@@ -98,6 +98,9 @@ extension UILabel {
   @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
   @objc deinit
 }
+extension Array where Element : UIKit.NSLayoutConstraint {
+  public func activate()
+}
 @objc public protocol TeadsInReadAdPlacementDelegate : AnyObject {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
   @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
@@ -228,10 +231,6 @@ public protocol TeadsAdPlacementSettingsProtocol {
   public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
-@objc extension TeadsAdPlacementSettings {
-  @objc dynamic public func toDictionary() throws -> [Swift.AnyHashable : Any]
-  @objc dynamic public class func instance(from dictionary: [Swift.AnyHashable : Any]) throws -> TeadsSDK.TeadsAdPlacementSettings
-}
 extension UIImageView {
   @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
@@ -279,6 +278,9 @@ extension FileManager {
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers @objc public class ContainerComponent : TeadsSDK.CommonComponent {
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
   @objc deinit

@@ -249,6 +249,11 @@ SWIFT_CLASS("_TtC8TeadsSDK15CommonComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
+@interface ContainerComponent : CommonComponent
+@end
+
+
 
 
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
@@ -406,22 +411,6 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdPlacementSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface TeadsAdPlacementSettings (SWIFT_EXTENSION(TeadsSDK))
-/// Return a dictionary representation of the current TeadsAdSettings object.
-///
-/// returns:
-/// A <code>[AnyHashable: Any]</code> representing the object.
-- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-/// Create an instance from <code>[AnyHashable: Any]</code>
-/// \param dictionary representation of TeadsAdSettings instance
-///
-///
-/// returns:
-/// A <code>TeadsAdPlacementSettings</code> object instance.
-+ (TeadsAdPlacementSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -960,6 +949,11 @@ SWIFT_CLASS("_TtC8TeadsSDK15CommonComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
+@interface ContainerComponent : CommonComponent
+@end
+
+
 
 
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
@@ -1117,22 +1111,6 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdPlacementSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface TeadsAdPlacementSettings (SWIFT_EXTENSION(TeadsSDK))
-/// Return a dictionary representation of the current TeadsAdSettings object.
-///
-/// returns:
-/// A <code>[AnyHashable: Any]</code> representing the object.
-- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-/// Create an instance from <code>[AnyHashable: Any]</code>
-/// \param dictionary representation of TeadsAdSettings instance
-///
-///
-/// returns:
-/// A <code>TeadsAdPlacementSettings</code> object instance.
-+ (TeadsAdPlacementSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1671,6 +1649,11 @@ SWIFT_CLASS("_TtC8TeadsSDK15CommonComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
+@interface ContainerComponent : CommonComponent
+@end
+
+
 
 
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
@@ -1828,22 +1811,6 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdPlacementSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface TeadsAdPlacementSettings (SWIFT_EXTENSION(TeadsSDK))
-/// Return a dictionary representation of the current TeadsAdSettings object.
-///
-/// returns:
-/// A <code>[AnyHashable: Any]</code> representing the object.
-- (NSDictionary * _Nullable)toDictionaryAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-/// Create an instance from <code>[AnyHashable: Any]</code>
-/// \param dictionary representation of TeadsAdSettings instance
-///
-///
-/// returns:
-/// A <code>TeadsAdPlacementSettings</code> object instance.
-+ (TeadsAdPlacementSettings * _Nullable)instanceFrom:(NSDictionary * _Nonnull)dictionary error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
