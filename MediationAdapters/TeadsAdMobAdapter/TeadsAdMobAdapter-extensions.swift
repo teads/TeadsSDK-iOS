@@ -22,7 +22,7 @@ extension TeadsAdapterSettings: GADAdNetworkExtras {
 @objc public class GADMAdapterTeads: NSObject {
     @objc public static let defaultLabel = "Teads"
 
-    @objc public class func customEventExtra(with teadsAdSettings: TeadsAdPlacementSettings, for label: String = defaultLabel) -> GADCustomEventExtras {
+    @objc public class func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String = defaultLabel) -> GADCustomEventExtras {
         let customEventExtras = GADCustomEventExtras()
         if let parameters = try? teadsAdSettings.toDictionary() {
             customEventExtras.setExtras(parameters, forLabel: label)
