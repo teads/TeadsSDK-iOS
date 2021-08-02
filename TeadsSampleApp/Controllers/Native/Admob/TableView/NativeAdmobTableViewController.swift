@@ -102,43 +102,9 @@ extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == adRowNumber {
-            return adHeight ?? 0
-        } else {
-            return UITableView.automaticDimension
-        }
+        return 250
     }
     
-}
-
-extension NativeAdmobTableViewController: GADBannerViewDelegate {
-    
-    /// Tells the delegate an ad request loaded an ad.
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // not used
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-        // not used
-    }
-    
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-        // not used
-    }
-    
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-        // not used
-    }
-
 }
 
 extension NativeAdmobTableViewController: GADAdLoaderDelegate {
@@ -150,6 +116,9 @@ extension NativeAdmobTableViewController: GADAdLoaderDelegate {
 extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         elements.insert(nativeAd, at: adRowNumber)
+        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.reloadData()
         nativeAd.delegate = self
     }
 }
@@ -164,7 +133,7 @@ extension NativeAdmobTableViewController: GADVideoControllerDelegate {
 
 extension GADNativeAdView {
     func bind(_ ad: GADNativeAd, videoControllerDelegate: GADVideoControllerDelegate? = nil) {
-        nativeAd = ad
+        self.nativeAd = ad
         // Populate the native ad view with the native ad assets.
         // The headline and mediaContent are guaranteed to be present in every native ad.
         (headlineView as? UILabel)?.text = ad.headline

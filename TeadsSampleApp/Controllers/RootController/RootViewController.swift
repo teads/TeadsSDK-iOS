@@ -204,7 +204,10 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             for i in 0..<selectionList.count {
                 selectionList[i].isSelected = indexPath.item == i
                 if indexPath.item == i {
-                    self.adSelection.format = selectionList[i]
+                    adSelection.format = selectionList[i]
+                    if let creation = adSelection.format.creativeTypes.first(where: { $0.isSelected }) {
+                        adSelection.creation = creation
+                    }
                 }
             }
             collectionView.reloadData()
