@@ -13,13 +13,11 @@ struct AdSelection {
     var format: Format
     var provider: Provider
     var creation: CreativeType
-    var integration: Integration
     
     init() {
         format = Formats.inRead.format()
         provider = inReadDirectProvider
         creation = landscape
-        integration = scrollViewIntegration
     }
     
 }

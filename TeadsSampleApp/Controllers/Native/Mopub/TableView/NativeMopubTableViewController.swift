@@ -12,93 +12,76 @@ import MoPubSDK
 #else
 import MoPub
 #endif
+import TeadsMoPubAdapter
 import TeadsSDK
 
 class NativeMopubTableViewController: TeadsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let contentCell = "TeadsContentCell"
-    let teadsAdCellIndentifier = "TeadsAdCell"
-    let fakeArticleCell = "fakeArticleCell"
-    let adRowNumber = 2
-    var adHeight: CGFloat?
-    var adRatio: TeadsAdRatio?
-    var teadsAdIsLoaded = false
-    var mopubAdView: MPAdView?
-    var tableViewAdCellWidth: CGFloat!
+    let headerCell = "TeadsContentCell"
+    let teadsAdCellIndentifier = "MoPubNativeTableViewCell"
+    let fakeArticleCell = "FakeArticleNativeTableViewCell"
+    let adRowNumber = 3
+    var placement: TeadsNativeAdPlacement?
+
+    
+    private var elements = [MPNativeAd?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // FIXME This ids should be replaced by your own MoPub id
-        let MOPUB_AD_UNIT_ID = pid
-        
-        let config = MPMoPubConfiguration(adUnitIdForAppInitialization: MOPUB_AD_UNIT_ID)
-        mopubAdView = MPAdView(adUnitId: MOPUB_AD_UNIT_ID)
-        mopubAdView?.delegate = self
-        mopubAdView?.frame = view.bounds
-        
-        if MoPub.sharedInstance().isSdkInitialized {
-            loadAd()
+        (0..<8).forEach { _ in
+            elements.append(nil)
         }
         
-        MoPub.sharedInstance().initializeSdk(with: config) { [weak self] in
-            
-            guard let weakSelf = self else {
-                return
-            }
-            DispatchQueue.main.async {
-                weakSelf.loadAd()
-            }
+        let mpConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: pid)
+        mpConfig.loggingLevel = .debug
+        MoPub.sharedInstance().initializeSdk(with: mpConfig) {
+            self.loadAd()
         }
     }
     
     func loadAd() {
-        guard let mopubAdView = mopubAdView else {
-            return
-        }
-        let settings = TeadsAdapterSettings { (settings) in
+        let settings = MPAdapterTeadsNativeAdRendererSettings()
+
+        settings.renderingViewClass = MoPubNativeAdView.self
+        
+        let config: MPNativeAdRendererConfiguration =
+            MPAdapterTeadsNativeAdRenderer.rendererConfiguration(with: settings)
+        
+        let adRequest: MPNativeAdRequest = MPNativeAdRequest(adUnitIdentifier: pid, rendererConfigurations: [config])
+        
+        let targeting: MPNativeAdRequestTargeting = MPNativeAdRequestTargeting()
+        targeting.desiredAssets = [kAdTitleKey, kAdTextKey, kAdCTATextKey, kAdIconImageKey, kAdMainImageKey, kAdStarRatingKey, kAdSponsoredByCompanyKey]
+        
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.registerAdView(mopubAdView, delegate: self)
+            settings.pageUrl("http://teads.tv")
         }
-        mopubAdView.register(teadsAdSettings: settings)
-        mopubAdView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
-        mopubAdView.loadAd(withMaxAdSize: kMPPresetMaxAdSizeMatchFrame)
-
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableViewAdCellWidth = tableView.frame.width - 20
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    @objc func rotationDetected() {
-        if let adRatio = self.adRatio {
-            resizeTeadsAd(adRatio: adRatio)
+        targeting.register(teadsAdSettings: adSettings)
+        adRequest.targeting = targeting
+        
+        adRequest.start { [weak self] (request, response, error) in
+            guard let self = self else {
+                return
+            }
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                response?.delegate = self
+                self.elements.insert(response, at: self.adRowNumber)
+                let indexPaths = [IndexPath(row: self.adRowNumber, section: 0)]
+                self.tableView.insertRows(at: indexPaths, with: .automatic)
+                self.tableView.reloadData()
+            }
         }
-    }
-    
-    func resizeTeadsAd(adRatio: TeadsAdRatio) {
-        resizeAd(height: adRatio.calculateHeight(for: tableViewAdCellWidth))
-    }
-    
-    func resizeAd(height: CGFloat) {
-        adHeight = height
-        updateAdCellHeight()
+
     }
   
-    func closeSlot() {
-        adHeight = 0
-        updateAdCellHeight()
-    }
-    
-    func updateAdCellHeight() {
-        tableView.reloadRows(at: [IndexPath(row: adRowNumber, section: 0)], with: .automatic)
+    func closeSlot(ad: TeadsAd) {
+        elements.removeAll { $0 == ad }
+        tableView.reloadData()
     }
 
 }
@@ -106,52 +89,54 @@ class NativeMopubTableViewController: TeadsViewController {
 extension NativeMopubTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return elements.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: headerCell, for: indexPath)
             return cell
-        case adRowNumber:
-            //need to create a cell and just add a teadsAd to it, so we have only one teads ad
-            let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
-            if let mopubAdView = mopubAdView {
-                cellAd.addSubview(mopubAdView)
-                mopubAdView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                mopubAdView.frame = CGRect(x: 10, y: 0, width: tableViewAdCellWidth, height: adHeight ?? 250)
+        } else if let ad = elements[indexPath.row] {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? MoPubNativeTableViewCell else {
+                return UITableViewCell()
             }
-            return cellAd
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
+            
+            if let av = try? ad.retrieveAdView() {
+                av.frame = cell.nativeAdView.bounds
+                av.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                cell.nativeAdView.addSubview(av)
+            }
+            
+            cell.nativeAdView.isHidden = false
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.mediaView.image = UIImage(named: "social-covers")
+            cell.iconImageView.image = UIImage(named: "teads-logo")
+            cell.titleLabel.text = "Teads"
+            cell.contentLabel.text = "The global media platform"
+            cell.callToActionButton.setTitle("Discover Teads", for: .normal)
             return cell
         }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == adRowNumber {
-            return adHeight ?? 0
-        } else {
-            return UITableView.automaticDimension
+        if elements[indexPath.row] != nil {
+            return 400
         }
+        return 250
     }
     
 }
 
-extension NativeMopubTableViewController: MPAdViewDelegate {
-    func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
-        resizeAd(height: adSize.height)
-    }
+extension NativeMopubTableViewController: MPNativeAdDelegate {
     func viewControllerForPresentingModalView() -> UIViewController! {
         return self
     }
+    
+    
 }
-
-extension NativeMopubTableViewController: TeadsMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
-        self.adRatio = adRatio
-        resizeTeadsAd(adRatio: adRatio)
-    }
-}
-

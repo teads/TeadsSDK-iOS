@@ -28,8 +28,9 @@ class RootViewController: TeadsViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         collectionView.reloadData()
     }
-    func showSampleController(for adSelection: AdSelection) {
-        let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(adSelection.integration.name)"
+    
+    func showSampleController(for integration: Integration) {
+        let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(integration.name)"
         print(identifier)
         performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
@@ -208,6 +209,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     if let creation = adSelection.format.creativeTypes.first(where: { $0.isSelected }) {
                         adSelection.creation = creation
                     }
+                    if let provider = adSelection.format.providers.first(where: { $0.isSelected }) {
+                        adSelection.provider = provider
+                    }
                 }
             }
             collectionView.reloadData()
@@ -245,8 +249,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
                     for h in 0..<selectionList[j].providers[i].integrations.count {
                         if indexPath.item == h {
-                            adSelection.integration = selectionList[j].providers[i].integrations[h]
-                            showSampleController(for: self.adSelection)
+                            let integration = selectionList[j].providers[i].integrations[h]
+                            showSampleController(for: integration)
                         }
                     }
                 }

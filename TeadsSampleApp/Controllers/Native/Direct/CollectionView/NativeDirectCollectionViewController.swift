@@ -13,17 +13,11 @@ class NativeDirectCollectionViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "NativeAdCollectionViewCell"
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 3
-    var adHeight: CGFloat?
-    var adRatio: TeadsAdRatio?
-    var teadsAdIsLoaded = false
     var placement: TeadsNativeAdPlacement?
-    var tableViewAdCellWidth: CGFloat!
-    var collectionViewCellHeight: CGFloat = 250
     
     private var elements = [TeadsNativeAd?]()
 
@@ -42,23 +36,6 @@ class NativeDirectCollectionViewController: TeadsViewController {
         placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
             settings.pageUrl("https://www.teads.tv")
         }))
-        
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-                        
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func rotationDetected() {
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    func closeSlot() {
-        adHeight = 0
     }
 }
 
@@ -88,6 +65,11 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 250)
     }
+    
+    func closeSlot(ad: TeadsAd) {
+        elements.removeAll { $0 == ad }
+        collectionView.reloadData()
+    }
 }
 
 extension NativeDirectCollectionViewController: TeadsAdDelegate {
@@ -105,11 +87,11 @@ extension NativeDirectCollectionViewController: TeadsAdDelegate {
     }
     
     func didCatchError(ad: TeadsAd, error: Error) {
-        closeSlot()
+        closeSlot(ad: ad)
     }
     
     func didCloseAd(ad: TeadsAd) {
-        closeSlot()
+        closeSlot(ad: ad)
     }
     
 }
@@ -124,7 +106,6 @@ extension NativeDirectCollectionViewController: TeadsNativeAdPlacementDelegate {
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
-        closeSlot()
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

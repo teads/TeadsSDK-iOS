@@ -34,8 +34,6 @@ class NativeAdmobTableViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "fd67f9558900eaa7f39d416f0be9ee6e" ]
-        
         (0..<8).forEach { _ in
             elements.append(nil)
         }
@@ -48,7 +46,7 @@ class NativeAdmobTableViewController: TeadsViewController {
         let request = GADRequest()
         let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.pageUrl("toto.com")
+            settings.pageUrl("http://teads.tv")
         }
 
         let customEventExtras = GADCustomEventExtras()

@@ -48,6 +48,7 @@ class NativeDirectTableViewController: TeadsViewController {
   
     func closeSlot(ad: TeadsAd) {
         elements.removeAll { $0 == ad }
+        tableView.reloadData()
     }
     
     func updateAdCellHeight() {
