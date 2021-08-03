@@ -164,8 +164,7 @@ enum CreativeTypeName: String {
     case square = "Square"
     case carousel = "Carousel"
     case custom = "Custom"
-    case nativeDisplay = "display"
+    case nativeDisplay = "Display"
 }
-
 
 
