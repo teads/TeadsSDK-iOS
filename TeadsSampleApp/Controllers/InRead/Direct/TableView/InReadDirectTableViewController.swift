@@ -114,6 +114,7 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
         teadsAdView?.bind(ad)
         ad.delegate = self
         self.adRatio = adRatio
+        adHeight = adRatio.calculateHeight(for: tableView.bounds.width)
         resizeTeadsAd(adRatio: adRatio)
     }
     
@@ -122,8 +123,9 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        updateAdCellHeight()
         self.adRatio = adRatio
+        adHeight = adRatio.calculateHeight(for: tableView.bounds.width)
+        updateAdCellHeight()
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
