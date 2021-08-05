@@ -13,7 +13,6 @@ class RootViewController: TeadsViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var selectionList = [inReadFormat, nativeFormat]
-    private var creativesTypeList = [landscape, vertical, square, carousel, custom]
     
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
@@ -29,8 +28,9 @@ class RootViewController: TeadsViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         collectionView.reloadData()
     }
-    func showSampleController(for adSelection: AdSelection) {
-        let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(adSelection.integration.name)"
+    
+    func showSampleController(for integration: Integration) {
+        let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(integration.name)"
         print(identifier)
         performSegue(withIdentifier: identifier.lowercased(), sender: self)
     }
@@ -56,6 +56,8 @@ class RootViewController: TeadsViewController {
                 return PID.directCarousel
             case .custom:
                 return PID.custom
+            case .nativeDisplay:
+                return PID.nativeDisplay
             }
         case .admob:
             switch adSelection.creation.name {
@@ -69,6 +71,8 @@ class RootViewController: TeadsViewController {
                 return PID.admobCarousel
             case .custom:
                 return PID.custom
+            case .nativeDisplay:
+                return PID.admobNativeDisplay
             }
         case .mopub:
             switch adSelection.creation.name {
@@ -82,6 +86,8 @@ class RootViewController: TeadsViewController {
                 return PID.mopubCarousel
             case .custom:
                 return PID.custom
+            case .nativeDisplay:
+                return PID.mopubNativeDisplay
             }
         case .sas:
             switch adSelection.creation.name {
@@ -95,6 +101,8 @@ class RootViewController: TeadsViewController {
                 return PID.sasCarousel
             case .custom:
                 return PID.custom
+            case .nativeDisplay:
+                return PID.nativeDisplay
             }
         }
         
@@ -121,7 +129,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 1:
             return selectionList.first(where: {$0.isSelected})?.providers.count ?? 0
         case 2:
-            return creativesTypeList.count
+            return selectionList.first(where: {$0.isSelected})?.creativeTypes.count ?? 0
         case 3:
             return selectionList.first(where: {$0.isSelected})?.providers.first(where: {$0.isSelected})?.integrations.count ?? 0
         default:
@@ -139,7 +147,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 1:
             cell.label.text = "Providers"
         case 2:
-            cell.label.text = "Creative sizes"
+            cell.label.text = "Creatives"
         case 3:
             cell.label.text = "Integrations"
         default:
@@ -172,9 +180,10 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            let cellValue = creativesTypeList[indexPath.item]
-            cell.label.text = cellValue.name.rawValue
-            cell.isSelected = cellValue.isSelected
+            if let cellValue = selectionList.first(where: {$0.isSelected})?.creativeTypes[indexPath.item] {
+                cell.label.text = cellValue.name.rawValue
+                cell.isSelected = cellValue.isSelected
+            }
             return cell
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
@@ -196,7 +205,13 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             for i in 0..<selectionList.count {
                 selectionList[i].isSelected = indexPath.item == i
                 if indexPath.item == i {
-                    self.adSelection.format = selectionList[i]
+                    adSelection.format = selectionList[i]
+                    if let creation = adSelection.format.creativeTypes.first(where: { $0.isSelected }) {
+                        adSelection.creation = creation
+                    }
+                    if let provider = adSelection.format.providers.first(where: { $0.isSelected }) {
+                        adSelection.provider = provider
+                    }
                 }
             }
             collectionView.reloadData()
@@ -220,14 +235,12 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             collectionView.reloadData()
         case 2:
-            for i in 0..<creativesTypeList.count {
-                let isSelected = indexPath.item == i
-                if isSelected  && creativesTypeList[i].name == .custom {
-                    pidAlert()
-                }
-                creativesTypeList[i].isSelected = isSelected
-                if isSelected {
-                    self.adSelection.creation = creativesTypeList[i]
+            for j in 0..<selectionList.count where selectionList[j].isSelected {
+                for i in 0..<selectionList[j].creativeTypes.count {
+                    selectionList[j].creativeTypes[i].isSelected = indexPath.item == i
+                    if indexPath.item == i {
+                        self.adSelection.creation = selectionList[j].creativeTypes[i]
+                    }
                 }
             }
             collectionView.reloadData()
@@ -236,8 +249,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for i in 0..<selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
                     for h in 0..<selectionList[j].providers[i].integrations.count {
                         if indexPath.item == h {
-                            adSelection.integration = selectionList[j].providers[i].integrations[h]
-                            showSampleController(for: self.adSelection)
+                            let integration = selectionList[j].providers[i].integrations[h]
+                            showSampleController(for: integration)
                         }
                     }
                 }
@@ -269,6 +282,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 2:
+            let creativesTypeList = selectionList.first(where: {$0.isSelected})?.creativeTypes ?? []
             return getButtonButtonSize(buttonValues: creativesTypeList)
         case 3:
             let spacing: CGFloat = 16
