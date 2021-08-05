@@ -44,12 +44,8 @@ class InReadMopubTableViewController: TeadsViewController {
         }
         
         MoPub.sharedInstance().initializeSdk(with: config) { [weak self] in
-            
-            guard let weakSelf = self else {
-                return
-            }
             DispatchQueue.main.async {
-                weakSelf.loadAd()
+                self?.loadAd()
             }
         }
     }

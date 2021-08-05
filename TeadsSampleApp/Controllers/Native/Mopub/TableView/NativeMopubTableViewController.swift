@@ -37,8 +37,13 @@ class NativeMopubTableViewController: TeadsViewController {
         
         let mpConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: pid)
         mpConfig.loggingLevel = .debug
-        MoPub.sharedInstance().initializeSdk(with: mpConfig) {
-            self.loadAd()
+        
+        if MoPub.sharedInstance().isSdkInitialized {
+            loadAd()
+        }
+        
+        MoPub.sharedInstance().initializeSdk(with: mpConfig) { [weak self] in
+            self?.loadAd()
         }
     }
     
