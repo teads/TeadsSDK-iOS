@@ -84,7 +84,7 @@ extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
             guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? AdmobNativeAdTableViewCell else {
                 return UITableViewCell()
             }
-            cell.nativeAdView.bind(ad, videoControllerDelegate: self)
+            cell.nativeAdView.bind(ad, videoControllerDelegate: nil)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeTableViewCell else {
@@ -122,11 +122,13 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
 }
 
 extension NativeAdmobTableViewController: GADNativeAdDelegate {
+    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
+        print("nativeAdDidRecordClick")
+    }
     
-}
-
-extension NativeAdmobTableViewController: GADVideoControllerDelegate {
-    
+    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
+        print("nativeAdDidRecordImpression")
+    }
 }
 
 extension GADNativeAdView {
