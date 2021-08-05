@@ -107,7 +107,7 @@ extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
 
 extension NativeAdmobTableViewController: GADAdLoaderDelegate {
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
-        //fail hoho
+        print("didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 }
 

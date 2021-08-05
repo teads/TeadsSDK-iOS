@@ -103,10 +103,11 @@ extension NativeDirectTableViewController: TeadsNativeAdPlacementDelegate {
     
     
     func didFailToReceiveAd(reason: AdFailReason) {
+        print("didFailToReceiveAd: \(reason.description)")
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        // TODO
+        // not relevant in tableView integration
     }
 }
 

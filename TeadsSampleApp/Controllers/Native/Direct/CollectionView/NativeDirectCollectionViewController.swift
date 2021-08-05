@@ -93,7 +93,6 @@ extension NativeDirectCollectionViewController: TeadsAdDelegate {
     func didCloseAd(ad: TeadsAd) {
         closeSlot(ad: ad)
     }
-    
 }
 
 extension NativeDirectCollectionViewController: TeadsNativeAdPlacementDelegate {
@@ -106,10 +105,10 @@ extension NativeDirectCollectionViewController: TeadsNativeAdPlacementDelegate {
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
+        print("didFailToReceiveAd: \(reason.description)")
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        // TODO
+        // not relevant in collectionView integration
     }
-    
 }
