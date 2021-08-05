@@ -32,9 +32,9 @@ class InReadDirectTableViewController: TeadsViewController {
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
         
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
-        }))
+        })
         
         teadsAdView = TeadsInReadAdView()
         // We use an observer to know when a rotation happened, to resize the ad

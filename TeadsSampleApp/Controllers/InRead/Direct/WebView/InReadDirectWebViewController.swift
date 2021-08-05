@@ -37,16 +37,13 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
         
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
-        }))
+        })
         
     }
     
-    // MARK: -
     // MARK: WKNavigationDelegate
-    // MARK: -
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("injectJS")
         webViewHelper?.injectJS()

@@ -23,9 +23,9 @@ class InReadDirectScrollViewController: TeadsViewController {
             settings.enableDebug()
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings(build: { (settings) in
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
-        }))
+        })
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
