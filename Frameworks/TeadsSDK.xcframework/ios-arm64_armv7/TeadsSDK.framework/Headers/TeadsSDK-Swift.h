@@ -508,6 +508,11 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 
 
 
+@interface TeadsInReadAd (SWIFT_EXTENSION(TeadsSDK))
+/// adRatio to correctly display ad
+@property (nonatomic, readonly, strong) TeadsAdRatio * _Nonnull adRatio;
+@end
+
 
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
@@ -1207,6 +1212,11 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 @end
 
 
+
+@interface TeadsInReadAd (SWIFT_EXTENSION(TeadsSDK))
+/// adRatio to correctly display ad
+@property (nonatomic, readonly, strong) TeadsAdRatio * _Nonnull adRatio;
+@end
 
 
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")

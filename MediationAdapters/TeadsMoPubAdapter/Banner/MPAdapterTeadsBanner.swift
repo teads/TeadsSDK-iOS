@@ -25,11 +25,9 @@ class MPAdapterTeadsBanner: MPInlineAdAdapter, MPThirdPartyInlineAdAdapter {
             return
         }
         self.pid = rawPid
-        
-        let adSize = size.width > 0 ? size : MPAdapterTeadsConstants.bannerSize
-        
+                
         let adSettings = (try? TeadsAdapterSettings.instance(fromMopubParameters: localExtras)) ?? TeadsAdapterSettings()
-        currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: adSize))
+        currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: Helper.bannerSize(for: size.width)))
         
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
@@ -51,7 +49,6 @@ extension MPAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
         ad.delegate = self
         currentBanner?.bind(ad)
         delegate?.inlineAdAdapter(self, didLoadAdWithAdView: currentBanner)
-        placement = nil
         currentBanner?.updateHeight(with: adRatio)
     }
     

@@ -33,8 +33,8 @@ import GoogleMobileAds
                 
         // Prepare ad settings
         let adSettings = (try? TeadsAdapterSettings.instance(fromAdmobParameters: request.additionalParameters)) ?? TeadsAdapterSettings()
-    
-        currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: CGSizeFromGADAdSize(adSize)))
+            
+        currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: Helper.bannerSize(for: adSize.size.width)))
         
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
@@ -46,11 +46,10 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
+        currentBanner?.updateHeight(with: adRatio)
         if let adBanner = currentBanner {
             delegate?.customEventBanner(self, didReceiveAd: adBanner)
         }
-        placement = nil
-        currentBanner?.updateHeight(with: adRatio)
     }
     
     public func didFailToReceiveAd(reason: AdFailReason) {

@@ -36,10 +36,8 @@ import TeadsSDK
         let adSettings = serverParameter.adSettings
         addExtrasToAdSettings(adSettings)
         let adViewSize = clientParameters["adViewSize"] as? CGSize ?? viewController.view.bounds.size
-        
-        currentBanner?.frame = CGRect(x: 0, y: 0, width: adViewSize.width, height: 250)
-        
-        currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: adViewSize))
+                
+        currentBanner = TeadsInReadAdView(frame: CGRect(origin: .zero, size: Helper.bannerSize(for: adViewSize.width)))
         
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
@@ -60,12 +58,12 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
+        currentBanner?.updateHeight(with: adRatio)
         if let banner = currentBanner {
             delegate?.mediationBannerAdapter(self, didLoadBanner: banner)
         } else {
             delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsSASErrors.loadError, noFill: false)
         }
-        currentBanner?.updateHeight(with: adRatio)
     }
     
     public func didFailToReceiveAd(reason: AdFailReason) {

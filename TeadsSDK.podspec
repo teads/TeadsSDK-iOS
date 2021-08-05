@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
     s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.author                = { "Teads" => "support-sdk@teads.tv" }
-    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'}
+    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => 'v5.0.0'}
     s.requires_arc          = true
     s.swift_versions        = ['5.3']
     s.frameworks            = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'

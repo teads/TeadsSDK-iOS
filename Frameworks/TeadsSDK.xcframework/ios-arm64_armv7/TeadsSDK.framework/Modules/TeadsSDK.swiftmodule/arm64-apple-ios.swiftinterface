@@ -36,8 +36,6 @@ extension UIView {
   public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings)
   @objc deinit
 }
-@available(*, deprecated, renamed: "TeadsAdapterSettings", message: "Only relevant when using TeadsAdMobAdapter, TeadsMopubAdapter, TeadsSmartAdapter")
-public typealias TeadsAdSettings = TeadsSDK.TeadsAdapterSettings
 @_inheritsConvenienceInitializers @objc public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable, TeadsSDK.TeadsAdPlacementSettingsProtocol, TeadsSDK.TeadsAdRequestSettingsProtocol {
   public static let integrationAdmob: Swift.String
   public static let integrationMopub: Swift.String
@@ -179,7 +177,7 @@ extension UIButton {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ImageComponent : TeadsSDK.CommonComponent {
   final public let url: Foundation.URL
-  public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)? = nil, failure: ((Swift.Error) -> Swift.Void)? = nil)
+  public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((Swift.Error) -> Swift.Void)? = nil)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class TeadsAdView : UIKit.UIView {
@@ -241,6 +239,11 @@ extension FileManager {
 @objc @_hasMissingDesignatedInitializers public class TeadsInReadAd : TeadsSDK.TeadsAd {
   @objc public func registerContainer(in view: UIKit.UIView)
   @objc deinit
+}
+extension TeadsInReadAd {
+  @objc dynamic public var adRatio: TeadsSDK.TeadsAdRatio {
+    @objc get
+  }
 }
 @objc public protocol TeadsAdDelegate : AnyObject {
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?

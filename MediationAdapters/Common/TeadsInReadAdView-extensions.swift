@@ -7,7 +7,6 @@
 
 import TeadsSDK
 import UIKit
-
 extension TeadsInReadAdView {
     
     func updateHeight(with adRatio: TeadsAdRatio) {
