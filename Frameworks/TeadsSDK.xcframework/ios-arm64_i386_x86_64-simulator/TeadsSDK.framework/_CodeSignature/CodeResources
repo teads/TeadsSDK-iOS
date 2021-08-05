@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		iOnCH5NRkHhHHdkYxQ+kVo28XXQ=
+		O2c1XBXLKWBuGIcHpvZIhReBTF4=
 		</data>
 		<key>Headers/TeadsSDK-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		t6IhlfbBhGTwkH/COl3Htpd41hQ=
+		2Iex5lDKh7A0K/uMVC69ZopmTwI=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>lib-js.tar</key>
 		<data>
-		IYOvtKslUdQrLciNgevMG1f92ww=
+		t5JA/+OnGj+VFkeoWtGtv4I7E+k=
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
@@ -119,11 +119,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iOnCH5NRkHhHHdkYxQ+kVo28XXQ=
+			O2c1XBXLKWBuGIcHpvZIhReBTF4=
 			</data>
 			<key>hash2</key>
 			<data>
-			NryoyT9vrmKSFYVrxjEoDvz94jXEJL5jCt/KoSkABWY=
+			ZS08LrokXFIXap+io/jExlJ9hLRZIaM8wDs98BKh7eE=
 			</data>
 		</dict>
 		<key>Headers/TeadsSDK-Swift.h</key>
@@ -361,11 +361,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IYOvtKslUdQrLciNgevMG1f92ww=
+			t5JA/+OnGj+VFkeoWtGtv4I7E+k=
 			</data>
 			<key>hash2</key>
 			<data>
-			F+YuqbmEVSNdhL18/5LlpfomO/cW3YyS9o+riUTGZKQ=
+			mO210FiH0blHNECAcXhHiQjweq9QZk73cOf7KQ8bAFQ=
 			</data>
 		</dict>
 		<key>omid-session-client-v1.js</key>
