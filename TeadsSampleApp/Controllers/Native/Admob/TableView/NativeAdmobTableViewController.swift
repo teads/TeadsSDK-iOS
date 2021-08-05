@@ -123,11 +123,11 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
 
 extension NativeAdmobTableViewController: GADNativeAdDelegate {
     func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
-        print("nativeAdDidRecordClick")
+        //you may want to use this callback for your own analytics
     }
     
     func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
-        print("nativeAdDidRecordImpression")
+        //you may want to use this callback for your own analytics
     }
 }
 

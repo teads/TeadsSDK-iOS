@@ -75,11 +75,11 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
 extension NativeDirectCollectionViewController: TeadsAdDelegate {
     
     func didRecordImpression(ad: TeadsAd) {
-        
+        //you may want to use this callback for your own analytics
     }
     
     func didRecordClick(ad: TeadsAd) {
-        
+        //you may want to use this callback for your own analytics
     }
     
     func willPresentModalView(ad: TeadsAd) -> UIViewController? {
