@@ -2,14 +2,14 @@ PODS:
   - Google-Mobile-Ads-SDK (8.8.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleAppMeasurement (8.4.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.4.0)
+  - GoogleAppMeasurement (8.5.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.5.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
     - GoogleUtilities/MethodSwizzler (~> 7.4)
     - GoogleUtilities/Network (~> 7.4)
     - "GoogleUtilities/NSData+zlib (~> 7.4)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.4.0):
+  - GoogleAppMeasurement/AdIdSupport (8.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
     - GoogleUtilities/MethodSwizzler (~> 7.4)
     - GoogleUtilities/Network (~> 7.4)
@@ -64,10 +64,10 @@ PODS:
   - TeadsSDK/Core (5.0.0)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, branch `v5`)
-  - TeadsMoPubAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, branch `v5`)
-  - TeadsSASAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, branch `v5`)
-  - TeadsSDK (from `https://github.com/teads/TeadsSDK-iOS.git`, branch `v5`)
+  - TeadsAdMobAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, tag `v5.0.0`)
+  - TeadsMoPubAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, tag `v5.0.0`)
+  - TeadsSASAdapter (from `https://github.com/teads/TeadsSDK-iOS.git`, tag `v5.0.0`)
+  - TeadsSDK (from `https://github.com/teads/TeadsSDK-iOS.git`, tag `v5.0.0`)
 
 SPEC REPOS:
   trunk:
@@ -83,35 +83,35 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   TeadsAdMobAdapter:
-    :branch: v5
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsMoPubAdapter:
-    :branch: v5
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsSASAdapter:
-    :branch: v5
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsSDK:
-    :branch: v5
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
 
 CHECKOUT OPTIONS:
   TeadsAdMobAdapter:
-    :commit: 09a287a99dd6046df6a3e159c6dd6be73badae0a
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsMoPubAdapter:
-    :commit: 09a287a99dd6046df6a3e159c6dd6be73badae0a
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsSASAdapter:
-    :commit: 09a287a99dd6046df6a3e159c6dd6be73badae0a
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
   TeadsSDK:
-    :commit: 09a287a99dd6046df6a3e159c6dd6be73badae0a
     :git: https://github.com/teads/TeadsSDK-iOS.git
+    :tag: v5.0.0
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 1fccd8fd76aca1cef9bfe0711124c9731dad9307
-  GoogleAppMeasurement: 6b6a08fd9c71f4dbc89e0e812acca81d797aa342
+  GoogleAppMeasurement: 8d10c1c470fcb0e5143ed74fddd164f0a0384800
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
   mopub-ios-sdk: 36d322902674b79b0560a1cb8d15af0548d364ea
@@ -119,11 +119,11 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Smart-Core-SDK: e881969bd695ec3ae1d03100703a19b657cba9c3
   Smart-Display-SDK: 7fccb0a15bb820adea66e31fff937888811e2529
-  TeadsAdMobAdapter: 16dd5e8c29a0a7509b65f011b24c2b26c5600d94
+  TeadsAdMobAdapter: ed9486c743768f6a9dfceb5f520745772e8c0270
   TeadsMoPubAdapter: 50b7bef94e25cb9908786cf9c63fd3a98ca4faa0
-  TeadsSASAdapter: 95232412ee8bdbd9a4a43c7ff6b2d09aa0d9e863
-  TeadsSDK: ae7d9f06ebc1a56be4bb96744acace0573dd699e
+  TeadsSASAdapter: 27498ce3d5be61c025feb4fafe4c6cb28031a21a
+  TeadsSDK: ca2eb7c2f64ccfc6807d7d60472fd01849ad6826
 
-PODFILE CHECKSUM: e7e822402b5d57e2af5b96e48ded6db3010b3179
+PODFILE CHECKSUM: 0629c793cc823ac94d417b0f417e4b5c3555897f
 
 COCOAPODS: 1.10.1

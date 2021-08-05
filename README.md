@@ -28,7 +28,7 @@ Teads SDK is currently distributed through CocoaPods. It includes everything you
 For installing TeadsSDK just put this on your podfile, if you never use cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
 
 ```ruby
-pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'v5'
+pod 'TeadsSDK', :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => 'v5.0.0'
 ```
 
 Go to the directory containing your project's `.xcodeproj` file and the Podfile,  on the terminal and run `pod install` command. This will install Teads SDK along with our needed dependencies.
