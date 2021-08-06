@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import GoogleMobileAds
 import TeadsSDK
+import TeadsAdMobAdapter
 
 class InReadAdmobWebViewController: TeadsViewController {
 
@@ -39,7 +40,6 @@ class InReadAdmobWebViewController: TeadsViewController {
         /// init helper
         webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
         
-        let request = GADRequest()
         let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
@@ -53,10 +53,9 @@ class InReadAdmobWebViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
 
         bannerView.load(request)

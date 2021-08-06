@@ -55,7 +55,7 @@ class InReadMopubTableViewController: TeadsViewController {
             return
         }
         let settings = TeadsAdapterSettings { (settings) in
-            settings.enableDebug()
+            settings.pageUrl("http://teads.tv")
             settings.registerAdView(mopubAdView, delegate: self)
         }
         mopubAdView.register(teadsAdSettings: settings)

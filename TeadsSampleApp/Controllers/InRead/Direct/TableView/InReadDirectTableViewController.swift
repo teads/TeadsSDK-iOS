@@ -16,17 +16,18 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let adRowNumber = 2
-    var adHeight: CGFloat?
-    var adRatio: TeadsAdRatio?
-    var teadsAdIsLoaded = false
-    var teadsAdView: TeadsInReadAdView?
+    let adRowNumber = 3
     var placement: TeadsInReadAdPlacement?
-    var tableViewAdCellWidth: CGFloat!
+    
+    private var elements = [TeadsInReadAd?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        (0..<8).forEach { _ in
+            elements.append(nil)
+        }
+            
         let placementSettings = TeadsAdPlacementSettings { (settings) in
             settings.enableDebug()
         }
@@ -35,75 +36,44 @@ class InReadDirectTableViewController: TeadsViewController {
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
         })
-        
-        teadsAdView = TeadsInReadAdView()
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableViewAdCellWidth = tableView.frame.width - 20
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    @objc func rotationDetected() {
-        if let adRatio = self.adRatio {
-            resizeTeadsAd(adRatio: adRatio)
-        }
-    }
-    
-    func resizeTeadsAd(adRatio: TeadsAdRatio) {
-        adHeight = adRatio.calculateHeight(for: tableViewAdCellWidth)
-        updateAdCellHeight()
-    }
-  
-    func closeSlot() {
-        adHeight = 0
-        updateAdCellHeight()
+    func closeSlot(ad: TeadsAd) {
+        elements.removeAll { $0 == ad }
+        tableView.reloadData()
     }
     
     func updateAdCellHeight() {
         tableView.reloadRows(at: [IndexPath(row: adRowNumber, section: 0)], with: .automatic)
     }
-
 }
 
 extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return elements.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
-            return cell
-        case adRowNumber:
-            //need to create a cell and just add a teadsAd to it, so we have only one teads ad
+        if indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
+        } else if let ad = elements[indexPath.row] {
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
-            if let teadsAdView = teadsAdView {
-                cellAd.addSubview(teadsAdView)
-                teadsAdView.frame = CGRect(x: 10, y: 0, width: tableViewAdCellWidth, height: adHeight ?? 250)
-            }
+            let teadsAdView = TeadsInReadAdView(bind: ad)
+            cellAd.contentView.addSubview(teadsAdView)
+            teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        default:
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == adRowNumber {
-            return adHeight ?? 0
-        } else {
-            return UITableView.automaticDimension
+        if let ad = elements[indexPath.row] {
+            return ad.adRatio.calculateHeight(for: tableView.frame.width - 20)
         }
+        return UITableView.automaticDimension
     }
     
 }
@@ -111,25 +81,25 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        teadsAdView?.bind(ad)
+        elements.insert(ad, at: adRowNumber)
         ad.delegate = self
-        self.adRatio = adRatio
-        adHeight = adRatio.calculateHeight(for: tableView.bounds.width)
-        resizeTeadsAd(adRatio: adRatio)
+        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
-        closeSlot()
+        print("didFailToReceiveAd: \(reason.description)")
     }
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        self.adRatio = adRatio
-        adHeight = adRatio.calculateHeight(for: tableView.bounds.width)
-        updateAdCellHeight()
+        if let row = elements.firstIndex(of: ad) {
+            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+        }
+        
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        teadsAdView?.addSubview(trackerView)
+        //not relevant in tableView integration
     }
     
 }
@@ -148,11 +118,24 @@ extension InReadDirectTableViewController: TeadsAdDelegate {
     }
     
     func didCatchError(ad: TeadsAd, error: Error) {
-        closeSlot()
+        closeSlot(ad: ad)
     }
     
     func didCloseAd(ad: TeadsAd) {
-        closeSlot()
+        closeSlot(ad: ad)
     }
-    
+}
+
+
+extension UIView {
+    func setupConstraintsToFitSuperView(horizontalMargin: CGFloat = 0) {
+        guard let superview = superview else {
+            return
+        }
+        translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: horizontalMargin).isActive = true
+        trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -horizontalMargin).isActive = true
+    }
 }

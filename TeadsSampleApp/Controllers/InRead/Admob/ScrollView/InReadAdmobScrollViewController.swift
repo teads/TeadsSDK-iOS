@@ -33,7 +33,6 @@ class InReadAdmobScrollViewController: TeadsViewController {
         bannerView.delegate = self
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
-        let request = GADRequest()
         let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
@@ -46,10 +45,9 @@ class InReadAdmobScrollViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
         
         bannerView.load(request)

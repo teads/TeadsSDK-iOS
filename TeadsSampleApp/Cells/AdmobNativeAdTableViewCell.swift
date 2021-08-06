@@ -9,7 +9,5 @@ import UIKit
 import GoogleMobileAds
 
 class AdmobNativeAdTableViewCell: UITableViewCell {
-
     @IBOutlet weak var nativeAdView: GADNativeAdView!
-    
 }
