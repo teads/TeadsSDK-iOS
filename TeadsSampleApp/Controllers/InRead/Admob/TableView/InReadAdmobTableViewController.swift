@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import TeadsSDK
+import TeadsAdMobAdapter
 
 class InReadAdmobTableViewController: TeadsViewController {
 
@@ -39,7 +40,6 @@ class InReadAdmobTableViewController: TeadsViewController {
         admobAdView?.delegate = self
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
-        let request = GADRequest()
         let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
@@ -54,10 +54,9 @@ class InReadAdmobTableViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
         
         admobAdView?.load(request)

@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import TeadsSDK
+import TeadsAdMobAdapter
 
 class NativeAdmobTableViewController: TeadsViewController {
 
@@ -43,20 +44,16 @@ class NativeAdmobTableViewController: TeadsViewController {
         
         adLoader?.delegate = self
 
-        let request = GADRequest()
-        let settings = TeadsAdapterSettings { (settings) in
+        let settings = TeadsAdapterSettings { settings in
             settings.enableDebug()
             settings.pageUrl("http://teads.tv")
         }
 
-        let customEventExtras = GADCustomEventExtras()
-        if let parameters = try? settings.toDictionary() {
-            customEventExtras.setExtras(parameters, forLabel: "Teads")
-        }
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: settings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
         adLoader.load(request)
-        
-
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,7 +113,6 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
         elements.insert(nativeAd, at: adRowNumber)
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
-        tableView.reloadData()
         nativeAd.delegate = self
     }
 }

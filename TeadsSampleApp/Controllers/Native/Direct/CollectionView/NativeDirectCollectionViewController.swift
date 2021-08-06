@@ -35,7 +35,7 @@ class NativeDirectCollectionViewController: TeadsViewController {
         
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
-        }))
+        })
     }
 }
 

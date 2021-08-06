@@ -68,20 +68,19 @@ class NativeMopubTableViewController: TeadsViewController {
         adRequest.targeting = targeting
         
         adRequest.start { [weak self] (request, response, error) in
-            guard let self = self else {
-                return
-            }
             if let error = error {
                 print("Error: \(error.localizedDescription)")
-            } else {
-                response?.delegate = self
-                self.elements.insert(response, at: self.adRowNumber)
-                let indexPaths = [IndexPath(row: self.adRowNumber, section: 0)]
-                self.tableView.insertRows(at: indexPaths, with: .automatic)
-                self.tableView.reloadData()
+            } else if let ad = response {
+                self?.didReceiveAd(ad)
             }
         }
-
+    }
+    
+    func didReceiveAd(_ ad: MPNativeAd) {
+        ad.delegate = self
+        self.elements.insert(ad, at: self.adRowNumber)
+        let indexPaths = [IndexPath(row: self.adRowNumber, section: 0)]
+        self.tableView.insertRows(at: indexPaths, with: .automatic)
     }
   
     func closeSlot(ad: TeadsAd) {
@@ -142,6 +141,4 @@ extension NativeMopubTableViewController: MPNativeAdDelegate {
     func viewControllerForPresentingModalView() -> UIViewController! {
         return self
     }
-    
-    
 }

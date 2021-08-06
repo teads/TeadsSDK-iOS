@@ -30,14 +30,14 @@ class InReadSASTableViewController: TeadsViewController {
         banner?.modalParentViewController = self
         let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.pageUrl("https://toto.com")
+            settings.pageUrl("https://teads.tv")
             settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317
         let pageId = 1331331
         let formatId = Int(pid) ?? 96445
-        var keywordsTargetting = "yourkw=titi"
+        var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
         
         // Create a placement
