@@ -4448,12 +4448,15 @@ _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvgTo
 _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvg
 _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvsTo
 _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvs
+_$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvW
 _$s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvgTo
 _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvgToTm
 _$s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvg
 _$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvgTm
 _$s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvsTo
 _$s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvs
+_$s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvsTm
+_$s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvW
 _$s8TeadsSDK15VPaidPlayerViewC06resizeD0yyF
 _$s8TeadsSDK14PluginsManagerC17playerNeedsResizeyyF
 _$s8TeadsSDK15VPaidPlayerViewC9didRotateyyF
@@ -4831,12 +4834,11 @@ initTimer.get
 $s8TeadsSDK15VPaidPlayerViewC9didRotateyyFyycfU_
 didRotate
 resizePlayer
-bounds.set
 bounds.didset
+frame.set
 $s8TeadsSDK15VPaidPlayerViewC6boundsSo6CGRectVvsTo
 frame.get
 $s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvgTo
-frame.set
 frame.didset
 $s8TeadsSDK15VPaidPlayerViewC5frameSo6CGRectVvsTo
 changeVolume
@@ -9537,6 +9539,7 @@ setAdContainerView
 willMove
 awakeFromNib
 autoLoad.get
+bounds.set
 $s8TeadsSDK9TFAAdViewC5frameSo6CGRectVvsTo
 bounds.get
 $s8TeadsSDK9TFAAdViewC6boundsSo6CGRectVvgTo

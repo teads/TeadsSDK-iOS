@@ -1,5 +1,9 @@
 # Changelog
 
+### v4.8.8
+_2021-08-10_
+- fix Xcode13 beta crash running on iOS 15 beta  #155
+
 ### v4.8.7
 _2021-05-18_
 - Updated OMSDK to 1.3.19
