@@ -239,6 +239,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for i in 0..<selectionList[j].creativeTypes.count {
                     selectionList[j].creativeTypes[i].isSelected = indexPath.item == i
                     if indexPath.item == i {
+                        if selectionList[j].creativeTypes[i].name == .custom {
+                            pidAlert()
+                        }
                         self.adSelection.creation = selectionList[j].creativeTypes[i]
                     }
                 }
