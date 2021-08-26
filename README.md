@@ -172,7 +172,7 @@ extension <#YOURViewController#>: TeadsAdDelegate {
         <#your view height#> = 0
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         //here you should hide your ad view
         <#your view height#> = 0
     }
@@ -182,6 +182,14 @@ extension <#YOURViewController#>: TeadsAdDelegate {
     }
     
     func didRecordClick(ad: TeadsAd) {
+       //you may want to use this callback for your own analytics
+    }
+    
+    func didExpandedToFullscreen(ad: TeadsAd) {
+       //you may want to use this callback for your own analytics
+    }
+    
+    func didCollapsedFromFullscreen(ad: TeadsAd) {
        //you may want to use this callback for your own analytics
     }
     
