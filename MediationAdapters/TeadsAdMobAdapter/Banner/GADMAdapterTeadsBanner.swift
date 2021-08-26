@@ -85,8 +85,16 @@ extension GADMAdapterTeadsBanner: TeadsAdDelegate {
         delegate?.customEventBanner(self, didFailAd: error)
     }
     
-    public func didCloseAd(ad: TeadsAd) {
+    public func didClose(ad: TeadsAd) {
         //not handled by GAD
+    }
+    
+    public func didExpandedToFullscreen(ad: TeadsAd) {
+        delegate?.customEventBannerWillPresentModal(self)
+    }
+    
+    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+        delegate?.customEventBannerDidDismissModal(self)
     }
 }
 

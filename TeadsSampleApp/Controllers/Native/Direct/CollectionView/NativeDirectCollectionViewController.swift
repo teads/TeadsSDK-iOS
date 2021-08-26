@@ -90,7 +90,7 @@ extension NativeDirectCollectionViewController: TeadsAdDelegate {
         closeSlot(ad: ad)
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         closeSlot(ad: ad)
     }
 }

@@ -86,7 +86,15 @@ extension MPAdapterTeadsBanner: TeadsAdDelegate {
         logEvent(MPLogEvent.adShowFailed(forAdapter: className(), error: error))
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
+        delegate?.inlineAdAdapterDidCollapse(self)
+    }
+    
+    func didExpandedToFullscreen(ad: TeadsAd) {
+        delegate?.inlineAdAdapterWillExpand(self)
+    }
+    
+    func didCollapsedFromFullscreen(ad: TeadsAd) {
         delegate?.inlineAdAdapterDidCollapse(self)
     }
 }

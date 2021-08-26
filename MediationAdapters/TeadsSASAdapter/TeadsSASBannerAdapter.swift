@@ -97,8 +97,15 @@ extension TeadsSASBannerAdapter: TeadsAdDelegate {
         
     }
     
-    public func didCloseAd(ad: TeadsAd) {
+    public func didClose(ad: TeadsAd) {
         
     }
     
+    public func didExpandedToFullscreen(ad: TeadsAd) {
+        delegate?.mediationBannerAdapterWillPresentModalView(self)
+    }
+    
+    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+        delegate?.mediationBannerAdapterWillDismissModalView(self)
+    }
 }

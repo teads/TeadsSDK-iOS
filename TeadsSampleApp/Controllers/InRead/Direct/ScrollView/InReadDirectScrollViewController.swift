@@ -85,7 +85,7 @@ extension InReadDirectScrollViewController: TeadsAdDelegate {
         closeAd()
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         closeAd()
     }
 
@@ -97,4 +97,11 @@ extension InReadDirectScrollViewController: TeadsAdDelegate {
     
     }
     
+    func didExpandedToFullscreen(ad: TeadsAd) {
+        
+    }
+    
+    func didCollapsedFromFullscreen(ad: TeadsAd) {
+        
+    }
 }

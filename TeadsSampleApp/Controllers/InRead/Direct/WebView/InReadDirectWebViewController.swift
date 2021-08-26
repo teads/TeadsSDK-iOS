@@ -77,7 +77,7 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
 
 extension InReadDirectWebViewController: TeadsAdDelegate {
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         
     }
     

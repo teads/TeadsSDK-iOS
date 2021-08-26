@@ -247,10 +247,12 @@ extension TeadsInReadAd {
 }
 @objc public protocol TeadsAdDelegate : AnyObject {
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
-  @objc func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
-  @objc func didCloseAd(ad: TeadsSDK.TeadsAd)
-  @objc func didRecordImpression(ad: TeadsSDK.TeadsAd)
-  @objc func didRecordClick(ad: TeadsSDK.TeadsAd)
+  @objc optional func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
+  @objc optional func didClose(ad: TeadsSDK.TeadsAd)
+  @objc optional func didRecordImpression(ad: TeadsSDK.TeadsAd)
+  @objc optional func didRecordClick(ad: TeadsSDK.TeadsAd)
+  @objc optional func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
+  @objc optional func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
 }
 @objc public protocol TeadsSoundDelegate {
   @objc func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)

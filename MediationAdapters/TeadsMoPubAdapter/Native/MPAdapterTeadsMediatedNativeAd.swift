@@ -75,8 +75,15 @@ extension MPAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
         MPLogEvent.error(error, message: error.localizedDescription)
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         MPLogEvent.adDidDisappear(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
     
+    func didExpandedToFullscreen(ad: TeadsAd) {
+        MPLogEvent.adWillPresentModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
+    }
+    
+    func didCollapsedFromFullscreen(ad: TeadsAd) {
+        MPLogEvent.adDidDismissModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
+    }
 }

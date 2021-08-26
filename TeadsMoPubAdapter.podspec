@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsMoPubAdapter'
-    s.version                   = '5.0.0'
+    s.version                   = '5.0.1'
     s.summary                   = "MoPub Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsMoPubAdapter'
     s.description               = <<-DESC

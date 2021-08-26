@@ -329,6 +329,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// returns:
 /// UIViewController to present viewController
 - (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
+@optional
 /// Called when the ad has encountered an issue, in this case you need to remove the slot or you will have a blank space
 /// /// - parameters:
 /// - ad: The teadsAd object
@@ -337,7 +338,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space
 /// /// - parameters:
 /// - ad: The teadsAd object
-- (void)didCloseAdWithAd:(TeadsAd * _Nonnull)ad;
+- (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when Teads has recorded an impression for the current ad
 /// \param ad The teadsAd object
 ///
@@ -346,6 +347,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// \param ad The teadsAd object
 ///
 - (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when ad is shown in fullscreen
+/// \param ad The TeadsAd object
+///
+- (void)didExpandedToFullscreenWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when ad leaves the fullscreen mode
+/// \param ad The TeadsAd object
+///
+- (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
 @class NSCoder;
@@ -688,6 +697,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
 @interface UIView (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
+
+
 
 
 
@@ -1034,6 +1046,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// returns:
 /// UIViewController to present viewController
 - (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
+@optional
 /// Called when the ad has encountered an issue, in this case you need to remove the slot or you will have a blank space
 /// /// - parameters:
 /// - ad: The teadsAd object
@@ -1042,7 +1055,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space
 /// /// - parameters:
 /// - ad: The teadsAd object
-- (void)didCloseAdWithAd:(TeadsAd * _Nonnull)ad;
+- (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when Teads has recorded an impression for the current ad
 /// \param ad The teadsAd object
 ///
@@ -1051,6 +1064,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// \param ad The teadsAd object
 ///
 - (void)didRecordClickWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when ad is shown in fullscreen
+/// \param ad The TeadsAd object
+///
+- (void)didExpandedToFullscreenWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when ad leaves the fullscreen mode
+/// \param ad The TeadsAd object
+///
+- (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
 @class NSCoder;
@@ -1393,6 +1414,9 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
 @interface UIView (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
+
+
 
 
 

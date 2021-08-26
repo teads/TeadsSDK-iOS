@@ -173,8 +173,16 @@ extension GADMAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
         //don't know what to do yet
     }
     
-    func didCloseAd(ad: TeadsAd) {
+    func didClose(ad: TeadsAd) {
         //don't know what to do yet
+    }
+    
+    public func didExpandedToFullscreen(ad: TeadsAd) {
+        GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdWillPresentScreen(self)
+    }
+    
+    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+        GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidDismissScreen(self)
     }
     
 }
