@@ -165,7 +165,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             let cellValue = selectionList[indexPath.item]
             cell.label.text = cellValue.name.rawValue
-            cell.isSelected = cellValue.isSelected
+            cell.isButtonSelected = cellValue.isSelected
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
@@ -173,7 +173,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             if let cellValue = selectionList.first(where: {$0.isSelected})?.providers[indexPath.item] {
                 cell.label.text = cellValue.name.rawValue
-                cell.isSelected = cellValue.isSelected
+                cell.isButtonSelected = cellValue.isSelected
             }
             return cell
         case 2:
@@ -182,7 +182,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             if let cellValue = selectionList.first(where: {$0.isSelected})?.creativeTypes[indexPath.item] {
                 cell.label.text = cellValue.name.rawValue
-                cell.isSelected = cellValue.isSelected
+                cell.isButtonSelected = cellValue.isSelected
             }
             return cell
         case 3:
