@@ -21,7 +21,7 @@ class RootButtonCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            if isSelected {
+            if isSelected != oldValue {
                 label.backgroundColor = .primary
                 label.textColor = .white
                 layer.borderColor = UIColor.primary.cgColor
