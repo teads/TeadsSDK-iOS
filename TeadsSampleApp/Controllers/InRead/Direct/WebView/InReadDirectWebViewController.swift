@@ -71,7 +71,7 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        self.webViewHelper?.adOpportunityTrackerView = trackerView
+        self.webViewHelper?.setAdOpportunityTrackerView(trackerView)
     }
 }
 

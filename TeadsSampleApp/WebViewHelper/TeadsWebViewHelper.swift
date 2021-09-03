@@ -48,9 +48,10 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     // only webView.scrollView should retain adView as subView
     weak var adView: UIView?
     
-    var adOpportunityTrackerView: TeadsAdOpportunityTrackerView?
-    
     private var adViewConstraints = [NSLayoutConstraint]()
+    
+    // latest slot position updated
+    private var slotPosition: SlotPosition?
     
     // width of element in Web content, needed to compute ratio
     public var adViewHTMLElementWidth: CGFloat = 0
@@ -61,6 +62,7 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     private var isJsReady = false
     
     private var slotOpenner: (() -> Void)?
+    private var slotPositionAvailable: ((WKWebView, SlotPosition) -> Void)?
     
     /// Init the Teads webView helper
     ///
@@ -141,7 +143,6 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
                 self?.noSlotTimer?.invalidate()
             }
             self?.slotOpenner?()
-            self?.slotOpenner = nil
         }
     }
     
@@ -167,9 +168,6 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             self.adView?.removeFromSuperview()
 
             self.adView = adView
-            if let adOpportunityTrackerView = self.adOpportunityTrackerView {
-                self.adView?.addSubview(adOpportunityTrackerView)
-            }
             self.webView?.scrollView.addSubview(adView)
             self.adView?.translatesAutoresizingMaskIntoConstraints = false
             
@@ -286,8 +284,14 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     ///   - position: top/bottom/right/left position of the slot
     private func updateAdViewPosition(position: SlotPosition) {
         adViewHTMLElementWidth = position.right - position.left
-        guard let adView = self.adView,
-              let webView = self.webView else {
+        slotPosition = position
+        
+        guard let webView = self.webView else {
+            return
+        }
+        slotPositionAvailable?(webView, position)
+        
+        guard let adView = self.adView else {
             return
         }
         let adViewHTMLElementHeight =  position.bottom - position.top
@@ -309,12 +313,36 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
         adViewConstraints.append(adView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: position.top))
         
         if shouldUpdateAdViewFrame {
-        adViewConstraints.append(adView.widthAnchor.constraint(equalToConstant: adViewHTMLElementWidth))
+            adViewConstraints.append(adView.widthAnchor.constraint(equalToConstant: adViewHTMLElementWidth))
             adViewConstraints.append(adView.heightAnchor.constraint(equalToConstant: adViewHTMLElementHeight))
         }
         
         NSLayoutConstraint.activate(adViewConstraints)
-        
+    }
+    
+    /// `adOpportunity` is a key metrics to evaluate the performance of your inventory. It builds the visibility score of your placement in publisher dashboards.
+    ///
+    /// - Parameters:
+    ///   - adOpportunityTrackerView: the view that will monitor your inventory
+    ///
+    @objc public func setAdOpportunityTrackerView(_ adOpportunityTrackerView: TeadsAdOpportunityTrackerView) {
+        slotPositionAvailable = { [weak self] webView, position in
+            adOpportunityTrackerView.frame = CGRect(x: position.left, y: position.top, width: 1, height: 1)
+            webView.scrollView.addSubview(adOpportunityTrackerView)
+            
+            adOpportunityTrackerView.translatesAutoresizingMaskIntoConstraints = false
+            
+            adOpportunityTrackerView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: position.top).isActive = true
+            adOpportunityTrackerView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: position.left).isActive = true
+            adOpportunityTrackerView.widthAnchor.constraint(equalToConstant: 1).isActive = true
+            adOpportunityTrackerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            self?.slotPositionAvailable = nil
+        }
+        guard let position = slotPosition,
+              let webView = webView else {
+            return
+        }
+        slotPositionAvailable?(webView, position)
     }
 }
 

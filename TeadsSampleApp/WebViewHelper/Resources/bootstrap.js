@@ -1,7 +1,7 @@
 /**
  * @module Teads JS Utils for inRead
  * @author RonanDrouglazet <ronan.drouglazet@ebuzzing.com>
- * @date 10-2014
+ * @date 08-2021
  * @copyright Teads <http://www.teads.tv>
  *
  * ⚠️ This bootstrap has been provided to give you a hand in your integration webview.
@@ -17,7 +17,7 @@
   var opened = false;
   var bridge, teadsContainer, finalSize, intervalPosition, offset, heightSup, ratio, maxHeight;
   var transitionType = "height [DURATION]ms ease-in-out";
-  // command use to communicate with WebViewController JS Bridge
+  // command use to communicate with TeadsWebViewHelper JS Bridge
   var command = {
     trigger: {
       ready: "onTeadsJsLibReady",
@@ -45,10 +45,10 @@
   var platformType;
 
   /*****************************************
-   * Method called by WebViewController (through bridge) *
+   * Method called by TeadsWebViewHelper (through bridge) *
    *****************************************/
 
-  // Check if WebViewController JS Bridge is present, set handler, and say JS Ready for WebViewController
+  // Check if TeadsWebViewHelper JS Bridge is present, set handler, and say JS Ready for TeadsWebViewHelper
   var sendJsLibReady = function() {
     platformType = getPlatformType();
     if (platformType === IOS_OS) {
@@ -134,7 +134,7 @@
     }, 'hidePlaceholder')
   };
 
-  // send placeholder's coordinate to WebViewController for player positioning
+  // send placeholder's coordinate to TeadsWebViewHelper for player positioning
   var sendTargetGeometry = function() {
     tryOrLog(function() {
       if (teadsContainer) {
@@ -184,7 +184,7 @@
     }, 'getPlatformType')
   };
 
-  // register handler on the WebViewController JS Bridge
+  // register handler on the TeadsWebViewHelper JS Bridge
   var setBridgeHandler = function(wvBridge) {
     tryOrLog(function() {
       bridge = wvBridge;
@@ -224,7 +224,7 @@
     }, 'setBridgeHandler')
   };
 
-  // set placeholder size, create it, and put it before "element" on document, then send coordinates to WebViewController
+  // set placeholder size, create it, and put it before "element" on document, then send coordinates to TeadsWebViewHelper
   var setPlaceholderDiv = function(element) {
     tryOrLog(function() {
       var parent = element.parentNode;
@@ -273,7 +273,7 @@
     }, 'getDocumentScroll')
   };
 
-  // find a slot in document with a CSS selector given by WebViewController (or automatic if no selector provided)
+  // find a slot in document with a CSS selector given by TeadsWebViewHelper (or automatic if no selector provided)
   var findSlot = function(selector) {
     return tryOrLog(function() {
 
