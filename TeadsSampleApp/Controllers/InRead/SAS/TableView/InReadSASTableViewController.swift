@@ -20,7 +20,7 @@ class InReadSASTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var tableViewAdCellWidth: CGFloat!
     
@@ -28,16 +28,16 @@ class InReadSASTableViewController: TeadsViewController {
         super.viewDidLoad()
         banner = SASBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200), loader: .activityIndicatorStyleWhite)
         banner?.modalParentViewController = self
-        let teadsAdSettings = TeadsAdSettings { (settings) in
+        let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.pageUrl("https://toto.com")
-            try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
+            settings.pageUrl("https://teads.tv")
+            settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317
         let pageId = 1331331
         let formatId = Int(pid) ?? 96445
-        var keywordsTargetting = "yourkw=titi"
+        var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
         
         // Create a placement
@@ -54,15 +54,13 @@ class InReadSASTableViewController: TeadsViewController {
     
     
     @objc func rotationDetected() {
-        if adRatio != nil {
-            resizeTeadsAd(adRatio: adRatio!)
+        if let adRatio = self.adRatio {
+            resizeTeadsAd(adRatio: adRatio)
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = tableViewAdCellWidth/adRatio
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        adHeight = adRatio.calculateHeight(for: tableViewAdCellWidth)
         updateAdCellHeight()
     }
     
@@ -112,9 +110,9 @@ extension InReadSASTableViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 
-extension InReadSASTableViewController: TFAMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        self.adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+extension InReadSASTableViewController: TeadsMediatedAdViewDelegate {
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
 }

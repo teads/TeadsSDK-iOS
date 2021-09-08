@@ -8,8 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
-import TeadsAdMobAdapter
 import TeadsSDK
+import TeadsAdMobAdapter
 
 class InReadAdmobTableViewController: TeadsViewController {
 
@@ -23,7 +23,7 @@ class InReadAdmobTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adRowNumber = 2
     var adHeight: CGFloat?
-    var adRatio: CGFloat?
+    var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
     var admobAdView: GAMBannerView?
     var tableViewAdCellWidth: CGFloat!
@@ -40,12 +40,11 @@ class InReadAdmobTableViewController: TeadsViewController {
         admobAdView?.delegate = self
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
-        let request = GADRequest()
-        let adSettings = TeadsAdSettings { (settings) in
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
             if let admobAdView = admobAdView {
-                try? settings.subscribeAdResizeDelegate(self, forAdView: admobAdView)
+                settings.registerAdView(admobAdView, delegate: self)
             }
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
@@ -55,10 +54,9 @@ class InReadAdmobTableViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
         
         admobAdView?.load(request)
@@ -78,15 +76,13 @@ class InReadAdmobTableViewController: TeadsViewController {
     }
 
     @objc func rotationDetected() {
-        if adRatio != nil {
-            resizeTeadsAd(adRatio: adRatio!)
+        if let adRatio = self.adRatio {
+            resizeTeadsAd(adRatio: adRatio)
         }
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            resizeAd(height: tableViewAdCellWidth/adRatio)
-        }
+    func resizeTeadsAd(adRatio: TeadsAdRatio) {
+        resizeAd(height: adRatio.calculateHeight(for: tableViewAdCellWidth))
     }
     
     func resizeAd(height: CGFloat) {
@@ -146,8 +142,7 @@ extension InReadAdmobTableViewController: GADBannerViewDelegate {
     
     /// Tells the delegate an ad request loaded an ad.
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
-        resizeAd(height: bannerView.adSize.size.height)
+        // not used
     }
     
     /// Tells the delegate an ad request failed.
@@ -174,9 +169,11 @@ extension InReadAdmobTableViewController: GADBannerViewDelegate {
 
 }
 
-extension InReadAdmobTableViewController: TFAMediatedAdViewDelegate {
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        self.adRatio = ratio
-        resizeTeadsAd(adRatio: ratio)
+extension InReadAdmobTableViewController: TeadsMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        self.adRatio = adRatio
+        resizeTeadsAd(adRatio: adRatio)
     }
+    
 }

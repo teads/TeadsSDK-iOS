@@ -33,11 +33,10 @@ class InReadAdmobScrollViewController: TeadsViewController {
         bannerView.delegate = self
 
         // 3. Load a new ad (this will call AdMob and Teads afterward)
-        let request = GADRequest()
-        let adSettings = TeadsAdSettings { (settings) in
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
-            try? settings.subscribeAdResizeDelegate(self, forAdView: bannerView)
+            settings.registerAdView(bannerView, delegate: self)
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
             //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
@@ -46,18 +45,17 @@ class InReadAdmobScrollViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
         
         bannerView.load(request)
     }
     
     private func resizeAd(height: CGFloat) {
-        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
         slotViewHeightConstraint.constant = height
+        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
     }
 
 }
@@ -65,8 +63,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
 extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // reset the size to "kGADAdSizeMediumRectangle" if a didFailToReceiveAdWithError was triggered before.
-        resizeAd(height: bannerView.adSize.size.height)
+        // not used
     }
     
     /// Tells the delegate an ad request failed.
@@ -93,10 +90,9 @@ extension InReadAdmobScrollViewController: GADBannerViewDelegate {
     
 }
 
-extension InReadAdmobScrollViewController: TFAMediatedAdViewDelegate {
+extension InReadAdmobScrollViewController: TeadsMediatedAdViewDelegate {
     
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        resizeAd(height: slotView.frame.width / ratio)
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        resizeAd(height: adRatio.calculateHeight(for: slotView.frame.width))
     }
-    
 }

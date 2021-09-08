@@ -9,13 +9,13 @@
 import UIKit
 import WebKit
 import GoogleMobileAds
-import TeadsAdMobAdapter
 import TeadsSDK
+import TeadsAdMobAdapter
 
 class InReadAdmobWebViewController: TeadsViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    var webSync: SyncWebViewAdView!
+    var webViewHelper: TeadsWebViewHelper?
     var bannerView: GAMBannerView!
 
     // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
@@ -37,13 +37,13 @@ class InReadAdmobWebViewController: TeadsViewController {
         bannerView.rootViewController = self
         bannerView.delegate = self
         
-        webSync = SyncWebViewAdView(webView: webView, selector: "#teads-placement-slot", adView: bannerView)
+        /// init helper
+        webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
         
-        let request = GADRequest()
-        let adSettings = TeadsAdSettings { (settings) in
+        let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
-            try? settings.subscribeAdResizeDelegate(webSync, forAdView: bannerView)
+            settings.registerAdView(bannerView, delegate: self)
 
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
@@ -53,10 +53,9 @@ class InReadAdmobWebViewController: TeadsViewController {
             //settings.pageUrl("http://page.com/article1")
         }
         
-        let extras = try? adSettings.toDictionary()
-        let customEventExtras = GADCustomEventExtras()
-        customEventExtras.setExtras(extras, forLabel: "Teads")
-
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+        
+        let request = GADRequest()
         request.register(customEventExtras)
 
         bannerView.load(request)
@@ -64,15 +63,26 @@ class InReadAdmobWebViewController: TeadsViewController {
 
 }
 
+extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
+    public func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        guard let webViewHelper = webViewHelper else {
+            return
+        }
+        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
+       webViewHelper.updateSlot(adRatio: adRatio)
+    }
+}
+
 extension InReadAdmobWebViewController: GADBannerViewDelegate {
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("SampleApp: banner is loaded.")
+        webViewHelper?.openSlot(adView: bannerView)
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("SampleApp: banner failed to load with error: \(error)")
-        webSync.webViewHelper.closeSlot()
+        webViewHelper?.closeSlot()
     }
     
     func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
@@ -92,7 +102,25 @@ extension InReadAdmobWebViewController: GADBannerViewDelegate {
 extension InReadAdmobWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webSync?.injectJS()
+        webViewHelper?.injectJS()
     }
     
+}
+
+extension InReadAdmobWebViewController: TeadsWebViewHelperDelegate {
+    func webViewHelperSlotStartToShow() {
+        print("webViewHelperSlotStartToShow")
+    }
+    
+    func webViewHelperSlotStartToHide() {
+        print("webViewHelperSlotStartToHide")
+    }
+    
+    func webViewHelperSlotNotFound() {
+        print("webViewHelperSlotNotFound")
+    }
+    
+    func webViewHelperOnError(error: String) {
+        print("webViewHelperOnError \(error)")
+    }
 }

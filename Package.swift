@@ -8,7 +8,7 @@ let omModuleName = "OMSDK_Teadstv"
 let package = Package(
     name: teadsModuleName,
     platforms: [
-        .iOS(.v9)
+        .iOS(.v10)
     ],
     products: [
         .library(
@@ -19,11 +19,11 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: teadsModuleName,
-            path: "\(teadsModuleName).xcframework"
+            path: "Frameworks/\(teadsModuleName).xcframework"
         ),
         .binaryTarget(
            name: omModuleName,
-           path: "\(omModuleName).xcframework"
+           path: "Frameworks/\(omModuleName).xcframework"
         ),
         
     ]

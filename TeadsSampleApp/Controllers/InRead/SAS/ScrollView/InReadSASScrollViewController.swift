@@ -11,7 +11,7 @@ import SASDisplayKit
 import TeadsSDK
 import TeadsSASAdapter
 
-class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDelegate {
+class InReadSASScrollViewController: TeadsViewController {
     
     @IBOutlet weak var slotView: UIView!
     
@@ -23,16 +23,16 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
         super.viewDidLoad()
         banner = SASBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200), loader: .activityIndicatorStyleWhite)
         banner?.modalParentViewController = self
-        let teadsAdSettings = TeadsAdSettings { (settings) in
+        let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.pageUrl("https://toto.com")
-            try? settings.subscribeAdResizeDelegate(self, forAdView: banner!)
+            settings.pageUrl("https://teads.tv")
+            settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317
         let pageId = 1331331
         let formatId = Int(pid) ?? 96445
-        var keywordsTargetting = "yourkw=titi"
+        var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
         
         // Create a placement
@@ -47,42 +47,21 @@ class InReadSASScrollViewController: TeadsViewController, TFAMediatedAdViewDeleg
         guard let adView = banner else {
             return
         }
-        view.addSubview(adView)
+        slotView.addSubview(adView)
         adView.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraints([
-            NSLayoutConstraint(item: adView,
-                attribute: .top,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .top,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .leading,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .leading,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .trailing,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .trailing,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: adView,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: slotView,
-                attribute: .bottom,
-                multiplier: 1,
-                constant: 0)
-        ])
+        let margins = slotView.layoutMarginsGuide
+        adView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+        adView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0).isActive = true
+        adView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+        adView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
     }
 
-    func didUpdateRatio(_ adView: UIView, ratio: CGFloat) {
-        adViewHeightConstraint.constant =  adView.bounds.width / ratio
+}
+
+extension InReadSASScrollViewController: TeadsMediatedAdViewDelegate {
+    
+    func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+        adViewHeightConstraint.constant = adRatio.calculateHeight(for: slotView.bounds.width)
     }
     
 }

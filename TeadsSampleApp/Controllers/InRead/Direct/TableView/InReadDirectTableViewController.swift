@@ -16,122 +16,126 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let adRowNumber = 2
-    var adHeight: CGFloat?
-    var adRatio: CGFloat?
-    var teadsAdIsLoaded = false
-    var teadsAdView: TFAInReadAdView?
-    var tableViewAdCellWidth: CGFloat!
+    let adRowNumber = 3
+    var placement: TeadsInReadAdPlacement?
+    
+    private var elements = [TeadsInReadAd?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        teadsAdView = TFAInReadAdView(withPid: Int(pid) ?? 0, andDelegate: self)
-        teadsAdView?.load()
+        (0..<8).forEach { _ in
+            elements.append(nil)
+        }
+            
+        let placementSettings = TeadsAdPlacementSettings { (settings) in
+            settings.enableDebug()
+        }
+        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
         
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+            settings.pageUrl("https://www.teads.tv")
+        })
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableViewAdCellWidth = tableView.frame.width - 20
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    @objc func rotationDetected() {
-        if adRatio != nil {
-            resizeTeadsAd(adRatio: adRatio!)
-        }
-    }
-    
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = tableViewAdCellWidth/adRatio
-        }
-        updateAdCellHeight()
-    }
-  
-    func closeSlot() {
-        adHeight = 0
-        updateAdCellHeight()
+    func closeSlot(ad: TeadsAd) {
+        elements.removeAll { $0 == ad }
+        tableView.reloadData()
     }
     
     func updateAdCellHeight() {
         tableView.reloadRows(at: [IndexPath(row: adRowNumber, section: 0)], with: .automatic)
     }
-
 }
 
 extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return elements.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
-            return cell
-        case adRowNumber:
-            //need to create a cell and just add a teadsAd to it, so we have only one teads ad
+        if indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
+        } else if let ad = elements[indexPath.row] {
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
-            if let teadsAdView = teadsAdView {
-                cellAd.addSubview(teadsAdView)
-                teadsAdView.frame = CGRect(x: 10, y: 0, width: tableViewAdCellWidth, height: adHeight ?? 250)
-            }
+            let teadsAdView = TeadsInReadAdView(bind: ad)
+            cellAd.contentView.addSubview(teadsAdView)
+            teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        default:
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == adRowNumber {
-            return adHeight ?? 0
-        } else {
-            return UITableView.automaticDimension
+        if let ad = elements[indexPath.row] {
+            return ad.adRatio.calculateHeight(for: tableView.frame.width - 20)
         }
+        return UITableView.automaticDimension
     }
     
 }
 
-extension InReadDirectTableViewController: TFAAdDelegate {
+extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     
-    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
-        self.adRatio = adRatio
-        resizeTeadsAd(adRatio: adRatio)
+    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        elements.insert(ad, at: adRowNumber)
+        ad.delegate = self
+        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
-    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
-        closeSlot()
+    func didFailToReceiveAd(reason: AdFailReason) {
+        print("didFailToReceiveAd: \(reason.description)")
     }
     
-    func adClose(_ ad: TFAAdView, userAction: Bool) {
-        closeSlot()
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
+    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        if let row = elements.firstIndex(of: ad) {
+            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+        }
+        
     }
     
-    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
-        adRatio = ratio
-        //update slot with the right ratio
-        resizeTeadsAd(adRatio: ratio)
+    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+        //not relevant in tableView integration
     }
     
-    public func adError(_ ad: TFAAdView, errorMessage: String) {
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
+}
+
+extension InReadDirectTableViewController: TeadsAdDelegate {
+    func didRecordImpression(ad: TeadsAd) {
+        
     }
     
-    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+    func didRecordClick(ad: TeadsAd) {
+        
+    }
+    
+    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return self
     }
     
+    func didCatchError(ad: TeadsAd, error: Error) {
+        closeSlot(ad: ad)
+    }
+    
+    func didClose(ad: TeadsAd) {
+        closeSlot(ad: ad)
+    }
+}
+
+
+extension UIView {
+    func setupConstraintsToFitSuperView(horizontalMargin: CGFloat = 0) {
+        guard let superview = superview else {
+            return
+        }
+        translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: horizontalMargin).isActive = true
+        trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -horizontalMargin).isActive = true
+    }
 }

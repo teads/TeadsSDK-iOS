@@ -17,132 +17,130 @@ class InReadDirectCollectionViewController: TeadsViewController {
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 2
-    var adHeight: CGFloat?
-    var adRatio: CGFloat?
-    var teadsAdIsLoaded = false
-    var teadsAdView: TFAInReadAdView?
-    var collectionViewAdCellWidth: CGFloat!
-    var fakeArticleCellHeight: CGFloat = 300
+    var placement: TeadsInReadAdPlacement?
     
+    private var elements = [TeadsInReadAd?]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        teadsAdView = TFAInReadAdView(withPid: Int(pid) ?? 0, andDelegate: self)
-        teadsAdView?.load()
+        (0..<8).forEach { _ in
+            elements.append(nil)
+        }
         
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
-                        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionViewAdCellWidth = collectionView.frame.width - 20
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+        let placementSettings = TeadsAdPlacementSettings { (settings) in
+            settings.enableDebug()
+        }
+        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+        
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+            settings.pageUrl("https://www.teads.tv")
+        })
     }
     
     @objc func rotationDetected() {
-        if adRatio != nil {
-            resizeTeadsAd(adRatio: adRatio!)
+        var indexPaths = [IndexPath]()
+        for index in 0..<elements.count {
+            indexPaths.append(IndexPath(row: index, section: 0))
         }
+        collectionView.reloadItems(at: indexPaths)
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func resizeTeadsAd(adRatio: CGFloat) {
-        if adRatio > 0 {
-            adHeight = collectionViewAdCellWidth/adRatio
+    func closeSlot(ad: TeadsAd) {
+        elements.removeAll { $0 == ad }
+        collectionView.reloadData()
+    }
+    
+    func updateAdSize(ad: TeadsInReadAd) {
+        if let row = elements.firstIndex(of: ad) {
+            collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
+            collectionView.collectionViewLayout.invalidateLayout()
         }
-        updateAdCellHeight()
-    }
-    
-    func closeSlot() {
-        adHeight = 0
-        updateAdCellHeight()
-    }
-    
-    func updateAdCellHeight() {
-        collectionView.reloadItems(at: [IndexPath(row: adItemNumber, section: 0)])
-        collectionView.collectionViewLayout.invalidateLayout()
     }
     
 }
 
 extension InReadDirectCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return elements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.item {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCell, for: indexPath)
-            cell.contentView.translatesAutoresizingMaskIntoConstraints = false
-            cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.bounds.width).isActive = true
-            return cell
-        case adItemNumber:
-            //need to create a cell and just add a teadsAd to it, so we have only one teads ad
+        if indexPath.item == 0 {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: contentCell, for: indexPath)
+        } else if let ad = elements[indexPath.row] {
             let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath)
-            if let teadsAdView = teadsAdView {
-                cellAd.addSubview(teadsAdView)
-                teadsAdView.frame = CGRect(x: 0, y: 0, width: collectionViewAdCellWidth, height: adHeight ?? 250)
-            }
+            let teadsAdView = TeadsInReadAdView(bind: ad)
+            cellAd.contentView.addSubview(teadsAdView)
+            teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        default:
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
             return cell
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.item {
-        case 0:
+        if indexPath.item == 0 {
             let cell = collectionView.cellForItem(at: indexPath)
             guard let bounds = cell?.bounds else {
                 return CGSize.zero
             }
             return CGSize(width: collectionView.bounds.width, height: bounds.height)
-        case adItemNumber:
-            return CGSize(width: collectionViewAdCellWidth, height: adHeight ?? 0)
-        default:
-            return CGSize(width: collectionView.bounds.width, height: fakeArticleCellHeight)
+        } else if let ad = elements[indexPath.row] {
+            let width = collectionView.frame.width - 20
+            let height = ad.adRatio.calculateHeight(for: width)
+            return .init(width: width, height: height)
+        } else {
+            return CGSize(width: collectionView.bounds.width, height: 300)
         }
     }
 }
 
-extension InReadDirectCollectionViewController: TFAAdDelegate {
+extension InReadDirectCollectionViewController: TeadsAdDelegate {
     
-    func didReceiveAd(_ ad: TFAAdView, adRatio: CGFloat) {
-        self.adRatio = adRatio
-        resizeTeadsAd(adRatio: adRatio)
+    func didRecordImpression(ad: TeadsAd) {
+        
     }
     
-    func didFailToReceiveAd(_ ad: TFAAdView, adFailReason: AdFailReason) {
-        closeSlot()
+    func didRecordClick(ad: TeadsAd) {
+        
     }
     
-    func adClose(_ ad: TFAAdView, userAction: Bool) {
-        closeSlot()
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    public func didUpdateRatio(_ ad: TFAAdView, ratio: CGFloat) {
-        adRatio = ratio
-        //update slot with the right ratio
-        resizeTeadsAd(adRatio: ratio)
-    }
-    
-    public func adError(_ ad: TFAAdView, errorMessage: String) {
-        //be careful if you want to load another ad in the same page don't remove the observer
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    public func adBrowserWillOpen(_ ad: TFAAdView) -> UIViewController? {
+    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return self
     }
     
+    func didCatchError(ad: TeadsAd, error: Error) {
+        closeSlot(ad: ad)
+    }
+    
+    func didClose(ad: TeadsAd) {
+        closeSlot(ad: ad)
+    }
+    
+}
+
+extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
+    
+    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        elements.insert(ad, at: adItemNumber)
+        let indexPaths = [IndexPath(row: adItemNumber, section: 0)]
+        collectionView.insertItems(at: indexPaths)
+        collectionView.collectionViewLayout.invalidateLayout()
+        ad.delegate = self
+    }
+    
+    func didFailToReceiveAd(reason: AdFailReason) {
+        print("didFailToReceiveAd: \(reason.description)")
+    }
+    
+    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        updateAdSize(ad: ad)
+    }
+    
+    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+        //not relevant in tableView integration
+    }
 }
