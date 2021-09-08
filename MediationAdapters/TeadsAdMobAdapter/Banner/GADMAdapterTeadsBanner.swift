@@ -9,7 +9,8 @@ import Foundation
 import TeadsSDK
 import GoogleMobileAds
 
-@objc(GADMAdapterTeadsBanner) public class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
+@objc(GADMAdapterTeadsBanner)
+public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
     private var currentBanner: TeadsInReadAdView?
     private var placement: TeadsInReadAdPlacement?
     @objc required public override init() {

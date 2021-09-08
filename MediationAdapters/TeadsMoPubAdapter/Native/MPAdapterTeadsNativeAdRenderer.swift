@@ -11,7 +11,7 @@ import MoPubSDK
 
 typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
 
-@objc public class MPAdapterTeadsNativeAdRenderer: NSObject, MPNativeAdRenderer {
+@objc public final class MPAdapterTeadsNativeAdRenderer: NSObject, MPNativeAdRenderer {
 
     @objc public var viewSizeHandler: MPNativeViewSizeHandler!
 

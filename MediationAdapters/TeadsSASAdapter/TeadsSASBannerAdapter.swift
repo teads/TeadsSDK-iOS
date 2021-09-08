@@ -8,7 +8,8 @@ import UIKit
 import SASDisplayKit
 import TeadsSDK
 
-@objc open class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
+@objc(TeadsSASBannerAdapter)
+final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
     
     @objc public weak var delegate: SASMediationBannerAdapterDelegate?
     private var currentBanner: TeadsInReadAdView?
@@ -44,9 +45,8 @@ import TeadsSDK
     }
     
     private func addExtrasToAdSettings(_ adSettings: TeadsAdapterSettings) {
-        adSettings.addExtras(TeadsAdapterSettings.integrationTypeKey, for: TeadsAdapterSettings.integrationSAS)
         let sasVersion = Bundle.init(for: SASAdPlacement.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
-        adSettings.addExtras(TeadsAdapterSettings.integrationVersionKey, for: sasVersion)
+        adSettings.setIntegation(TeadsAdapterSettings.integrationSAS, version: sasVersion)
     }
     
 }

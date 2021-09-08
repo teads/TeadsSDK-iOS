@@ -9,7 +9,8 @@ import UIKit
 import MoPubSDK
 import TeadsSDK
 
-class MPAdapterTeadsBanner: MPInlineAdAdapter, MPThirdPartyInlineAdAdapter {
+@objc(MPAdapterTeadsBanner)
+final class MPAdapterTeadsBanner: MPInlineAdAdapter, MPThirdPartyInlineAdAdapter {
     
     internal var pid: String?
     private var currentBanner: TeadsInReadAdView?
@@ -27,6 +28,7 @@ class MPAdapterTeadsBanner: MPInlineAdAdapter, MPThirdPartyInlineAdAdapter {
         self.pid = rawPid
                 
         let adSettings = (try? TeadsAdapterSettings.instance(fromMopubParameters: localExtras)) ?? TeadsAdapterSettings()
+        adSettings.setIntegation(TeadsAdapterSettings.integrationMopub, version: MoPub.sharedInstance().version())
         currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: Helper.bannerSize(for: size.width)))
         
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)

@@ -9,7 +9,9 @@ import UIKit
 import TeadsSDK
 import GoogleMobileAds
 
-class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
+
+@objc(GADMAdapterTeadsNative)
+final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
     
     var delegate: GADCustomEventNativeAdDelegate?
     private var placement: TeadsNativeAdPlacement?

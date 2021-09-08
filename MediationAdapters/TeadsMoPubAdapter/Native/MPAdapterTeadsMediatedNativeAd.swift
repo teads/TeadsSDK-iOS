@@ -9,7 +9,8 @@ import UIKit
 import MoPubSDK
 import TeadsSDK
 
-class MPAdapterTeadsMediatedNativeAd: NSObject, MPNativeAdAdapter {
+@objc(MPAdapterTeadsMediatedNativeAd)
+final class MPAdapterTeadsMediatedNativeAd: NSObject, MPNativeAdAdapter {
     
     var defaultActionURL: URL!
     

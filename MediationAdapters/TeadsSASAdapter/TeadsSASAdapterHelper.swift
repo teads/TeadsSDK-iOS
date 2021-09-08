@@ -8,7 +8,7 @@
 import UIKit
 import TeadsSDK
 
-@objc public class TeadsSASAdapterHelper: NSObject {
+@objc public final class TeadsSASAdapterHelper: NSObject {
 
     @objc public static func teadsAdSettingsToString(adSettings: TeadsAdapterSettings) -> String? {
         guard let adSettingsEscapedString = adSettings.escapedString else {

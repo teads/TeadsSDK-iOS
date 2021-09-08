@@ -13,13 +13,12 @@ import GoogleMobileAds
 extension TeadsAdapterSettings: GADAdNetworkExtras {
     @nonobjc internal class func instance(fromAdmobParameters dictionary: [AnyHashable: Any]?) throws -> TeadsAdapterSettings {
         let adSettings = try TeadsAdapterSettings.instance(from: dictionary ?? Dictionary())
-        adSettings.addExtras(TeadsAdapterSettings.integrationAdmob, for: TeadsAdapterSettings.integrationTypeKey)
-        adSettings.addExtras(GADMobileAds.sharedInstance().sdkVersion, for: TeadsAdapterSettings.integrationVersionKey)
+        adSettings.setIntegation(TeadsAdapterSettings.integrationAdmob, version: GADMobileAds.sharedInstance().sdkVersion)
         return adSettings
     }
 }
 
-@objc public class GADMAdapterTeads: NSObject {
+@objc public final class GADMAdapterTeads: NSObject {
     @objc public static let defaultLabel = "Teads"
 
     @objc public class func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String = defaultLabel) -> GADCustomEventExtras {

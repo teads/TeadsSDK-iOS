@@ -16,3 +16,10 @@ class Helper {
 
 @available(*, deprecated, renamed: "TeadsAdapterSettings", message: "Only relevant when using TeadsAdMobAdapter, TeadsMopubAdapter, TeadsSmartAdapter")
 public typealias TeadsAdSettings = TeadsAdapterSettings
+
+extension TeadsAdapterSettings {
+    func setIntegation(_ integration: String, version: String) {
+        addExtras(integration, for: TeadsAdapterSettings.integrationTypeKey)
+        addExtras(version, for: TeadsAdapterSettings.integrationVersionKey)
+    }
+}

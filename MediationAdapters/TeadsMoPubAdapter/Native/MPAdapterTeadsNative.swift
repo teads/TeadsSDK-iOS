@@ -10,7 +10,8 @@ import TeadsSDK
 
 import MoPubSDK
 
-@objc public class MPAdapterTeadsNative: MPNativeCustomEvent {
+@objc(MPAdapterTeadsNative)
+public final class MPAdapterTeadsNative: MPNativeCustomEvent {
 
     // MARK: - Members
     private var currentNativePlacement: TeadsNativeAdPlacement?
@@ -29,6 +30,7 @@ import MoPubSDK
 
         // Prepare ad settings
         let adSettings = (try? TeadsAdapterSettings.instance(fromMopubParameters: localExtras)) ?? TeadsAdapterSettings()
+        adSettings.setIntegation(TeadsAdapterSettings.integrationMopub, version: MoPub.sharedInstance().version())
 
         // Load native ad
         currentNativePlacement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
