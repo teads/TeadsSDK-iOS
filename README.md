@@ -107,7 +107,7 @@ The old `TFAAdDelegate` has been replaced by two new delegates `TeadsInReadAdPla
 
 #### Implement the TeadsInReadAdPlacementDelegate
 
-The TeadsInReadAdPlacementDelegate own 4 methods that you need to implement. This delegate is reacting to the ad loading process, for example to let the app know when an ad is received or when the ad server failed to deliver one.
+The TeadsInReadAdPlacementDelegate owns 4 methods that you need to implement. This delegate is reacting to the ad loading process, for example to let the app know when an ad is received or when the ad server failed to deliver one.
 
 ```swift
 extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
