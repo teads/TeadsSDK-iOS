@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = "TeadsSDK"
-    s.version               = "5.0.1"
+    s.version               = "5.0.2"
     s.summary               = "Teads' iOS SDK"
     s.module_name           = s.name
     s.description           = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
     s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.author                = { "Teads" => "support-sdk@teads.tv" }
-    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => 'v5.0.0'}
+    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "v#{s.version}" }
     s.requires_arc          = true
     s.swift_versions        = ['5.3']
     s.frameworks            = 'AdSupport', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'MediaPlayer', 'SystemConfiguration'
