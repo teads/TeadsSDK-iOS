@@ -77,7 +77,7 @@ placement = Teads.createInReadPlacement(pid: <#YOUR_PID#>, delegate: self)
 ```
 
 --
-**(Optional)** Add the settings to the adPlacement initialization parameters, note this could be mandatory if your app have to manage the privacies consent, more details about [TeadsAdPlacementSettings](#teadsadplacementsettings).
+**(Optional)** Add settings to the adPlacement initialization parameters, note this could be mandatory if your app have to manage the privacies consent, more details about [TeadsAdPlacementSettings](#teadsadplacementsettings).
 
 ```swift
 let pSettings = TeadsAdPlacementSettings { (settings) in
