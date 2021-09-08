@@ -12,11 +12,10 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 
 The best way to see the working integration is to clone this repository, open it with Xcode, and run the project. The sample contains multiples kinds of integrations from direct integration to integrations using mediations partners such as AdMob, Mopub, Smart.
 
---
 
 # Direct integration
 
-*For setup through mediation partners check those [steps](#setup-for-mediations).*
+*To setup through mediation partners check those [steps](#setup-for-mediations).*
 
 
 ## Install the Teads SDK iOS framework
@@ -25,25 +24,25 @@ Teads SDK is currently distributed through CocoaPods. It includes everything you
 
 ### Cocoapods
 
-For installing TeadsSDK just put this on your podfile, if you never use cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
+To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
 
 ```ruby
 pod 'TeadsSDK', '~> 5.0'
 ```
 
-Go to the directory containing your project's `.xcodeproj` file and the Podfile,  on the terminal and run `pod install` command. This will install Teads SDK along with our needed dependencies.
+On your terminal, go to the directory containing your project's `.xcodeproj` file and your Podfile and run `pod install` command. This will install Teads SDK along with our needed dependencies.
 
-```
-$ pod install -repo-update
+```bash
+pod install --repo-update
 ```
 
 ## Migrating from v4 to v5
 
-In the v5 of the SDK, we've introduced a new class called `TeadsInReadAdPlacement` which is responsible of configuring the ad request and then make the call.
+In SDK's v5, we've introduced a new class called `TeadsInReadAdPlacement` which is responsible of configuring the ad request and then make the call.
 
 ### Rename your ad view 
 
-From now on, we have replaced the old class `TFAInReadAdView` with a new one called `TeadsInReadAdView`. So you just need to rename it, in code and do not forget your storyboards if you are using it.
+We've replaced the old class `TFAInReadAdView` with a new one called `TeadsInReadAdView`. All you need to do is renaming it (don't forget your storyboard or nib files if needed).
 
 ```swift
 var teadsAdView: TeadsInReadAdView
@@ -78,7 +77,7 @@ placement = Teads.createInReadPlacement(pid: <#YOUR_PID#>, delegate: self)
 ```
 
 --
-**(Optional)** Pass configurations to the adPlacement, note this could be mandatory if your app have to manage the privacies consent, more details about [TeadsAdPlacementSettings](#teadsadplacementsettings).
+**(Optional)** Add the settings to the adPlacement initialization parameters, note this could be mandatory if your app have to manage the privacies consent, more details about [TeadsAdPlacementSettings](#teadsadplacementsettings).
 
 ```swift
 let pSettings = TeadsAdPlacementSettings { (settings) in
@@ -92,7 +91,7 @@ For more information about the user privacies consent, see this [documentation] 
 --
 ### Request an Ad
 
-You can then request an ad using the placement you have just created. Do not forget to provide your article url (if applicable) through `TeadsAdRequestSettings`. To know more about `TeadsAdRequestSettings` parameters check [this](#teadsadrequestsettings). 
+You can then request an ad using the placement you've just created. Do not forget to provide your article url (if applicable) through `TeadsAdRequestSettings`. To know more about `TeadsAdRequestSettings` parameters check [this](#teadsadrequestsettings). 
 
 ```swift
 let adSettings = TeadsAdRequestSettings(build: { (settings) in
@@ -108,7 +107,7 @@ The old `TFAAdDelegate` has been replaced by two new delegates `TeadsInReadAdPla
 
 #### Implement the TeadsInReadAdPlacementDelegate
 
-The TeadsInReadAdPlacementDelegate has 4 methods that you need to implement. This delegate responsability is the ad loading process, for example to tell the app when it received an ad or when the ad server failed to deliver one.
+The TeadsInReadAdPlacementDelegate own 4 methods that you need to implement. This delegate is reacting to the ad loading process, for example to let the app know when an ad is received or when the ad server failed to deliver one.
 
 ```swift
 extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
@@ -140,9 +139,9 @@ extension <#YOURViewController#>: TeadsInReadAdPlacementDelegate {
 #### TeadsAdOpportunityTrackerView
 
 The `TeadsAdOpportunityTrackerView` is a view that you will need to add to your slot view *(e.g. the view where you will display the ad)*. 
-This view will be provided during the ad request process and will allow Teads to monitor precisely ad opportunities on [**Teads for Publisher**](https://publishers.teads.tv/).
+This view will be provided during the ad request process and will allow Teads to monitor with precision ad opportunities on [**Teads for Publisher**](https://publishers.teads.tv/).
 
-You should add it where the ad will be displayed, even if you don't received an ad from our SDK. 
+You should add it where the ad will be displayed, even if you didn't have received an ad from our SDK.
 This view needs to be at the origin of your ad slot `(x:0, y:0)`.
 
 Once the `TeadsAdOpportunityTrackerView` is visible, it will be automatically removed by the SDK. 
@@ -158,7 +157,7 @@ func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
 
 ### Implement the TeadsAdDelegate
 
-The TeadsAdDelegate has 5 methods that you need to implement. It is responsible for following the lifecycle of an ad, the impression, when the user taps on it when an ad it shows and even when the user closes the ad. 
+The TeadsAdDelegate own 5 methods that you need to implement. This delegate is reacting to the ad lifecycle (e.g. impressions, clicks, ad close, modal presentation...). 
 
 ```swift
 extension <#YOURViewController#>: TeadsAdDelegate {
@@ -196,9 +195,9 @@ extension <#YOURViewController#>: TeadsAdDelegate {
 }
 ```
 
-Note: didRecordImpression and didRecordClick are for your analytics if you have some, otherwise it could be empty.
+Note: didRecordImpression and didRecordClick are provided for your analytics if you have some, otherwise it could be empty.
 
-You are all set! You can now display Teads ads inside your app. 🎉
+You are all set! You can now display insane Teads ads inside your app. 🎉
 
 ### Validate your integration
 
@@ -229,7 +228,7 @@ When you request an ad with the adPlacement you can pass customs settings.
 
 ## TeadsAdPlacementSettings
 
-* `disableCrashMonitoring()`, disallows the SDK to add battery informations to our logs.
-* `disableBatteryMonitoring()`, disallows the SDK to send crash logs to our servers.
-* `disableTeadsAudioSessionManagement()`, if you have custom sound session management you need to disable our audio sessio management and implement the TeadsSoundDelegate. 
+* `disableCrashMonitoring()`, disallows the SDK to send crash logs to our servers.
+* `disableBatteryMonitoring()`, disallows the SDK to add battery informations to our logs.
+* `disableTeadsAudioSessionManagement()`, if you have custom sound session management you need to disable our audio session management and implement the TeadsSoundDelegate. 
 {"mode":"full","isActive":false}
