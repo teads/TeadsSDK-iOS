@@ -197,7 +197,7 @@ extension <#YOURViewController#>: TeadsAdDelegate {
 
 Note: didRecordImpression and didRecordClick are provided for your analytics if you have some, otherwise it could be empty.
 
-You are all set! You can now display insane Teads ads inside your app. 🎉
+You are all set! You can now display Teads ads inside your app. 🎉
 
 ### Validate your integration
 
