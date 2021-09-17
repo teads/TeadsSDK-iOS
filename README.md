@@ -3,6 +3,16 @@
 
 Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
 
+
+> **⚠️ Important ⚠️**
+> 
+> ***Xcode 13 + iOS 15 device***
+>
+> [#155](https://github.com/teads/TeadsSDK-iOS/issues/155) building your application with **Xcode 13** and running it on **iOS 15 device** will crash when running TeadsSDK, we strongly advise to upgrade to [4.8.8 version](https://github.com/teads/TeadsSDK-iOS/releases/tag/v4.8.8) which fixes this crash
+>
+> You can still build and publish your app using Xcode 12 with older versions than 4.8.8
+>
+
 ## Run the sample app
 
 Clone this repository, open it with Xcode, and run project.
@@ -46,12 +56,6 @@ github "teads/TeadsSDK-iOS"
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000165909).
-
-## Known Issue
-
-### Xcode 12 Excluded Architecture
-
-[#142](https://github.com/teads/TeadsSDK-iOS/issues/142) Our third party viewability solution is unfortunately not yet compatible with ARM Simulator Architecture.
 
 ## Changelog
 
