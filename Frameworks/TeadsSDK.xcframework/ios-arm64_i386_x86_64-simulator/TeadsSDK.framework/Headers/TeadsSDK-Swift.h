@@ -262,6 +262,11 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
+@interface OverlayComponent : CommonComponent
+@end
+
+
 /// Transparency & Consent Framework versions
 typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV1 = 1,
@@ -563,13 +568,11 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 @interface TeadsInReadAdView : TeadsAdView
-@property (nonatomic) CGRect bounds;
-@property (nonatomic) CGRect frame;
 - (void)bind:(TeadsInReadAd * _Nonnull)ad;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
 @end
-
 
 
 
@@ -578,10 +581,10 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 @interface TeadsMediaView : UIView
-@property (nonatomic) CGRect bounds;
 - (nonnull instancetype)initWithVideoComponent:(VideoComponent * _Nonnull)videoComponent OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 
@@ -695,6 +698,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
 
 
 @interface UIView (SWIFT_EXTENSION(TeadsSDK))
+/// map your UIKit element to TeadsSDK logic,
+/// this ensures visibility measurement is monitored and click behaviors are well handled
+/// \param component object holding text, image or video depending on his subtype
+///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 
@@ -978,6 +985,11 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
+@interface OverlayComponent : CommonComponent
+@end
+
+
 /// Transparency & Consent Framework versions
 typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV1 = 1,
@@ -1279,13 +1291,11 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 @interface TeadsInReadAdView : TeadsAdView
-@property (nonatomic) CGRect bounds;
-@property (nonatomic) CGRect frame;
 - (void)bind:(TeadsInReadAd * _Nonnull)ad;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
 @end
-
 
 
 
@@ -1294,10 +1304,10 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 @interface TeadsMediaView : UIView
-@property (nonatomic) CGRect bounds;
 - (nonnull instancetype)initWithVideoComponent:(VideoComponent * _Nonnull)videoComponent OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 
@@ -1411,6 +1421,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
 
 
 @interface UIView (SWIFT_EXTENSION(TeadsSDK))
+/// map your UIKit element to TeadsSDK logic,
+/// this ensures visibility measurement is monitored and click behaviors are well handled
+/// \param component object holding text, image or video depending on his subtype
+///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 
@@ -1694,6 +1708,11 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 
 
 
+SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
+@interface OverlayComponent : CommonComponent
+@end
+
+
 /// Transparency & Consent Framework versions
 typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV1 = 1,
@@ -1995,13 +2014,11 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 @interface TeadsInReadAdView : TeadsAdView
-@property (nonatomic) CGRect bounds;
-@property (nonatomic) CGRect frame;
 - (void)bind:(TeadsInReadAd * _Nonnull)ad;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
 @end
-
 
 
 
@@ -2010,10 +2027,10 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 @interface TeadsMediaView : UIView
-@property (nonatomic) CGRect bounds;
 - (nonnull instancetype)initWithVideoComponent:(VideoComponent * _Nonnull)videoComponent OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 
@@ -2127,6 +2144,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
 
 
 @interface UIView (SWIFT_EXTENSION(TeadsSDK))
+/// map your UIKit element to TeadsSDK logic,
+/// this ensures visibility measurement is monitored and click behaviors are well handled
+/// \param component object holding text, image or video depending on his subtype
+///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
 

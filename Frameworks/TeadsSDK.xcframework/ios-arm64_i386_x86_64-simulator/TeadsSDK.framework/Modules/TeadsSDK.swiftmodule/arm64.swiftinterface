@@ -12,6 +12,7 @@ import JavaScriptCore
 import OMSDK_Teadstv
 import SafariServices
 import Swift
+import SwiftUI
 import SystemConfiguration
 @_exported import TeadsSDK
 import UIKit
@@ -104,13 +105,10 @@ extension UILabel {
   @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class TeadsMediaView : UIKit.UIView {
-  @objc override final public var bounds: CoreGraphics.CGRect {
-    @objc get
-    @objc set
-  }
   final public var placeholderImage: UIKit.UIImage?
   @objc public init(videoComponent: TeadsSDK.VideoComponent)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override final public func layoutSubviews()
   @objc override final public func bind(component: TeadsSDK.CommonComponent?)
   @objc deinit
 }
@@ -262,6 +260,31 @@ extension TeadsInReadAd {
     @objc get
   }
 }
+@available(iOS 13.0, *)
+public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.View {
+  public init(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings? = nil, placement: SwiftUI.Binding<TeadsSDK.TeadsInReadAdPlacement?>, didReceiveAd: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, didFailToReceiveAd: @escaping (TeadsSDK.AdFailReason) -> Swift.Void, didUpdateRatio: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, willPresentModalView: @escaping (TeadsSDK.TeadsAd) -> UIKit.UIViewController, didCatchError: @escaping (TeadsSDK.TeadsAd, Swift.Error) -> Swift.Void, didClose: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, didRecordImpression: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didRecordClick: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didExpandedToFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didCollapsedFromFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, adStartPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, adStopPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void)
+  public func makeUIView(context: TeadsSDK.TeadsInReadAdViewRenderer.Context) -> TeadsSDK.TeadsInReadAdView
+  public func updateUIView(_ uiView: TeadsSDK.TeadsInReadAdView, context: TeadsSDK.TeadsInReadAdViewRenderer.Context)
+  public func makeCoordinator() -> TeadsSDK.TeadsInReadAdViewRenderer.Coordinator
+  @_hasMissingDesignatedInitializers public class Coordinator : TeadsSDK.TeadsInReadAdPlacementDelegate, TeadsSDK.TeadsAdDelegate, TeadsSDK.TeadsSoundDelegate {
+    @objc public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+    @objc public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+    @objc public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+    @objc public func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+    @objc public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
+    @objc public func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
+    @objc public func didClose(ad: TeadsSDK.TeadsAd)
+    @objc public func didRecordImpression(ad: TeadsSDK.TeadsAd)
+    @objc public func didRecordClick(ad: TeadsSDK.TeadsAd)
+    @objc public func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
+    @objc public func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
+    @objc public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+    @objc public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+    @objc deinit
+  }
+  public typealias UIViewType = TeadsSDK.TeadsInReadAdView
+  public typealias Body = Swift.Never
+}
 @objc public protocol TeadsAdDelegate : AnyObject {
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
   @objc optional func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
@@ -301,6 +324,9 @@ extension TeadsInReadAd {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
+@_hasMissingDesignatedInitializers @objc public class OverlayComponent : TeadsSDK.CommonComponent {
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc final public class ContainerComponent : TeadsSDK.CommonComponent {
   @objc deinit
 }
@@ -317,18 +343,11 @@ extension CommonComponent {
   @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
-  @objc override final public var bounds: CoreGraphics.CGRect {
-    @objc get
-    @objc set
-  }
-  @objc override final public var frame: CoreGraphics.CGRect {
-    @objc get
-    @objc set
-  }
   @objc final public func bind(_ ad: TeadsSDK.TeadsInReadAd)
   public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreGraphics.CGRect = .zero)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override final public func layoutSubviews()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
@@ -355,6 +374,9 @@ extension CommonComponent {
   @objc final public var errorMessage: Swift.String
   @objc override final public var description: Swift.String {
     @objc get
+  }
+  final public var error: Swift.Error {
+    get
   }
   @objc override dynamic public init()
   @objc deinit

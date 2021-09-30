@@ -67,7 +67,8 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     }
     
     public func didFailToReceiveAd(reason: AdFailReason) {
-        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsSASErrors.noFillError, noFill: true)
+        let isNotFilled = reason.errorCode == .errorNotFilled
+        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason.error, noFill: isNotFilled)
     }
     
     public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {

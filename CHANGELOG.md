@@ -1,5 +1,14 @@
 # Changelog
 
+### v5.0.3
+_2021-09-30_
+- Fix scroller creative issue: when the slot was not visible, the scroller could not be well displayed.
+- OpenMeasurement upgrade to 1.3.24
+
+### v5.0.2
+_2021-09-09_
+- New public APIs, Ad opportunities metrics, new ad format: inFeed Native, a new engine under the hood and some fixes.
+
 ### v4.8.8
 _2021-08-10_
 - fix Xcode13 beta crash running on iOS 15 beta  #155
