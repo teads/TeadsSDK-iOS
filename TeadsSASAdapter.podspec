@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
     s.description               = <<-DESC
                                 Use this adapter to include Teads as a demand source in your mediation waterfall
                                 DESC
-    s.homepage                  = 'https://github.com/teads/TeadsSDK-adapter-sas-ios'
-    s.documentation_url         = 'https://support.teads.tv/support/solutions/articles/36000256729-smart-ad-mediation-ios'
+    s.homepage                  = 'https://github.com/teads/TeadsSDK-iOS'
+    s.documentation_url         = 'https://support.teads.tv/support/solutions/articles/36000314771-smart-adserver-mediation'
     s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 

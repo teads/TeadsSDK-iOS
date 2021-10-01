@@ -61,6 +61,11 @@ Integration instructions are available on [Teads SDK Documentation](https://supp
 ## Migrating from v4 to v5
 TeadsSDK v5 introduces some changes regarding v4, see [Migration Documentation](https://support.teads.tv/support/solutions/articles/36000314772-migrating-from-v4-to-v5)
 
+## Mediation Adapters
+- [Google AdMob](./MediationAdapters/TeadsAdMobAdapter/README.md)
+- [Twitter Mopub](./MediationAdapters/TeadsMoPubAdapter/README.md)
+- [Smart AdServer](./MediationAdapters/TeadsSASAdapter/README.md)
+
 ## Changelog
 
 See [changelog here](CHANGELOG.md). 
