@@ -38,7 +38,7 @@ class GADMAdapterTeadsMediatedNativeAd: NSObject {
 extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
     
     var extraAssets: [String : Any]? {
-        return nil // todo?
+        return nil
     }
     
     var advertiser: String? {

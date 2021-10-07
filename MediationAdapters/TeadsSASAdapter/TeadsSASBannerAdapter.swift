@@ -76,13 +76,13 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     }
     
     public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        
+        //adOpportunityTrackerView is handled by TeadsSDK
     }
     
 }
 extension TeadsSASBannerAdapter: TeadsAdDelegate {
     public func didRecordImpression(ad: TeadsAd) {
-        
+        //not handled by SASDisplayKit
     }
     
     public func didRecordClick(ad: TeadsAd) {
@@ -95,11 +95,11 @@ extension TeadsSASBannerAdapter: TeadsAdDelegate {
     }
     
     public func didCatchError(ad: TeadsAd, error: Error) {
-        
+        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: error, noFill: false)
     }
     
     public func didClose(ad: TeadsAd) {
-        
+        //not handled by SASDisplayKit
     }
     
     public func didExpandedToFullscreen(ad: TeadsAd) {

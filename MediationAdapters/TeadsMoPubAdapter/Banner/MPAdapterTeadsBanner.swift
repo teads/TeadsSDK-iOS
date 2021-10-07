@@ -63,7 +63,7 @@ extension MPAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        //adOpportunity view is handled by the SDK
+        //adOpportunityTrackerView is handled by TeadsSDK
     }
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {

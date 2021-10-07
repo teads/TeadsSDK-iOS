@@ -61,7 +61,7 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     }
     
     public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        //adOpportunityTrackerView is handle in the SDK
+        //adOpportunityTrackerView is handled by TeadsSDK
     }
     
     public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
@@ -72,7 +72,7 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
 
 extension GADMAdapterTeadsBanner: TeadsAdDelegate {
     public func didRecordImpression(ad: TeadsAd) {
-        //not handled by GAD
+        //not handled by GoogleMobileAds
     }
     
     public func didRecordClick(ad: TeadsAd) {

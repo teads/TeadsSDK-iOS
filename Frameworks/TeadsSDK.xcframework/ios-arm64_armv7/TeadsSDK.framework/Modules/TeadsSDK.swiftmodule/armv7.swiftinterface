@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TeadsSDK
 import AVFoundation
 import AVKit
@@ -24,10 +24,10 @@ extension UIView {
   @objc public static let `default`: TeadsSDK.TeadsAdRatio
   @objc(calculateHeightForWidth:) final public func calculateHeight(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
   final public func value(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-@objc public protocol TeadsNativeAdPlacementDelegate : AnyObject {
+@objc public protocol TeadsNativeAdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
   @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
   @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
@@ -94,8 +94,8 @@ extension AnyEncodableProtocol {
   }
   final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsNativeAdPlacementDelegate) -> TeadsSDK.TeadsNativeAdPlacement?
   @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsInReadAdPlacementDelegate) -> TeadsSDK.TeadsInReadAdPlacement?
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension Teads {
   @objc final public class func configure()
@@ -122,7 +122,7 @@ internal protocol AnyDecodableProtocol {
 extension AnyDecodableProtocol {
   public init(from decoder: Swift.Decoder) throws
 }
-@objc public protocol TeadsInReadAdPlacementDelegate : AnyObject {
+@objc public protocol TeadsInReadAdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
   @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
   @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
@@ -189,8 +189,8 @@ public protocol TeadsAdRequestSettingsProtocol {
 @objc public enum TCFVersion : Swift.Int, Swift.Codable {
   case v1 = 1
   case v2 = 2
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -259,7 +259,7 @@ extension TeadsInReadAd {
     @objc get
   }
 }
-@objc public protocol TeadsAdDelegate : AnyObject {
+@objc public protocol TeadsAdDelegate {
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
   @objc optional func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
   @objc optional func didClose(ad: TeadsSDK.TeadsAd)
@@ -294,9 +294,9 @@ extension TeadsInReadAd {
   @objc @IBOutlet weak public var ratingView: UIKit.UIView?
   @objc @IBOutlet weak public var priceLabel: UIKit.UILabel?
   public func bind(_ ad: TeadsSDK.TeadsNativeAd)
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class OverlayComponent : TeadsSDK.CommonComponent {
   @objc deinit
@@ -313,7 +313,7 @@ extension CommonComponent {
     get
   }
 }
-@objc public protocol TeadsMediatedAdViewDelegate : AnyObject {
+@objc public protocol TeadsMediatedAdViewDelegate {
   @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
@@ -337,8 +337,8 @@ extension CommonComponent {
   case errorInternal = 7
   case disabledApp = 8
   case errorAdRequest = 9
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
