@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
     s.description               = <<-DESC
                                 Use this adapter to include MoPub as a demand source in your mediation waterfall
                                 DESC
-    s.homepage                  = 'https://github.com/teads/TeadsSDK-adapter-mopub-ios'
-    s.documentation_url         = "https://support.teads.tv/support/solutions/articles/36000166728-twitter-mopub-mediation-ios"
+    s.homepage                  = 'https://github.com/teads/TeadsSDK-iOS'
+    s.documentation_url         = "https://support.teads.tv/support/solutions/articles/36000314769-inread-twitter-mopub-mediation"
     s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 
