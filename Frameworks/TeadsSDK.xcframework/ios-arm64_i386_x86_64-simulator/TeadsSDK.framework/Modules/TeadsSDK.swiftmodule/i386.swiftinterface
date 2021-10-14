@@ -268,6 +268,14 @@ extension TeadsInReadAd {
   @objc optional func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
   @objc optional func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
 }
+@objc public protocol TeadsPlaybackDelegate {
+  @objc optional func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc optional func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc optional func didPause(_ ad: TeadsSDK.TeadsAd)
+  @objc optional func didPlay(_ ad: TeadsSDK.TeadsAd)
+  @objc optional func didComplete(_ ad: TeadsSDK.TeadsAd)
+}
+@available(*, unavailable, renamed: "TeadsPlaybackDelegate", message: "Use TeadsPlaybackDelegate instead")
 @objc public protocol TeadsSoundDelegate {
   @objc func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
   @objc func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
@@ -277,7 +285,9 @@ extension TeadsInReadAd {
     @objc get
     @objc set
   }
-  @objc weak public var soundDelegate: TeadsSDK.TeadsSoundDelegate? {
+  @available(*, unavailable, renamed: "playbackDelegate", message: "Use playbackDelegate instead")
+  @objc weak public var soundDelegate: TeadsSDK.TeadsPlaybackDelegate?
+  @objc weak public var playbackDelegate: TeadsSDK.TeadsPlaybackDelegate? {
     @objc get
     @objc set
   }

@@ -307,12 +307,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 @protocol TeadsAdDelegate;
-@protocol TeadsSoundDelegate;
+@protocol TeadsPlaybackDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 @interface TeadsAd : NSObject
 @property (nonatomic, weak) id <TeadsAdDelegate> _Nullable delegate;
-@property (nonatomic, weak) id <TeadsSoundDelegate> _Nullable soundDelegate;
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable soundDelegate SWIFT_UNAVAILABLE_MSG("'soundDelegate' has been renamed to 'playbackDelegate': Use playbackDelegate instead");
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -668,7 +669,34 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 
 
 ///
-SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
+@protocol TeadsPlaybackDelegate
+@optional
+/// Called when the ad starts playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad stops playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+/// Called when the ad starts or resumes
+/// \param ad The teadsAd object
+///
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad ended
+/// \param ad The teadsAd object
+///
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
+
+///
+SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'TeadsSoundDelegate' has been renamed to '_TtP8TeadsSDK21TeadsPlaybackDelegate_': Use TeadsPlaybackDelegate instead")
 @protocol TeadsSoundDelegate
 /// Called when the ad starts playing audio
 /// \param ad The teadsAd object
@@ -1033,12 +1061,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 @protocol TeadsAdDelegate;
-@protocol TeadsSoundDelegate;
+@protocol TeadsPlaybackDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 @interface TeadsAd : NSObject
 @property (nonatomic, weak) id <TeadsAdDelegate> _Nullable delegate;
-@property (nonatomic, weak) id <TeadsSoundDelegate> _Nullable soundDelegate;
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable soundDelegate SWIFT_UNAVAILABLE_MSG("'soundDelegate' has been renamed to 'playbackDelegate': Use playbackDelegate instead");
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1394,7 +1423,34 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 
 
 ///
-SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
+@protocol TeadsPlaybackDelegate
+@optional
+/// Called when the ad starts playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad stops playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+/// Called when the ad starts or resumes
+/// \param ad The teadsAd object
+///
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad ended
+/// \param ad The teadsAd object
+///
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
+
+///
+SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'TeadsSoundDelegate' has been renamed to '_TtP8TeadsSDK21TeadsPlaybackDelegate_': Use TeadsPlaybackDelegate instead")
 @protocol TeadsSoundDelegate
 /// Called when the ad starts playing audio
 /// \param ad The teadsAd object
@@ -1759,12 +1815,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 @protocol TeadsAdDelegate;
-@protocol TeadsSoundDelegate;
+@protocol TeadsPlaybackDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 @interface TeadsAd : NSObject
 @property (nonatomic, weak) id <TeadsAdDelegate> _Nullable delegate;
-@property (nonatomic, weak) id <TeadsSoundDelegate> _Nullable soundDelegate;
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable soundDelegate SWIFT_UNAVAILABLE_MSG("'soundDelegate' has been renamed to 'playbackDelegate': Use playbackDelegate instead");
+@property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2120,7 +2177,34 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 
 
 ///
-SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
+@protocol TeadsPlaybackDelegate
+@optional
+/// Called when the ad starts playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad stops playing audio
+/// \param ad The teadsAd object
+///
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+/// Called when the ad starts or resumes
+/// \param ad The teadsAd object
+///
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad ended
+/// \param ad The teadsAd object
+///
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
+
+///
+SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'TeadsSoundDelegate' has been renamed to '_TtP8TeadsSDK21TeadsPlaybackDelegate_': Use TeadsPlaybackDelegate instead")
 @protocol TeadsSoundDelegate
 /// Called when the ad starts playing audio
 /// \param ad The teadsAd object

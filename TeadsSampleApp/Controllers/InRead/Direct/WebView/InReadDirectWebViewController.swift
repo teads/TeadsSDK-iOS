@@ -62,7 +62,7 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
         //open the slot
         webViewHelper?.openSlot(ad: ad, adRatio: adRatio)
         print("didReceiveAd")
-        ad.soundDelegate = self
+        ad.playbackDelegate = self
         ad.delegate = self
     }
     
@@ -99,7 +99,7 @@ extension InReadDirectWebViewController: TeadsAdDelegate {
     }
 }
 
-extension InReadDirectWebViewController: TeadsSoundDelegate {
+extension InReadDirectWebViewController: TeadsPlaybackDelegate {
     func adStartPlayingAudio(_ ad: TeadsAd) {
         print("adStartPlayingAudio")
     }
