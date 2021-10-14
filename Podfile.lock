@@ -1,5 +1,5 @@
 PODS:
-  - Google-Mobile-Ads-SDK (8.11.0):
+  - Google-Mobile-Ads-SDK (8.12.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (8.8.0):
@@ -57,18 +57,18 @@ PODS:
   - Smart-Core-SDK (7.14.0)
   - Smart-Display-SDK (7.14.0):
     - Smart-Core-SDK (~> 7.14)
-  - TeadsAdMobAdapter (5.0.4):
+  - TeadsAdMobAdapter (5.0.5):
     - Google-Mobile-Ads-SDK (>= 8.0)
-    - TeadsSDK (= 5.0.4)
-  - TeadsMoPubAdapter (5.0.4):
+    - TeadsSDK (= 5.0.5)
+  - TeadsMoPubAdapter (5.0.5):
     - mopub-ios-sdk (>= 5.13)
-    - TeadsSDK (= 5.0.4)
-  - TeadsSASAdapter (5.0.4):
+    - TeadsSDK (= 5.0.5)
+  - TeadsSASAdapter (5.0.5):
     - Smart-Display-SDK (>= 7.6.2)
-    - TeadsSDK (= 5.0.4)
-  - TeadsSDK (5.0.4):
-    - TeadsSDK/Core (= 5.0.4)
-  - TeadsSDK/Core (5.0.4)
+    - TeadsSDK (= 5.0.5)
+  - TeadsSDK (5.0.5):
+    - TeadsSDK/Core (= 5.0.5)
+  - TeadsSDK/Core (5.0.5)
 
 DEPENDENCIES:
   - TeadsAdMobAdapter (~> 5.0)
@@ -93,7 +93,7 @@ SPEC REPOS:
     - TeadsSDK
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: be2192b51b74d74a6ed70590c2e8275412f1b71e
+  Google-Mobile-Ads-SDK: fb31b6ef68ef352b551ee29585cd9ceb07230cd0
   GoogleAppMeasurement: 5ba1164e3c844ba84272555e916d0a6d3d977e91
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
@@ -102,10 +102,10 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Smart-Core-SDK: c7b7511fbcfe244b5029901bf56a2a3c0c88bd7c
   Smart-Display-SDK: b7f3a5b6473aff1b214eed9a65cd313c1fd15f83
-  TeadsAdMobAdapter: d18b9913cd7d83b2f62191225e0978ca9aeba658
-  TeadsMoPubAdapter: 2aafa60fef30f37f99c9a2225cd788a59f746c8a
-  TeadsSASAdapter: 7825146725ceab8cdbebe9c7b506fca850957e0f
-  TeadsSDK: ac6eb5cb8f33fd67f05cd147eefe59d10e9e563b
+  TeadsAdMobAdapter: 8fc7f72464369edc3c832637ee989a8c63eed8cb
+  TeadsMoPubAdapter: ded29902328e583572e01ed9dce93b978aaba0a9
+  TeadsSASAdapter: b9ce19759e50c782cc9d4e109580b2554c1215f7
+  TeadsSDK: 1ed885aa05fe4b207ae21b565968a503ece02145
 
 PODFILE CHECKSUM: aa4219f7835c2c99ea97b01461d8286fcd340667
 
