@@ -1,5 +1,5 @@
 PODS:
-  - Google-Mobile-Ads-SDK (8.11.0):
+  - Google-Mobile-Ads-SDK (8.12.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (8.8.0):
@@ -40,13 +40,13 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.5.2)"
   - GoogleUtilities/Reachability (7.5.2):
     - GoogleUtilities/Logger
-  - mopub-ios-sdk (5.18.0):
-    - mopub-ios-sdk/MoPubSDK (= 5.18.0)
-  - mopub-ios-sdk/Core (5.18.0)
-  - mopub-ios-sdk/MoPubSDK (5.18.0):
+  - mopub-ios-sdk (5.18.2):
+    - mopub-ios-sdk/MoPubSDK (= 5.18.2)
+  - mopub-ios-sdk/Core (5.18.2)
+  - mopub-ios-sdk/MoPubSDK (5.18.2):
     - mopub-ios-sdk/Core
     - mopub-ios-sdk/NativeAds
-  - mopub-ios-sdk/NativeAds (5.18.0):
+  - mopub-ios-sdk/NativeAds (5.18.2):
     - mopub-ios-sdk/Core
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -71,10 +71,10 @@ PODS:
   - TeadsSDK/Core (5.0.6)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (from `./`)
-  - TeadsMoPubAdapter (from `./`)
-  - TeadsSASAdapter (from `./`)
-  - TeadsSDK (from `./`)
+  - TeadsAdMobAdapter (~> 5.0)
+  - TeadsMoPubAdapter (~> 5.0)
+  - TeadsSASAdapter (~> 5.0)
+  - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -87,23 +87,17 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-
-EXTERNAL SOURCES:
-  TeadsAdMobAdapter:
-    :path: "./"
-  TeadsMoPubAdapter:
-    :path: "./"
-  TeadsSASAdapter:
-    :path: "./"
-  TeadsSDK:
-    :path: "./"
+    - TeadsAdMobAdapter
+    - TeadsMoPubAdapter
+    - TeadsSASAdapter
+    - TeadsSDK
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: be2192b51b74d74a6ed70590c2e8275412f1b71e
+  Google-Mobile-Ads-SDK: fb31b6ef68ef352b551ee29585cd9ceb07230cd0
   GoogleAppMeasurement: 5ba1164e3c844ba84272555e916d0a6d3d977e91
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
-  mopub-ios-sdk: d7b533646d96a075e578e8af9598794f2dfb7f7b
+  mopub-ios-sdk: 39dd404dc791e543979b91aa8e3b27197af91377
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Smart-Core-SDK: c7b7511fbcfe244b5029901bf56a2a3c0c88bd7c
@@ -113,6 +107,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 1db379cf42d474b7fe6bd5faea584c8a7eb7374f
   TeadsSDK: cb117eb0418b9041a1d8cf4b7348bab8f8d6b981
 
-PODFILE CHECKSUM: 720a9592df375ce23cb9532bc57a391a9ba02e91
+PODFILE CHECKSUM: aa4219f7835c2c99ea97b01461d8286fcd340667
 
 COCOAPODS: 1.11.2
