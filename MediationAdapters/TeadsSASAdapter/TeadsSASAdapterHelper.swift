@@ -68,8 +68,7 @@ struct TeadsSASErrors {
     static let serverParameterError = NSError(domain: "JsonError", code: 401, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("JsonError", value: "serverParameterString is not a jSON", comment: "") ,
                                                                                                NSLocalizedFailureReasonErrorKey: NSLocalizedString("JsonError", value: "serverParameterString is not a jSON", comment: "")
                                                                                        ])
-    
+
     static let loadError = NSError(domain: "loadError", code: 402, userInfo: [ NSLocalizedDescriptionKey: NSLocalizedString("loadError", value: "Teads ad can't be initialized", comment: "") ,
                                                                        NSLocalizedFailureReasonErrorKey: NSLocalizedString("loadError", value: "Teads ad can't be initialized", comment: "")])
 }
-

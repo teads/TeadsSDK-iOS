@@ -11,9 +11,9 @@ import TeadsSDK
 
 @objc(MPAdapterTeadsMediatedNativeAd)
 final class MPAdapterTeadsMediatedNativeAd: NSObject, MPNativeAdAdapter {
-    
-    var defaultActionURL: URL!
-    
+
+    var defaultActionURL: URL?
+
     weak var delegate: MPNativeAdAdapterDelegate?
 
     var properties: [AnyHashable: Any] {
@@ -62,28 +62,28 @@ extension MPAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
         MPLogEvent.adShowSuccess(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
         MPLogEvent.adDidAppear(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
-    
+
     func didRecordClick(ad: TeadsAd) {
         delegate?.nativeAdDidClick?(self)
         MPLogEvent.adTapped(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
-    
+
     func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return delegate?.viewControllerForPresentingModalView()
     }
-    
+
     func didCatchError(ad: TeadsAd, error: Error) {
         MPLogEvent.error(error, message: error.localizedDescription)
     }
-    
+
     func didClose(ad: TeadsAd) {
         MPLogEvent.adDidDisappear(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
-    
+
     func didExpandedToFullscreen(ad: TeadsAd) {
         MPLogEvent.adWillPresentModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
-    
+
     func didCollapsedFromFullscreen(ad: TeadsAd) {
         MPLogEvent.adDidDismissModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }

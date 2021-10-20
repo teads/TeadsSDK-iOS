@@ -13,9 +13,9 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
 
 @objc public final class MPAdapterTeadsNativeAdRenderer: NSObject, MPNativeAdRenderer {
 
-    @objc public var viewSizeHandler: MPNativeViewSizeHandler!
+    public var viewSizeHandler: MPNativeViewSizeHandler?
 
-    var rendererSettings: MPAdapterTeadsNativeAdRendererSettings!
+    let rendererSettings: MPAdapterTeadsNativeAdRendererSettings?
 
     /// Publisher adView which is rendering.
     var adView: TeadsUIViewMPNativeAdRendering?
@@ -24,19 +24,19 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
     var adViewInViewHierarchy: Bool?
 
     /// MPNativeAdRendererImageHandler instance.
-    var renderingViewClass: TeadsUIViewMPNativeAdRendering.Type?
+    let renderingViewClass: TeadsUIViewMPNativeAdRendering.Type?
 
     /// Renderer settings are objects that allow you to expose configurable properties to the
     /// application. MPAdapterTeadsNativeAdRenderer renderer will be initialized with these settings.
-    @objc required public init!(rendererSettings: MPNativeAdRendererSettings!) {
+    @objc required public init(rendererSettings: MPNativeAdRendererSettings) {
         viewSizeHandler = rendererSettings.viewSizeHandler
         self.rendererSettings = rendererSettings as? MPAdapterTeadsNativeAdRendererSettings
-        renderingViewClass = self.rendererSettings.renderingViewClass
+        renderingViewClass = self.rendererSettings?.renderingViewClass
     }
 
     /// Construct and return an MPNativeAdRendererConfiguration object, you must set all the properties
     /// on the configuration object.
-    @objc public static func rendererConfiguration(with rendererSettings: MPNativeAdRendererSettings!) -> MPNativeAdRendererConfiguration! {
+    @objc public static func rendererConfiguration(with rendererSettings: MPNativeAdRendererSettings) -> MPNativeAdRendererConfiguration {
         let config = MPNativeAdRendererConfiguration()
         config.rendererClass = MPAdapterTeadsNativeAdRenderer.self
         config.rendererSettings = rendererSettings
@@ -46,7 +46,7 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
 
     /// Returns an ad view rendered using provided |adapter|. Sets an |error| if any error is
     /// encountered.
-    @objc public func retrieveView(with adapter: MPNativeAdAdapter!) throws -> UIView {
+    @objc public func retrieveView(with adapter: MPNativeAdAdapter) throws -> UIView {
         guard let adapter = adapter as? MPAdapterTeadsMediatedNativeAd else {
             throw MPNativeAdNSErrorForRenderValueTypeError()
         }
@@ -91,11 +91,9 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
         // Advertiser
         register(component: adapter.teadsNativeAd.sponsored,
                  in: adView.nativeSponsoredByCompanyTextLabel?())
-        
     }
 
     func registerContainer(adapter: MPAdapterTeadsMediatedNativeAd) {
-        
         if let adView = renderingViewClass?.nibForAd?()?.instantiate(withOwner: self, options: nil).first as? TeadsUIViewMPNativeAdRendering {
             self.adView = adView
         } else {
@@ -115,4 +113,3 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
         }
     }
 }
-

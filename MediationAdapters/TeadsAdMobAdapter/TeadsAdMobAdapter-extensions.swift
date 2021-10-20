@@ -29,4 +29,3 @@ extension TeadsAdapterSettings: GADAdNetworkExtras {
         return customEventExtras
     }
 }
-

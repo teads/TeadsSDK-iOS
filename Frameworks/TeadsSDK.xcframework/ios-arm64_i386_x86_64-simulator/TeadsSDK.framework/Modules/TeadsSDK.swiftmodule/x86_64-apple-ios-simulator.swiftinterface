@@ -260,31 +260,6 @@ extension TeadsInReadAd {
     @objc get
   }
 }
-@available(iOS 13.0, *)
-public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.View {
-  public init(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings? = nil, placement: SwiftUI.Binding<TeadsSDK.TeadsInReadAdPlacement?>, didReceiveAd: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, didFailToReceiveAd: @escaping (TeadsSDK.AdFailReason) -> Swift.Void, didUpdateRatio: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, willPresentModalView: @escaping (TeadsSDK.TeadsAd) -> UIKit.UIViewController, didCatchError: @escaping (TeadsSDK.TeadsAd, Swift.Error) -> Swift.Void, didClose: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, didRecordImpression: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didRecordClick: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didExpandedToFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didCollapsedFromFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, adStartPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, adStopPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void)
-  public func makeUIView(context: TeadsSDK.TeadsInReadAdViewRenderer.Context) -> TeadsSDK.TeadsInReadAdView
-  public func updateUIView(_ uiView: TeadsSDK.TeadsInReadAdView, context: TeadsSDK.TeadsInReadAdViewRenderer.Context)
-  public func makeCoordinator() -> TeadsSDK.TeadsInReadAdViewRenderer.Coordinator
-  @_hasMissingDesignatedInitializers public class Coordinator : TeadsSDK.TeadsInReadAdPlacementDelegate, TeadsSDK.TeadsAdDelegate, TeadsSDK.TeadsPlaybackDelegate {
-    @objc public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-    @objc public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-    @objc public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
-    @objc public func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-    @objc public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
-    @objc public func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
-    @objc public func didClose(ad: TeadsSDK.TeadsAd)
-    @objc public func didRecordImpression(ad: TeadsSDK.TeadsAd)
-    @objc public func didRecordClick(ad: TeadsSDK.TeadsAd)
-    @objc public func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
-    @objc public func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
-    @objc public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-    @objc public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-    @objc deinit
-  }
-  public typealias Body = Swift.Never
-  public typealias UIViewType = TeadsSDK.TeadsInReadAdView
-}
 @objc public protocol TeadsAdDelegate {
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
   @objc optional func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
@@ -348,6 +323,31 @@ extension CommonComponent {
   public var text: Swift.String? {
     get
   }
+}
+@available(iOS 13.0, *)
+public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.View {
+  public init(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings? = nil, placement: SwiftUI.Binding<TeadsSDK.TeadsInReadAdPlacement?>, didReceiveAd: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, didFailToReceiveAd: @escaping (TeadsSDK.AdFailReason) -> Swift.Void, didUpdateRatio: @escaping (TeadsSDK.TeadsInReadAd, TeadsSDK.TeadsAdRatio) -> Swift.Void, willPresentModalView: @escaping (TeadsSDK.TeadsAd) -> UIKit.UIViewController, didCatchError: @escaping (TeadsSDK.TeadsAd, Swift.Error) -> Swift.Void, didClose: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, didRecordImpression: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didRecordClick: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didExpandedToFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, didCollapsedFromFullscreen: ((TeadsSDK.TeadsAd) -> Swift.Void)? = nil, adStartPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void, adStopPlayingAudio: @escaping (TeadsSDK.TeadsAd) -> Swift.Void)
+  public func makeUIView(context: TeadsSDK.TeadsInReadAdViewRenderer.Context) -> TeadsSDK.TeadsInReadAdView
+  public func updateUIView(_ uiView: TeadsSDK.TeadsInReadAdView, context: TeadsSDK.TeadsInReadAdViewRenderer.Context)
+  public func makeCoordinator() -> TeadsSDK.TeadsInReadAdViewRenderer.Coordinator
+  @_hasMissingDesignatedInitializers public class Coordinator : TeadsSDK.TeadsInReadAdPlacementDelegate, TeadsSDK.TeadsAdDelegate, TeadsSDK.TeadsPlaybackDelegate {
+    @objc public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+    @objc public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+    @objc public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+    @objc public func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+    @objc public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
+    @objc public func didCatchError(ad: TeadsSDK.TeadsAd, error: Swift.Error)
+    @objc public func didClose(ad: TeadsSDK.TeadsAd)
+    @objc public func didRecordImpression(ad: TeadsSDK.TeadsAd)
+    @objc public func didRecordClick(ad: TeadsSDK.TeadsAd)
+    @objc public func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
+    @objc public func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
+    @objc public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+    @objc public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+    @objc deinit
+  }
+  public typealias Body = Swift.Never
+  public typealias UIViewType = TeadsSDK.TeadsInReadAdView
 }
 @objc public protocol TeadsMediatedAdViewDelegate {
   @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)

@@ -16,7 +16,7 @@ class GADMAdapterTeadsMediatedNativeAd: NSObject {
     private var adOpportunityView: TeadsAdOpportunityTrackerView?
     var teadsMediaView: TeadsMediaView?
     weak var viewController: UIViewController?
-    
+
     init(teadsNativeAd: TeadsNativeAd, adOpportunityView: TeadsAdOpportunityTrackerView?) {
         self.teadsNativeAd = teadsNativeAd
         self.adOpportunityView = adOpportunityView
@@ -36,11 +36,11 @@ class GADMAdapterTeadsMediatedNativeAd: NSObject {
 }
 
 extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
-    
-    var extraAssets: [String : Any]? {
+
+    var extraAssets: [String: Any]? {
         return nil
     }
-    
+
     var advertiser: String? {
         return teadsNativeAd.sponsored?.text
     }
@@ -85,7 +85,7 @@ extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
         // Set to nil as we only handle images atm
         return teadsMediaView
     }
-    
+
     var hasVideoContent: Bool {
         return teadsNativeAd.video != nil
     }
@@ -94,7 +94,7 @@ extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
         // AdChoices is completely handle from the SDK side because this doesn't work here atm
         return nil
     }
-    
+
     func didRender(in view: UIView, clickableAssetViews: [GADNativeAssetIdentifier: UIView], nonclickableAssetViews: [GADNativeAssetIdentifier: UIView], viewController: UIViewController) {
         self.viewController = viewController
         teadsNativeAd.register(containerView: view)
@@ -160,29 +160,44 @@ extension GADMAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
     func didRecordImpression(ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidRecordImpression(self)
     }
-    
+
     func didRecordClick(ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidRecordClick(self)
     }
-    
+
     func willPresentModalView(ad: TeadsAd) -> UIViewController? {
         return viewController
     }
-    
+
     func didCatchError(ad: TeadsAd, error: Error) {
-        //don't know what to do yet
+        // don't know what to do yet
     }
-    
+
     func didClose(ad: TeadsAd) {
-        //don't know what to do yet
+        // don't know what to do yet
     }
-    
+
     public func didExpandedToFullscreen(ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdWillPresentScreen(self)
     }
-    
+
     public func didCollapsedFromFullscreen(ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidDismissScreen(self)
     }
+}
+
+extension GADMAdapterTeadsMediatedNativeAd: TeadsPlaybackDelegate {
     
+    public func didPause(_ ad: TeadsAd) {
+        GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPauseVideo(self)
+    }
+    
+    public func didPlay(_ ad: TeadsAd) {
+        GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPlayVideo(self)
+    }
+
+    public func didComplete(_ ad: TeadsAd) {
+        GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidEndVideoPlayback(self)
+    }
+
 }
