@@ -20,7 +20,7 @@ import MoPubSDK
 
 @objc extension MPNativeAdRequestTargeting {
     /// This method helps you to add Teads settings to the mopub view
-    ///     /// - parameters:
+    ///     - parameters:
     ///     - teadsAdSettings: teads ad settings
     public func register(teadsAdSettings: TeadsAdapterSettings) {
         guard let extra = try? teadsAdSettings.toDictionary() else {

@@ -25,12 +25,12 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
         controller = viewController
 
         guard let serverParameter = ServerParameter.instance(from: serverParameterString) else {
-            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsSASErrors.serverParameterError, noFill: false)
+            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsAdapterErrorCode.serverParameterError, noFill: false)
             return
         }
 
         guard let pid = serverParameter.placementId else {
-            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsSASErrors.noPidError, noFill: false)
+            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsAdapterErrorCode.pidNotFound, noFill: false)
             return
         }
 
@@ -60,13 +60,13 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
         if let banner = currentBanner {
             delegate?.mediationBannerAdapter(self, didLoadBanner: banner)
         } else {
-            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsSASErrors.loadError, noFill: false)
+            delegate?.mediationBannerAdapter(self, didFailToLoadWithError: TeadsAdapterErrorCode.loadError, noFill: false)
         }
     }
 
     public func didFailToReceiveAd(reason: AdFailReason) {
-        let isNotFilled = reason.errorCode == .errorNotFilled
-        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason.error, noFill: isNotFilled)
+        let isNotFilled = reason.code == .errorNotFilled
+        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason, noFill: isNotFilled)
     }
 
     public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {

@@ -28,10 +28,8 @@ extension UIView {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public protocol TeadsNativeAdPlacementDelegate {
+@objc public protocol TeadsNativeAdPlacementDelegate : TeadsSDK.TeadsdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
-  @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-  @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
   final public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings)
@@ -123,14 +121,12 @@ internal protocol AnyDecodableProtocol {
 extension AnyDecodableProtocol {
   public init(from decoder: Swift.Decoder) throws
 }
-@objc public protocol TeadsInReadAdPlacementDelegate {
+@objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-  @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-  @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
   @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsInReadAdPlacement : TeadsSDK.TeadsAdPlacement {
-  @objc final public func requestAd(requestSettings: TeadsSDK.TeadsAdRequestSettings)
+  @objc final public func requestAd(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAd : TeadsSDK.TeadsAd {
@@ -187,6 +183,8 @@ public protocol TeadsAdRequestSettingsProtocol {
   @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: TeadsSDK.TeadsMediatedAdViewDelegate?)
   @objc deinit
 }
+public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
+public typealias TeadsInReadAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
 @objc public enum TCFVersion : Swift.Int, Swift.Codable {
   case v1 = 1
   case v2 = 2
@@ -209,7 +207,11 @@ extension UIButton {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
+@objc public protocol TeadsdPlacementDelegate {
+  @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+  @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+  @objc optional func didLogMessage(message: Swift.String)
+}
 @_hasMissingDesignatedInitializers @objc public class TeadsAdPlacement : ObjectiveC.NSObject {
   @objc deinit
   @objc override dynamic public init()
@@ -272,8 +274,8 @@ extension TeadsInReadAd {
 @objc public protocol TeadsPlaybackDelegate {
   @objc optional func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
   @objc optional func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-  @objc optional func didPause(_ ad: TeadsSDK.TeadsAd)
   @objc optional func didPlay(_ ad: TeadsSDK.TeadsAd)
+  @objc optional func didPause(_ ad: TeadsSDK.TeadsAd)
   @objc optional func didComplete(_ ad: TeadsSDK.TeadsAd)
 }
 @available(*, unavailable, renamed: "TeadsPlaybackDelegate", message: "Use TeadsPlaybackDelegate instead")
@@ -380,16 +382,24 @@ public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.V
   }
 }
 @_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
-  @objc final public var errorCode: TeadsSDK.AdErrorCode
+  @objc final public var code: TeadsSDK.AdErrorCode
   @objc final public var errorMessage: Swift.String
   @objc override final public var description: Swift.String {
     @objc get
   }
-  final public var error: Swift.Error {
-    get
-  }
   @objc override dynamic public init()
   @objc deinit
+}
+extension AdFailReason : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  final public var errorCode: Swift.Int {
+    get
+  }
+  final public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
 }
 extension TeadsSDK.TCFVersion : Swift.Equatable {}
 extension TeadsSDK.TCFVersion : Swift.Hashable {}

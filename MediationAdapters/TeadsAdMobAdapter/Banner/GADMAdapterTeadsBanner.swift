@@ -25,10 +25,7 @@ public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
                                 request: GADCustomEventRequest) {
         // Check PID
         guard let rawPid = serverParameter, let pid = Int(rawPid) else {
-            let error = NSError.from(code: .pidNotFound,
-                                     description: "No valid PID has been provided to load Teads banner ad.",
-                                     domain: GADMAdapterTeadsConstants.teadsAdapterErrorDomain)
-            delegate?.customEventBanner(self, didFailAd: error)
+            delegate?.customEventBanner(self, didFailAd: TeadsAdapterErrorCode.pidNotFound)
             return
         }
 
@@ -54,10 +51,7 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     }
 
     public func didFailToReceiveAd(reason: AdFailReason) {
-        let error = NSError.from(code: .loadingFailure,
-                                 description: reason.errorMessage,
-                                 domain: GADMAdapterTeadsConstants.teadsAdapterErrorDomain)
-        delegate?.customEventBanner(self, didFailAd: error)
+        delegate?.customEventBanner(self, didFailAd: reason)
     }
 
     public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

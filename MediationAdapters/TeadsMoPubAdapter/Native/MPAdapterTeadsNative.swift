@@ -21,10 +21,7 @@ public final class MPAdapterTeadsNative: MPNativeCustomEvent {
     @objc public override func requestAd(withCustomEventInfo info: [AnyHashable: Any], adMarkup: String) {
         // Check PID
         guard let rawPid = info[MPAdapterTeadsConstants.teadsPIDKey] as? String, let pid = Int(rawPid) else {
-            let error = NSError.from(code: .pidNotFound,
-                                     description: "No valid PID has been provided to load Teads banner ad.",
-                                     domain: MPAdapterTeadsConstants.teadsAdapterErrorDomain)
-            delegate.nativeCustomEvent(self, didFailToLoadAdWithError: error)
+            delegate.nativeCustomEvent(self, didFailToLoadAdWithError: TeadsAdapterErrorCode.pidNotFound)
             return
         }
 
@@ -47,7 +44,7 @@ extension MPAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
     }
 
     public func didFailToReceiveAd(reason: AdFailReason) {
-        delegate.nativeCustomEvent(self, didFailToLoadAdWithError: NSError(domain: "teads.placement", code: reason.errorCode.rawValue, userInfo: [NSLocalizedDescriptionKey: reason.errorMessage]))
+        delegate.nativeCustomEvent(self, didFailToLoadAdWithError: reason)
     }
 
     public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

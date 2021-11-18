@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsAdMobAdapter'
-    s.version                   = '5.0.6'
+    s.version                   = '5.0.7'
     s.summary                   = "AdMob Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsAdMobAdapter'
     s.description               = <<-DESC

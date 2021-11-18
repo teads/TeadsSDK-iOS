@@ -8,7 +8,7 @@
 import UIKit
 import TeadsSDK
 
-class Helper {
+struct Helper {
     static func bannerSize(for width: CGFloat) -> CGSize {
         return CGSize(width: width > 0 ? width : 300, height: width/(16/9))
     }

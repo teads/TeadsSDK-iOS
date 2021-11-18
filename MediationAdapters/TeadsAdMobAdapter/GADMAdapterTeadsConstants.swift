@@ -7,9 +7,3 @@
 //
 
 import Foundation
-
-/// Structure defining constants used by Teads adapter.
-public struct GADMAdapterTeadsConstants {
-    static let teadsAdapterErrorDomain  = "tv.teads.adapter.admob"
-    static let teadsAdContainerKey      = "adContainer"
-}

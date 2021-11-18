@@ -18,9 +18,7 @@ final class MPAdapterTeadsBanner: MPInlineAdAdapter, MPThirdPartyInlineAdAdapter
 
     @objc public override func requestAd(with size: CGSize, adapterInfo info: [AnyHashable: Any], adMarkup: String?) {
         guard let rawPid = info[MPAdapterTeadsConstants.teadsPIDKey] as? String, let pid = Int(rawPid) else {
-            let error = NSError.from(code: .pidNotFound,
-                                     description: "No valid PID has been provided to load Teads banner ad.",
-                                     domain: MPAdapterTeadsConstants.teadsAdapterErrorDomain)
+            let error = TeadsAdapterErrorCode.pidNotFound
             logEvent(MPLogEvent.adLoadFailed(forAdapter: className(), error: error))
             delegate?.inlineAdAdapter(self, didFailToLoadAdWithError: error)
             return
@@ -55,11 +53,8 @@ extension MPAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
-        let error = NSError.from(code: .loadingFailure,
-                                 description: reason.errorMessage,
-                                 domain: MPAdapterTeadsConstants.teadsAdapterErrorDomain)
-        logEvent(MPLogEvent.adLoadFailed(forAdapter: className(), error: error))
-        delegate?.inlineAdAdapter(self, didFailToLoadAdWithError: error)
+        logEvent(MPLogEvent.adLoadFailed(forAdapter: className(), error: reason))
+        delegate?.inlineAdAdapter(self, didFailToLoadAdWithError: reason)
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

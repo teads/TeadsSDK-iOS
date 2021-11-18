@@ -9,7 +9,7 @@ import UIKit
 import TeadsSDK
 import GoogleMobileAds
 
-class GADMAdapterTeadsMediatedNativeAd: NSObject {
+final class GADMAdapterTeadsMediatedNativeAd: NSObject {
     let teadsNativeAd: TeadsNativeAd
     var mappedImages = [GADNativeAdImage]()
     var mappedIcon: GADNativeAdImage?
@@ -187,11 +187,11 @@ extension GADMAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
 }
 
 extension GADMAdapterTeadsMediatedNativeAd: TeadsPlaybackDelegate {
-    
+
     public func didPause(_ ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPauseVideo(self)
     }
-    
+
     public func didPlay(_ ad: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPlayVideo(self)
     }

@@ -10,20 +10,31 @@ import Foundation
 /// Enumeration defining possible errors in Teads adapter.
 public enum TeadsAdapterErrorCode: Int {
     case pidNotFound
-    case loadingFailure
+    case serverParameterError
+    case loadError
 }
 
-extension NSError {
+extension TeadsAdapterErrorCode: CustomNSError {
+    var localizedDescription: String {
+        switch self {
+        case .pidNotFound:
+            return "No valid PID has been provided to load Teads ad."
+        case .serverParameterError:
+            return "serverParameterString is not a jSON"
+        case .loadError:
+            return "Teads ad can't be initialized"
+        }
+    }
 
-    static func from(code: TeadsAdapterErrorCode,
-                     description: String,
-                     domain: String) -> Error {
+    public static var errorDomain: String {
+        return "tv.teads.adapter"
+    }
 
-        let userInfo = [NSLocalizedDescriptionKey: description,
-                        NSLocalizedFailureReasonErrorKey: description]
+    public var errorCode: Int {
+        return rawValue
+    }
 
-        return NSError(domain: domain,
-                       code: code.rawValue,
-                       userInfo: userInfo)
+    public var errorUserInfo: [String: Any] {
+        return [NSLocalizedDescriptionKey: localizedDescription, NSLocalizedFailureReasonErrorKey: localizedDescription]
     }
 }

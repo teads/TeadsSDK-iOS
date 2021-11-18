@@ -229,13 +229,14 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code
-@property (nonatomic) enum AdErrorCode errorCode;
+@property (nonatomic) enum AdErrorCode code;
 /// String that describes the error reason
 @property (nonatomic, copy) NSString * _Nonnull errorMessage;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -260,7 +261,6 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 @interface ImageComponent : CommonComponent
 @end
-
 
 
 
@@ -339,13 +339,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 @optional
 /// Called when the ad has encountered an issue, in this case you need to remove the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - error: error object
+/// \param ad The teadsAd object
+///
+/// \param error error object
+///
 - (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)ad error:(NSError * _Nonnull)error;
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
+/// \param ad The teadsAd object
+///
 - (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when Teads has recorded an impression for the current ad
 /// \param ad The teadsAd object
@@ -538,14 +539,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate
-/// Called when the Teads SDK has received an ad for you to display
-/// \param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
+@protocol TeadsdPlacementDelegate
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -554,6 +549,24 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
+@protocol TeadsInReadAdPlacementDelegate <TeadsdPlacementDelegate>
+/// Called when the Teads SDK has received an ad for you to display
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
 /// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
 /// When it called it is the right place to update your view ratio. A basic implementation may look litke this:
 /// <h1>Code</h1>
@@ -631,21 +644,13 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate
+@protocol TeadsNativeAdPlacementDelegate <TeadsdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
 - (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
-/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
-/// /// - parameters:
-/// - reason: an object that contains the fail reason
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-/// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
 @end
 
 @class UILabel;
@@ -680,14 +685,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 /// \param ad The teadsAd object
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when the ad is paused
-/// \param ad The teadsAd object
-///
-- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad starts or resumes
 /// \param ad The teadsAd object
 ///
 - (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad ended
 /// \param ad The teadsAd object
 ///
@@ -707,6 +712,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 
@@ -983,13 +989,14 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code
-@property (nonatomic) enum AdErrorCode errorCode;
+@property (nonatomic) enum AdErrorCode code;
 /// String that describes the error reason
 @property (nonatomic, copy) NSString * _Nonnull errorMessage;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -1014,7 +1021,6 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 @interface ImageComponent : CommonComponent
 @end
-
 
 
 
@@ -1093,13 +1099,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 @optional
 /// Called when the ad has encountered an issue, in this case you need to remove the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - error: error object
+/// \param ad The teadsAd object
+///
+/// \param error error object
+///
 - (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)ad error:(NSError * _Nonnull)error;
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
+/// \param ad The teadsAd object
+///
 - (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when Teads has recorded an impression for the current ad
 /// \param ad The teadsAd object
@@ -1292,14 +1299,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate
-/// Called when the Teads SDK has received an ad for you to display
-/// \param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
+@protocol TeadsdPlacementDelegate
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -1308,6 +1309,24 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
+@protocol TeadsInReadAdPlacementDelegate <TeadsdPlacementDelegate>
+/// Called when the Teads SDK has received an ad for you to display
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
 /// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
 /// When it called it is the right place to update your view ratio. A basic implementation may look litke this:
 /// <h1>Code</h1>
@@ -1385,21 +1404,13 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate
+@protocol TeadsNativeAdPlacementDelegate <TeadsdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
 - (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
-/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
-/// /// - parameters:
-/// - reason: an object that contains the fail reason
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-/// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
 @end
 
 @class UILabel;
@@ -1434,14 +1445,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 /// \param ad The teadsAd object
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when the ad is paused
-/// \param ad The teadsAd object
-///
-- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad starts or resumes
 /// \param ad The teadsAd object
 ///
 - (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad ended
 /// \param ad The teadsAd object
 ///
@@ -1461,6 +1472,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 
@@ -1737,13 +1749,14 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code
-@property (nonatomic) enum AdErrorCode errorCode;
+@property (nonatomic) enum AdErrorCode code;
 /// String that describes the error reason
 @property (nonatomic, copy) NSString * _Nonnull errorMessage;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -1768,7 +1781,6 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 @interface ImageComponent : CommonComponent
 @end
-
 
 
 
@@ -1847,13 +1859,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 @optional
 /// Called when the ad has encountered an issue, in this case you need to remove the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - error: error object
+/// \param ad The teadsAd object
+///
+/// \param error error object
+///
 - (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)ad error:(NSError * _Nonnull)error;
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space
-/// /// - parameters:
-/// - ad: The teadsAd object
+/// \param ad The teadsAd object
+///
 - (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when Teads has recorded an impression for the current ad
 /// \param ad The teadsAd object
@@ -2046,14 +2059,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate
-/// Called when the Teads SDK has received an ad for you to display
-/// \param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
+@protocol TeadsdPlacementDelegate
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -2062,6 +2069,24 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
+@protocol TeadsInReadAdPlacementDelegate <TeadsdPlacementDelegate>
+/// Called when the Teads SDK has received an ad for you to display
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
 /// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
 /// When it called it is the right place to update your view ratio. A basic implementation may look litke this:
 /// <h1>Code</h1>
@@ -2139,21 +2164,13 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 
 
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate
+@protocol TeadsNativeAdPlacementDelegate <TeadsdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
 - (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
-/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
-/// /// - parameters:
-/// - reason: an object that contains the fail reason
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-/// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
-/// /// - parameters:
-/// - ad: The teadsAd object
-/// - adRatio: an object that will help you display the ad correctly
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
 @end
 
 @class UILabel;
@@ -2188,14 +2205,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 /// \param ad The teadsAd object
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when the ad is paused
-/// \param ad The teadsAd object
-///
-- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad starts or resumes
 /// \param ad The teadsAd object
 ///
 - (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when the ad is paused
+/// \param ad The teadsAd object
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
 /// Called when the ad ended
 /// \param ad The teadsAd object
 ///
@@ -2215,6 +2232,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 

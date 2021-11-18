@@ -9,6 +9,4 @@ import UIKit
 
 public struct MPAdapterTeadsConstants {
     static let teadsPIDKey                      = "PID"
-    static let teadsAdapterErrorDomain          = "tv.teads.adapter.mopub"
-    static let teadsAdContainerKey              = "adContainer"
 }
