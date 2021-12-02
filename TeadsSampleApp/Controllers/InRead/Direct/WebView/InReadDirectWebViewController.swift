@@ -67,7 +67,7 @@ extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd \(reason.errorMessage)")
+        print("didFailToReceiveAd \(reason.localizedDescription)")
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {

@@ -86,6 +86,10 @@ extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
         return teadsMediaView
     }
 
+    var mediaContentAspectRatio: CGFloat {
+        return teadsNativeAd.video?.contentAspectRatio ?? 0
+    }
+
     var hasVideoContent: Bool {
         return teadsNativeAd.video != nil
     }

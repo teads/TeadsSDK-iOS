@@ -41,17 +41,6 @@ internal protocol AnyEncodableProtocol {
   init<T>(_ value: T?)
 }
 extension AnyEncodableProtocol {
-  public func encode(to encoder: Swift.Encoder) throws
-}
-extension AnyEncodableProtocol {
-  public init(nilLiteral _: ())
-  public init(booleanLiteral value: Swift.Bool)
-  public init(integerLiteral value: Swift.Int)
-  public init(floatLiteral value: Swift.Double)
-  public init(extendedGraphemeClusterLiteral value: Swift.String)
-  public init(stringLiteral value: Swift.String)
-  public init(arrayLiteral elements: Any...)
-  public init(dictionaryLiteral elements: (Swift.AnyHashable, Any)...)
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable, TeadsSDK.TeadsAdPlacementSettingsProtocol, TeadsSDK.TeadsAdRequestSettingsProtocol {
   public static let integrationAdmob: Swift.String
@@ -110,16 +99,10 @@ extension UILabel {
   @objc override final public func bind(component: TeadsSDK.CommonComponent?)
   @objc deinit
 }
-extension Array where Element : UIKit.NSLayoutConstraint {
-  public func activate()
-}
 @usableFromInline
 internal protocol AnyDecodableProtocol {
   var value: Any { get }
   init<T>(_ value: T?)
-}
-extension AnyDecodableProtocol {
-  public init(from decoder: Swift.Decoder) throws
 }
 @objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
@@ -253,8 +236,7 @@ public protocol TeadsAdPlacementSettingsProtocol {
 extension UIImageView {
   @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
-@objc @_hasMissingDesignatedInitializers final public class TeadsInReadAd : TeadsSDK.TeadsAd {
-  @objc final public func registerContainer(in view: UIKit.UIView)
+@_hasMissingDesignatedInitializers @objc final public class TeadsInReadAd : TeadsSDK.TeadsAd {
   @objc deinit
 }
 extension TeadsInReadAd {
@@ -363,6 +345,9 @@ public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.V
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
+  @objc public var contentAspectRatio: CoreGraphics.CGFloat {
+    @objc get
+  }
   @objc deinit
 }
 @objc public enum AdErrorCode : Swift.Int {
@@ -383,7 +368,6 @@ public struct TeadsInReadAdViewRenderer : SwiftUI.UIViewRepresentable, SwiftUI.V
 }
 @_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
   @objc final public var code: TeadsSDK.AdErrorCode
-  @objc final public var errorMessage: Swift.String
   @objc override final public var description: Swift.String {
     @objc get
   }
