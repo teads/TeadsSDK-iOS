@@ -70,6 +70,13 @@ TeadsSDK v5 introduces some changes regarding v4, see [Migration Documentation](
 - [Twitter Mopub](./MediationAdapters/TeadsMoPubAdapter/README.md)
 - [Smart AdServer](./MediationAdapters/TeadsSASAdapter/README.md)
 
+## Certifications
+
+Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measurement](https://iabtechlab.com/standards/open-measurement-sdk/) SDK, also known as OM SDK. The OM SDK brings transparency to the advertising world, giving a way to standardize the viewability and verification measurement for the ads served through mobile apps.  Teads is part of the [IAB's compliant companies](https://iabtechlab.com/compliance-programs/compliant-companies/). 
+
+![iab certification badge](OMCompliant.png)
+
+
 ## Changelog
 
 See [changelog here](CHANGELOG.md). 
