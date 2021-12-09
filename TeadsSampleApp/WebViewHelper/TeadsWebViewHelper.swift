@@ -61,8 +61,8 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     
     private var isJsReady = false
     
-    private var slotOpenner: (() -> Void)?
-    private var slotPositionAvailable: ((WKWebView, SlotPosition) -> Void)?
+    private var slotOpener: (() -> Void)?
+    private var slotOpportunity: ((WKWebView, SlotPosition) -> Void)?
     
     /// Init the Teads webView helper
     ///
@@ -130,19 +130,22 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     /// insert the slot in the webview with the selector
     private func insertSlot() {
         //add a timeout in case we are not able to find the slot
-        let timer = Timer(timeInterval: 4, repeats: false) { [delegate] _ in
-            delegate?.webViewHelperSlotNotFound()
+        let timer = Timer(timeInterval: 4, repeats: false) { [weak self] _ in
+            self?.slotOpener = nil
+            self?.delegate?.webViewHelperSlotNotFound()
         }
         noSlotTimer = timer
         RunLoop.main.add(timer, forMode: .common)
         
         evaluateBootstrapInput(JSBootstrapInput.insertPlaceholder(selector)) { [weak self] (_, error) in
             if error != nil {
+                self?.slotOpener = nil
                 self?.delegate?.webViewHelperOnError(error: "insertSlot failed")
                 self?.delegate?.webViewHelperSlotNotFound()
                 self?.noSlotTimer?.invalidate()
+            } else {
+                self?.slotOpener?()
             }
-            self?.slotOpenner?()
         }
     }
     
@@ -160,7 +163,7 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     }
     
     public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default) {
-        slotOpenner = { [self] in
+        slotOpener = { [self] in
             //update slot with the right ratio
             self.updateSlot(adRatio: adRatio)
             
@@ -176,10 +179,10 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
                     delegate?.webViewHelperOnError(error: "openSlot failed")
                 }
             }
-            self.slotOpenner = nil
+            self.slotOpener = nil
         }
         if isJsReady {
-            slotOpenner?()
+            slotOpener?()
         }
     }
     
@@ -289,11 +292,12 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
         guard let webView = self.webView else {
             return
         }
-        slotPositionAvailable?(webView, position)
+        slotOpportunity?(webView, position)
         
         guard let adView = self.adView else {
             return
         }
+        
         let adViewHTMLElementHeight =  position.bottom - position.top
         //when the adView is from Admob we can't update the frame without having a new request, so the update is done with an Admob method in the controller
         var shouldUpdateAdViewFrame: Bool {
@@ -326,7 +330,7 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     ///   - adOpportunityTrackerView: the view that will monitor your inventory
     ///
     @objc public func setAdOpportunityTrackerView(_ adOpportunityTrackerView: TeadsAdOpportunityTrackerView) {
-        slotPositionAvailable = { [weak self] webView, position in
+        slotOpportunity = { [weak self] webView, position in
             adOpportunityTrackerView.frame = CGRect(x: position.left, y: position.top, width: 1, height: 1)
             webView.scrollView.addSubview(adOpportunityTrackerView)
             
@@ -336,13 +340,13 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             adOpportunityTrackerView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: position.left).isActive = true
             adOpportunityTrackerView.widthAnchor.constraint(equalToConstant: 1).isActive = true
             adOpportunityTrackerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-            self?.slotPositionAvailable = nil
+            self?.slotOpportunity = nil
         }
-        guard let position = slotPosition,
-              let webView = webView else {
-            return
+        
+        if let position = slotPosition,
+              let webView = webView  {
+            slotOpportunity?(webView, position)
         }
-        slotPositionAvailable?(webView, position)
     }
 }
 
