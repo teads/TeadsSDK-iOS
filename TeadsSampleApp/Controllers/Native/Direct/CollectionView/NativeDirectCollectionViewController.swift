@@ -57,7 +57,10 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
             cell.adView.bind(ad)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.setMockValues()
             return cell
         }
     }
