@@ -77,11 +77,7 @@ extension NativeDirectTableViewController: UITableViewDelegate, UITableViewDataS
             guard let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeTableViewCell else {
                 return UITableViewCell()
             }
-            cell.mediaView.image = UIImage(named: "social-covers")
-            cell.iconImageView.image = UIImage(named: "teads-logo")
-            cell.titleLabel.text = "Teads"
-            cell.contentLabel.text = "The global media platform"
-            cell.callToActionButton.setTitle("Discover Teads", for: .normal)
+            cell.setMockValues()
             return cell
         }
     }
