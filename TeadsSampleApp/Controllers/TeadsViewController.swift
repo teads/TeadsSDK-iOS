@@ -58,16 +58,37 @@ class TeadsViewController: UIViewController {
         navigationItem.titleView = imageView
         
         navigationBar.tintColor = .white
+
+        if #available(iOS 15, *) {
+            navigationBar.barStyle = .black
+
+            let appearance = navigationBar.standardAppearance
+            appearance.backgroundImage = backgroundImage
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+            navigationBar.compactAppearance = appearance
+        }
     }
     
     fileprivate func applyDefaultNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        guard let navigationBar = navigationController?.navigationBar else {
+            return
+        }
+        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationBar.shadowImage = UIImage()
         let imageView = UIImageView(image: teadsLogo)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         navigationItem.titleView = imageView
+        if #available(iOS 15, *) {
+            let appearance = navigationBar.standardAppearance
+            appearance.backgroundImage = UIImage()
+            appearance.shadowImage = UIImage()
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+            navigationBar.compactAppearance = appearance
+        }
+
     }
-    
 }
