@@ -46,7 +46,7 @@ class InReadMopubScrollViewController: TeadsViewController {
     func loadAd() {
         let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.registerAdView(bannerView, delegate: self)
+            try? settings.registerAdView(bannerView, delegate: self)
         }
         bannerView.register(teadsAdSettings: settings)
         bannerView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool

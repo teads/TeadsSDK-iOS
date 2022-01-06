@@ -31,7 +31,7 @@ class InReadSASTableViewController: TeadsViewController {
         let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.pageUrl("https://teads.tv")
-            settings.registerAdView(banner!, delegate: self)
+            try? settings.registerAdView(banner!, delegate: self)
         }
         
         let webSiteId = 385317

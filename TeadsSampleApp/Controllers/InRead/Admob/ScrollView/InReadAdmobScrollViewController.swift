@@ -36,7 +36,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.disableLocation()
-            settings.registerAdView(bannerView, delegate: self)
+            try? settings.registerAdView(bannerView, delegate: self)
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
             //settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
