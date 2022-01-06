@@ -34,7 +34,7 @@
 		B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
 		B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
-		D9EAA8DA97B5DC6D5CF72BFB /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F6E3F5DBFC364683FDC7AF /* Pods_TeadsSampleApp.framework */; };
+		C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */; };
 		E906CDA826B81D4200E92576 /* MoPubNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */; };
 		E906CDA926B81D4200E92576 /* MoPubNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */; };
 		E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */; };
@@ -51,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +61,8 @@
 		408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadMopubTableViewController.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
-		60AA148B2F66A4B614CA54BD /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		63B9385EDA1DC5810EC74590 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectTableViewController.swift; sourceTree = "<group>"; };
 		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
 		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
-		E8F6E3F5DBFC364683FDC7AF /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoPubNativeAdView.xib; sourceTree = "<group>"; };
 		E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeAdView.swift; sourceTree = "<group>"; };
 		E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9EAA8DA97B5DC6D5CF72BFB /* Pods_TeadsSampleApp.framework in Frameworks */,
+				C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +254,8 @@
 		9C4C2A8CC3AEB01218414AF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				60AA148B2F66A4B614CA54BD /* Pods-TeadsSampleApp.debug.xcconfig */,
-				63B9385EDA1DC5810EC74590 /* Pods-TeadsSampleApp.release.xcconfig */,
+				9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */,
+				4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				B5555A341F7CDF80007406D4 /* TeadsSampleApp */,
 				B5555A331F7CDF80007406D4 /* Products */,
 				9C4C2A8CC3AEB01218414AF6 /* Pods */,
-				E85D3168550003E1A3897487 /* Frameworks */,
+				DE0116B31068BD02E3224B25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -379,10 +379,10 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
-		E85D3168550003E1A3897487 /* Frameworks */ = {
+		DE0116B31068BD02E3224B25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8F6E3F5DBFC364683FDC7AF /* Pods_TeadsSampleApp.framework */,
+				13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -480,12 +480,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsSampleApp" */;
 			buildPhases = (
-				7CFCAA641082DED3F8281688 /* [CP] Check Pods Manifest.lock */,
+				30717AAFC9E6D6D8951DDAD6 /* [CP] Check Pods Manifest.lock */,
 				B5555A2E1F7CDF80007406D4 /* Sources */,
 				B5555A2F1F7CDF80007406D4 /* Frameworks */,
 				B5555A301F7CDF80007406D4 /* Resources */,
 				913FE1D31FEC291B003C6E5E /* ShellScript */,
-				6D35E50F39BD5E8DA638F527 /* [CP] Embed Pods Frameworks */,
+				17DE1E1C76C21A32980C582E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -549,7 +549,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D35E50F39BD5E8DA638F527 /* [CP] Embed Pods Frameworks */ = {
+		17DE1E1C76C21A32980C582E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -583,7 +583,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7CFCAA641082DED3F8281688 /* [CP] Check Pods Manifest.lock */ = {
+		30717AAFC9E6D6D8951DDAD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -798,7 +798,7 @@
 		};
 		B5555A451F7CDF80007406D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60AA148B2F66A4B614CA54BD /* Pods-TeadsSampleApp.debug.xcconfig */;
+			baseConfigurationReference = 9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";
@@ -897,7 +897,7 @@
 		};
 		B5555A461F7CDF80007406D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63B9385EDA1DC5810EC74590 /* Pods-TeadsSampleApp.release.xcconfig */;
+			baseConfigurationReference = 4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";

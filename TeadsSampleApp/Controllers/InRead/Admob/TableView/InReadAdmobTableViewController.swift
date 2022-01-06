@@ -44,7 +44,7 @@ class InReadAdmobTableViewController: TeadsViewController {
             settings.enableDebug()
             settings.disableLocation()
             if let admobAdView = admobAdView {
-                settings.registerAdView(admobAdView, delegate: self)
+                try? settings.registerAdView(admobAdView, delegate: self)
             }
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent

@@ -56,7 +56,7 @@ class InReadMopubTableViewController: TeadsViewController {
         }
         let settings = TeadsAdapterSettings { (settings) in
             settings.pageUrl("http://teads.tv")
-            settings.registerAdView(mopubAdView, delegate: self)
+            try? settings.registerAdView(mopubAdView, delegate: self)
         }
         mopubAdView.register(teadsAdSettings: settings)
         mopubAdView.stopAutomaticallyRefreshingContents() //usefull to perform validationTool https://support.teads.tv/support/solutions/articles/36000209100-validation-tool
