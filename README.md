@@ -1,6 +1,12 @@
 
 
-![teads_logo](./ReadmeResources/teads_logo.png)
+<br/>
+<p align="center">
+    <a href="https://teads.com/" target="_blank">
+        <img width="75%" src="./ReadmeResources/teads_logo.png" alt="Teads logo">
+    </a>
+</p>
+<br/>
 
 ----
 
@@ -19,7 +25,7 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 >
 > You can still build and publish your app using Xcode 12 with older versions than 4.8.8
 
-## Table of Contents
+## 📃&nbsp; Table of Contents
 
 - [Integration Documentation](#integration-documentation)
 - [Migrating from v4 to v5](#migrating-from-v4-to-v5)
@@ -29,19 +35,19 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 - [Certifications](#certifications)
 - [Changelog](#changelog)
 
-## Integration Documentation
+## 🚀&nbsp; Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
 
-## Migrating from v4 to v5
+## 🕊&nbsp; Migrating from v4 to v5
 
 TeadsSDK v5 introduces some changes regarding v4, see [Migration Documentation](https://support.teads.tv/support/solutions/articles/36000314772-migrating-from-v4-to-v5)
 
-## Run the sample app
+## 🚲&nbsp; Run the sample app
 
 Clone this repository, open it with Xcode, and run project.
 
-## Install the Teads SDK iOS framework
+## 📦&nbsp; Install the Teads SDK iOS framework
 
 Teads SDK is currently distributed through CocoaPods. It includes everything you need to serve "outstream" video ads. 
 
@@ -70,19 +76,19 @@ https://github.com/teads/TeadsSDK-iOS
 
 Then select latest version available
 
-## Mediation Adapters
+## 🤝&nbsp; Mediation Adapters
 - [Google AdMob](./MediationAdapters/TeadsAdMobAdapter/README.md)
 - [Twitter Mopub](./MediationAdapters/TeadsMoPubAdapter/README.md)
 - [Smart AdServer](./MediationAdapters/TeadsSASAdapter/README.md)
 
-## Certifications
+## 🎓&nbsp; Certifications
 
 Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measurement](https://iabtechlab.com/standards/open-measurement-sdk/) SDK, also known as OM SDK. The OM SDK brings transparency to the advertising world, giving a way to standardize the viewability and verification measurement for the ads served through mobile apps.  Teads is part of the [IAB's compliant companies](https://iabtechlab.com/compliance-programs/compliant-companies/). 
 
 ![iab certification badge](./ReadmeResources/OMCompliant.png)
 
 
-## Changelog
+## ⌚️&nbsp; Changelog
 
 See [changelog here](https://github.com/teads/TeadsSDK-iOS/releases). 
 
