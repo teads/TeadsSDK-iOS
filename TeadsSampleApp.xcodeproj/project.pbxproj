@@ -46,9 +46,20 @@
 		E9984EFA26B2D46F000D42D3 /* MoPubNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */; };
 		E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */; };
 		E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */; };
+		F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */; };
 		F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = F7651FE126A07A58004DAFD9 /* bootstrap.js */; };
 		F7651FE426A07A58004DAFD9 /* TeadsWebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F71C452427918A88000C696F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5555A2A1F7CDF80007406D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5555A311F7CDF80007406D4;
+			remoteInfo = TeadsSampleApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +105,8 @@
 		E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobNativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdCollectionViewCell.swift; sourceTree = "<group>"; };
+		F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeadsSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsSampleAppUITests.swift; sourceTree = "<group>"; };
 		F7651FE126A07A58004DAFD9 /* bootstrap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
 		F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeadsWebViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +117,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F71C451B27918A88000C696F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				B5555A341F7CDF80007406D4 /* TeadsSampleApp */,
+				F71C451F27918A88000C696F /* TeadsSampleAppUITests */,
 				B5555A331F7CDF80007406D4 /* Products */,
 				9C4C2A8CC3AEB01218414AF6 /* Pods */,
 				DE0116B31068BD02E3224B25 /* Frameworks */,
@@ -307,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */,
+				F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,6 +478,14 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		F71C451F27918A88000C696F /* TeadsSampleAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */,
+			);
+			path = TeadsSampleAppUITests;
+			sourceTree = "<group>";
+		};
 		F7651FDF26A07A58004DAFD9 /* WebViewHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,13 +526,31 @@
 			productReference = B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F71C451D27918A88000C696F /* TeadsSampleAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F71C452827918A88000C696F /* Build configuration list for PBXNativeTarget "TeadsSampleAppUITests" */;
+			buildPhases = (
+				F71C451A27918A88000C696F /* Sources */,
+				F71C451B27918A88000C696F /* Frameworks */,
+				F71C451C27918A88000C696F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F71C452527918A88000C696F /* PBXTargetDependency */,
+			);
+			name = TeadsSampleAppUITests;
+			productName = TeadsSampleAppUITests;
+			productReference = F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5555A2A1F7CDF80007406D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Teads;
 				TargetAttributes = {
@@ -510,6 +558,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1170;
 						ProvisioningStyle = Automatic;
+					};
+					F71C451D27918A88000C696F = {
+						CreatedOnToolsVersion = 13.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B5555A311F7CDF80007406D4;
 					};
 				};
 			};
@@ -527,6 +580,7 @@
 			projectRoot = "";
 			targets = (
 				B5555A311F7CDF80007406D4 /* TeadsSampleApp */,
+				F71C451D27918A88000C696F /* TeadsSampleAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -543,6 +597,13 @@
 				F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */,
 				B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */,
 				B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F71C451C27918A88000C696F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +722,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F71C451A27918A88000C696F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F71C452527918A88000C696F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5555A311F7CDF80007406D4 /* TeadsSampleApp */;
+			targetProxy = F71C452427918A88000C696F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5555A391F7CDF80007406D4 /* Main.storyboard */ = {
@@ -994,6 +1071,51 @@
 			};
 			name = Release;
 		};
+		F71C452627918A88000C696F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.Teads.TeadsSampleAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TeadsSampleApp;
+			};
+			name = Debug;
+		};
+		F71C452727918A88000C696F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V55UEG98F8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.Teads.TeadsSampleAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TeadsSampleApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1011,6 +1133,15 @@
 			buildConfigurations = (
 				B5555A451F7CDF80007406D4 /* Debug */,
 				B5555A461F7CDF80007406D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F71C452827918A88000C696F /* Build configuration list for PBXNativeTarget "TeadsSampleAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F71C452627918A88000C696F /* Debug */,
+				F71C452727918A88000C696F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

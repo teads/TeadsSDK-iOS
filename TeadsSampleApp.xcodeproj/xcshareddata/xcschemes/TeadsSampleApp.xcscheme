@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F71C451D27918A88000C696F"
+               BuildableName = "TeadsSampleAppUITests.xctest"
+               BlueprintName = "TeadsSampleAppUITests"
+               ReferencedContainer = "container:TeadsSampleApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
