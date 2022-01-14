@@ -23,22 +23,22 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 7.6)"
     - nanopb (~> 2.30908.0)
   - GoogleUserMessagingPlatform (2.0.0)
-  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
+  - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.6.0):
+  - GoogleUtilities/Environment (7.7.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.6.0):
+  - GoogleUtilities/Logger (7.7.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.6.0):
+  - GoogleUtilities/MethodSwizzler (7.7.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.6.0):
+  - GoogleUtilities/Network (7.7.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.6.0)"
-  - GoogleUtilities/Reachability (7.6.0):
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
   - mopub-ios-sdk (5.18.2):
     - mopub-ios-sdk/MoPubSDK (= 5.18.2)
@@ -71,10 +71,10 @@ PODS:
   - TeadsSDK/Core (5.0.9)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (from `./`)
-  - TeadsMoPubAdapter (from `./`)
-  - TeadsSASAdapter (from `./`)
-  - TeadsSDK (from `./`)
+  - TeadsAdMobAdapter (~> 5.0)
+  - TeadsMoPubAdapter (~> 5.0)
+  - TeadsSASAdapter (~> 5.0)
+  - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -87,22 +87,16 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-
-EXTERNAL SOURCES:
-  TeadsAdMobAdapter:
-    :path: "./"
-  TeadsMoPubAdapter:
-    :path: "./"
-  TeadsSASAdapter:
-    :path: "./"
-  TeadsSDK:
-    :path: "./"
+    - TeadsAdMobAdapter
+    - TeadsMoPubAdapter
+    - TeadsSASAdapter
+    - TeadsSDK
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 05e5d68bb42a61b2e5bef336a52789785605aa22
   GoogleAppMeasurement: a3311dbcf3ea651e5a070fe8559b57c174ada081
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
-  GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   mopub-ios-sdk: 39dd404dc791e543979b91aa8e3b27197af91377
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
@@ -113,6 +107,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 8f9887c212eb804ff5848a55aa896f7a28ac5f0f
   TeadsSDK: 814bd67fa39a9e8b8550562ee5c09f6b2b806421
 
-PODFILE CHECKSUM: a1142c5e1eecc6a69f971bf26b6ad4f2f8f86b46
+PODFILE CHECKSUM: aa4219f7835c2c99ea97b01461d8286fcd340667
 
 COCOAPODS: 1.11.2
