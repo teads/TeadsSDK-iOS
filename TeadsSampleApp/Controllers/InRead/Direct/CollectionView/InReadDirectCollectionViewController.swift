@@ -11,21 +11,30 @@ import TeadsSDK
 
 class InReadDirectCollectionViewController: TeadsViewController {
     
+    enum TeadsElement: Equatable {
+        case article
+        case ad(_ ad: TeadsInReadAd)
+        case trackerView(_ trackerView: TeadsAdOpportunityTrackerView)
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let adItemNumber = 2
+    let trackerViewItemNumber = 2
+    var adItemNumber: Int {
+        return trackerViewItemNumber + 1
+    }
     var placement: TeadsInReadAdPlacement?
     
-    private var elements = [TeadsInReadAd?]()
+    private var elements = [TeadsElement]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         (0..<8).forEach { _ in
-            elements.append(nil)
+            elements.append(.article)
         }
         
         let placementSettings = TeadsAdPlacementSettings { (settings) in
@@ -36,6 +45,8 @@ class InReadDirectCollectionViewController: TeadsViewController {
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
         })
+        
+        collectionView.register(AdOpportunityTrackerCollectionViewCell.self, forCellWithReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier)
     }
     
     @objc func rotationDetected() {
@@ -48,12 +59,15 @@ class InReadDirectCollectionViewController: TeadsViewController {
     }
     
     func closeSlot(ad: TeadsAd) {
-        elements.removeAll { $0 == ad }
+        guard let inReadAd = ad as? TeadsInReadAd else {
+            return
+        }
+        elements.removeAll { $0 == .ad(inReadAd) }
         collectionView.reloadData()
     }
     
     func updateAdSize(ad: TeadsInReadAd) {
-        if let row = elements.firstIndex(of: ad) {
+        if let row = elements.firstIndex(of: .ad(ad)) {
             collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
             collectionView.collectionViewLayout.invalidateLayout()
         }
@@ -69,11 +83,15 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
             return collectionView.dequeueReusableCell(withReuseIdentifier: contentCell, for: indexPath)
-        } else if let ad = elements[indexPath.row] {
+        } else if case let .ad(ad) = elements[indexPath.row] {
             let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath)
             let teadsAdView = TeadsInReadAdView(bind: ad)
             cellAd.contentView.addSubview(teadsAdView)
             teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
+            return cellAd
+        } else if case let .trackerView(trackerView) = elements[indexPath.row],
+                  let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier, for: indexPath) as? AdOpportunityTrackerCollectionViewCell {
+            cellAd.setTrackerView(trackerView)
             return cellAd
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
@@ -88,10 +106,12 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
                 return CGSize.zero
             }
             return CGSize(width: collectionView.bounds.width, height: bounds.height)
-        } else if let ad = elements[indexPath.row] {
+        } else if case let .ad(ad) = elements[indexPath.row] {
             let width = collectionView.frame.width - 20
             let height = ad.adRatio.calculateHeight(for: width)
             return .init(width: width, height: height)
+        } else if case .trackerView(_) = elements[indexPath.row] {
+            return .init(width: 1, height: 10)
         } else {
             return CGSize(width: collectionView.bounds.width, height: 300)
         }
@@ -119,13 +139,12 @@ extension InReadDirectCollectionViewController: TeadsAdDelegate {
     func didClose(ad: TeadsAd) {
         closeSlot(ad: ad)
     }
-    
 }
 
 extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
     
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        elements.insert(ad, at: adItemNumber)
+        elements.insert(.ad(ad), at: adItemNumber)
         let indexPaths = [IndexPath(row: adItemNumber, section: 0)]
         collectionView.insertItems(at: indexPaths)
         collectionView.collectionViewLayout.invalidateLayout()
@@ -141,6 +160,9 @@ extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        //not relevant in tableView integration
+        elements.insert(.trackerView(trackerView), at: trackerViewItemNumber)
+        let indexPaths = [IndexPath(row: trackerViewItemNumber, section: 0)]
+        collectionView.insertItems(at: indexPaths)
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 }
