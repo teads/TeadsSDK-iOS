@@ -36,6 +36,10 @@ extension UIView {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
+  weak final public var delegate: TeadsSDK.TeadsNativeAdPlacementDelegate? {
+    get
+    set
+  }
   @discardableResult
   final public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
   @objc deinit
@@ -83,8 +87,8 @@ extension AnyEncodableProtocol {
 }
 @_inheritsConvenienceInitializers @objc final public class Teads : ObjectiveC.NSObject {
   @objc public static let sdkVersion: Swift.String
-  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsNativeAdPlacementDelegate) -> TeadsSDK.TeadsNativeAdPlacement?
-  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsInReadAdPlacementDelegate) -> TeadsSDK.TeadsInReadAdPlacement?
+  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsNativeAdPlacementDelegate? = nil) -> TeadsSDK.TeadsNativeAdPlacement?
+  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: TeadsSDK.TeadsInReadAdPlacementDelegate? = nil) -> TeadsSDK.TeadsInReadAdPlacement?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -112,6 +116,10 @@ internal protocol AnyDecodableProtocol {
   @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsInReadAdPlacement : TeadsSDK.TeadsAdPlacement {
+  weak final public var delegate: TeadsSDK.TeadsInReadAdPlacementDelegate? {
+    get
+    set
+  }
   @discardableResult
   @objc final public func requestAd(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
   @objc deinit

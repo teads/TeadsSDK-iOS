@@ -320,9 +320,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
-/// \param delegate TeadsAdDelegate to follow ad placement lifecycle
+/// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
-+ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nonnull)delegate SWIFT_WARN_UNUSED_RESULT;
++ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -601,6 +601,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
+/// note:
+/// <code>delegate</code> must be set to perform ad request, otherwise didReceiveAd will not be triggered
 /// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
 ///
 ///
@@ -1207,9 +1209,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
-/// \param delegate TeadsAdDelegate to follow ad placement lifecycle
+/// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
-+ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nonnull)delegate SWIFT_WARN_UNUSED_RESULT;
++ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1488,6 +1490,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
+/// note:
+/// <code>delegate</code> must be set to perform ad request, otherwise didReceiveAd will not be triggered
 /// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
 ///
 ///
@@ -2094,9 +2098,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
-/// \param delegate TeadsAdDelegate to follow ad placement lifecycle
+/// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
-+ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nonnull)delegate SWIFT_WARN_UNUSED_RESULT;
++ (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2375,6 +2379,8 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
+/// note:
+/// <code>delegate</code> must be set to perform ad request, otherwise didReceiveAd will not be triggered
 /// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
 ///
 ///

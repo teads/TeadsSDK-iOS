@@ -35,7 +35,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
         }
 
         let adSettings = serverParameter.adSettings
-        addExtrasToAdSettings(adSettings)
+        Self.addExtrasToAdSettings(adSettings)
         let adViewSize = clientParameters["adViewSize"] as? CGSize ?? viewController.view.bounds.size
 
         currentBanner = TeadsInReadAdView(frame: CGRect(origin: .zero, size: Helper.bannerSize(for: adViewSize.width)))
@@ -44,7 +44,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
 
-    private func addExtrasToAdSettings(_ adSettings: TeadsAdapterSettings) {
+    static func addExtrasToAdSettings(_ adSettings: TeadsAdapterSettings) {
         let sasVersion = Bundle.init(for: SASAdPlacement.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
         adSettings.setIntegation(TeadsAdapterSettings.integrationSAS, version: sasVersion)
     }
@@ -65,8 +65,7 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     }
 
     public func didFailToReceiveAd(reason: AdFailReason) {
-        let isNotFilled = reason.code == .errorNotFilled
-        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason, noFill: isNotFilled)
+        delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason, noFill: reason.isNoFill)
     }
 
     public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
@@ -106,5 +105,11 @@ extension TeadsSASBannerAdapter: TeadsAdDelegate {
 
     public func didCollapsedFromFullscreen(ad: TeadsAd) {
         delegate?.mediationBannerAdapterWillDismissModalView(self)
+    }
+}
+
+extension AdFailReason {
+    var isNoFill: Bool {
+        return code == .errorNotFilled
     }
 }
