@@ -111,7 +111,7 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
             let height = ad.adRatio.calculateHeight(for: width)
             return .init(width: width, height: height)
         } else if case .trackerView(_) = elements[indexPath.row] {
-            return .init(width: 1, height: 10)
+            return .init(width: 1, height: 0)
         } else {
             return CGSize(width: collectionView.bounds.width, height: 300)
         }
