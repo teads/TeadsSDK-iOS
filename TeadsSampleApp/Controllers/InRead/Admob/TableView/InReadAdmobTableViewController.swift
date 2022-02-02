@@ -32,7 +32,7 @@ class InReadAdmobTableViewController: TeadsViewController {
         super.viewDidLoad()
         
         // Be sure to use DFPBannerView instead of GADBannerView
-        admobAdView = GAMBannerView(adSize: kGADAdSizeMediumRectangle)
+        admobAdView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
         
         // 2. Attach Delegate (will include Teads events)
         admobAdView?.adUnitID = pid // Replace with your adunit

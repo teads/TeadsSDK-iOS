@@ -20,7 +20,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         super.viewDidLoad()
 
         // 1. Create AdMob view and add it to hierarchy
-        bannerView = GAMBannerView(adSize: kGADAdSizeFluid)
+        bannerView = GAMBannerView(adSize: GADAdSizeFluid)
         slotView.addSubview(bannerView)
         
         bannerView.translatesAutoresizingMaskIntoConstraints = false

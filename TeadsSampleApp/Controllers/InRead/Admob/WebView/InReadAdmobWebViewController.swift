@@ -32,7 +32,7 @@ class InReadAdmobWebViewController: TeadsViewController {
         webView.navigationDelegate = self
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
         
-        bannerView = GAMBannerView(adSize: kGADAdSizeMediumRectangle)
+        bannerView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
         bannerView.adUnitID = pid // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
