@@ -30,4 +30,23 @@ class TeadsSampleAppUITests: XCTestCase {
         XCTAssert(player.frame.height > 80)
     }
     
+    func testInReadIntegrationVerticalInScrollView() throws {
+        let app = XCUIApplication()
+        app.launch()
+        let collectionViewsQuery = app.collectionViews
+        app.collectionViews.cells.staticTexts["Vertical"].tap()
+        collectionViewsQuery.otherElements.containing(.staticText, identifier: "Creatives").element.swipeUp()
+        app.collectionViews.cells.staticTexts["ScrollView"].tap()
+        let scrollViewsQuery = XCUIApplication().scrollViews.firstMatch
+        let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier:"ARTICLE").element
+        let elementsQuery = scrollViewsQuery.otherElements
+        while !elementsQuery.otherElements["teads-player"].exists {
+            articleElement.swipeUp()
+        }
+        let player = elementsQuery.otherElements["teads-player"]
+        XCTAssert(player.frame.height > 80)
+    }
+
+
 }
+

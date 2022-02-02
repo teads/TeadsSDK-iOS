@@ -54,7 +54,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - Smart-Core-SDK (7.15.0)
+  - Smart-Core-SDK (7.16.0)
   - Smart-Display-SDK (7.15.0):
     - Smart-Core-SDK (~> 7.15)
   - TeadsAdMobAdapter (5.0.10):
@@ -71,10 +71,10 @@ PODS:
   - TeadsSDK/Core (5.0.10)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (from `./`)
-  - TeadsMoPubAdapter (from `./`)
-  - TeadsSASAdapter (from `./`)
-  - TeadsSDK (from `./`)
+  - TeadsAdMobAdapter (~> 5.0)
+  - TeadsMoPubAdapter (~> 5.0)
+  - TeadsSASAdapter (~> 5.0)
+  - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -87,16 +87,10 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-
-EXTERNAL SOURCES:
-  TeadsAdMobAdapter:
-    :path: "./"
-  TeadsMoPubAdapter:
-    :path: "./"
-  TeadsSASAdapter:
-    :path: "./"
-  TeadsSDK:
-    :path: "./"
+    - TeadsAdMobAdapter
+    - TeadsMoPubAdapter
+    - TeadsSASAdapter
+    - TeadsSDK
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 05e5d68bb42a61b2e5bef336a52789785605aa22
@@ -106,13 +100,13 @@ SPEC CHECKSUMS:
   mopub-ios-sdk: 39dd404dc791e543979b91aa8e3b27197af91377
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  Smart-Core-SDK: 84f5527be798a0497b33391db73691dc3c7bc713
+  Smart-Core-SDK: 6eb61082ec48ad48cf416708487b1ad3c25770cc
   Smart-Display-SDK: 33f0325dfb1bf93256942e6e545322aad8a64842
   TeadsAdMobAdapter: c7110f4568185364ecba302b1eefb86145a9c8d3
   TeadsMoPubAdapter: 5f7c0470ee09d4dc42153de705400b8f3a894ddc
   TeadsSASAdapter: d1ff4f7b883628f5bb26a401443f2a57870918a3
   TeadsSDK: a6d99fcfc49ed0d4ae5715bc50149ecd83ce8f25
 
-PODFILE CHECKSUM: 720a9592df375ce23cb9532bc57a391a9ba02e91
+PODFILE CHECKSUM: 1d3369f37f269eccfc0630fab866604fff5c7e2c
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2
