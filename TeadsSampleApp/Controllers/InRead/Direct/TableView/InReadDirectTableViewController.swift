@@ -16,7 +16,7 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let trackerViewRowNumber = 3
+    let trackerViewRowNumber = 3 // tracker view needs to be placed above the slot view
     var adRowNumber: Int {
         return trackerViewRowNumber + 1
     }
