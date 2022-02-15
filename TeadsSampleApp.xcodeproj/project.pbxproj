@@ -45,6 +45,8 @@
 		E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */; };
 		E9984EFA26B2D46F000D42D3 /* MoPubNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */; };
 		E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */; };
+		E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */; };
+		E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */; };
 		E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */; };
 		F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */; };
 		F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = F7651FE126A07A58004DAFD9 /* bootstrap.js */; };
@@ -104,6 +106,8 @@
 		E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArticleNativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobNativeAdTableViewCell.swift; sourceTree = "<group>"; };
+		E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerTableViewCell.swift; sourceTree = "<group>"; };
+		E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeadsSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsSampleAppUITests.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */,
+				E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */,
+				E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */,
+				E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */,
 				B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */,
 				E9984EFA26B2D46F000D42D3 /* MoPubNativeTableViewCell.swift in Sources */,
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
@@ -700,6 +707,7 @@
 				E906CDA926B81D4200E92576 /* MoPubNativeAdView.swift in Sources */,
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
 				E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */,
+				E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */,
 				E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */,
 				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
 				B5966D1C269C7690005CA2FF /* InReadDirectCollectionViewController.swift in Sources */,

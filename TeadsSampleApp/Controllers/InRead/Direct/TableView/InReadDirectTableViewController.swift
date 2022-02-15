@@ -16,16 +16,25 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let adRowNumber = 3
+    let trackerViewRowNumber = 3 // tracker view needs to be placed above the slot view
+    var adRowNumber: Int {
+        return trackerViewRowNumber + 1
+    }
     var placement: TeadsInReadAdPlacement?
     
-    private var elements = [TeadsInReadAd?]()
+    enum TeadsElement: Equatable {
+        case article
+        case ad(_ ad: TeadsInReadAd)
+        case trackerView(_ trackerView: TeadsAdOpportunityTrackerView)
+    }
+    
+    private var elements = [TeadsElement]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         (0..<8).forEach { _ in
-            elements.append(nil)
+            elements.append(.article)
         }
             
         let placementSettings = TeadsAdPlacementSettings { (settings) in
@@ -36,10 +45,15 @@ class InReadDirectTableViewController: TeadsViewController {
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
         })
+        
+        tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
     
     func closeSlot(ad: TeadsAd) {
-        elements.removeAll { $0 == ad }
+        guard let inReadAd = ad as? TeadsInReadAd else {
+            return
+        }
+        elements.removeAll { $0 == .ad(inReadAd) }
         tableView.reloadData()
     }
     
@@ -57,11 +71,15 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
-        } else if let ad = elements[indexPath.row] {
+        } else if case let .ad(ad) = elements[indexPath.row] {
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
             let teadsAdView = TeadsInReadAdView(bind: ad)
             cellAd.contentView.addSubview(teadsAdView)
             teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
+            return cellAd
+        } else if case let .trackerView(trackerView) = elements[indexPath.row],
+                  let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell {
+            cellAd.setTrackerView(trackerView)
             return cellAd
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
@@ -70,8 +88,10 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let ad = elements[indexPath.row] {
+        if case let .ad(ad) = elements[indexPath.row] {
             return ad.adRatio.calculateHeight(for: tableView.frame.width - 20)
+        } else if case .trackerView(_) = elements[indexPath.row] {
+            return 0
         }
         return UITableView.automaticDimension
     }
@@ -81,7 +101,7 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        elements.insert(ad, at: adRowNumber)
+        elements.insert(.ad(ad), at: adRowNumber)
         ad.delegate = self
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
@@ -92,14 +112,16 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     }
     
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        if let row = elements.firstIndex(of: ad) {
+        if let row = elements.firstIndex(of: .ad(ad)) {
             tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
         }
         
     }
     
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        //not relevant in tableView integration
+        elements.insert(.trackerView(trackerView), at: trackerViewRowNumber)
+        let indexPaths = [IndexPath(row: trackerViewRowNumber, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
 }
