@@ -48,6 +48,7 @@
 		E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */; };
 		E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */; };
 		E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */; };
+		E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */; };
 		F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */; };
 		F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = F7651FE126A07A58004DAFD9 /* bootstrap.js */; };
 		F7651FE426A07A58004DAFD9 /* TeadsWebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */; };
@@ -109,6 +110,7 @@
 		E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerTableViewCell.swift; sourceTree = "<group>"; };
 		E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdCollectionViewCell.swift; sourceTree = "<group>"; };
+		E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAppLovinScrollViewController.swift; sourceTree = "<group>"; };
 		F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeadsSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsSampleAppUITests.swift; sourceTree = "<group>"; };
 		F7651FE126A07A58004DAFD9 /* bootstrap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				40D289F325384F240031A64D /* Admob */,
 				40D289F425384F2F0031A64D /* Mopub */,
 				B5EBAF5D256559A900B0DAFA /* SAS */,
+				E9B7170327C7962700FB7DCB /* AppLovin */,
 			);
 			path = InRead;
 			sourceTree = "<group>";
@@ -484,6 +487,22 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		E9B7170327C7962700FB7DCB /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				E9B7170427C7963C00FB7DCB /* ScrollView */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		E9B7170427C7963C00FB7DCB /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		F71C451F27918A88000C696F /* TeadsSampleAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +541,7 @@
 				B5555A301F7CDF80007406D4 /* Resources */,
 				913FE1D31FEC291B003C6E5E /* ShellScript */,
 				17DE1E1C76C21A32980C582E /* [CP] Embed Pods Frameworks */,
+				98DE17617D0CAB0FDFDF57BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -685,6 +705,24 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
 		};
+		98DE17617D0CAB0FDFDF57BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.1.1/AppLovinSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -725,6 +763,7 @@
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
 				B5966D20269DCF2D005CA2FF /* InReadMopubTableViewController.swift in Sources */,
+				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
 				E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */,
 			);

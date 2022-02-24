@@ -57,7 +57,7 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             case .nativeDisplay:
-                return PID.nativeDisplay
+                return PID.directNativeDisplay
             }
         case .admob:
             switch adSelection.creation.name {
@@ -102,13 +102,25 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             case .nativeDisplay:
-                return PID.nativeDisplay
+                return PID.directNativeDisplay
+            }
+        case .appLovin:
+            switch adSelection.creation.name {
+            case .landscape:
+                return PID.appLovinLandscape
+            case .vertical:
+                return PID.appLovinVertical
+            case .square:
+                return PID.appLovinSquare
+            case .carousel:
+                return PID.appLovinCarousel
+            case .custom:
+                return PID.custom
+            case .nativeDisplay:
+                return PID.appLovinNativeDisplay
             }
         }
-        
-        
     }
-
 }
 
 extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -280,7 +292,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 1:
-            let spacing: CGFloat = 4
+            let spacing: CGFloat = 2
             let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)

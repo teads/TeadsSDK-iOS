@@ -1,4 +1,5 @@
 PODS:
+  - AppLovinSDK (11.1.1)
   - Google-Mobile-Ads-SDK (9.0.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -60,6 +61,9 @@ PODS:
   - TeadsAdMobAdapter (5.0.10):
     - Google-Mobile-Ads-SDK (>= 8.0)
     - TeadsSDK (= 5.0.10)
+  - TeadsAppLovinAdapter (5.0.10):
+    - AppLovinSDK (>= 11.1.1)
+    - TeadsSDK (= 5.0.10)
   - TeadsMoPubAdapter (5.0.10):
     - mopub-ios-sdk (>= 5.13)
     - TeadsSDK (= 5.0.10)
@@ -72,12 +76,14 @@ PODS:
 
 DEPENDENCIES:
   - TeadsAdMobAdapter (~> 5.0)
+  - TeadsAppLovinAdapter (from `./`)
   - TeadsMoPubAdapter (~> 5.0)
   - TeadsSASAdapter (~> 5.0)
   - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
+    - AppLovinSDK
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
@@ -92,7 +98,12 @@ SPEC REPOS:
     - TeadsSASAdapter
     - TeadsSDK
 
+EXTERNAL SOURCES:
+  TeadsAppLovinAdapter:
+    :path: "./"
+
 SPEC CHECKSUMS:
+  AppLovinSDK: a418677708090e2116e9080c3ca46cc81df7b8de
   Google-Mobile-Ads-SDK: d6ff7e6a7e46a76eb91af814d16d040197606afc
   GoogleAppMeasurement: aa3cb422fab2b05d2efac543a5720d1a85b9dea5
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
@@ -103,10 +114,11 @@ SPEC CHECKSUMS:
   Smart-Core-SDK: 6eb61082ec48ad48cf416708487b1ad3c25770cc
   Smart-Display-SDK: 33f0325dfb1bf93256942e6e545322aad8a64842
   TeadsAdMobAdapter: c7110f4568185364ecba302b1eefb86145a9c8d3
+  TeadsAppLovinAdapter: 7269757b5154af435469490f9889a7e63170d17f
   TeadsMoPubAdapter: 5f7c0470ee09d4dc42153de705400b8f3a894ddc
   TeadsSASAdapter: d1ff4f7b883628f5bb26a401443f2a57870918a3
   TeadsSDK: a6d99fcfc49ed0d4ae5715bc50149ecd83ce8f25
 
-PODFILE CHECKSUM: 22e06a8b95491276c09ed474c5ef49d44e48bbf5
+PODFILE CHECKSUM: ecefa31ea95174d94bf6e4cc29c8afcf0409c1e8
 
 COCOAPODS: 1.11.2
