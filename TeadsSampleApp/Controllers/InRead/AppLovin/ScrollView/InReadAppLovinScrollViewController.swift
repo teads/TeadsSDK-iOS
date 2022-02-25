@@ -25,8 +25,8 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         ALSdk.shared()?.mediationProvider = "MAAdapterTeadsMediation"
         ALSdk.shared()?.initializeSdk()
         
-        // FIXME This ids should be replaced by your own MoPub id
-        let APPLOVIN_AD_UNIT_ID = pid
+        // FIXME This ids should be replaced by your own AppLovin AdUnitId
+        let APPLOVIN_AD_UNIT_ID = "ebe5409dd16b929d" //TODO replace by self.pid
         bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
         loadAd()
     }
