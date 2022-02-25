@@ -292,13 +292,11 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 1:
-            let spacing: CGFloat = 2
-            let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
-            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-            return CGSize(width: width, height: 32)
+            let providerList = selectionList.first(where: {$0.isSelected})?.providers ?? []
+            return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })
         case 2:
             let creativesTypeList = selectionList.first(where: {$0.isSelected})?.creativeTypes ?? []
-            return getButtonButtonSize(buttonValues: creativesTypeList)
+            return getButtonButtonSize(buttonValues: creativesTypeList.map { $0.name.rawValue })
         case 3:
             let spacing: CGFloat = 16
             let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
@@ -325,18 +323,18 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func getButtonWidth(buttonValues: [CreativeType]) -> Int {
+    func getButtonWidth(buttonValues: [String]) -> Int {
         
         var width = 0
         buttonValues.forEach { (item) in
-            width = max(width, Int(item.name.rawValue.size(withAttributes: [
+            width = max(width, Int(item.size(withAttributes: [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
             ]).width))
         }
         return width + 16
     }
     
-    func getButtonButtonSize(buttonValues: [CreativeType]) -> CGSize {
+    func getButtonButtonSize(buttonValues: [String]) -> CGSize {
         
         let spacing: CGFloat = 4
         let availableWidth = Int(collectionView.bounds.width - 32)

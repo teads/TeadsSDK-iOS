@@ -168,7 +168,7 @@ enum ProviderName: String {
     case admob = "Admob"
     case mopub = "Mopub"
     case sas = "Smart"
-    case appLovin = "MAX"
+    case appLovin = "App Lovin"
 }
 
 enum CreativeTypeName: String {
