@@ -7,7 +7,7 @@ If you want to display Teads ads in your iOS application through AppLovin mediat
 
 - ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
 - ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
-- ![AppLovin SDK: 11.1.2+](https://img.shields.io/badge/MoPub%20SDK-11.1.2+-blue.svg?style=flat)
+- ![AppLovin SDK: 11.1.1+](https://img.shields.io/badge/MoPub%20SDK-11.1.1+-blue.svg?style=flat)
 - ![Teads SDK: 5.0.9+](https://img.shields.io/badge/Teads%20SDK-5.0.9+-blue.svg?style=flat)
 
 ## Features
@@ -17,7 +17,7 @@ If you want to display Teads ads in your iOS application through AppLovin mediat
 
 ## Installation
 
-Before installing Teads adapter, you need to implement [AppLovin Ads](https://developers.mopub.com/docs/ios/) in your application.
+Before installing Teads adapter, you need to implement [AppLovin Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration) in your application.
 
 #### CocoaPods
 
