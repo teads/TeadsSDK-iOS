@@ -23,21 +23,17 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         super.viewDidLoad()
         
         ALSdk.shared()?.mediationProvider = "MAAdapterTeadsMediation"
-        ALSdk.shared()?.initializeSdk()
-        
+        ALSdk.shared()!.initializeSdk { [weak self] (configuration: ALSdkConfiguration) in
+            self?.loadAd()
+        }
+    }
+    
+    func loadAd() {
         // FIXME This ids should be replaced by your own AppLovin AdUnitId
         let APPLOVIN_AD_UNIT_ID = "ebe5409dd16b929d" //TODO replace by self.pid
         bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
         bannerView.stopAutoRefresh()
-        loadAd()
         
-        let nativeAdView = MANativeAdView()
-        nativeAdView.bindViews(with: MANativeAdViewBinder { builder in
-            builder.advertiserLabelTag = 1
-        }) //Binds the native asset ad views to this native ad using view tags.
-    }
-    
-    func loadAd() {
         let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
             settings.pageUrl("https://teads.com")
