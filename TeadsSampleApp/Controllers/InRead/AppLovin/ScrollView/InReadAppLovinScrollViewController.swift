@@ -28,7 +28,13 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         // FIXME This ids should be replaced by your own AppLovin AdUnitId
         let APPLOVIN_AD_UNIT_ID = "ebe5409dd16b929d" //TODO replace by self.pid
         bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
+        bannerView.stopAutoRefresh()
         loadAd()
+        
+        let nativeAdView = MANativeAdView()
+        nativeAdView.bindViews(with: MANativeAdViewBinder { builder in
+            builder.advertiserLabelTag = 1
+        }) //Binds the native asset ad views to this native ad using view tags.
     }
     
     func loadAd() {

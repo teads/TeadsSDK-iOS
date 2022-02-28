@@ -59,7 +59,7 @@ enum Formats {
 }
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadMopubProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: [landscape, vertical, square, carousel, custom])
-let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeMopubProvider], isSelected: false, creativeTypes: [display])
+let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeMopubProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [

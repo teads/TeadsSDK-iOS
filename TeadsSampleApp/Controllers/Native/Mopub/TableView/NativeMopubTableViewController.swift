@@ -20,11 +20,9 @@ class NativeMopubTableViewController: TeadsViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let headerCell = "TeadsContentCell"
-    let teadsAdCellIndentifier = "MoPubNativeTableViewCell"
+    let teadsAdCellIndentifier = "NativeTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
     let adRowNumber = 3
-    var placement: TeadsNativeAdPlacement?
-
     
     private var elements = [MPNativeAd?]()
     
@@ -102,7 +100,7 @@ extension NativeMopubTableViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCell, for: indexPath)
             return cell
         } else if let ad = elements[indexPath.row] {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? MoPubNativeTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeTableViewCell else {
                 return UITableViewCell()
             }
             

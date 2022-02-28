@@ -37,13 +37,16 @@
 		C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */; };
 		E906CDA826B81D4200E92576 /* MoPubNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */; };
 		E906CDA926B81D4200E92576 /* MoPubNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */; };
+		E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */; };
+		E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */; };
+		E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */; };
 		E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */; };
 		E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */; };
 		E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */; };
 		E9984EF126AF3CCC000D42D3 /* NativeMopubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EE926AF3CCC000D42D3 /* NativeMopubTableViewController.swift */; };
 		E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */; };
 		E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */; };
-		E9984EFA26B2D46F000D42D3 /* MoPubNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */; };
+		E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */; };
 		E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */; };
 		E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */; };
 		E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */; };
@@ -99,13 +102,16 @@
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 		E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoPubNativeAdView.xib; sourceTree = "<group>"; };
 		E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeAdView.swift; sourceTree = "<group>"; };
+		E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLovinNativeAdView.xib; sourceTree = "<group>"; };
+		E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinNativeAdView.swift; sourceTree = "<group>"; };
+		E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAppLovinTableViewController.swift; sourceTree = "<group>"; };
 		E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewController.swift; sourceTree = "<group>"; };
 		E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdmobTableViewController.swift; sourceTree = "<group>"; };
 		E9984EE926AF3CCC000D42D3 /* NativeMopubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeMopubTableViewController.swift; sourceTree = "<group>"; };
 		E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArticleNativeTableViewCell.swift; sourceTree = "<group>"; };
-		E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeTableViewCell.swift; sourceTree = "<group>"; };
+		E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobNativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerTableViewCell.swift; sourceTree = "<group>"; };
 		E9A3AC592795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -366,7 +372,7 @@
 			children = (
 				E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */,
 				E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */,
-				E9984EF626B2D46F000D42D3 /* MoPubNativeTableViewCell.swift */,
+				E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */,
 				E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */,
 				E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */,
 			);
@@ -418,12 +424,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E954312227CD038A005004B4 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				E954312927CD2A74005004B4 /* TableView */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		E954312927CD2A74005004B4 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */,
+				E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */,
+				E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		E9984ED526AF3CCC000D42D3 /* Native */ = {
 			isa = PBXGroup;
 			children = (
 				E9984ED626AF3CCC000D42D3 /* Direct */,
 				E9984EDB26AF3CCC000D42D3 /* Admob */,
 				E9984EE526AF3CCC000D42D3 /* Mopub */,
+				E954312227CD038A005004B4 /* AppLovin */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -617,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
+				E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */,
 				B50425F6252F436000ABF07D /* sample.html in Resources */,
 				E906CDA826B81D4200E92576 /* MoPubNativeAdView.xib in Resources */,
 				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
@@ -730,11 +756,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */,
 				B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */,
 				E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */,
 				B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */,
-				E9984EFA26B2D46F000D42D3 /* MoPubNativeTableViewCell.swift in Sources */,
+				E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */,
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
+				E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */,
 				408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */,
 				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
 				E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */,
