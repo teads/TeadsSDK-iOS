@@ -47,6 +47,16 @@
                ReferencedContainer = "container:TeadsSampleApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F7535F9E27D0FF250025E723"
+               BuildableName = "TeadsSampleAppTests.xctest"
+               BlueprintName = "TeadsSampleAppTests"
+               ReferencedContainer = "container:TeadsSampleApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
