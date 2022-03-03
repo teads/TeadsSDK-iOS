@@ -1,22 +1,22 @@
 PODS:
-  - Google-Mobile-Ads-SDK (9.0.0):
+  - Google-Mobile-Ads-SDK (9.1.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleAppMeasurement (8.11.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.11.0)
+  - GoogleAppMeasurement (8.12.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.12.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.11.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.11.0)
+  - GoogleAppMeasurement/AdIdSupport (8.12.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.12.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (8.11.0):
+  - GoogleAppMeasurement/WithoutAdIdSupport (8.12.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
@@ -57,24 +57,24 @@ PODS:
   - Smart-Core-SDK (7.16.0)
   - Smart-Display-SDK (7.15.0):
     - Smart-Core-SDK (~> 7.15)
-  - TeadsAdMobAdapter (5.0.10):
+  - TeadsAdMobAdapter (5.0.11):
     - Google-Mobile-Ads-SDK (>= 8.0)
-    - TeadsSDK (= 5.0.10)
-  - TeadsMoPubAdapter (5.0.10):
+    - TeadsSDK (= 5.0.11)
+  - TeadsMoPubAdapter (5.0.11):
     - mopub-ios-sdk (>= 5.13)
-    - TeadsSDK (= 5.0.10)
-  - TeadsSASAdapter (5.0.10):
+    - TeadsSDK (= 5.0.11)
+  - TeadsSASAdapter (5.0.11):
     - Smart-Display-SDK (>= 7.6.2)
-    - TeadsSDK (= 5.0.10)
-  - TeadsSDK (5.0.10):
-    - TeadsSDK/Core (= 5.0.10)
-  - TeadsSDK/Core (5.0.10)
+    - TeadsSDK (= 5.0.11)
+  - TeadsSDK (5.0.11):
+    - TeadsSDK/Core (= 5.0.11)
+  - TeadsSDK/Core (5.0.11)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (~> 5.0)
-  - TeadsMoPubAdapter (~> 5.0)
-  - TeadsSASAdapter (~> 5.0)
-  - TeadsSDK (~> 5.0)
+  - TeadsAdMobAdapter (from `./`)
+  - TeadsMoPubAdapter (from `./`)
+  - TeadsSASAdapter (from `./`)
+  - TeadsSDK (from `./`)
 
 SPEC REPOS:
   trunk:
@@ -87,14 +87,20 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-    - TeadsAdMobAdapter
-    - TeadsMoPubAdapter
-    - TeadsSASAdapter
-    - TeadsSDK
+
+EXTERNAL SOURCES:
+  TeadsAdMobAdapter:
+    :path: "./"
+  TeadsMoPubAdapter:
+    :path: "./"
+  TeadsSASAdapter:
+    :path: "./"
+  TeadsSDK:
+    :path: "./"
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: d6ff7e6a7e46a76eb91af814d16d040197606afc
-  GoogleAppMeasurement: aa3cb422fab2b05d2efac543a5720d1a85b9dea5
+  Google-Mobile-Ads-SDK: d6ebb0e05cc38f4fad82d77a6655552213ed5e38
+  GoogleAppMeasurement: ae033c3aad67e68294369373056b4d74cc8ae0d6
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   mopub-ios-sdk: 39dd404dc791e543979b91aa8e3b27197af91377
@@ -102,11 +108,11 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Smart-Core-SDK: 6eb61082ec48ad48cf416708487b1ad3c25770cc
   Smart-Display-SDK: 33f0325dfb1bf93256942e6e545322aad8a64842
-  TeadsAdMobAdapter: c7110f4568185364ecba302b1eefb86145a9c8d3
-  TeadsMoPubAdapter: 5f7c0470ee09d4dc42153de705400b8f3a894ddc
-  TeadsSASAdapter: d1ff4f7b883628f5bb26a401443f2a57870918a3
-  TeadsSDK: a6d99fcfc49ed0d4ae5715bc50149ecd83ce8f25
+  TeadsAdMobAdapter: bcd932975bd28c1b824f62f965f76fbca1eb0f7c
+  TeadsMoPubAdapter: 4c7d7e81535920613ca041279db7787db21ce374
+  TeadsSASAdapter: ec4d23bd93ecf1880f46c31289081acb69c82a5b
+  TeadsSDK: 996bc7050e1cd69641c056ca6eff1fb750f0cdd8
 
-PODFILE CHECKSUM: 22e06a8b95491276c09ed474c5ef49d44e48bbf5
+PODFILE CHECKSUM: 99da1db9b572dcc107dda3925ae1e75aa614df00
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.10.2
