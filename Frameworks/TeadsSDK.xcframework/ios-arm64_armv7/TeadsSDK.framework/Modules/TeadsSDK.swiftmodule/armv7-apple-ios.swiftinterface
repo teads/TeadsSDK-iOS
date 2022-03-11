@@ -12,6 +12,7 @@ import JavaScriptCore
 import OMSDK_Teadstv
 import SafariServices
 import Swift
+import SwiftUI
 import SystemConfiguration
 @_exported import TeadsSDK
 import UIKit
@@ -35,9 +36,9 @@ extension UIView {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
-  weak final public var delegate: TeadsSDK.TeadsNativeAdPlacementDelegate? {
-    get
-    set
+  @objc weak final public var delegate: TeadsSDK.TeadsNativeAdPlacementDelegate? {
+    @objc get
+    @objc set
   }
   @discardableResult
   final public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
@@ -50,7 +51,7 @@ internal protocol AnyEncodableProtocol {
 }
 extension AnyEncodableProtocol {
 }
-@_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable, TeadsSDK.TeadsAdPlacementSettingsProtocol, TeadsSDK.TeadsAdRequestSettingsProtocol {
+@_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable {
   public static let integrationAdmob: Swift.String
   public static let integrationMopub: Swift.String
   public static let integrationSAS: Swift.String
@@ -64,7 +65,9 @@ extension AnyEncodableProtocol {
   @objc public init(build: (TeadsSDK.TeadsAdapterSettings) -> Swift.Void)
   @objc final public func disableCrashMonitoring()
   @objc final public func disableTeadsAudioSessionManagement()
+  @available(*, deprecated, message: "TeadsSDK does not record location.")
   @objc final public func disableLocation()
+  @available(*, deprecated, message: "Won't be used in any newer SDK versions.")
   @objc final public func enableLightEndScreen()
   @objc final public func disableMediaPreload()
   @objc final public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v1, cmpSdkID: Swift.Int = 0)
@@ -161,11 +164,7 @@ internal protocol AnyDecodableProtocol {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
-public protocol TeadsAdRequestSettingsProtocol {
-  func enableValidationMode()
-  func pageUrl(_ urlString: Swift.String)
-}
-@_inheritsConvenienceInitializers @objc final public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable, TeadsSDK.TeadsAdRequestSettingsProtocol {
+@_inheritsConvenienceInitializers @objc final public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
   @objc final public func enableValidationMode()
   @objc final public func pageUrl(_ urlString: Swift.String)
   @objc final public func addExtras(_ value: Swift.String, for key: Swift.String)
@@ -194,6 +193,9 @@ extension UIButton {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
   final public let url: Foundation.URL
   final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((Swift.Error) -> Swift.Void)? = nil)
+  final public var image: UIKit.UIImage? {
+    get
+  }
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class TeadsAdView : UIKit.UIView {
@@ -210,23 +212,7 @@ extension UIButton {
   @objc deinit
   @objc override dynamic public init()
 }
-public protocol TeadsAdPlacementSettingsProtocol {
-  func disableCrashMonitoring()
-  func disableTeadsAudioSessionManagement()
-  func disableLocation()
-  func enableLightEndScreen()
-  func disableMediaPreload()
-  func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion, cmpSdkID: Swift.Int)
-  func setUsPrivacy(consent: Swift.String)
-  func disableBatteryMonitoring()
-  func addExtras(_ value: Swift.String, for key: Swift.String)
-  func enableDebug()
-}
-@_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable, TeadsSDK.TeadsAdPlacementSettingsProtocol {
-  public static let integrationAdmob: Swift.String
-  public static let integrationMopub: Swift.String
-  public static let integrationTypeKey: Swift.String
-  public static let integrationVersionKey: Swift.String
+@_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable {
   @objc final public func disableCrashMonitoring()
   @objc final public func disableTeadsAudioSessionManagement()
   @objc final public func enableDebug()
@@ -315,6 +301,7 @@ extension TeadsInReadAd {
 }
 @_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
   @objc deinit
+  public func didTapView()
   @objc override dynamic public init()
 }
 extension CommonComponent {
@@ -335,7 +322,7 @@ extension CommonComponent {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
   @objc public var contentAspectRatio: CoreGraphics.CGFloat {
-    @objc get
+    get
   }
   @objc deinit
 }
@@ -357,7 +344,7 @@ extension CommonComponent {
 }
 @_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
   @objc final public var code: TeadsSDK.AdErrorCode
-  @objc final public var requestIdentifier: Foundation.UUID? {
+  @objc final public var requestIdentifier: Foundation.UUID! {
     get
   }
   @objc override final public var description: Swift.String {
