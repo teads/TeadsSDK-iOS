@@ -30,15 +30,16 @@ class NativeAppLovinTableViewController: TeadsViewController {
             elements.append(nil)
         }
         
-        ALSdk.shared()?.mediationProvider = "MAAdapterTeadsMediation"
+        ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
+        ALSdk.shared()!.settings.isVerboseLogging = true
         ALSdk.shared()!.initializeSdk { [weak self] (configuration: ALSdkConfiguration) in
             self?.loadAd()
         }
-    }
+    } 
     
     func loadAd() {
         // FIXME This ids should be replaced by your own AppLovin AdUnitId
-        let APPLOVIN_AD_UNIT_ID = "ebe5409dd16b929d" //TODO replace by self.pid
+        let APPLOVIN_AD_UNIT_ID = "b87480e23dd55a79" //TODO replace by self.pid
         nativeAdLoader = MANativeAdLoader(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
         
         // Setting the modal parent view controller.

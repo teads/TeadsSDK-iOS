@@ -42,7 +42,6 @@ class InReadAdmobTableViewController: TeadsViewController {
         // 3. Load a new ad (this will call AdMob and Teads afterward)
         let adSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.disableLocation()
             if let admobAdView = admobAdView {
                 try? settings.registerAdView(admobAdView, delegate: self)
             }

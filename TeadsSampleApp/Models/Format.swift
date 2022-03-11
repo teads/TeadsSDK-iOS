@@ -150,7 +150,7 @@ struct PID {
     static let sasSquare = "96468"
     static let sasCarousel = "96470"
     
-    static let appLovinLandscape = "ebe5409dd16b929d"
+    static let appLovinLandscape = "33d03d37d70196e3"
     static let appLovinVertical = "808eaa38d08ade2d"
     static let appLovinSquare = "f83b5fc30c17954e"
     static let appLovinCarousel = "21c6dc998b472d8d"

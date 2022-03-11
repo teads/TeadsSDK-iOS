@@ -1,6 +1,6 @@
 //
-//  MAAdapterTeadsMediation.swift
-//  TeadsAdMobAdapter
+//  TeadsMediationAdapter.swift
+//  TeadsAppLovinAdapter
 //
 //  Created by Paul Nicolas on 15/02/2022.
 //
@@ -9,10 +9,8 @@ import UIKit
 import AppLovinSDK
 import TeadsSDK
 
-@objc(MAAdapterTeadsMediation)
+@objc(TeadsMediationAdapter)
 final class TeadsMediationAdapter: ALMediationAdapter {
-    var parameters: MAAdapterInitializationParameters!
-
     var currentNativePlacement: TeadsNativeAdPlacement?
     weak var nativeDelegate: MANativeAdAdapterDelegate?
 
@@ -21,7 +19,6 @@ final class TeadsMediationAdapter: ALMediationAdapter {
     weak var currentAdView: TeadsInReadAdView?
 
     @objc override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
-        self.parameters = parameters
         Teads.configure()
         completionHandler(.doesNotApply, nil)
     }
@@ -39,7 +36,7 @@ final class TeadsMediationAdapter: ALMediationAdapter {
     }
 
     override func destroy() {
-
+        
     }
 }
 
@@ -70,7 +67,7 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
         // Prepare ad settings
         let adSettings = (try? TeadsAdapterSettings.instance(fromAppLovinParameters: parameters.localExtraParameters)) ?? TeadsAdapterSettings()
-
+        
         // Load inRead ad
         currentInReadPlacement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         currentInReadPlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
@@ -87,7 +84,6 @@ extension TeadsMediationAdapter: TeadsInReadAdPlacementDelegate {
     func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         currentAdView?.updateHeight(with: adRatio)
     }
-
 }
 
 extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
@@ -128,7 +124,6 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
         // adOpportunityTrackerView is handled by TeadsSDK
     }
-
 }
 
 extension TeadsMediationAdapter: TeadsAdDelegate {

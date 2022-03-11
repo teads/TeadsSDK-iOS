@@ -22,7 +22,8 @@ class InReadAppLovinScrollViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ALSdk.shared()?.mediationProvider = "MAAdapterTeadsMediation"
+        ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
+        ALSdk.shared()!.settings.isVerboseLogging = true
         ALSdk.shared()!.initializeSdk { [weak self] (configuration: ALSdkConfiguration) in
             self?.loadAd()
         }
@@ -30,8 +31,8 @@ class InReadAppLovinScrollViewController: TeadsViewController {
     
     func loadAd() {
         // FIXME This ids should be replaced by your own AppLovin AdUnitId
-        let APPLOVIN_AD_UNIT_ID = "ebe5409dd16b929d" //TODO replace by self.pid
-        bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
+        let APPLOVIN_AD_UNIT_ID = "33d03d37d70196e3" //TODO replace by self.pid
+        bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID, adFormat: .mrec)
         bannerView.stopAutoRefresh()
         
         let settings = TeadsAdapterSettings { (settings) in
@@ -41,13 +42,7 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         }
         bannerView.register(teadsAdSettings: settings)
         
-        // Banner height on iPhone and iPad is 50 and 90, respectively
-        let height: CGFloat = (UIDevice.current.userInterfaceIdiom == .pad) ? 90 : 50
-        
-        // Stretch to the width of the screen for banners to be fully functional
-        let width: CGFloat = UIScreen.main.bounds.width
-        
-        bannerView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        bannerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
         
         // Set background or background color for banners to be fully functional
         bannerView.backgroundColor = .clear

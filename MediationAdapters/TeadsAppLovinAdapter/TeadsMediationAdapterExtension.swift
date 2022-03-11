@@ -1,6 +1,6 @@
 //
 //  MAAdapterTeadsExtension.swift
-//  TeadsAdMobAdapter
+//  TeadsAppLovinAdapter
 //
 //  Created by Paul Nicolas on 15/02/2022.
 //
