@@ -9,26 +9,25 @@
 /// ⚠️ This helper has been provided to give you a hand in your integration webview.
 /// It's not designed to work on every integration, it may need to be customised to suit your needs
 
+import TeadsSDK
 import UIKit
 import WebKit
-import TeadsSDK
 
 /// follow slot javascript lyfecycle
 /// - Note:
 /// method will be triggered on mainThread or thead from original call
 @objc public protocol TeadsWebViewHelperDelegate {
-    
     /// is called when the teads slot is shown
     func webViewHelperSlotStartToShow()
-    
+
     /// is called when the teads slot is hidden
     func webViewHelperSlotStartToHide()
-    
+
     /// is called when no slot is found
     /// - Note
     /// this indicates slot specified with `selector` on `TeadsWebViewHelper` init has not been found in webview html DOM
     func webViewHelperSlotNotFound()
-    
+
     /// is called when an error occured with the reason
     /// - Parameters:
     ///   - error: description of issue encountered
@@ -37,33 +36,32 @@ import TeadsSDK
 
 /// Helper to add TeadsInReadAd inside your webView
 /// Helper add AdView over webView allowing Teads' rich display ads
-public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
-
+@objc public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     private weak var delegate: TeadsWebViewHelperDelegate?
     private weak var webView: WKWebView?
-    
+
     private let selector: String
     private var noSlotTimer: Timer?
-    
+
     // only webView.scrollView should retain adView as subView
     weak var adView: UIView?
-    
+
     private var adViewConstraints = [NSLayoutConstraint]()
-    
+
     // latest slot position updated
     private var slotPosition: SlotPosition?
-    
+
     // width of element in Web content, needed to compute ratio
     public var adViewHTMLElementWidth: CGFloat = 0
-    
+
     private var webViewObservation: NSKeyValueObservation?
     private var orientationStateObserver: NSObjectProtocol?
-    
+
     private var isJsReady = false
-    
+
     private var slotOpener: (() -> Void)?
     private var slotOpportunity: ((WKWebView, SlotPosition) -> Void)?
-    
+
     /// Init the Teads webView helper
     ///
     /// - Note: handles slot position injection from TeadsSDK
@@ -74,13 +72,13 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     ///   - delegate: optional delegate to follow slot javascript lyfecycle
     ///
     /// - Important: should be called from **main Thread**
-    public init(webView: WKWebView, selector: String, delegate: TeadsWebViewHelperDelegate? = nil) {
+    @objc public init(webView: WKWebView, selector: String, delegate: TeadsWebViewHelperDelegate? = nil) {
         self.webView = webView
         self.selector = selector
         self.delegate = delegate
         super.init()
-        
-        //add message handler method name to communicate with the wkwebview
+
+        // add message handler method name to communicate with the wkwebview
         JSBootstrapOutput.allCases.map(\.rawValue).forEach {
             webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: $0)
         }
@@ -96,20 +94,19 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
         webViewObservation = nil
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     /// Inject Teads' bootstrap in the webview
     /// make sure bootstrap.js file is present in same the bundle of this file
-    public func injectJS() {
-        guard let webView = self.webView,
+    @objc public func injectJS() {
+        guard let webView = webView,
               let bootStrapURL = Bundle(for: Self.self).url(forResource: "bootstrap", withExtension: "js"),
-              let data = try? Data(contentsOf: bootStrapURL)
-             else {
+              let data = try? Data(contentsOf: bootStrapURL) else {
             delegate?.webViewHelperOnError(error: "Unable to load bootstrap.js file, make sure to append to bundle")
             return
         }
-        
+
         let bootStrap64 = data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        
+
         let javascript = """
         javascript:(function() { var scriptElement = document.getElementById('teadsbootstrap'); if(scriptElement) scriptElement.remove();
         var script = document.createElement('script');
@@ -118,26 +115,26 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
         script.setAttribute('type', 'text/javascript');
         document.body.appendChild(script);})()
         """
-        webView.evaluateJavaScript(javascript) { [weak delegate, weak self] (_, error) in
+        webView.evaluateJavaScript(javascript) { [weak delegate, weak self] _, error in
             if error != nil {
                 delegate?.webViewHelperOnError(error: "injection of JS failed")
             }
             self?.isJsReady = true
         }
     }
-    
+
     /// the bootstrap calls this when it is ready
     /// insert the slot in the webview with the selector
     private func insertSlot() {
-        //add a timeout in case we are not able to find the slot
+        // add a timeout in case we are not able to find the slot
         let timer = Timer(timeInterval: 4, repeats: false) { [weak self] _ in
             self?.slotOpener = nil
             self?.delegate?.webViewHelperSlotNotFound()
         }
         noSlotTimer = timer
         RunLoop.main.add(timer, forMode: .common)
-        
-        evaluateBootstrapInput(JSBootstrapInput.insertPlaceholder(selector)) { [weak self] (_, error) in
+
+        evaluateBootstrapInput(JSBootstrapInput.insertPlaceholder(selector)) { [weak self] _, error in
             if error != nil {
                 self?.slotOpener = nil
                 self?.delegate?.webViewHelperOnError(error: "insertSlot failed")
@@ -148,7 +145,7 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             }
         }
     }
-    
+
     /// Call the bootstrap to open the slot
     ///
     /// - Parameters:
@@ -158,23 +155,23 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     /// - Note:
     ///   sould be called from
     ///   ```TeadsInReadAdPlacementDelegate.didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio)```
-    public func openSlot(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    @objc public func openSlot(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         openSlot(adView: TeadsInReadAdView(bind: ad), adRatio: adRatio)
     }
-    
-    public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default) {
+
+    @objc public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default) {
         slotOpener = { [self] in
-            //update slot with the right ratio
+            // update slot with the right ratio
             self.updateSlot(adRatio: adRatio)
-            
+
             // in case openSlot is called multiple times
             self.adView?.removeFromSuperview()
 
             self.adView = adView
             self.webView?.scrollView.addSubview(adView)
             self.adView?.translatesAutoresizingMaskIntoConstraints = false
-            
-            self.evaluateBootstrapInput(JSBootstrapInput.showPlaceholder(0)) { [weak delegate] (_, error) in
+
+            self.evaluateBootstrapInput(JSBootstrapInput.showPlaceholder(0)) { [weak delegate] _, error in
                 if error != nil {
                     delegate?.webViewHelperOnError(error: "openSlot failed")
                 }
@@ -185,9 +182,7 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             slotOpener?()
         }
     }
-    
 
-    
     /// Update the slot height with the given ad ratio
     /// - Parameters:
     ///   - adRatio: ratio of the ad
@@ -195,52 +190,51 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     /// - Note:
     ///   sould be called from
     ///   ```TeadsInReadAdPlacementDelegate.didUpdateRatio(ratio: TeadsAdRatio)```
-    public func updateSlot(adRatio: TeadsAdRatio) {
-        
+    @objc public func updateSlot(adRatio: TeadsAdRatio) {
         guard isJsReady else {
             return
         }
-        guard let webView = self.webView,
+        guard let webView = webView,
               adRatio != .zero else {
             delegate?.webViewHelperOnError(error: "Webview can't be nil, ratio can't be equals to zero")
             return
         }
-        
+
         var ratio = adRatio.value(for: adViewHTMLElementWidth)
-        
-        //prevent the ad from being bigger than the screen or the webview
+
+        // prevent the ad from being bigger than the screen or the webview
         let visibleHeight = min(UIScreen.main.bounds.height, webView.frame.height)
         let heightFromWidthRatio = adRatio.calculateHeight(for: adViewHTMLElementWidth)
         if heightFromWidthRatio > visibleHeight {
-            ratio = adViewHTMLElementWidth/visibleHeight
+            ratio = adViewHTMLElementWidth / visibleHeight
         }
-        
-        evaluateBootstrapInput(JSBootstrapInput.updatePlaceholder(offsetHeight: 0, ratioVideo: ratio)) { [delegate] (_, error) in
+
+        evaluateBootstrapInput(JSBootstrapInput.updatePlaceholder(offsetHeight: 0, ratioVideo: ratio)) { [delegate] _, error in
             if error != nil {
                 delegate?.webViewHelperOnError(error: "updateSlot failed")
             }
         }
     }
-    
+
     /// Call the bootstrap to close the slot
     ///
     /// - Note:
     ///   sould be called from
     ///   ```TeadsAdDelegate.onError(ad: TeadsAd, error: Error)```
-    public func closeSlot() {
+    @objc public func closeSlot() {
         Self.mainThread { [weak adView] in
             adView?.removeFromSuperview()
         }
         noSlotTimer?.invalidate()
-        evaluateBootstrapInput(JSBootstrapInput.hidePlaceholder(0.25)) { [weak delegate] (_, error) in
+        evaluateBootstrapInput(JSBootstrapInput.hidePlaceholder(0.25)) { [weak delegate] _, error in
             if error != nil {
                 delegate?.webViewHelperOnError(error: "closeSlot failed")
             }
         }
     }
-    
+
     // MARK: JS Interface
-    
+
     /// the bootstrap calls this when the slot is updated
     ///
     /// - Parameter position: json describing the position with top/bottom/right/left
@@ -253,34 +247,34 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
             delegate?.webViewHelperOnError(error: "The json is malformed")
         }
     }
-    
+
     // MARK: WKScriptMessageHandler
-    
-    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+
+    public func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let interface = JSBootstrapOutput(rawValue: message.name) else {
             delegate?.webViewHelperOnError(error: "WKMessage not supported")
             return
         }
         switch interface {
-        case .onTeadsJsLibReady:
-            insertSlot()
-        case .onSlotStartShow:
-            //the bootstrap calls this when the slot starts to show
-            delegate?.webViewHelperSlotStartToShow()
-        case .onSlotUpdated:
-            onSlotUpdated(position: message.body as? String)
-        case .onSlotStartHide:
-            //the bootstrap calls this when the slot starts to hide
-            delegate?.webViewHelperSlotStartToHide()
-        case .handleError:
-            guard let errorString = message.body as? String else {
-                delegate?.webViewHelperOnError(error: "Unknown error occured")
-                return
-            }
-            delegate?.webViewHelperOnError(error: errorString)
+            case .onTeadsJsLibReady:
+                insertSlot()
+            case .onSlotStartShow:
+                // the bootstrap calls this when the slot starts to show
+                delegate?.webViewHelperSlotStartToShow()
+            case .onSlotUpdated:
+                onSlotUpdated(position: message.body as? String)
+            case .onSlotStartHide:
+                // the bootstrap calls this when the slot starts to hide
+                delegate?.webViewHelperSlotStartToHide()
+            case .handleError:
+                guard let errorString = message.body as? String else {
+                    delegate?.webViewHelperOnError(error: "Unknown error occured")
+                    return
+                }
+                delegate?.webViewHelperOnError(error: errorString)
         }
     }
-    
+
     /// Change the constraint of the ad so it follows what the bootstrap ask
     ///
     /// - Parameters:
@@ -288,42 +282,42 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
     private func updateAdViewPosition(position: SlotPosition) {
         adViewHTMLElementWidth = position.right - position.left
         slotPosition = position
-        
-        guard let webView = self.webView else {
+
+        guard let webView = webView else {
             return
         }
         slotOpportunity?(webView, position)
-        
-        guard let adView = self.adView else {
+
+        guard let adView = adView else {
             return
         }
-        
-        let adViewHTMLElementHeight =  position.bottom - position.top
-        //when the adView is from Admob we can't update the frame without having a new request, so the update is done with an Admob method in the controller
+
+        let adViewHTMLElementHeight = position.bottom - position.top
+        // when the adView is from Admob we can't update the frame without having a new request, so the update is done with an Admob method in the controller
         var shouldUpdateAdViewFrame: Bool {
-            if let gadClass = NSClassFromString("GADBannerView"),  adView.isKind(of: gadClass) {
+            if let gadClass = NSClassFromString("GADBannerView"), adView.isKind(of: gadClass) {
                 return false
             }
             return true
         }
         if shouldUpdateAdViewFrame {
-            //prevent an UI glitch when autolayout constraint is activated, prevent adReached sent too early also
+            // prevent an UI glitch when autolayout constraint is activated, prevent adReached sent too early also
             adView.frame = CGRect(x: position.left, y: position.top, width: adViewHTMLElementWidth, height: adViewHTMLElementHeight)
         }
-       
+
         NSLayoutConstraint.deactivate(adViewConstraints)
         adViewConstraints.removeAll()
         adViewConstraints.append(adView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: position.left))
         adViewConstraints.append(adView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: position.top))
-        
+
         if shouldUpdateAdViewFrame {
             adViewConstraints.append(adView.widthAnchor.constraint(equalToConstant: adViewHTMLElementWidth))
             adViewConstraints.append(adView.heightAnchor.constraint(equalToConstant: adViewHTMLElementHeight))
         }
-        
+
         NSLayoutConstraint.activate(adViewConstraints)
     }
-    
+
     /// `adOpportunity` is a key metrics to evaluate the performance of your inventory. It builds the visibility score of your placement in publisher dashboards.
     ///
     /// - Parameters:
@@ -333,53 +327,52 @@ public class TeadsWebViewHelper: NSObject, WKScriptMessageHandler {
         slotOpportunity = { [weak self] webView, position in
             adOpportunityTrackerView.frame = CGRect(x: position.left, y: position.top, width: 1, height: 1)
             webView.scrollView.addSubview(adOpportunityTrackerView)
-            
+
             adOpportunityTrackerView.translatesAutoresizingMaskIntoConstraints = false
-            
+
             adOpportunityTrackerView.topAnchor.constraint(equalTo: webView.scrollView.topAnchor, constant: position.top).isActive = true
             adOpportunityTrackerView.leadingAnchor.constraint(equalTo: webView.scrollView.leadingAnchor, constant: position.left).isActive = true
             adOpportunityTrackerView.widthAnchor.constraint(equalToConstant: 1).isActive = true
             adOpportunityTrackerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
             self?.slotOpportunity = nil
         }
-        
+
         if let position = slotPosition,
-              let webView = webView  {
+           let webView = webView {
             slotOpportunity?(webView, position)
         }
     }
 }
-
 
 // MARK: JSBootstrap I/O
 
 extension TeadsWebViewHelper {
     enum JSBootstrapInput {
         private static let prefix = "javascript:window.teads."
-        
+
         case insertPlaceholder(String)
         case updatePlaceholder(offsetHeight: CGFloat, ratioVideo: CGFloat)
         case showPlaceholder(CGFloat)
         case hidePlaceholder(CGFloat)
-        
+
         var command: String {
             switch self {
-            case let .insertPlaceholder(value):
-                let method = "insertPlaceholder('%@');"
-                return String(format: Self.prefix + method,  value)
-            case let .updatePlaceholder(offsetHeight, ratioVideo):
-                let method = "updatePlaceholder({" + "'offsetHeight':%f," + "'ratioVideo':%f" + "});"
-                return String(format: Self.prefix + method,  offsetHeight, ratioVideo)
-            case let .showPlaceholder(value):
-                let method = "showPlaceholder('%f');"
-                return String(format: Self.prefix + method, value)
-            case let .hidePlaceholder(value):
-                let method = "hidePlaceholder('%f');"
-                return String(format: Self.prefix + method, value)
+                case let .insertPlaceholder(value):
+                    let method = "insertPlaceholder('%@');"
+                    return String(format: Self.prefix + method, value)
+                case let .updatePlaceholder(offsetHeight, ratioVideo):
+                    let method = "updatePlaceholder({" + "'offsetHeight':%f," + "'ratioVideo':%f" + "});"
+                    return String(format: Self.prefix + method, offsetHeight, ratioVideo)
+                case let .showPlaceholder(value):
+                    let method = "showPlaceholder('%f');"
+                    return String(format: Self.prefix + method, value)
+                case let .hidePlaceholder(value):
+                    let method = "hidePlaceholder('%f');"
+                    return String(format: Self.prefix + method, value)
             }
         }
     }
-    
+
     // js interface
     // method name that will be called by the boostrap
     enum JSBootstrapOutput: String, CaseIterable {
@@ -401,7 +394,7 @@ extension TeadsWebViewHelper {
             DispatchQueue.main.async(execute: work)
         }
     }
-    
+
     /// perform javascript evalutation on main Thread from JSBootstrapInput script
     func evaluateBootstrapInput(_ bootstrap: JSBootstrapInput, completionHandler: ((Any?, Error?) -> Void)? = nil) {
         let script = bootstrap.command
@@ -417,21 +410,22 @@ extension TeadsWebViewHelper {
     /// When registering WKWeakScriptHandler, WKWebView create a strong reference to handler
     /// This leads to retain cycle between webView <-> owner and webView <-> scriptHandler
     /// In order to avoid retain cycle
-    class WKWeakScriptHandler : NSObject, WKScriptMessageHandler {
-        weak var delegate : WKScriptMessageHandler?
-        
-        init(delegate:WKScriptMessageHandler) {
+    class WKWeakScriptHandler: NSObject, WKScriptMessageHandler {
+        weak var delegate: WKScriptMessageHandler?
+
+        init(delegate: WKScriptMessageHandler) {
             self.delegate = delegate
             super.init()
         }
-        
-        func userContentController(_ userContentController: WKUserContentController,
-                                   didReceive message: WKScriptMessage) {
-            delegate?.userContentController(
-                userContentController, didReceive: message)
+
+        func userContentController(
+            _ userContentController: WKUserContentController,
+            didReceive message: WKScriptMessage
+        ) {
+            delegate?.userContentController(userContentController, didReceive: message)
         }
     }
-    
+
     /// Position of the slot described from Javascript
     struct SlotPosition: Decodable {
         let top: CGFloat
