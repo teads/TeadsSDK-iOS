@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppLovinNativeAdView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Yr2-r6-oZu" customClass="AppLovinNativeAdView" customModule="TeadsSDKIntegrationTestsApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="Yr2-r6-oZu" customClass="AppLovinNativeAdView" customModule="TeadsSampleApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,7 +25,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5q7-di-aL4">
                     <rect key="frame" x="108" y="24" width="243" height="39.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAQ-A6-bjb">
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAQ-A6-bjb">
                             <rect key="frame" x="0.0" y="0.0" width="243" height="19.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <nil key="textColor"/>
@@ -69,25 +69,24 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-PP-3Zt">
-                    <rect key="frame" x="308.5" y="375.5" width="42.5" height="19.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dO-Pv-Qh0" userLabel="ContentView">
                     <rect key="frame" x="24" y="100" width="327" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="eHR-dH-zuo"/>
                     </constraints>
                 </view>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naI-wO-42r" userLabel="CTA Button">
+                    <rect key="frame" x="288.5" y="375.5" width="62.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Install"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="MOU-oS-ZgE"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
+                <constraint firstItem="MOU-oS-ZgE" firstAttribute="trailing" secondItem="naI-wO-42r" secondAttribute="trailing" constant="24" id="15R-1h-VGA"/>
                 <constraint firstItem="q25-37-4MT" firstAttribute="top" secondItem="Yr2-r6-oZu" secondAttribute="top" id="31P-0d-5CA"/>
                 <constraint firstItem="Ddf-dS-jO7" firstAttribute="top" secondItem="Yr2-r6-oZu" secondAttribute="top" constant="24" id="3TD-Fl-tUs"/>
-                <constraint firstItem="L8C-PP-3Zt" firstAttribute="top" secondItem="IHI-TG-ptk" secondAttribute="bottom" constant="14" id="3sd-wb-3r4"/>
                 <constraint firstItem="IHI-TG-ptk" firstAttribute="leading" secondItem="MOU-oS-ZgE" secondAttribute="leading" constant="20" id="4ua-S6-zNr"/>
                 <constraint firstItem="MOU-oS-ZgE" firstAttribute="trailing" secondItem="9dO-Pv-Qh0" secondAttribute="trailing" constant="24" id="5Fe-4G-wJj"/>
                 <constraint firstItem="5q7-di-aL4" firstAttribute="top" secondItem="Yr2-r6-oZu" secondAttribute="top" constant="24" id="BTo-HS-v8I"/>
@@ -95,11 +94,11 @@
                 <constraint firstItem="9dO-Pv-Qh0" firstAttribute="leading" secondItem="MOU-oS-ZgE" secondAttribute="leading" constant="24" id="E66-HZ-xeL"/>
                 <constraint firstItem="5q7-di-aL4" firstAttribute="leading" secondItem="Ddf-dS-jO7" secondAttribute="trailing" constant="24" id="FyT-2m-v00"/>
                 <constraint firstItem="9dO-Pv-Qh0" firstAttribute="top" secondItem="Ddf-dS-jO7" secondAttribute="bottom" constant="16" id="Gu1-sh-iyp"/>
+                <constraint firstItem="naI-wO-42r" firstAttribute="top" secondItem="IHI-TG-ptk" secondAttribute="bottom" constant="14" id="JTx-19-1ek"/>
                 <constraint firstItem="Ddf-dS-jO7" firstAttribute="leading" secondItem="MOU-oS-ZgE" secondAttribute="leading" constant="24" id="nGo-Xv-oFc"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q25-37-4MT" secondAttribute="trailing" constant="20" symbolic="YES" id="njk-1L-eYa"/>
                 <constraint firstItem="q25-37-4MT" firstAttribute="leading" secondItem="Yr2-r6-oZu" secondAttribute="leading" id="o9P-mb-jkZ"/>
                 <constraint firstItem="MOU-oS-ZgE" firstAttribute="trailing" secondItem="5q7-di-aL4" secondAttribute="trailing" constant="24" id="vaI-N9-hRD"/>
-                <constraint firstItem="MOU-oS-ZgE" firstAttribute="trailing" secondItem="L8C-PP-3Zt" secondAttribute="trailing" constant="24" id="vm0-dP-p6s"/>
                 <constraint firstItem="IHI-TG-ptk" firstAttribute="top" secondItem="9dO-Pv-Qh0" secondAttribute="bottom" constant="23" id="wZW-a0-Dgd"/>
             </constraints>
             <point key="canvasLocation" x="32.799999999999997" y="296.40179910044981"/>
