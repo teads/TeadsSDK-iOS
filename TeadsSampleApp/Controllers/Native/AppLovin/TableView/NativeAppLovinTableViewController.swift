@@ -45,7 +45,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
         // Setting the modal parent view controller.
         let teadsAdSettings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
-            settings.pageUrl("https://toto.com")
+            settings.pageUrl("https://www.teads.tv")
         }
         
         nativeAdLoader.register(teadsAdSettings: teadsAdSettings)

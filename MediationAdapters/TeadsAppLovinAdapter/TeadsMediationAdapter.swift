@@ -12,7 +12,7 @@ import TeadsSDK
 @objc(TeadsMediationAdapter)
 final class TeadsMediationAdapter: ALMediationAdapter {
     var currentNativePlacement: TeadsNativeAdPlacement?
-    weak var nativeAd: TeadsNativeAd?
+    var nativeAd: TeadsNativeAd?
     weak var nativeDelegate: MANativeAdAdapterDelegate?
 
     var currentInReadPlacement: TeadsInReadAdPlacement?
@@ -37,7 +37,9 @@ final class TeadsMediationAdapter: ALMediationAdapter {
     }
 
     override func destroy() {
+        currentNativePlacement = nil
         
+        currentInReadPlacement = nil
     }
 }
 
@@ -100,21 +102,20 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
             if let title = ad.title?.text {
                 builder.title = title
             }
-
-            builder.body = ad.content?.text
             builder.advertiser = ad.sponsored?.text
+            builder.body = ad.content?.text
             builder.callToAction = ad.callToAction?.text
+            
+            ad.icon?.loadImage { icon in
+                builder.icon = MANativeAdImage(image: icon)
+            }
+            
+            // TODO: add public signatures on TeadsAdChoicesView
+            //builder.optionsView = TeadsAdChoicesView(binding: ad.adChoices)
 
             let mediaView = TeadsMediaView()
             mediaView.bind(component: mediaComponent)
             builder.mediaView = mediaView
-
-            ad.icon?.loadImage { icon in
-                builder.icon = MANativeAdImage(image: icon)
-            }
-            if let adChoices = ad.adChoices {
-                builder.optionsView = TeadsAdChoicesView(binding: adChoices)
-            }
         }
 
         nativeDelegate?.didLoadAd(for: nativeAd, withExtraInfo: nil)
@@ -159,29 +160,5 @@ extension TeadsMediationAdapter: TeadsAdDelegate {
 
     func didCollapsedFromFullscreen(ad: TeadsAd) {
         bannerDelegate?.didCollapseAdViewAd()
-    }
-}
-
-
-final class AppLovinTeadsNativeAd: MANativeAd {
-    weak var parentAdatper: TeadsMediationAdapter?
-    
-    init(parent: TeadsMediationAdapter, builderBlock: MANativeAdBuilderBlock) {
-        super.init(format: .native, builderBlock: builderBlock)
-        self.parentAdatper = parent
-    }
-    
-    override func prepareView(forInteraction nativeAdView: MANativeAdView) {
-        guard let nativeAd = parentAdatper?.nativeAd else {
-            parentAdatper?.e("Failed to register native ad views: native ad is nil.", becauseOf: nil)
-            return
-        }
-        nativeAd.register(containerView: nativeAdView)
-        nativeAdView.titleLabel?.bind(component: nativeAd.title)
-        nativeAdView.bodyLabel?.bind(component: nativeAd.content)
-        nativeAdView.callToActionButton?.bind(component: nativeAd.callToAction)
-        nativeAdView.iconImageView?.bind(component: nativeAd.icon)
-        nativeAdView.mediaContentView?.bind(component: nativeAd.video ?? nativeAd.image)
-        nativeAdView.advertiserLabel?.bind(component: nativeAd.adChoices)
     }
 }
