@@ -56,7 +56,9 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
         // Load native ad
         currentNativePlacement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
-        currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        DispatchQueue.main.async { [weak self] in
+            self?.currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        }
     }
 }
 
@@ -73,7 +75,11 @@ final class TeadsMediationAdapter: ALMediationAdapter {
         
         // Load inRead ad
         currentInReadPlacement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
-        currentInReadPlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        
+        // TODO: remove dispach main once fix is made on SDK
+        DispatchQueue.main.async { [weak self] in
+            self?.currentInReadPlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        }
     }
 }
 
