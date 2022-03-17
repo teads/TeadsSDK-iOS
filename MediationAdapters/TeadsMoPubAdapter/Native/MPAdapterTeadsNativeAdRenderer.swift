@@ -5,14 +5,13 @@
 //  Created by Jérémy Grosjean on 24/06/2021.
 //
 
-import UIKit
-import TeadsSDK
 import MoPubSDK
+import TeadsSDK
+import UIKit
 
 typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
 
 @objc public final class MPAdapterTeadsNativeAdRenderer: NSObject, MPNativeAdRenderer {
-
     public var viewSizeHandler: MPNativeViewSizeHandler?
 
     let rendererSettings: MPAdapterTeadsNativeAdRendererSettings?
@@ -28,7 +27,7 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
 
     /// Renderer settings are objects that allow you to expose configurable properties to the
     /// application. MPAdapterTeadsNativeAdRenderer renderer will be initialized with these settings.
-    @objc required public init(rendererSettings: MPNativeAdRendererSettings) {
+    @objc public required init(rendererSettings: MPNativeAdRendererSettings) {
         viewSizeHandler = rendererSettings.viewSizeHandler
         self.rendererSettings = rendererSettings as? MPAdapterTeadsNativeAdRendererSettings
         renderingViewClass = self.rendererSettings?.renderingViewClass
@@ -62,35 +61,46 @@ typealias TeadsUIViewMPNativeAdRendering = UIView & MPNativeAdRendering
     /// Creates Teads Native AdView with adapter. We added TeadsNativeAdView assets on
     /// top of MoPub's adView, to track impressions & clicks.
     func renderTeadsNativeAdView(with adapter: MPAdapterTeadsMediatedNativeAd) {
-
         registerContainer(adapter: adapter)
         guard let adView = adView else {
             return
         }
 
         // Title
-        register(component: adapter.teadsNativeAd.title,
-                 in: adView.nativeTitleTextLabel?())
+        register(
+            component: adapter.teadsNativeAd.title,
+            in: adView.nativeTitleTextLabel?()
+        )
 
         // Main Text
-        register(component: adapter.teadsNativeAd.content,
-                 in: adView.nativeMainTextLabel?())
+        register(
+            component: adapter.teadsNativeAd.content,
+            in: adView.nativeMainTextLabel?()
+        )
 
         // Call to action
-        register(component: adapter.teadsNativeAd.callToAction,
-                 in: adView.nativeCallToActionTextLabel?())
+        register(
+            component: adapter.teadsNativeAd.callToAction,
+            in: adView.nativeCallToActionTextLabel?()
+        )
 
         // Icon image
-        register(component: adapter.teadsNativeAd.icon,
-                 in: adView.nativeIconImageView?())
+        register(
+            component: adapter.teadsNativeAd.icon,
+            in: adView.nativeIconImageView?()
+        )
 
         // Main image
-        register(component: adapter.teadsNativeAd.image,
-                 in: adView.nativeMainImageView?())
+        register(
+            component: adapter.teadsNativeAd.image,
+            in: adView.nativeMainImageView?()
+        )
 
         // Advertiser
-        register(component: adapter.teadsNativeAd.sponsored,
-                 in: adView.nativeSponsoredByCompanyTextLabel?())
+        register(
+            component: adapter.teadsNativeAd.sponsored,
+            in: adView.nativeSponsoredByCompanyTextLabel?()
+        )
     }
 
     func registerContainer(adapter: MPAdapterTeadsMediatedNativeAd) {

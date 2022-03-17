@@ -5,13 +5,12 @@
 //  Created by Jérémy Grosjean on 24/06/2021.
 //
 
-import UIKit
 import MoPubSDK
 import TeadsSDK
+import UIKit
 
 @objc(MPAdapterTeadsMediatedNativeAd)
 final class MPAdapterTeadsMediatedNativeAd: NSObject, MPNativeAdAdapter {
-
     var defaultActionURL: URL?
 
     weak var delegate: MPNativeAdAdapterDelegate?
@@ -53,38 +52,37 @@ final class MPAdapterTeadsMediatedNativeAd: NSObject, MPNativeAdAdapter {
     func enableThirdPartyClickTracking() -> Bool {
         return false
     }
-
 }
 
 extension MPAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
-    func didRecordImpression(ad: TeadsAd) {
+    func didRecordImpression(ad _: TeadsAd) {
         delegate?.nativeAdWillLogImpression?(self)
         MPLogEvent.adShowSuccess(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
         MPLogEvent.adDidAppear(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
 
-    func didRecordClick(ad: TeadsAd) {
+    func didRecordClick(ad _: TeadsAd) {
         delegate?.nativeAdDidClick?(self)
         MPLogEvent.adTapped(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
 
-    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return delegate?.viewControllerForPresentingModalView()
     }
 
-    func didCatchError(ad: TeadsAd, error: Error) {
+    func didCatchError(ad _: TeadsAd, error: Error) {
         MPLogEvent.error(error, message: error.localizedDescription)
     }
 
-    func didClose(ad: TeadsAd) {
+    func didClose(ad _: TeadsAd) {
         MPLogEvent.adDidDisappear(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
 
-    func didExpandedToFullscreen(ad: TeadsAd) {
+    func didExpandedToFullscreen(ad _: TeadsAd) {
         MPLogEvent.adWillPresentModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
 
-    func didCollapsedFromFullscreen(ad: TeadsAd) {
+    func didCollapsedFromFullscreen(ad _: TeadsAd) {
         MPLogEvent.adDidDismissModal(forAdapter: NSStringFromClass(MPAdapterTeadsNative.self))
     }
 }

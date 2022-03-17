@@ -1,28 +1,30 @@
 //
 //  GADMAdapterTeadsBanner.swift
-//  Admob
+//  TeadsAdMobAdapter
 //
 //  Created by Jérémy Grosjean on 07/06/2021.
 //
 
 import Foundation
-import TeadsSDK
 import GoogleMobileAds
+import TeadsSDK
 
 @objc(GADMAdapterTeadsBanner)
 public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
     private var currentBanner: TeadsInReadAdView?
     private var placement: TeadsInReadAdPlacement?
-    @objc required public override init() {
+    @objc override public required init() {
         super.init()
     }
 
     @objc public weak var delegate: GADCustomEventBannerDelegate?
 
-    @objc public func requestAd(_ adSize: GADAdSize,
-                                parameter serverParameter: String?,
-                                label serverLabel: String?,
-                                request: GADCustomEventRequest) {
+    @objc public func requestAd(
+        _ adSize: GADAdSize,
+        parameter serverParameter: String?,
+        label _: String?,
+        request: GADCustomEventRequest
+    ) {
         // Check PID
         guard let rawPid = serverParameter, let pid = Int(rawPid) else {
             delegate?.customEventBanner(self, didFailAd: TeadsAdapterErrorCode.pidNotFound)
@@ -40,7 +42,6 @@ public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
 }
 
 extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
-
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
@@ -54,41 +55,41 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
         delegate?.customEventBanner(self, didFailAd: reason)
     }
 
-    public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+    public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
         // adOpportunityTrackerView is handled by TeadsSDK
     }
 
-    public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
         currentBanner?.updateHeight(with: adRatio)
     }
-
 }
 
 extension GADMAdapterTeadsBanner: TeadsAdDelegate {
-    public func didRecordImpression(ad: TeadsAd) {
+    public func didRecordImpression(ad _: TeadsAd) {
         // not handled by GoogleMobileAds
     }
 
-    public func didRecordClick(ad: TeadsAd) {
+    public func didRecordClick(ad _: TeadsAd) {
         delegate?.customEventBannerWasClicked(self)
     }
-    public func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+
+    public func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return delegate?.viewControllerForPresentingModalView
     }
 
-    public func didCatchError(ad: TeadsAd, error: Error) {
+    public func didCatchError(ad _: TeadsAd, error: Error) {
         delegate?.customEventBanner(self, didFailAd: error)
     }
 
-    public func didClose(ad: TeadsAd) {
+    public func didClose(ad _: TeadsAd) {
         // not handled by GAD
     }
 
-    public func didExpandedToFullscreen(ad: TeadsAd) {
+    public func didExpandedToFullscreen(ad _: TeadsAd) {
         delegate?.customEventBannerWillPresentModal(self)
     }
 
-    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+    public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.customEventBannerDidDismissModal(self)
     }
 }

@@ -17,12 +17,12 @@ public enum TeadsAdapterErrorCode: Int {
 extension TeadsAdapterErrorCode: CustomNSError {
     var localizedDescription: String {
         switch self {
-        case .pidNotFound:
-            return "No valid PID has been provided to load Teads ad."
-        case .serverParameterError:
-            return "serverParameterString is not a jSON"
-        case .loadError:
-            return "Teads ad can't be initialized"
+            case .pidNotFound:
+                return "No valid PID has been provided to load Teads ad."
+            case .serverParameterError:
+                return "serverParameterString is not a jSON"
+            case .loadError:
+                return "Teads ad can't be initialized"
         }
     }
 

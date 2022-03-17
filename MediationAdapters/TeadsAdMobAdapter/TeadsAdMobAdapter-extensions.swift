@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import TeadsSDK
 import GoogleMobileAds
+import TeadsSDK
 
 extension TeadsAdapterSettings: GADAdNetworkExtras {
     @nonobjc internal class func instance(fromAdmobParameters dictionary: [AnyHashable: Any]?) throws -> TeadsAdapterSettings {

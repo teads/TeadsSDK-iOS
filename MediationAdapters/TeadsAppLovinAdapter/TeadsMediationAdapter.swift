@@ -5,12 +5,16 @@
 //  Created by Paul Nicolas on 15/02/2022.
 //
 
-import UIKit
 import AppLovinSDK
 import TeadsSDK
+import UIKit
 
 @objc(TeadsMediationAdapter)
 final class TeadsMediationAdapter: ALMediationAdapter {
+    var currentObserver: NSKeyValueObservation?
+
+    var adOpportunityView: TeadsAdOpportunityTrackerView?
+
     var currentNativePlacement: TeadsNativeAdPlacement?
     var nativeAd: TeadsNativeAd?
     weak var nativeDelegate: MANativeAdAdapterDelegate?
@@ -18,8 +22,9 @@ final class TeadsMediationAdapter: ALMediationAdapter {
     var currentInReadPlacement: TeadsInReadAdPlacement?
     weak var bannerDelegate: MAAdViewAdapterDelegate?
     weak var inReadAdView: TeadsInReadAdView?
+    var adFormat: MAAdFormat?
 
-    @objc override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
+    @objc override func initialize(with _: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         Teads.configure()
         completionHandler(.doesNotApply, nil)
     }
@@ -38,8 +43,17 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
     override func destroy() {
         currentNativePlacement = nil
-        
+        nativeAd = nil
+
         currentInReadPlacement = nil
+        inReadAdView = nil
+
+        currentObserver?.invalidate()
+        currentObserver = nil
+    }
+
+    deinit {
+        destroy()
     }
 }
 
@@ -56,15 +70,14 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
         // Load native ad
         currentNativePlacement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
-        DispatchQueue.main.async { [weak self] in
-            self?.currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
-        }
+        currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
 }
 
 @objc extension TeadsMediationAdapter: MAAdViewAdapter {
     func loadAdViewAd(for parameters: MAAdapterResponseParameters, adFormat: MAAdFormat, andNotify delegate: MAAdViewAdapterDelegate) {
         bannerDelegate = delegate
+        self.adFormat = adFormat
         guard let pid = Int(parameters.thirdPartyAdPlacementIdentifier) else {
             delegate.didFailToLoadAdViewAdWithError(.invalidConfiguration)
             return
@@ -72,25 +85,51 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
         // Prepare ad settings
         let adSettings = (try? TeadsAdapterSettings.instance(fromAppLovinParameters: parameters.localExtraParameters)) ?? TeadsAdapterSettings()
-        
+
         // Load inRead ad
         currentInReadPlacement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
-        
-        // TODO: remove dispach main once fix is made on SDK
-        DispatchQueue.main.async { [weak self] in
-            self?.currentInReadPlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
-        }
+        currentInReadPlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
 }
 
 extension TeadsMediationAdapter: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
         let adView = TeadsInReadAdView(bind: ad)
         inReadAdView = adView
         bannerDelegate?.didLoadAd(forAdView: adView)
+        // adOpportunityView = nil
+
+        currentObserver = inReadAdView?.observe(\.center, options: NSKeyValueObservingOptions.new, changeHandler: { [weak self] adView, _ in
+            guard let bannerView = adView.superview,
+                  let adFormat = self?.adFormat else {
+                self?.currentObserver?.invalidate()
+                return
+            }
+
+            if adFormat == .mrec {
+                guard let fixedHeightConstraint = bannerView.constraints.first(where: { $0.firstAttribute == .height }),
+                      let fixedWidthConstraint = bannerView.constraints.first(where: { $0.firstAttribute == .width }) else {
+                    return
+                }
+
+                bannerView.removeConstraints([fixedHeightConstraint, fixedWidthConstraint])
+                adView.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: 0).isActive = true
+                adView.widthAnchor.constraint(equalTo: bannerView.widthAnchor, multiplier: 1).isActive = true
+            } else {
+                guard let fixedHeightConstraint = bannerView.constraints.first(where: { $0.firstAttribute == .height }) else {
+                    return
+                }
+
+                bannerView.removeConstraint(fixedHeightConstraint)
+                adView.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: 0).isActive = true
+            }
+
+            self?.currentObserver?.invalidate()
+            self?.currentObserver = nil
+        })
     }
 
-    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
         inReadAdView?.updateHeight(with: adRatio)
     }
 }
@@ -111,13 +150,12 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
             builder.advertiser = ad.sponsored?.text
             builder.body = ad.content?.text
             builder.callToAction = ad.callToAction?.text
-            
+
             ad.icon?.loadImage { icon in
                 builder.icon = MANativeAdImage(image: icon)
             }
-            
-            // TODO: add public signatures on TeadsAdChoicesView
-            //builder.optionsView = TeadsAdChoicesView(binding: ad.adChoices)
+
+            builder.optionsView = TeadsAdChoicesView(binding: ad.adChoices)
 
             let mediaView = TeadsMediaView()
             mediaView.bind(component: mediaComponent)
@@ -133,38 +171,40 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        // adOpportunityTrackerView is handled by TeadsSDK
+        if nativeDelegate != nil {
+            adOpportunityView = trackerView
+        }
     }
 }
 
 extension TeadsMediationAdapter: TeadsAdDelegate {
-    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return ALUtils.topViewControllerFromKeyWindow()
     }
 
-    func didRecordClick(ad: TeadsAd) {
+    func didRecordClick(ad _: TeadsAd) {
         nativeDelegate?.didClickNativeAd()
         bannerDelegate?.didClickAdViewAd()
     }
 
-    func didRecordImpression(ad: TeadsAd) {
+    func didRecordImpression(ad _: TeadsAd) {
         nativeDelegate?.didDisplayNativeAd(withExtraInfo: ["event": "impression"])
         bannerDelegate?.didDisplayAdViewAd(withExtraInfo: ["event": "impression"])
     }
 
-    func didCatchError(ad: TeadsAd, error: Error) {
+    func didCatchError(ad _: TeadsAd, error: Error) {
         bannerDelegate?.didFailToDisplayAdViewAdWithError(MAAdapterError(adapterError: .noConnection, thirdPartySdkErrorCode: error._code, thirdPartySdkErrorMessage: error.localizedDescription))
     }
 
-    func didClose(ad: TeadsAd) {
+    func didClose(ad _: TeadsAd) {
         bannerDelegate?.didHideAdViewAd()
     }
 
-    func didExpandedToFullscreen(ad: TeadsAd) {
+    func didExpandedToFullscreen(ad _: TeadsAd) {
         bannerDelegate?.didExpandAdViewAd()
     }
 
-    func didCollapsedFromFullscreen(ad: TeadsAd) {
+    func didCollapsedFromFullscreen(ad _: TeadsAd) {
         bannerDelegate?.didCollapseAdViewAd()
     }
 }

@@ -5,9 +5,9 @@
 //  Created by Jérémy Grosjean on 15/06/2021.
 //
 
-import UIKit
-import TeadsSDK
 import GoogleMobileAds
+import TeadsSDK
+import UIKit
 
 final class GADMAdapterTeadsMediatedNativeAd: NSObject {
     let teadsNativeAd: TeadsNativeAd
@@ -31,12 +31,10 @@ final class GADMAdapterTeadsMediatedNativeAd: NSObject {
         teadsNativeAd.icon?.loadImage(async: false) { [weak self] image in
             self?.mappedIcon = GADNativeAdImage(image: image)
         }
-
     }
 }
 
 extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
-
     var extraAssets: [String: Any]? {
         return nil
     }
@@ -95,113 +93,110 @@ extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
     }
 
     var adChoicesView: UIView? {
-        // AdChoices is completely handle from the SDK side because this doesn't work here atm
-        return nil
+        return TeadsAdChoicesView(binding: teadsNativeAd.adChoices)
     }
 
-    func didRender(in view: UIView, clickableAssetViews: [GADNativeAssetIdentifier: UIView], nonclickableAssetViews: [GADNativeAssetIdentifier: UIView], viewController: UIViewController) {
+    func didRender(in view: UIView, clickableAssetViews: [GADNativeAssetIdentifier: UIView], nonclickableAssetViews _: [GADNativeAssetIdentifier: UIView], viewController: UIViewController) {
         self.viewController = viewController
         teadsNativeAd.register(containerView: view)
         if let adOpportunityView = adOpportunityView {
             view.addSubview(adOpportunityView)
             self.adOpportunityView = nil
         }
-        clickableAssetViews.forEach { (key, assetView) in
+        clickableAssetViews.forEach { key, assetView in
             switch key {
-            case .headlineAsset:
-                guard let headline = teadsNativeAd.title else {
+                case .headlineAsset:
+                    guard let headline = teadsNativeAd.title else {
+                        break
+                    }
+                    assetView.bind(component: headline)
+                case .callToActionAsset:
+                    guard let callToAction = teadsNativeAd.callToAction else {
+                        break
+                    }
+                    assetView.bind(component: callToAction)
+                case .iconAsset:
+                    guard let icon = teadsNativeAd.icon else {
+                        break
+                    }
+                    assetView.bind(component: icon)
+                case .bodyAsset:
+                    guard let body = teadsNativeAd.content else {
+                        break
+                    }
+                    assetView.bind(component: body)
+                case .priceAsset:
+                    guard let price = teadsNativeAd.price else {
+                        break
+                    }
+                    assetView.bind(component: price)
+                case .imageAsset:
+                    guard let image = teadsNativeAd.image else {
+                        break
+                    }
+                    assetView.bind(component: image)
+                case .mediaViewAsset:
+                    guard let video = teadsNativeAd.video else {
+                        break
+                    }
+                    assetView.bind(component: video)
+                case .starRatingAsset:
+                    guard let starRating = teadsNativeAd.rating else {
+                        break
+                    }
+                    assetView.bind(component: starRating)
+                case .advertiserAsset:
+                    guard let advertiser = teadsNativeAd.sponsored else {
+                        break
+                    }
+                    assetView.bind(component: advertiser)
+                default:
                     break
-                }
-                assetView.bind(component: headline)
-            case .callToActionAsset:
-                guard let callToAction = teadsNativeAd.callToAction else {
-                    break
-                }
-                assetView.bind(component: callToAction)
-            case .iconAsset:
-                guard let icon = teadsNativeAd.icon else {
-                    break
-                }
-                assetView.bind(component: icon)
-            case .bodyAsset:
-                guard let body = teadsNativeAd.content else {
-                    break
-                }
-                assetView.bind(component: body)
-            case .priceAsset:
-                guard let price = teadsNativeAd.price else {
-                    break
-                }
-                assetView.bind(component: price)
-            case .imageAsset:
-                guard let image = teadsNativeAd.image else {
-                    break
-                }
-                assetView.bind(component: image)
-            case .mediaViewAsset:
-                guard let video = teadsNativeAd.video else {
-                    break
-                }
-                assetView.bind(component: video)
-            case .starRatingAsset:
-                guard let starRating = teadsNativeAd.rating else {
-                    break
-                }
-                assetView.bind(component: starRating)
-            case .advertiserAsset:
-                guard let advertiser = teadsNativeAd.sponsored else {
-                    break
-                }
-                assetView.bind(component: advertiser)
-            default:
-                break
             }
         }
     }
 }
 
 extension GADMAdapterTeadsMediatedNativeAd: TeadsAdDelegate {
-    func didRecordImpression(ad: TeadsAd) {
+    func didRecordImpression(ad _: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidRecordImpression(self)
     }
 
-    func didRecordClick(ad: TeadsAd) {
+    func didRecordClick(ad _: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidRecordClick(self)
     }
 
-    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return viewController
     }
 
-    func didCatchError(ad: TeadsAd, error: Error) {
+    func didCatchError(ad _: TeadsAd, error _: Error) {
         // don't know what to do yet
     }
 
-    func didClose(ad: TeadsAd) {
+    func didClose(ad _: TeadsAd) {
         // don't know what to do yet
     }
 
-    public func didExpandedToFullscreen(ad: TeadsAd) {
+    public func didExpandedToFullscreen(ad _: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdWillPresentScreen(self)
     }
 
-    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+    public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidDismissScreen(self)
     }
 }
 
 extension GADMAdapterTeadsMediatedNativeAd: TeadsPlaybackDelegate {
-
-    public func didPause(_ ad: TeadsAd) {
+    public func didPause(_: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPauseVideo(self)
     }
 
-    public func didPlay(_ ad: TeadsAd) {
+    public func didPlay(_: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidPlayVideo(self)
     }
 
-    public func didComplete(_ ad: TeadsAd) {
+    public func didComplete(_: TeadsAd) {
         GADMediatedUnifiedNativeAdNotificationSource.mediatedNativeAdDidEndVideoPlayback(self)
     }
-
 }

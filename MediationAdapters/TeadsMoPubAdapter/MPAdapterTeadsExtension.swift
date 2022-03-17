@@ -5,12 +5,12 @@
 //  Created by Jérémy Grosjean on 23/06/2021.
 //
 
-import UIKit
-import TeadsSDK
 import MoPubSDK
+import TeadsSDK
+import UIKit
 
-@objc extension MPAdView {
-    public func register(teadsAdSettings: TeadsAdapterSettings) {
+@objc public extension MPAdView {
+    func register(teadsAdSettings: TeadsAdapterSettings) {
         guard let extra = try? teadsAdSettings.toDictionary() else {
             return
         }
@@ -18,11 +18,11 @@ import MoPubSDK
     }
 }
 
-@objc extension MPNativeAdRequestTargeting {
+@objc public extension MPNativeAdRequestTargeting {
     /// This method helps you to add Teads settings to the mopub view
     ///     - parameters:
     ///     - teadsAdSettings: teads ad settings
-    public func register(teadsAdSettings: TeadsAdapterSettings) {
+    func register(teadsAdSettings: TeadsAdapterSettings) {
         guard let extra = try? teadsAdSettings.toDictionary() else {
             return
         }
@@ -32,7 +32,6 @@ import MoPubSDK
 
 extension TeadsAdapterSettings: MPMediationSettingsProtocol {
     @nonobjc internal class func instance(fromMopubParameters dictionary: [AnyHashable: Any]?) throws -> TeadsAdapterSettings {
-
         let adSettings = try TeadsAdapterSettings.instance(from: dictionary ?? Dictionary())
 
         adSettings.addExtras(TeadsAdapterSettings.integrationMopub, for: TeadsAdapterSettings.integrationTypeKey)

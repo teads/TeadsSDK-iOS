@@ -1,24 +1,25 @@
 //
 //  MPAdapterTeadsNative.swift
-//  TeadsAdMobAdapter
+//  TeadsMoPubAdapter
 //
 //  Created by Jérémy Grosjean on 24/06/2021.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 import MoPubSDK
 
 @objc(MPAdapterTeadsNative)
 public final class MPAdapterTeadsNative: MPNativeCustomEvent {
-
     // MARK: - Members
+
     private var currentNativePlacement: TeadsNativeAdPlacement?
     // private var mediatedNativeAd: MPNativeAdAdapter?
 
     // MARK: - MPNativeCustomEvent Protocol
-    @objc public override func requestAd(withCustomEventInfo info: [AnyHashable: Any], adMarkup: String) {
+
+    @objc override public func requestAd(withCustomEventInfo info: [AnyHashable: Any], adMarkup _: String) {
         // Check PID
         guard let rawPid = info[MPAdapterTeadsConstants.teadsPIDKey] as? String, let pid = Int(rawPid) else {
             delegate.nativeCustomEvent(self, didFailToLoadAdWithError: TeadsAdapterErrorCode.pidNotFound)
@@ -33,7 +34,6 @@ public final class MPAdapterTeadsNative: MPNativeCustomEvent {
         currentNativePlacement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
-
 }
 
 extension MPAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
@@ -47,7 +47,7 @@ extension MPAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
         delegate.nativeCustomEvent(self, didFailToLoadAdWithError: reason)
     }
 
-    public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+    public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
         // no implemented for now
     }
 }

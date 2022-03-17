@@ -5,11 +5,10 @@
 //  Created by Jérémy Grosjean on 06/11/2020.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 @objc public final class TeadsSASAdapterHelper: NSObject {
-
     @objc public static func teadsAdSettingsToString(adSettings: TeadsAdapterSettings) -> String? {
         guard let adSettingsEscapedString = adSettings.escapedString else {
             return nil
@@ -30,11 +29,9 @@ import TeadsSDK
         }
         return nil
     }
-
 }
 
 extension TeadsAdapterSettings {
-
     var escapedString: String? {
         if let data = try? JSONEncoder().encode(self), let adSettingsString = String(data: data, encoding: .utf8) {
             return adSettingsString.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed)
