@@ -113,7 +113,8 @@ extension NativeAppLovinTableViewController: UITableViewDelegate, UITableViewDat
 }
 
 extension NativeAppLovinTableViewController: MANativeAdDelegate {
-    func didLoadNativeAd(_ nativeAdView: MANativeAdView, for ad: MAAd) {
+    
+    func didLoadNativeAd(_ nativeAdView: MANativeAdView?, for ad: MAAd) {
         elements.insert(nativeAdView, at: self.adRowNumber)
         let indexPaths = [IndexPath(row: self.adRowNumber, section: 0)]
         self.tableView.insertRows(at: indexPaths, with: .automatic)

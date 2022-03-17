@@ -26,18 +26,19 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
     @objc override func initialize(with _: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         Teads.configure()
+        
         completionHandler(.doesNotApply, nil)
     }
 
-    @objc override var sdkVersion: String {
+    @objc public override var sdkVersion: String {
         return Teads.sdkVersion
     }
 
-    @objc override var adapterVersion: String {
+    @objc public override var adapterVersion: String {
         return Teads.sdkVersion
     }
 
-    @objc override var isBeta: Bool {
+    @objc public override var isBeta: Bool {
         return false
     }
 
@@ -165,7 +166,7 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
         nativeDelegate?.didLoadAd(for: nativeAd, withExtraInfo: nil)
     }
 
-    func didFailToReceiveAd(reason: AdFailReason) {
+    public func didFailToReceiveAd(reason: AdFailReason) {
         nativeDelegate?.didFailToLoadNativeAdWithError(MAAdapterError(adapterError: .noFill, thirdPartySdkErrorCode: reason.errorCode, thirdPartySdkErrorMessage: reason.localizedDescription))
         bannerDelegate?.didFailToLoadAdViewAdWithError(MAAdapterError(adapterError: .noFill, thirdPartySdkErrorCode: reason.errorCode, thirdPartySdkErrorMessage: reason.localizedDescription))
     }

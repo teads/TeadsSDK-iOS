@@ -40,6 +40,12 @@ class RootViewController: TeadsViewController {
             return
         }
         destination.pid = pidForCreative()
+        
+        if let appLovinViewController = destination as? AppLovinViewController,
+           [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
+            appLovinViewController.isMREC = true
+        }
+        
     }
     
     private func pidForCreative() -> String {
@@ -58,6 +64,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.directNativeDisplay
+            default: return ""
             }
         case .admob:
             switch adSelection.creation.name {
@@ -73,6 +80,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.admobNativeDisplay
+            default: return ""
             }
         case .mopub:
             switch adSelection.creation.name {
@@ -88,6 +96,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.mopubNativeDisplay
+            default: return ""
             }
         case .sas:
             switch adSelection.creation.name {
@@ -103,6 +112,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.directNativeDisplay
+            default: return ""
             }
         case .appLovin:
             switch adSelection.creation.name {
@@ -114,6 +124,16 @@ class RootViewController: TeadsViewController {
                 return PID.appLovinSquare
             case .carousel:
                 return PID.appLovinCarousel
+                
+            case .appLovinMRECLandscape:
+                return PID.appLovinLandscapeMREC
+            case .appLovinMRECVertical:
+                return PID.appLovinVerticalMREC
+            case .appLovinMRECSquare:
+                return PID.appLovinSquareMREC
+            case .appLovinMRECCarousel:
+                return PID.appLovinCarouselMREC
+                
             case .custom:
                 return PID.custom
             case .nativeDisplay:
@@ -245,6 +265,14 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     }
                 }
             }
+            
+            // Change creative type for AppLovin setup due to Banner vs MREC integration
+            if self.adSelection.provider == inReadAppLovinProvider {
+                selectionList[0].creativeTypes = appLovinInReadCreativeTypes
+            } else {
+                selectionList[0].creativeTypes = defaultInReadCreativeTypes
+            }
+            
             collectionView.reloadData()
         case 2:
             for j in 0..<selectionList.count where selectionList[j].isSelected {

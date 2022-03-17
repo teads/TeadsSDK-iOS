@@ -35,6 +35,12 @@ struct Provider {
     var isSelected: Bool
 }
 
+extension Provider: Equatable {
+    static func ==(lhs: Provider, rhs: Provider) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
+
 struct CreativeType {
     let name: CreativeTypeName
     var isSelected: Bool
@@ -57,8 +63,10 @@ enum Formats {
     }
     
 }
+let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
+let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
 
-let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadMopubProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: [landscape, vertical, square, carousel, custom])
+let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadMopubProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
 let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeMopubProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display])
 
 // inRead Providers
@@ -106,6 +114,13 @@ var vertical = CreativeType(name: .vertical, isSelected: false)
 var square = CreativeType(name: .square, isSelected: false)
 var carousel = CreativeType(name: .carousel, isSelected: false)
 var custom = CreativeType(name: .custom, isSelected: false)
+// Specific for AppLovin due to MREC vs Banner
+var appLovinMRECLandscape = CreativeType(name: .appLovinMRECLandscape, isSelected: false)
+var appLovinMRECVertical = CreativeType(name: .appLovinMRECVertical, isSelected: false)
+var appLovinMRECSquare = CreativeType(name: .appLovinMRECSquare, isSelected: false)
+var appLovinMRECCarousel = CreativeType(name: .appLovinMRECCarousel, isSelected: false)
+
+
 
 var display = CreativeType(name: .nativeDisplay, isSelected: true)
 
@@ -150,10 +165,15 @@ struct PID {
     static let sasSquare = "96468"
     static let sasCarousel = "96470"
     
-    static let appLovinLandscape = "33d03d37d70196e3"
-    static let appLovinVertical = "808eaa38d08ade2d"
-    static let appLovinSquare = "f83b5fc30c17954e"
-    static let appLovinCarousel = "21c6dc998b472d8d"
+    static let appLovinLandscapeMREC = "894cd8ec0ebacb6a"
+    static let appLovinVerticalMREC = "75e2d86138e840dd"
+    static let appLovinSquareMREC = "7fae8670d141cf67"
+    static let appLovinCarouselMREC = "40d9c1a4123359fe"
+    
+    static let appLovinLandscape = "5ad809b221c4861f"
+    static let appLovinVertical = "51a7fdbc558bb5ba"
+    static let appLovinSquare = "34f66d4de8892fae"
+    static let appLovinCarousel = "7f99d64bd3c245d0"
     static let appLovinNativeDisplay = "b87480e23dd55a79"
     
 }
@@ -178,6 +198,11 @@ enum CreativeTypeName: String {
     case carousel = "Carousel"
     case custom = "Custom"
     case nativeDisplay = "Display"
+    
+    case appLovinMRECLandscape = "Landscape MREC"
+    case appLovinMRECVertical = "Vertical MREC"
+    case appLovinMRECSquare = "Square MREC"
+    case appLovinMRECCarousel = "Carousel MREC"
 }
 
 

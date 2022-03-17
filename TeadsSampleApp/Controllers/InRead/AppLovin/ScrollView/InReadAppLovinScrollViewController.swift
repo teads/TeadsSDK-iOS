@@ -12,7 +12,7 @@ import UIKit
 import AppLovinSDK
 import TeadsAppLovinAdapter
 
-class InReadAppLovinScrollViewController: TeadsViewController {
+class InReadAppLovinScrollViewController: AppLovinViewController {
     
     @IBOutlet weak var slotHeight: NSLayoutConstraint!
     var bannerView: MAAdView!
@@ -25,15 +25,16 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
         ALSdk.shared()!.settings.isVerboseLogging = true
         ALSdk.shared()!.initializeSdk { [weak self] (configuration: ALSdkConfiguration) in
+            
             self?.loadAd()
         }
     }
     
     func loadAd() {
-        // FIXME This ids should be replaced by your own AppLovin AdUnitId
-        let APPLOVIN_AD_UNIT_ID = "33d03d37d70196e3" //TODO replace by self.pid
-        bannerView = MAAdView(adUnitIdentifier: APPLOVIN_AD_UNIT_ID, adFormat: .mrec)
-        bannerView.stopAutoRefresh()
+        let adFormat: MAAdFormat = isMREC ? .mrec : .banner
+        bannerView = MAAdView(adUnitIdentifier: pid, adFormat: adFormat)
+        print("AppLoving loading adUnit \(pid) on adFormat \(adFormat)")
+        bannerView.isHidden = false
         
         let settings = TeadsAdapterSettings { (settings) in
             settings.enableDebug()
@@ -53,7 +54,6 @@ class InReadAppLovinScrollViewController: TeadsViewController {
         // Load banner
         bannerView.delegate = self
         bannerView.loadAd()
-
     }
     func addConstraints() {
         guard let adView = bannerView else {
@@ -71,8 +71,8 @@ class InReadAppLovinScrollViewController: TeadsViewController {
 }
 
 extension InReadAppLovinScrollViewController: MAAdViewAdDelegate {
+    
     func didExpand(_ ad: MAAd) {
-        slotHeight.constant = 50
         // handle specific expand logic
     }
     
@@ -109,7 +109,8 @@ extension InReadAppLovinScrollViewController: TeadsMediatedAdViewDelegate {
     
     func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
         let width = slotView.frame.width
-        slotHeight.constant = adRatio.calculateHeight(for: width)
+        let height = adRatio.calculateHeight(for: width)
+        slotHeight.constant = height
     }
     
 }
