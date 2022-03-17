@@ -1,4 +1,5 @@
 PODS:
+  - AppLovinSDK (11.3.0)
   - Google-Mobile-Ads-SDK (9.1.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -60,6 +61,9 @@ PODS:
   - TeadsAdMobAdapter (5.0.12):
     - Google-Mobile-Ads-SDK (>= 8.0)
     - TeadsSDK (= 5.0.12)
+  - TeadsAppLovinAdapter (5.0.12):
+    - AppLovinSDK (>= 11.1.1)
+    - TeadsSDK (= 5.0.12)
   - TeadsMoPubAdapter (5.0.12):
     - mopub-ios-sdk (>= 5.13)
     - TeadsSDK (= 5.0.12)
@@ -71,13 +75,15 @@ PODS:
   - TeadsSDK/Core (5.0.12)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (from `./`)
-  - TeadsMoPubAdapter (from `./`)
-  - TeadsSASAdapter (from `./`)
-  - TeadsSDK (from `./`)
+  - TeadsAdMobAdapter (~> 5.0)
+  - TeadsAppLovinAdapter (~> 5.0)
+  - TeadsMoPubAdapter (~> 5.0)
+  - TeadsSASAdapter (~> 5.0)
+  - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
+    - AppLovinSDK
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
@@ -87,18 +93,14 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-
-EXTERNAL SOURCES:
-  TeadsAdMobAdapter:
-    :path: "./"
-  TeadsMoPubAdapter:
-    :path: "./"
-  TeadsSASAdapter:
-    :path: "./"
-  TeadsSDK:
-    :path: "./"
+    - TeadsAdMobAdapter
+    - TeadsAppLovinAdapter
+    - TeadsMoPubAdapter
+    - TeadsSASAdapter
+    - TeadsSDK
 
 SPEC CHECKSUMS:
+  AppLovinSDK: df5f0ab4fcad2668ac4563bc3c66c2dddb1099c6
   Google-Mobile-Ads-SDK: d6ebb0e05cc38f4fad82d77a6655552213ed5e38
   GoogleAppMeasurement: 135c2fbcf5038e0f37dbce04fa641a702fc275d1
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
@@ -109,10 +111,11 @@ SPEC CHECKSUMS:
   Smart-Core-SDK: 2f7ace8d71315cb2d864ada9c756f2d1d36d5c11
   Smart-Display-SDK: bdd450cda22cbcd0e3552c43ee6eeaf82c5df19d
   TeadsAdMobAdapter: 9d09a6c2abe708fa2701dc155995deaa294674bb
+  TeadsAppLovinAdapter: 5d37ef8e81ceb348d73e09ced31e30510cb4e9d7
   TeadsMoPubAdapter: e5cd6b2b1670e73819fa8a8629594880d7b1c0c0
   TeadsSASAdapter: da05523d13255a7273a610d9c095f21b22b122dc
   TeadsSDK: 3c5f5ab6bc71a88efe998f86182add7fa595d4fd
 
-PODFILE CHECKSUM: 99da1db9b572dcc107dda3925ae1e75aa614df00
+PODFILE CHECKSUM: 42f5828869ba5c98c85b09681c455747029b247d
 
 COCOAPODS: 1.11.2

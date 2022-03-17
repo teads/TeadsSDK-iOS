@@ -12,6 +12,6 @@ target 'TeadsSampleApp' do
   pod 'TeadsSASAdapter', '~> 5.0'
   pod 'TeadsMoPubAdapter', '~> 5.0'
   pod 'TeadsAdMobAdapter', '~> 5.0'
-  pod 'TeadsAppLovinAdapter', :path => './'
+  pod 'TeadsAppLovinAdapter', '~> 5.0'
   
 end
