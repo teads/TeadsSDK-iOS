@@ -2,21 +2,21 @@ PODS:
   - Google-Mobile-Ads-SDK (9.1.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleAppMeasurement (8.12.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.12.0)
+  - GoogleAppMeasurement (8.13.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.13.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.12.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.12.0)
+  - GoogleAppMeasurement/AdIdSupport (8.13.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.13.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (8.12.0):
+  - GoogleAppMeasurement/WithoutAdIdSupport (8.13.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/MethodSwizzler (~> 7.7)
     - GoogleUtilities/Network (~> 7.7)
@@ -54,27 +54,27 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - Smart-Core-SDK (7.16.0)
-  - Smart-Display-SDK (7.15.0):
-    - Smart-Core-SDK (~> 7.15)
-  - TeadsAdMobAdapter (5.0.11):
+  - Smart-Core-SDK (7.17.0)
+  - Smart-Display-SDK (7.17.0):
+    - Smart-Core-SDK (~> 7.17)
+  - TeadsAdMobAdapter (5.0.12):
     - Google-Mobile-Ads-SDK (>= 8.0)
-    - TeadsSDK (= 5.0.11)
-  - TeadsMoPubAdapter (5.0.11):
+    - TeadsSDK (= 5.0.12)
+  - TeadsMoPubAdapter (5.0.12):
     - mopub-ios-sdk (>= 5.13)
-    - TeadsSDK (= 5.0.11)
-  - TeadsSASAdapter (5.0.11):
+    - TeadsSDK (= 5.0.12)
+  - TeadsSASAdapter (5.0.12):
     - Smart-Display-SDK (>= 7.6.2)
-    - TeadsSDK (= 5.0.11)
-  - TeadsSDK (5.0.11):
-    - TeadsSDK/Core (= 5.0.11)
-  - TeadsSDK/Core (5.0.11)
+    - TeadsSDK (= 5.0.12)
+  - TeadsSDK (5.0.12):
+    - TeadsSDK/Core (= 5.0.12)
+  - TeadsSDK/Core (5.0.12)
 
 DEPENDENCIES:
-  - TeadsAdMobAdapter (~> 5.0)
-  - TeadsMoPubAdapter (~> 5.0)
-  - TeadsSASAdapter (~> 5.0)
-  - TeadsSDK (~> 5.0)
+  - TeadsAdMobAdapter (from `./`)
+  - TeadsMoPubAdapter (from `./`)
+  - TeadsSASAdapter (from `./`)
+  - TeadsSDK (from `./`)
 
 SPEC REPOS:
   trunk:
@@ -87,26 +87,32 @@ SPEC REPOS:
     - PromisesObjC
     - Smart-Core-SDK
     - Smart-Display-SDK
-    - TeadsAdMobAdapter
-    - TeadsMoPubAdapter
-    - TeadsSASAdapter
-    - TeadsSDK
+
+EXTERNAL SOURCES:
+  TeadsAdMobAdapter:
+    :path: "./"
+  TeadsMoPubAdapter:
+    :path: "./"
+  TeadsSASAdapter:
+    :path: "./"
+  TeadsSDK:
+    :path: "./"
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: d6ebb0e05cc38f4fad82d77a6655552213ed5e38
-  GoogleAppMeasurement: ae033c3aad67e68294369373056b4d74cc8ae0d6
+  GoogleAppMeasurement: 135c2fbcf5038e0f37dbce04fa641a702fc275d1
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   mopub-ios-sdk: 39dd404dc791e543979b91aa8e3b27197af91377
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  Smart-Core-SDK: 6eb61082ec48ad48cf416708487b1ad3c25770cc
-  Smart-Display-SDK: 33f0325dfb1bf93256942e6e545322aad8a64842
-  TeadsAdMobAdapter: bcd932975bd28c1b824f62f965f76fbca1eb0f7c
-  TeadsMoPubAdapter: 4c7d7e81535920613ca041279db7787db21ce374
-  TeadsSASAdapter: ec4d23bd93ecf1880f46c31289081acb69c82a5b
-  TeadsSDK: 996bc7050e1cd69641c056ca6eff1fb750f0cdd8
+  Smart-Core-SDK: 2f7ace8d71315cb2d864ada9c756f2d1d36d5c11
+  Smart-Display-SDK: bdd450cda22cbcd0e3552c43ee6eeaf82c5df19d
+  TeadsAdMobAdapter: 9d09a6c2abe708fa2701dc155995deaa294674bb
+  TeadsMoPubAdapter: e5cd6b2b1670e73819fa8a8629594880d7b1c0c0
+  TeadsSASAdapter: da05523d13255a7273a610d9c095f21b22b122dc
+  TeadsSDK: 3c5f5ab6bc71a88efe998f86182add7fa595d4fd
 
-PODFILE CHECKSUM: 22e06a8b95491276c09ed474c5ef49d44e48bbf5
+PODFILE CHECKSUM: 99da1db9b572dcc107dda3925ae1e75aa614df00
 
 COCOAPODS: 1.11.2

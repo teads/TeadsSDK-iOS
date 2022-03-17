@@ -26,7 +26,7 @@ final class TeadsSASNativeAdapter: NSObject, SASMediationNativeAdAdapter {
         unregisterViews()
     }
 
-    func requestNativeAd(withServerParameterString serverParameterString: String, clientParameters: [AnyHashable: Any]) {
+    func requestNativeAd(withServerParameterString serverParameterString: String, clientParameters _: [AnyHashable: Any]) {
         guard let serverParameter = ServerParameter.instance(from: serverParameterString) else {
             delegate?.mediationNativeAdAdapter(self, didFailToLoadWithError: TeadsAdapterErrorCode.serverParameterError, noFill: false)
             return
@@ -44,7 +44,7 @@ final class TeadsSASNativeAdapter: NSObject, SASMediationNativeAdAdapter {
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
 
-    func register(_ view: UIView, tappableViews: [Any]?, overridableViews: [AnyHashable: Any], from viewController: UIViewController) {
+    func register(_ view: UIView, tappableViews: [Any]?, overridableViews _: [AnyHashable: Any], from viewController: UIViewController) {
         self.viewController = viewController
 
         nativeAd?.register(containerView: view)
@@ -97,17 +97,17 @@ extension TeadsSASNativeAdapter: TeadsNativeAdPlacementDelegate {
         delegate?.mediationNativeAdAdapter(self, didFailToLoadWithError: reason, noFill: reason.isNoFill)
     }
 
-    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
         // not supported in native format
     }
 }
 
 extension TeadsSASNativeAdapter: TeadsAdDelegate {
-    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return viewController
     }
 
-    func didRecordClick(ad: TeadsAd) {
+    func didRecordClick(ad _: TeadsAd) {
         delegate?.mediationNativeAdAdapterDidReceiveAdClickedEvent(self)
     }
 }

@@ -5,24 +5,22 @@
 //  Created by Jérémy Grosjean on 15/06/2021.
 //
 
-import UIKit
-import TeadsSDK
 import GoogleMobileAds
+import TeadsSDK
+import UIKit
 
 @objc(GADMAdapterTeadsNative)
 final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
-
     weak var delegate: GADCustomEventNativeAdDelegate?
     private var placement: TeadsNativeAdPlacement?
     private var nativeAd: TeadsNativeAd?
     private var adOpportunityView: TeadsAdOpportunityTrackerView?
 
-    @objc public required override init() {
+    @objc override public required init() {
         super.init()
     }
 
-    func request(withParameter serverParameter: String, request: GADCustomEventRequest, adTypes: [Any], options: [Any], rootViewController: UIViewController) {
-
+    func request(withParameter serverParameter: String, request: GADCustomEventRequest, adTypes _: [Any], options _: [Any], rootViewController _: UIViewController) {
         // Check PID
         guard let pid = Int(serverParameter) else {
             delegate?.customEventNativeAd(self, didFailToLoadWithError: TeadsAdapterErrorCode.pidNotFound)
@@ -46,11 +44,9 @@ final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
         // Let Teads SDK tracks impressions
         return true
     }
-
 }
 
 extension GADMAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
-
     func didReceiveAd(ad: TeadsNativeAd) {
         nativeAd = ad
         let mediatedNativeAd = GADMAdapterTeadsMediatedNativeAd(teadsNativeAd: ad, adOpportunityView: adOpportunityView)
@@ -69,5 +65,4 @@ extension GADMAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
         adOpportunityView = trackerView
     }
-
 }

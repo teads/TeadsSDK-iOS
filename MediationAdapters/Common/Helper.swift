@@ -5,12 +5,12 @@
 //  Created by Thibaud Saint-Etienne on 21/07/2021.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 struct Helper {
     static func bannerSize(for width: CGFloat) -> CGSize {
-        return CGSize(width: width > 0 ? width : 300, height: width/(16/9))
+        return CGSize(width: width > 0 ? width : 300, height: width / (16 / 9))
     }
 }
 

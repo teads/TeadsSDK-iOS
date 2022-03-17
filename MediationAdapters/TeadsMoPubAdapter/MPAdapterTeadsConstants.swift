@@ -7,6 +7,6 @@
 
 import UIKit
 
-public struct MPAdapterTeadsConstants {
-    static let teadsPIDKey                      = "PID"
+public enum MPAdapterTeadsConstants {
+    static let teadsPIDKey = "PID"
 }

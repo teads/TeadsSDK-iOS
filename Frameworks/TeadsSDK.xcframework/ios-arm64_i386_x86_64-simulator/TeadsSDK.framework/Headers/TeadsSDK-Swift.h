@@ -230,6 +230,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
 
 
 /// Native Component containing AdChoices <code>clickThroughUrl</code>
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 /// note:
 /// AdChoices component and associated logo is automatically added to <code>TeadsNativeAdView</code>
 SWIFT_CLASS("_TtC8TeadsSDK18AdChoicesComponent")
@@ -378,6 +379,17 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 
 
+@class NSCoder;
+
+/// The Teads AdChoices view is responsible to render the optionView or AdChoices view.
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
+SWIFT_CLASS("_TtC8TeadsSDK18TeadsAdChoicesView")
+@interface TeadsAdChoicesView : UIView
+- (nonnull instancetype)initWithBinding:(CommonComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class UIViewController;
 
 /// Delegate methods needed to follow Teads ads lifecycle.
@@ -423,7 +435,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
-@class NSCoder;
 
 /// adOpportunity is a key metrics to evaluate the performance of your inventory.
 /// It builds the visibility score of your placement in publisher dashboards.
@@ -433,7 +444,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 @interface TeadsAdOpportunityTrackerView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)removeFromSuperview;
 @end
 
 
@@ -688,6 +700,8 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// In order to create placement, call <code>Teads.createInReadPlacement()</code>
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
+/// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
+@property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
@@ -702,9 +716,22 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
+/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
+@protocol TeadsLogMessageDelegate
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
 /// Root placement delegate methods needed to follow Teads ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
-@protocol TeadsdPlacementDelegate
+@protocol TeadsdPlacementDelegate <TeadsLogMessageDelegate>
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -713,13 +740,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@optional
-/// Called each time TeadsSDK triggers a log message
-/// \param message log message
-///
-/// \param note If no subscribers is set, log message will be written into console
-///
-- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
 @end
 
 
@@ -767,6 +787,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
 
 
 
@@ -889,21 +910,21 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @interface TeadsNativeAdView : TeadsAdView
 /// The native ad title label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable titleLabel;
 /// The native ad content / body label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable contentLabel;
 /// The native ad media view (for images and videos).
-@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, strong) IBOutlet TeadsMediaView * _Nullable mediaView;
 /// The native ad icon image view.
-@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, strong) IBOutlet UIImageView * _Nullable iconImageView;
 /// The native ad advertiser / sponsored label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable advertiserLabel;
 /// The native ad call to action button.
-@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, strong) IBOutlet UIButton * _Nullable callToActionButton;
 /// The native ad rating view.
-@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -947,6 +968,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 
@@ -1230,6 +1252,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
 
 
 /// Native Component containing AdChoices <code>clickThroughUrl</code>
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 /// note:
 /// AdChoices component and associated logo is automatically added to <code>TeadsNativeAdView</code>
 SWIFT_CLASS("_TtC8TeadsSDK18AdChoicesComponent")
@@ -1378,6 +1401,17 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 
 
+@class NSCoder;
+
+/// The Teads AdChoices view is responsible to render the optionView or AdChoices view.
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
+SWIFT_CLASS("_TtC8TeadsSDK18TeadsAdChoicesView")
+@interface TeadsAdChoicesView : UIView
+- (nonnull instancetype)initWithBinding:(CommonComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class UIViewController;
 
 /// Delegate methods needed to follow Teads ads lifecycle.
@@ -1423,7 +1457,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
-@class NSCoder;
 
 /// adOpportunity is a key metrics to evaluate the performance of your inventory.
 /// It builds the visibility score of your placement in publisher dashboards.
@@ -1433,7 +1466,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 @interface TeadsAdOpportunityTrackerView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)removeFromSuperview;
 @end
 
 
@@ -1688,6 +1722,8 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// In order to create placement, call <code>Teads.createInReadPlacement()</code>
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
+/// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
+@property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
@@ -1702,9 +1738,22 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
+/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
+@protocol TeadsLogMessageDelegate
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
 /// Root placement delegate methods needed to follow Teads ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
-@protocol TeadsdPlacementDelegate
+@protocol TeadsdPlacementDelegate <TeadsLogMessageDelegate>
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -1713,13 +1762,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@optional
-/// Called each time TeadsSDK triggers a log message
-/// \param message log message
-///
-/// \param note If no subscribers is set, log message will be written into console
-///
-- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
 @end
 
 
@@ -1767,6 +1809,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
 
 
 
@@ -1889,21 +1932,21 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @interface TeadsNativeAdView : TeadsAdView
 /// The native ad title label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable titleLabel;
 /// The native ad content / body label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable contentLabel;
 /// The native ad media view (for images and videos).
-@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, strong) IBOutlet TeadsMediaView * _Nullable mediaView;
 /// The native ad icon image view.
-@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, strong) IBOutlet UIImageView * _Nullable iconImageView;
 /// The native ad advertiser / sponsored label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable advertiserLabel;
 /// The native ad call to action button.
-@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, strong) IBOutlet UIButton * _Nullable callToActionButton;
 /// The native ad rating view.
-@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1947,6 +1990,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 
@@ -2230,6 +2274,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
 
 
 /// Native Component containing AdChoices <code>clickThroughUrl</code>
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 /// note:
 /// AdChoices component and associated logo is automatically added to <code>TeadsNativeAdView</code>
 SWIFT_CLASS("_TtC8TeadsSDK18AdChoicesComponent")
@@ -2378,6 +2423,17 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 
 
+@class NSCoder;
+
+/// The Teads AdChoices view is responsible to render the optionView or AdChoices view.
+/// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
+SWIFT_CLASS("_TtC8TeadsSDK18TeadsAdChoicesView")
+@interface TeadsAdChoicesView : UIView
+- (nonnull instancetype)initWithBinding:(CommonComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class UIViewController;
 
 /// Delegate methods needed to follow Teads ads lifecycle.
@@ -2423,7 +2479,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 @end
 
-@class NSCoder;
 
 /// adOpportunity is a key metrics to evaluate the performance of your inventory.
 /// It builds the visibility score of your placement in publisher dashboards.
@@ -2433,7 +2488,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 @interface TeadsAdOpportunityTrackerView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)removeFromSuperview;
 @end
 
 
@@ -2688,6 +2744,8 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// In order to create placement, call <code>Teads.createInReadPlacement()</code>
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
+/// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
+@property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
@@ -2702,9 +2760,22 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
+/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
+@protocol TeadsLogMessageDelegate
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
 /// Root placement delegate methods needed to follow Teads ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
-@protocol TeadsdPlacementDelegate
+@protocol TeadsdPlacementDelegate <TeadsLogMessageDelegate>
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
 ///
@@ -2713,13 +2784,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@optional
-/// Called each time TeadsSDK triggers a log message
-/// \param message log message
-///
-/// \param note If no subscribers is set, log message will be written into console
-///
-- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
 @end
 
 
@@ -2767,6 +2831,7 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
 
 
 
@@ -2889,21 +2954,21 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @interface TeadsNativeAdView : TeadsAdView
 /// The native ad title label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable titleLabel;
 /// The native ad content / body label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable contentLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable contentLabel;
 /// The native ad media view (for images and videos).
-@property (nonatomic, weak) IBOutlet TeadsMediaView * _Nullable mediaView;
+@property (nonatomic, strong) IBOutlet TeadsMediaView * _Nullable mediaView;
 /// The native ad icon image view.
-@property (nonatomic, weak) IBOutlet UIImageView * _Nullable iconImageView;
+@property (nonatomic, strong) IBOutlet UIImageView * _Nullable iconImageView;
 /// The native ad advertiser / sponsored label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable advertiserLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable advertiserLabel;
 /// The native ad call to action button.
-@property (nonatomic, weak) IBOutlet UIButton * _Nullable callToActionButton;
+@property (nonatomic, strong) IBOutlet UIButton * _Nullable callToActionButton;
 /// The native ad rating view.
-@property (nonatomic, weak) IBOutlet UIView * _Nullable ratingView;
+@property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
-@property (nonatomic, weak) IBOutlet UILabel * _Nullable priceLabel;
+@property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2947,6 +3012,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
+
 
 
 

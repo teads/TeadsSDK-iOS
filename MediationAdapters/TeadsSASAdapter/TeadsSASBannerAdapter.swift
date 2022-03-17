@@ -1,22 +1,22 @@
 //
 //  TeadsSASBannerAdapter.swift
+//  TeadsSASAdapter
 //
 //  Created by Jérémy Grosjean on 29/06/2021.
 //
 
-import UIKit
 import SASDisplayKit
 import TeadsSDK
+import UIKit
 
 @objc(TeadsSASBannerAdapter)
 final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
-
     @objc public weak var delegate: SASMediationBannerAdapterDelegate?
     private var currentBanner: TeadsInReadAdView?
     private var placement: TeadsInReadAdPlacement?
     private weak var controller: UIViewController?
 
-    @objc required public init(delegate: SASMediationBannerAdapterDelegate) {
+    @objc public required init(delegate: SASMediationBannerAdapterDelegate) {
         super.init()
         self.delegate = delegate
     }
@@ -45,14 +45,12 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
     }
 
     static func addExtrasToAdSettings(_ adSettings: TeadsAdapterSettings) {
-        let sasVersion = Bundle.init(for: SASAdPlacement.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
+        let sasVersion = Bundle(for: SASAdPlacement.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
         adSettings.setIntegation(TeadsAdapterSettings.integrationSAS, version: sasVersion)
     }
-
 }
 
 extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
-
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
@@ -68,42 +66,42 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
         delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason, noFill: reason.isNoFill)
     }
 
-    public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
         currentBanner?.updateHeight(with: adRatio)
     }
 
-    public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+    public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
         // adOpportunityTrackerView is handled by TeadsSDK
     }
-
 }
+
 extension TeadsSASBannerAdapter: TeadsAdDelegate {
-    public func didRecordImpression(ad: TeadsAd) {
+    public func didRecordImpression(ad _: TeadsAd) {
         // not handled by SASDisplayKit
     }
 
-    public func didRecordClick(ad: TeadsAd) {
+    public func didRecordClick(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterDidReceiveAdClickedEvent(self)
     }
 
-    public func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    public func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         delegate?.mediationBannerAdapterWillPresentModalView(self)
         return controller
     }
 
-    public func didCatchError(ad: TeadsAd, error: Error) {
+    public func didCatchError(ad _: TeadsAd, error: Error) {
         delegate?.mediationBannerAdapter(self, didFailToLoadWithError: error, noFill: false)
     }
 
-    public func didClose(ad: TeadsAd) {
+    public func didClose(ad _: TeadsAd) {
         // not handled by SASDisplayKit
     }
 
-    public func didExpandedToFullscreen(ad: TeadsAd) {
+    public func didExpandedToFullscreen(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterWillPresentModalView(self)
     }
 
-    public func didCollapsedFromFullscreen(ad: TeadsAd) {
+    public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterWillDismissModalView(self)
     }
 }
