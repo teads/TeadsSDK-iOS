@@ -126,6 +126,5 @@ extension NativeAppLovinTableViewController: MANativeAdDelegate {
     
     func didClickNativeAd(_ ad: MAAd) {
         print("didClickNativeAd")
-        // did click on native ad
     }
 }

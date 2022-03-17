@@ -24,8 +24,7 @@ class InReadAppLovinScrollViewController: AppLovinViewController {
         
         ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
         ALSdk.shared()!.settings.isVerboseLogging = true
-        ALSdk.shared()!.initializeSdk { [weak self] (configuration: ALSdkConfiguration) in
-            
+        ALSdk.shared()!.initializeSdk { [weak self] _ in
             self?.loadAd()
         }
     }
