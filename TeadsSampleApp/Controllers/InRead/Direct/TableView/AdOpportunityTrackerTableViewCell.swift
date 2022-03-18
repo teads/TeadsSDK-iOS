@@ -6,8 +6,8 @@
 //  Copyright © 2022 Teads. All rights reserved.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 /// Implement this cell to track slot
 class AdOpportunityTrackerTableViewCell: UITableViewCell {

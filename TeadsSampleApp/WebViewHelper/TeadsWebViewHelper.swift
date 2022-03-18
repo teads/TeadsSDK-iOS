@@ -83,7 +83,7 @@ import WebKit
             webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: $0)
         }
     }
-    
+
     deinit {
         closeSlot()
         Self.mainThread { [weak webView] in

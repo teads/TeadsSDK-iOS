@@ -9,17 +9,15 @@
 import Foundation
 
 struct AdSelection {
-    
     var format: Format
     var provider: Provider
     var creation: CreativeType
-    
+
     init() {
         format = Formats.inRead.format()
         provider = inReadDirectProvider
         creation = landscape
     }
-    
 }
 
 struct Format {
@@ -51,18 +49,17 @@ struct Integration {
     let imageName: String
 }
 
-
 // Formats
 enum Formats {
     case inRead, native
     func format() -> Format {
         switch self {
-        case .inRead: return inReadFormat
-        case .native: return nativeFormat
+            case .inRead: return inReadFormat
+            case .native: return nativeFormat
         }
     }
-    
 }
+
 let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
 let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
 
@@ -74,23 +71,23 @@ let inReadDirectProvider = Provider(name: .direct, integrations: [
     scrollViewIntegration,
     tableViewIntegration,
     collectionViewIntegration,
-    webViewIntegration
+    webViewIntegration,
 ], isSelected: true)
 let inReadAdmobProvider = Provider(name: .admob, integrations: [
     scrollViewIntegration,
     tableViewIntegration,
-    webViewIntegration
+    webViewIntegration,
 ], isSelected: false)
 let inReadMopubProvider = Provider(name: .mopub, integrations: [
     scrollViewIntegration,
-    tableViewIntegration
+    tableViewIntegration,
 ], isSelected: false)
 let inReadSASProvider = Provider(name: .sas, integrations: [
     scrollViewIntegration,
-    tableViewIntegration
+    tableViewIntegration,
 ], isSelected: false)
 let inReadAppLovinProvider = Provider(name: .appLovin, integrations: [
-    scrollViewIntegration
+    scrollViewIntegration,
 ], isSelected: false)
 
 // Native Providers
@@ -102,10 +99,10 @@ let nativeAdmobProvider = Provider(name: .admob, integrations: [
     tableViewIntegration,
 ], isSelected: false)
 let nativeMopubProvider = Provider(name: .mopub, integrations: [
-    tableViewIntegration
+    tableViewIntegration,
 ], isSelected: false)
 let nativeAppLovinProvider = Provider(name: .appLovin, integrations: [
-    tableViewIntegration
+    tableViewIntegration,
 ], isSelected: false)
 
 // CreativeType
@@ -120,10 +117,7 @@ var appLovinMRECVertical = CreativeType(name: .appLovinMRECVertical, isSelected:
 var appLovinMRECSquare = CreativeType(name: .appLovinMRECSquare, isSelected: false)
 var appLovinMRECCarousel = CreativeType(name: .appLovinMRECCarousel, isSelected: false)
 
-
-
 var display = CreativeType(name: .nativeDisplay, isSelected: true)
-
 
 // Integration
 let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollView")
@@ -131,8 +125,7 @@ let tableViewIntegration = Integration(name: "TableView", imageName: "TableView"
 let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
 let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
 
-struct PID {
-    
+enum PID {
     static let directLandscape = "84242"
     static let directVertical = "127546"
     static let directSquare = "127547"
@@ -145,7 +138,6 @@ struct PID {
         set {
             UserDefaults.standard.setValue(newValue, forKey: "PID")
         }
-        
     }
 
     static let admobLandscape = "ca-app-pub-3068786746829754/2411019030"
@@ -159,17 +151,17 @@ struct PID {
     static let mopubSquare = "d017b5f3e0284a3f8be15e78df49a005"
     static let mopubCarousel = "639e0c172c944f82a61599d8b7a6de4f"
     static let mopubNativeDisplay = "4592565b187c468389b85c733a22f313"
-    
+
     static let sasLandscape = "96445"
     static let sasVertical = "96469"
     static let sasSquare = "96468"
     static let sasCarousel = "96470"
-    
+
     static let appLovinLandscapeMREC = "33d03d37d70196e3"
     static let appLovinVerticalMREC = "66ff5813c2c2698c"
     static let appLovinSquareMREC = "5512c029c9a2ebd9"
     static let appLovinCarouselMREC = "d60fbc370461602d"
-    
+
     static let appLovinLandscape = "ebe5409dd16b929d"
     static let appLovinVertical = "808eaa38d08ade2d"
     static let appLovinSquare = "f83b5fc30c17954e"
@@ -178,7 +170,7 @@ struct PID {
 }
 
 enum FormatName: String {
-    case inRead = "inRead"
+    case inRead
     case native = "Native"
 }
 
@@ -197,11 +189,9 @@ enum CreativeTypeName: String {
     case carousel = "Carousel"
     case custom = "Custom"
     case nativeDisplay = "Display"
-    
+
     case appLovinMRECLandscape = "Landscape MREC"
     case appLovinMRECVertical = "Vertical MREC"
     case appLovinMRECSquare = "Square MREC"
     case appLovinMRECCarousel = "Carousel MREC"
 }
-
-

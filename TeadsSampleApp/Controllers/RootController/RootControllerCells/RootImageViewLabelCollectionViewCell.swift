@@ -9,20 +9,19 @@
 import UIKit
 
 class RootImageViewLabelCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var label: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         layer.cornerRadius = 12
         layer.borderWidth = 1
         layer.borderColor = UIColor.teadsGray.cgColor
-        
+
         label.textColor = .teadsGray
     }
-    
+
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.1) {
@@ -34,5 +33,4 @@ class RootImageViewLabelCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-
 }

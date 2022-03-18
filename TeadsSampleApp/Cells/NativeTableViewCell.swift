@@ -8,7 +8,5 @@
 import UIKit
 
 class NativeTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var nativeAdView: UIView!
-    
+    @IBOutlet var nativeAdView: UIView!
 }

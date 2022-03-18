@@ -9,17 +9,16 @@
 import UIKit
 
 class RootButtonCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet var label: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         layer.cornerRadius = 12
         layer.borderWidth = 1
     }
-    
-    var isButtonSelected: Bool = false {
+
+    var isButtonSelected = false {
         didSet {
             if isButtonSelected {
                 label.backgroundColor = .primary
@@ -32,11 +31,11 @@ class RootButtonCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
+
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.1) {
-                if self.isHighlighted && !self.isSelected {
+                if self.isHighlighted, !self.isSelected {
                     self.alpha = 0.5
                 } else {
                     self.alpha = 1
@@ -44,5 +43,4 @@ class RootButtonCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-
 }

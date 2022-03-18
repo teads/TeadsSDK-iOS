@@ -5,9 +5,9 @@
 //  Created by Jérémy Grosjean on 16/06/2021.
 //
 
-import UIKit
 import GoogleMobileAds
+import UIKit
 
 class AdmobNativeAdTableViewCell: UITableViewCell {
-    @IBOutlet weak var nativeAdView: GADNativeAdView!
+    @IBOutlet var nativeAdView: GADNativeAdView!
 }

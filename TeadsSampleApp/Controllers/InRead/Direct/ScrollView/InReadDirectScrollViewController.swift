@@ -6,20 +6,19 @@
 //  Copyright © 2018 Teads. All rights reserved.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 class InReadDirectScrollViewController: TeadsViewController {
-    
-    @IBOutlet weak var scrollDownImageView: TeadsGradientImageView!
-    @IBOutlet weak var teadsAdView: TeadsInReadAdView!
-    @IBOutlet weak var teadsAdHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var scrollDownImageView: TeadsGradientImageView!
+    @IBOutlet var teadsAdView: TeadsInReadAdView!
+    @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: TeadsAdRatio?
     var placement: TeadsInReadAdPlacement?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pSettings = TeadsAdPlacementSettings { (settings) in
+        let pSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug()
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
@@ -30,78 +29,67 @@ class InReadDirectScrollViewController: TeadsViewController {
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     @objc func rotationDetected() {
-        if let adRatio = self.adRatio {
+        if let adRatio = adRatio {
             resizeTeadsAd(adRatio: adRatio)
         }
     }
-    
+
     func resizeTeadsAd(adRatio: TeadsAdRatio) {
         self.adRatio = adRatio
         teadsAdHeightConstraint.constant = adRatio.calculateHeight(for: teadsAdView.frame.width)
     }
-    
+
     func closeAd() {
-        //be careful if you want to load another ad in the same page don't remove the observer
+        // be careful if you want to load another ad in the same page don't remove the observer
         NotificationCenter.default.removeObserver(self)
         teadsAdHeightConstraint.constant = 0
     }
-    
 }
 
 extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
         teadsAdView.addSubview(trackerView)
     }
-    
+
     func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         teadsAdView.bind(ad)
         ad.delegate = self
         resizeTeadsAd(adRatio: adRatio)
     }
-    
-    func didFailToReceiveAd(reason: AdFailReason) {
+
+    func didFailToReceiveAd(reason _: AdFailReason) {
         closeAd()
     }
-    
-    func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+
+    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
         resizeTeadsAd(adRatio: adRatio)
     }
-    
 }
 
 extension InReadDirectScrollViewController: TeadsAdDelegate {
-    
-    func willPresentModalView(ad: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         return self
     }
-    
-    func didCatchError(ad: TeadsAd, error: Error) {
-        closeAd()
-    }
-    
-    func didClose(ad: TeadsAd) {
+
+    func didCatchError(ad _: TeadsAd, error _: Error) {
         closeAd()
     }
 
-    func didRecordImpression(ad: TeadsAd) {
-        
+    func didClose(ad _: TeadsAd) {
+        closeAd()
     }
-    
-    func didRecordClick(ad: TeadsAd) {
-    
-    }
-    
-    func didExpandedToFullscreen(ad: TeadsAd) {
-        
-    }
-    
-    func didCollapsedFromFullscreen(ad: TeadsAd) {
-        
-    }
+
+    func didRecordImpression(ad _: TeadsAd) {}
+
+    func didRecordClick(ad _: TeadsAd) {}
+
+    func didExpandedToFullscreen(ad _: TeadsAd) {}
+
+    func didCollapsedFromFullscreen(ad _: TeadsAd) {}
 }

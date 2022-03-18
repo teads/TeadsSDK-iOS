@@ -14,4 +14,6 @@ target 'TeadsSampleApp' do
   pod 'TeadsAdMobAdapter', '~> 5.0'
   pod 'TeadsAppLovinAdapter', '~> 5.0'
   
+  
+  pod 'SwiftFormat/CLI'
 end

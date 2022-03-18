@@ -6,9 +6,9 @@
 //  Copyright © 2021 Teads. All rights reserved.
 //
 
-import UIKit
 import TeadsSDK
+import UIKit
 
 class NativeAdCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var adView: TeadsNativeAdView!
+    @IBOutlet var adView: TeadsNativeAdView!
 }

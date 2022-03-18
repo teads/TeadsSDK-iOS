@@ -1,0 +1,13 @@
+# rules
+--disable wrapMultilineStatementBraces
+
+# format options
+--elseposition same-line
+--guardelse same-line
+--redundanttype inferred
+--indentcase true
+--ifdef no-indent
+--operatorfunc no-space
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first

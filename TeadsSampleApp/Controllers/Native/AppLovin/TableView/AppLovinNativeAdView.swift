@@ -6,14 +6,12 @@
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
-import UIKit
 import AppLovinSDK
 import MoPubSDK
+import UIKit
 
 /**
  Provides a common native ad view.
  */
 @IBDesignable
-class AppLovinNativeAdView: MANativeAdView {
-    
-}
+class AppLovinNativeAdView: MANativeAdView {}
