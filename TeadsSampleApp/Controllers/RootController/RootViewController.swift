@@ -40,6 +40,12 @@ class RootViewController: TeadsViewController {
             return
         }
         destination.pid = pidForCreative()
+        
+        if let appLovinViewController = destination as? AppLovinViewController,
+           [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
+            appLovinViewController.isMREC = true
+        }
+        
     }
     
     private func pidForCreative() -> String {
@@ -57,7 +63,8 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             case .nativeDisplay:
-                return PID.nativeDisplay
+                return PID.directNativeDisplay
+            default: return ""
             }
         case .admob:
             switch adSelection.creation.name {
@@ -73,6 +80,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.admobNativeDisplay
+            default: return ""
             }
         case .mopub:
             switch adSelection.creation.name {
@@ -88,6 +96,7 @@ class RootViewController: TeadsViewController {
                 return PID.custom
             case .nativeDisplay:
                 return PID.mopubNativeDisplay
+            default: return ""
             }
         case .sas:
             switch adSelection.creation.name {
@@ -102,13 +111,36 @@ class RootViewController: TeadsViewController {
             case .custom:
                 return PID.custom
             case .nativeDisplay:
-                return PID.nativeDisplay
+                return PID.directNativeDisplay
+            default: return ""
+            }
+        case .appLovin:
+            switch adSelection.creation.name {
+            case .landscape:
+                return PID.appLovinLandscape
+            case .vertical:
+                return PID.appLovinVertical
+            case .square:
+                return PID.appLovinSquare
+            case .carousel:
+                return PID.appLovinCarousel
+                
+            case .appLovinMRECLandscape:
+                return PID.appLovinLandscapeMREC
+            case .appLovinMRECVertical:
+                return PID.appLovinVerticalMREC
+            case .appLovinMRECSquare:
+                return PID.appLovinSquareMREC
+            case .appLovinMRECCarousel:
+                return PID.appLovinCarouselMREC
+                
+            case .custom:
+                return PID.custom
+            case .nativeDisplay:
+                return PID.appLovinNativeDisplay
             }
         }
-        
-        
     }
-
 }
 
 extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -233,6 +265,14 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     }
                 }
             }
+            
+            // Change creative type for AppLovin setup due to Banner vs MREC integration
+            if self.adSelection.provider == inReadAppLovinProvider {
+                selectionList[0].creativeTypes = appLovinInReadCreativeTypes
+            } else {
+                selectionList[0].creativeTypes = defaultInReadCreativeTypes
+            }
+            
             collectionView.reloadData()
         case 2:
             for j in 0..<selectionList.count where selectionList[j].isSelected {
@@ -280,13 +320,11 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
             return CGSize(width: width, height: 32)
         case 1:
-            let spacing: CGFloat = 4
-            let count: CGFloat = CGFloat(selectionList.first(where: {$0.isSelected})?.providers.count ?? 0)
-            let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-            return CGSize(width: width, height: 32)
+            let providerList = selectionList.first(where: {$0.isSelected})?.providers ?? []
+            return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })
         case 2:
             let creativesTypeList = selectionList.first(where: {$0.isSelected})?.creativeTypes ?? []
-            return getButtonButtonSize(buttonValues: creativesTypeList)
+            return getButtonButtonSize(buttonValues: creativesTypeList.map { $0.name.rawValue })
         case 3:
             let spacing: CGFloat = 16
             let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
@@ -313,18 +351,18 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func getButtonWidth(buttonValues: [CreativeType]) -> Int {
+    func getButtonWidth(buttonValues: [String]) -> Int {
         
         var width = 0
         buttonValues.forEach { (item) in
-            width = max(width, Int(item.name.rawValue.size(withAttributes: [
+            width = max(width, Int(item.size(withAttributes: [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
             ]).width))
         }
         return width + 16
     }
     
-    func getButtonButtonSize(buttonValues: [CreativeType]) -> CGSize {
+    func getButtonButtonSize(buttonValues: [String]) -> CGSize {
         
         let spacing: CGFloat = 4
         let availableWidth = Int(collectionView.bounds.width - 32)

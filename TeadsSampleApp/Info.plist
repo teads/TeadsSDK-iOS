@@ -50,5 +50,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>AppLovinSdkKey</key>
+	<string>gVnGNZO0g67qWhpnz0fIyM6JtXc4Fi0NRLNGyV64ec4eh1-zJ-JqLOsfRfN03Lmld-owcwHxnX70afmuvcwagH</string>
 </dict>
 </plist>

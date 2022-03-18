@@ -19,11 +19,6 @@ class NativeAdmobTableViewController: TeadsViewController {
     let teadsAdCellIndentifier = "AdmobNativeAdTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
     let adRowNumber = 3
-    var adHeight: CGFloat?
-    var adRatio: TeadsAdRatio?
-    var teadsAdIsLoaded = false
-    var placement: TeadsNativeAdPlacement?
-    var tableViewAdCellWidth: CGFloat!
     
     private var elements = [GADNativeAd?]()
     
@@ -55,12 +50,6 @@ class NativeAdmobTableViewController: TeadsViewController {
         request.register(customEventExtras)
         adLoader.load(request)
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableViewAdCellWidth = tableView.frame.width - 20
-    }
-
   
     func closeSlot() {
         elements.removeAll { $0 != nil }
