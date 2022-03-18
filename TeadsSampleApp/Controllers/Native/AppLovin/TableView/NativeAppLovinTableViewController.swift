@@ -39,7 +39,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
     
     func loadAd() {
         // FIXME This ids should be replaced by your own AppLovin AdUnitId
-        let APPLOVIN_AD_UNIT_ID = "b87480e23dd55a79" //TODO replace by self.pid
+        let APPLOVIN_AD_UNIT_ID = pid
         nativeAdLoader = MANativeAdLoader(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
         
         // Setting the modal parent view controller.

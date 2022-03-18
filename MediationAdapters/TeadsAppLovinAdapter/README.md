@@ -12,7 +12,7 @@ If you want to display Teads ads in your iOS application through AppLovin MAX me
 
 ## Features
 
-- ✅  Displaying Teads banners
+- ✅  Displaying Teads inRead ads
 - ✅  Displaying Teads native ads
 
 ## Installation

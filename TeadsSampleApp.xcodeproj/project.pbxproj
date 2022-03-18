@@ -41,6 +41,7 @@
 		E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */; };
 		E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */; };
 		E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */; };
+		E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C1F9927E4902D00151530 /* UIView-extension.swift */; };
 		E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */; };
 		E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */; };
 		E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */; };
@@ -107,6 +108,7 @@
 		E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLovinNativeAdView.xib; sourceTree = "<group>"; };
 		E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinNativeAdView.swift; sourceTree = "<group>"; };
 		E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAppLovinTableViewController.swift; sourceTree = "<group>"; };
+		E96C1F9927E4902D00151530 /* UIView-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-extension.swift"; sourceTree = "<group>"; };
 		E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewController.swift; sourceTree = "<group>"; };
 		E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdmobTableViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				4079F242252CBE7F00B0AC31 /* ColorExtension.swift */,
 				B50425CF252E078B00ABF07D /* String.swift */,
+				E96C1F9927E4902D00151530 /* UIView-extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
 				B5966D20269DCF2D005CA2FF /* InReadMopubTableViewController.swift in Sources */,
+				E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
 				E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */,
