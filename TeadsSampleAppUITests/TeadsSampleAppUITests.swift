@@ -9,11 +9,10 @@
 import XCTest
 
 class TeadsSampleAppUITests: XCTestCase {
-    
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
-    
+
     func testInReadIntegrationInScrollView() throws {
         let app = XCUIApplication()
         app.launch()
@@ -21,7 +20,7 @@ class TeadsSampleAppUITests: XCTestCase {
         collectionViewsQuery.otherElements.containing(.staticText, identifier: "Creatives").element.swipeUp()
         app.collectionViews.cells.staticTexts["ScrollView"].tap()
         let scrollViewsQuery = XCUIApplication().scrollViews.firstMatch
-        let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier:"ARTICLE").element
+        let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier: "ARTICLE").element
         let elementsQuery = scrollViewsQuery.otherElements
         while !elementsQuery.otherElements["teads-player"].exists {
             articleElement.swipeUp()
@@ -29,7 +28,7 @@ class TeadsSampleAppUITests: XCTestCase {
         let player = elementsQuery.otherElements["teads-player"]
         XCTAssert(player.frame.height > 80)
     }
-    
+
     func testInReadIntegrationVerticalInScrollView() throws {
         let app = XCUIApplication()
         app.launch()
@@ -38,7 +37,7 @@ class TeadsSampleAppUITests: XCTestCase {
         collectionViewsQuery.otherElements.containing(.staticText, identifier: "Creatives").element.swipeUp()
         app.collectionViews.cells.staticTexts["ScrollView"].tap()
         let scrollViewsQuery = XCUIApplication().scrollViews.firstMatch
-        let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier:"ARTICLE").element
+        let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier: "ARTICLE").element
         let elementsQuery = scrollViewsQuery.otherElements
         while !elementsQuery.otherElements["teads-player"].exists {
             articleElement.swipeUp()
@@ -46,7 +45,4 @@ class TeadsSampleAppUITests: XCTestCase {
         let player = elementsQuery.otherElements["teads-player"]
         XCTAssert(player.frame.height > 80)
     }
-
-
 }
-

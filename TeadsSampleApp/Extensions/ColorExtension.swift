@@ -19,8 +19,7 @@ extension UIColor {
     static let teadsGray = UIColor(named: "TeadsGrayColor") ?? UIColor.clear
     static let fakeArticle = UIColor(named: "FakeArticleColor") ?? UIColor.clear
     static let cellBorder = UIColor(named: "CellBorderColor") ?? UIColor.clear
-    
-    
+
     func getRedValue() -> CGFloat {
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -29,7 +28,7 @@ extension UIColor {
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         return red
     }
-    
+
     func getBlueValue() -> CGFloat {
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -38,7 +37,7 @@ extension UIColor {
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         return blue
     }
-    
+
     func getGreenValue() -> CGFloat {
         var red: CGFloat = 0
         var green: CGFloat = 0

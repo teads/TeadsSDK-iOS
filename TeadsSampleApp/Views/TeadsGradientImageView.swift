@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable class TeadsGradientImageView: UIImageView {
-    
     private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         if #available(iOS 13.0, *) {
@@ -24,21 +23,20 @@ import UIKit
         super.init(frame: frame)
         addGradient()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         addGradient()
     }
-    
+
     override func layoutSubviews() {
         addGradient()
     }
-    
+
     func addGradient() {
         gradientLayer.frame = bounds
         if !(layer.sublayers?.contains(gradientLayer) ?? false) {
             layer.addSublayer(gradientLayer)
         }
     }
-    
 }

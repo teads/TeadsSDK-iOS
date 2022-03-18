@@ -6,37 +6,40 @@
 //  Copyright © 2021 Teads. All rights reserved.
 //
 
-import UIKit
 import GoogleMobileAds
-import TeadsSDK
 import TeadsAdMobAdapter
+import TeadsSDK
+import UIKit
 
 class NativeAdmobTableViewController: TeadsViewController {
+    @IBOutlet var tableView: UITableView!
 
-    @IBOutlet weak var tableView: UITableView!
-    
     let headerCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "AdmobNativeAdTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
     let adRowNumber = 3
-    
+
     private var elements = [GADNativeAd?]()
-    
+
     var adLoader: GADAdLoader!
-    
-    // FIXME This ids should be replaced by your own AdMob application and ad block/unit ids
+
+    // FIXME: This ids should be replaced by your own AdMob application and ad block/unit ids
     let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        (0..<8).forEach { _ in
+
+        (0 ..< 8).forEach { _ in
             elements.append(nil)
         }
-        
-        adLoader = GADAdLoader(adUnitID: pid, rootViewController: self,
-                               adTypes: [ .native ], options: nil)
-        
+
+        adLoader = GADAdLoader(
+            adUnitID: pid,
+            rootViewController: self,
+            adTypes: [.native],
+            options: nil
+        )
+
         adLoader?.delegate = self
 
         let settings = TeadsAdapterSettings { settings in
@@ -45,20 +48,19 @@ class NativeAdmobTableViewController: TeadsViewController {
         }
 
         let customEventExtras = GADMAdapterTeads.customEventExtra(with: settings)
-        
+
         let request = GADRequest()
         request.register(customEventExtras)
         adLoader.load(request)
     }
-  
+
     func closeSlot() {
         elements.removeAll { $0 != nil }
     }
 }
 
 extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return elements.count
     }
 
@@ -80,21 +82,20 @@ extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 250
     }
-    
 }
 
 extension NativeAdmobTableViewController: GADAdLoaderDelegate {
-    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+    func adLoader(_: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         print("didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 }
 
 extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
-    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+    func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         elements.insert(nativeAd, at: adRowNumber)
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
@@ -103,24 +104,24 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
 }
 
 extension NativeAdmobTableViewController: GADNativeAdDelegate {
-    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
-        //you may want to use this callback for your own analytics
+    func nativeAdDidRecordClick(_: GADNativeAd) {
+        // you may want to use this callback for your own analytics
     }
-    
-    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
-        //you may want to use this callback for your own analytics
+
+    func nativeAdDidRecordImpression(_: GADNativeAd) {
+        // you may want to use this callback for your own analytics
     }
 }
 
 extension GADNativeAdView {
     func bind(_ ad: GADNativeAd, videoControllerDelegate: GADVideoControllerDelegate? = nil) {
-        self.nativeAd = ad
+        nativeAd = ad
         // Populate the native ad view with the native ad assets.
         // The headline and mediaContent are guaranteed to be present in every native ad.
         (headlineView as? UILabel)?.text = ad.headline
         mediaView?.mediaContent = ad.mediaContent
         mediaView?.isAccessibilityElement = true
-        
+
         // Some native ads will include a video asset, while others do not. Apps can use the
         // GADVideoController's hasVideoContent property to determine if one is present, and adjust their
         // UI accordingly.

@@ -16,56 +16,55 @@ import TeadsMoPubAdapter
 import TeadsSDK
 
 class NativeMopubTableViewController: TeadsViewController {
+    @IBOutlet var tableView: UITableView!
 
-    @IBOutlet weak var tableView: UITableView!
-    
     let headerCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "NativeTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
     let adRowNumber = 3
-    
+
     private var elements = [MPNativeAd?]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        (0..<8).forEach { _ in
+
+        (0 ..< 8).forEach { _ in
             elements.append(nil)
         }
-        
+
         let mpConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: pid)
         mpConfig.loggingLevel = .debug
-        
+
         if MoPub.sharedInstance().isSdkInitialized {
             loadAd()
         }
-        
+
         MoPub.sharedInstance().initializeSdk(with: mpConfig) { [weak self] in
             self?.loadAd()
         }
     }
-    
+
     func loadAd() {
         let settings = MPAdapterTeadsNativeAdRendererSettings()
 
         settings.renderingViewClass = MoPubNativeAdView.self
-        
+
         let config: MPNativeAdRendererConfiguration =
             MPAdapterTeadsNativeAdRenderer.rendererConfiguration(with: settings)
-        
-        let adRequest: MPNativeAdRequest = MPNativeAdRequest(adUnitIdentifier: pid, rendererConfigurations: [config])
-        
-        let targeting: MPNativeAdRequestTargeting = MPNativeAdRequestTargeting()
-        targeting.desiredAssets = [kAdTitleKey, kAdTextKey, kAdCTATextKey, kAdIconImageKey, kAdMainImageKey, kAdStarRatingKey, kAdSponsoredByCompanyKey]
-        
-        let adSettings = TeadsAdapterSettings { (settings) in
+
+        let adRequest = MPNativeAdRequest(adUnitIdentifier: pid, rendererConfigurations: [config])
+
+        let targeting = MPNativeAdRequestTargeting()
+        targeting?.desiredAssets = [kAdTitleKey, kAdTextKey, kAdCTATextKey, kAdIconImageKey, kAdMainImageKey, kAdStarRatingKey, kAdSponsoredByCompanyKey]
+
+        let adSettings = TeadsAdapterSettings { settings in
             settings.enableDebug()
             settings.pageUrl("http://teads.tv")
         }
-        targeting.register(teadsAdSettings: adSettings)
-        adRequest.targeting = targeting
-        
-        adRequest.start { [weak self] (request, response, error) in
+        targeting?.register(teadsAdSettings: adSettings)
+        adRequest?.targeting = targeting
+
+        adRequest?.start { [weak self] _, response, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             } else if let ad = response {
@@ -73,29 +72,26 @@ class NativeMopubTableViewController: TeadsViewController {
             }
         }
     }
-    
+
     func didReceiveAd(_ ad: MPNativeAd) {
         ad.delegate = self
-        self.elements.insert(ad, at: self.adRowNumber)
-        let indexPaths = [IndexPath(row: self.adRowNumber, section: 0)]
-        self.tableView.insertRows(at: indexPaths, with: .automatic)
+        elements.insert(ad, at: adRowNumber)
+        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
-  
+
     func closeSlot(ad: TeadsAd) {
         elements.removeAll { $0 == ad }
         tableView.reloadData()
     }
-
 }
 
 extension NativeMopubTableViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return elements.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCell, for: indexPath)
             return cell
@@ -103,13 +99,13 @@ extension NativeMopubTableViewController: UITableViewDelegate, UITableViewDataSo
             guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeTableViewCell else {
                 return UITableViewCell()
             }
-            
+
             if let av = try? ad.retrieveAdView() {
                 av.frame = cell.nativeAdView.bounds
                 av.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                 cell.nativeAdView.addSubview(av)
             }
-            
+
             cell.nativeAdView.isHidden = false
             return cell
         } else {
@@ -119,16 +115,14 @@ extension NativeMopubTableViewController: UITableViewDelegate, UITableViewDataSo
             cell.setMockValues()
             return cell
         }
-
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 250
         }
         return 400
     }
-    
 }
 
 extension NativeMopubTableViewController: MPNativeAdDelegate {

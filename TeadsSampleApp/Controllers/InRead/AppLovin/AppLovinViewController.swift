@@ -9,5 +9,5 @@
 import Foundation
 
 class AppLovinViewController: TeadsViewController {
-    var isMREC: Bool = false
+    var isMREC = false
 }

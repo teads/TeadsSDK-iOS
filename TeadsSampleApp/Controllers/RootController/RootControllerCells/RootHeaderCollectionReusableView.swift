@@ -9,7 +9,5 @@
 import UIKit
 
 class RootHeaderCollectionReusableView: UICollectionReusableView {
-    
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet var label: UILabel!
 }
