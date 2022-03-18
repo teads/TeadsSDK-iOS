@@ -41,12 +41,10 @@ class InReadAppLovinScrollViewController: AppLovinViewController {
             try? settings.registerAdView(bannerView, delegate: self)
         }
         bannerView.register(teadsAdSettings: settings)
-        
-        bannerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
-        
+                
         // Set background or background color for banners to be fully functional
         bannerView.backgroundColor = .clear
-        slotHeight.constant = 100
+        slotHeight.constant = 0
         
         addConstraints()
         

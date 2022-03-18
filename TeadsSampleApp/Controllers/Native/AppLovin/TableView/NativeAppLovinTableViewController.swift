@@ -104,10 +104,10 @@ extension NativeAppLovinTableViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if elements[indexPath.row] != nil {
-            return 400
+        if indexPath.row == 0 {
+            return 250
         }
-        return 250
+        return 400
     }
     
 }
