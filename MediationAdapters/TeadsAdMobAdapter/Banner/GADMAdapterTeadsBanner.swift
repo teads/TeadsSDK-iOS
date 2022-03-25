@@ -35,15 +35,31 @@ public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
         let adSettings = (try? TeadsAdapterSettings.instance(fromAdmobParameters: request.additionalParameters)) ?? TeadsAdapterSettings()
 
         currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: Helper.bannerSize(for: adSize.size.width)))
+        try? adSettings.adRequestSettings.registerAdView(currentBanner!, delegate: self)
 
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
 }
 
+extension GADMAdapterTeadsBanner: TeadsMediatedAdViewDelegate {
+
+  public func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+    currentBanner?.adRatio = adRatio
+    var view = adView
+    while let superview = view.superview {
+      if let bannerview = superview as? GADBannerView {
+        (bannerview.adSizeDelegate as? TeadsBannerViewSizeDelegate)?.teadsDidUpdateRatio(adView, adRatio: adRatio)
+      }
+      view = superview
+    }
+  }
+}
+
 extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
+        currentBanner?.adRatio = adRatio
         currentBanner?.bind(ad)
         currentBanner?.updateHeight(with: adRatio)
         if let adBanner = currentBanner {
@@ -60,6 +76,7 @@ extension GADMAdapterTeadsBanner: TeadsInReadAdPlacementDelegate {
     }
 
     public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        currentBanner?.adRatio = adRatio
         currentBanner?.updateHeight(with: adRatio)
     }
 }
@@ -92,4 +109,17 @@ extension GADMAdapterTeadsBanner: TeadsAdDelegate {
     public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.customEventBannerDidDismissModal(self)
     }
+}
+
+public protocol TeadsBannerViewSizeDelegate: GADAdSizeDelegate {
+  func teadsDidUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio)
+}
+
+fileprivate var adRatioContext: UInt8 = 0
+
+extension TeadsInReadAdView {
+  public var adRatio: TeadsAdRatio? {
+    get { objc_getAssociatedObject(self, &adRatioContext) as? TeadsAdRatio }
+    set { objc_setAssociatedObject(self, &adRatioContext, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+  }
 }
