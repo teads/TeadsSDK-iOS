@@ -1,13 +1,11 @@
 //
-//  NativeAdView.swift
+//  AppLovinNativeAdView.swift
+//  TeadsSDKIntegrationTestsApp
 //
-//  Copyright 2018-2020 Twitter, Inc.
-//  Licensed under the MoPub SDK License Agreement
-//  http://www.mopub.com/legal/sdk-license-agreement/
+//  Created by Paul Nicolas on 15/02/2022.
 //
 
 import AppLovinSDK
-import MoPubSDK
 import UIKit
 
 /**
