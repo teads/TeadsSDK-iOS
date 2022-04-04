@@ -81,22 +81,6 @@ class RootViewController: TeadsViewController {
                         return PID.admobNativeDisplay
                     default: return ""
                 }
-            case .mopub:
-                switch adSelection.creation.name {
-                    case .landscape:
-                        return PID.mopubLandscape
-                    case .vertical:
-                        return PID.mopubVertical
-                    case .square:
-                        return PID.mopubSquare
-                    case .carousel:
-                        return PID.mopubCarousel
-                    case .custom:
-                        return PID.custom
-                    case .nativeDisplay:
-                        return PID.mopubNativeDisplay
-                    default: return ""
-                }
             case .sas:
                 switch adSelection.creation.name {
                     case .landscape:

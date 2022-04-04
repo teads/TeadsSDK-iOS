@@ -63,8 +63,8 @@ enum Formats {
 let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
 let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
 
-let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadMopubProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
-let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeMopubProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display])
+let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
+let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
@@ -77,10 +77,6 @@ let inReadAdmobProvider = Provider(name: .admob, integrations: [
     scrollViewIntegration,
     tableViewIntegration,
     webViewIntegration,
-], isSelected: false)
-let inReadMopubProvider = Provider(name: .mopub, integrations: [
-    scrollViewIntegration,
-    tableViewIntegration,
 ], isSelected: false)
 let inReadSASProvider = Provider(name: .sas, integrations: [
     scrollViewIntegration,
@@ -96,9 +92,6 @@ let nativeDirectProvider = Provider(name: .direct, integrations: [
     collectionViewIntegration,
 ], isSelected: true)
 let nativeAdmobProvider = Provider(name: .admob, integrations: [
-    tableViewIntegration,
-], isSelected: false)
-let nativeMopubProvider = Provider(name: .mopub, integrations: [
     tableViewIntegration,
 ], isSelected: false)
 let nativeAppLovinProvider = Provider(name: .appLovin, integrations: [
@@ -146,12 +139,6 @@ enum PID {
     static let admobCarousel = "ca-app-pub-3068786746829754/5832124062"
     static let admobNativeDisplay = "ca-app-pub-3068786746829754/6007333247"
 
-    static let mopubLandscape = "1d055042d1fc4d5d8240e4dec026f910"
-    static let mopubVertical = "ffb910cb8192456f99ae362430a5aa84"
-    static let mopubSquare = "d017b5f3e0284a3f8be15e78df49a005"
-    static let mopubCarousel = "639e0c172c944f82a61599d8b7a6de4f"
-    static let mopubNativeDisplay = "4592565b187c468389b85c733a22f313"
-
     static let sasLandscape = "96445"
     static let sasVertical = "96469"
     static let sasSquare = "96468"
@@ -177,7 +164,6 @@ enum FormatName: String {
 enum ProviderName: String {
     case direct = "Direct"
     case admob = "Admob"
-    case mopub = "Mopub"
     case sas = "Smart"
     case appLovin = "App Lovin"
 }

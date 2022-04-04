@@ -10,7 +10,6 @@ target 'TeadsSampleApp' do
   pod 'TeadsSDK', '~> 5.0'
 
   pod 'TeadsSASAdapter', '~> 5.0'
-  pod 'TeadsMoPubAdapter', '~> 5.0'
   pod 'TeadsAdMobAdapter', '~> 5.0'
   pod 'TeadsAppLovinAdapter', '~> 5.0'
   
