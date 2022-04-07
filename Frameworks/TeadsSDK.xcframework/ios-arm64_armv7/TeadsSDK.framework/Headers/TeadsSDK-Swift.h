@@ -379,6 +379,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 
 
+
 @class NSCoder;
 
 /// The Teads AdChoices view is responsible to render the optionView or AdChoices view.
@@ -480,7 +481,7 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
 /// To improve performances and user experience, media such as videos or images are preloaded.
 /// This setting prevents TeadsSDK from automatically preloading media.
-- (void)disableMediaPreload;
+- (void)disableMediaPreload SWIFT_DEPRECATED_MSG("This is not used anymore and will be removed in a future version of the SDK");
 /// In order to follow the IAB specifications for GDPR, please fill the following parameters with attention.
 /// note:
 /// If you use a <a href="https://iabeurope.eu/tcf-for-cmps/">CMP</a>, you can skip this step: CMP will store those parameters into <code>UserDefaults</code>, TeadSDK will automatically retrieve these values. <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation.
@@ -604,7 +605,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
 /// To improve performances and user experience, media such as videos or images are preloaded.
 /// This setting prevents TeadsSDK from automatically preloading media.
-- (void)disableMediaPreload;
+- (void)disableMediaPreload SWIFT_DEPRECATED_MSG("This is not used anymore and will be removed in a future version of the SDK");
 /// In order to follow the IAB specifications for GDPR, please fill the following parameters with attention.
 /// note:
 /// If you use a <a href="https://iabeurope.eu/tcf-for-cmps/">CMP</a>, you can skip this step: CMP will store those parameters into <code>UserDefaults</code>, TeadSDK will automatically retrieve these values. <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation.
@@ -1401,6 +1402,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 
 
 
+
 @class NSCoder;
 
 /// The Teads AdChoices view is responsible to render the optionView or AdChoices view.
@@ -1502,7 +1504,7 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
 /// To improve performances and user experience, media such as videos or images are preloaded.
 /// This setting prevents TeadsSDK from automatically preloading media.
-- (void)disableMediaPreload;
+- (void)disableMediaPreload SWIFT_DEPRECATED_MSG("This is not used anymore and will be removed in a future version of the SDK");
 /// In order to follow the IAB specifications for GDPR, please fill the following parameters with attention.
 /// note:
 /// If you use a <a href="https://iabeurope.eu/tcf-for-cmps/">CMP</a>, you can skip this step: CMP will store those parameters into <code>UserDefaults</code>, TeadSDK will automatically retrieve these values. <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation.
@@ -1626,7 +1628,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
 /// To improve performances and user experience, media such as videos or images are preloaded.
 /// This setting prevents TeadsSDK from automatically preloading media.
-- (void)disableMediaPreload;
+- (void)disableMediaPreload SWIFT_DEPRECATED_MSG("This is not used anymore and will be removed in a future version of the SDK");
 /// In order to follow the IAB specifications for GDPR, please fill the following parameters with attention.
 /// note:
 /// If you use a <a href="https://iabeurope.eu/tcf-for-cmps/">CMP</a>, you can skip this step: CMP will store those parameters into <code>UserDefaults</code>, TeadSDK will automatically retrieve these values. <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">GDPR Transparency and Consent Framework </a> IAB documentation.

@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TeadsSDK
+import ARKit
 import AVFoundation
 import AVKit
 import AdSupport
@@ -10,6 +11,7 @@ import CoreTelephony
 import Foundation
 import JavaScriptCore
 import OMSDK_Teadstv
+import QuickLook
 import SafariServices
 import Swift
 import SwiftUI
@@ -53,6 +55,7 @@ extension AnyEncodableProtocol {
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable {
   public static let integrationAdmob: Swift.String
+  @available(*, deprecated, message: "Since March 31, 2022 Mopub integration has sunset in favor of AppLovin")
   public static let integrationMopub: Swift.String
   public static let integrationApplovin: Swift.String
   public static let integrationSAS: Swift.String
@@ -70,6 +73,7 @@ extension AnyEncodableProtocol {
   @objc final public func disableLocation()
   @available(*, deprecated, message: "Won't be used in any newer SDK versions.")
   @objc final public func enableLightEndScreen()
+  @available(*, deprecated, message: "This is not used anymore and will be removed in a future version of the SDK")
   @objc final public func disableMediaPreload()
   @objc final public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v1, cmpSdkID: Swift.Int = 0)
   @objc final public func setUsPrivacy(consent: Swift.String)
@@ -229,6 +233,7 @@ extension UIButton {
   @objc final public func disableLocation()
   @available(*, deprecated, message: "Won't be used in any newer SDK versions.")
   @objc final public func enableLightEndScreen()
+  @available(*, deprecated, message: "This is not used anymore and will be removed in a future version of the SDK")
   @objc final public func disableMediaPreload()
   @objc final public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v2, cmpSdkID: Swift.Int = 0)
   @objc final public func setUsPrivacy(consent: Swift.String)
