@@ -259,11 +259,13 @@ import WebKit
             case .onTeadsJsLibReady:
                 insertSlot()
             case .onSlotStartShow:
+                adView?.isHidden = false
                 // the bootstrap calls this when the slot starts to show
                 delegate?.webViewHelperSlotStartToShow()
             case .onSlotUpdated:
                 onSlotUpdated(position: message.body as? String)
             case .onSlotStartHide:
+                adView?.isHidden = true
                 // the bootstrap calls this when the slot starts to hide
                 delegate?.webViewHelperSlotStartToHide()
             case .handleError:
