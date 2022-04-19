@@ -64,7 +64,7 @@ let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
 let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
-let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display])
+let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display, custom])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
