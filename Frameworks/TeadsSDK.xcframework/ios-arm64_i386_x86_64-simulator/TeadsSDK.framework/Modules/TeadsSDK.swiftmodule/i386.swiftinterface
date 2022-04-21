@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TeadsSDK
 import ARKit
 import AVFoundation
@@ -19,15 +19,15 @@ import SystemConfiguration
 @_exported import TeadsSDK
 import UIKit
 import WebKit
-extension UIView {
-  @objc dynamic public func bind(component: TeadsSDK.CommonComponent?)
+import _Concurrency
+extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsAdRatio : ObjectiveC.NSObject {
   @objc public static let zero: TeadsSDK.TeadsAdRatio
   @objc public static let `default`: TeadsSDK.TeadsAdRatio
   @objc(calculateHeightForWidth:) final public func calculateHeight(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
   final public func value(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class AdChoicesComponent : TeadsSDK.OverlayComponent {
@@ -50,8 +50,6 @@ extension UIView {
 internal protocol AnyEncodableProtocol {
   var value: Any { get }
   init<T>(_ value: T?)
-}
-extension AnyEncodableProtocol {
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable {
   public static let integrationAdmob: Swift.String
@@ -88,7 +86,7 @@ extension AnyEncodableProtocol {
   final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
-@objc extension TeadsAdapterSettings {
+@objc extension TeadsSDK.TeadsAdapterSettings {
   @objc final public func toDictionary() throws -> [Swift.AnyHashable : Any]
   @objc final public class func instance(from dictionary: [Swift.AnyHashable : Any]) throws -> TeadsSDK.TeadsAdapterSettings
 }
@@ -99,18 +97,18 @@ extension AnyEncodableProtocol {
   @objc override dynamic public init()
   @objc deinit
 }
-extension Teads {
+extension TeadsSDK.Teads {
   @objc final public class func configure()
 }
-extension UILabel {
-  @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+extension UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class TeadsMediaView : UIKit.UIView {
-  final public var placeholderImage: UIKit.UIImage?
-  @objc public init(videoComponent: TeadsSDK.VideoComponent)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc override final public func layoutSubviews()
-  @objc override final public func bind(component: TeadsSDK.CommonComponent?)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class TeadsMediaView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var placeholderImage: UIKit.UIImage?
+  @objc @_Concurrency.MainActor(unsafe) public init(videoComponent: TeadsSDK.VideoComponent)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override final public func bind(component: TeadsSDK.CommonComponent?)
   @objc deinit
 }
 @usableFromInline
@@ -165,9 +163,9 @@ internal protocol AnyDecodableProtocol {
   @objc final public func register(containerView: UIKit.UIView)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc override final public func removeFromSuperview()
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func removeFromSuperview()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
@@ -193,8 +191,8 @@ public typealias TeadsInReadAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
     get
   }
 }
-extension UIButton {
-  @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
   final public let url: Foundation.URL
@@ -204,14 +202,13 @@ extension UIButton {
   }
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class TeadsAdView : UIKit.UIView {
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class TeadsAdView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc final public class TeadsAdChoicesView : UIKit.UIView {
-  @objc public init(binding component: TeadsSDK.CommonComponent? = nil)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsAdChoicesView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public init(binding component: TeadsSDK.CommonComponent? = nil)
   @objc deinit
 }
 @objc public protocol TeadsLogMessageDelegate {
@@ -223,7 +220,6 @@ extension UIButton {
 }
 @_hasMissingDesignatedInitializers @objc public class TeadsAdPlacement : ObjectiveC.NSObject {
   @objc deinit
-  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable {
   @objc final public func disableCrashMonitoring()
@@ -246,13 +242,13 @@ extension UIButton {
   final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
-extension UIImageView {
-  @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsInReadAd : TeadsSDK.TeadsAd {
   @objc deinit
 }
-extension TeadsInReadAd {
+extension TeadsSDK.TeadsInReadAd {
   @objc final public var adRatio: TeadsSDK.TeadsAdRatio {
     @objc get
   }
@@ -291,20 +287,19 @@ extension TeadsInReadAd {
   }
   @objc final public let requestIdentifier: Foundation.UUID
   @objc deinit
-  @objc override dynamic public init()
 }
-@objc @_inheritsConvenienceInitializers public class TeadsNativeAdView : TeadsSDK.TeadsAdView {
-  @objc @IBOutlet public var titleLabel: UIKit.UILabel?
-  @objc @IBOutlet public var contentLabel: UIKit.UILabel?
-  @objc @IBOutlet public var mediaView: TeadsSDK.TeadsMediaView?
-  @objc @IBOutlet public var iconImageView: UIKit.UIImageView?
-  @objc @IBOutlet public var advertiserLabel: UIKit.UILabel?
-  @objc @IBOutlet public var callToActionButton: UIKit.UIButton?
-  @objc @IBOutlet public var ratingView: UIKit.UIView?
-  @objc @IBOutlet public var priceLabel: UIKit.UILabel?
-  public func bind(_ ad: TeadsSDK.TeadsNativeAd)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TeadsNativeAdView : TeadsSDK.TeadsAdView {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var titleLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var contentLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var mediaView: TeadsSDK.TeadsMediaView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var iconImageView: UIKit.UIImageView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var advertiserLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var callToActionButton: UIKit.UIButton?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var ratingView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var priceLabel: UIKit.UILabel?
+  @_Concurrency.MainActor(unsafe) public func bind(_ ad: TeadsSDK.TeadsNativeAd)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class OverlayComponent : TeadsSDK.CommonComponent {
@@ -316,9 +311,8 @@ extension TeadsInReadAd {
 @_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
   @objc deinit
   public func didTapView()
-  @objc override dynamic public init()
 }
-extension CommonComponent {
+extension TeadsSDK.CommonComponent {
   public var text: Swift.String? {
     get
   }
@@ -326,12 +320,12 @@ extension CommonComponent {
 @objc public protocol TeadsMediatedAdViewDelegate {
   @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
 }
-@_inheritsConvenienceInitializers @objc final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
-  @objc final public func bind(_ ad: TeadsSDK.TeadsInReadAd)
-  public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreGraphics.CGRect = .zero)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc override final public func layoutSubviews()
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
+  @objc @_Concurrency.MainActor(unsafe) final public func bind(_ ad: TeadsSDK.TeadsInReadAd)
+  @_Concurrency.MainActor(unsafe) public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreGraphics.CGRect = .zero)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
@@ -364,10 +358,9 @@ extension CommonComponent {
   @objc override final public var description: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
-extension AdFailReason : Foundation.CustomNSError {
+extension TeadsSDK.AdFailReason : Foundation.CustomNSError {
   public static var errorDomain: Swift.String {
     get
   }
