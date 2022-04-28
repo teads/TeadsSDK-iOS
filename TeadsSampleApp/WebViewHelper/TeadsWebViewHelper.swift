@@ -186,7 +186,7 @@ import WebKit
     }
 
     private func createContainerView(topOffset: CGFloat, bottomOffset: CGFloat) -> UIView {
-        let container = UIView()
+        let container = PassthroughView()
         container.clipsToBounds = true
         container.translatesAutoresizingMaskIntoConstraints = false
         if let webView = webView {
@@ -452,5 +452,18 @@ extension TeadsWebViewHelper {
         let bottom: CGFloat
         let right: CGFloat
         let left: CGFloat
+    }
+}
+
+// MARK: PassthroughView
+
+class PassthroughView: UIView {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        for view in subviews {
+            if view.isUserInteractionEnabled, view.point(inside: convert(point, to: view), with: event) {
+                return true
+            }
+        }
+        return false
     }
 }
