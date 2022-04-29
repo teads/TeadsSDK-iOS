@@ -30,14 +30,10 @@
 		B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
 		B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */; };
 		B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */; };
-		B5966D20269DCF2D005CA2FF /* InReadMopubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */; };
-		B5966D21269DCFB9005CA2FF /* InReadMopubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */; };
 		B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
 		B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
 		C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */; };
-		E906CDA826B81D4200E92576 /* MoPubNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */; };
-		E906CDA926B81D4200E92576 /* MoPubNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */; };
 		E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */; };
 		E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */; };
 		E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */; };
@@ -45,7 +41,6 @@
 		E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */; };
 		E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */; };
 		E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */; };
-		E9984EF126AF3CCC000D42D3 /* NativeMopubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EE926AF3CCC000D42D3 /* NativeMopubTableViewController.swift */; };
 		E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */; };
 		E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */; };
 		E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */; };
@@ -77,7 +72,6 @@
 		408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootImageViewLabelCollectionViewCell.swift; sourceTree = "<group>"; };
-		408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadMopubTableViewController.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,11 +94,8 @@
 		B5555A411F7CDF80007406D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectScrollViewController.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
-		B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadMopubScrollViewController.swift; sourceTree = "<group>"; };
 		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
-		E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoPubNativeAdView.xib; sourceTree = "<group>"; };
-		E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeAdView.swift; sourceTree = "<group>"; };
 		E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLovinNativeAdView.xib; sourceTree = "<group>"; };
 		E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinNativeAdView.swift; sourceTree = "<group>"; };
 		E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAppLovinTableViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +103,6 @@
 		E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewController.swift; sourceTree = "<group>"; };
 		E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdmobTableViewController.swift; sourceTree = "<group>"; };
-		E9984EE926AF3CCC000D42D3 /* NativeMopubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeMopubTableViewController.swift; sourceTree = "<group>"; };
 		E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArticleNativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,14 +146,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		40B9A0C525398B0400A1D9DF /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				408A2D50253DC5A200CCFF44 /* InReadMopubTableViewController.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
 		40D289EA25384E5A0031A64D /* RootController */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +178,6 @@
 			children = (
 				40D289EE25384E9E0031A64D /* Direct */,
 				40D289F325384F240031A64D /* Admob */,
-				40D289F425384F2F0031A64D /* Mopub */,
 				B5EBAF5D256559A900B0DAFA /* SAS */,
 				E9B7170327C7962700FB7DCB /* AppLovin */,
 			);
@@ -250,15 +231,6 @@
 			path = Admob;
 			sourceTree = "<group>";
 		};
-		40D289F425384F2F0031A64D /* Mopub */ = {
-			isa = PBXGroup;
-			children = (
-				40B9A0C525398B0400A1D9DF /* TableView */,
-				40D28A4D25388F270031A64D /* ScrollView */,
-			);
-			path = Mopub;
-			sourceTree = "<group>";
-		};
 		40D28A25253853450031A64D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,14 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */,
-			);
-			path = ScrollView;
-			sourceTree = "<group>";
-		};
-		40D28A4D25388F270031A64D /* ScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				B5D8037824E3E6C800C0AAF6 /* InReadMopubScrollViewController.swift */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -452,7 +416,6 @@
 			children = (
 				E9984ED626AF3CCC000D42D3 /* Direct */,
 				E9984EDB26AF3CCC000D42D3 /* Admob */,
-				E9984EE526AF3CCC000D42D3 /* Mopub */,
 				E954312227CD038A005004B4 /* AppLovin */,
 			);
 			path = Native;
@@ -495,24 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		E9984EE526AF3CCC000D42D3 /* Mopub */ = {
-			isa = PBXGroup;
-			children = (
-				E906CDA726B81D4200E92576 /* MoPubNativeAdView.swift */,
-				E906CDA626B81D4200E92576 /* MoPubNativeAdView.xib */,
-				E9984EE826AF3CCC000D42D3 /* TableView */,
-			);
-			path = Mopub;
-			sourceTree = "<group>";
-		};
-		E9984EE826AF3CCC000D42D3 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				E9984EE926AF3CCC000D42D3 /* NativeMopubTableViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -651,7 +596,6 @@
 				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
 				E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */,
 				B50425F6252F436000ABF07D /* sample.html in Resources */,
-				E906CDA826B81D4200E92576 /* MoPubNativeAdView.xib in Resources */,
 				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
 				F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */,
 				B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */,
@@ -678,25 +622,21 @@
 				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPubSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Smart-Core-SDK/SCSCoreKit.framework/SCSCoreKit",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Smart-Display-SDK/SASDisplayKit.framework/SASDisplayKit",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/TeadsSDK.framework/TeadsSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/OMSDK_Teadstv.framework/OMSDK_Teadstv",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/mopub-ios-sdk/Core/OMSDK_Mopub.framework/OMSDK_Mopub",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPubSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SASDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Teadstv.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -745,7 +685,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.3.0/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.3.3/AppLovinSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -795,7 +735,6 @@
 				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
 				E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */,
 				B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */,
-				E906CDA926B81D4200E92576 /* MoPubNativeAdView.swift in Sources */,
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
 				E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */,
 				E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */,
@@ -811,12 +750,9 @@
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B56A8ABA26988C780090A14A /* InReadDirectScrollViewController.swift in Sources */,
 				B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */,
-				E9984EF126AF3CCC000D42D3 /* NativeMopubTableViewController.swift in Sources */,
-				B5966D21269DCFB9005CA2FF /* InReadMopubScrollViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
-				B5966D20269DCF2D005CA2FF /* InReadMopubTableViewController.swift in Sources */,
 				E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
@@ -1033,8 +969,6 @@
 					"-framework",
 					"\"MessageUI\"",
 					"-framework",
-					"\"MoPubSDK\"",
-					"-framework",
 					"\"MobileCoreServices\"",
 					"-framework",
 					"\"QuartzCore\"",
@@ -1131,8 +1065,6 @@
 					"\"MediaPlayer\"",
 					"-framework",
 					"\"MessageUI\"",
-					"-framework",
-					"\"MoPubSDK\"",
 					"-framework",
 					"\"MobileCoreServices\"",
 					"-framework",

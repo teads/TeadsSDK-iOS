@@ -45,6 +45,7 @@ import WebKit
 
     // only webView.scrollView should retain adView as subView
     weak var adView: UIView?
+    weak var containerView: UIView?
 
     private var adViewConstraints = [NSLayoutConstraint]()
 
@@ -151,15 +152,16 @@ import WebKit
     /// - Parameters:
     ///   - ad: inRead ad
     ///   - adRatio: ratio of the ad
-    ///
+    ///   - topOffset: topOffset of the View is 0 in most cases,  useful if your website display a top bar and don't want the ad to overlap it
+    ///   - bottomOffset: bottomOffset of the View is 0 in most cases,  useful if your website display a bottom bar and don't want the ad to overlap it
     /// - Note:
-    ///   sould be called from
+    ///   should be called from
     ///   ```TeadsInReadAdPlacementDelegate.didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio)```
-    @objc public func openSlot(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        openSlot(adView: TeadsInReadAdView(bind: ad), adRatio: adRatio)
+    @objc public func openSlot(ad: TeadsInReadAd, adRatio: TeadsAdRatio, topOffset: CGFloat = 0.0, bottomOffset: CGFloat = 0.0) {
+        openSlot(adView: TeadsInReadAdView(bind: ad), adRatio: adRatio, topOffset: topOffset, bottomOffset: bottomOffset)
     }
 
-    @objc public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default) {
+    @objc public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default, topOffset: CGFloat = 0.0, bottomOffset: CGFloat = 0.0) {
         slotOpener = { [self] in
             // update slot with the right ratio
             self.updateSlot(adRatio: adRatio)
@@ -167,10 +169,10 @@ import WebKit
             // in case openSlot is called multiple times
             self.adView?.removeFromSuperview()
 
+            adView.translatesAutoresizingMaskIntoConstraints = false
+            self.containerView = createContainerView(topOffset: topOffset, bottomOffset: bottomOffset)
+            self.containerView?.addSubview(adView)
             self.adView = adView
-            self.webView?.scrollView.addSubview(adView)
-            self.adView?.translatesAutoresizingMaskIntoConstraints = false
-
             self.evaluateBootstrapInput(JSBootstrapInput.showPlaceholder(0)) { [weak delegate] _, error in
                 if error != nil {
                     delegate?.webViewHelperOnError(error: "openSlot failed")
@@ -181,6 +183,22 @@ import WebKit
         if isJsReady {
             slotOpener?()
         }
+    }
+
+    private func createContainerView(topOffset: CGFloat, bottomOffset: CGFloat) -> UIView {
+        let container = PassthroughView()
+        container.clipsToBounds = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+        if let webView = webView {
+            webView.scrollView.addSubview(container)
+            NSLayoutConstraint.activate([
+                container.topAnchor.constraint(equalTo: webView.topAnchor, constant: topOffset),
+                container.bottomAnchor.constraint(equalTo: webView.bottomAnchor, constant: -bottomOffset),
+                container.leadingAnchor.constraint(equalTo: webView.leadingAnchor),
+                container.trailingAnchor.constraint(equalTo: webView.trailingAnchor),
+            ])
+        }
+        return container
     }
 
     /// Update the slot height with the given ad ratio
@@ -259,11 +277,13 @@ import WebKit
             case .onTeadsJsLibReady:
                 insertSlot()
             case .onSlotStartShow:
+                adView?.isHidden = false
                 // the bootstrap calls this when the slot starts to show
                 delegate?.webViewHelperSlotStartToShow()
             case .onSlotUpdated:
                 onSlotUpdated(position: message.body as? String)
             case .onSlotStartHide:
+                adView?.isHidden = true
                 // the bootstrap calls this when the slot starts to hide
                 delegate?.webViewHelperSlotStartToHide()
             case .handleError:
@@ -432,5 +452,18 @@ extension TeadsWebViewHelper {
         let bottom: CGFloat
         let right: CGFloat
         let left: CGFloat
+    }
+}
+
+// MARK: PassthroughView
+
+class PassthroughView: UIView {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        for view in subviews {
+            if view.isUserInteractionEnabled, view.point(inside: convert(point, to: view), with: event) {
+                return true
+            }
+        }
+        return false
     }
 }
