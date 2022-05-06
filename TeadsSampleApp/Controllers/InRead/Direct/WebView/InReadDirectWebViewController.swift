@@ -34,10 +34,6 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
             // settings.enableDebug()
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.tv")
-        })
     }
 
     // MARK: WKNavigationDelegate
@@ -108,6 +104,13 @@ extension InReadDirectWebViewController: TeadsWebViewHelperDelegate {
 
     func webViewHelperSlotStartToHide() {
         print("webViewHelperSlotStartToHide")
+    }
+
+    func webViewHelperSlotFoundSuccessfully() {
+        print("webViewHelperSlotFoundSuccessfully")
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+            settings.pageUrl("https://www.teads.tv")
+        })
     }
 
     func webViewHelperSlotNotFound() {
