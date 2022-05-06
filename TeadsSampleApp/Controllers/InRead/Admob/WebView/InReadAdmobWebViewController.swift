@@ -38,26 +38,6 @@ class InReadAdmobWebViewController: TeadsViewController {
 
         /// init helper
         webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
-
-        let adSettings = TeadsAdapterSettings { settings in
-            settings.enableDebug()
-            settings.disableLocation()
-            try? settings.registerAdView(bannerView, delegate: self)
-
-            // Needed by european regulation
-            // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
-            // settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
-
-            // The article url if you are a news publisher
-            // settings.pageUrl("http://page.com/article1")
-        }
-
-        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
-
-        let request = GADRequest()
-        request.register(customEventExtras)
-
-        bannerView.load(request)
     }
 }
 
@@ -108,6 +88,28 @@ extension InReadAdmobWebViewController: TeadsWebViewHelperDelegate {
 
     func webViewHelperSlotStartToHide() {
         print("webViewHelperSlotStartToHide")
+    }
+
+    func webViewHelperSlotFoundSuccessfully() {
+        print("webViewHelperSlotFoundSuccessfully")
+        let adSettings = TeadsAdapterSettings { settings in
+            settings.enableDebug()
+            try? settings.registerAdView(bannerView, delegate: self)
+
+            // Needed by european regulation
+            // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
+            // settings.userConsent(subjectToGDPR: "1", consent: "0001100101010101")
+
+            // The article url if you are a news publisher
+            // settings.pageUrl("http://page.com/article1")
+        }
+
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
+
+        let request = GADRequest()
+        request.register(customEventExtras)
+
+        bannerView.load(request)
     }
 
     func webViewHelperSlotNotFound() {
