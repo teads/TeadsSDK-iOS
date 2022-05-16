@@ -66,10 +66,10 @@ PODS:
 
 DEPENDENCIES:
   - SwiftFormat/CLI
-  - TeadsAdMobAdapter (from `./`)
-  - TeadsAppLovinAdapter (from `./`)
-  - TeadsSASAdapter (from `./`)
-  - TeadsSDK (from `./`)
+  - TeadsAdMobAdapter (~> 5.0)
+  - TeadsAppLovinAdapter (~> 5.0)
+  - TeadsSASAdapter (~> 5.0)
+  - TeadsSDK (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -83,16 +83,10 @@ SPEC REPOS:
     - Smart-Core-SDK
     - Smart-Display-SDK
     - SwiftFormat
-
-EXTERNAL SOURCES:
-  TeadsAdMobAdapter:
-    :path: "./"
-  TeadsAppLovinAdapter:
-    :path: "./"
-  TeadsSASAdapter:
-    :path: "./"
-  TeadsSDK:
-    :path: "./"
+    - TeadsAdMobAdapter
+    - TeadsAppLovinAdapter
+    - TeadsSASAdapter
+    - TeadsSDK
 
 SPEC CHECKSUMS:
   AppLovinSDK: 6ed446d284d8852520a786ad5a91796f1730c3f3
@@ -110,6 +104,6 @@ SPEC CHECKSUMS:
   TeadsSASAdapter: 4b9712a8e94722578fb38feffcdff7ed53f67afb
   TeadsSDK: 63cd22c0351854eee577ac0960fe5cba4b2b1bc6
 
-PODFILE CHECKSUM: 55210a42754a193fd1cc6ffc7f79bbae342aea73
+PODFILE CHECKSUM: 9003282ee893b30b3d0c343b3a7cf4667732b291
 
 COCOAPODS: 1.11.2

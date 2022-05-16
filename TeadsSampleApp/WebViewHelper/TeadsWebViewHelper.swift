@@ -71,6 +71,8 @@ import WebKit
     private var slotOpener: (() -> Void)?
     private var slotOpportunity: ((WKWebView, SlotPosition) -> Void)?
 
+    private static let urlKeyPath = NSExpression(forKeyPath: \WKWebView.url).keyPath
+
     /// Init the Teads webView helper
     ///
     /// - Note: handles slot position injection from TeadsSDK
@@ -87,6 +89,9 @@ import WebKit
         self.delegate = delegate
         super.init()
 
+        // URL Change observer
+        webView.addObserver(self, forKeyPath: Self.urlKeyPath, options: .new, context: nil)
+
         // add message handler method name to communicate with the wkwebview
         JSBootstrapOutput.allCases.map(\.rawValue).forEach {
             webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: $0)
@@ -102,6 +107,15 @@ import WebKit
         }
         webViewObservation = nil
         NotificationCenter.default.removeObserver(self)
+    }
+
+    override public func observeValue(forKeyPath keyPath: String?, of _: Any?, change: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
+        if keyPath == Self.urlKeyPath,
+           let _ = change?[NSKeyValueChangeKey.newKey] {
+            adView?.removeFromSuperview()
+            containerView?.removeFromSuperview()
+            slotPosition = nil
+        }
     }
 
     /// Inject Teads' bootstrap in the webview
@@ -176,6 +190,7 @@ import WebKit
 
             // in case openSlot is called multiple times
             self.adView?.removeFromSuperview()
+            self.containerView?.removeFromSuperview()
 
             adView.isHidden = true
             adView.translatesAutoresizingMaskIntoConstraints = false
@@ -198,13 +213,14 @@ import WebKit
         let container = PassthroughView()
         container.clipsToBounds = true
         container.translatesAutoresizingMaskIntoConstraints = false
-        if let webView = webView {
+        if let webView = webView,
+           let slotPosition = slotPosition {
             webView.scrollView.addSubview(container)
             NSLayoutConstraint.activate([
                 container.topAnchor.constraint(equalTo: webView.topAnchor, constant: topOffset),
                 container.bottomAnchor.constraint(equalTo: webView.bottomAnchor, constant: -bottomOffset),
-                container.leadingAnchor.constraint(equalTo: webView.leadingAnchor),
-                container.trailingAnchor.constraint(equalTo: webView.trailingAnchor),
+                container.leadingAnchor.constraint(equalTo: webView.leadingAnchor, constant: slotPosition.left),
+                container.widthAnchor.constraint(equalToConstant: slotPosition.right - slotPosition.left),
             ])
         }
         return container
@@ -473,7 +489,10 @@ extension TeadsWebViewHelper {
 class PassthroughView: UIView {
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         for view in subviews {
-            if view.isUserInteractionEnabled, view.point(inside: convert(point, to: view), with: event) {
+            if point.y > 0,
+               point.y < bounds.size.height,
+               view.isUserInteractionEnabled,
+               view.point(inside: convert(point, to: view), with: event) {
                 return true
             }
         }
