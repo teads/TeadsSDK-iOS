@@ -163,8 +163,6 @@ import WebKit
                 self?.delegate?.webViewHelperOnError?(error: "insertSlot failed")
                 self?.delegate?.webViewHelperSlotNotFound?()
                 self?.noSlotTimer?.invalidate()
-            } else {
-                self?.slotOpener?()
             }
         }
     }
@@ -331,7 +329,7 @@ import WebKit
 
         adViewHTMLElementWidth = position.right - position.left
         slotPosition = position
-
+        slotOpener?()
         guard let webView = webView else {
             return
         }
@@ -348,10 +346,6 @@ import WebKit
                 return false
             }
             return true
-        }
-        if shouldUpdateAdViewFrame {
-            // prevent an UI glitch when autolayout constraint is activated, prevent adReached sent too early also
-            adView.frame = CGRect(x: position.left, y: position.top, width: adViewHTMLElementWidth, height: adViewHTMLElementHeight)
         }
 
         NSLayoutConstraint.deactivate(adViewConstraints)
