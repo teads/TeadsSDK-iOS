@@ -13,9 +13,10 @@ import TeadsSDK
 import UIKit
 import WebKit
 
-/// follow slot javascript lyfecycle
-/// - Note:
-/// method will be triggered on mainThread or thead from original call
+/// Follow slot javascript lyfecycle
+///
+/// Methods will be triggered on mainThread or thead from original call
+///
 @objc public protocol TeadsWebViewHelperDelegate {
     /// This is called when the teads slot is shown.
     @objc optional func webViewHelperSlotStartToShow()
@@ -25,12 +26,12 @@ import WebKit
 
     /// This is called when the html element slot has been found.
     /// - Note
-    /// This indicates slot specified with `selector` on `TeadsWebViewHelper` init has been found in webview html DOM.
+    /// This indicates slot specified with `selector` on ``TeadsWebViewHelper/init(webView:selector:delegate:)`` has been found in webview html DOM.
     @objc optional func webViewHelperSlotFoundSuccessfully()
 
     /// This is called when no slot is found.
     /// - Note
-    /// This indicates slot specified with `selector` on `TeadsWebViewHelper` init has not been found in webview html DOM.
+    /// This indicates slot specified with `selector` on ``TeadsWebViewHelper/init(webView:selector:delegate:)`` has **NOT** been found in webview html DOM.
     @objc optional func webViewHelperSlotNotFound()
 
     /// This is called when an error occured with the reason.
@@ -56,15 +57,19 @@ import WebKit
 
     // latest slot position updated
     private var slotPosition: SlotPosition?
-    private var isSlotFound: Bool {
-        return slotPosition != nil
+    private var isSlotNotFound: Bool {
+        return slotPosition == nil
     }
 
     // width of element in Web content, needed to compute ratio
-    public var adViewHTMLElementWidth: CGFloat = 0
+    public var adViewHTMLElementWidth: CGFloat {
+        if let slotPosition = slotPosition {
+            return slotPosition.right - slotPosition.left
+        }
+        return .zero
+    }
 
     private var webViewObservation: NSKeyValueObservation?
-    private var orientationStateObserver: NSObjectProtocol?
 
     private var isJsReady = false
 
@@ -79,7 +84,7 @@ import WebKit
     ///
     /// - Parameters:
     ///   - webView: webView where you want to add your ad. The receiver holds a weak reference only.
-    ///   - selector: name of the html identifier where you want your slot to open `#mySelector`
+    ///   - selector: name of the html identifier where you want your slot to open `#mySelector` will pick the first [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) found in the DOM
     ///   - delegate: optional delegate to follow slot javascript lyfecycle
     ///
     /// - Important: should be called from **main Thread**
@@ -109,6 +114,8 @@ import WebKit
         NotificationCenter.default.removeObserver(self)
     }
 
+    /// Track url requests change in order to reset adView and position tracking
+    /// When position is located a new time, alert through ``TeadsWebViewHelperDelegate/webViewHelperSlotFoundSuccessfully()``
     override public func observeValue(forKeyPath keyPath: String?, of _: Any?, change: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
         if keyPath == Self.urlKeyPath,
            let _ = change?[NSKeyValueChangeKey.newKey] {
@@ -183,6 +190,10 @@ import WebKit
 
     @objc public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default, topOffset: CGFloat = 0.0, bottomOffset: CGFloat = 0.0) {
         slotOpener = { [self] in
+            guard let slotPosition = self.slotPosition else {
+                return
+            }
+
             // update slot with the right ratio
             self.updateSlot(adRatio: adRatio)
 
@@ -195,6 +206,7 @@ import WebKit
             self.containerView = createContainerView(topOffset: topOffset, bottomOffset: bottomOffset)
             self.containerView?.addSubview(adView)
             self.adView = adView
+            self.updateAdViewPosition(position: slotPosition)
             self.evaluateBootstrapInput(JSBootstrapInput.showPlaceholder(0)) { [weak delegate] _, error in
                 if error != nil {
                     delegate?.webViewHelperOnError?(error: "openSlot failed")
@@ -202,9 +214,7 @@ import WebKit
             }
             self.slotOpener = nil
         }
-        if isSlotFound {
-            slotOpener?()
-        }
+        slotOpener?()
     }
 
     private func createContainerView(topOffset: CGFloat, bottomOffset: CGFloat) -> UIView {
@@ -276,17 +286,29 @@ import WebKit
 
     // MARK: JS Interface
 
-    /// the bootstrap calls this when the slot is updated
+    /// the bootstrap calls this when the slot is updated: slot found or moved to another position due to runtime evolution of the HTML content
     ///
     /// - Parameter position: json describing the position with top/bottom/right/left
     private func onSlotUpdated(position: String?) {
-        if let data = position?.data(using: .utf8),
-           let slotPosition = try? JSONDecoder().decode(SlotPosition.self, from: data) {
-            noSlotTimer?.invalidate()
-            updateAdViewPosition(position: slotPosition)
-        } else {
+        guard let data = position?.data(using: .utf8),
+              let slotPosition = try? JSONDecoder().decode(SlotPosition.self, from: data) else {
             delegate?.webViewHelperOnError?(error: "The json is malformed")
+            return
         }
+        noSlotTimer?.invalidate()
+
+        if isSlotNotFound {
+            // triggered once: only when slot is found
+            delegate?.webViewHelperSlotFoundSuccessfully?()
+        }
+
+        self.slotPosition = slotPosition
+        guard let webView = webView else {
+            return
+        }
+        slotOpportunity?(webView, slotPosition)
+        slotOpener?()
+        updateAdViewPosition(position: slotPosition)
     }
 
     // MARK: WKScriptMessageHandler
@@ -318,24 +340,12 @@ import WebKit
         }
     }
 
-    /// Change the constraint of the ad so it follows what the bootstrap ask
+    /// Change the constraint of the ad so it follows DOM position
     ///
     /// - Parameters:
     ///   - position: top/bottom/right/left position of the slot
     private func updateAdViewPosition(position: SlotPosition) {
-        if !isSlotFound {
-            delegate?.webViewHelperSlotFoundSuccessfully?()
-        }
-
-        adViewHTMLElementWidth = position.right - position.left
-        slotPosition = position
-        slotOpener?()
-        guard let webView = webView else {
-            return
-        }
-        slotOpportunity?(webView, position)
-
-        guard let adView = adView else {
+        guard let webView = webView, let adView = adView else {
             return
         }
 
