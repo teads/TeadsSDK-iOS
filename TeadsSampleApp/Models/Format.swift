@@ -77,6 +77,7 @@ let inReadAdmobProvider = Provider(name: .admob, integrations: [
     scrollViewIntegration,
     tableViewIntegration,
     webViewIntegration,
+    swiftUIIntegration,
 ], isSelected: false)
 let inReadSASProvider = Provider(name: .sas, integrations: [
     scrollViewIntegration,
@@ -117,6 +118,7 @@ let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollVi
 let tableViewIntegration = Integration(name: "TableView", imageName: "TableView")
 let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
 let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
+let swiftUIIntegration = Integration(name: "SwiftUI", imageName: "SwiftUI")
 
 enum PID {
     static let directLandscape = "84242"

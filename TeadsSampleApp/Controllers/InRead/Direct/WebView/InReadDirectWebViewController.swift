@@ -24,7 +24,7 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
             return
         }
         let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Direct WebView Integration")
-        
+
         // The html identifier where you want your slot to open`
         let domCSSSlotSelector = "#teads-placement-slot"
         webView.navigationDelegate = self

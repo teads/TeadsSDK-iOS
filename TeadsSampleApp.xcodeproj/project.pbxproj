@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BADB527284902E4001FE178 /* InReadAdMobSwiftUIBannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BADB523284902E3001FE178 /* InReadAdMobSwiftUIBannerAdView.swift */; };
+		1BADB528284902E4001FE178 /* InReadAdmobSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BADB524284902E3001FE178 /* InReadAdmobSwiftUIView.swift */; };
+		1BADB52C284903BE001FE178 /* InReadAdmobHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BADB52B284903BE001FE178 /* InReadAdmobHostingController.swift */; };
 		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
 		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
 		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
@@ -66,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BADB523284902E3001FE178 /* InReadAdMobSwiftUIBannerAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadAdMobSwiftUIBannerAdView.swift; sourceTree = "<group>"; };
+		1BADB524284902E3001FE178 /* InReadAdmobSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InReadAdmobSwiftUIView.swift; sourceTree = "<group>"; };
+		1BADB52B284903BE001FE178 /* InReadAdmobHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobHostingController.swift; sourceTree = "<group>"; };
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +142,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BADB522284902E3001FE178 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				1BADB523284902E3001FE178 /* InReadAdMobSwiftUIBannerAdView.swift */,
+				1BADB524284902E3001FE178 /* InReadAdmobSwiftUIView.swift */,
+				1BADB52B284903BE001FE178 /* InReadAdmobHostingController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		4079F241252CBE7300B0AC31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +240,7 @@
 		40D289F325384F240031A64D /* Admob */ = {
 			isa = PBXGroup;
 			children = (
+				1BADB522284902E3001FE178 /* SwiftUI */,
 				40D28A49253887720031A64D /* ScrollView */,
 				40D28A25253853450031A64D /* TableView */,
 				40D28A41253879140031A64D /* WebView */,
@@ -738,6 +755,7 @@
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
 				E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */,
 				E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */,
+				1BADB52C284903BE001FE178 /* InReadAdmobHostingController.swift in Sources */,
 				E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */,
 				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
 				B5966D1C269C7690005CA2FF /* InReadDirectCollectionViewController.swift in Sources */,
@@ -748,10 +766,12 @@
 				B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
+				1BADB528284902E4001FE178 /* InReadAdmobSwiftUIView.swift in Sources */,
 				B56A8ABA26988C780090A14A /* InReadDirectScrollViewController.swift in Sources */,
 				B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
+				1BADB527284902E4001FE178 /* InReadAdMobSwiftUIBannerAdView.swift in Sources */,
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
 				E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
