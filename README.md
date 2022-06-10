@@ -27,13 +27,13 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 
 ## 📃 Table of Contents
 
-- [Integration Documentation](#integration-documentation)
+- [Integration Documentation](#-integration-documentation)
 - [Migrating from v4 to v5](#-migrating-from-v4-to-v5)
 - [Run the sample app](#-run-the-sample-app)
 - [Installation](#-install-the-teads-sdk-ios-framework)
 - [Mediation Adapters](#-mediation-adapters)
 - [Certifications](#-certifications)
-- [Changelog](#-changelog)
+- [Changelog](#%EF%B8%8F-changelog)
 
 ## 🚀 Integration Documentation
 

@@ -24,20 +24,19 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
             return
         }
         let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Direct WebView Integration")
+        
+        // The html identifier where you want your slot to open`
+        let domCSSSlotSelector = "#teads-placement-slot"
         webView.navigationDelegate = self
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
         /// init helper
-        webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
+        webViewHelper = TeadsWebViewHelper(webView: webView, selector: domCSSSlotSelector, delegate: self)
 
         let pSettings = TeadsAdPlacementSettings { _ in
             // settings.enableDebug()
         }
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.tv")
-        })
     }
 
     // MARK: WKNavigationDelegate
@@ -108,6 +107,13 @@ extension InReadDirectWebViewController: TeadsWebViewHelperDelegate {
 
     func webViewHelperSlotStartToHide() {
         print("webViewHelperSlotStartToHide")
+    }
+
+    func webViewHelperSlotFoundSuccessfully() {
+        print("webViewHelperSlotFoundSuccessfully")
+        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+            settings.pageUrl("https://www.teads.tv")
+        })
     }
 
     func webViewHelperSlotNotFound() {
