@@ -529,7 +529,6 @@
 			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsSampleApp" */;
 			buildPhases = (
 				30717AAFC9E6D6D8951DDAD6 /* [CP] Check Pods Manifest.lock */,
-				E96C1F9B27E495D900151530 /* SwiftFormat */,
 				B5555A2E1F7CDF80007406D4 /* Sources */,
 				B5555A2F1F7CDF80007406D4 /* Frameworks */,
 				B5555A301F7CDF80007406D4 /* Resources */,
@@ -712,24 +711,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E96C1F9B27E495D900151530 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

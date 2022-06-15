@@ -12,7 +12,7 @@ import TeadsSDK
 
 @available(iOS 14.0, *)
 struct InReadAdmobSwiftUIView: View {
-    @State private var gamBannerAdView = GAMBannerView(adSize: GADAdSizeFluid)
+    @State private var gamBannerAdView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
     @State private var height: CGFloat = 0
 
     init() {
