@@ -34,4 +34,9 @@ import AppLovinSDK
             parentAdatper?.adOpportunityView = nil
         }
     }
+
+    override func performClick() {
+        parentAdatper?.nativeAd?.performTap()
+        super.performClick()
+    }
 }

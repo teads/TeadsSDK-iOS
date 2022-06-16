@@ -27,14 +27,14 @@ extension UIKit.UIView {
   @objc public static let zero: TeadsSDK.TeadsAdRatio
   @objc public static let `default`: TeadsSDK.TeadsAdRatio
   @objc(calculateHeightForWidth:) final public func calculateHeight(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-  final public func value(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+  @objc final public func value(for width: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class AdChoicesComponent : TeadsSDK.OverlayComponent {
   final public let clickThroughUrl: Foundation.URL
   @objc deinit
 }
-@objc public protocol TeadsNativeAdPlacementDelegate : TeadsSDK.TeadsdPlacementDelegate {
+@objc public protocol TeadsNativeAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
 }
 @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
@@ -43,7 +43,7 @@ extension UIKit.UIView {
     @objc set
   }
   @discardableResult
-  final public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
+  @objc final public func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
   @objc deinit
 }
 @usableFromInline
@@ -59,8 +59,12 @@ internal protocol AnyEncodableProtocol {
   public static let integrationSAS: Swift.String
   public static let integrationTypeKey: Swift.String
   public static let integrationVersionKey: Swift.String
-  final public var adRequestSettings: TeadsSDK.TeadsAdRequestSettings
-  final public var adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings
+  final public var adRequestSettings: TeadsSDK.TeadsAdRequestSettings {
+    get
+  }
+  final public var adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings {
+    get
+  }
   public typealias BuildTeadsAdapterSettings = (TeadsSDK.TeadsAdapterSettings) -> Swift.Void
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public init()
@@ -73,7 +77,7 @@ internal protocol AnyEncodableProtocol {
   @objc final public func enableLightEndScreen()
   @available(*, deprecated, message: "This is not used anymore and will be removed in a future version of the SDK")
   @objc final public func disableMediaPreload()
-  @objc final public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v1, cmpSdkID: Swift.Int = 0)
+  @objc final public func userConsent(subjectToGDPR: Swift.String, consent: Swift.String, tcfVersion: TeadsSDK.TCFVersion = .v2, cmpSdkID: Swift.Int = 0)
   @objc final public func setUsPrivacy(consent: Swift.String)
   @objc final public func disableBatteryMonitoring()
   @objc final public func addExtras(_ value: Swift.String, for key: Swift.String)
@@ -116,7 +120,7 @@ internal protocol AnyDecodableProtocol {
   var value: Any { get }
   init<T>(_ value: T?)
 }
-@objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsdPlacementDelegate {
+@objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
   @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
 }
@@ -161,6 +165,7 @@ internal protocol AnyDecodableProtocol {
     @objc get
   }
   @objc final public func register(containerView: UIKit.UIView)
+  final public func performTap()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
@@ -170,19 +175,19 @@ internal protocol AnyDecodableProtocol {
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
   @objc final public func enableValidationMode()
-  @objc final public func pageUrl(_ urlString: Swift.String)
+  @objc final public func pageUrl(_ rawUrlString: Swift.String)
   @objc final public func addExtras(_ value: Swift.String, for key: Swift.String)
   public typealias BuildTeadsAdRequestSettings = (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void
   @objc public init(build: (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void)
   @objc override dynamic public init()
   required public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
-  @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: TeadsSDK.TeadsMediatedAdViewDelegate?) throws
   @objc deinit
 }
 public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
 public typealias TeadsInReadAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
 @objc public enum TCFVersion : Swift.Int, Swift.Codable {
+  @available(*, deprecated, message: "no longer supported since 15 August 2020")
   case v1 = 1
   case v2 = 2
   public init?(rawValue: Swift.Int)
@@ -196,7 +201,7 @@ extension UIKit.UIButton {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
   final public let url: Foundation.URL
-  final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((Swift.Error) -> Swift.Void)? = nil)
+  @objc final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((Swift.Error) -> Swift.Void)? = nil)
   final public var image: UIKit.UIImage? {
     get
   }
@@ -208,13 +213,13 @@ extension UIKit.UIButton {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsAdChoicesView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) public init(binding component: TeadsSDK.CommonComponent? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public init(binding component: TeadsSDK.OverlayComponent? = nil)
   @objc deinit
 }
 @objc public protocol TeadsLogMessageDelegate {
   @objc optional func didLogMessage(message: Swift.String)
 }
-@objc public protocol TeadsdPlacementDelegate : TeadsSDK.TeadsLogMessageDelegate {
+@objc public protocol TeadsAdPlacementDelegate : TeadsSDK.TeadsLogMessageDelegate {
   @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
   @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
 }
@@ -297,7 +302,7 @@ extension TeadsSDK.TeadsInReadAd {
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var callToActionButton: UIKit.UIButton?
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var ratingView: UIKit.UIView?
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var priceLabel: UIKit.UILabel?
-  @_Concurrency.MainActor(unsafe) public func bind(_ ad: TeadsSDK.TeadsNativeAd)
+  @objc @_Concurrency.MainActor(unsafe) public func bind(_ ad: TeadsSDK.TeadsNativeAd)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -310,7 +315,7 @@ extension TeadsSDK.TeadsInReadAd {
 }
 @_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
   @objc deinit
-  public func didTapView()
+  @objc public func didTapView()
 }
 extension TeadsSDK.CommonComponent {
   public var text: Swift.String? {

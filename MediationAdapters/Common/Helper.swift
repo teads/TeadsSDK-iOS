@@ -14,7 +14,7 @@ struct Helper {
     }
 }
 
-/// Convenience closure typealias for `TeadsAdSettings`
+/// Convenience closure typealias for ``TeadsAdSettings``
 ///
 /// Has been renamed in favor of TeadsAdapterSettings
 @available(*, deprecated, renamed: "TeadsAdapterSettings", message: "Only relevant when using TeadsAdMobAdapter, TeadsAppLovinAdapter, TeadsSmartAdapter")
