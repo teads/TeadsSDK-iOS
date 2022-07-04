@@ -40,8 +40,9 @@ class InReadDirectTableViewController: TeadsViewController {
         let placementSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug()
         }
+        
+        //keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
-
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")
         })
