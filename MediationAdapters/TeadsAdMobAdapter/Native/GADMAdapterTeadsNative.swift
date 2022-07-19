@@ -15,6 +15,7 @@ final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
     private var placement: TeadsNativeAdPlacement?
     private var nativeAd: TeadsNativeAd?
     private var adOpportunityView: TeadsAdOpportunityTrackerView?
+    private var adSettings: TeadsAdapterSettings?
 
     @objc override public required init() {
         super.init()
@@ -29,10 +30,12 @@ final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
 
         // Prepare ad settings
         guard let adSettings = try? TeadsAdapterSettings.instance(fromAdmobParameters: request.additionalParameters) else {
+            delegate?.customEventNativeAd(self, didFailToLoadWithError: TeadsAdapterErrorCode.serverParameterError)
             return
         }
         placement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        self.adSettings = adSettings
     }
 
     func handlesUserClicks() -> Bool {
@@ -49,7 +52,7 @@ final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {
 extension GADMAdapterTeadsNative: TeadsNativeAdPlacementDelegate {
     func didReceiveAd(ad: TeadsNativeAd) {
         nativeAd = ad
-        let mediatedNativeAd = GADMAdapterTeadsMediatedNativeAd(teadsNativeAd: ad, adOpportunityView: adOpportunityView)
+        let mediatedNativeAd = GADMAdapterTeadsMediatedNativeAd(teadsNativeAd: ad, adOpportunityView: adOpportunityView, adSettings: adSettings)
         nativeAd?.delegate = mediatedNativeAd
         nativeAd?.playbackDelegate = mediatedNativeAd
 

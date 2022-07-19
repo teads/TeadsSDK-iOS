@@ -17,11 +17,14 @@ final class GADMAdapterTeadsMediatedNativeAd: NSObject {
     var teadsMediaView: TeadsMediaView?
     weak var viewController: UIViewController?
 
-    init(teadsNativeAd: TeadsNativeAd, adOpportunityView: TeadsAdOpportunityTrackerView?) {
+    init(teadsNativeAd: TeadsNativeAd, adOpportunityView: TeadsAdOpportunityTrackerView?, adSettings: TeadsAdapterSettings?) {
         self.teadsNativeAd = teadsNativeAd
         self.adOpportunityView = adOpportunityView
         if let video = teadsNativeAd.video {
             teadsMediaView = TeadsMediaView(videoComponent: video)
+            if let mediaScale = adSettings?.mediaScale {
+                teadsMediaView?.mediaScale = mediaScale
+            }
         }
         super.init()
         teadsNativeAd.image?.loadImage(async: false) { [weak self] image in
@@ -79,8 +82,7 @@ extension GADMAdapterTeadsMediatedNativeAd: GADMediatedUnifiedNativeAd {
     }
 
     var mediaView: UIView? {
-        // Used to return the mediaView if video content
-        // Set to nil as we only handle images atm
+        // Used to return the mediaView if video content.
         return teadsMediaView
     }
 

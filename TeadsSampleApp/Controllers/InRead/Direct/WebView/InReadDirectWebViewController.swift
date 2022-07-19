@@ -36,8 +36,8 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
         let pSettings = TeadsAdPlacementSettings { _ in
             // settings.enableDebug()
         }
-        
-        //keep a strong reference to placement instance
+
+        // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
     }
 

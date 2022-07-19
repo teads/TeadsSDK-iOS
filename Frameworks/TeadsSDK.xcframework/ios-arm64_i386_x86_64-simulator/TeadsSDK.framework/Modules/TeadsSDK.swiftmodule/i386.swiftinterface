@@ -65,6 +65,9 @@ internal protocol AnyEncodableProtocol {
   final public var adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings {
     get
   }
+  @objc final public var mediaScale: TeadsSDK.MediaScale {
+    @objc get
+  }
   public typealias BuildTeadsAdapterSettings = (TeadsSDK.TeadsAdapterSettings) -> Swift.Void
   required public init(from decoder: Swift.Decoder) throws
   @objc override dynamic public init()
@@ -84,6 +87,7 @@ internal protocol AnyEncodableProtocol {
   @objc final public func enableDebug()
   @objc final public func enableValidationMode()
   @objc final public func pageUrl(_ urlString: Swift.String)
+  @objc final public func setMediaScale(_ mediaScale: TeadsSDK.MediaScale)
   @available(*, deprecated, renamed: "registerAdView(_:delegate:)")
   @objc final public func subscribeAdResizeDelegate(_ delegate: TeadsSDK.TeadsMediatedAdViewDelegate, forAdView adView: UIKit.UIView) throws
   @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: TeadsSDK.TeadsMediatedAdViewDelegate?) throws
@@ -107,8 +111,21 @@ extension TeadsSDK.Teads {
 extension UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
 }
+@objc public enum MediaScale : Swift.Int, Swift.Codable {
+  case scaleAspectFill = 0
+  case scaleAspectFit = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class TeadsMediaView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) final public var placeholderImage: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) final public var mediaScale: TeadsSDK.MediaScale {
+    get
+    set
+  }
   @objc @_Concurrency.MainActor(unsafe) public init(videoComponent: TeadsSDK.VideoComponent)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
@@ -173,15 +190,15 @@ internal protocol AnyDecodableProtocol {
   @_Concurrency.MainActor(unsafe) @objc override final public func removeFromSuperview()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc final public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public func enableValidationMode()
-  @objc final public func pageUrl(_ rawUrlString: Swift.String)
-  @objc final public func addExtras(_ value: Swift.String, for key: Swift.String)
+@_inheritsConvenienceInitializers @objc public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
+  @objc public func enableValidationMode()
+  @objc public func pageUrl(_ rawUrlString: Swift.String)
+  @objc public func addExtras(_ value: Swift.String, for key: Swift.String)
   public typealias BuildTeadsAdRequestSettings = (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void
   @objc public init(build: (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void)
   @objc override dynamic public init()
   required public init(from decoder: Swift.Decoder) throws
-  final public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
 public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
@@ -376,6 +393,9 @@ extension TeadsSDK.AdFailReason : Foundation.CustomNSError {
     get
   }
 }
+extension TeadsSDK.MediaScale : Swift.Equatable {}
+extension TeadsSDK.MediaScale : Swift.Hashable {}
+extension TeadsSDK.MediaScale : Swift.RawRepresentable {}
 extension TeadsSDK.TCFVersion : Swift.Equatable {}
 extension TeadsSDK.TCFVersion : Swift.Hashable {}
 extension TeadsSDK.TCFVersion : Swift.RawRepresentable {}

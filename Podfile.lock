@@ -51,18 +51,18 @@ PODS:
   - Smart-Display-SDK (7.17.1):
     - Smart-Core-SDK (~> 7.17)
   - SwiftFormat/CLI (0.49.7)
-  - TeadsAdMobAdapter (5.0.17):
+  - TeadsAdMobAdapter (5.0.18):
     - Google-Mobile-Ads-SDK (>= 8.0)
-    - TeadsSDK (= 5.0.17)
-  - TeadsAppLovinAdapter (5.0.17):
+    - TeadsSDK (= 5.0.18)
+  - TeadsAppLovinAdapter (5.0.18):
     - AppLovinSDK (>= 11.2.1)
-    - TeadsSDK (= 5.0.17)
-  - TeadsSASAdapter (5.0.17):
+    - TeadsSDK (= 5.0.18)
+  - TeadsSASAdapter (5.0.18):
     - Smart-Display-SDK (>= 7.6.2)
-    - TeadsSDK (= 5.0.17)
-  - TeadsSDK (5.0.17):
-    - TeadsSDK/Core (= 5.0.17)
-  - TeadsSDK/Core (5.0.17)
+    - TeadsSDK (= 5.0.18)
+  - TeadsSDK (5.0.18):
+    - TeadsSDK/Core (= 5.0.18)
+  - TeadsSDK/Core (5.0.18)
 
 DEPENDENCIES:
   - SwiftFormat/CLI
@@ -105,10 +105,10 @@ SPEC CHECKSUMS:
   Smart-Core-SDK: 44fa421cb9e2cabe26810c70e0919446c18f95ed
   Smart-Display-SDK: 00bcac3ab2120401bf1756ad7d3ed553090a5623
   SwiftFormat: b70e3c776a74c67ce8bd140425a8c86d4a843759
-  TeadsAdMobAdapter: 78d5afbbdeccc73f77484827ddf6718529bf25b8
-  TeadsAppLovinAdapter: d83548a77f2295dd93d54e435c1ed2b974bbc296
-  TeadsSASAdapter: 760f6f3e0ccffe65fa3d42b93ff3ba9a9c2b7754
-  TeadsSDK: 163bbfd897a05ed1a386099ee533f62cd70e23f8
+  TeadsAdMobAdapter: 5bd23755c944a351889aafe1dccc551e4f0be1b4
+  TeadsAppLovinAdapter: 5f402fab12ab60fa649b1b27b57b93660f0f6c89
+  TeadsSASAdapter: d148c6b098ac723159d4b54d9f5b8d26850bdc63
+  TeadsSDK: 05b3b809869c06a135c2dbfdbabec63717303660
 
 PODFILE CHECKSUM: 55210a42754a193fd1cc6ffc7f79bbae342aea73
 

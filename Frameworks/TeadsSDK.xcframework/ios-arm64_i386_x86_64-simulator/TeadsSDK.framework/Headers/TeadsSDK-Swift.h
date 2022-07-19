@@ -323,6 +323,15 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
+/// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
+  MediaScaleScaleAspectFill = 0,
+/// Contents scaled to fit with fixed aspect. remainder is transparent.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleAspectFit</code>.
+  MediaScaleScaleAspectFit = 1,
+};
+
 
 
 
@@ -357,17 +366,24 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
 /// Current Teads SDK Version value
 /// Value is <a href="https://semver.org/">semver</a> format compliant
+/// note:
+/// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-/// Create an inRead ad placement to request inRead ads
+/// Create an  inRead  ad placement to request inRead ads
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-/// \param pid Your Teads placement identifier for inRead ads
+/// \param pid Your Teads placement identifier for <em>inRead</em> ads
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
 /// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
+///
+/// returns:
+/// TeadsInReadAdPlacement instance, this instance must be owned/retained
 + (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -653,6 +669,9 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// A value describing the native ad media scale that is being used.
+/// This is only relevant for native ad.
+@property (nonatomic, readonly) enum MediaScale mediaScale;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Instance settings builder
 /// \param build closure to tune settings
@@ -721,6 +740,12 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// Set the native media view scale.
+/// important:
+/// This setting only apply for native ads.
+/// \param mediaScale The media scale.
+///
+- (void)setMediaScale:(enum MediaScale)mediaScale;
 - (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
 /// Register the ad view in case of mediation adapter.
 /// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
@@ -773,6 +798,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// InRead ad placement to request inRead ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -942,6 +971,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 /// Native ad placement to request native ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 @interface TeadsNativeAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -1422,6 +1455,15 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
+/// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
+  MediaScaleScaleAspectFill = 0,
+/// Contents scaled to fit with fixed aspect. remainder is transparent.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleAspectFit</code>.
+  MediaScaleScaleAspectFit = 1,
+};
+
 
 
 
@@ -1456,17 +1498,24 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
 /// Current Teads SDK Version value
 /// Value is <a href="https://semver.org/">semver</a> format compliant
+/// note:
+/// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-/// Create an inRead ad placement to request inRead ads
+/// Create an  inRead  ad placement to request inRead ads
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-/// \param pid Your Teads placement identifier for inRead ads
+/// \param pid Your Teads placement identifier for <em>inRead</em> ads
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
 /// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
+///
+/// returns:
+/// TeadsInReadAdPlacement instance, this instance must be owned/retained
 + (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1752,6 +1801,9 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// A value describing the native ad media scale that is being used.
+/// This is only relevant for native ad.
+@property (nonatomic, readonly) enum MediaScale mediaScale;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Instance settings builder
 /// \param build closure to tune settings
@@ -1820,6 +1872,12 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// Set the native media view scale.
+/// important:
+/// This setting only apply for native ads.
+/// \param mediaScale The media scale.
+///
+- (void)setMediaScale:(enum MediaScale)mediaScale;
 - (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
 /// Register the ad view in case of mediation adapter.
 /// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
@@ -1872,6 +1930,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// InRead ad placement to request inRead ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -2041,6 +2103,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 /// Native ad placement to request native ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 @interface TeadsNativeAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -2521,6 +2587,15 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
+/// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
+  MediaScaleScaleAspectFill = 0,
+/// Contents scaled to fit with fixed aspect. remainder is transparent.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleAspectFit</code>.
+  MediaScaleScaleAspectFit = 1,
+};
+
 
 
 
@@ -2555,17 +2630,24 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
 /// Current Teads SDK Version value
 /// Value is <a href="https://semver.org/">semver</a> format compliant
+/// note:
+/// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-/// Create an inRead ad placement to request inRead ads
+/// Create an  inRead  ad placement to request inRead ads
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-/// \param pid Your Teads placement identifier for inRead ads
+/// \param pid Your Teads placement identifier for <em>inRead</em> ads
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
 /// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
+///
+/// returns:
+/// TeadsInReadAdPlacement instance, this instance must be owned/retained
 + (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2851,6 +2933,9 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// A value describing the native ad media scale that is being used.
+/// This is only relevant for native ad.
+@property (nonatomic, readonly) enum MediaScale mediaScale;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Instance settings builder
 /// \param build closure to tune settings
@@ -2919,6 +3004,12 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// Set the native media view scale.
+/// important:
+/// This setting only apply for native ads.
+/// \param mediaScale The media scale.
+///
+- (void)setMediaScale:(enum MediaScale)mediaScale;
 - (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
 /// Register the ad view in case of mediation adapter.
 /// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
@@ -2971,6 +3062,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// InRead ad placement to request inRead ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -3140,6 +3235,10 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 /// Native ad placement to request native ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 @interface TeadsNativeAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
