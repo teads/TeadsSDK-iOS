@@ -23,21 +23,21 @@ class InReadAdmobWebViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /// init helper before loading html content
+        webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
+
         guard let content = Bundle.main.path(forResource: "sample", ofType: "html"),
               let contentString = try? String(contentsOfFile: content) else {
             return
         }
         let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Admob WebView Integration")
-        webView.navigationDelegate = self
+
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
         bannerView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
         bannerView.adUnitID = pid // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
-
-        /// init helper
-        webViewHelper = TeadsWebViewHelper(webView: webView, selector: "#teads-placement-slot", delegate: self)
     }
 }
 
@@ -72,12 +72,6 @@ extension InReadAdmobWebViewController: GADBannerViewDelegate {
 
     func bannerViewDidDismissScreen(_: GADBannerView) {
         print("SampleApp: banner did dismiss screen.")
-    }
-}
-
-extension InReadAdmobWebViewController: WKNavigationDelegate {
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        webViewHelper?.injectJS()
     }
 }
 

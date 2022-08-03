@@ -12,7 +12,7 @@
 (function() {
 
   var verticalSpacer = 10;
-  var showHideTimerDuration = 100; 
+  var showHideTimerDuration = 100;
   var intervalCheckPosition = 250;
   var opened = false;
   var bridge, teadsContainer, finalSize, intervalPosition, offset, heightSup, ratio, maxHeight;

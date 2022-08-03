@@ -80,14 +80,15 @@ import WebKit
 
     /// Init the Teads webView helper
     ///
-    /// - Note: handles slot position injection from TeadsSDK
+    /// Handles slot position injection from TeadsSDK
     ///
     /// - Parameters:
     ///   - webView: webView where you want to add your ad. The receiver holds a weak reference only.
     ///   - selector: name of the html identifier where you want your slot to open `#mySelector` will pick the first [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) found in the DOM
     ///   - delegate: optional delegate to follow slot javascript lyfecycle
     ///
-    /// - Important: should be called from **main Thread**
+    /// - Important: Should be called from **main Thread**: before loading html content.
+    /// - Note: Make sure bootstrap.js file is present in the same bundle of this file
     @objc public init(webView: WKWebView, selector: String, delegate: TeadsWebViewHelperDelegate? = nil) {
         self.webView = webView
         self.selector = selector
@@ -101,6 +102,14 @@ import WebKit
         JSBootstrapOutput.allCases.map(\.rawValue).forEach {
             webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: $0)
         }
+
+        guard let bootstrap = bootstrap else {
+            delegate?.webViewHelperOnError?(error: "Unable to load bootstrap.js file, make sure to append to bundle")
+            return
+        }
+
+        let bootstrapUserScript = WKUserScript(source: bootstrap, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        webView.configuration.userContentController.addUserScript(bootstrapUserScript)
     }
 
     deinit {
@@ -126,18 +135,17 @@ import WebKit
     }
 
     /// Inject Teads' bootstrap in the webview
-    /// make sure bootstrap.js file is present in same the bundle of this file
-    @objc public func injectJS() {
-        guard let webView = webView,
-              let bootStrapURL = Bundle(for: Self.self).url(forResource: "bootstrap", withExtension: "js"),
-              let data = try? Data(contentsOf: bootStrapURL) else {
-            delegate?.webViewHelperOnError?(error: "Unable to load bootstrap.js file, make sure to append to bundle")
-            return
-        }
+    @available(*, deprecated, message: "no longer needed, using WKUserScript logic to inject bootstrap automatically instead")
+    @objc public func injectJS() {}
 
+    private var bootstrap: String? {
+        guard let bootStrapURL = Bundle(for: Self.self).url(forResource: "bootstrap", withExtension: "js"),
+              let data = try? Data(contentsOf: bootStrapURL) else {
+            return nil
+        }
         let bootStrap64 = data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
 
-        let javascript = """
+        return """
         javascript:(function() { var scriptElement = document.getElementById('teadsbootstrap'); if(scriptElement) scriptElement.remove();
         var script = document.createElement('script');
         script.innerHTML = window.atob('\(bootStrap64)');
@@ -145,17 +153,13 @@ import WebKit
         script.setAttribute('type', 'text/javascript');
         document.body.appendChild(script);})()
         """
-        webView.evaluateJavaScript(javascript) { [weak delegate, weak self] _, error in
-            if error != nil {
-                delegate?.webViewHelperOnError?(error: "injection of JS failed")
-            }
-            self?.isJsReady = true
-        }
     }
 
-    /// the bootstrap calls this when it is ready
-    /// insert the slot in the webview with the selector
+    /// The bootstrap calls this when it is ready
+    ///
+    /// Insert the slot in the webview with the `selector` specified at ``TeadsWebViewHelper/init(webView:selector:delegate:)``
     private func insertSlot() {
+        isJsReady = true
         // add a timeout in case we are not able to find the slot
         let timer = Timer(timeInterval: 4, repeats: false) { [weak self] _ in
             self?.slotOpener = nil
@@ -188,6 +192,15 @@ import WebKit
         openSlot(adView: TeadsInReadAdView(bind: ad), adRatio: adRatio, topOffset: topOffset, bottomOffset: bottomOffset)
     }
 
+    /// Call the bootstrap to open the slot
+    ///
+    /// - Parameters:
+    ///   - adView: any UIView
+    ///   - adRatio: ratio of the Teads ad
+    ///   - topOffset: topOffset of the View is 0 in most cases,  useful if your website display a top bar and don't want the ad to overlap it
+    ///   - bottomOffset: bottomOffset of the View is 0 in most cases,  useful if your website display a bottom bar and don't want the ad to overlap it
+    ///
+    /// - Note: should be called from ```TeadsInReadAdPlacementDelegate.didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio)```
     @objc public func openSlot(adView: UIView, adRatio: TeadsAdRatio = .default, topOffset: CGFloat = 0.0, bottomOffset: CGFloat = 0.0) {
         slotOpener = { [self] in
             guard let slotPosition = self.slotPosition else {
@@ -235,12 +248,11 @@ import WebKit
     }
 
     /// Update the slot height with the given ad ratio
+    ///
     /// - Parameters:
     ///   - adRatio: ratio of the ad
     ///
-    /// - Note:
-    ///   sould be called from
-    ///   ```TeadsInReadAdPlacementDelegate.didUpdateRatio(ratio: TeadsAdRatio)```
+    /// - Note: sould be called from ```TeadsInReadAdPlacementDelegate.didUpdateRatio(ratio: TeadsAdRatio)```
     @objc public func updateSlot(adRatio: TeadsAdRatio) {
         guard isJsReady else {
             return
@@ -269,9 +281,7 @@ import WebKit
 
     /// Call the bootstrap to close the slot
     ///
-    /// - Note:
-    ///   sould be called from
-    ///   ```TeadsAdDelegate.onError(ad: TeadsAd, error: Error)```
+    /// - Note: sould be called from ```TeadsAdDelegate.onError(ad: TeadsAd, error: Error)```
     @objc public func closeSlot() {
         Self.mainThread { [weak adView] in
             adView?.removeFromSuperview()
