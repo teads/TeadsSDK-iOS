@@ -35,7 +35,7 @@ public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
         let adSettings = (try? TeadsAdapterSettings.instance(fromAdmobParameters: request.additionalParameters)) ?? TeadsAdapterSettings()
 
         currentBanner = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: Helper.bannerSize(for: adSize.size.width)))
-        try? adSettings.adRequestSettings.registerAdView(currentBanner!, delegate: self)
+        try? adSettings.registerAdView(currentBanner!, delegate: self)
 
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
