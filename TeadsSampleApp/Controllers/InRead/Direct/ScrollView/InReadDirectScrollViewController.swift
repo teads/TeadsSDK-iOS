@@ -21,6 +21,8 @@ class InReadDirectScrollViewController: TeadsViewController {
         let pSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug()
         }
+
+        // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
             settings.pageUrl("https://www.teads.tv")

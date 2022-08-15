@@ -19,31 +19,26 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // The html identifier where you want your slot to open`
+        let domCSSSlotSelector = "#teads-placement-slot"
+
+        /// init helper before loading html content
+        webViewHelper = TeadsWebViewHelper(webView: webView, selector: domCSSSlotSelector, delegate: self)
+
         guard let content = Bundle.main.path(forResource: "sample", ofType: "html"),
               let contentString = try? String(contentsOfFile: content) else {
             return
         }
         let contentStringWithIntegrationType = contentString.replacingOccurrences(of: "{INTEGRATION_TYPE}", with: "InRead Direct WebView Integration")
-        
-        // The html identifier where you want your slot to open`
-        let domCSSSlotSelector = "#teads-placement-slot"
-        webView.navigationDelegate = self
-        webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
-        /// init helper
-        webViewHelper = TeadsWebViewHelper(webView: webView, selector: domCSSSlotSelector, delegate: self)
+        webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
         let pSettings = TeadsAdPlacementSettings { _ in
             // settings.enableDebug()
         }
+
+        // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-    }
-
-    // MARK: WKNavigationDelegate
-
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        print("injectJS")
-        webViewHelper?.injectJS()
     }
 }
 

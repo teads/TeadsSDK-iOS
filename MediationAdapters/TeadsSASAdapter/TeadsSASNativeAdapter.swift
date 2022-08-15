@@ -17,6 +17,7 @@ final class TeadsSASNativeAdapter: NSObject, SASMediationNativeAdAdapter {
     private var placement: TeadsNativeAdPlacement?
     private var nativeAd: TeadsNativeAd?
     private var teadsMediaView: TeadsMediaView?
+    private var adSettings: TeadsAdapterSettings?
 
     init(delegate: SASMediationNativeAdAdapterDelegate) {
         self.delegate = delegate
@@ -42,6 +43,7 @@ final class TeadsSASNativeAdapter: NSObject, SASMediationNativeAdAdapter {
 
         placement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        self.adSettings = adSettings
     }
 
     func register(_ view: UIView, tappableViews: [Any]?, overridableViews _: [AnyHashable: Any], from viewController: UIViewController) {
@@ -89,6 +91,9 @@ extension TeadsSASNativeAdapter: TeadsNativeAdPlacementDelegate {
         nativeAd = ad
         if let video = ad.video {
             teadsMediaView = TeadsMediaView(videoComponent: video)
+            if let mediaScale = adSettings?.mediaScale {
+                teadsMediaView?.mediaScale = mediaScale
+            }
         }
         delegate?.mediationNativeAdAdapter(self, didLoad: ad.sasMediationNativeAdInfo)
     }

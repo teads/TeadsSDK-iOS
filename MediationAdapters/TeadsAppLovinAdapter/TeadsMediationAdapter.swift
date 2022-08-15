@@ -17,6 +17,7 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
     var currentNativePlacement: TeadsNativeAdPlacement?
     var nativeAd: TeadsNativeAd?
+    private var adSettings: TeadsAdapterSettings?
     weak var nativeDelegate: MANativeAdAdapterDelegate?
 
     var currentInReadPlacement: TeadsInReadAdPlacement?
@@ -71,6 +72,7 @@ final class TeadsMediationAdapter: ALMediationAdapter {
         // Load native ad
         currentNativePlacement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         currentNativePlacement?.requestAd(requestSettings: adSettings.adRequestSettings)
+        self.adSettings = adSettings
     }
 }
 
@@ -159,6 +161,9 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
 
             let mediaView = TeadsMediaView()
             mediaView.bind(component: mediaComponent)
+            if let mediaScale = adSettings?.mediaScale {
+                mediaView.mediaScale = mediaScale
+            }
             builder.mediaView = mediaView
         }
 

@@ -216,6 +216,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// Native Root Component
 SWIFT_CLASS("_TtC8TeadsSDK15CommonComponent")
 @interface CommonComponent : NSObject
+/// You should call it when view like Call to Action button is tapped
+/// This will open link on SFSafariViewController or open directly an app depending on the link itself
+- (void)didTapView;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -229,7 +232,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
 @end
 
 
-/// Native Component containing AdChoices <code>clickThroughUrl</code>
+/// Native Component containing AdChoices <code>AdChoicesComponent/clickThroughUrl</code>
 /// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 /// note:
 /// AdChoices component and associated logo is automatically added to <code>TeadsNativeAdView</code>
@@ -238,7 +241,7 @@ SWIFT_CLASS("_TtC8TeadsSDK18AdChoicesComponent")
 @end
 
 /// Enumeration of Teads’ error codes.
-/// Error code is part of the <code>AdFailReason</code> object returned through placement delegate <code>didFailToReceiveAd(reason: AdFailReason)</code>
+/// Error code is part of the <code>AdFailReason</code> object returned through placement delegate <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// You can switch over it in order to adapt logic regarding error case
 typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 /// When no slot exists for ad
@@ -298,13 +301,36 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 
 
 
+@class NSNumber;
+@class UIImage;
 
 /// Native image component containing image url
 /// note:
-/// Image data content is automatically pre-loaded, you can retrieve content using <code>loadImage()</code>
+/// Image data content is automatically pre-loaded, you can retrieve content using <code>ImageComponent/loadImage(async:success:failure:)</code>
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 @interface ImageComponent : CommonComponent
+/// Loads Image data content asynchronously depending on the needs
+/// warning:
+/// specifying <code>async</code> parameter to false will block thread execution
+/// note:
+/// we strongly encourage to use this method to retrieve content and associate with <code>UIImageView</code>
+/// \param async default value is true, image data loading will be performed asynchronously (very recommanded) otherwise the loading is performed synchronously (thread blocking)
+///
+/// \param success closure will be called once image data has been successfully loaded
+///
+/// \param failure failure will be called when image loading has failed: can fail for multiple reasong connectivity, resource unavailable, …
+///
+- (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
+
+typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
+/// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
+  MediaScaleScaleAspectFill = 0,
+/// Contents scaled to fit with fixed aspect. remainder is transparent.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleAspectFit</code>.
+  MediaScaleScaleAspectFit = 1,
+};
 
 
 
@@ -313,39 +339,59 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 /// note:
 /// Europe  General Data Protection Regulation (GDPR) see <a href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a>
 typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
+/// Version 1 of TCF
+/// note:
+/// No longer supported since 15 August 2020
   TCFVersionV1 = 1,
+/// Version 2 of TCF
   TCFVersionV2 = 2,
 };
 
-@class NSNumber;
 @class TeadsAdPlacementSettings;
 @protocol TeadsInReadAdPlacementDelegate;
 @class TeadsInReadAdPlacement;
 
-/// Entry point for TeadsSDK
-/// In order to increase TeadsSDK launch speed and load ads faster, we strongly suggest to call <code>TeadsSDK.configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
+/// The <code>Teads</code> class defines the main entry point to start implementing TeadsSDK.
+/// From this class you can statically create placements
+/// <ul>
+///   <li>
+///     inRead: call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+///   </li>
+///   <li>
+///     native: call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+///   </li>
+/// </ul>
+/// In order to increase TeadsSDK launch speed and load ads faster, we strongly suggest to call <code>Teads/configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
 /// Current Teads SDK Version value
 /// Value is <a href="https://semver.org/">semver</a> format compliant
+/// note:
+/// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-/// Create an inRead ad placement to request inRead ads
+/// Create an  inRead  ad placement to request inRead ads
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-/// \param pid Your Teads placement identifier for inRead ads
+/// \param pid Your Teads placement identifier for <em>inRead</em> ads
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
 /// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
+///
+/// returns:
+/// TeadsInReadAdPlacement instance, this instance must be owned/retained
 + (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface Teads (SWIFT_EXTENSION(TeadsSDK))
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// In order to increase TeadsSDK launch speed and load ads faster, call <code>Teads/configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product  continuously.
 /// You can disable the  crash monitoring feature by adding <code>disableCrashMonitoring()</code> in the TeadsAdPlacementSettings.
 /// note:
@@ -362,11 +408,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 @interface TeadsAd : NSObject
 /// Optional delegate object that receives state changes notifications from TeadsAd.
-/// Usually this is a UIViewController.
+/// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsAdDelegate> _Nullable delegate;
+/// Delegate object that receives sound states changes notifications from TeadsAd.
+/// Use <code>TeadsPlaybackDelegate</code> instead
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable soundDelegate SWIFT_UNAVAILABLE_MSG("'soundDelegate' has been renamed to 'playbackDelegate': Use playbackDelegate instead");
 /// Optional delegate object that receives playback lifecycle changes notifications from TeadsAd.
-/// Usually this is a UIViewController.
+/// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
 /// Request identifier allows you to match the returned value from placement.requestAd call
 @property (nonatomic, readonly, copy) NSUUID * _Nonnull requestIdentifier;
@@ -386,7 +434,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 /// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 SWIFT_CLASS("_TtC8TeadsSDK18TeadsAdChoicesView")
 @interface TeadsAdChoicesView : UIView
-- (nonnull instancetype)initWithBinding:(CommonComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithBinding:(OverlayComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -414,7 +462,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)ad error:(NSError * _Nonnull)error;
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space.
 /// note:
-/// Only relevant for <code>TeadsInReadAd</code>, you can remove the <code>TeadsInReadAdView</code> from your super view.
+/// Only relevant for <code>TeadsInReadAd</code>, you can remove the ``TeadsInReadAdView` from your super view.
 /// \param ad The Teads ad that you need to close.
 ///
 - (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
@@ -458,11 +506,38 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
 @end
 
 
+/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
+@protocol TeadsLogMessageDelegate
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
+/// Root placement delegate methods needed to follow Teads ad requests flow
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate <TeadsLogMessageDelegate>
+/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
+/// \param reason an object that contains the fail reason
+///
+- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
+/// Called when the Teads SDK has a tracker view to provide you. You have to place it where your ad slot is. It will be used to help monitor your inventory.
+/// \param trackerView the view that will monitor your inventory
+///
+- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
+@end
+
+
 /// Specify which parameters you want to set for your Teads placement.
 /// These parameters will be persisted for the entire placement lifecycle.
 SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 @interface TeadsAdPlacementSettings : NSObject
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product continuously.
 /// Prevent TeadsSDK to automatically handle/monitor crashes
 /// note:
@@ -471,7 +546,7 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 /// By default, the Teads SDK handles the audio session by setting its category to ambient.
 /// This means that all the audio played by other apps will be simply mixed with the ad sound.
 /// note:
-/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <a href="x-source-tag://TeadsSoundDelegate">TeadsSoundDelegate</a>
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <code>TeadsPlaybackDelegate</code>
 - (void)disableTeadsAudioSessionManagement;
 /// Enable all TeadsSDK Log for debugging purpose
 /// warning:
@@ -529,18 +604,25 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsAdRatio
 /// usually 16:9 HDTV aspect ratio
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=default) TeadsAdRatio * _Nonnull default_;)
 + (TeadsAdRatio * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
-/// calculate the best height for your TeadsInReadAdView with the given width.
+/// Compute the best height for your TeadsInReadAdView with the given width.
 /// \param width the width of your TeadsInReadAdView.
 ///
 ///
 /// returns:
 /// The calculated height that fit the creative aspect ratio.
 - (CGFloat)calculateHeightForWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
+/// Get a CGFloat ratio for a given width.
+/// You can use returned value to specify autolayout multiplier constraint.
+/// \param width the width of your TeadsInReadAdView.
+///
+///
+/// returns:
+/// The ratio corresponding to the given width.
+- (CGFloat)valueFor:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol TeadsMediatedAdViewDelegate;
 
 /// Specify which parameters you want to set for the related ad request.
 /// These parameters will be persisted for the ad lifecycle only.
@@ -548,28 +630,29 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
 /// It is also useful during integration iterations.
+/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly
 /// warning:
 /// Remember to remove this setting when you are going in production.
 /// note:
 /// Follow <a href="https://support.teads.tv/support/solutions/articles/36000314783-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
 /// Set the publisher http page url that matches the content where Teads Ad will be loaded.
+/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url
 /// \param urlString The content related page URL.
 ///
-- (void)pageUrl:(NSString * _Nonnull)urlString;
+- (void)pageUrl:(NSString * _Nonnull)rawUrlString;
 /// Add extra informations to settings.
+/// Mediation adapters purpose only
 /// \param value Extra value.
 ///
 /// \param key Extra key.
 ///
 - (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder.
-/// \param build Build your <code>AdRequestSettings</code> from this closure.
+/// \param build Build your <code>TeadsAdRequestSettings</code> from this closure.
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdRequestSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// Register the ad view in case of mediation adapter.
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -582,15 +665,19 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol TeadsMediatedAdViewDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// A value describing the native ad media scale that is being used.
+/// This is only relevant for native ad.
+@property (nonatomic, readonly) enum MediaScale mediaScale;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdapterSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product continuously.
 /// Prevent TeadsSDK to automatically handle/monitor crashes
 /// note:
@@ -599,7 +686,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// By default, the Teads SDK handles the audio session by setting its category to ambient.
 /// This means that all the audio played by other apps will be simply mixed with the ad sound.
 /// note:
-/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <a href="x-source-tag://TeadsSoundDelegate">TeadsSoundDelegate</a>
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <code>TeadsPlaybackDelegate/adStartPlayingAudio(_:)</code> & <code>TeadsPlaybackDelegate/adStopPlayingAudio(_:)</code>
 - (void)disableTeadsAudioSessionManagement;
 - (void)disableLocation SWIFT_DEPRECATED_MSG("TeadsSDK does not record location.");
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
@@ -653,12 +740,23 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// Set the native media view scale.
+/// important:
+/// This setting only apply for native ads.
+/// \param mediaScale The media scale.
+///
+- (void)setMediaScale:(enum MediaScale)mediaScale;
 - (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
 /// Register the ad view in case of mediation adapter.
+/// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
+/// implementing <code>TeadsMediatedAdViewDelegate/didUpdateRatio(_:adRatio:)</code> will allows you to resize the  AdView
 /// \param adView slot view returned by Mediation actor
 ///
 /// \param delegate TeadsMediatedAdViewDelegate to update adView slot size
 ///
+///
+/// throws:
+/// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
 - (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
@@ -680,6 +778,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 
 
 /// A TeadsInReadAd represents an InRead ad that will be binded to a <code>TeadsInReadAdView</code> instance
+/// This instance is returned through <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code>
 /// note:
 /// you need use <code>TeadsInReadAdView</code> to bind a <code>TeadsInReadAd</code>
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
@@ -691,14 +790,18 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 @interface TeadsInReadAd (SWIFT_EXTENSION(TeadsSDK))
 /// adRatio to correctly display ad
 /// note:
-/// call  <code>calculateHeight(for:)</code> to obtain optimal height to better fit ad size
+/// call  <code>TeadsAdRatio/calculateHeight(for:)</code> to obtain optimal height to better fit ad size
 @property (nonatomic, readonly, strong) TeadsAdRatio * _Nonnull adRatio;
 @end
 
 
 /// InRead ad placement to request inRead ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
-/// In order to create placement, call <code>Teads.createInReadPlacement()</code>
+/// In order to create placement, call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -706,7 +809,7 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
-/// <code>delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// <code>TeadsInReadAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
 /// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
 ///
 ///
@@ -717,36 +820,9 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
-/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
-SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
-@protocol TeadsLogMessageDelegate
-@optional
-/// Called each time TeadsSDK triggers a log message
-/// \param message log message
-///
-/// \param note If no subscribers is set, log message will be written into console
-///
-- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
-@end
-
-
-/// Root placement delegate methods needed to follow Teads ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
-@protocol TeadsdPlacementDelegate <TeadsLogMessageDelegate>
-/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
-/// \param reason an object that contains the fail reason
-///
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-/// Called when the Teads SDK has a tracker view to provide you. You have to place it where your ad slot is. It will be used to help monitor your inventory.
-/// \param trackerView the view that will monitor your inventory
-///
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@end
-
-
 /// Delegate methods needed to follow Teads inRead ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate <TeadsdPlacementDelegate>
+@protocol TeadsInReadAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
 ///
@@ -796,6 +872,15 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 @class VideoComponent;
 
 /// The TeadsMediaView can load either images, videos and VPAID content.
+/// Implement it to render media component content using <code>TeadsMediaView/bind(component:)</code>
+/// <ul>
+///   <li>
+///     <code>ImageComponent</code>
+///   </li>
+///   <li>
+///     <code>VideoComponent</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 @interface TeadsMediaView : UIView
 /// When dealing with VideoComponent, it needs to be rendered using TeadsMediaView
@@ -821,61 +906,62 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK27TeadsMediatedAdViewDelegate_")
 
 /// A TeadsNativeAd represents an ad that will be displayed by the native code of the application. This ad is fully customizable
 /// You should register your class (typically a UIViewController) to <code>delegate</code> conforming to <code>TeadsAdDelegate</code> in order to follow ad lifecycle
-/// note:
+/// warning:
 /// Contrary to the <code>TeadsInReadAd</code> object, the <code>TeadsNativeAd</code> only contains information that needs to be displayed.
 /// It does not create any view for the actual display: your application is responsible of the ad rendering.
-/// We strongly advise you to use <code>TeadsNativeAdView</code> to bind ad <code>TeadsNaitveAd</code>
+/// We strongly advise you to use <code>TeadsNativeAdView</code> to bind ad <code>TeadsNativeAd</code>
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : TeadsAd
 /// Ad’s title
 /// note:
-/// contains <code>text</code> String property
+/// contains ``CommonComponent/text` String property
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable title;
 /// Ad’s main content / body
 /// Descriptive text associated with the product or service being advertised
 /// note:
-/// <code>text</code> String property reprensent large description of ad
+/// <code>CommonComponent/text</code> String property reprensent large description of ad
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable content;
 /// Main image element of ad, usually corresponds to main media content
 /// Large image preview for the ad
 /// note:
-/// <code>url</code> property
+/// <code>ImageComponent/url</code> property
 /// note:
-/// you can call <code>loadImage</code> to get <code>UImage</code>
+/// you can call <code>ImageComponent/loadImage(async:success:failure:)</code> to get <code>UImage</code>
 @property (nonatomic, readonly, strong) ImageComponent * _Nullable image;
 /// Icon should contain icon
 /// note:
-/// <code>url</code> property
+/// <code>ImageComponent/url</code> property
 /// note:
-/// you can call <code>loadImage</code> to get <code>UImage</code>
+/// you can call <code>ImageComponent/loadImage(async:success:failure:)</code> to get <code>UImage</code>
 @property (nonatomic, readonly, strong) ImageComponent * _Nullable icon;
 /// Sponsored may contain the brand name of the sponsor / advertiser.
 /// note:
-/// <code>text</code> String property represents brand name value
+/// <code>CommonComponent/text</code> String property represents brand name value
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable sponsored;
 /// Text describing a ‘call to action’ button for destination URL
 /// note:
-/// <code>text</code> String property represents the action that will be made when the ad is clicked: for instance ‘Learn more’ or ‘Buy now’.
+/// <code>CommonComponent/text</code> String property represents the action that will be made when the ad is clicked: for instance ‘Learn more’ or ‘Buy now’.
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable callToAction;
+/// Represent multimedia component, should be used in conjonction with <code>TeadsMediaView</code>
 /// note:
-/// contains <code>text</code> String property
+/// contains <code>VideoComponent/contentAspectRatio</code> CGFloat property
 @property (nonatomic, readonly, strong) VideoComponent * _Nullable video;
 /// Rating of the product being offered to the user
 /// note:
-/// <code>text</code> String property represents float rating value
+/// <code>CommonComponent/text</code> String property represents float rating value
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable rating;
 /// Price for product / app / in-app purchase
 /// note:
-/// <code>text</code> String property represents price value including currency symbol in localised format
+/// <code>CommonComponent/text</code> String property represents price value including currency symbol in localised format
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable price;
 /// Teads’ AdChoices element
 /// note:
-/// <code>clickThroughUrl</code> property represents advertiser’s url
+/// <code>AdChoicesComponent/clickThroughUrl</code> property represents advertiser’s url
 @property (nonatomic, readonly, strong) AdChoicesComponent * _Nullable adChoices;
 /// register containerView
 /// note:
 /// this should be called on adapter part or without interface builder
-/// \param view view containing UI elements defined in  <code>TeadsNativeAdView</code>
+/// \param view view containing UI elements defined in  ``TeadsNativeAdView`
 ///
 - (void)registerWithContainerView:(UIView * _Nonnull)containerView;
 @end
@@ -884,17 +970,31 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 
 /// Native ad placement to request native ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
-/// In order to create placement, call <code>Teads.createNativePlacement()</code>
+/// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 @interface TeadsNativeAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, weak) id <TeadsNativeAdPlacementDelegate> _Nullable delegate;
+/// Request a native ad on this placement
+/// listen for events by implementing <code>TeadsNativeAdPlacementDelegate</code>
+/// requires:
+/// <code>TeadsNativeAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
+///
+///
+/// returns:
+/// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
+- (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
 
 /// Delegate methods needed to follow Teads native ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate <TeadsdPlacementDelegate>
+@protocol TeadsNativeAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
 ///
@@ -912,20 +1012,29 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @interface TeadsNativeAdView : TeadsAdView
 /// The native ad title label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable titleLabel;
-/// The native ad content / body label.
+/// The native ad content / body / description label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable contentLabel;
 /// The native ad media view (for images and videos).
 @property (nonatomic, strong) IBOutlet TeadsMediaView * _Nullable mediaView;
-/// The native ad icon image view.
+/// The native ad icon / logo image view.
+/// Contenet usually corresponds to brand logo
 @property (nonatomic, strong) IBOutlet UIImageView * _Nullable iconImageView;
 /// The native ad advertiser / sponsored label.
+/// /// Content usually corresponds to brand name
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable advertiserLabel;
 /// The native ad call to action button.
+/// e.g: <code>"Shop now!"</code>
 @property (nonatomic, strong) IBOutlet UIButton * _Nullable callToActionButton;
 /// The native ad rating view.
 @property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
+/// Call this function to bind a native ad to your native ad view.
+/// important:
+/// This call is mandatory in order to monitor ad viewability of each components
+/// \param ad The ad that should be binded to the ad view.
+///
+- (void)bind:(TeadsNativeAd * _Nonnull)ad;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -958,6 +1067,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 @end
 
 
+/// Delegate methods sending informations about Teads ads sound states.
 SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'TeadsSoundDelegate' has been renamed to '_TtP8TeadsSDK21TeadsPlaybackDelegate_': Use TeadsPlaybackDelegate instead")
 @protocol TeadsSoundDelegate
 /// Called when an ad starts playing audio.
@@ -969,7 +1079,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
-
 
 
 
@@ -1009,7 +1118,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 /// Native video component containing media content
 /// note:
-/// In order to render VideoComponent, you need to instanciate a <code>TeadsMediaView</code> by calling <code>TeadsMediaView(videoComponent:)</code>
+/// In order to render VideoComponent, you need to instanciate a <code>TeadsMediaView</code> by calling <code>TeadsMediaView/init(videoComponent:)</code>
 SWIFT_CLASS("_TtC8TeadsSDK14VideoComponent")
 @interface VideoComponent : CommonComponent
 /// Media content aspect ratio (width/height).
@@ -1239,6 +1348,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// Native Root Component
 SWIFT_CLASS("_TtC8TeadsSDK15CommonComponent")
 @interface CommonComponent : NSObject
+/// You should call it when view like Call to Action button is tapped
+/// This will open link on SFSafariViewController or open directly an app depending on the link itself
+- (void)didTapView;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1252,7 +1364,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16OverlayComponent")
 @end
 
 
-/// Native Component containing AdChoices <code>clickThroughUrl</code>
+/// Native Component containing AdChoices <code>AdChoicesComponent/clickThroughUrl</code>
 /// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 /// note:
 /// AdChoices component and associated logo is automatically added to <code>TeadsNativeAdView</code>
@@ -1261,7 +1373,7 @@ SWIFT_CLASS("_TtC8TeadsSDK18AdChoicesComponent")
 @end
 
 /// Enumeration of Teads’ error codes.
-/// Error code is part of the <code>AdFailReason</code> object returned through placement delegate <code>didFailToReceiveAd(reason: AdFailReason)</code>
+/// Error code is part of the <code>AdFailReason</code> object returned through placement delegate <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// You can switch over it in order to adapt logic regarding error case
 typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 /// When no slot exists for ad
@@ -1321,13 +1433,36 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 
 
 
+@class NSNumber;
+@class UIImage;
 
 /// Native image component containing image url
 /// note:
-/// Image data content is automatically pre-loaded, you can retrieve content using <code>loadImage()</code>
+/// Image data content is automatically pre-loaded, you can retrieve content using <code>ImageComponent/loadImage(async:success:failure:)</code>
 SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 @interface ImageComponent : CommonComponent
+/// Loads Image data content asynchronously depending on the needs
+/// warning:
+/// specifying <code>async</code> parameter to false will block thread execution
+/// note:
+/// we strongly encourage to use this method to retrieve content and associate with <code>UIImageView</code>
+/// \param async default value is true, image data loading will be performed asynchronously (very recommanded) otherwise the loading is performed synchronously (thread blocking)
+///
+/// \param success closure will be called once image data has been successfully loaded
+///
+/// \param failure failure will be called when image loading has failed: can fail for multiple reasong connectivity, resource unavailable, …
+///
+- (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
+
+typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
+/// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
+  MediaScaleScaleAspectFill = 0,
+/// Contents scaled to fit with fixed aspect. remainder is transparent.
+/// Behaviour is similar to <code>UIView.ContentMode.scaleAspectFit</code>.
+  MediaScaleScaleAspectFit = 1,
+};
 
 
 
@@ -1336,39 +1471,59 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 /// note:
 /// Europe  General Data Protection Regulation (GDPR) see <a href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a>
 typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
+/// Version 1 of TCF
+/// note:
+/// No longer supported since 15 August 2020
   TCFVersionV1 = 1,
+/// Version 2 of TCF
   TCFVersionV2 = 2,
 };
 
-@class NSNumber;
 @class TeadsAdPlacementSettings;
 @protocol TeadsInReadAdPlacementDelegate;
 @class TeadsInReadAdPlacement;
 
-/// Entry point for TeadsSDK
-/// In order to increase TeadsSDK launch speed and load ads faster, we strongly suggest to call <code>TeadsSDK.configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
+/// The <code>Teads</code> class defines the main entry point to start implementing TeadsSDK.
+/// From this class you can statically create placements
+/// <ul>
+///   <li>
+///     inRead: call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+///   </li>
+///   <li>
+///     native: call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+///   </li>
+/// </ul>
+/// In order to increase TeadsSDK launch speed and load ads faster, we strongly suggest to call <code>Teads/configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
 SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 @interface Teads : NSObject
 /// Current Teads SDK Version value
 /// Value is <a href="https://semver.org/">semver</a> format compliant
+/// note:
+/// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-/// Create an inRead ad placement to request inRead ads
+/// Create an  inRead  ad placement to request inRead ads
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-/// \param pid Your Teads placement identifier for inRead ads
+/// \param pid Your Teads placement identifier for <em>inRead</em> ads
 ///
 /// \param settings The placement’s related settings you want to apply
 ///
 /// \param delegate TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 ///
+///
+/// returns:
+/// TeadsInReadAdPlacement instance, this instance must be owned/retained
 + (TeadsInReadAdPlacement * _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface Teads (SWIFT_EXTENSION(TeadsSDK))
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// In order to increase TeadsSDK launch speed and load ads faster, call <code>Teads/configure()</code> into <code>AppDelegate.didFinishLaunchingWithOptions</code>
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product  continuously.
 /// You can disable the  crash monitoring feature by adding <code>disableCrashMonitoring()</code> in the TeadsAdPlacementSettings.
 /// note:
@@ -1385,11 +1540,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 @interface TeadsAd : NSObject
 /// Optional delegate object that receives state changes notifications from TeadsAd.
-/// Usually this is a UIViewController.
+/// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsAdDelegate> _Nullable delegate;
+/// Delegate object that receives sound states changes notifications from TeadsAd.
+/// Use <code>TeadsPlaybackDelegate</code> instead
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable soundDelegate SWIFT_UNAVAILABLE_MSG("'soundDelegate' has been renamed to 'playbackDelegate': Use playbackDelegate instead");
 /// Optional delegate object that receives playback lifecycle changes notifications from TeadsAd.
-/// Usually this is a UIViewController.
+/// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
 /// Request identifier allows you to match the returned value from placement.requestAd call
 @property (nonatomic, readonly, copy) NSUUID * _Nonnull requestIdentifier;
@@ -1409,7 +1566,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 /// Teads is partner of DAA <a href="https://youradchoices.com/participating#CompanyT">Digital Advertising Alliance</a>
 SWIFT_CLASS("_TtC8TeadsSDK18TeadsAdChoicesView")
 @interface TeadsAdChoicesView : UIView
-- (nonnull instancetype)initWithBinding:(CommonComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithBinding:(OverlayComponent * _Nullable)component OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -1437,7 +1594,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 - (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)ad error:(NSError * _Nonnull)error;
 /// Called when the ad has been close, in this case you need to close the slot or you will have a blank space.
 /// note:
-/// Only relevant for <code>TeadsInReadAd</code>, you can remove the <code>TeadsInReadAdView</code> from your super view.
+/// Only relevant for <code>TeadsInReadAd</code>, you can remove the ``TeadsInReadAdView` from your super view.
 /// \param ad The Teads ad that you need to close.
 ///
 - (void)didCloseWithAd:(TeadsAd * _Nonnull)ad;
@@ -1481,11 +1638,38 @@ SWIFT_CLASS("_TtC8TeadsSDK16TeadsAdPlacement")
 @end
 
 
+/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
+SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
+@protocol TeadsLogMessageDelegate
+@optional
+/// Called each time TeadsSDK triggers a log message
+/// \param message log message
+///
+/// \param note If no subscribers is set, log message will be written into console
+///
+- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
+@end
+
+
+/// Root placement delegate methods needed to follow Teads ad requests flow
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+@protocol TeadsAdPlacementDelegate <TeadsLogMessageDelegate>
+/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
+/// \param reason an object that contains the fail reason
+///
+- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
+/// Called when the Teads SDK has a tracker view to provide you. You have to place it where your ad slot is. It will be used to help monitor your inventory.
+/// \param trackerView the view that will monitor your inventory
+///
+- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
+@end
+
+
 /// Specify which parameters you want to set for your Teads placement.
 /// These parameters will be persisted for the entire placement lifecycle.
 SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 @interface TeadsAdPlacementSettings : NSObject
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product continuously.
 /// Prevent TeadsSDK to automatically handle/monitor crashes
 /// note:
@@ -1494,7 +1678,7 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 /// By default, the Teads SDK handles the audio session by setting its category to ambient.
 /// This means that all the audio played by other apps will be simply mixed with the ad sound.
 /// note:
-/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <a href="x-source-tag://TeadsSoundDelegate">TeadsSoundDelegate</a>
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <code>TeadsPlaybackDelegate</code>
 - (void)disableTeadsAudioSessionManagement;
 /// Enable all TeadsSDK Log for debugging purpose
 /// warning:
@@ -1552,18 +1736,25 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsAdRatio
 /// usually 16:9 HDTV aspect ratio
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=default) TeadsAdRatio * _Nonnull default_;)
 + (TeadsAdRatio * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
-/// calculate the best height for your TeadsInReadAdView with the given width.
+/// Compute the best height for your TeadsInReadAdView with the given width.
 /// \param width the width of your TeadsInReadAdView.
 ///
 ///
 /// returns:
 /// The calculated height that fit the creative aspect ratio.
 - (CGFloat)calculateHeightForWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
+/// Get a CGFloat ratio for a given width.
+/// You can use returned value to specify autolayout multiplier constraint.
+/// \param width the width of your TeadsInReadAdView.
+///
+///
+/// returns:
+/// The ratio corresponding to the given width.
+- (CGFloat)valueFor:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol TeadsMediatedAdViewDelegate;
 
 /// Specify which parameters you want to set for the related ad request.
 /// These parameters will be persisted for the ad lifecycle only.
@@ -1571,28 +1762,29 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
 /// It is also useful during integration iterations.
+/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly
 /// warning:
 /// Remember to remove this setting when you are going in production.
 /// note:
 /// Follow <a href="https://support.teads.tv/support/solutions/articles/36000314783-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
 /// Set the publisher http page url that matches the content where Teads Ad will be loaded.
+/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url
 /// \param urlString The content related page URL.
 ///
-- (void)pageUrl:(NSString * _Nonnull)urlString;
+- (void)pageUrl:(NSString * _Nonnull)rawUrlString;
 /// Add extra informations to settings.
+/// Mediation adapters purpose only
 /// \param value Extra value.
 ///
 /// \param key Extra key.
 ///
 - (void)addExtras:(NSString * _Nonnull)value for:(NSString * _Nonnull)key;
 /// Instance settings builder.
-/// \param build Build your <code>AdRequestSettings</code> from this closure.
+/// \param build Build your <code>TeadsAdRequestSettings</code> from this closure.
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdRequestSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// Register the ad view in case of mediation adapter.
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -1605,15 +1797,19 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol TeadsMediatedAdViewDelegate;
 
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// A value describing the native ad media scale that is being used.
+/// This is only relevant for native ad.
+@property (nonatomic, readonly) enum MediaScale mediaScale;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Instance settings builder
 /// \param build closure to tune settings
 ///
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdapterSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
-/// <code>Teads Crash Monitoring</code> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK..
+/// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
 /// This tool is really helpful for us and it aims to improve our product continuously.
 /// Prevent TeadsSDK to automatically handle/monitor crashes
 /// note:
@@ -1622,7 +1818,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// By default, the Teads SDK handles the audio session by setting its category to ambient.
 /// This means that all the audio played by other apps will be simply mixed with the ad sound.
 /// note:
-/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <a href="x-source-tag://TeadsSoundDelegate">TeadsSoundDelegate</a>
+/// If you chose to handle the audio session by yourself you need to call <code>disableTeadsAudioSessionManagement</code> and implement  <code>TeadsPlaybackDelegate/adStartPlayingAudio(_:)</code> & <code>TeadsPlaybackDelegate/adStopPlayingAudio(_:)</code>
 - (void)disableTeadsAudioSessionManagement;
 - (void)disableLocation SWIFT_DEPRECATED_MSG("TeadsSDK does not record location.");
 - (void)enableLightEndScreen SWIFT_DEPRECATED_MSG("Won't be used in any newer SDK versions.");
@@ -1676,12 +1872,23 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)urlString;
+/// Set the native media view scale.
+/// important:
+/// This setting only apply for native ads.
+/// \param mediaScale The media scale.
+///
+- (void)setMediaScale:(enum MediaScale)mediaScale;
 - (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
 /// Register the ad view in case of mediation adapter.
+/// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
+/// implementing <code>TeadsMediatedAdViewDelegate/didUpdateRatio(_:adRatio:)</code> will allows you to resize the  AdView
 /// \param adView slot view returned by Mediation actor
 ///
 /// \param delegate TeadsMediatedAdViewDelegate to update adView slot size
 ///
+///
+/// throws:
+/// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
 - (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
@@ -1703,6 +1910,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 
 
 /// A TeadsInReadAd represents an InRead ad that will be binded to a <code>TeadsInReadAdView</code> instance
+/// This instance is returned through <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code>
 /// note:
 /// you need use <code>TeadsInReadAdView</code> to bind a <code>TeadsInReadAd</code>
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
@@ -1714,14 +1922,18 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 @interface TeadsInReadAd (SWIFT_EXTENSION(TeadsSDK))
 /// adRatio to correctly display ad
 /// note:
-/// call  <code>calculateHeight(for:)</code> to obtain optimal height to better fit ad size
+/// call  <code>TeadsAdRatio/calculateHeight(for:)</code> to obtain optimal height to better fit ad size
 @property (nonatomic, readonly, strong) TeadsAdRatio * _Nonnull adRatio;
 @end
 
 
 /// InRead ad placement to request inRead ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
-/// In order to create placement, call <code>Teads.createInReadPlacement()</code>
+/// In order to create placement, call <code>Teads/createInReadPlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
@@ -1729,7 +1941,7 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 /// Request a native ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
-/// <code>delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// <code>TeadsInReadAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
 /// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
 ///
 ///
@@ -1740,36 +1952,9 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 
 
 
-/// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
-SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
-@protocol TeadsLogMessageDelegate
-@optional
-/// Called each time TeadsSDK triggers a log message
-/// \param message log message
-///
-/// \param note If no subscribers is set, log message will be written into console
-///
-- (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
-@end
-
-
-/// Root placement delegate methods needed to follow Teads ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsdPlacementDelegate_")
-@protocol TeadsdPlacementDelegate <TeadsLogMessageDelegate>
-/// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
-/// \param reason an object that contains the fail reason
-///
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-/// Called when the Teads SDK has a tracker view to provide you. You have to place it where your ad slot is. It will be used to help monitor your inventory.
-/// \param trackerView the view that will monitor your inventory
-///
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@end
-
-
 /// Delegate methods needed to follow Teads inRead ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate <TeadsdPlacementDelegate>
+@protocol TeadsInReadAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
 ///
@@ -1819,6 +2004,15 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
 @class VideoComponent;
 
 /// The TeadsMediaView can load either images, videos and VPAID content.
+/// Implement it to render media component content using <code>TeadsMediaView/bind(component:)</code>
+/// <ul>
+///   <li>
+///     <code>ImageComponent</code>
+///   </li>
+///   <li>
+///     <code>VideoComponent</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC8TeadsSDK14TeadsMediaView")
 @interface TeadsMediaView : UIView
 /// When dealing with VideoComponent, it needs to be rendered using TeadsMediaView
@@ -1844,61 +2038,62 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK27TeadsMediatedAdViewDelegate_")
 
 /// A TeadsNativeAd represents an ad that will be displayed by the native code of the application. This ad is fully customizable
 /// You should register your class (typically a UIViewController) to <code>delegate</code> conforming to <code>TeadsAdDelegate</code> in order to follow ad lifecycle
-/// note:
+/// warning:
 /// Contrary to the <code>TeadsInReadAd</code> object, the <code>TeadsNativeAd</code> only contains information that needs to be displayed.
 /// It does not create any view for the actual display: your application is responsible of the ad rendering.
-/// We strongly advise you to use <code>TeadsNativeAdView</code> to bind ad <code>TeadsNaitveAd</code>
+/// We strongly advise you to use <code>TeadsNativeAdView</code> to bind ad <code>TeadsNativeAd</code>
 SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 @interface TeadsNativeAd : TeadsAd
 /// Ad’s title
 /// note:
-/// contains <code>text</code> String property
+/// contains ``CommonComponent/text` String property
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable title;
 /// Ad’s main content / body
 /// Descriptive text associated with the product or service being advertised
 /// note:
-/// <code>text</code> String property reprensent large description of ad
+/// <code>CommonComponent/text</code> String property reprensent large description of ad
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable content;
 /// Main image element of ad, usually corresponds to main media content
 /// Large image preview for the ad
 /// note:
-/// <code>url</code> property
+/// <code>ImageComponent/url</code> property
 /// note:
-/// you can call <code>loadImage</code> to get <code>UImage</code>
+/// you can call <code>ImageComponent/loadImage(async:success:failure:)</code> to get <code>UImage</code>
 @property (nonatomic, readonly, strong) ImageComponent * _Nullable image;
 /// Icon should contain icon
 /// note:
-/// <code>url</code> property
+/// <code>ImageComponent/url</code> property
 /// note:
-/// you can call <code>loadImage</code> to get <code>UImage</code>
+/// you can call <code>ImageComponent/loadImage(async:success:failure:)</code> to get <code>UImage</code>
 @property (nonatomic, readonly, strong) ImageComponent * _Nullable icon;
 /// Sponsored may contain the brand name of the sponsor / advertiser.
 /// note:
-/// <code>text</code> String property represents brand name value
+/// <code>CommonComponent/text</code> String property represents brand name value
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable sponsored;
 /// Text describing a ‘call to action’ button for destination URL
 /// note:
-/// <code>text</code> String property represents the action that will be made when the ad is clicked: for instance ‘Learn more’ or ‘Buy now’.
+/// <code>CommonComponent/text</code> String property represents the action that will be made when the ad is clicked: for instance ‘Learn more’ or ‘Buy now’.
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable callToAction;
+/// Represent multimedia component, should be used in conjonction with <code>TeadsMediaView</code>
 /// note:
-/// contains <code>text</code> String property
+/// contains <code>VideoComponent/contentAspectRatio</code> CGFloat property
 @property (nonatomic, readonly, strong) VideoComponent * _Nullable video;
 /// Rating of the product being offered to the user
 /// note:
-/// <code>text</code> String property represents float rating value
+/// <code>CommonComponent/text</code> String property represents float rating value
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable rating;
 /// Price for product / app / in-app purchase
 /// note:
-/// <code>text</code> String property represents price value including currency symbol in localised format
+/// <code>CommonComponent/text</code> String property represents price value including currency symbol in localised format
 @property (nonatomic, readonly, strong) CommonComponent * _Nullable price;
 /// Teads’ AdChoices element
 /// note:
-/// <code>clickThroughUrl</code> property represents advertiser’s url
+/// <code>AdChoicesComponent/clickThroughUrl</code> property represents advertiser’s url
 @property (nonatomic, readonly, strong) AdChoicesComponent * _Nullable adChoices;
 /// register containerView
 /// note:
 /// this should be called on adapter part or without interface builder
-/// \param view view containing UI elements defined in  <code>TeadsNativeAdView</code>
+/// \param view view containing UI elements defined in  ``TeadsNativeAdView`
 ///
 - (void)registerWithContainerView:(UIView * _Nonnull)containerView;
 @end
@@ -1907,17 +2102,31 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 
 /// Native ad placement to request native ads
 /// This object is reponsible for performing request and is tied to you PID (placement identifier)
-/// In order to create placement, call <code>Teads.createNativePlacement()</code>
+/// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
+/// important:
+/// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
+/// note:
+/// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsNativeAdPlacement")
 @interface TeadsNativeAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, weak) id <TeadsNativeAdPlacementDelegate> _Nullable delegate;
+/// Request a native ad on this placement
+/// listen for events by implementing <code>TeadsNativeAdPlacementDelegate</code>
+/// requires:
+/// <code>TeadsNativeAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
+///
+///
+/// returns:
+/// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
+- (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
 
 /// Delegate methods needed to follow Teads native ad requests flow
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate <TeadsdPlacementDelegate>
+@protocol TeadsNativeAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
 ///
@@ -1935,20 +2144,29 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @interface TeadsNativeAdView : TeadsAdView
 /// The native ad title label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable titleLabel;
-/// The native ad content / body label.
+/// The native ad content / body / description label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable contentLabel;
 /// The native ad media view (for images and videos).
 @property (nonatomic, strong) IBOutlet TeadsMediaView * _Nullable mediaView;
-/// The native ad icon image view.
+/// The native ad icon / logo image view.
+/// Contenet usually corresponds to brand logo
 @property (nonatomic, strong) IBOutlet UIImageView * _Nullable iconImageView;
 /// The native ad advertiser / sponsored label.
+/// /// Content usually corresponds to brand name
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable advertiserLabel;
 /// The native ad call to action button.
+/// e.g: <code>"Shop now!"</code>
 @property (nonatomic, strong) IBOutlet UIButton * _Nullable callToActionButton;
 /// The native ad rating view.
 @property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
+/// Call this function to bind a native ad to your native ad view.
+/// important:
+/// This call is mandatory in order to monitor ad viewability of each components
+/// \param ad The ad that should be binded to the ad view.
+///
+- (void)bind:(TeadsNativeAd * _Nonnull)ad;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1981,6 +2199,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 @end
 
 
+/// Delegate methods sending informations about Teads ads sound states.
 SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'TeadsSoundDelegate' has been renamed to '_TtP8TeadsSDK21TeadsPlaybackDelegate_': Use TeadsPlaybackDelegate instead")
 @protocol TeadsSoundDelegate
 /// Called when an ad starts playing audio.
@@ -1992,7 +2211,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
 @end
-
 
 
 
@@ -2032,7 +2250,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 /// Native video component containing media content
 /// note:
-/// In order to render VideoComponent, you need to instanciate a <code>TeadsMediaView</code> by calling <code>TeadsMediaView(videoComponent:)</code>
+/// In order to render VideoComponent, you need to instanciate a <code>TeadsMediaView</code> by calling <code>TeadsMediaView/init(videoComponent:)</code>
 SWIFT_CLASS("_TtC8TeadsSDK14VideoComponent")
 @interface VideoComponent : CommonComponent
 /// Media content aspect ratio (width/height).
