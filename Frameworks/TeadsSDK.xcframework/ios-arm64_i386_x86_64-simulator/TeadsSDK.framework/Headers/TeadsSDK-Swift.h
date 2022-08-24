@@ -323,6 +323,7 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+/// A flag used to determine how TeadsMediaView lays out its content when its bounds change.
 typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
 /// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
 /// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
@@ -533,8 +534,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
 @end
 
 
-/// Specify which parameters you want to set for your Teads placement.
-/// These parameters will be persisted for the entire placement lifecycle.
+/// Specify which settings you want to set for your Teads placement.
+/// Those settings will be persisted for the entire placement lifecycle.
 SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 @interface TeadsAdPlacementSettings : NSObject
 /// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
@@ -624,8 +625,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 @end
 
 
-/// Specify which parameters you want to set for the related ad request.
-/// These parameters will be persisted for the ad lifecycle only.
+/// Specify which settings you want to set for the related ad request.
+/// Those settings will be persisted for the ad lifecycle only.
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
@@ -667,6 +668,11 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 @protocol TeadsMediatedAdViewDelegate;
 
+/// Settings used to load Teads’ mediation adapter ads
+/// Specify which setting you want to set for the related mediation request.
+/// Those settings will be persisted for the ad lifecycle only.
+/// important:
+/// Only relevant when using mediation adapter such as <a href="https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation">AdMob</a> or <a href="https://support.teads.tv/support/solutions/articles/36000357700-inread-applovin-mediation">AppLovin</a>
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
 /// A value describing the native ad media scale that is being used.
@@ -806,15 +812,15 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
-/// Request a native ad on this placement
+/// Request an InRead ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
 /// <code>TeadsInReadAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
-/// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
+/// \param requestSettings settings <code>TeadsInReadAdRequestSettings</code> to tweak your needs
 ///
 ///
 /// returns:
-/// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
+/// a unique request identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
 - (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
@@ -1083,10 +1089,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 
 
-
 @interface UIButton (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -1108,6 +1114,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -1455,6 +1462,7 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+/// A flag used to determine how TeadsMediaView lays out its content when its bounds change.
 typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
 /// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
 /// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
@@ -1665,8 +1673,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
 @end
 
 
-/// Specify which parameters you want to set for your Teads placement.
-/// These parameters will be persisted for the entire placement lifecycle.
+/// Specify which settings you want to set for your Teads placement.
+/// Those settings will be persisted for the entire placement lifecycle.
 SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 @interface TeadsAdPlacementSettings : NSObject
 /// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
@@ -1756,8 +1764,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 @end
 
 
-/// Specify which parameters you want to set for the related ad request.
-/// These parameters will be persisted for the ad lifecycle only.
+/// Specify which settings you want to set for the related ad request.
+/// Those settings will be persisted for the ad lifecycle only.
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
@@ -1799,6 +1807,11 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 @protocol TeadsMediatedAdViewDelegate;
 
+/// Settings used to load Teads’ mediation adapter ads
+/// Specify which setting you want to set for the related mediation request.
+/// Those settings will be persisted for the ad lifecycle only.
+/// important:
+/// Only relevant when using mediation adapter such as <a href="https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation">AdMob</a> or <a href="https://support.teads.tv/support/solutions/articles/36000357700-inread-applovin-mediation">AppLovin</a>
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
 /// A value describing the native ad media scale that is being used.
@@ -1938,15 +1951,15 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
-/// Request a native ad on this placement
+/// Request an InRead ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
 /// <code>TeadsInReadAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
-/// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
+/// \param requestSettings settings <code>TeadsInReadAdRequestSettings</code> to tweak your needs
 ///
 ///
 /// returns:
-/// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
+/// a unique request identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
 - (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
@@ -2215,10 +2228,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 
 
-
 @interface UIButton (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -2240,6 +2253,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -2587,6 +2601,7 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
 @end
 
+/// A flag used to determine how TeadsMediaView lays out its content when its bounds change.
 typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
 /// Contents scaled to fill with fixed aspect. some portion of content may be clipped.
 /// Behaviour is similar to <code>UIView.ContentMode.scaleToFill</code>.
@@ -2797,8 +2812,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
 @end
 
 
-/// Specify which parameters you want to set for your Teads placement.
-/// These parameters will be persisted for the entire placement lifecycle.
+/// Specify which settings you want to set for your Teads placement.
+/// Those settings will be persisted for the entire placement lifecycle.
 SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 @interface TeadsAdPlacementSettings : NSObject
 /// <em>Teads Crash Monitoring</em> is a tool we use to monitor crashes that may occur ONLY IN OUR SDK.
@@ -2888,8 +2903,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 @end
 
 
-/// Specify which parameters you want to set for the related ad request.
-/// These parameters will be persisted for the ad lifecycle only.
+/// Specify which settings you want to set for the related ad request.
+/// Those settings will be persisted for the ad lifecycle only.
 SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
@@ -2931,6 +2946,11 @@ SWIFT_CLASS("_TtC8TeadsSDK11TeadsAdView")
 
 @protocol TeadsMediatedAdViewDelegate;
 
+/// Settings used to load Teads’ mediation adapter ads
+/// Specify which setting you want to set for the related mediation request.
+/// Those settings will be persisted for the ad lifecycle only.
+/// important:
+/// Only relevant when using mediation adapter such as <a href="https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation">AdMob</a> or <a href="https://support.teads.tv/support/solutions/articles/36000357700-inread-applovin-mediation">AppLovin</a>
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
 /// A value describing the native ad media scale that is being used.
@@ -3070,15 +3090,15 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsInReadAdPlacement")
 @interface TeadsInReadAdPlacement : TeadsAdPlacement
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, weak) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
-/// Request a native ad on this placement
+/// Request an InRead ad on this placement
 /// listen for events by implementing <code>TeadsInReadAdPlacementDelegate</code>
 /// requires:
 /// <code>TeadsInReadAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
-/// \param requestSettings settings <code>TeadsNativeAdRequestSettings</code> to tweak your needs
+/// \param requestSettings settings <code>TeadsInReadAdRequestSettings</code> to tweak your needs
 ///
 ///
 /// returns:
-/// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
+/// a unique request identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
 - (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
@@ -3347,10 +3367,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 
 
-
 @interface UIButton (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -3372,6 +3392,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 ///
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 

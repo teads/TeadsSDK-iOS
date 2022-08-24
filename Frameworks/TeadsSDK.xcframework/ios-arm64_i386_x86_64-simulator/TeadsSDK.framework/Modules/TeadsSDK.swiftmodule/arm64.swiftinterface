@@ -244,6 +244,10 @@ extension UIKit.UIButton {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable {
+  public static let pluginKey: Swift.String
+  public static let pluginFlutter: Swift.String
+  public static let pluginReactNative: Swift.String
+  public static let pluginVersionKey: Swift.String
   @objc final public func disableCrashMonitoring()
   @objc final public func disableTeadsAudioSessionManagement()
   @objc final public func enableDebug()

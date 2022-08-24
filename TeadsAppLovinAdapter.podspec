@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsAppLovinAdapter'
-    s.version                   = '5.0.18'
+    s.version                   = '5.0.19'
     s.summary                   = "AppLovin MAX Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsAppLovinAdapter'
     s.description               = <<-DESC
