@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		/5up4sHKLMI6qTumw732TniHxBw=
+		GSuNXRYOS89/NG2cgJnPzj6HSfY=
 		</data>
 		<key>Headers/TeadsSDK-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3a6NsSZf5pKR/lVyBElRrRFUux4=
+		GHVYPL99pipU4ni9rfgGD/6yZxA=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Hr7Q7+FqAcjf+hsGQ3HpSH2wsII=
+		dUht46Qp1Ig7DB1tXBOHGsQ+q+Y=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Hr7Q7+FqAcjf+hsGQ3HpSH2wsII=
+		dUht46Qp1Ig7DB1tXBOHGsQ+q+Y=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		3QCf+F6kwwDxsRZdOoatAMV++ac=
+		Ozbd7gMUfSnIx+XtkB0bPIiB6Dw=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		3QCf+F6kwwDxsRZdOoatAMV++ac=
+		Ozbd7gMUfSnIx+XtkB0bPIiB6Dw=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eWiXogBM8f8AjOjRqsG5l0Ju1Wk=
+		+hwb4bdOf7IcEdp3bO9G0bKmFWU=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		eWiXogBM8f8AjOjRqsG5l0Ju1Wk=
+		+hwb4bdOf7IcEdp3bO9G0bKmFWU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,11 +119,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/5up4sHKLMI6qTumw732TniHxBw=
+			GSuNXRYOS89/NG2cgJnPzj6HSfY=
 			</data>
 			<key>hash2</key>
 			<data>
-			F2PBaeEDJCNWE/upABDo6DjrlFJ/NkZkkpwKvL1PW2U=
+			SkTkXDQmfdHYyBOy1k3lc+DZzIexMb6hsfqq7M1Uy30=
 			</data>
 		</dict>
 		<key>Headers/TeadsSDK-Swift.h</key>
@@ -174,11 +174,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hr7Q7+FqAcjf+hsGQ3HpSH2wsII=
+			dUht46Qp1Ig7DB1tXBOHGsQ+q+Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			9KHufEqjiyBQ4mmYSLWv3THAc0PQkDhA1srrjF6pRvE=
+			riNyMahEvbsmAMAotYFpwEK0eLWLdqz+JhmIYdB2KDE=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64.swiftdoc</key>
@@ -207,11 +207,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hr7Q7+FqAcjf+hsGQ3HpSH2wsII=
+			dUht46Qp1Ig7DB1tXBOHGsQ+q+Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			9KHufEqjiyBQ4mmYSLWv3THAc0PQkDhA1srrjF6pRvE=
+			riNyMahEvbsmAMAotYFpwEK0eLWLdqz+JhmIYdB2KDE=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -240,11 +240,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3QCf+F6kwwDxsRZdOoatAMV++ac=
+			Ozbd7gMUfSnIx+XtkB0bPIiB6Dw=
 			</data>
 			<key>hash2</key>
 			<data>
-			SQ+1BuzPun2nzxx5pXmXbqFbomwpZTq3RQ32BCoBS7I=
+			zr6nFnY02FDKr+bILzO0fZV1X8pGhRMYcqmwl35ewlk=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386.swiftdoc</key>
@@ -273,11 +273,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3QCf+F6kwwDxsRZdOoatAMV++ac=
+			Ozbd7gMUfSnIx+XtkB0bPIiB6Dw=
 			</data>
 			<key>hash2</key>
 			<data>
-			SQ+1BuzPun2nzxx5pXmXbqFbomwpZTq3RQ32BCoBS7I=
+			zr6nFnY02FDKr+bILzO0fZV1X8pGhRMYcqmwl35ewlk=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -306,11 +306,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eWiXogBM8f8AjOjRqsG5l0Ju1Wk=
+			+hwb4bdOf7IcEdp3bO9G0bKmFWU=
 			</data>
 			<key>hash2</key>
 			<data>
-			qEUQp7DJbCaGNa0fIf1QWnp/MFT1xZ2eJLFOMDVC6Ds=
+			ZTpmvzhSeOeCHXh2hXzggYQFvqhMNFKxXXlRyRM5V/w=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -339,11 +339,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eWiXogBM8f8AjOjRqsG5l0Ju1Wk=
+			+hwb4bdOf7IcEdp3bO9G0bKmFWU=
 			</data>
 			<key>hash2</key>
 			<data>
-			qEUQp7DJbCaGNa0fIf1QWnp/MFT1xZ2eJLFOMDVC6Ds=
+			ZTpmvzhSeOeCHXh2hXzggYQFvqhMNFKxXXlRyRM5V/w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
