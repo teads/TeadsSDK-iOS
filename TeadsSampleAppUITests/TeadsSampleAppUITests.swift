@@ -9,6 +9,9 @@
 import XCTest
 
 class TeadsSampleAppUITests: XCTestCase {
+    
+    private let mediaViewIdentifier = "teads-mediaView"
+    
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
@@ -22,10 +25,10 @@ class TeadsSampleAppUITests: XCTestCase {
         let scrollViewsQuery = XCUIApplication().scrollViews.firstMatch
         let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier: "ARTICLE").element
         let elementsQuery = scrollViewsQuery.otherElements
-        while !elementsQuery.otherElements["teads-player"].exists {
+        while !elementsQuery.otherElements[mediaViewIdentifier].exists {
             articleElement.swipeUp()
         }
-        let player = elementsQuery.otherElements["teads-player"]
+        let player = elementsQuery.otherElements[mediaViewIdentifier]
         XCTAssert(player.frame.height > 80)
     }
 
@@ -39,10 +42,10 @@ class TeadsSampleAppUITests: XCTestCase {
         let scrollViewsQuery = XCUIApplication().scrollViews.firstMatch
         let articleElement = scrollViewsQuery.otherElements.containing(.staticText, identifier: "ARTICLE").element
         let elementsQuery = scrollViewsQuery.otherElements
-        while !elementsQuery.otherElements["teads-player"].exists {
+        while !elementsQuery.otherElements[mediaViewIdentifier].exists {
             articleElement.swipeUp()
         }
-        let player = elementsQuery.otherElements["teads-player"]
+        let player = elementsQuery.otherElements[mediaViewIdentifier]
         XCTAssert(player.frame.height > 80)
     }
 }
