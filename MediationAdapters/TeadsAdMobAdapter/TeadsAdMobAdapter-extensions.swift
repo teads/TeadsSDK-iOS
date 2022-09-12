@@ -19,9 +19,10 @@ extension TeadsAdapterSettings: GADAdNetworkExtras {
 }
 
 @objc public final class GADMAdapterTeads: NSObject {
+    @available(*, deprecated, message: "defaultLabel is not used anymore please pass your label value as parameter of the customEventExtra method")
     @objc public static let defaultLabel = "Teads"
 
-    @objc public class func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String = defaultLabel) -> GADCustomEventExtras {
+    @objc public class func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String) -> GADCustomEventExtras {
         let customEventExtras = GADCustomEventExtras()
         if let parameters = try? teadsAdSettings.toDictionary() {
             customEventExtras.setExtras(parameters, forLabel: label)
