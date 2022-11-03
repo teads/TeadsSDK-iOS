@@ -3,6 +3,7 @@
 import PackageDescription
 
 let teadsModuleName = "TeadsSDK"
+let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let omModuleName = "OMSDK_Teadstv"
 
 let package = Package(
@@ -15,15 +16,23 @@ let package = Package(
             name: teadsModuleName,
             targets: [teadsModuleName, omModuleName]
         ),
+        .library(
+            name: teadsAdMobAdapterModuleName,
+            targets: [teadsAdMobAdapterModuleName]
+        ),
+    ],
+    dependencies: [
+        .package(name: "GoogleMobileAds", url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "9.0.0"),
     ],
     targets: [
         .binaryTarget(
             name: teadsModuleName,
-            path: "\(teadsModuleName).xcframework"
+            path: "Frameworks/\(teadsModuleName).xcframework"
         ),
         .binaryTarget(
             name: omModuleName,
-            path: "\(omModuleName).xcframework"
+            path: "Frameworks/\(omModuleName).xcframework"
         ),
+        .target(name: teadsAdMobAdapterModuleName, dependencies: ["GoogleMobileAds"])
     ]
 )

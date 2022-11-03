@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "teadssdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/teads/TeadsSDK-iOS",
+      "state" : {
+        "branch" : "master",
+        "revision" : "125ba4249b300ad6d8095db54a5771bf490968bb"
+      }
+    }
+  ],
+  "version" : 2
+}
