@@ -3,7 +3,7 @@
 import PackageDescription
 
 let teadsModuleName = "TeadsSDK"
-let teadsAdmobAdapterModuleName = "TeadsAdmobAdapter"
+let teadsAdmobAdapterModuleName = "TeadsAdMobAdapter"
 let omModuleName = "OMSDK_Teadstv"
 
 let package = Package(
