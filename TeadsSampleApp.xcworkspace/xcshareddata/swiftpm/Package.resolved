@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "teadssdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/teads/TeadsSDK-iOS",
+      "state" : {
+        "branch" : "test_spm_admob",
+        "revision" : "0c84467d02b0863d23063f0d3ff1a396c1db786e"
+      }
+    }
+  ],
+  "version" : 2
+}
