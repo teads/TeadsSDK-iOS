@@ -76,8 +76,6 @@ import WebKit
     private var slotOpener: (() -> Void)?
     private var slotOpportunity: ((WKWebView, SlotPosition) -> Void)?
 
-    private static let urlKeyPath = NSExpression(forKeyPath: \WKWebView.url).keyPath
-
     /// Init the Teads webView helper
     ///
     /// Handles slot position injection from TeadsSDK
@@ -95,8 +93,15 @@ import WebKit
         self.delegate = delegate
         super.init()
 
-        // URL Change observer
-        webView.addObserver(self, forKeyPath: Self.urlKeyPath, options: .new, context: nil)
+        /// Track url requests change in order to reset adView and position tracking
+        /// When position is located a new time, alert through ``TeadsWebViewHelperDelegate/webViewHelperSlotFoundSuccessfully()``
+        webViewObservation = webView.observe(\.url, options: [.old, .new]) { [weak self] _, changes in
+            if changes.oldValue != changes.newValue {
+                self?.adView?.removeFromSuperview()
+                self?.containerView?.removeFromSuperview()
+                self?.slotPosition = nil
+            }
+        }
 
         // add message handler method name to communicate with the wkwebview
         JSBootstrapOutput.allCases.map(\.rawValue).forEach {
@@ -120,18 +125,6 @@ import WebKit
             }
         }
         webViewObservation = nil
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    /// Track url requests change in order to reset adView and position tracking
-    /// When position is located a new time, alert through ``TeadsWebViewHelperDelegate/webViewHelperSlotFoundSuccessfully()``
-    override public func observeValue(forKeyPath keyPath: String?, of _: Any?, change: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
-        if keyPath == Self.urlKeyPath,
-           let _ = change?[NSKeyValueChangeKey.newKey] {
-            adView?.removeFromSuperview()
-            containerView?.removeFromSuperview()
-            slotPosition = nil
-        }
     }
 
     /// Inject Teads' bootstrap in the webview
@@ -473,7 +466,7 @@ extension TeadsWebViewHelper {
     /// When registering WKWeakScriptHandler, WKWebView create a strong reference to handler
     /// This leads to retain cycle between webView <-> owner and webView <-> scriptHandler
     /// In order to avoid retain cycle
-    class WKWeakScriptHandler: NSObject, WKScriptMessageHandler {
+    final class WKWeakScriptHandler: NSObject, WKScriptMessageHandler {
         weak var delegate: WKScriptMessageHandler?
 
         init(delegate: WKScriptMessageHandler) {
