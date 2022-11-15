@@ -23,7 +23,7 @@ let package = Package(
         ),
         .library(
             name: teadsAdMobAdapterModuleName,
-            targets: [teadsAdMobAdapterModuleName, teadsModuleName, omModuleName]
+            targets: [teadsAdMobAdapterModuleName]
         )
     ],
     dependencies: [
@@ -42,15 +42,12 @@ let package = Package(
             name: omModuleName,
             path: "Frameworks/\(omModuleName).xcframework"
         ),
-//        .target(
-//            name: commonModuleName,
-//            path: "\(mediationAdaptersDirectory)/\(commonModuleName)"
-//        ),
         .target(
             name: teadsAdMobAdapterModuleName,
             dependencies: [
                 .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
-//                .target(name: commonModuleName)
+                .target(name: omModuleName),
+                .target(name: teadsModuleName),
             ],
             path: mediationAdaptersDirectory,
             exclude: [
