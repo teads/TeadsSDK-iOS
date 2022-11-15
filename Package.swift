@@ -4,12 +4,17 @@ import PackageDescription
 
 let teadsModuleName = "TeadsSDK"
 let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
+let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
+let teadsSASAdapterModuleName = "TeadsSASAdapter"
+let mediationAdaptersDirectory = "MediationAdapters"
+let googleMobileAdsModuleName = "GoogleMobileAds"
+let commonModuleName = "Common"
 let omModuleName = "OMSDK_Teadstv"
 
 let package = Package(
     name: teadsModuleName,
     platforms: [
-        .iOS(.v10),
+        .iOS(.v10)
     ],
     products: [
         .library(
@@ -18,11 +23,15 @@ let package = Package(
         ),
         .library(
             name: teadsAdMobAdapterModuleName,
-            targets: [teadsAdMobAdapterModuleName]
-        ),
+            targets: [teadsAdMobAdapterModuleName, teadsModuleName, omModuleName]
+        )
     ],
     dependencies: [
-        .package(name: "GoogleMobileAds", url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "9.0.0"),
+        .package(
+            name: googleMobileAdsModuleName,
+            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+            from: "9.0.0"
+        )
     ],
     targets: [
         .binaryTarget(
@@ -33,6 +42,21 @@ let package = Package(
             name: omModuleName,
             path: "Frameworks/\(omModuleName).xcframework"
         ),
-        .target(name: teadsAdMobAdapterModuleName, dependencies: ["GoogleMobileAds"])
+//        .target(
+//            name: commonModuleName,
+//            path: "\(mediationAdaptersDirectory)/\(commonModuleName)"
+//        ),
+        .target(
+            name: teadsAdMobAdapterModuleName,
+            dependencies: [
+                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
+//                .target(name: commonModuleName)
+            ],
+            path: mediationAdaptersDirectory,
+            exclude: [
+                teadsAppLovinAdapterModuleName,
+                teadsSASAdapterModuleName
+            ]
+        )
     ]
 )
