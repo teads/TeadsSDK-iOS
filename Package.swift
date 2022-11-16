@@ -18,10 +18,6 @@ let package = Package(
     ],
     products: [
         .library(
-            name: teadsModuleName,
-            targets: [teadsModuleName, omModuleName]
-        ),
-        .library(
             name: teadsAdMobAdapterModuleName,
             targets: [teadsAdMobAdapterModuleName]
         )

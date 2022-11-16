@@ -1,95 +1,35 @@
+# Teads - iOS AdMob Mediation Adapter
 
+This branch is dedicated to deliver TeadsAdMobAdapter through SPM
 
-<br/>
-<p align="center">
-    <a href="https://teads.com/" target="_blank">
-        <img width="75%" src="./ReadmeResources/teads_logo.png" alt="Teads logo">
-    </a>
-</p>
-<br/>
+> Mediation adapter to be used in conjunction with AdMob to deliver Teads ads on iOS devices.
 
-----
+If you want to display Teads ads in your iOS application through AdMob mediation, you’re at the right place.
 
-Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
+## Requirements
 
+- ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
+- ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
+- ![GoogleMobileAdsSDK: 9.0+](https://img.shields.io/badge/GoogleMobileAdsSDK-8.0+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
 
-> **⚠️ Important ⚠️**
->
-> ***Xcode 13***
->
-> In Xcode 13, Apple introduced an option to override the version number of every plist present inside your app (https://developer.apple.com/forums/thread/690647). Even those from third parties frameworks like TeadsSDK. We used to rely on the plist to retrieve the TeadsSDK version. To prevent this, we changed the way we checked the SDK version since version 5.0.6. So please update your integration to at least version 5.0.6.
->
-> ***Xcode 13 + iOS 15 device***
->
-> [#155](https://github.com/teads/TeadsSDK-iOS/issues/155) building your application with **Xcode 13** and running it on **iOS 15 device** will crash when running TeadsSDK, we strongly advise to upgrade to [4.8.8 version](https://github.com/teads/TeadsSDK-iOS/releases/tag/v4.8.8) which fixes this crash
->
-> You can still build and publish your app using Xcode 12 with older versions than 4.8.8
+## Features
 
-## 📃 Table of Contents
+- ✅  Displaying Teads banners
+- ✅  Displaying Teads native ads
 
-- [Integration Documentation](#-integration-documentation)
-- [Migrating from v4 to v5](#-migrating-from-v4-to-v5)
-- [Run the sample app](#-run-the-sample-app)
-- [Installation](#-install-the-teads-sdk-ios-framework)
-- [Mediation Adapters](#-mediation-adapters)
-- [Certifications](#-certifications)
-- [Changelog](#%EF%B8%8F-changelog)
+## Installation
 
-## 🚀 Integration Documentation
-
-Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
-
-## 🕊 Migrating from v4 to v5
-
-TeadsSDK v5 introduces some changes regarding v4, see [Migration Documentation](https://support.teads.tv/support/solutions/articles/36000314772-migrating-from-v4-to-v5)
-
-## 🚲 Run the sample app
-
-Clone this repository, open it with Xcode, and run project.
-
-## 📦 Install the Teads SDK iOS framework
-
-Teads SDK is currently distributed through CocoaPods. It includes everything you need to serve "outstream" video ads. 
-
-### Cocoapods
-
-To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
-
-```ruby
-pod 'TeadsSDK', '~> 5.0'
-```
-
-On your terminal, go to the directory containing your project's `.xcodeproj` file and your Podfile and run `pod install` command. This will install Teads SDK along with our needed dependencies.
-
-```bash
-pod install --repo-update
-```
-
+Before installing Teads adapter, you need to implement [Google Mobile Ads](https://developers.google.com/admob/ios/quick-start) in your application.
 
 ### Swift Package Manager
 
 [SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url :
 
-```
-https://github.com/teads/TeadsSDK-iOS
-```
+- Repository: `https://github.com/teads/TeadsSDK-iOS`
+- Dependency rule: `branch` 
+- Branch: `admob-spm`
 
-Then select latest version available
+## Integration Documentation
 
-## 🤝 Mediation Adapters
-- [Google AdMob](./MediationAdapters/TeadsAdMobAdapter/README.md)
-- [Mopub](./MediationAdapters/TeadsMoPubAdapter/README.md)
-- [AppLovin Max](./MediationAdapters/TeadsAppLovinAdapter/README.md)
-- [Smart AdServer](./MediationAdapters/TeadsSASAdapter/README.md)
-
-## 🎓 Certifications
-
-Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measurement](https://iabtechlab.com/standards/open-measurement-sdk/) SDK, also known as OM SDK. The OM SDK brings transparency to the advertising world, giving a way to standardize the viewability and verification measurement for the ads served through mobile apps.  Teads is part of the [IAB's compliant companies](https://iabtechlab.com/compliance-programs/compliant-companies/). 
-
-![iab certification badge](./ReadmeResources/OMCompliant.png)
-
-
-## ⌚️ Changelog
-
-See [changelog here](https://github.com/teads/TeadsSDK-iOS/releases). 
-
+Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
