@@ -12,7 +12,7 @@ let commonModuleName = "Common"
 let omModuleName = "OMSDK_Teadstv"
 
 let package = Package(
-    name: teadsModuleName,
+    name: "Teads",
     platforms: [
         .iOS(.v10)
     ],
