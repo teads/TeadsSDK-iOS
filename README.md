@@ -18,12 +18,6 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 > ***Xcode 13***
 >
 > In Xcode 13, Apple introduced an option to override the version number of every plist present inside your app (https://developer.apple.com/forums/thread/690647). Even those from third parties frameworks like TeadsSDK. We used to rely on the plist to retrieve the TeadsSDK version. To prevent this, we changed the way we checked the SDK version since version 5.0.6. So please update your integration to at least version 5.0.6.
->
-> ***Xcode 13 + iOS 15 device***
->
-> [#155](https://github.com/teads/TeadsSDK-iOS/issues/155) building your application with **Xcode 13** and running it on **iOS 15 device** will crash when running TeadsSDK, we strongly advise to upgrade to [4.8.8 version](https://github.com/teads/TeadsSDK-iOS/releases/tag/v4.8.8) which fixes this crash
->
-> You can still build and publish your app using Xcode 12 with older versions than 4.8.8
 
 ## 📃 Table of Contents
 
