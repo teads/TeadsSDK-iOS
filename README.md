@@ -13,8 +13,6 @@ If you want to display Teads ads in your iOS application through AdMob mediation
 - ![GoogleMobileAdsSDK: 9.0+](https://img.shields.io/badge/GoogleMobileAdsSDK-8.0+-blue.svg?style=flat)
 - ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
 
-## Features
-
 - ✅  Displaying Teads banners
 - ✅  Displaying Teads native ads
 
