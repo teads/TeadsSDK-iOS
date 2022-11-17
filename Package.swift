@@ -8,7 +8,6 @@ let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsSASAdapterModuleName = "TeadsSASAdapter"
 let mediationAdaptersDirectory = "MediationAdapters"
 let googleMobileAdsModuleName = "GoogleMobileAds"
-let commonModuleName = "Common"
 let omModuleName = "OMSDK_Teadstv"
 
 let package = Package(
