@@ -14,20 +14,20 @@ let omModuleName = "OMSDK_Teadstv"
 let package = Package(
     name: "Teads",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v10),
     ],
     products: [
         .library(
             name: teadsAdMobAdapterModuleName,
             targets: [teadsAdMobAdapterModuleName]
-        )
+        ),
     ],
     dependencies: [
         .package(
             name: googleMobileAdsModuleName,
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
             from: "9.0.0"
-        )
+        ),
     ],
     targets: [
         .binaryTarget(
@@ -48,8 +48,8 @@ let package = Package(
             path: mediationAdaptersDirectory,
             exclude: [
                 teadsAppLovinAdapterModuleName,
-                teadsSASAdapterModuleName
+                teadsSASAdapterModuleName,
             ]
-        )
+        ),
     ]
 )
