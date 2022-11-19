@@ -7,7 +7,7 @@ let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsSASAdapterModuleName = "TeadsSASAdapter"
 let mediationAdaptersDirectory = "MediationAdapters"
-let googleMobileAdsModuleName = "GoogleMobileAds"
+let appLovinMaxModuleName = "AppLovinSDK"
 let commonModuleName = "Common"
 let omModuleName = "OMSDK_Teadstv"
 
@@ -18,15 +18,15 @@ let package = Package(
     ],
     products: [
         .library(
-            name: teadsAdMobAdapterModuleName,
-            targets: [teadsAdMobAdapterModuleName]
+            name: teadsAppLovinAdapterModuleName,
+            targets: [teadsAppLovinAdapterModuleName]
         ),
     ],
     dependencies: [
         .package(
-            name: googleMobileAdsModuleName,
-            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            from: "9.0.0"
+            name: appLovinMaxModuleName,
+            url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
+            .upToNextMajor(from: "11.1.1")
         ),
     ],
     targets: [
@@ -39,15 +39,15 @@ let package = Package(
             path: "Frameworks/\(omModuleName).xcframework"
         ),
         .target(
-            name: teadsAdMobAdapterModuleName,
+            name: teadsAppLovinAdapterModuleName,
             dependencies: [
-                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
+                .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
                 .target(name: omModuleName),
                 .target(name: teadsModuleName),
             ],
             path: mediationAdaptersDirectory,
             exclude: [
-                teadsAppLovinAdapterModuleName,
+                teadsAdMobAdapterModuleName,
                 teadsSASAdapterModuleName,
             ]
         ),

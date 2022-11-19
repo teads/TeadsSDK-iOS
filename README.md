@@ -1,17 +1,18 @@
-# Teads - iOS AdMob Mediation Adapter
+# Teads - iOS AppLovin MAX Mediation Adapter
+This branch is dedicated to deliver TeadsAppLovinAdapter through SPM
 
-This branch is dedicated to deliver TeadsAdMobAdapter through SPM
 
-> Mediation adapter to be used in conjunction with AdMob to deliver Teads ads on iOS devices.
+> Mediation adapter to be used in conjunction with AppLovin to deliver Teads ads on iOS devices.
 
-If you want to display Teads ads in your iOS application through AdMob mediation, you’re at the right place.
+If you want to display Teads ads in your iOS application through AppLovin MAX mediation, you’re at the right place.
 
 ## Requirements
 
 - ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
 - ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
-- ![GoogleMobileAdsSDK: 9.0+](https://img.shields.io/badge/GoogleMobileAdsSDK-8.0+-blue.svg?style=flat)
-- ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
+- ![AppLovin SDK: 11.1.1+](https://img.shields.io/badge/AppLovin%20SDK-11.1.1+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.20+](https://img.shields.io/badge/Teads%20SDK-5.0.12+-blue.svg?style=flat)
+
 
 ## Features
 
@@ -20,7 +21,7 @@ If you want to display Teads ads in your iOS application through AdMob mediation
 
 ## Installation
 
-Before installing Teads adapter, you need to implement [Google Mobile Ads](https://developers.google.com/admob/ios/quick-start) in your application.
+Before installing Teads adapter, you need to implement [AppLovin Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration) in your application.
 
 ### Swift Package Manager
 
@@ -28,8 +29,8 @@ Before installing Teads adapter, you need to implement [Google Mobile Ads](https
 
 - Repository: `https://github.com/teads/TeadsSDK-iOS`
 - Dependency rule: `branch` 
-- Branch: `admob-spm`
+- Branch: `applovin-spm`
 
 ## Integration Documentation
 
-Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
+Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000357700-inread-applovin-mediation).
