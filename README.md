@@ -11,7 +11,7 @@ If you want to display Teads ads in your iOS application through AppLovin MAX me
 - ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
 - ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
 - ![AppLovin SDK: 11.1.1+](https://img.shields.io/badge/AppLovin%20SDK-11.1.1+-blue.svg?style=flat)
-- ![Teads SDK: 5.0.20+](https://img.shields.io/badge/Teads%20SDK-5.0.12+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.20+](https://img.shields.io/badge/Teads%20SDK-5.0.20+-blue.svg?style=flat)
 
 
 ## Features
@@ -25,7 +25,7 @@ Before installing Teads adapter, you need to implement [AppLovin Ads](https://da
 
 ### Swift Package Manager
 
-[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url :
+[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.To integrate TeadsSDK into your Xcode project using SPM, specify the following :
 
 - Repository: `https://github.com/teads/TeadsSDK-iOS`
 - Dependency rule: `branch` 
