@@ -47,7 +47,7 @@ class NativeAdmobTableViewController: TeadsViewController {
             settings.pageUrl("http://teads.tv")
         }
 
-        let customEventExtras = GADMAdapterTeads.customEventExtra(with: settings)
+        let customEventExtras = GADMAdapterTeads.customEventExtra(with: settings, for: "Teads")
 
         let request = GADRequest()
         request.register(customEventExtras)
