@@ -8,6 +8,7 @@
 import Foundation
 import GoogleMobileAds
 import TeadsSDK
+@_exported import Common
 
 @objc(GADMAdapterTeadsBanner)
 public final class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {

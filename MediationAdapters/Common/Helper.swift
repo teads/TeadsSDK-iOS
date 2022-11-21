@@ -8,8 +8,8 @@
 import TeadsSDK
 import UIKit
 
-struct Helper {
-    static func bannerSize(for width: CGFloat) -> CGSize {
+public struct Helper {
+    public static func bannerSize(for width: CGFloat) -> CGSize {
         return CGSize(width: width > 0 ? width : 300, height: width / (16 / 9))
     }
 }
@@ -21,7 +21,7 @@ struct Helper {
 public typealias TeadsAdSettings = TeadsAdapterSettings
 
 extension TeadsAdapterSettings {
-    func setIntegation(_ integration: String, version: String) {
+    public func setIntegation(_ integration: String, version: String) {
         addExtras(integration, for: TeadsAdapterSettings.integrationTypeKey)
         addExtras(version, for: TeadsAdapterSettings.integrationVersionKey)
     }
