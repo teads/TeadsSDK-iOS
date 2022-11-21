@@ -55,24 +55,35 @@ pod 'TeadsSDK', '~> 5.0'
 
 On your terminal, go to the directory containing your project's `.xcodeproj` file and your Podfile and run `pod install` command. This will install Teads SDK along with our needed dependencies.
 
-```bash
+```console
 pod install --repo-update
 ```
 
 
 ### Swift Package Manager
 
-[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url :
+[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-```
+#### Installing from Xcode
+
+1. Add a package by selecting `File` → `Add Packages…` in Xcode’s menu bar.
+2. Search for the Teads iOS SDK using the repo's URL:
+```console
 https://github.com/teads/TeadsSDK-iOS
 ```
+3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and specify `5.20.0` as the lower bound.
 
-Then select latest version available
+#### Alternatively, add Teads to your Package.swift manifest
+1. Add it to the `dependencies` of your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.20"))
+]
+```
 
 ## 🤝 Mediation Adapters
 - [Google AdMob](./MediationAdapters/TeadsAdMobAdapter/README.md)
-- [Mopub](./MediationAdapters/TeadsMoPubAdapter/README.md)
 - [AppLovin Max](./MediationAdapters/TeadsAppLovinAdapter/README.md)
 - [Smart AdServer](./MediationAdapters/TeadsSASAdapter/README.md)
 
