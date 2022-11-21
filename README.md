@@ -11,7 +11,7 @@ If you want to display Teads ads in your iOS application through AdMob mediation
 - ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
 - ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
 - ![GoogleMobileAdsSDK: 9.0+](https://img.shields.io/badge/GoogleMobileAdsSDK-9.0+-blue.svg?style=flat)
-- ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.20+](https://img.shields.io/badge/Teads%20SDK-5.0.20+-blue.svg?style=flat)
 
 - ✅  Displaying Teads banners
 - ✅  Displaying Teads native ads
@@ -22,7 +22,7 @@ Before installing Teads adapter, you need to implement [Google Mobile Ads](https
 
 ### Swift Package Manager
 
-[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify package repository url :
+[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies. To integrate TeadsSDK into your Xcode project using SPM, specify the following :
 
 - Repository: `https://github.com/teads/TeadsSDK-iOS`
 - Dependency rule: `branch` 
