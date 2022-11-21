@@ -11,14 +11,13 @@ The Teads Webview Helper adds a JavaScript logic (called bootstrap) into the Web
 
 ## Initial configuration
 HTML element is set into your web content loaded into your webview
-<img src="./README_Webview_configuration.png">
+![Configuration](./README_WebView_configuration.png)
 
 ## When an ad is received
 1. The bootstrap **expands** the `teads-slot` HTML div to the ad height
 2. The `TeadsAdView` is **injected** to `WKWebView.UIScrollView.content` at the `teads-slot` HTML exact position: assuring scroll fluidity 
 3. The bootstrap **synchronizes** the `teads-slot` vertical position with the Swift `TeadsAdView`
-
-<img src="./README_Webview_hierarchy.png">
+![Hierarchy](./README_WebView_hierarchy.png)
 
 ## When an ad is closed
 - The bootstrap **collapses** `teads-slot` height to zero
