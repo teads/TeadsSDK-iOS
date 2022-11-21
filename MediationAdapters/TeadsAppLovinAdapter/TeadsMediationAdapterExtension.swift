@@ -7,9 +7,6 @@
 
 import AppLovinSDK
 import TeadsSDK
-#if canImport(TeadsAdapterCommon)
-import TeadsAdapterCommon
-#endif
 
 @objc public extension MANativeAdLoader {
     func register(teadsAdSettings: TeadsAdapterSettings) {

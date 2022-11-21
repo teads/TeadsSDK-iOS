@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsAppLovinAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
+    s.exclude_files             = ['MediationAdapters/TeadsAppLovinAdapter/Exports.swift']
     s.dependency                'TeadsSDK', s.version.to_s
     s.dependency                'AppLovinSDK', '>= 11.2.1'
 
