@@ -8,7 +8,9 @@
 import GoogleMobileAds
 import TeadsSDK
 import UIKit
-@_exported import Common
+#if canImport(TeadsAdapterCommon)
+import TeadsAdapterCommon
+#endif
 
 @objc(GADMAdapterTeadsNative)
 final class GADMAdapterTeadsNative: NSObject, GADCustomEventNativeAd {

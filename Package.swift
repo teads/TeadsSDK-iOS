@@ -10,12 +10,13 @@ let mediationAdaptersDirectory = "MediationAdapters"
 let googleMobileAdsModuleName = "GoogleMobileAds"
 let appLovinMaxModuleName = "AppLovinSDK"
 let omModuleName = "OMSDK_Teadstv"
-let commonModuleName = "Common"
+let commonModuleName = "TeadsAdapterCommon"
+let commonModuleNamePath = "Common"
 
 let package = Package(
     name: "Teads",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v10),
     ],
     products: [
         .library(
@@ -54,7 +55,7 @@ let package = Package(
         ),
         .target(
             name: commonModuleName,
-            path: "\(mediationAdaptersDirectory)/\(commonModuleName)"
+            path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
         .target(
             name: teadsAdMobAdapterModuleName,
