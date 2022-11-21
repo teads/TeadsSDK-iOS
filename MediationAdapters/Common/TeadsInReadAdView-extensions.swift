@@ -7,6 +7,7 @@
 
 import TeadsSDK
 import UIKit
+
 public extension TeadsInReadAdView {
     func updateHeight(with adRatio: TeadsAdRatio) {
         if let width = superview?.frame.width.positive ?? frame.width.positive {
