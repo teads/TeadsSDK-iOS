@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsAdMobAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
+    s.exclude_files             = ['MediationAdapters/TeadsAdMobAdapter/Exports.swift']
     s.dependency                'TeadsSDK', s.version.to_s
     s.dependency                'Google-Mobile-Ads-SDK', '>= 8.0'
 
