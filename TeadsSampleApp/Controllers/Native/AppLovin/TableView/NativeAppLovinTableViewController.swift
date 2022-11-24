@@ -30,7 +30,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
         }
 
         ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
-        ALSdk.shared()!.settings.isVerboseLogging = true
+        ALSdk.shared()!.settings.isVerboseLoggingEnabled = true
         ALSdk.shared()!.initializeSdk { [weak self] (_: ALSdkConfiguration) in
             self?.loadAd()
         }

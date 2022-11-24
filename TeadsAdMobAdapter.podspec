@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsAdMobAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
+    s.exclude_files             = ['MediationAdapters/TeadsAdMobAdapter/Exports.swift']
     s.dependency                'TeadsSDK', s.version.to_s
-    s.dependency                'Google-Mobile-Ads-SDK', '>= 8.0'
+    s.dependency                'Google-Mobile-Ads-SDK', '>= 9.0.0'
 
     s.pod_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
     s.user_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }

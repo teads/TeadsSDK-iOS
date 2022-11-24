@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsAppLovinAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
+    s.exclude_files             = ['MediationAdapters/TeadsAppLovinAdapter/Exports.swift']
     s.dependency                'TeadsSDK', s.version.to_s
-    s.dependency                'AppLovinSDK', '>= 11.2.1'
+    s.dependency                'AppLovinSDK', '>= 11.5.1'
 
     s.pod_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
     s.user_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
