@@ -52,10 +52,8 @@ class InReadAdmobTableViewController: TeadsViewController {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings, for: "Teads")
-
         let request = GADRequest()
-        request.register(customEventExtras)
+        request.register(adSettings)
 
         admobAdView?.load(request)
 
