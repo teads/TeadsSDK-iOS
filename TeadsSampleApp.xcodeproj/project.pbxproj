@@ -525,7 +525,7 @@
 			dependencies = (
 			);
 			name = TeadsSampleApp;
-			productName = TeadsDemoApp;
+			productName = TeadsSampleApp;
 			productReference = B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -685,7 +685,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.5/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.5.3/AppLovinSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
