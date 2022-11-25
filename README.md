@@ -71,14 +71,14 @@ pod install --repo-update
 ```console
 https://github.com/teads/TeadsSDK-iOS
 ```
-3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and specify `5.20.0` as the lower bound.
+3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and keep `5.0.0 < 6.0.0`.
 
 #### Alternatively, add Teads to your Package.swift manifest
 1. Add it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.20"))
+    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.0"))
 ]
 ```
 
