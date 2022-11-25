@@ -27,7 +27,7 @@ final class TeadsMediationAdapter: ALMediationAdapter {
 
     @objc override func initialize(with _: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         Teads.configure()
-        completionHandler(.doesNotApply, nil)
+        completionHandler(.initializedSuccess, nil)
     }
 
     @objc override var sdkVersion: String {
