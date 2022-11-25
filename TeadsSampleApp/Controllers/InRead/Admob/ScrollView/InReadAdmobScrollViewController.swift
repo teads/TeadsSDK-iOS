@@ -43,10 +43,8 @@ class InReadAdmobScrollViewController: TeadsViewController {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let customEventExtras = GADMAdapterTeads.customEventExtra(with: adSettings)
-
         let request = GADRequest()
-        request.register(customEventExtras)
+        request.register(adSettings)
 
         bannerView.load(request)
     }

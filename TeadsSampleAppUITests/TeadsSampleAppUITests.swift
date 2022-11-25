@@ -9,9 +9,8 @@
 import XCTest
 
 class TeadsSampleAppUITests: XCTestCase {
-    
     private let mediaViewIdentifier = "teads-mediaView"
-    
+
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
