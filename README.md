@@ -19,7 +19,7 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 >
 > In Xcode 13, Apple introduced an option to override the version number of every plist present inside your app (https://developer.apple.com/forums/thread/690647). Even those from third parties frameworks like TeadsSDK. We used to rely on the plist to retrieve the TeadsSDK version. To prevent this, we changed the way we checked the SDK version since version 5.0.6. So please update your integration to at least version 5.0.6.
 
-## 📃 Table of Contents
+## 📋 Table of Contents
 
 - [Integration Documentation](#-integration-documentation)
 - [Migrating from v4 to v5](#-migrating-from-v4-to-v5)
@@ -29,9 +29,10 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 - [Certifications](#-certifications)
 - [Changelog](#%EF%B8%8F-changelog)
 
-## 🚀 Integration Documentation
+## 📚 Integration Documentation
 
-Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
+- Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
+- Framework API documentation is available [here](https://teads.github.io/TeadsSDK-iOS/latest/)
 
 ## 🕊 Migrating from v4 to v5
 
