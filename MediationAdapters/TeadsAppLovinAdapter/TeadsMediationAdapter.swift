@@ -171,8 +171,9 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
-        nativeDelegate?.didFailToLoadNativeAdWithError(MAAdapterError(adapterError: .noFill, thirdPartySdkErrorCode: reason.errorCode, thirdPartySdkErrorMessage: reason.localizedDescription))
-        bannerDelegate?.didFailToLoadAdViewAdWithError(MAAdapterError(adapterError: .noFill, thirdPartySdkErrorCode: reason.errorCode, thirdPartySdkErrorMessage: reason.localizedDescription))
+        let maxError = reason.maxError
+        nativeDelegate?.didFailToLoadNativeAdWithError(maxError)
+        bannerDelegate?.didFailToLoadAdViewAdWithError(maxError)
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
@@ -193,12 +194,14 @@ extension TeadsMediationAdapter: TeadsAdDelegate {
     }
 
     func didRecordImpression(ad _: TeadsAd) {
-        nativeDelegate?.didDisplayNativeAd(withExtraInfo: ["event": "impression"])
-        bannerDelegate?.didDisplayAdViewAd(withExtraInfo: ["event": "impression"])
+        let event = ["event": "impression"]
+        nativeDelegate?.didDisplayNativeAd(withExtraInfo: event)
+        bannerDelegate?.didDisplayAdViewAd(withExtraInfo: event)
     }
 
     func didCatchError(ad _: TeadsAd, error: Error) {
-        bannerDelegate?.didFailToDisplayAdViewAdWithError(MAAdapterError(adapterError: .noConnection, thirdPartySdkErrorCode: error._code, thirdPartySdkErrorMessage: error.localizedDescription))
+        let maxError = MAAdapterError(adapterError: .init(nsError: error), mediatedNetworkErrorCode: error._code, mediatedNetworkErrorMessage: error.localizedDescription)
+        bannerDelegate?.didFailToDisplayAdViewAdWithError(maxError)
     }
 
     func didClose(ad _: TeadsAd) {
@@ -211,5 +214,26 @@ extension TeadsMediationAdapter: TeadsAdDelegate {
 
     func didCollapsedFromFullscreen(ad _: TeadsAd) {
         bannerDelegate?.didCollapseAdViewAd()
+    }
+}
+
+extension AdFailReason {
+    var maxError: MAAdapterError {
+        switch code {
+            case .errorNetwork:
+                return .noConnection
+            case .errorBadResponse:
+                return .invalidConfiguration
+            case .errorVastError:
+                return .adDisplayFailedError
+            case .errorInternal:
+                return .internalError
+            case .disabledApp, .errorUserIdMissing, .errorNoSlot:
+                return .invalidConfiguration
+            case .errorAdRequest:
+                return .badRequest
+            default:
+                return .noFill
+        }
     }
 }

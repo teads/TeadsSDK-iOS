@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		H+IoocfSN0FSpPjV73fTd71VloU=
+		931ZZ5lR1Uxh4jb367FN40DebmQ=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Zq0Kvgh8QaKw541uR6c8P0YX+mg=
+		Dt830PE3sLwfo2pIB1YpbEaz7/Y=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QZBp+0IkdX6qGDpm4cQmhYTDb0I=
+		2bm1aANJS2l/3RDv3WSEyHpGpMk=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vmrsA2YvQYCscb3JY6fkDGULOP8=
+		voxFrGwMrmPzTitDJlGm10nXXEI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>lib-js.tar</key>
 		<data>
-		C9MPmoOkgJW8vPM2dMg0AQNcdSo=
+		zjL+1oOspV3MaFrjIAdlzEr2VRw=
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
@@ -138,11 +138,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Zq0Kvgh8QaKw541uR6c8P0YX+mg=
+			Dt830PE3sLwfo2pIB1YpbEaz7/Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			z21LmMdARWaOdWIRptjLjQLdX0dRqyTdM4KuJgzwli0=
+			UPkMz2p+aOuBIluCtncKx+XLf54l+0Uc/mHYGfNq65I=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -171,11 +171,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QZBp+0IkdX6qGDpm4cQmhYTDb0I=
+			2bm1aANJS2l/3RDv3WSEyHpGpMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			cg2clIY3FXRuETMerctZSEvqiFBbywfqvKSwhVvy4BQ=
+			r1nxk429w6CedC5mlgmoG6WubuBApvEPhOlqOc8eG+s=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -204,11 +204,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vmrsA2YvQYCscb3JY6fkDGULOP8=
+			voxFrGwMrmPzTitDJlGm10nXXEI=
 			</data>
 			<key>hash2</key>
 			<data>
-			XeIbHbK11LbipwvgLemhKHnN1MaTG7FCTLDLsTMGpDM=
+			s/hVSPRAuvZ5/Uw0jgWV3guGTbmqZ13CUc8Asj7YP+8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -226,11 +226,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C9MPmoOkgJW8vPM2dMg0AQNcdSo=
+			zjL+1oOspV3MaFrjIAdlzEr2VRw=
 			</data>
 			<key>hash2</key>
 			<data>
-			hjuPCeQQPgmKyG1Mf2nPIz+H040gYa8FHbTR3MONirc=
+			Sxr60WQ5LPYFizvLf4/7J86swteWLJBb005ddaPJ2U8=
 			</data>
 		</dict>
 		<key>omid-session-client-v1.js</key>
