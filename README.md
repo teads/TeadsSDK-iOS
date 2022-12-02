@@ -1,12 +1,8 @@
-
-
-<br/>
 <p align="center">
     <a href="https://teads.com/" target="_blank">
         <img width="75%" src="./ReadmeResources/teads_logo.png" alt="Teads logo">
     </a>
 </p>
-<br/>
 
 ----
 
