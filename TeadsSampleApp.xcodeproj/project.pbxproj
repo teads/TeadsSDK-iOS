@@ -525,7 +525,7 @@
 			dependencies = (
 			);
 			name = TeadsSampleApp;
-			productName = TeadsDemoApp;
+			productName = TeadsSampleApp;
 			productReference = B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};

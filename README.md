@@ -1,16 +1,14 @@
-<br/>
 <p align="center">
     <a href="https://teads.com/" target="_blank">
         <img width="75%" src="./ReadmeResources/teads_logo.png" alt="Teads logo">
     </a>
 </p>
-<br/>
 
 ----
 
 Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
 
-## 📃 Table of Contents
+## 📋 Table of Contents
 
 - [Integration Documentation](#-integration-documentation)
 - [Migrating from v4 to v5](#-migrating-from-v4-to-v5)
@@ -20,9 +18,10 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 - [Certifications](#-certifications)
 - [Changelog](#%EF%B8%8F-changelog)
 
-## 🚀 Integration Documentation
+## 📚 Integration Documentation
 
-Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
+- Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
+- Framework API documentation is available [here](https://teads.github.io/TeadsSDK-iOS/latest/)
 
 ## 🕊 Migrating from v4 to v5
 
