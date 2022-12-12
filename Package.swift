@@ -55,14 +55,16 @@ let package = Package(
         ),
         .target(
             name: commonModuleName,
+            dependencies: [
+                .target(name: teadsModuleName),
+                .target(name: omModuleName),
+            ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
         .target(
             name: teadsAdMobAdapterModuleName,
             dependencies: [
                 .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
-                .target(name: omModuleName),
-                .target(name: teadsModuleName),
                 .target(name: commonModuleName),
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAdMobAdapterModuleName)"
@@ -71,8 +73,6 @@ let package = Package(
             name: teadsAppLovinAdapterModuleName,
             dependencies: [
                 .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
-                .target(name: omModuleName),
-                .target(name: teadsModuleName),
                 .target(name: commonModuleName),
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
