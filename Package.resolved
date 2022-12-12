@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AppLovinSDK",
+        "repositoryURL": "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
+        "state": {
+          "branch": null,
+          "revision": "84c1243412129ce17700655f68c60afcd73a8928",
+          "version": "11.5.5"
+        }
+      },
+      {
+        "package": "GoogleAppMeasurement",
+        "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
+        "state": {
+          "branch": null,
+          "revision": "71eb6700dd53a851473c48d392f00a3ab26699a6",
+          "version": "10.1.0"
+        }
+      },
+      {
+        "package": "GoogleUtilities",
+        "repositoryURL": "https://github.com/google/GoogleUtilities.git",
+        "state": {
+          "branch": null,
+          "revision": "6db6edb48bdd9943426562c7f042a5492de5ba3d",
+          "version": "7.10.0"
+        }
+      },
+      {
+        "package": "nanopb",
+        "repositoryURL": "https://github.com/firebase/nanopb.git",
+        "state": {
+          "branch": null,
+          "revision": "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
+          "version": "2.30909.0"
+        }
+      },
+      {
+        "package": "Promises",
+        "repositoryURL": "https://github.com/google/promises.git",
+        "state": {
+          "branch": null,
+          "revision": "3e4e743631e86c8c70dbc6efdc7beaa6e90fd3bb",
+          "version": "2.1.1"
+        }
+      },
+      {
+        "package": "GoogleMobileAds",
+        "repositoryURL": "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+        "state": {
+          "branch": null,
+          "revision": "88363fbe76de1a163ddb234b7379096449026d26",
+          "version": "9.13.0"
+        }
+      },
+      {
+        "package": "GoogleUserMessagingPlatform",
+        "repositoryURL": "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+        "state": {
+          "branch": null,
+          "revision": "3b924ce3313a5fd2fc6a8dc889a8c38f76890fe3",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

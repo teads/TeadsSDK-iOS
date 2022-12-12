@@ -8,13 +8,6 @@
 
 Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
 
-
-> **⚠️ Important ⚠️**
->
-> ***Xcode 13***
->
-> In Xcode 13, Apple introduced an option to override the version number of every plist present inside your app (https://developer.apple.com/forums/thread/690647). Even those from third parties frameworks like TeadsSDK. We used to rely on the plist to retrieve the TeadsSDK version. To prevent this, we changed the way we checked the SDK version since version 5.0.6. So please update your integration to at least version 5.0.6.
-
 ## 📋 Table of Contents
 
 - [Integration Documentation](#-integration-documentation)
@@ -40,8 +33,6 @@ Clone this repository, open it with Xcode, and run project.
 
 ## 📦 Install the Teads SDK iOS framework
 
-Teads SDK is currently distributed through CocoaPods. It includes everything you need to serve "outstream" video ads. 
-
 ### Cocoapods
 
 To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
@@ -56,6 +47,7 @@ On your terminal, go to the directory containing your project's `.xcodeproj` fil
 pod install --repo-update
 ```
 
+Before installing Teads adapter, you need to implement [Google Mobile Ads](https://developers.google.com/admob/ios/quick-start) in your application.
 
 ### Swift Package Manager
 
@@ -69,6 +61,7 @@ pod install --repo-update
 https://github.com/teads/TeadsSDK-iOS
 ```
 3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and keep `5.0.0 < 6.0.0`.
+4. Choose the Teads product that you want to be installed in your app: `TeadsSDK`
 
 #### Alternatively, add Teads to your Package.swift manifest
 1. Add it to the `dependencies` of your `Package.swift`:
@@ -77,6 +70,18 @@ https://github.com/teads/TeadsSDK-iOS
 dependencies: [
     .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.0"))
 ]
+```
+
+2. in any target that depends on a Teads product, add it to the `dependencies` array of that target:
+
+```swift
+.target(
+  name: "MyTargetName",
+  dependencies: [
+    // The product(s) you want (e.g. TeadsSDK).
+    .product(name: "TeadsSDK", package: "Teads"),
+  ]
+),
 ```
 
 ## 🤝 Mediation Adapters
@@ -95,3 +100,4 @@ Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measuremen
 
 See [changelog here](https://github.com/teads/TeadsSDK-iOS/releases). 
 
+Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
