@@ -56,6 +56,9 @@ let package = Package(
         .target(
             name: commonModuleName,
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
+            dependencies: [
+                .target(name: teadsModuleName),
+            ]
         ),
         .target(
             name: teadsAdMobAdapterModuleName,
