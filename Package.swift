@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -56,10 +56,10 @@ let package = Package(
         ),
         .target(
             name: teadsResourcesName,
-            dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
+//            dependencies: [
+//                .target(name: teadsModuleName),
+//                .target(name: omModuleName),
+//            ],
             resources: [
                 .process("Resources/Dependency/swiftpackagemanager.json"),
             ]
