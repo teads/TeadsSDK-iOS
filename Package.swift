@@ -55,6 +55,16 @@ let package = Package(
             path: "Frameworks/\(omModuleName).xcframework"
         ),
         .target(
+            name: teadsResourcesName,
+            dependencies: [
+                .target(name: teadsModuleName),
+                .target(name: omModuleName),
+            ],
+            resources: [
+                .process("Dependency/swiftpackagemanager.json"),
+            ]
+        ),
+        .target(
             name: commonModuleName,
             dependencies: [
                 .target(name: teadsResourcesName),
@@ -77,15 +87,6 @@ let package = Package(
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
         ),
-        .target(
-            name: teadsResourcesName,
-            dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
-            resources: [
-                .process("Dependency/swiftpackagemanager.json"),
-            ]
-        )
-    ]
+    ],
+    swiftLanguageVersions: [.version("5.3")]
 )
