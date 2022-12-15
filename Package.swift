@@ -59,6 +59,7 @@ let package = Package(
             dependencies: [
                 .target(name: teadsModuleName),
                 .target(name: omModuleName),
+                .target(name: resources),
             ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
@@ -78,8 +79,11 @@ let package = Package(
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
         ),
-        .target(name: resources, resources: [
-            .process("Dependency/swiftpackagemanager.json"),
-        ])
+        .target(
+            name: resources,
+            resources: [
+                .process("Dependency/swiftpackagemanager.json"),
+            ]
+        )
     ]
 )
