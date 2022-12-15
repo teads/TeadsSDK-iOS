@@ -12,7 +12,7 @@ let appLovinMaxModuleName = "AppLovinSDK"
 let omModuleName = "OMSDK_Teadstv"
 let commonModuleName = "TeadsAdapterCommon"
 let commonModuleNamePath = "Common"
-let resources = "TeadsSDKResources"
+let teadsResourcesName = "TeadsSDKResources"
 
 let package = Package(
     name: "Teads",
@@ -22,7 +22,7 @@ let package = Package(
     products: [
         .library(
             name: teadsModuleName,
-            targets: [teadsModuleName, omModuleName, resources]
+            targets: [teadsResourcesName]
         ),
         .library(
             name: teadsAdMobAdapterModuleName,
@@ -57,9 +57,7 @@ let package = Package(
         .target(
             name: commonModuleName,
             dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-                .target(name: resources),
+                .target(name: teadsResourcesName),
             ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
@@ -80,8 +78,11 @@ let package = Package(
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
         ),
         .target(
-            name: resources,
-            dependencies: [],
+            name: teadsResourcesName,
+            dependencies: [
+                .target(name: teadsModuleName),
+                .target(name: omModuleName),
+            ],
             resources: [
                 .process("Dependency/swiftpackagemanager.json"),
             ]
