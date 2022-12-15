@@ -61,7 +61,7 @@ let package = Package(
                 .target(name: omModuleName),
             ],
             resources: [
-                .process("Dependency/swiftpackagemanager.json"),
+                .process("Resources/Dependency/swiftpackagemanager.json"),
             ]
         ),
         .target(
