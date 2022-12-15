@@ -337,6 +337,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+
 /// Native container component: represent the overall container of native ad view
 SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 @interface ContainerComponent : CommonComponent
@@ -1535,6 +1536,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

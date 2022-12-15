@@ -337,6 +337,7 @@ SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 
 
 
+
 /// Native container component: represent the overall container of native ad view
 SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 @interface ContainerComponent : CommonComponent
