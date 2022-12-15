@@ -81,6 +81,7 @@ let package = Package(
         ),
         .target(
             name: resources,
+            dependencies: [],
             resources: [
                 .process("Dependency/swiftpackagemanager.json"),
             ]
