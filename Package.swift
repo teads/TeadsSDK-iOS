@@ -22,7 +22,7 @@ let package = Package(
     products: [
         .library(
             name: teadsModuleName,
-            targets: [teadsModuleName, omModuleName, teadsResourcesName]
+            targets: [teadsModuleName, omModuleName]
         ),
         .library(
             name: teadsAdMobAdapterModuleName,
@@ -65,7 +65,6 @@ let package = Package(
             dependencies: [
                 .target(name: teadsModuleName),
                 .target(name: omModuleName),
-                .target(name: teadsResourcesName),
             ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
