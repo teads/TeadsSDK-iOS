@@ -22,7 +22,7 @@ let package = Package(
     products: [
         .library(
             name: teadsModuleName,
-            targets: [teadsResourcesName]
+            targets: [teadsModuleName, omModuleName, teadsResourcesName]
         ),
         .library(
             name: teadsAdMobAdapterModuleName,
@@ -56,10 +56,6 @@ let package = Package(
         ),
         .target(
             name: teadsResourcesName,
-//            dependencies: [
-//                .target(name: teadsModuleName),
-//                .target(name: omModuleName),
-//            ],
             resources: [
                 .process("Resources/Dependency/swiftpackagemanager.json"),
             ]
@@ -67,6 +63,8 @@ let package = Package(
         .target(
             name: commonModuleName,
             dependencies: [
+                .target(name: teadsModuleName),
+                .target(name: omModuleName),
                 .target(name: teadsResourcesName),
             ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
