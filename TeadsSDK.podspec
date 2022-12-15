@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     s.subspec 'Core' do |core|
       core.preserve_paths        = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
       core.vendored_frameworks   = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
+      core.resource_bundle       = { 'Dependency' => 'Dependency/cocoapods.json' }
     end
     
 end
