@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 
 import PackageDescription
 
@@ -60,6 +60,7 @@ let package = Package(
                 .target(name: teadsModuleName),
                 .target(name: omModuleName),
             ],
+            path: "Sources",
             resources: [
                 .process("Resources/Dependency/swiftpackagemanager.json"),
             ]
@@ -87,6 +88,5 @@ let package = Package(
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
         ),
-    ],
-    swiftLanguageVersions: [.version("5.3")]
+    ]
 )
