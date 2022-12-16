@@ -56,6 +56,10 @@ let package = Package(
         ),
         .target(
             name: teadsResourcesName,
+            dependencies: [
+                .target(name: teadsModuleName),
+                .target(name: omModuleName),
+            ],
             resources: [
                 .process("Resources/Dependency/swiftpackagemanager.json"),
             ]
