@@ -22,29 +22,29 @@ let package = Package(
     products: [
         .library(
             name: teadsModuleName,
-            targets: [teadsModuleName, omModuleName]
+            targets: [teadsResourcesName]
         ),
-        .library(
-            name: teadsAdMobAdapterModuleName,
-            targets: [teadsAdMobAdapterModuleName]
-        ),
-        .library(
-            name: teadsAppLovinAdapterModuleName,
-            targets: [teadsAppLovinAdapterModuleName]
-        ),
+//        .library(
+//            name: teadsAdMobAdapterModuleName,
+//            targets: [teadsAdMobAdapterModuleName]
+//        ),
+//        .library(
+//            name: teadsAppLovinAdapterModuleName,
+//            targets: [teadsAppLovinAdapterModuleName]
+//        ),
     ],
-    dependencies: [
-        .package(
-            name: googleMobileAdsModuleName,
-            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            from: "9.0.0"
-        ),
-        .package(
-            name: appLovinMaxModuleName,
-            url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            .upToNextMajor(from: "11.1.1")
-        ),
-    ],
+//    dependencies: [
+//        .package(
+//            name: googleMobileAdsModuleName,
+//            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+//            from: "9.0.0"
+//        ),
+//        .package(
+//            name: appLovinMaxModuleName,
+//            url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
+//            .upToNextMajor(from: "11.1.1")
+//        ),
+//    ],
     targets: [
         .binaryTarget(
             name: teadsModuleName,
@@ -67,26 +67,25 @@ let package = Package(
         .target(
             name: commonModuleName,
             dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
+                .target(name: teadsResourcesName),
             ],
             path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
         ),
-        .target(
-            name: teadsAdMobAdapterModuleName,
-            dependencies: [
-                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAdMobAdapterModuleName)"
-        ),
-        .target(
-            name: teadsAppLovinAdapterModuleName,
-            dependencies: [
-                .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
-        ),
+//        .target(
+//            name: teadsAdMobAdapterModuleName,
+//            dependencies: [
+//                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
+//                .target(name: commonModuleName),
+//            ],
+//            path: "\(mediationAdaptersDirectory)/\(teadsAdMobAdapterModuleName)"
+//        ),
+//        .target(
+//            name: teadsAppLovinAdapterModuleName,
+//            dependencies: [
+//                .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
+//                .target(name: commonModuleName),
+//            ],
+//            path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
+//        ),
     ]
 )
