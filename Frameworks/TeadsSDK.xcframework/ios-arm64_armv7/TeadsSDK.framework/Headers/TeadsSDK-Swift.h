@@ -637,14 +637,16 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
 /// It is also useful during integration iterations.
-/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly
+/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly.
 /// warning:
 /// Remember to remove this setting when you are going in production.
 /// note:
 /// Follow <a href="https://support.teads.tv/support/solutions/articles/36000314783-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
 /// Set the publisher http page url that matches the content where Teads Ad will be loaded.
-/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url
+/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url.
+/// It’s perfectly suitable for news app or retail app as most of the app content is also available on a website: it allows us to have a more detailed brand safety article by article.
+/// For non-news apps, this setting is optional.
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)rawUrlString;
@@ -1782,14 +1784,16 @@ SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdRequestSettings")
 @interface TeadsAdRequestSettings : NSObject
 /// The Teads inApp Validation tool is the best way to ensure all basic features and prerequisites are correctly implemented.
 /// It is also useful during integration iterations.
-/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly
+/// Each time you upgrade TeadsSDK versions, you should perfom a validation pass to ensure integration is set correctly.
 /// warning:
 /// Remember to remove this setting when you are going in production.
 /// note:
 /// Follow <a href="https://support.teads.tv/support/solutions/articles/36000314783-validation-tool">validate your integration documentation</a>
 - (void)enableValidationMode;
 /// Set the publisher http page url that matches the content where Teads Ad will be loaded.
-/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url
+/// Setting this value can significally improve fill-rate since contextual data can be inferred from the content behing url.
+/// It’s perfectly suitable for news app or retail app as most of the app content is also available on a website: it allows us to have a more detailed brand safety article by article.
+/// For non-news apps, this setting is optional.
 /// \param urlString The content related page URL.
 ///
 - (void)pageUrl:(NSString * _Nonnull)rawUrlString;

@@ -26,6 +26,7 @@ public final class GADMAdapterTeadsBannerAd: NSObject, GADMediationBannerAd {
 
     private var placement: TeadsInReadAdPlacement?
     private var adConfiguration: GADMediationBannerAdConfiguration?
+    private var adSettings: TeadsAdapterSettings?
 
     public func loadBanner(
         for adConfiguration: GADMediationBannerAdConfiguration,
@@ -43,6 +44,7 @@ public final class GADMAdapterTeadsBannerAd: NSObject, GADMediationBannerAd {
         // Prepare ad settings
         let adSettings = (adConfiguration.extras as? TeadsAdapterSettings) ?? TeadsAdapterSettings()
         adSettings.setIntegation(TeadsAdapterSettings.integrationAdmob, version: GADMobileAds.sharedInstance().sdkVersion)
+        self.adSettings = adSettings
 
         let adSize = adConfiguration.adSize
         bannerAd = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: adSize.size.width, height: adSize.size.height)))
@@ -56,7 +58,9 @@ extension GADMAdapterTeadsBannerAd: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         bannerAd?.bind(ad)
-        bannerAd?.updateHeight(with: adRatio)
+        if adSettings?.hasSubscribedToAdResizing ?? false {
+            bannerAd?.updateHeight(with: adRatio)
+        }
         delegate = completionHandler?(self, nil)
         completionHandler = nil
     }
@@ -71,7 +75,9 @@ extension GADMAdapterTeadsBannerAd: TeadsInReadAdPlacementDelegate {
     }
 
     public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        bannerAd?.updateHeight(with: adRatio)
+        if adSettings?.hasSubscribedToAdResizing ?? false {
+            bannerAd?.updateHeight(with: adRatio)
+        }
     }
 }
 

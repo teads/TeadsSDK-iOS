@@ -15,6 +15,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
     private var currentBanner: TeadsInReadAdView?
     private var placement: TeadsInReadAdPlacement?
     private weak var controller: UIViewController?
+    private var adSettings: TeadsAdapterSettings?
 
     @objc public required init(delegate: SASMediationBannerAdapterDelegate) {
         super.init()
@@ -36,6 +37,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
 
         let adSettings = serverParameter.adSettings
         Self.addExtrasToAdSettings(adSettings)
+        self.adSettings = adSettings
         let adViewSize = clientParameters["adViewSize"] as? CGSize ?? viewController.view.bounds.size
 
         currentBanner = TeadsInReadAdView(frame: CGRect(origin: .zero, size: Helper.bannerSize(for: adViewSize.width)))
@@ -54,7 +56,9 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
-        currentBanner?.updateHeight(with: adRatio)
+        if adSettings?.hasSubscribedToAdResizing ?? false {
+            currentBanner?.updateHeight(with: adRatio)
+        }
         if let banner = currentBanner {
             delegate?.mediationBannerAdapter(self, didLoadBanner: banner)
         } else {
@@ -67,7 +71,9 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
     }
 
     public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        currentBanner?.updateHeight(with: adRatio)
+        if adSettings?.hasSubscribedToAdResizing ?? false {
+            currentBanner?.updateHeight(with: adRatio)
+        }
     }
 
     public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {

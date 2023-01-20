@@ -59,6 +59,9 @@ internal protocol AnyEncodableProtocol {
   public static let integrationSAS: Swift.String
   public static let integrationTypeKey: Swift.String
   public static let integrationVersionKey: Swift.String
+  final public var hasSubscribedToAdResizing: Swift.Bool {
+    get
+  }
   final public var adRequestSettings: TeadsSDK.TeadsAdRequestSettings {
     get
   }
@@ -241,6 +244,7 @@ extension UIKit.UIButton {
   @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
 }
 @_hasMissingDesignatedInitializers @objc public class TeadsAdPlacement : ObjectiveC.NSObject {
+  final public let pid: Swift.Int
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable {

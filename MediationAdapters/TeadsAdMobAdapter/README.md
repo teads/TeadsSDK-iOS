@@ -36,43 +36,6 @@ pod 'TeadsAdMobAdapter', '~> 5.0'
 3. Follow the [Define Custom Event](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation#defining_a_custom_event) step to finish the integration.
 4. You’re done.
 
-### Swift Package Manager
-
-[SPM](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
-
-#### Installing from Xcode
-
-1. Add a package by selecting `File` → `Add Packages…` in Xcode’s menu bar.
-2. Search for the Teads iOS SDK using the repo's URL:
-```console
-https://github.com/teads/TeadsSDK-iOS
-```
-3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and keep `5.0.0 < 6.0.0`.
-4. Choose the Teads product that you want to be installed in your app: `TeadsAdMobAdapter`
-5. Follow the [Define Custom Event](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation#defining_a_custom_event) step to finish the integration.
-
-#### Alternatively, add Teads to your Package.swift manifest
-1. Add it to the `dependencies` of your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.0"))
-]
-```
-
-2. in any target that depends on a Teads product, add it to the `dependencies` array of that target:
-
-```swift
-.target(
-  name: "MyTargetName",
-  dependencies: [
-    .product(name: "TeadsAdMobAdapter", package: "Teads"),
-  ]
-),
-```
-
-3. Follow the [Define Custom Event](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation#defining_a_custom_event) step to finish the integration.
-
 ## Integration Documentation
 
 Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
