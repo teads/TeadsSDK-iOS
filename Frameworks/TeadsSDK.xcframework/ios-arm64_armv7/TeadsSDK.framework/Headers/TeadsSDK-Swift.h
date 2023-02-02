@@ -771,7 +771,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 ///
 /// throws:
 /// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -1918,7 +1918,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 ///
 /// throws:
 /// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
 @end
 
 

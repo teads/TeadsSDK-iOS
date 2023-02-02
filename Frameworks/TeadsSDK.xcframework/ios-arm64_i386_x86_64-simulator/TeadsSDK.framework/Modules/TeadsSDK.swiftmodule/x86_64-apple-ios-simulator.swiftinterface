@@ -93,7 +93,7 @@ internal protocol AnyEncodableProtocol {
   @objc final public func setMediaScale(_ mediaScale: TeadsSDK.MediaScale)
   @available(*, deprecated, renamed: "registerAdView(_:delegate:)")
   @objc final public func subscribeAdResizeDelegate(_ delegate: TeadsSDK.TeadsMediatedAdViewDelegate, forAdView adView: UIKit.UIView) throws
-  @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: TeadsSDK.TeadsMediatedAdViewDelegate?) throws
+  @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: TeadsSDK.TeadsMediatedAdViewDelegate) throws
   final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }

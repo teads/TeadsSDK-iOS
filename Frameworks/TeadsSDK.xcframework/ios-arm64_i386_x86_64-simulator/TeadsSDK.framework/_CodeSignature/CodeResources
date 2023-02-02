@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/TeadsSDK-Swift.h</key>
 		<data>
-		8RgzaynrQEm2HIcby0YHtRwcenI=
+		8UKSVGlxuGT64xs0BZJUwH7V2Ss=
 		</data>
 		<key>Headers/TeadsSDK.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5WbAoDC1SHLQnY+xb3ffVVsD4EI=
+		Mu4XLGeBFFK+GgILocFePbrfKBk=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		yqWGvdPSmlsBSCWFOA/Hgqamto4=
+		uh3fOMqij/O4MJ6HjOYd4S/8JOY=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LVvjhhXaCRFOMokAPpXZ9wvjgYA=
+		/CUnKRa5lDwa4ldXjmVjqZfUlUA=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		xW9JqVX8YIfM+vgUSdLY9Ir7a34=
+		4+LB8mBoVMOkF7ZP5sa/3JN7KZw=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BiOz5LQS5/jy00fUyHQEj25Hw28=
+		TsU/C4Ya/1I7yw57R7Bo1LlEfy4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZLIhb+xZTtvOxH/pSgg8xmRAhVo=
+		KDDPA++KrrrpRUK8zM58F2re/h4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7sDuWKaFzNKzFk2KP6GThdLJ/mk=
+		SGR1P7dDRRRCgK4WFpacqrhPG/8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -94,11 +94,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8RgzaynrQEm2HIcby0YHtRwcenI=
+			8UKSVGlxuGT64xs0BZJUwH7V2Ss=
 			</data>
 			<key>hash2</key>
 			<data>
-			dF7J1Q7CltLDXo3AzpCfLRQArsOzW96oiP/foYVrLEA=
+			zmaTzj7Rd2XtPYfMWcATHSEH+BCpDzzLuvChQbgvvGg=
 			</data>
 		</dict>
 		<key>Headers/TeadsSDK.h</key>
@@ -127,22 +127,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yqWGvdPSmlsBSCWFOA/Hgqamto4=
+			uh3fOMqij/O4MJ6HjOYd4S/8JOY=
 			</data>
 			<key>hash2</key>
 			<data>
-			wNiCwXWaahYKaIv/t9zB6bYeTndwZqj3RuaB1M+AYhc=
+			pcA3yV2Lo+gIvvGiMDyg2kWRrREA+KHDx/S4iq5bptA=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LVvjhhXaCRFOMokAPpXZ9wvjgYA=
+			/CUnKRa5lDwa4ldXjmVjqZfUlUA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wv/PL+/ys4t9AhpCG5qf+KAUxZtPRELX2nIJ2ZsicfM=
+			DSXQyy3Aor3uSWTfe1VrVDktUrVksZ5+wTyUNqptHU8=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -160,22 +160,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xW9JqVX8YIfM+vgUSdLY9Ir7a34=
+			4+LB8mBoVMOkF7ZP5sa/3JN7KZw=
 			</data>
 			<key>hash2</key>
 			<data>
-			59nbFbavR2OycwwYCVijZyAGd5z1N2JRl8RQIn1jODc=
+			YoFZiSWweTL8EeHn/ORtuC1+CgsmZotEqAZU9g2NMqE=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BiOz5LQS5/jy00fUyHQEj25Hw28=
+			TsU/C4Ya/1I7yw57R7Bo1LlEfy4=
 			</data>
 			<key>hash2</key>
 			<data>
-			7Ps7H8c4cDcj86CKBWg2I86Vxd8T+pnUfgkEt8MVczg=
+			xIDXjSkddlR34DtweRfVVT9LZoiIU8//7ghK7QVNCJ4=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -193,22 +193,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZLIhb+xZTtvOxH/pSgg8xmRAhVo=
+			KDDPA++KrrrpRUK8zM58F2re/h4=
 			</data>
 			<key>hash2</key>
 			<data>
-			RrTULXxLLPXqObS2vWdB1OiKsHr20TOVmXG8jtoc0F8=
+			Xkv0xCiYaUYm/vUVTl90rhiC6DXF0hTlB6U/vgc0Mgo=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7sDuWKaFzNKzFk2KP6GThdLJ/mk=
+			SGR1P7dDRRRCgK4WFpacqrhPG/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			BqQ3xDDNRJoFOB33YPPgoSang6HCKNVGULKtRZ1Y2a4=
+			nshV/A4mXkAq0imk2NYYx9unlXATjNip7fiOuIjm9wc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
