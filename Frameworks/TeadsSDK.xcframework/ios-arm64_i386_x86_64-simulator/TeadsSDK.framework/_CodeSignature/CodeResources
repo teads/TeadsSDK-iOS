@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Mu4XLGeBFFK+GgILocFePbrfKBk=
+		lYmBQ1dwI/7/6pw+8Zxz1wkAKKg=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/CUnKRa5lDwa4ldXjmVjqZfUlUA=
+		nE5Ltqb7ODeDeNO2A5sX709IDdE=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		TsU/C4Ya/1I7yw57R7Bo1LlEfy4=
+		jC7xg/x12iMnJrEhkzCoq8OHK90=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SGR1P7dDRRRCgK4WFpacqrhPG/8=
+		zR1LiSh9bTQZpI5oV00dry2GL8g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -138,11 +138,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/CUnKRa5lDwa4ldXjmVjqZfUlUA=
+			nE5Ltqb7ODeDeNO2A5sX709IDdE=
 			</data>
 			<key>hash2</key>
 			<data>
-			DSXQyy3Aor3uSWTfe1VrVDktUrVksZ5+wTyUNqptHU8=
+			xU0ID8O03r6WP+zkXeIN6Q637IXTriLndL0bYs6Zm98=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -171,11 +171,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TsU/C4Ya/1I7yw57R7Bo1LlEfy4=
+			jC7xg/x12iMnJrEhkzCoq8OHK90=
 			</data>
 			<key>hash2</key>
 			<data>
-			xIDXjSkddlR34DtweRfVVT9LZoiIU8//7ghK7QVNCJ4=
+			K9ACiId/2NhunL4WYZUrFBiWDQGZLNabiGMDR6CciIo=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -204,11 +204,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SGR1P7dDRRRCgK4WFpacqrhPG/8=
+			zR1LiSh9bTQZpI5oV00dry2GL8g=
 			</data>
 			<key>hash2</key>
 			<data>
-			nshV/A4mXkAq0imk2NYYx9unlXATjNip7fiOuIjm9wc=
+			YeyudFnYIuAwvPrv1cNyGBEyoq46Ezfifdi9kubpb/E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

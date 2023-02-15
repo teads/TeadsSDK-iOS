@@ -73,15 +73,15 @@ final class TeadsSASNativeAdapter: NSObject, SASMediationNativeAdAdapter {
     }
 
     func adChoicesURL() -> URL? {
-        return nativeAd?.adChoices?.clickThroughUrl
+        nativeAd?.adChoices?.clickThroughUrl
     }
 
     func hasMedia() -> Bool {
-        return nativeAd?.video != nil
+        nativeAd?.video != nil
     }
 
     func mediaView() -> UIView? {
-        return teadsMediaView
+        teadsMediaView
     }
 }
 
@@ -109,7 +109,7 @@ extension TeadsSASNativeAdapter: TeadsNativeAdPlacementDelegate {
 
 extension TeadsSASNativeAdapter: TeadsAdDelegate {
     func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return viewController
+        viewController
     }
 
     func didRecordClick(ad _: TeadsAd) {

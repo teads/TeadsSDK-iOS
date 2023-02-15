@@ -114,6 +114,6 @@ extension TeadsSASBannerAdapter: TeadsAdDelegate {
 
 extension AdFailReason {
     var isNoFill: Bool {
-        return code == .errorNotFilled
+        code == .errorNotFilled
     }
 }

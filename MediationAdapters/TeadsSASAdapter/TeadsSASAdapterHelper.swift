@@ -52,6 +52,6 @@ struct ServerParameter: Codable {
     }
 
     var adSettings: TeadsAdapterSettings {
-        return TeadsSASAdapterHelper.stringToAdSettings(adSettingsString: teadsAdSettingsKey) ?? TeadsAdapterSettings()
+        TeadsSASAdapterHelper.stringToAdSettings(adSettingsString: teadsAdSettingsKey) ?? TeadsAdapterSettings()
     }
 }

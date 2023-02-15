@@ -10,7 +10,7 @@ import UIKit
 
 public enum Helper {
     public static func bannerSize(for width: CGFloat) -> CGSize {
-        return CGSize(width: width > 0 ? width : 300, height: width / (16 / 9))
+        CGSize(width: width > 0 ? width : 300, height: width / (16 / 9))
     }
 }
 

@@ -27,14 +27,14 @@ extension TeadsAdapterErrorCode: CustomNSError {
     }
 
     public static var errorDomain: String {
-        return "tv.teads.adapter"
+        "tv.teads.adapter"
     }
 
     public var errorCode: Int {
-        return rawValue
+        rawValue
     }
 
     public var errorUserInfo: [String: Any] {
-        return [NSLocalizedDescriptionKey: localizedDescription, NSLocalizedFailureReasonErrorKey: localizedDescription]
+        [NSLocalizedDescriptionKey: localizedDescription, NSLocalizedFailureReasonErrorKey: localizedDescription]
     }
 }

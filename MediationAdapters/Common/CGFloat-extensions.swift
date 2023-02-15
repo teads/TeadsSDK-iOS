@@ -9,6 +9,6 @@ import UIKit
 
 extension CGFloat {
     var positive: CGFloat? {
-        return self > 0 ? self : nil
+        self > 0 ? self : nil
     }
 }

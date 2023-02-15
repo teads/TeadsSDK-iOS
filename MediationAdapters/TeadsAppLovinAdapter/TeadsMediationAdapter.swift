@@ -31,15 +31,15 @@ final class TeadsMediationAdapter: ALMediationAdapter {
     }
 
     @objc override var sdkVersion: String {
-        return Teads.sdkVersion
+        Teads.sdkVersion
     }
 
     @objc override var adapterVersion: String {
-        return Teads.sdkVersion
+        sdkVersion
     }
 
     @objc override var isBeta: Bool {
-        return false
+        false
     }
 
     override func destroy() {
@@ -185,7 +185,7 @@ extension TeadsMediationAdapter: TeadsNativeAdPlacementDelegate {
 
 extension TeadsMediationAdapter: TeadsAdDelegate {
     func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return ALUtils.topViewControllerFromKeyWindow()
+        ALUtils.topViewControllerFromKeyWindow()
     }
 
     func didRecordClick(ad _: TeadsAd) {
