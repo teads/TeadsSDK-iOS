@@ -64,7 +64,7 @@ let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
 let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
-let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider], isSelected: false, creativeTypes: [display, custom])
+let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false, creativeTypes: [display, custom])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
@@ -95,6 +95,9 @@ let nativeAdmobProvider = Provider(name: .admob, integrations: [
     tableViewIntegration,
 ], isSelected: false)
 let nativeAppLovinProvider = Provider(name: .appLovin, integrations: [
+    tableViewIntegration,
+], isSelected: false)
+let nativeSASProvider = Provider(name: .sas, integrations: [
     tableViewIntegration,
 ], isSelected: false)
 
@@ -143,6 +146,7 @@ enum PID {
     static let sasVertical = "96469"
     static let sasSquare = "96468"
     static let sasCarousel = "96470"
+    static let sasNativeDisplay = 102_803
 
     static let appLovinLandscapeMREC = "33d03d37d70196e3"
     static let appLovinVerticalMREC = "66ff5813c2c2698c"
