@@ -17,7 +17,7 @@ class NativeSASTableViewController: TeadsViewController {
     let headerCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "NativeTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
-    let adRowNumber = 3
+    static let adRowNumber = 3
 
     private var elements = [SASNativeAd?]()
     private var nativeAdManager: SASNativeAdManager?
@@ -34,7 +34,7 @@ class NativeSASTableViewController: TeadsViewController {
         }
 
         let webSiteId = 385_317
-        let pageId = 1_399_205
+        let pageId = 1_399_206
         let formatId = PID.sasNativeDisplay
         var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
@@ -43,14 +43,16 @@ class NativeSASTableViewController: TeadsViewController {
         let adPlacement = SASAdPlacement(siteId: webSiteId, pageId: pageId, formatId: formatId, keywordTargeting: keywordsTargetting)
         nativeAdManager = SASNativeAdManager(placement: adPlacement)
 
-        nativeAdManager?.requestAd { (ad: SASNativeAd?, error: Error?) in
-            if let nativeAd = ad {
-                self.elements.insert(nativeAd, at: self.adRowNumber)
-                self.tableView.reloadData()
-            } else if let error = error {
-                print("Unable to load ad: \(error.localizedDescription)")
-            } else {
-                print("Unknown error")
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.nativeAdManager?.requestAd { (ad: SASNativeAd?, error: Error?) in
+                if let nativeAd = ad {
+                    self?.elements.insert(nativeAd, at: Self.adRowNumber)
+                    self?.tableView.reloadData()
+                } else if let error = error {
+                    print("Unable to load ad: \(error.localizedDescription)")
+                } else {
+                    print("Unknown error")
+                }
             }
         }
     }
