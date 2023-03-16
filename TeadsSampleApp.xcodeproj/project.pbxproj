@@ -14,6 +14,8 @@
 		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		979210C427E0A5C00010E81A /* AppLovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979210C327E0A5C00010E81A /* AppLovinViewController.swift */; };
+		A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */; };
+		A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
 		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
 		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
@@ -77,6 +79,8 @@
 		4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		979210C327E0A5C00010E81A /* AppLovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinViewController.swift; sourceTree = "<group>"; };
 		9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewController.swift; sourceTree = "<group>"; };
+		A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartNativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectTableViewController.swift; sourceTree = "<group>"; };
 		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -264,6 +268,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A9799DF429BF76D90038DCCD /* SAS */ = {
+			isa = PBXGroup;
+			children = (
+				A9799DF529BF76E70038DCCD /* TableView */,
+			);
+			path = SAS;
+			sourceTree = "<group>";
+		};
+		A9799DF529BF76E70038DCCD /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */,
+				A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		B501EC681F8232A4002909B9 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +438,7 @@
 				E9984ED626AF3CCC000D42D3 /* Direct */,
 				E9984EDB26AF3CCC000D42D3 /* Admob */,
 				E954312227CD038A005004B4 /* AppLovin */,
+				A9799DF429BF76D90038DCCD /* SAS */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -736,6 +758,7 @@
 				E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */,
 				B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */,
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
+				A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */,
 				E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */,
 				E9A3AC5A2795BB0D00F124D6 /* AdOpportunityTrackerCollectionViewCell.swift in Sources */,
 				E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */,
@@ -748,6 +771,7 @@
 				B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
+				A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */,
 				B56A8ABA26988C780090A14A /* InReadDirectScrollViewController.swift in Sources */,
 				B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
