@@ -36,7 +36,7 @@ let package = Package(
         .package(
             name: googleMobileAdsModuleName,
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            "9.0.0"..<"11.0.0"
+            "9.0.0" ..< "11.0.0"
         ),
         .package(
             name: appLovinMaxModuleName,
