@@ -34,7 +34,7 @@ class InReadAdmobWebViewController: TeadsViewController {
 
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
-        bannerView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
+        bannerView = GAMBannerView(adSize: GADAdSizeFluid)
         bannerView.adUnitID = pid // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
@@ -46,8 +46,10 @@ extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
         guard let webViewHelper = webViewHelper else {
             return
         }
-        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
+        let h = adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)
         webViewHelper.updateSlot(adRatio: adRatio)
+        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: h), flags: 1))
+        print("UPDATE RATIO \(h)")
     }
 }
 
@@ -98,7 +100,18 @@ extension InReadAdmobWebViewController: TeadsWebViewHelperDelegate {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let request = GADRequest()
+        let request = GAMRequest()
+        request.customTargeting = [
+            "darkmode": "false",
+            "language": "de",
+            "fr": "false",
+            "iosbuild": "",
+            "userloggedin": "false",
+            "pagetype": "story",
+            "gpsenabled": "false",
+            "gb_beagle_id": "",
+            "storyId": "",
+        ]
         request.register(adSettings)
 
         bannerView.load(request)
