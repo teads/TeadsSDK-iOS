@@ -62,12 +62,8 @@ internal protocol AnyEncodableProtocol {
   final public var hasSubscribedToAdResizing: Swift.Bool {
     get
   }
-  final public var adRequestSettings: TeadsSDK.TeadsAdRequestSettings {
-    get
-  }
-  final public var adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings {
-    get
-  }
+  final public let adRequestSettings: TeadsSDK.TeadsAdRequestSettings
+  final public let adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings
   @objc final public var mediaScale: TeadsSDK.MediaScale {
     @objc get
   }
@@ -222,8 +218,8 @@ extension UIKit.UIButton {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
   final public let url: Foundation.URL
   @objc final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((Swift.Error) -> Swift.Void)? = nil)
-  final public var image: UIKit.UIImage? {
-    get
+  @objc final public var image: UIKit.UIImage? {
+    @objc get
   }
   @objc deinit
 }
@@ -381,7 +377,7 @@ extension TeadsSDK.CommonComponent {
   }
 }
 @_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
-  @objc final public var code: TeadsSDK.AdErrorCode
+  @objc final public let code: TeadsSDK.AdErrorCode
   @objc final public var requestIdentifier: Foundation.UUID! {
     get
   }
