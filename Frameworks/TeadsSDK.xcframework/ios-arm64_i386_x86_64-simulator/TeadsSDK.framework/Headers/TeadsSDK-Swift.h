@@ -285,7 +285,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code enumeration value
-@property (nonatomic) enum AdErrorCode code;
+@property (nonatomic, readonly) enum AdErrorCode code;
 /// Request identifier allows you to match with the returned value from <code>placement.requestAd()</code> call
 @property (nonatomic, readonly, copy) NSUUID * _Null_unspecified requestIdentifier;
 /// Contains <code>AdErrorCode</code> and error message, prefer use of <code>localizedDescription</code>
@@ -327,6 +327,10 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 /// \param failure failure will be called when image loading has failed: can fail for multiple reasong connectivity, resource unavailable, …
 ///
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
+/// load Image synchronously, prefer using <code>ImageComponent/loadImage(async:success:failure:)</code> instead
+/// warning:
+/// this computed var is blocking thread execution in order to download image data.
+@property (nonatomic, readonly, strong) UIImage * _Nullable image;
 @end
 
 /// A flag used to determine how TeadsMediaView lays out its content when its bounds change.
@@ -1432,7 +1436,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code enumeration value
-@property (nonatomic) enum AdErrorCode code;
+@property (nonatomic, readonly) enum AdErrorCode code;
 /// Request identifier allows you to match with the returned value from <code>placement.requestAd()</code> call
 @property (nonatomic, readonly, copy) NSUUID * _Null_unspecified requestIdentifier;
 /// Contains <code>AdErrorCode</code> and error message, prefer use of <code>localizedDescription</code>
@@ -1474,6 +1478,10 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 /// \param failure failure will be called when image loading has failed: can fail for multiple reasong connectivity, resource unavailable, …
 ///
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
+/// load Image synchronously, prefer using <code>ImageComponent/loadImage(async:success:failure:)</code> instead
+/// warning:
+/// this computed var is blocking thread execution in order to download image data.
+@property (nonatomic, readonly, strong) UIImage * _Nullable image;
 @end
 
 /// A flag used to determine how TeadsMediaView lays out its content when its bounds change.
@@ -2579,7 +2587,7 @@ typedef SWIFT_ENUM(NSInteger, AdErrorCode, open) {
 SWIFT_CLASS("_TtC8TeadsSDK12AdFailReason")
 @interface AdFailReason : NSObject
 /// Error code enumeration value
-@property (nonatomic) enum AdErrorCode code;
+@property (nonatomic, readonly) enum AdErrorCode code;
 /// Request identifier allows you to match with the returned value from <code>placement.requestAd()</code> call
 @property (nonatomic, readonly, copy) NSUUID * _Null_unspecified requestIdentifier;
 /// Contains <code>AdErrorCode</code> and error message, prefer use of <code>localizedDescription</code>
@@ -2621,6 +2629,10 @@ SWIFT_CLASS("_TtC8TeadsSDK14ImageComponent")
 /// \param failure failure will be called when image loading has failed: can fail for multiple reasong connectivity, resource unavailable, …
 ///
 - (void)loadImageWithAsync:(BOOL)async success:(void (^ _Nullable)(UIImage * _Nonnull))success failure:(void (^ _Nullable)(NSError * _Nonnull))failure;
+/// load Image synchronously, prefer using <code>ImageComponent/loadImage(async:success:failure:)</code> instead
+/// warning:
+/// this computed var is blocking thread execution in order to download image data.
+@property (nonatomic, readonly, strong) UIImage * _Nullable image;
 @end
 
 /// A flag used to determine how TeadsMediaView lays out its content when its bounds change.

@@ -31,8 +31,8 @@
         window.webkit.messageHandlers.notifyPlayerEvent.postMessage(jsonEventString);
     };
     
-    window.adPlayerOutput.setFixedBackgroundImage = function setFixedBackgroundImage(imageSrc) {
-        const message = JSON.stringify({"mediaUrl": imageSrc})
+    window.adPlayerOutput.setFixedBackgroundImage = function setFixedBackgroundImage(imageSrc, timeout) {
+        const message = JSON.stringify({"mediaUrl": imageSrc, "timeoutMilliseconds": timeout})
         window.webkit.messageHandlers.setFixedBackgroundImage.postMessage(message);
     };
 })();
