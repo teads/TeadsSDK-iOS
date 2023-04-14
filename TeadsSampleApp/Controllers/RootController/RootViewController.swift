@@ -30,8 +30,8 @@ class RootViewController: TeadsViewController {
 
     func showSampleController(for integration: Integration) {
         let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(integration.name)"
-        print(identifier)
-        performSegue(withIdentifier: identifier.lowercased(), sender: self)
+            .lowercased()
+        performSegue(withIdentifier: identifier, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
