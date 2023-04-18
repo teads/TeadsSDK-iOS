@@ -358,6 +358,36 @@ typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV2 = 2,
 };
 
+
+SWIFT_CLASS("_TtC8TeadsSDK16TagBinderBuilder")
+@interface TagBinderBuilder : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// A non-zero tag for the title label view to be rendered. The maximum length will be 50 characters.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger titleLabelTag;
+/// A non-zero tag for content / body / description label view to be rendered. The maximum length will be 150 characters.
+/// UIView element should be a ``UILabel```
+@property (nonatomic) NSInteger contentLabelTag;
+/// A non-zero tag for media content view to be rendered.
+/// UIView element must be a <code>TeadsMediaView</code>
+@property (nonatomic) NSInteger mediaViewTag;
+/// A non-zero tag for icon image view to be rendered.
+/// UIView element must be a <code>UIImageView</code>
+@property (nonatomic) NSInteger iconImageViewTag;
+/// A non-zero tag for advertiser label view to be rendered. The maximum length will be 25 characters.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger advertiserLabelTag;
+/// A non-zero tag for call to action button view to be rendered. The maximum length will be 15 characters.
+/// UIView element should be a <code>UIButton</code>
+@property (nonatomic) NSInteger callToActionButtonTag;
+/// A non-zero tag for star rating content view to be rendered.
+@property (nonatomic) NSInteger ratingViewTag;
+/// A non-zero tag for price content view to be rendered.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger priceLabelTag;
+@end
+
 @class TeadsAdPlacementSettings;
 @protocol TeadsInReadAdPlacementDelegate;
 @class TeadsInReadAdPlacement;
@@ -1053,6 +1083,14 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 /// \param ad The ad that should be binded to the ad view.
 ///
 - (void)bind:(TeadsNativeAd * _Nonnull)ad;
+/// Binds the native asset ad views to this native ad using view tags binder
+/// important:
+/// This call is mandatory in order to monitor ad viewability of each components
+/// \param ad The ad that should be binded to the ad view.
+///
+/// \param binder Binds the native asset ad views to this native ad using view tags.
+///
+- (void)bind:(TeadsNativeAd * _Nonnull)ad tagBinder:(SWIFT_NOESCAPE void (^ _Nonnull)(TagBinderBuilder * _Nonnull))tagBinder;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1101,10 +1139,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 
 
+
 @interface UIButton (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
-
 
 
 
@@ -1116,6 +1154,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 @interface UILabel (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
@@ -1509,6 +1548,36 @@ typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV2 = 2,
 };
 
+
+SWIFT_CLASS("_TtC8TeadsSDK16TagBinderBuilder")
+@interface TagBinderBuilder : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// A non-zero tag for the title label view to be rendered. The maximum length will be 50 characters.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger titleLabelTag;
+/// A non-zero tag for content / body / description label view to be rendered. The maximum length will be 150 characters.
+/// UIView element should be a ``UILabel```
+@property (nonatomic) NSInteger contentLabelTag;
+/// A non-zero tag for media content view to be rendered.
+/// UIView element must be a <code>TeadsMediaView</code>
+@property (nonatomic) NSInteger mediaViewTag;
+/// A non-zero tag for icon image view to be rendered.
+/// UIView element must be a <code>UIImageView</code>
+@property (nonatomic) NSInteger iconImageViewTag;
+/// A non-zero tag for advertiser label view to be rendered. The maximum length will be 25 characters.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger advertiserLabelTag;
+/// A non-zero tag for call to action button view to be rendered. The maximum length will be 15 characters.
+/// UIView element should be a <code>UIButton</code>
+@property (nonatomic) NSInteger callToActionButtonTag;
+/// A non-zero tag for star rating content view to be rendered.
+@property (nonatomic) NSInteger ratingViewTag;
+/// A non-zero tag for price content view to be rendered.
+/// UIView element should be a <code>UILabel</code>
+@property (nonatomic) NSInteger priceLabelTag;
+@end
+
 @class TeadsAdPlacementSettings;
 @protocol TeadsInReadAdPlacementDelegate;
 @class TeadsInReadAdPlacement;
@@ -2204,6 +2273,14 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 /// \param ad The ad that should be binded to the ad view.
 ///
 - (void)bind:(TeadsNativeAd * _Nonnull)ad;
+/// Binds the native asset ad views to this native ad using view tags binder
+/// important:
+/// This call is mandatory in order to monitor ad viewability of each components
+/// \param ad The ad that should be binded to the ad view.
+///
+/// \param binder Binds the native asset ad views to this native ad using view tags.
+///
+- (void)bind:(TeadsNativeAd * _Nonnull)ad tagBinder:(SWIFT_NOESCAPE void (^ _Nonnull)(TagBinderBuilder * _Nonnull))tagBinder;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2252,10 +2329,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 
 
 
+
 @interface UIButton (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
-
 
 
 
@@ -2267,6 +2344,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK18TeadsSoundDelegate_") SWIFT_UNAVAILABLE_MSG("'Tea
 @interface UILabel (SWIFT_EXTENSION(TeadsSDK))
 - (void)bindWithComponent:(CommonComponent * _Nullable)component;
 @end
+
 
 
 
