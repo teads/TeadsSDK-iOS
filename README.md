@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://teads.com/" target="_blank">
-        <img width="75%" src="./ReadmeResources/teads_logo.png" alt="Teads logo">
+        <img width="75%" src="https://raw.githubusercontent.com/teads/TeadsSDK-iOS/master/ReadmeResources/teads_logo.png" alt="Teads logo">
     </a>
 </p>
 
@@ -93,7 +93,7 @@ dependencies: [
 
 Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measurement](https://iabtechlab.com/standards/open-measurement-sdk/) SDK, also known as OM SDK. The OM SDK brings transparency to the advertising world, giving a way to standardize the viewability and verification measurement for the ads served through mobile apps.  Teads is part of the [IAB's compliant companies](https://iabtechlab.com/compliance-programs/compliant-companies/). 
 
-![iab certification badge](./ReadmeResources/OMCompliant.png)
+![iab certification badge](https://raw.githubusercontent.com/teads/TeadsSDK-iOS/master/ReadmeResources/OMCompliant.png)
 
 
 ## ⌚️ Changelog
