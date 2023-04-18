@@ -221,6 +221,12 @@ extension UIKit.UIButton {
   @objc final public var image: UIKit.UIImage? {
     @objc get
   }
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0.0, *)
+  final public func loadImage() async throws -> UIKit.UIImage
+  #endif
+
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class TeadsAdView : UIKit.UIView {
@@ -324,6 +330,7 @@ extension TeadsSDK.TeadsInReadAd {
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var ratingView: UIKit.UIView?
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var priceLabel: UIKit.UILabel?
   @objc @_Concurrency.MainActor(unsafe) public func bind(_ ad: TeadsSDK.TeadsNativeAd)
+  @objc @_Concurrency.MainActor(unsafe) public func bind(_ ad: TeadsSDK.TeadsNativeAd, tagBinder: (TeadsSDK.TagBinderBuilder) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -342,6 +349,41 @@ extension TeadsSDK.CommonComponent {
   public var text: Swift.String? {
     get
   }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TagBinderBuilder : ObjectiveC.NSObject {
+  @objc final public var titleLabelTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var contentLabelTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var mediaViewTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var iconImageViewTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var advertiserLabelTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var callToActionButtonTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var ratingViewTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc final public var priceLabelTag: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc deinit
 }
 @objc public protocol TeadsMediatedAdViewDelegate {
   @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
