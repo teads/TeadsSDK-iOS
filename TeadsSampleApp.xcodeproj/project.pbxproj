@@ -14,6 +14,7 @@
 		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		979210C427E0A5C00010E81A /* AppLovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979210C327E0A5C00010E81A /* AppLovinViewController.swift */; };
+		A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */; };
 		A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */; };
 		A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
@@ -79,6 +80,7 @@
 		4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		979210C327E0A5C00010E81A /* AppLovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinViewController.swift; sourceTree = "<group>"; };
 		9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTagDirectTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartNativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */,
+				A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 			files = (
 				E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */,
 				B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */,
+				A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */,
 				E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */,
 				B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */,
 				E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */,

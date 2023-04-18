@@ -90,6 +90,7 @@ let inReadAppLovinProvider = Provider(name: .appLovin, integrations: [
 let nativeDirectProvider = Provider(name: .direct, integrations: [
     tableViewIntegration,
     collectionViewIntegration,
+    tableTagViewIntegration,
 ], isSelected: true)
 let nativeAdmobProvider = Provider(name: .admob, integrations: [
     tableViewIntegration,
@@ -118,6 +119,7 @@ var display = CreativeType(name: .nativeDisplay, isSelected: true)
 // Integration
 let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollView")
 let tableViewIntegration = Integration(name: "TableView", imageName: "TableView")
+let tableTagViewIntegration = Integration(name: "TableView-Tag", imageName: "TableView")
 let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
 let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
 
