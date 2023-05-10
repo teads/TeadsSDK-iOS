@@ -14,6 +14,11 @@ class InReadAdmobScrollViewController: TeadsViewController {
     var bannerView: GAMBannerView!
     @IBOutlet var slotView: UIView!
     @IBOutlet var slotViewHeightConstraint: NSLayoutConstraint!
+    @IBAction func callResize(_: UIButton) {
+        let height = CGFloat.random(in: 200 ..< 400)
+        print("random height", height)
+        resizeAd(height: height)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +32,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         bannerView.centerYAnchor.constraint(equalTo: slotView.centerYAnchor).isActive = true
 
         // 2. Attach Delegate (will include Teads events)
-        bannerView.adUnitID = pid // Replace with your adunit
+        bannerView.adUnitID = "ca-app-pub-3068786746829754/1034598116" // Replace with your adunit
         bannerView.rootViewController = self
         bannerView.delegate = self
 
@@ -43,7 +48,19 @@ class InReadAdmobScrollViewController: TeadsViewController {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let request = GADRequest()
+        let request = GAMRequest()
+        request.publisherProvidedID = "0ead6fa8215c272fd1d85bcb1c67e181"
+        request.customTargeting = [
+            "darkmode": "false",
+            "language": "de",
+            "fr": "false",
+            "iosbuild": "",
+            "userloggedin": "false",
+            "pagetype": "story",
+            "gpsenabled": "false",
+            "gb_beagle_id": "0ead6fa8215c272fd1d85bcb1c67e181",
+            "storyId": "688874247994",
+        ]
         request.register(adSettings)
 
         bannerView.load(request)
