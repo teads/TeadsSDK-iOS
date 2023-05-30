@@ -36,6 +36,15 @@ class NativeAppLovinTableViewController: TeadsViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        #if targetEnvironment(simulator)
+        let alert = UIAlertController(title: "Warning", message: "Teads AppLovin adapter does not work on simulator ", preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+        #endif
+    }
+
     func loadAd() {
         // FIXME: This ids should be replaced by your own AppLovin AdUnitId
         let APPLOVIN_AD_UNIT_ID = pid
