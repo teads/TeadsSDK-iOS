@@ -42,13 +42,13 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80u-jD-Bwf">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-Xl-dJO">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-Xl-dJO">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="23G-ts-bP1">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="23G-ts-bP1">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,6 +96,7 @@
                                                                 <constraint firstItem="a9Q-hM-b1d" firstAttribute="leading" secondItem="Snk-38-Cgt" secondAttribute="leading" id="PF2-lL-Pij"/>
                                                                 <constraint firstAttribute="bottom" secondItem="a9Q-hM-b1d" secondAttribute="bottom" id="VAX-rx-iJG"/>
                                                                 <constraint firstItem="a9Q-hM-b1d" firstAttribute="top" secondItem="Snk-38-Cgt" secondAttribute="top" id="Zlj-LZ-s84"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a9Q-hM-b1d" secondAttribute="trailing" symbolic="YES" id="dWU-Rv-mIf"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative that cuts through the noise…but respects the user." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-Gg-CGL" userLabel="title">
@@ -584,6 +585,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="cbL-hy-KQD" firstAttribute="leading" secondItem="i48-6t-HSz" secondAttribute="leading" id="DsZ-dx-nOx"/>
                                                                 <constraint firstItem="cbL-hy-KQD" firstAttribute="top" secondItem="i48-6t-HSz" secondAttribute="top" id="do0-7U-JzX"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cbL-hy-KQD" secondAttribute="trailing" symbolic="YES" id="nhV-vs-Wnb"/>
                                                                 <constraint firstAttribute="bottom" secondItem="cbL-hy-KQD" secondAttribute="bottom" id="qir-FA-jLs"/>
                                                                 <constraint firstAttribute="height" constant="24" id="x9a-h4-ptE"/>
                                                             </constraints>
@@ -956,13 +958,13 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKl-dF-Skq">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="luA-K5-FUi">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="luA-K5-FUi">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Admob TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-ef-m1R">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Admob TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-ef-m1R">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1530,6 +1532,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-3n-hMv">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dq7-rc-zKx">
                                                             <rect key="frame" x="0.0" y="170" width="375" height="80"/>
@@ -1884,6 +1891,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1s-Ef-Kao">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="712"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qcu-pC-ffK">
                                                             <rect key="frame" x="0.0" y="720" width="375" height="80"/>
@@ -2081,6 +2093,7 @@
                                         <constraints>
                                             <constraint firstItem="sz7-LI-t3e" firstAttribute="leading" secondItem="ql2-9V-b0a" secondAttribute="leading" id="4Ai-e7-Sci"/>
                                             <constraint firstItem="Zu3-Gq-3qs" firstAttribute="top" secondItem="sz7-LI-t3e" secondAttribute="bottom" constant="40" id="PPr-UV-OV7"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zu3-Gq-3qs" secondAttribute="trailing" symbolic="YES" id="U2g-WU-QnL"/>
                                             <constraint firstAttribute="trailing" secondItem="sz7-LI-t3e" secondAttribute="trailing" id="X4W-fe-a7z"/>
                                             <constraint firstItem="fqC-DB-9ra" firstAttribute="leading" secondItem="ql2-9V-b0a" secondAttribute="leading" constant="10" id="ZvK-hD-mJT"/>
                                             <constraint firstAttribute="trailing" secondItem="fqC-DB-9ra" secondAttribute="trailing" constant="10" id="ipk-Rc-zPx"/>
@@ -2208,7 +2221,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zL-7T-Of9" customClass="SmartNativeAdTableViewCell" customModule="TeadsSampleApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zL-7T-Of9" customClass="GADNativeAdView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UNT-yN-5C9">
@@ -2302,7 +2315,7 @@
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
                                         <connections>
-                                            <outlet property="nativeAdView" destination="1zL-7T-Of9" id="ys0-fl-ZOH"/>
+                                            <outlet property="nativeAdView" destination="1zL-7T-Of9" id="taL-CU-2Ut"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FakeArticleNativeTableViewCell" rowHeight="250" id="pwT-to-NDe" customClass="FakeArticleNativeTableViewCell" customModule="TeadsSampleApp" customModuleProvider="target">
@@ -2317,6 +2330,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-oe-4se">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A2k-0R-pVf">
                                                             <rect key="frame" x="0.0" y="170" width="375" height="80"/>
@@ -2530,6 +2548,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ngn-ab-HRg">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vie-7f-caJ">
                                                             <rect key="frame" x="0.0" y="170" width="375" height="80"/>
@@ -2831,6 +2854,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mYC-GL-kEE">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KQa-iY-HCC">
                                                             <rect key="frame" x="0.0" y="170" width="375" height="80"/>
@@ -2924,10 +2952,10 @@
             </objects>
             <point key="canvasLocation" x="3762" y="2013"/>
         </scene>
-        <!--native-direct-tableview-->
+        <!--native-direct-tableview-tag-->
         <scene sceneID="A6Y-Mu-UJr">
             <objects>
-                <viewController title="native-direct-tableview-tag" id="e7F-yF-Khd" userLabel="native-direct-tableview" customClass="NativeTagDirectTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="native-direct-tableview-tag" id="e7F-yF-Khd" customClass="NativeTagDirectTableViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6W6-24-1fW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3015,6 +3043,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-ti-8FX">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a7d-gb-Aqg">
                                                             <rect key="frame" x="0.0" y="170" width="375" height="80"/>

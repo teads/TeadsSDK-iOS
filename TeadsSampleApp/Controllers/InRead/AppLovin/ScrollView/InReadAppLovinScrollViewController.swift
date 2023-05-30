@@ -28,6 +28,15 @@ class InReadAppLovinScrollViewController: AppLovinViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        #if targetEnvironment(simulator)
+        let alert = UIAlertController(title: "Warning", message: "Teads AppLovin adapter does not work on simulator ", preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+        #endif
+    }
+
     func loadAd() {
         let adFormat: MAAdFormat = isMREC ? .mrec : .banner
         bannerView = MAAdView(adUnitIdentifier: pid, adFormat: adFormat)
