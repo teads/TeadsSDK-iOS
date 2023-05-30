@@ -71,6 +71,7 @@ let inReadDirectProvider = Provider(name: .direct, integrations: [
     scrollViewIntegration,
     tableViewIntegration,
     collectionViewIntegration,
+    pageViewIntegration,
     webViewIntegration,
 ], isSelected: true)
 let inReadAdmobProvider = Provider(name: .admob, integrations: [
@@ -121,6 +122,7 @@ let scrollViewIntegration = Integration(name: "ScrollView", imageName: "ScrollVi
 let tableViewIntegration = Integration(name: "TableView", imageName: "TableView")
 let tableTagViewIntegration = Integration(name: "TableView-Tag", imageName: "TableView")
 let collectionViewIntegration = Integration(name: "CollectionView", imageName: "CollectionView")
+let pageViewIntegration = Integration(name: "PageView", imageName: "PageView")
 let webViewIntegration = Integration(name: "WebView", imageName: "WebView")
 
 enum PID {

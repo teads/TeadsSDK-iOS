@@ -325,6 +325,7 @@
                         <segue destination="R7w-RR-ZAl" kind="show" identifier="native-applovin-tableview" id="obT-gL-ZEF"/>
                         <segue destination="c7j-SF-cdV" kind="show" identifier="native-sas-tableview" id="1Bx-Sz-KQq"/>
                         <segue destination="e7F-yF-Khd" kind="show" identifier="native-direct-tableview-tag" id="pdK-VU-DsJ"/>
+                        <segue destination="rBF-Bs-lld" kind="show" identifier="inread-direct-pageview" id="bRz-tQ-Nca"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-97-aM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -495,6 +496,170 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBB-TJ-3hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988" y="-1076"/>
+        </scene>
+        <!--In Read Direct Page View Controller-->
+        <scene sceneID="VTT-jd-iuX">
+            <objects>
+                <viewController storyboardIdentifier="page-view-controller" id="5Qh-aL-llV" customClass="InReadDirectPageViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdr-bS-meT" userLabel="RootView">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74D-Bg-4Sd">
+                                <subviews>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLn-lk-eJ2" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="1926.5" height="1155"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oct-nn-bY7" userLabel="headerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="1926.5" height="150"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeDesk2.png" translatesAutoresizingMaskIntoConstraints="NO" id="SQg-8Q-faY" customClass="TeadsGradientImageView" customModule="TeadsSampleApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1926.5" height="150"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHo-6y-SQA">
+                                                        <rect key="frame" x="8" y="46" width="1910.5" height="58.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-Yp-StP">
+                                                                <rect key="frame" x="0.0" y="34.5" width="1910.5" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Direct PageView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-xn-1ya">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1910.5" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="IWI-Yp-StP" secondAttribute="trailing" id="50d-cM-6Z3"/>
+                                                            <constraint firstItem="rgy-xn-1ya" firstAttribute="leading" secondItem="QHo-6y-SQA" secondAttribute="leading" id="6Oy-oq-Umc"/>
+                                                            <constraint firstItem="IWI-Yp-StP" firstAttribute="top" secondItem="rgy-xn-1ya" secondAttribute="bottom" constant="8" id="GGh-Dq-6HV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rgy-xn-1ya" secondAttribute="trailing" id="IpX-Ik-POz"/>
+                                                            <constraint firstItem="IWI-Yp-StP" firstAttribute="leading" secondItem="QHo-6y-SQA" secondAttribute="leading" id="Zvc-rY-e0k"/>
+                                                            <constraint firstAttribute="bottom" secondItem="IWI-Yp-StP" secondAttribute="bottom" id="mmH-66-tCH"/>
+                                                            <constraint firstItem="rgy-xn-1ya" firstAttribute="top" secondItem="QHo-6y-SQA" secondAttribute="top" id="yow-xr-ht8"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="SQg-8Q-faY" secondAttribute="bottom" id="56W-Uu-5FN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SQg-8Q-faY" secondAttribute="trailing" id="8zO-Ny-gax"/>
+                                                    <constraint firstItem="SQg-8Q-faY" firstAttribute="top" secondItem="oct-nn-bY7" secondAttribute="top" id="HOb-Wc-vWD"/>
+                                                    <constraint firstItem="QHo-6y-SQA" firstAttribute="centerY" secondItem="oct-nn-bY7" secondAttribute="centerY" id="PEY-pJ-feI"/>
+                                                    <constraint firstAttribute="height" constant="150" id="Pyh-fb-TzD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QHo-6y-SQA" secondAttribute="trailing" constant="8" id="WOv-1e-36n"/>
+                                                    <constraint firstItem="QHo-6y-SQA" firstAttribute="leading" secondItem="oct-nn-bY7" secondAttribute="leading" constant="8" id="aMX-eK-OLC"/>
+                                                    <constraint firstItem="SQg-8Q-faY" firstAttribute="leading" secondItem="oct-nn-bY7" secondAttribute="leading" id="l9q-Av-VCM"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTICLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-X7-s6C" userLabel="article">
+                                                <rect key="frame" x="10" y="190" width="73.5" height="20.5"/>
+                                                <color key="backgroundColor" name="LightBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="oV1-M0-01K">
+                                                <rect key="frame" x="10" y="240.5" width="1906.5" height="914.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative that cuts through the noise…but respects the user." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-Bi-bnt" userLabel="title">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1906.5" height="39.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                                        <color key="textColor" name="AppTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHV-Y2-a5E" userLabel="content">
+                                                        <rect key="frame" x="0.0" y="69.5" width="1906.5" height="25"/>
+                                                        <string key="text">Holding attention in a mobile driven world is no easy challenge. At Teads, we embrace the swipes, the scrolls, the pinches and the taps to build ad experiences that delight the user and deliver business results for brands.</string>
+                                                        <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="21"/>
+                                                        <color key="textColor" name="AppTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVC-xm-jU2" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="104.5" width="1906.5" height="250"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="250" id="pf4-Bk-KqV"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jae-At-vrZ" customClass="TeadsInReadAdView" customModule="TeadsSDK">
+                                                        <rect key="frame" x="0.0" y="354.5" width="1906.5" height="250"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="250" id="2CS-0c-I0r"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="pid">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-pb-ssh" customClass="FakeArticleView" customModule="TeadsSampleApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="614.5" width="1906.5" height="300"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" id="uhC-SJ-dM0"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="SVC-xm-jU2" firstAttribute="top" secondItem="KHV-Y2-a5E" secondAttribute="bottom" constant="10" id="51e-9Z-g1k"/>
+                                                    <constraint firstItem="uA2-pb-ssh" firstAttribute="top" secondItem="jae-At-vrZ" secondAttribute="bottom" constant="10" id="FkE-JG-rEV"/>
+                                                    <constraint firstItem="KHV-Y2-a5E" firstAttribute="top" secondItem="J5Q-Bi-bnt" secondAttribute="bottom" constant="30" id="MHh-9c-X8a"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="bKU-X7-s6C" firstAttribute="top" secondItem="oct-nn-bY7" secondAttribute="bottom" constant="40" id="3OY-DL-hRr"/>
+                                            <constraint firstItem="oV1-M0-01K" firstAttribute="top" secondItem="bKU-X7-s6C" secondAttribute="bottom" constant="30" id="46A-K4-ElO"/>
+                                            <constraint firstAttribute="bottom" secondItem="oV1-M0-01K" secondAttribute="bottom" id="D9O-t3-BLJ"/>
+                                            <constraint firstItem="oct-nn-bY7" firstAttribute="top" secondItem="ZLn-lk-eJ2" secondAttribute="top" id="Dtb-1h-C0z"/>
+                                            <constraint firstAttribute="trailing" secondItem="oct-nn-bY7" secondAttribute="trailing" id="Dxg-6T-c16"/>
+                                            <constraint firstItem="oct-nn-bY7" firstAttribute="leading" secondItem="ZLn-lk-eJ2" secondAttribute="leading" id="Dxl-Tn-RHT"/>
+                                            <constraint firstItem="oV1-M0-01K" firstAttribute="leading" secondItem="ZLn-lk-eJ2" secondAttribute="leading" constant="10" id="FRD-HW-VIc"/>
+                                            <constraint firstAttribute="trailing" secondItem="oV1-M0-01K" secondAttribute="trailing" constant="10" id="JKt-cr-RdG"/>
+                                            <constraint firstItem="bKU-X7-s6C" firstAttribute="leading" secondItem="ZLn-lk-eJ2" secondAttribute="leading" constant="10" id="ZeK-zD-olm"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bKU-X7-s6C" secondAttribute="trailing" constant="20" symbolic="YES" id="f1Z-Dq-QXS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ZLn-lk-eJ2" firstAttribute="leading" secondItem="74D-Bg-4Sd" secondAttribute="leading" id="Nl7-OA-T3P"/>
+                                    <constraint firstItem="ZLn-lk-eJ2" firstAttribute="top" secondItem="74D-Bg-4Sd" secondAttribute="top" id="PEC-86-mEO"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZLn-lk-eJ2" secondAttribute="bottom" id="YNM-TL-9CZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZLn-lk-eJ2" secondAttribute="trailing" id="vlq-sT-JRR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PEa-JH-RYd"/>
+                        <color key="backgroundColor" name="AppBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PEa-JH-RYd" firstAttribute="bottom" secondItem="74D-Bg-4Sd" secondAttribute="bottom" id="0e6-fb-8tI"/>
+                            <constraint firstItem="PEa-JH-RYd" firstAttribute="trailing" secondItem="74D-Bg-4Sd" secondAttribute="trailing" id="2cG-pV-J4G"/>
+                            <constraint firstItem="74D-Bg-4Sd" firstAttribute="width" secondItem="fdr-bS-meT" secondAttribute="width" id="FVs-ZD-jsz"/>
+                            <constraint firstItem="74D-Bg-4Sd" firstAttribute="top" secondItem="fdr-bS-meT" secondAttribute="top" id="ML1-rr-V9y"/>
+                            <constraint firstItem="PEa-JH-RYd" firstAttribute="trailing" secondItem="ZLn-lk-eJ2" secondAttribute="trailing" id="dlD-cp-Rg2"/>
+                            <constraint firstItem="ZLn-lk-eJ2" firstAttribute="leading" secondItem="PEa-JH-RYd" secondAttribute="leading" id="ozo-hr-l64"/>
+                            <constraint firstItem="74D-Bg-4Sd" firstAttribute="leading" secondItem="PEa-JH-RYd" secondAttribute="leading" id="zTp-7y-xV8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mPd-GJ-vZd"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="0.0" height="0.0"/>
+                    <connections>
+                        <outlet property="articleLabel" destination="bKU-X7-s6C" id="LaP-n4-5w5"/>
+                        <outlet property="teadsAdHeightConstraint" destination="2CS-0c-I0r" id="U4w-sI-DUK"/>
+                        <outlet property="teadsAdView" destination="jae-At-vrZ" id="c7Q-Dx-AuJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iv-58-Xbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5121" y="-1057"/>
         </scene>
         <!--In Read Direct Collection View Controller-->
         <scene sceneID="uaG-q0-HB3">
@@ -714,6 +879,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn1-51-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3546" y="-1076"/>
+        </scene>
+        <!--In Read Page View Controller-->
+        <scene sceneID="XSo-Pi-CTq">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rBF-Bs-lld" customClass="InReadPageViewController" customModule="TeadsSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ki2-5W-hme"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46H-wh-if2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4297" y="-1057"/>
         </scene>
         <!--In Read Admob Web View Controller-->
         <scene sceneID="Umv-ro-kXq">
@@ -1295,13 +1470,13 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJm-OU-v2c">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-7T-qdp">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-7T-qdp">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-XK-5gn">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="InRead Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-XK-5gn">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1472,13 +1647,13 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-Mz-nhh">
                                                                     <rect key="frame" x="8" y="46" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="1zb-5g-rVg">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="1zb-5g-rVg">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Native Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-cm-gJD">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native Direct TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-cm-gJD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2166,13 +2341,13 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaL-ws-moV">
                                                                     <rect key="frame" x="8" y="96" width="359" height="58.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-MP-dk4">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll down to see your creative" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-MP-dk4">
                                                                             <rect key="frame" x="0.0" y="34.5" width="359" height="24"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Native Admob TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-UK-hQV">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native Admob TableView Integration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-UK-hQV">
                                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="26.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3222,6 +3397,9 @@
             <size key="intrinsicContentSize" width="1666" height="833"/>
         </designable>
         <designable name="PHc-4t-vYo">
+            <size key="intrinsicContentSize" width="1666" height="833"/>
+        </designable>
+        <designable name="SQg-8Q-faY">
             <size key="intrinsicContentSize" width="1666" height="833"/>
         </designable>
         <designable name="V2R-b5-ntE">

@@ -17,6 +17,8 @@
 		A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */; };
 		A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */; };
 		A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */; };
+		A98FA31F2A25070D00FB8F75 /* InReadDirectPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98FA31E2A25070D00FB8F75 /* InReadDirectPageViewController.swift */; };
+		A98FA3212A250A0200FB8F75 /* InReadPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98FA3202A250A0200FB8F75 /* InReadPageViewController.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
 		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
 		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
@@ -83,6 +85,8 @@
 		A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTagDirectTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartNativeAdTableViewCell.swift; sourceTree = "<group>"; };
+		A98FA31E2A25070D00FB8F75 /* InReadDirectPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectPageViewController.swift; sourceTree = "<group>"; };
+		A98FA3202A250A0200FB8F75 /* InReadPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadPageViewController.swift; sourceTree = "<group>"; };
 		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectTableViewController.swift; sourceTree = "<group>"; };
 		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				40D289EF25384EB00031A64D /* TableView */,
 				40D289F225384EEF0031A64D /* CollectionView */,
 				B501EC781F823C2A002909B9 /* WebView */,
+				A98FA31D2A2506EC00FB8F75 /* PageView */,
 			);
 			path = Direct;
 			sourceTree = "<group>";
@@ -285,6 +290,15 @@
 				A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		A98FA31D2A2506EC00FB8F75 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				A98FA31E2A25070D00FB8F75 /* InReadDirectPageViewController.swift */,
+				A98FA3202A250A0200FB8F75 /* InReadPageViewController.swift */,
+			);
+			path = PageView;
 			sourceTree = "<group>";
 		};
 		B501EC681F8232A4002909B9 /* Ressources */ = {
@@ -755,11 +769,13 @@
 				B50425D0252E078B00ABF07D /* String.swift in Sources */,
 				E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */,
 				408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */,
+				A98FA31F2A25070D00FB8F75 /* InReadDirectPageViewController.swift in Sources */,
 				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
 				E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */,
 				E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */,
 				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
 				E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */,
+				A98FA3212A250A0200FB8F75 /* InReadPageViewController.swift in Sources */,
 				B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */,
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
 				A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */,
