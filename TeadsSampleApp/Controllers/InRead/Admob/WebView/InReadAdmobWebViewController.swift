@@ -17,9 +17,6 @@ class InReadAdmobWebViewController: TeadsViewController {
     var webViewHelper: TeadsWebViewHelper?
     var bannerView: GAMBannerView!
 
-    // FIXME: This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +32,8 @@ class InReadAdmobWebViewController: TeadsViewController {
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
         bannerView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
-        bannerView.adUnitID = pid // Replace with your adunit
+        // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
+        bannerView.adUnitID = pid
         bannerView.rootViewController = self
         bannerView.delegate = self
     }
