@@ -1,3 +1,5 @@
+# Teads SDK for iOS
+
 <p align="center">
     <a href="https://teads.com/" target="_blank">
         <img width="75%" src="https://raw.githubusercontent.com/teads/TeadsSDK-iOS/master/ReadmeResources/teads_logo.png" alt="Teads logo">
