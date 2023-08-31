@@ -14,9 +14,6 @@ import UIKit
 class InReadAdmobTableViewController: TeadsViewController {
     @IBOutlet var tableView: UITableView!
 
-    // FIXME: This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
-
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
@@ -34,7 +31,8 @@ class InReadAdmobTableViewController: TeadsViewController {
         admobAdView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
 
         // 2. Attach Delegate (will include Teads events)
-        admobAdView?.adUnitID = pid // Replace with your adunit
+        // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
+        admobAdView?.adUnitID = pid
         admobAdView?.rootViewController = self
         admobAdView?.delegate = self
 

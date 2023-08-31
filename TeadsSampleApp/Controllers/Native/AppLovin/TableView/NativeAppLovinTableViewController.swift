@@ -46,7 +46,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
     }
 
     func loadAd() {
-        // FIXME: This ids should be replaced by your own AppLovin AdUnitId
+        // FIXME: This id below should be replaced by your own AppLovin AdUnitId
         let APPLOVIN_AD_UNIT_ID = pid
         nativeAdLoader = MANativeAdLoader(adUnitIdentifier: APPLOVIN_AD_UNIT_ID)
 

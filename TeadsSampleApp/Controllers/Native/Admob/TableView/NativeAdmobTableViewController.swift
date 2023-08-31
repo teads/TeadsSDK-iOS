@@ -23,9 +23,6 @@ class NativeAdmobTableViewController: TeadsViewController {
 
     var adLoader: GADAdLoader!
 
-    // FIXME: This ids should be replaced by your own AdMob application and ad block/unit ids
-    let ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2934735716"
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +31,7 @@ class NativeAdmobTableViewController: TeadsViewController {
         }
 
         adLoader = GADAdLoader(
+            // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
             adUnitID: pid,
             rootViewController: self,
             adTypes: [.native],
