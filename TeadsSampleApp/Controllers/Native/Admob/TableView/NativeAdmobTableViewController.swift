@@ -34,7 +34,7 @@ class NativeAdmobTableViewController: TeadsViewController {
             // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
             adUnitID: pid,
             rootViewController: self,
-            adTypes: [.native],
+            adTypes: [.native, .gamBanner],
             options: nil
         )
 
@@ -96,6 +96,19 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
         nativeAd.delegate = self
+    }
+}
+
+extension NativeAdmobTableViewController: GAMBannerAdLoaderDelegate {
+    func validBannerSizes(for _: GADAdLoader) -> [NSValue] {
+        [
+            NSValueFromGADAdSize(GADAdSizeFluid),
+        ]
+    }
+
+    func adLoader(_: GADAdLoader, didReceive bannerView: GAMBannerView) {
+        let view = bannerView
+        // future banner has to be insterted in the view hierarchy
     }
 }
 
