@@ -32,9 +32,9 @@ class NativeAdmobTableViewController: TeadsViewController {
 
         adLoader = GADAdLoader(
             // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
-            adUnitID: pid,
+            adUnitID: PID.admobLandscape,
             rootViewController: self,
-            adTypes: [.native, .gamBanner],
+            adTypes: [.customNative, .gamBanner],
             options: nil
         )
 
@@ -52,6 +52,18 @@ class NativeAdmobTableViewController: TeadsViewController {
 
     func closeSlot() {
         elements.removeAll { $0 != nil }
+    }
+}
+
+// MARK: - Native Ad Delegates
+
+extension NativeAdmobTableViewController: GADCustomNativeAdLoaderDelegate {
+    func adLoader(_: GADAdLoader, didReceive _: GADCustomNativeAd) {
+        print("received GADCustomNativeAd")
+    }
+
+    func customNativeAdFormatIDs(for _: GADAdLoader) -> [String] {
+        return ["11855407"]
     }
 }
 
@@ -92,6 +104,7 @@ extension NativeAdmobTableViewController: GADAdLoaderDelegate {
 
 extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
     func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+        print("received GADNativeAd")
         elements.insert(nativeAd, at: adRowNumber)
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
@@ -108,6 +121,7 @@ extension NativeAdmobTableViewController: GAMBannerAdLoaderDelegate {
 
     func adLoader(_: GADAdLoader, didReceive bannerView: GAMBannerView) {
         let view = bannerView
+        print("received GAMBannerView")
         // future banner has to be insterted in the view hierarchy
     }
 }

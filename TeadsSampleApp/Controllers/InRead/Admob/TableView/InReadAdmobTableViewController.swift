@@ -32,7 +32,7 @@ class InReadAdmobTableViewController: TeadsViewController {
 
         // 2. Attach Delegate (will include Teads events)
         // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
-        admobAdView?.adUnitID = pid
+        admobAdView?.adUnitID = PID.admobLandscape
         admobAdView?.rootViewController = self
         admobAdView?.delegate = self
 
