@@ -1,0 +1,4 @@
+module OMSDK_Teadstv {
+    header "Headers/OMIDImports.h"
+    export *
+}

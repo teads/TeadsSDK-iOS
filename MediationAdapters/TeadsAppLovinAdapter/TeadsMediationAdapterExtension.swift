@@ -24,7 +24,7 @@ extension TeadsAdapterSettings {
     @nonobjc class func instance(fromAppLovinParameters dictionary: [AnyHashable: Any]?) throws -> TeadsAdapterSettings {
         let adapterVersion = ALSdk.version()
         let adSettings = try TeadsAdapterSettings.instance(from: dictionary ?? Dictionary())
-        adSettings.setIntegation(TeadsAdapterSettings.integrationApplovin, version: adapterVersion)
+        adSettings.setIntegration(type: .appLovin, version: adapterVersion)
         return adSettings
     }
 }

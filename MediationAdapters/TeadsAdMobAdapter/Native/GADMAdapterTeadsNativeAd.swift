@@ -109,7 +109,7 @@ final class GADMAdapterTeadsNativeAd: NSObject, GADMediationNativeAd {
 
         // Prepare ad settings
         let adSettings = (adConfiguration.extras as? TeadsAdapterSettings) ?? TeadsAdapterSettings()
-        adSettings.setIntegation(TeadsAdapterSettings.integrationAdmob, version: GADMobileAds.sharedInstance().sdkVersion)
+        adSettings.setIntegration(type: .adMob, version: GADMobileAds.sharedInstance().sdkVersion)
         self.adSettings = adSettings
         placement = Teads.createNativePlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)

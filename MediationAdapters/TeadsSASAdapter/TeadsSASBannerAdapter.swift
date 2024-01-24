@@ -48,7 +48,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
 
     static func addExtrasToAdSettings(_ adSettings: TeadsAdapterSettings) {
         let sasVersion = Bundle(for: SASAdPlacement.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
-        adSettings.setIntegation(TeadsAdapterSettings.integrationSAS, version: sasVersion)
+        adSettings.setIntegration(type: .smart, version: sasVersion)
     }
 }
 
