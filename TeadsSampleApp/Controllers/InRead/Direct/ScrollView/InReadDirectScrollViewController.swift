@@ -25,7 +25,7 @@ class InReadDirectScrollViewController: TeadsViewController {
         // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.tv")
+            settings.pageUrl("https://www.teads.com")
         })
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so

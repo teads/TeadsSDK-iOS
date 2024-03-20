@@ -28,7 +28,7 @@ class InReadDirectPageViewController: TeadsViewController {
 
     func loadAd() {
         placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.tv")
+            settings.pageUrl("https://www.teads.com")
         })
     }
 
