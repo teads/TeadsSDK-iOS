@@ -6,10 +6,10 @@ If you want to display Teads ads in your iOS application through Smart Ads Serve
 
 ## Requirements
 
-- ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
-- ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
+- ![Platform: iOS 14+](https://img.shields.io/badge/Platform-iOS%2014%2B-blue.svg?style=flat)
+- ![Xcode: 14+](https://img.shields.io/badge/Xcode-14+-blue.svg?style=flat)
 - ![SAS SDK: 7.62+](https://img.shields.io/badge/Smart%20AdServer%20SDK-7.62+-blue.svg?style=flat)
-- ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
+- ![Teads SDK: 5.1.1+](https://img.shields.io/badge/Teads%20SDK-5.1.1+-blue.svg?style=flat)
 
 ## Features
 
