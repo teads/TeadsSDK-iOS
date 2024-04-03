@@ -7,11 +7,11 @@ target 'TeadsSampleApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'TeadsSDK', '~> 5.1.0'
+  pod 'TeadsSDK', '~> 5.1'
 
-  pod 'TeadsSASAdapter', '~> 5.1.0'
-  pod 'TeadsAdMobAdapter', '~> 5.1.0'
-  pod 'TeadsAppLovinAdapter', '~> 5.1.0'
+  pod 'TeadsSASAdapter', '~> 5.1'
+  pod 'TeadsAdMobAdapter', '~> 5.1'
+  pod 'TeadsAppLovinAdapter', '~> 5.1'
   
   pod 'SwiftFormat/CLI'
 end
