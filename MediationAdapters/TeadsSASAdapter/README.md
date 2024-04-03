@@ -1,4 +1,5 @@
 # Teads - iOS Smart AdServer Mediation Adapter
+
 > Mediation adapter to be used in conjunction with Smart Ads Server to deliver Teads ads on iOS devices.
 
 If you want to display Teads ads in your iOS application through Smart Ads Server mediation, you’re at the right place.
@@ -12,7 +13,7 @@ If you want to display Teads ads in your iOS application through Smart Ads Serve
 
 ## Features
 
-- ✅  Displaying Teads banners
+- ✅ Displaying Teads banners
 
 ## Installation
 
@@ -28,13 +29,12 @@ It will install Teads adapter and Teads SDK.
 
 ```ruby
 platform :ios, '10.0'
-pod 'TeadsSASAdapter', '~> 5.0'
+pod 'TeadsSASAdapter', '~> 5.1'
 ```
 
 2. Run `pod install --repo-update` to install the adapter in your project.
 3. Follow the [Define Custom Event](https://support.teads.tv/support/solutions/articles/36000314771-smart-adserver-mediation#defining_a_custom_event) step to finish the integration.
 4. You’re done.
-
 
 ## Integration Documentation
 

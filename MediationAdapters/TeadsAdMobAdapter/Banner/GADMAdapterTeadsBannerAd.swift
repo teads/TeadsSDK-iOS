@@ -43,7 +43,7 @@ public final class GADMAdapterTeadsBannerAd: NSObject, GADMediationBannerAd {
 
         // Prepare ad settings
         let adSettings = (adConfiguration.extras as? TeadsAdapterSettings) ?? TeadsAdapterSettings()
-        adSettings.setIntegration(type: .adMob, version: GADMobileAds.sharedInstance().sdkVersion)
+        adSettings.setIntegration(type: .adMob, version: AdMobHelper.getGMAVersionNumber())
         self.adSettings = adSettings
 
         let adSize = adConfiguration.adSize

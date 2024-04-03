@@ -6,6 +6,6 @@ framework module TeadsSDK {
 }
 
 module TeadsSDK.Swift {
-    header "TeadsSDK-Swift.h"
-    requires objc
+  header "TeadsSDK-Swift.h"
+  requires objc
 }

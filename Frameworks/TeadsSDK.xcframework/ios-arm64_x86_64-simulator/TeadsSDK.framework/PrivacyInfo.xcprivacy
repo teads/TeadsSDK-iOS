@@ -30,14 +30,6 @@
 			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
 		</dict>
 	</array>
-	<key>NSPrivacyTrackingDomains</key>
-	<array>
-		<string>t2.teads.tv</string>
-		<string>t.teads.tv</string>
-		<string>studio-t.teads.tv</string>
-	</array>
-	<key>NSPrivacyTracking</key>
-	<true/>
 	<key>NSPrivacyCollectedDataTypes</key>
 	<array>
 		<dict>

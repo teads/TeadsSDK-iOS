@@ -1,4 +1,5 @@
 # Teads - iOS AppLovin MAX Mediation Adapter
+
 > Mediation adapter to be used in conjunction with AppLovin to deliver Teads ads on iOS devices.
 
 If you want to display Teads ads in your iOS application through AppLovin MAX mediation, you’re at the right place.
@@ -12,8 +13,8 @@ If you want to display Teads ads in your iOS application through AppLovin MAX me
 
 ## Features
 
-- ✅  Displaying Teads inRead ads
-- ✅  Displaying Teads native ads
+- ✅ Displaying Teads inRead ads
+- ✅ Displaying Teads native ads
 
 ## Installation
 
@@ -29,13 +30,12 @@ It will install Teads adapter and Teads SDK.
 
 ```ruby
 platform :ios, '10.0'
-pod 'TeadsAppLovinAdapter', '~> 5.0'
+pod 'TeadsAppLovinAdapter', '~> 5.1'
 ```
 
 2. Run `pod install --repo-update` to install the adapter in your project.
 3. Follow the [Create a custom Network](https://support.teads.tv/support/solutions/articles/36000357700-inread-applovin-mediation#create-a-custom-network) step to finish the integration.
 4. You’re done.
-
 
 ## Integration Documentation
 
