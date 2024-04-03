@@ -5,10 +5,39 @@
 //  Copyright © 2018 Teads. All rights reserved.
 //
 
+import AdSupport
+import AppTrackingTransparency
 import GoogleMobileAds
 import TeadsAdMobAdapter
 import TeadsSDK
 import UIKit
+
+func requestPermission() {
+    if #available(iOS 14, *) {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            switch status {
+                case .authorized:
+                    // Tracking authorization dialog was shown
+                    // and we are authorized
+                    print("Authorized")
+
+                    // Now that we are authorized we can get the IDFA
+                    print(ASIdentifierManager.shared().advertisingIdentifier)
+                case .denied:
+                    // Tracking authorization dialog was
+                    // shown and permission is denied
+                    print("Denied")
+                case .notDetermined:
+                    // Tracking authorization dialog has not been shown
+                    print("Not Determined")
+                case .restricted:
+                    print("Restricted")
+                @unknown default:
+                    print("Unknown")
+            }
+        }
+    }
+}
 
 class InReadAdmobScrollViewController: TeadsViewController {
     var bannerView: GAMBannerView!
@@ -17,7 +46,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        requestPermission()
         // 1. Create AdMob view and add it to hierarchy
         bannerView = GAMBannerView(adSize: GADAdSizeFluid)
         slotView.addSubview(bannerView)

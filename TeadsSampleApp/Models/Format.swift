@@ -152,16 +152,16 @@ enum PID {
     static let sasCarousel = "96470"
     static let sasNativeDisplay = 102_803
 
-    static let appLovinLandscapeMREC = "33d03d37d70196e3"
-    static let appLovinVerticalMREC = "66ff5813c2c2698c"
-    static let appLovinSquareMREC = "5512c029c9a2ebd9"
-    static let appLovinCarouselMREC = "d60fbc370461602d"
+    static let appLovinLandscapeMREC = "ddfc48cc6bd71d73"
+    static let appLovinVerticalMREC = "a4f5eb2342e7febb"
+    static let appLovinSquareMREC = "512f790c9cf57ccd"
+    static let appLovinCarouselMREC = "9b2445c1ac3d55d6"
 
-    static let appLovinLandscape = "ebe5409dd16b929d"
-    static let appLovinVertical = "808eaa38d08ade2d"
-    static let appLovinSquare = "f83b5fc30c17954e"
-    static let appLovinCarousel = "21c6dc998b472d8d"
-    static let appLovinNativeDisplay = "b87480e23dd55a79"
+    static let appLovinLandscape = "eff7e1e4d3096392"
+    static let appLovinVertical = "42b9f89963b23101"
+    static let appLovinSquare = "4df06edb6937371e"
+    static let appLovinCarousel = "373d7d2b25d2d8cc"
+    static let appLovinNativeDisplay = "5738024757e4ef72"
 }
 
 enum FormatName: String {
