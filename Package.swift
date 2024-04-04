@@ -36,12 +36,12 @@ let package = Package(
         .package(
             name: googleMobileAdsModuleName,
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            "11.0.0" ..< "13.0.0"
+            "11.2.0" ..< "11.2.0"
         ),
         .package(
             name: appLovinMaxModuleName,
             url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            "11.5.1" ..< "13.0.0"
+            "12.3.1" ..< "12.3.1"
         ),
     ],
     targets: [
