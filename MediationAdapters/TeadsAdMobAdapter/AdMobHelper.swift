@@ -1,5 +1,5 @@
 //
-//  Helper.swift
+//  AdMobHelper.swift
 //  TeadsAdMobAdapter
 //
 //  Created by Richard Dépierre on 28/03/2024.

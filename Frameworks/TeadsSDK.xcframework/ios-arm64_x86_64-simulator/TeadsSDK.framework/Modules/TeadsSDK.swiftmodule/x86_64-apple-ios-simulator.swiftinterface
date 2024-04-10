@@ -47,12 +47,14 @@ internal protocol AnyEncodableProtocol {
   var value: Any { get }
   init<T>(_ value: T?)
 }
-@_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject, Swift.Codable {
+@_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject {
   public static let integrationTypeKey: Swift.String
+  public static let prebidStandaloneKey: Swift.String
   public static let integrationVersionKey: Swift.String
   final public var hasSubscribedToAdResizing: Swift.Bool {
     get
   }
+  @objc final public func subscribeToAdResizing()
   final public let adRequestSettings: TeadsSDK.TeadsAdRequestSettings
   final public let adPlacementSettings: TeadsSDK.TeadsAdPlacementSettings
   @objc final public var mediaScale: TeadsSDK.MediaScale {
@@ -80,7 +82,7 @@ internal protocol AnyEncodableProtocol {
   @objc final public func setMediaScale(_ mediaScale: TeadsSDK.MediaScale)
   @available(*, deprecated, renamed: "registerAdView(_:delegate:)")
   @objc final public func subscribeAdResizeDelegate(_ delegate: any TeadsSDK.TeadsMediatedAdViewDelegate, forAdView adView: UIKit.UIView) throws
-  @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: any TeadsSDK.TeadsMediatedAdViewDelegate) throws
+  @objc final public func registerAdView(_ adView: UIKit.UIView, delegate: any TeadsSDK.TeadsMediatedAdViewDelegate)
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -96,7 +98,7 @@ internal protocol AnyEncodableProtocol {
   @objc public static let sdkVersion: Swift.String
   final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsNativeAdPlacement)?
   @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsInReadAdPlacement)?
-  @objc final public class func createPrebidInReadPlacement(settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsPrebidAdPlacement)?
+  @objc final public class func createPrebidPlacement(settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsPrebidAdPlacement)?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -150,6 +152,7 @@ extension UIKit.UILabel {
   @objc optional func didRecordClick(ad: TeadsSDK.TeadsAd)
   @objc optional func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
   @objc optional func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
+  @objc optional func didTerminate(requestIdentifier: Foundation.UUID)
 }
 @usableFromInline
 internal protocol AnyDecodableProtocol {
@@ -197,6 +200,9 @@ internal protocol AnyDecodableProtocol {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) final public var requestIdentifier: Foundation.UUID? {
+    get
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override final public func removeFromSuperview()
   @objc deinit
@@ -205,8 +211,10 @@ internal protocol AnyDecodableProtocol {
   @objc dynamic var delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? { get set }
   @discardableResult
   @objc func loadAd(adResponse: Swift.String, requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
+  @discardableResult
+  @objc func getData(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) throws -> [Swift.AnyHashable : Any]
 }
-@_inheritsConvenienceInitializers @objc public class TeadsAdRequestSettings : ObjectiveC.NSObject, Swift.Codable {
+@_inheritsConvenienceInitializers @objc public class TeadsAdRequestSettings : ObjectiveC.NSObject {
   @objc public func enableValidationMode()
   @objc public func pageUrl(_ rawUrlString: Swift.String)
   @objc public func addExtras(_ value: Swift.String, for key: Swift.String)
@@ -260,7 +268,7 @@ extension UIKit.UIButton {
 @objc public protocol TeadsAdPlacement {
   @objc var pid: Swift.Int { get }
 }
-@_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject, Swift.Codable {
+@_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject {
   public static let pluginKey: Swift.String
   public static let pluginFlutter: Swift.String
   public static let pluginReactNative: Swift.String
@@ -394,13 +402,14 @@ extension TeadsSDK.CommonComponent {
   }
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class TeadsAdapterIntegrationType : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsAdapterIntegrationType : ObjectiveC.NSObject {
   public static let adMob: TeadsSDK.TeadsAdapterIntegrationType
   public static let appLovin: TeadsSDK.TeadsAdapterIntegrationType
   public static let smart: TeadsSDK.TeadsAdapterIntegrationType
   public static let gravite: TeadsSDK.TeadsAdapterIntegrationType
   public static let flutter: TeadsSDK.TeadsAdapterIntegrationType
   public static let reactNative: TeadsSDK.TeadsAdapterIntegrationType
+  public static let prebid: TeadsSDK.TeadsAdapterIntegrationType
   @objc deinit
 }
 @objc public enum AdErrorCode : Swift.Int {
@@ -440,12 +449,18 @@ extension TeadsSDK.AdFailReason : Foundation.CustomNSError {
     get
   }
 }
+extension TeadsSDK.TeadsAdapterSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdapterSettings : Swift.Decodable {}
 extension TeadsSDK.MediaScale : Swift.Equatable {}
 extension TeadsSDK.MediaScale : Swift.Hashable {}
 extension TeadsSDK.MediaScale : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsAdRequestSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdRequestSettings : Swift.Decodable {}
 extension TeadsSDK.TCFVersion : Swift.Equatable {}
 extension TeadsSDK.TCFVersion : Swift.Hashable {}
 extension TeadsSDK.TCFVersion : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsAdPlacementSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdPlacementSettings : Swift.Decodable {}
 extension TeadsSDK.AdErrorCode : Swift.Equatable {}
 extension TeadsSDK.AdErrorCode : Swift.Hashable {}
 extension TeadsSDK.AdErrorCode : Swift.RawRepresentable {}

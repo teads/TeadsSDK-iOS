@@ -506,7 +506,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// returns:
 /// TeadsInReadAdPlacement instance, this instance must be owned/retained
-+ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidInReadPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
++ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -535,7 +535,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 /// Optional delegate object that receives playback lifecycle changes notifications from TeadsAd.
 /// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
-/// Request identifier allows you to match the returned value from placement.requestAd call
+/// Request identifier allows you to match the returned value from <code>placement.requestAd</code> / <code>placement.loadAd</code> call
 @property (nonatomic, readonly, copy) NSUUID * _Nonnull requestIdentifier;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -601,6 +601,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// \param ad The ad that leaved the fullscreen mode.
 ///
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when an ad is terminated (deinit)
+/// \param identifier The ad request identifier
+///
+- (void)didTerminateWithRequestIdentifier:(NSUUID * _Nonnull)requestIdentifier;
 @end
 
 
@@ -611,6 +615,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// To do so: add this view just above your slot, when visibility is tracked, this view will be removed from superview automaically
 SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 @interface TeadsAdOpportunityTrackerView : UIView
+/// Request identifier allows you to match the returned value from placement.requestAd call
+@property (nonatomic, readonly, copy) NSUUID * _Nullable requestIdentifier;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)removeFromSuperview;
@@ -620,6 +626,8 @@ SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 SWIFT_PROTOCOL("_TtP8TeadsSDK16TeadsAdPlacement_")
 @protocol TeadsAdPlacement
 /// Your Teads placement identifier for <em>inRead</em> or <em>native</em> ads
+/// note:
+/// no use for <code>TeadsPrebidAdPlacement</code>
 @property (nonatomic, readonly) NSInteger pid;
 @end
 
@@ -798,7 +806,7 @@ SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdapterIntegrationType")
 /// Settings used to load Teads’ mediation adapter ads
 /// Specify which setting you want to set for the related mediation request.
 /// Those settings will be persisted for the ad lifecycle only.
-/// Only relevant when using mediation adapter such as
+/// Only relevant when using  adapter such as
 /// <ul>
 ///   <li>
 ///     <a href="https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation">AdMob</a>
@@ -809,9 +817,14 @@ SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdapterIntegrationType")
 ///   <li>
 ///     <a href="https://support.teads.tv/support/solutions/articles/36000314771-smart-adserver-mediation-inread">Smart Ad Server</a>
 ///   </li>
+///   <li>
+///     <a href="https://support.teads.tv/support/solutions/articles/3600031477136000459748">Prebid</a>
+///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// Convenient way to specify ability to resize in settings
+- (void)subscribeToAdResizing;
 /// A value describing the native ad media scale that is being used.
 /// This is only relevant for native ad.
 @property (nonatomic, readonly) enum MediaScale mediaScale;
@@ -889,7 +902,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param mediaScale The media scale.
 ///
 - (void)setMediaScale:(enum MediaScale)mediaScale;
-- (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
+- (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:");
 /// Register the ad view in case of mediation adapter.
 /// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
 /// implementing <code>TeadsMediatedAdViewDelegate/didUpdateRatio(_:adRatio:)</code> will allows you to resize the  AdView
@@ -900,7 +913,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 ///
 /// throws:
 /// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+- (void)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate;
 @end
 
 
@@ -1233,7 +1246,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 
 /// / Prebid ad placement to load inRead ads from Prebid winning bid
 /// This object is reponsible of loading prebid winning ad response
-/// In order to create placement, call <code>Teads/createPrebidInReadPlacement(settings:delegate:)</code>
+/// In order to create placement, call <code>Teads/createPrebidPlacement(settings:delegate:)</code>
 /// important:
 /// You must own/retain <code>TeadsPrebidAdPlacement</code> instance, otherwise ads could not be delivered properly
 SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
@@ -1250,8 +1263,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
 ///
 ///
 /// returns:
-/// a unique request identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
+/// a unique load identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
 - (NSUUID * _Nonnull)loadAdWithAdResponse:(NSString * _Nonnull)adResponse requestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
+/// get prebid request data
+/// requires:
+/// <code>TeadsPrebidAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// \param requestSettings settings <code>TeadsInReadAdRequestSettings</code> to tweak your needs
+///
+///
+/// throws:
+/// error when not able to gather data
+- (NSDictionary * _Nullable)getDataWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -1831,7 +1853,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// returns:
 /// TeadsInReadAdPlacement instance, this instance must be owned/retained
-+ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidInReadPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
++ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1860,7 +1882,7 @@ SWIFT_CLASS("_TtC8TeadsSDK7TeadsAd")
 /// Optional delegate object that receives playback lifecycle changes notifications from TeadsAd.
 /// Usually this is a <code>UIViewController</code>.
 @property (nonatomic, weak) id <TeadsPlaybackDelegate> _Nullable playbackDelegate;
-/// Request identifier allows you to match the returned value from placement.requestAd call
+/// Request identifier allows you to match the returned value from <code>placement.requestAd</code> / <code>placement.loadAd</code> call
 @property (nonatomic, readonly, copy) NSUUID * _Nonnull requestIdentifier;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1926,6 +1948,10 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// \param ad The ad that leaved the fullscreen mode.
 ///
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
+/// Called when an ad is terminated (deinit)
+/// \param identifier The ad request identifier
+///
+- (void)didTerminateWithRequestIdentifier:(NSUUID * _Nonnull)requestIdentifier;
 @end
 
 
@@ -1936,6 +1962,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 /// To do so: add this view just above your slot, when visibility is tracked, this view will be removed from superview automaically
 SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 @interface TeadsAdOpportunityTrackerView : UIView
+/// Request identifier allows you to match the returned value from placement.requestAd call
+@property (nonatomic, readonly, copy) NSUUID * _Nullable requestIdentifier;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)removeFromSuperview;
@@ -1945,6 +1973,8 @@ SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 SWIFT_PROTOCOL("_TtP8TeadsSDK16TeadsAdPlacement_")
 @protocol TeadsAdPlacement
 /// Your Teads placement identifier for <em>inRead</em> or <em>native</em> ads
+/// note:
+/// no use for <code>TeadsPrebidAdPlacement</code>
 @property (nonatomic, readonly) NSInteger pid;
 @end
 
@@ -2123,7 +2153,7 @@ SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdapterIntegrationType")
 /// Settings used to load Teads’ mediation adapter ads
 /// Specify which setting you want to set for the related mediation request.
 /// Those settings will be persisted for the ad lifecycle only.
-/// Only relevant when using mediation adapter such as
+/// Only relevant when using  adapter such as
 /// <ul>
 ///   <li>
 ///     <a href="https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation">AdMob</a>
@@ -2134,9 +2164,14 @@ SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdapterIntegrationType")
 ///   <li>
 ///     <a href="https://support.teads.tv/support/solutions/articles/36000314771-smart-adserver-mediation-inread">Smart Ad Server</a>
 ///   </li>
+///   <li>
+///     <a href="https://support.teads.tv/support/solutions/articles/3600031477136000459748">Prebid</a>
+///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 @interface TeadsAdapterSettings : NSObject
+/// Convenient way to specify ability to resize in settings
+- (void)subscribeToAdResizing;
 /// A value describing the native ad media scale that is being used.
 /// This is only relevant for native ad.
 @property (nonatomic, readonly) enum MediaScale mediaScale;
@@ -2214,7 +2249,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// \param mediaScale The media scale.
 ///
 - (void)setMediaScale:(enum MediaScale)mediaScale;
-- (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:error:");
+- (BOOL)subscribeAdResizeDelegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate forAdView:(UIView * _Nonnull)adView error:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_MSG("", "registerAdView:delegate:");
 /// Register the ad view in case of mediation adapter.
 /// In order to perform ad resizing you need to register AdView with a <code>delegate</code>
 /// implementing <code>TeadsMediatedAdViewDelegate/didUpdateRatio(_:adRatio:)</code> will allows you to resize the  AdView
@@ -2225,7 +2260,7 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 ///
 /// throws:
 /// Error is thrown if the <code>adView</code> parameter supplied is not a subclass of Mediation third-party networks like Admob or AppLovin
-- (BOOL)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+- (void)registerAdView:(UIView * _Nonnull)adView delegate:(id <TeadsMediatedAdViewDelegate> _Nonnull)delegate;
 @end
 
 
@@ -2558,7 +2593,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
 
 /// / Prebid ad placement to load inRead ads from Prebid winning bid
 /// This object is reponsible of loading prebid winning ad response
-/// In order to create placement, call <code>Teads/createPrebidInReadPlacement(settings:delegate:)</code>
+/// In order to create placement, call <code>Teads/createPrebidPlacement(settings:delegate:)</code>
 /// important:
 /// You must own/retain <code>TeadsPrebidAdPlacement</code> instance, otherwise ads could not be delivered properly
 SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
@@ -2575,8 +2610,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
 ///
 ///
 /// returns:
-/// a unique request identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
+/// a unique load identifier, this identifier will be the same value of <code>TeadsInReadAd.requestIdentifier</code> property
 - (NSUUID * _Nonnull)loadAdWithAdResponse:(NSString * _Nonnull)adResponse requestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
+/// get prebid request data
+/// requires:
+/// <code>TeadsPrebidAdPlacement/delegate</code> property must be set to perform ad request, otherwise didReceiveAd will not be triggered
+/// \param requestSettings settings <code>TeadsInReadAdRequestSettings</code> to tweak your needs
+///
+///
+/// throws:
+/// error when not able to gather data
+- (NSDictionary * _Nullable)getDataWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings error:(NSError * _Nullable * _Nullable)error;
 @end
 
 

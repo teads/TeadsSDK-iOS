@@ -6,10 +6,10 @@ If you want to display Teads ads in your iOS application through AppLovin MAX me
 
 ## Requirements
 
-- ![Platform: iOS 14+](https://img.shields.io/badge/Platform-iOS%2014%2B-blue.svg?style=flat)
-- ![Xcode: 14+](https://img.shields.io/badge/Xcode-14+-blue.svg?style=flat)
-- ![AppLovin SDK: 12.3.1+](https://img.shields.io/badge/AppLovin%20SDK-12.3.1+-blue.svg?style=flat)
-- ![Teads SDK: 5.1.1+](https://img.shields.io/badge/Teads%20SDK-5.1.1+-blue.svg?style=flat)
+- ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
+- ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
+- ![AppLovin SDK: 11.1.1+](https://img.shields.io/badge/AppLovin%20SDK-11.1.1+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.12+](https://img.shields.io/badge/Teads%20SDK-5.0.12+-blue.svg?style=flat)
 
 ## Features
 

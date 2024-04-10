@@ -137,7 +137,7 @@ final class GADMAdapterTeadsNativeAd: NSObject, GADMediationNativeAd {
             view.addSubview(adOpportunityView)
             self.adOpportunityView = nil
         }
-        clickableAssetViews.forEach { key, assetView in
+        for (key, assetView) in clickableAssetViews {
             switch key {
                 case .headlineAsset:
                     assetView.bind(component: nativeAd?.title)
