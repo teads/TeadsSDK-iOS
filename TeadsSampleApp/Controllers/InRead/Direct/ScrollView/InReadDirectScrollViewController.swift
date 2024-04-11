@@ -14,19 +14,20 @@ class InReadDirectScrollViewController: TeadsViewController {
     @IBOutlet var teadsAdView: TeadsInReadAdView!
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: TeadsAdRatio?
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsPrebidAdPlacement?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
+        let adRequestSettings = TeadsAdRequestSettings { settings in
+            settings.addExtras("1", for: TeadsAdapterSettings.prebidStandaloneKey)
         }
+        let adPlacementSettings = TeadsAdPlacementSettings { settings in
+            settings.enableDebug() // remove in production
+        }
+        let prebidAdPlacement = Teads.createPrebidPlacement(settings: adPlacementSettings)
+        let renderersCollection = try? prebidAdPlacement?.getData(requestSettings: adRequestSettings)
+        print(renderersCollection)
 
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
