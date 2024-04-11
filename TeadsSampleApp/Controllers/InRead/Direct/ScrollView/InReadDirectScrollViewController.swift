@@ -18,19 +18,28 @@ class InReadDirectScrollViewController: TeadsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let adRequestSettings = TeadsAdRequestSettings { settings in
-            settings.addExtras("1", for: TeadsAdapterSettings.prebidStandaloneKey)
-        }
+
+        // Create Prebid placement
         let adPlacementSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug() // remove in production
         }
-        let prebidAdPlacement = Teads.createPrebidPlacement(settings: adPlacementSettings)
-        let renderersCollection = try? prebidAdPlacement?.getData(requestSettings: adRequestSettings)
-        print(renderersCollection)
+        placement = Teads.createPrebidPlacement(settings: adPlacementSettings, delegate: self)
+        
+        // Get the ad request data
+        let adRequestSettings = TeadsAdRequestSettings { settings in
+            // Ensure to inform your article url or domain url for brand safety matters
+            settings.pageUrl("https://www.your.url.com")
 
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+            // Add this extra to enable your standalone integration
+            settings.addExtras("1", for: TeadsAdapterSettings.prebidStandaloneKey)
+        }
+        let teadsBidRequestExtraData = try? placement?.getData(requestSettings: adRequestSettings)
+
+        // Prebid request with the getData
+        print(teadsBidRequestExtraData)
+
+        // Load ad
+        placement?.loadAd(adResponse: PrebidAdResponse.FAKE_WINNING_BID_RESPONSE, requestSettings: adRequestSettings)
     }
 
     deinit {
