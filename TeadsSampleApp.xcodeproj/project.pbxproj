@@ -13,6 +13,7 @@
 		408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */; };
 		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
 		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
+		8AA31CDE3909E5FEEBF18A70 /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22A325226740B47217915A7 /* Pods_TeadsSampleApp.framework */; };
 		979210C427E0A5C00010E81A /* AppLovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979210C327E0A5C00010E81A /* AppLovinViewController.swift */; };
 		A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */; };
 		A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */; };
@@ -38,7 +39,6 @@
 		B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
 		B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
-		C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */; };
 		E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */; };
 		E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */; };
 		E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */; };
@@ -70,7 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -79,9 +78,7 @@
 		408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootImageViewLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
 		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
-		4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		979210C327E0A5C00010E81A /* AppLovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinViewController.swift; sourceTree = "<group>"; };
-		9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTagDirectTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewController.swift; sourceTree = "<group>"; };
 		A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartNativeAdTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +102,9 @@
 		B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectScrollViewController.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
 		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
+		B9A905766DF37E2FEB0E8585 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		C418984C25DB4EA25F788AFD /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D22A325226740B47217915A7 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 		E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLovinNativeAdView.xib; sourceTree = "<group>"; };
 		E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinNativeAdView.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5BA8B567033A38B69C9CBEF /* Pods_TeadsSampleApp.framework in Frameworks */,
+				8AA31CDE3909E5FEEBF18A70 /* Pods_TeadsSampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +146,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372468189DE0EF4DF1FE772C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D22A325226740B47217915A7 /* Pods_TeadsSampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4079F241252CBE7300B0AC31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,8 +277,8 @@
 		9C4C2A8CC3AEB01218414AF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */,
-				4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */,
+				C418984C25DB4EA25F788AFD /* Pods-TeadsSampleApp.debug.xcconfig */,
+				B9A905766DF37E2FEB0E8585 /* Pods-TeadsSampleApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -341,7 +349,7 @@
 				F71C451F27918A88000C696F /* TeadsSampleAppUITests */,
 				B5555A331F7CDF80007406D4 /* Products */,
 				9C4C2A8CC3AEB01218414AF6 /* Pods */,
-				DE0116B31068BD02E3224B25 /* Frameworks */,
+				372468189DE0EF4DF1FE772C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,14 +428,6 @@
 				B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */,
 			);
 			path = ScrollView;
-			sourceTree = "<group>";
-		};
-		DE0116B31068BD02E3224B25 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				13915D12E3814B15B3832777 /* Pods_TeadsSampleApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E954312227CD038A005004B4 /* AppLovin */ = {
@@ -550,14 +550,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5555A441F7CDF80007406D4 /* Build configuration list for PBXNativeTarget "TeadsSampleApp" */;
 			buildPhases = (
-				30717AAFC9E6D6D8951DDAD6 /* [CP] Check Pods Manifest.lock */,
+				0CB510AD6D95575DF4D62192 /* [CP] Check Pods Manifest.lock */,
 				E96C1F9B27E495D900151530 /* SwiftFormat */,
 				B5555A2E1F7CDF80007406D4 /* Sources */,
 				B5555A2F1F7CDF80007406D4 /* Frameworks */,
 				B5555A301F7CDF80007406D4 /* Resources */,
 				913FE1D31FEC291B003C6E5E /* ShellScript */,
-				17DE1E1C76C21A32980C582E /* [CP] Embed Pods Frameworks */,
-				B0F3549DACE8905C7657663B /* [CP] Copy Pods Resources */,
+				52E5FD273CC485302358F230 /* [CP] Embed Pods Frameworks */,
+				13ACEB7C5111267B8A95751A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -652,7 +652,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17DE1E1C76C21A32980C582E /* [CP] Embed Pods Frameworks */ = {
+		0CB510AD6D95575DF4D62192 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeadsSampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13ACEB7C5111267B8A95751A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.11.4/AppLovinSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52E5FD273CC485302358F230 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,28 +722,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		30717AAFC9E6D6D8951DDAD6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeadsSampleApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		913FE1D31FEC291B003C6E5E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -716,24 +734,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\necho \"$APP_PATH\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
-		};
-		B0F3549DACE8905C7657663B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.11.4/AppLovinSDKResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		E96C1F9B27E495D900151530 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -957,7 +957,7 @@
 		};
 		B5555A451F7CDF80007406D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D48A37BC2D2CEACF8F6BED5 /* Pods-TeadsSampleApp.debug.xcconfig */;
+			baseConfigurationReference = C418984C25DB4EA25F788AFD /* Pods-TeadsSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";
@@ -1054,7 +1054,7 @@
 		};
 		B5555A461F7CDF80007406D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E4C6A68AA96696F039D0AA4 /* Pods-TeadsSampleApp.release.xcconfig */;
+			baseConfigurationReference = B9A905766DF37E2FEB0E8585 /* Pods-TeadsSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "";
