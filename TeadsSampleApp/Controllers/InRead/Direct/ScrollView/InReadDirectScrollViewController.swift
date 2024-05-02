@@ -14,22 +14,32 @@ class InReadDirectScrollViewController: TeadsViewController {
     @IBOutlet var teadsAdView: TeadsInReadAdView!
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: TeadsAdRatio?
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsPrebidAdPlacement?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
-        }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
-        // We use an observer to know when a rotation happened, to resize the ad
-        // You can use whatever way you want to do so
-        NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
+        // Create Prebid placement
+        let adPlacementSettings = TeadsAdPlacementSettings { settings in
+            settings.enableDebug() // remove in production
+        }
+        placement = Teads.createPrebidPlacement(settings: adPlacementSettings, delegate: self)
+        
+        // Get the ad request data
+        let adRequestSettings = TeadsAdRequestSettings { settings in
+            // Ensure to inform your article url or domain url for brand safety matters
+            settings.pageUrl("https://www.your.url.com")
+
+            // Add this extra to enable your standalone integration
+            settings.addExtras("1", for: TeadsAdapterSettings.prebidStandaloneKey)
+        }
+        let teadsBidRequestExtraData = try? placement?.getData(requestSettings: adRequestSettings)
+
+        // Prebid request with the getData
+        print(teadsBidRequestExtraData)
+
+        // Load ad
+        placement?.loadAd(adResponse: PrebidAdResponse.FAKE_WINNING_BID_RESPONSE, requestSettings: adRequestSettings)
     }
 
     deinit {

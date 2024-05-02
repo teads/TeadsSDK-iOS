@@ -3,21 +3,21 @@ PODS:
   - Google-Mobile-Ads-SDK (10.8.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleAppMeasurement (10.23.1):
-    - GoogleAppMeasurement/AdIdSupport (= 10.23.1)
+  - GoogleAppMeasurement (10.24.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.24.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30911.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (10.23.1):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.23.1)
+  - GoogleAppMeasurement/AdIdSupport (10.24.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.24.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30911.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (10.23.1):
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.24.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
@@ -59,25 +59,25 @@ PODS:
   - Smart-Display-SDK (7.18.0):
     - Smart-Core-SDK (~> 7.18)
   - SwiftFormat/CLI (0.50.1)
-  - TeadsAdMobAdapter (5.1.1):
+  - TeadsAdMobAdapter (5.1.2):
     - Google-Mobile-Ads-SDK (>= 9.0.0)
-    - TeadsSDK (= 5.1.1)
-  - TeadsAppLovinAdapter (5.1.1):
+    - TeadsSDK (= 5.1.2)
+  - TeadsAppLovinAdapter (5.1.2):
     - AppLovinSDK (>= 11.5.1)
-    - TeadsSDK (= 5.1.1)
-  - TeadsSASAdapter (5.1.1):
+    - TeadsSDK (= 5.1.2)
+  - TeadsSASAdapter (5.1.2):
     - Smart-Display-SDK (>= 7.6.2)
-    - TeadsSDK (= 5.1.1)
-  - TeadsSDK (5.1.1):
-    - TeadsSDK/Core (= 5.1.1)
-  - TeadsSDK/Core (5.1.1)
+    - TeadsSDK (= 5.1.2)
+  - TeadsSDK (5.1.2):
+    - TeadsSDK/Core (= 5.1.2)
+  - TeadsSDK/Core (5.1.2)
 
 DEPENDENCIES:
   - SwiftFormat/CLI
-  - TeadsAdMobAdapter (~> 5.1)
-  - TeadsAppLovinAdapter (~> 5.1)
-  - TeadsSASAdapter (~> 5.1)
-  - TeadsSDK (~> 5.1)
+  - TeadsAdMobAdapter (~> 5.1.2)
+  - TeadsAppLovinAdapter (~> 5.1.2)
+  - TeadsSASAdapter (~> 5.1.2)
+  - TeadsSDK (~> 5.1.2)
 
 SPEC REPOS:
   trunk:
@@ -99,7 +99,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AppLovinSDK: 5c667a790725d9529c01c3f3acf12ab195865fbb
   Google-Mobile-Ads-SDK: 69daa7fb42061b425340706e382e87fab3e666a3
-  GoogleAppMeasurement: 794d1d2f71fdf77a077a3986258a5c2dac0f9d48
+  GoogleAppMeasurement: f3abf08495ef2cba7829f15318c373b8d9226491
   GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
@@ -107,11 +107,11 @@ SPEC CHECKSUMS:
   Smart-Core-SDK: 7f2b321a2f8a4233481db716a30a2715d2fafbd1
   Smart-Display-SDK: 83450dd0befaa55f08779a8c67c30bd6d8e80ee9
   SwiftFormat: e73212c71908404e333da34e303772b9e516ac9b
-  TeadsAdMobAdapter: 97c740bade7f433ec73372d0fe1c2e7bedaeeab4
-  TeadsAppLovinAdapter: f44f998464a570cb7ae37b2e4cdf9134f797f8d2
-  TeadsSASAdapter: 851149447b24293cbcb8c0f2ca93c8739ca6d969
-  TeadsSDK: 70452f9e291c33fc148ef9eca8425c72b903fa16
+  TeadsAdMobAdapter: ee85996c50697f1e8161b39ccf6869bfa8cc719d
+  TeadsAppLovinAdapter: 5b9e97b1f3f00b8879afd006b2688b810f89c888
+  TeadsSASAdapter: 2c51148a09fa727849655ef40bb1d836f1164599
+  TeadsSDK: 2a325eb7ee215db3b58df6ced5495ead2b3dfb8c
 
-PODFILE CHECKSUM: 393b53fe773fe70c29dfb94ca995faa7d222f72d
+PODFILE CHECKSUM: 638a8ade2e5537f7bb26e59df959b3cba02c3ee2
 
 COCOAPODS: 1.15.2
