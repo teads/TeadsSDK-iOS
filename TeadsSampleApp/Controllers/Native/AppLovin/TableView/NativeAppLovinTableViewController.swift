@@ -16,7 +16,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
     let headerCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "NativeTableViewCell"
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
-    let adRowNumber = 3
+    let adRowNumber = 1
 
     private var elements = [MANativeAdView?]()
     private var nativeAdLoader: MANativeAdLoader!
@@ -53,6 +53,7 @@ class NativeAppLovinTableViewController: TeadsViewController {
         // Setting the modal parent view controller.
         let teadsAdSettings = TeadsAdapterSettings { settings in
             settings.enableDebug()
+            settings.enableValidationMode() // here to validate your app
             settings.pageUrl("https://www.teads.com")
         }
 
