@@ -29,7 +29,7 @@ class InReadSASScrollViewController: TeadsViewController {
         }
 
         let webSiteId = 385_317
-        let pageId = 1_331_331
+        let pageId = 1_399_206
         let formatId = Int(pid) ?? 96445
         var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)

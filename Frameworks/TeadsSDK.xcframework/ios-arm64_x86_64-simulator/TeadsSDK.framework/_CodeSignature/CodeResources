@@ -18,11 +18,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wCTFLeVpJglziCXuOSDeHDz+pwk=
+		lOdLi649QA6ZjBIObsxPDI0SEX8=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		PsUDr3KdDR360nyHQfn76b3P74I=
+		eFpwmIkh4lylSN1YRhfuNKWCjyc=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		PsUDr3KdDR360nyHQfn76b3P74I=
+		eFpwmIkh4lylSN1YRhfuNKWCjyc=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
-		l0n1iTLukd3tXdqs2MqlQCC1e48=
+		YFqWDr5FVfPV5YgH0MB4PDByqwA=
 		</data>
 		<key>lib-js.tar</key>
 		<data>
-		xDeVEc7+2wo03yUhv+5mEm+QwZ8=
+		0WUtTBPeDTE0q7b/OpQ7Jgtk9g4=
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
@@ -124,11 +124,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PsUDr3KdDR360nyHQfn76b3P74I=
+			eFpwmIkh4lylSN1YRhfuNKWCjyc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ztVICR+JRDjFwRcC2XgXIwx/L9qMZ1HeZuRvNR3Nz+Y=
+			sdegZh4Ll34z24t5tOahXbs0CUHrxnhhpLFbdWE+LKE=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -179,11 +179,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PsUDr3KdDR360nyHQfn76b3P74I=
+			eFpwmIkh4lylSN1YRhfuNKWCjyc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ztVICR+JRDjFwRcC2XgXIwx/L9qMZ1HeZuRvNR3Nz+Y=
+			sdegZh4Ll34z24t5tOahXbs0CUHrxnhhpLFbdWE+LKE=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -245,22 +245,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l0n1iTLukd3tXdqs2MqlQCC1e48=
+			YFqWDr5FVfPV5YgH0MB4PDByqwA=
 			</data>
 			<key>hash2</key>
 			<data>
-			34y+hhJUU+K7pi0VITaPnPN5tbvPVeefnndi8CqszW8=
+			Mrdo2T9Az5MSq6CH7Im7mU/E/RUcnby8R2wZyHpkmM8=
 			</data>
 		</dict>
 		<key>lib-js.tar</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xDeVEc7+2wo03yUhv+5mEm+QwZ8=
+			0WUtTBPeDTE0q7b/OpQ7Jgtk9g4=
 			</data>
 			<key>hash2</key>
 			<data>
-			tzJ/jliOgNroYgla4tJx7lijnW4zjUiuyaQD47CKlXI=
+			KLAqoxra51DoaerPtRjQwbynY02rtKzSpykOpwTqPFI=
 			</data>
 		</dict>
 		<key>omid-session-client-v1.js</key>
