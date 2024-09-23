@@ -15,10 +15,13 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let trackerViewRowNumber = 3 // tracker view needs to be placed above the slot view
+    let trackerViewRowNumber = 3 // Tracker view needs to be placed above the slot view
     var adRowNumber: Int {
         return trackerViewRowNumber + 1
     }
+
+    var numberOfAds = 0 // To track how many ads are added
+    var maxAds = 5 // Define how many ads you want to request
 
     var placement: TeadsInReadAdPlacement?
 
@@ -28,11 +31,15 @@ class InReadDirectTableViewController: TeadsViewController {
         case trackerView(_ trackerView: TeadsAdOpportunityTrackerView)
     }
 
+    // Keep a strong reference to the list of ads
+    private var ads = [TeadsInReadAd]()
+
     private var elements = [TeadsElement]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Initialize content (articles)
         (0 ..< 8).forEach { _ in
             elements.append(.article)
         }
@@ -41,11 +48,15 @@ class InReadDirectTableViewController: TeadsViewController {
             settings.enableDebug()
         }
 
-        // keep a strong reference to placement instance
+        // Create the placement, keeping a strong reference
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+
+        // Request multiple ads
+        for _ in 0 ..< maxAds {
+            placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+                settings.pageUrl("https://www.teads.com")
+            })
+        }
 
         tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
@@ -56,6 +67,7 @@ class InReadDirectTableViewController: TeadsViewController {
         }
         elements.removeAll { $0 == .ad(inReadAd) }
         tableView.reloadData()
+        numberOfAds -= 1
     }
 
     func updateAdCellHeight() {
@@ -100,10 +112,20 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 
 extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        elements.insert(.ad(ad), at: adRowNumber)
+        // Keep a strong reference to each received ad
+        ads.append(ad)
+
+        // Insert each ad into a different position in the elements list
+        let adInsertPosition = trackerViewRowNumber + (ads.count - 1) * (trackerViewRowNumber + 1)
+        if adInsertPosition < elements.count {
+            elements.insert(.ad(ad), at: adInsertPosition)
+        } else {
+            elements.append(.ad(ad))
+        }
+
+        numberOfAds += 1
         ad.delegate = self
-        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.reloadData()
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
@@ -129,7 +151,7 @@ extension InReadDirectTableViewController: TeadsAdDelegate {
     func didRecordClick(ad _: TeadsAd) {}
 
     func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
+        return nil
     }
 
     func didCatchError(ad: TeadsAd, error _: Error) {
