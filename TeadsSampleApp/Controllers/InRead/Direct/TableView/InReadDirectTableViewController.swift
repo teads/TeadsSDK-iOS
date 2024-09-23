@@ -132,11 +132,7 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
         print("didFailToReceiveAd: \(reason.description)")
     }
 
-    func didUpdateRatio(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        if let row = elements.firstIndex(of: .ad(ad)) {
-            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
-        }
-    }
+    func didUpdateRatio(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {}
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
         elements.insert(.trackerView(trackerView), at: trackerViewRowNumber)
