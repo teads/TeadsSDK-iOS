@@ -970,7 +970,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -999,15 +999,9 @@
 					"-framework",
 					"\"CoreVideo\"",
 					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
 					"\"Foundation\"",
 					"-framework",
-					"\"GoogleAppMeasurement\"",
-					"-framework",
 					"\"GoogleMobileAds\"",
-					"-framework",
-					"\"GoogleUtilities\"",
 					"-framework",
 					"\"MediaPlayer\"",
 					"-framework",
@@ -1032,8 +1026,6 @@
 					"\"UserMessagingPlatform\"",
 					"-framework",
 					"\"WebKit\"",
-					"-framework",
-					"\"nanopb\"",
 					"-weak_framework",
 					"\"AdSupport\"",
 					"-weak_framework",
@@ -1067,7 +1059,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1096,15 +1088,9 @@
 					"-framework",
 					"\"CoreVideo\"",
 					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
 					"\"Foundation\"",
 					"-framework",
-					"\"GoogleAppMeasurement\"",
-					"-framework",
 					"\"GoogleMobileAds\"",
-					"-framework",
-					"\"GoogleUtilities\"",
 					"-framework",
 					"\"MediaPlayer\"",
 					"-framework",
@@ -1129,8 +1115,6 @@
 					"\"UserMessagingPlatform\"",
 					"-framework",
 					"\"WebKit\"",
-					"-framework",
-					"\"nanopb\"",
 					"-weak_framework",
 					"\"AdSupport\"",
 					"-weak_framework",
