@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppLovinSdkKey</key>
+	<string>CtFFIaXEO53aF-hpTnlPDqBiNLXG8e3mPMDLktuvKwHluzobrLE83BvsVhNrTeSeKPJx2Kg98mOuX_N6b5J_8b</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -52,7 +54,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>AppLovinSdkKey</key>
-	<string>CtFFIaXEO53aF-hpTnlPDqBiNLXG8e3mPMDLktuvKwHluzobrLE83BvsVhNrTeSeKPJx2Kg98mOuX_N6b5J_8b</string>
 </dict>
 </plist>
