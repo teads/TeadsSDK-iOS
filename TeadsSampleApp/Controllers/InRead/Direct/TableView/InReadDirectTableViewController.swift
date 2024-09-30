@@ -17,6 +17,7 @@ class InReadDirectTableViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     var adPosition: [(UUID, Int)] = []
     static let startPosition = 3
+    var adRequestedIndices = Set<Int>()
 
     var placement: TeadsInReadAdPlacement?
 
@@ -82,10 +83,15 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row % 3 == 0 {
-            if elements[indexPath.row] == .article {
+            if !adRequestedIndices.contains(indexPath.row) {
                 placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
                     settings.pageUrl("https://www.teads.com")
                 })
+                adRequestedIndices.insert(indexPath.row)
+            } else {
+                if case let .ad(ad) = elements[indexPath.row] {
+                    closeSlot(ad: ad)
+                }
             }
         }
     }
