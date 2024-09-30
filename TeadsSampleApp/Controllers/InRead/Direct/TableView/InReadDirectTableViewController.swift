@@ -122,10 +122,16 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 
 extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        elements.insert(.ad(ad), at: adRowNumber(requestIdentifier: ad.requestIdentifier))
-        ad.delegate = self
-        let indexPaths = [IndexPath(row: adRowNumber(requestIdentifier: ad.requestIdentifier), section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
+        let adRowIndex = adRowNumber(requestIdentifier: ad.requestIdentifier)
+
+        if adRowIndex <= elements.count {
+            elements.insert(.ad(ad), at: adRowIndex)
+            ad.delegate = self
+            let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
+            tableView.insertRows(at: indexPaths, with: .automatic)
+        } else {
+            print("Invalid index for inserting ad: \(adRowIndex), elements count: \(elements.count)")
+        }
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
