@@ -139,9 +139,15 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        elements.insert(.trackerView(trackerView), at: trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier))
-        let indexPaths = [IndexPath(row: trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier), section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
+        let trackerRowIndex = trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier)
+        if trackerRowIndex <= elements.count {
+            elements.insert(.trackerView(trackerView), at: trackerRowIndex)
+
+            let indexPaths = [IndexPath(row: trackerRowIndex, section: 0)]
+            tableView.insertRows(at: indexPaths, with: .automatic)
+        } else {
+            print("Invalid index for inserting trackerView: \(trackerRowIndex), elements count: \(elements.count)")
+        }
     }
 }
 
