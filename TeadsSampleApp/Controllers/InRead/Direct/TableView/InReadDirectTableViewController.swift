@@ -83,15 +83,10 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row % 3 == 0 {
-            if !adRequestedIndices.contains(indexPath.row) {
+            if elements[indexPath.row] == .article {
                 placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
                     settings.pageUrl("https://www.teads.com")
                 })
-                adRequestedIndices.insert(indexPath.row)
-            } else {
-                if case let .ad(ad) = elements[indexPath.row] {
-                    closeSlot(ad: ad)
-                }
             }
         }
     }
