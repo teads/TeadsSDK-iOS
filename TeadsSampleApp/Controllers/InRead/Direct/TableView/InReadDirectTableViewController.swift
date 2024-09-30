@@ -59,13 +59,6 @@ class InReadDirectTableViewController: TeadsViewController {
 
         // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
-
         tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
 
@@ -85,6 +78,16 @@ class InReadDirectTableViewController: TeadsViewController {
 extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return elements.count
+    }
+
+    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row % 3 == 0 {
+            if elements[indexPath.row] == .article {
+                placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+                    settings.pageUrl("https://www.teads.com")
+                })
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
