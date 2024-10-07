@@ -16,7 +16,7 @@ class InReadDirectTableViewController: TeadsViewController {
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
     var adPosition: [(UUID, Int)] = []
-    static let startPosition = 3
+    static let incrementPosition = 3
     var adRequestedIndices = Set<Int>()
 
     var placement: TeadsInReadAdPlacement?
@@ -31,12 +31,12 @@ class InReadDirectTableViewController: TeadsViewController {
 
     func trackerViewRowNumber(requestIdentifier: UUID?) -> Int {
         guard let requestIdentifier else {
-            return InReadDirectTableViewController.startPosition
+            return InReadDirectTableViewController.incrementPosition
         }
         guard let position = adPosition.first(where: { uuid, _ in
             uuid == requestIdentifier
         }) else {
-            let newPosition = (adPosition.last?.1 ?? 0) + InReadDirectTableViewController.startPosition
+            let newPosition = (adPosition.last?.1 ?? 0) + InReadDirectTableViewController.incrementPosition
             adPosition.append((requestIdentifier, newPosition))
             return newPosition
         }
@@ -78,12 +78,11 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row % 3 == 0 {
-            if elements[indexPath.row] == .article {
-                placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-                    settings.pageUrl("https://www.teads.com")
-                })
-            }
+        if indexPath.row % InReadDirectTableViewController.incrementPosition == 0, elements[indexPath.row] == .article, !adRequestedIndices.contains(indexPath.row) {
+            adRequestedIndices.insert(indexPath.row)
+            placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+                settings.pageUrl("https://www.teads.com")
+            })
         }
     }
 
@@ -121,14 +120,10 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
         let adRowIndex = adRowNumber(requestIdentifier: ad.requestIdentifier)
 
-        if adRowIndex <= elements.count {
-            elements.insert(.ad(ad), at: adRowIndex)
-            ad.delegate = self
-            let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
-            tableView.insertRows(at: indexPaths, with: .automatic)
-        } else {
-            print("Invalid index for inserting ad: \(adRowIndex), elements count: \(elements.count)")
-        }
+        elements.insert(.ad(ad), at: adRowIndex)
+        ad.delegate = self
+        let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
@@ -143,14 +138,10 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
         let trackerRowIndex = trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier)
-        if trackerRowIndex <= elements.count {
-            elements.insert(.trackerView(trackerView), at: trackerRowIndex)
+        elements.insert(.trackerView(trackerView), at: trackerRowIndex)
 
-            let indexPaths = [IndexPath(row: trackerRowIndex, section: 0)]
-            tableView.insertRows(at: indexPaths, with: .automatic)
-        } else {
-            print("Invalid index for inserting trackerView: \(trackerRowIndex), elements count: \(elements.count)")
-        }
+        let indexPaths = [IndexPath(row: trackerRowIndex, section: 0)]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
 }
 
