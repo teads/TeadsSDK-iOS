@@ -15,10 +15,9 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let trackerViewRowNumber = 3 // tracker view needs to be placed above the slot view
-    var adRowNumber: Int {
-        return trackerViewRowNumber + 1
-    }
+    var adPosition: [(UUID, Int)] = []
+    static let incrementPosition = 3
+    var adRequestedIndices = Set<Int>()
 
     var placement: TeadsInReadAdPlacement?
 
@@ -29,6 +28,24 @@ class InReadDirectTableViewController: TeadsViewController {
     }
 
     private var elements = [TeadsElement]()
+
+    func trackerViewRowNumber(requestIdentifier: UUID?) -> Int {
+        guard let requestIdentifier else {
+            return InReadDirectTableViewController.incrementPosition
+        }
+        guard let position = adPosition.first(where: { uuid, _ in
+            uuid == requestIdentifier
+        }) else {
+            let newPosition = (adPosition.last?.1 ?? 0) + InReadDirectTableViewController.incrementPosition
+            adPosition.append((requestIdentifier, newPosition))
+            return newPosition
+        }
+        return position.1
+    }
+
+    func adRowNumber(requestIdentifier: UUID?) -> Int {
+        return trackerViewRowNumber(requestIdentifier: requestIdentifier) + 1
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +60,6 @@ class InReadDirectTableViewController: TeadsViewController {
 
         // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
-
         tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
 
@@ -57,15 +70,20 @@ class InReadDirectTableViewController: TeadsViewController {
         elements.removeAll { $0 == .ad(inReadAd) }
         tableView.reloadData()
     }
-
-    func updateAdCellHeight() {
-        tableView.reloadRows(at: [IndexPath(row: adRowNumber, section: 0)], with: .automatic)
-    }
 }
 
 extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return elements.count
+    }
+
+    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row % InReadDirectTableViewController.incrementPosition == 0, elements[indexPath.row] == .article, !adRequestedIndices.contains(indexPath.row) {
+            adRequestedIndices.insert(indexPath.row)
+            placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
+                settings.pageUrl("https://www.teads.com")
+            })
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,9 +118,11 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
 
 extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        elements.insert(.ad(ad), at: adRowNumber)
+        let adRowIndex = adRowNumber(requestIdentifier: ad.requestIdentifier)
+
+        elements.insert(.ad(ad), at: adRowIndex)
         ad.delegate = self
-        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+        let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
     }
 
@@ -117,8 +137,10 @@ extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
     }
 
     func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        elements.insert(.trackerView(trackerView), at: trackerViewRowNumber)
-        let indexPaths = [IndexPath(row: trackerViewRowNumber, section: 0)]
+        let trackerRowIndex = trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier)
+        elements.insert(.trackerView(trackerView), at: trackerRowIndex)
+
+        let indexPaths = [IndexPath(row: trackerRowIndex, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
     }
 }
