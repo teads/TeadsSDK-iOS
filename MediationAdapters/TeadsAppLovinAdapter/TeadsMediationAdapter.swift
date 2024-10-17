@@ -200,7 +200,7 @@ extension TeadsMediationAdapter: TeadsAdDelegate {
     }
 
     func didCatchError(ad _: TeadsAd, error: Error) {
-        let maxError = MAAdapterError(adapterError: .init(nsError: error), mediatedNetworkErrorCode: error._code, mediatedNetworkErrorMessage: (error as NSError?)?.description ?? "unknown")
+        let maxError = MAAdapterError(adapterError: .init(nsError: error), mediatedNetworkErrorCode: error._code, mediatedNetworkErrorMessage: error.localizedDescription)
         bannerDelegate?.didFailToDisplayAdViewAdWithError(maxError)
     }
 
