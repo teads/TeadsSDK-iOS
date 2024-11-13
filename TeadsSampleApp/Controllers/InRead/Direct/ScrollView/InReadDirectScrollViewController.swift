@@ -1,11 +1,3 @@
-//
-//  InReadDirectScrollViewController.swift
-//  TeadsSampleApp
-//
-//  Created by Jérémy Grosjean on 28/09/2017.
-//  Copyright © 2018 Teads. All rights reserved.
-//
-
 import TeadsSDK
 import UIKit
 
@@ -16,11 +8,42 @@ class InReadDirectScrollViewController: TeadsViewController {
     var adRatio: TeadsAdRatio?
     var placement: TeadsInReadAdPlacement?
 
+    let anotherView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let pSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug()
         }
+
+        // Set up teadsAdView and anotherView
+        teadsAdView.translatesAutoresizingMaskIntoConstraints = false
+        anotherView.translatesAutoresizingMaskIntoConstraints = false
+        anotherView.backgroundColor = .black
+        view.addSubview(anotherView)
+        view.addSubview(teadsAdView)
+
+        // Uncomment the following lines to make teadsAdView match parent width
+//        NSLayoutConstraint.activate([
+//            teadsAdView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            teadsAdView.topAnchor.constraint(equalTo: view.topAnchor),
+//            teadsAdView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            teadsAdView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//        ])
+
+        // Uncomment the following lines to make teadsAdView fill 50% of the available horizontal content
+        NSLayoutConstraint.activate([
+            teadsAdView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            teadsAdView.topAnchor.constraint(equalTo: view.topAnchor),
+            teadsAdView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            teadsAdView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+
+            anotherView.leadingAnchor.constraint(equalTo: teadsAdView.trailingAnchor),
+            anotherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            anotherView.topAnchor.constraint(equalTo: view.topAnchor),
+            anotherView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            anotherView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+        ])
 
         // keep a strong reference to placement instance
         placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
