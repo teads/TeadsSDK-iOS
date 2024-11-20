@@ -18197,2191 +18197,2191 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 514,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 531,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 548,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 814,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/SoundHandler\/SoundHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/SoundHandler\/SoundHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 277,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/VideoAsset.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/VideoAsset.swift",
       "kind": "BooleanLiteral",
       "offset": 503,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/VideoAsset.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/VideoAsset.swift",
       "kind": "IntegerLiteral",
       "offset": 528,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
       "kind": "BooleanLiteral",
       "offset": 363,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
       "kind": "BooleanLiteral",
       "offset": 433,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/FeatureFlag.swift",
       "kind": "BooleanLiteral",
       "offset": 722,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 195,
       "length": 3,
       "value": "400"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 232,
       "length": 3,
       "value": "401"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 268,
       "length": 3,
       "value": "402"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 309,
       "length": 3,
       "value": "405"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 338,
       "length": 3,
       "value": "900"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "IntegerLiteral",
       "offset": 370,
       "length": 3,
       "value": "901"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "StringLiteral",
       "offset": 509,
       "length": 4,
       "value": "\"id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/Vast\/VastError.swift",
       "kind": "StringLiteral",
       "offset": 541,
       "length": 9,
       "value": "\"message\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
       "kind": "StringLiteral",
       "offset": 1082,
       "length": 11,
       "value": "\"mediation\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
       "kind": "StringLiteral",
       "offset": 1138,
       "length": 31,
       "value": "\"isStandalonePrebidIntegration\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
       "kind": "StringLiteral",
       "offset": 1327,
       "length": 9,
       "value": "\"version\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
       "kind": "StringLiteral",
       "offset": 1384,
       "length": 27,
       "value": "\"hasSubscribedToAdResizing\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/TeadsAdapterSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 6555,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSEngineProtocol.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSEngineProtocol.swift",
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
       "value": "\"Loader\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSEngineProtocol.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSEngineProtocol.swift",
       "kind": "StringLiteral",
       "offset": 285,
       "length": 6,
       "value": "\"Core\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
       "kind": "StringLiteral",
       "offset": 448,
       "length": 7,
       "value": "\"Apple\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1006,
       "length": 4,
       "value": "1000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1095,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/WebView\/MediaScroller.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/WebView\/MediaScroller.swift",
       "kind": "IntegerLiteral",
       "offset": 811,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsMediaView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsMediaView.swift",
       "kind": "IntegerLiteral",
       "offset": 626,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsMediaView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsMediaView.swift",
       "kind": "IntegerLiteral",
       "offset": 807,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1170,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1201,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1227,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1256,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1472,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1503,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1529,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 1558,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 2226,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 2257,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 2283,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/UIView-extension.swift",
       "kind": "IntegerLiteral",
       "offset": 2312,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
       "kind": "IntegerLiteral",
       "offset": 713,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
       "kind": "IntegerLiteral",
       "offset": 755,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
       "kind": "IntegerLiteral",
       "offset": 1049,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/RemoteConfig.swift",
       "kind": "Array",
       "offset": 1132,
       "length": 134,
       "value": "[\"GoogleMobileAds.GAMBannerView\", \"GAMBannerView\", \"SASBannerView\", \"SASDisplayKit.SASBannerView\", \"AppLovinSDK.MAAdView\", \"MAAdView\"]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
       "kind": "IntegerLiteral",
       "offset": 648,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
       "kind": "IntegerLiteral",
       "offset": 2000,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/UIPlayerComponent\/PlayerProgressBar.swift",
       "kind": "IntegerLiteral",
       "offset": 2017,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/JsLibEmbeddedVersion.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/JsLibEmbeddedVersion.swift",
       "kind": "StringLiteral",
       "offset": 108,
       "length": 5,
-      "value": "\"201\""
+      "value": "\"202\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
       "kind": "BooleanLiteral",
       "offset": 616,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
       "kind": "BooleanLiteral",
       "offset": 821,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
       "kind": "BooleanLiteral",
       "offset": 4415,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/String-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/String-extension.swift",
       "kind": "StringLiteral",
       "offset": 455,
       "length": 32,
       "value": "\"EEEE, dd LLL yyyy HH:mm:ss zzz\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
       "kind": "IntegerLiteral",
       "offset": 654,
       "length": 4,
       "value": "5000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
       "kind": "BooleanLiteral",
       "offset": 731,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/AdCall\/TeadsAdOpportunityTrackerView.swift",
       "kind": "BooleanLiteral",
       "offset": 1734,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ImageLoader.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ImageLoader.swift",
       "kind": "BooleanLiteral",
       "offset": 2448,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/TeadsSDKVersion.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/TeadsSDKVersion.swift",
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"5.1.6\""
+      "value": "\"5.1.8\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
       "kind": "StringLiteral",
       "offset": 562,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 597,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Core\/AdCoreInput.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Core\/AdCoreInput.swift",
       "kind": "StringLiteral",
       "offset": 1702,
       "length": 8,
       "value": "\"adCore\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 33,
       "value": "\"https:\/\/l.teads.tv\/format\/sdkv5\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
       "kind": "FloatLiteral",
       "offset": 304,
       "length": 4,
       "value": "0.05"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
       "kind": "StringLiteral",
       "offset": 381,
       "length": 39,
       "value": "\"https:\/\/l.teads.tv\/inapp\/crash-source\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Collector.swift",
       "kind": "IntegerLiteral",
       "offset": 440,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/IABConsent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/IABConsent.swift",
       "kind": "IntegerLiteral",
       "offset": 582,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/IABConsent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/IABConsent.swift",
       "kind": "IntegerLiteral",
       "offset": 623,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 233,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 311,
       "length": 40,
       "value": "\"https:\/\/sdk-assets.teads.tv\/lib-js.tar\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 403,
       "length": 22,
       "value": "\"teadsJsLibLastUpdate\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 494,
       "length": 3,
       "value": "120"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 562,
       "length": 10,
       "value": "\"omsdk-v1\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 610,
       "length": 24,
       "value": "\"omid-session-client-v1\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 713,
       "length": 60,
       "value": "\"https:\/\/cdn.teads.tv\/media\/sdk\/1.0.3\/remote_config_v5.json\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 818,
       "length": 23,
       "value": "\"teadsRemoteConfigData\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 888,
       "length": 29,
       "value": "\"teadsRemoteConfigLastUpdate\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 974,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1045,
       "length": 25,
       "value": "\"com.teads.adcore.engine\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1101,
       "length": 27,
       "value": "\"com.teads.adcore.jsengine\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1164,
       "length": 32,
       "value": "\"com.teads.adplacement.jsengine\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1231,
       "length": 30,
       "value": "\"com.teads.adinstancerecorder\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1299,
       "length": 34,
       "value": "\"com.teads.crashreporter.transfer\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1361,
       "length": 24,
       "value": "\"com.teads.image.loader\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1419,
       "length": 30,
       "value": "\"com.teads.migration.cleaning\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1483,
       "length": 25,
       "value": "\"com.teads.ad.visibility\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1553,
       "length": 36,
       "value": "\"com.teads.adslotvisible.visibility\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1616,
       "length": 24,
       "value": "\"com.teads.remoteLogger\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1676,
       "length": 18,
       "value": "\"com.teads.logger\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1729,
       "length": 21,
       "value": "\"com.teads.adRequest\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1788,
       "length": 35,
       "value": "\"com.teads.mediated.resize.manager\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1859,
       "length": 33,
       "value": "\"com.teads.remote.config.manager\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1924,
       "length": 28,
       "value": "\"com.teads.business.updater\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1995,
       "length": 12,
       "value": "\"Teads.Main\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2070,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2143,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2189,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2243,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2248,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2308,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2392,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2474,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2484,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2493,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "FloatLiteral",
       "offset": 2503,
       "length": 3,
       "value": "0.7"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2558,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2568,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2577,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 2587,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2631,
       "length": 26,
       "value": "\"icon-endscreen-learnMore\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2695,
       "length": 23,
       "value": "\"icon-endscreen-replay\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2790,
       "length": 53,
       "value": "\"teads.native.view.media-view.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2895,
       "length": 62,
       "value": "\"teads.native.view.rendered-media-view.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3012,
       "length": 60,
       "value": "\"teads.native.view.media-placeholder.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3123,
       "length": 56,
       "value": "\"teads.native.view.media-spinner.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3241,
       "length": 59,
       "value": "\"teads.native.view.media-background.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3359,
       "length": 59,
       "value": "\"teads.native.view.image-background.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 3487,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3584,
       "length": 11,
       "value": "\"adChoices\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3743,
       "length": 52,
       "value": "\"teads.native.view.adchoices.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 3871,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 3920,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 3966,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4005,
       "length": 32,
       "value": "\"teads_ic_sound_button_disabled\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4076,
       "length": 31,
       "value": "\"teads_ic_sound_button_enabled\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 4178,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4212,
       "length": 18,
       "value": "\"fullscreen.close\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 4301,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 4347,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4381,
       "length": 13,
       "value": "\"closeButton\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4438,
       "length": 54,
       "value": "\"teads.native.view.closeButton.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4559,
       "length": 14,
       "value": "\"teadsCrashes\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "Array",
       "offset": 4608,
       "length": 76,
       "value": "[\"TeadsSDK\", \"TeadsAppLovinAdapter\", \"TeadsAdMobAdapter\", \"TeadsSASAdapter\"]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4729,
       "length": 29,
       "value": "\"teadsHandlerInstanceCounter\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4798,
       "length": 31,
       "value": "\"teadsAdHandlerInstanceCounter\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4870,
       "length": 32,
       "value": "\"teadsAppHandlerInstanceCounter\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 4949,
       "length": 38,
       "value": "\"teadsPlacementHandlerInstanceCounter\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 5907,
       "length": 13,
       "value": "\"teads.error\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 10388,
       "length": 43,
       "value": "\"Unable to load webkitMessageHandlerScript\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 10467,
       "length": 33,
       "value": "\"Asset is not of type VideoAsset\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 10540,
       "length": 28,
       "value": "\"Media asset failed to load\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "FloatLiteral",
       "offset": 10628,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "Array",
       "offset": 10669,
       "length": 54,
       "value": "[\"application\/javascript\", \"application\/x-javascript\"]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 10755,
       "length": 11,
       "value": "\".teads.tv\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11111,
       "length": 24,
       "value": "\"wkMessageHandlerScript\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11177,
       "length": 4,
       "value": "\"js\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11255,
       "length": 46,
       "value": "\"teads.view.media-view.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11327,
       "length": 45,
       "value": "\"teads.view.adchoices.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11404,
       "length": 51,
       "value": "\"teads.view.buttonStackView.restoration-identifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "FloatLiteral",
       "offset": 11529,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11612,
       "length": 12,
       "value": "\"authorized\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11653,
       "length": 8,
       "value": "\"denied\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11696,
       "length": 14,
       "value": "\"undetermined\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 11743,
       "length": 12,
       "value": "\"restricted\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 11823,
       "length": 4,
       "value": "8000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 11889,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
       "kind": "StringLiteral",
       "offset": 166,
       "length": 14,
       "value": "\"CFBundleName\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
       "kind": "StringLiteral",
       "offset": 206,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
       "kind": "StringLiteral",
       "offset": 254,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Bundle-extension.swift",
       "kind": "StringLiteral",
       "offset": 311,
       "length": 20,
       "value": "\"CFBundleIdentifier\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
       "kind": "Array",
       "offset": 282,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
       "kind": "Array",
       "offset": 983,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RemoteConfig\/Breaker.swift",
       "kind": "Array",
       "offset": 1270,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
       "kind": "StringLiteral",
       "offset": 181,
       "length": 4,
       "value": "\"2g\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
       "kind": "StringLiteral",
       "offset": 202,
       "length": 4,
       "value": "\"3g\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
       "kind": "StringLiteral",
       "offset": 223,
       "length": 4,
       "value": "\"4g\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/NetworkType.swift",
       "kind": "StringLiteral",
       "offset": 244,
       "length": 4,
       "value": "\"5g\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Model\/Plugin.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Model\/Plugin.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 14,
       "value": "\"react_native\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/ImageComponent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/ImageComponent.swift",
       "kind": "BooleanLiteral",
       "offset": 1646,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/ImageComponent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/ImageComponent.swift",
       "kind": "BooleanLiteral",
       "offset": 2451,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDKIntegrationTests\/Utils\/LaunchEnvironmentKey.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDKIntegrationTests\/Utils\/LaunchEnvironmentKey.swift",
       "kind": "StringLiteral",
       "offset": 219,
       "length": 18,
       "value": "\"INTEGRATION_TEST\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/AdPlayerComponent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetComponent\/AdPlayerComponent.swift",
       "kind": "BooleanLiteral",
       "offset": 977,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacement.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacement.swift",
       "kind": "StringLiteral",
       "offset": 447,
       "length": 8,
       "value": "\"inread\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacement.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacement.swift",
       "kind": "BooleanLiteral",
       "offset": 1208,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "StringLiteral",
       "offset": 1020,
       "length": 8,
       "value": "\"plugin\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "StringLiteral",
       "offset": 1451,
       "length": 15,
       "value": "\"pluginVersion\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1495,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1527,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1564,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1600,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1648,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1862,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "BooleanLiteral",
       "offset": 1961,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Placement\/TeadsAdPlacementSettings.swift",
       "kind": "IntegerLiteral",
       "offset": 5171,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RepeatingTimer.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RepeatingTimer.swift",
       "kind": "IntegerLiteral",
       "offset": 839,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "StringLiteral",
       "offset": 239,
       "length": 21,
       "value": "\"tv.teads.untarError\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1081,
       "length": 3,
       "value": "512"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1134,
       "length": 3,
       "value": "156"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1187,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1234,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1287,
       "length": 3,
       "value": "124"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1336,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",
       "kind": "IntegerLiteral",
       "offset": 1396,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
       "kind": "IntegerLiteral",
       "offset": 201,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
       "kind": "StringLiteral",
       "offset": 238,
       "length": 19,
       "value": "\"teads.error.await\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Async.swift",
       "kind": "StringLiteral",
       "offset": 542,
       "length": 19,
       "value": "\"teads.error.await\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "IntegerLiteral",
       "offset": 152,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "BooleanLiteral",
       "offset": 397,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1921,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "BooleanLiteral",
       "offset": 2063,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "IntegerLiteral",
       "offset": 2924,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "BooleanLiteral",
       "offset": 3173,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashManager.swift",
       "kind": "BooleanLiteral",
       "offset": 3611,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/VideoPlayerComponent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/VideoPlayerComponent.swift",
       "kind": "IntegerLiteral",
       "offset": 740,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Player\/VideoPlayerComponent.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Player\/VideoPlayerComponent.swift",
       "kind": "BooleanLiteral",
       "offset": 1262,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Date-extension.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/extension\/Date-extension.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 31,
       "value": "\"EEE, dd LLL yyyy HH:mm:ss zzz\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSCoreEngine.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/JSCoreEngine.swift",
       "kind": "Array",
       "offset": 448,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/Ad.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/Ad.swift",
       "kind": "StringLiteral",
       "offset": 499,
       "length": 14,
       "value": "\"placement_id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 410,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 433,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 892,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 2013,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 2503,
       "length": 4,
       "value": "\"\r\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 3024,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 3134,
       "length": 4,
       "value": "\"\r\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 3227,
       "length": 26,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 3241,
       "length": 1,
       "value": "\"(\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/CrashReporter\/CrashHandler.swift",
       "kind": "StringLiteral",
       "offset": 3251,
       "length": 1,
       "value": "\")\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
       "kind": "IntegerLiteral",
       "offset": 187,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
       "kind": "IntegerLiteral",
       "offset": 207,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/SDKBridge.swift",
       "kind": "IntegerLiteral",
       "offset": 259,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
       "kind": "IntegerLiteral",
       "offset": 316,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
       "kind": "BooleanLiteral",
       "offset": 1177,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TagBinderBuilder.swift",
       "kind": "BooleanLiteral",
       "offset": 2526,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/V4ToV5Migration.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/V4ToV5Migration.swift",
       "kind": "StringLiteral",
       "offset": 1818,
       "length": 25,
       "value": "\"teadsV4ToV5CleaningDone\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 823,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 847,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 871,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 896,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 923,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Renderer\/UIKit\/TeadsInReadAdView.swift",
       "kind": "IntegerLiteral",
       "offset": 951,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/OM\/OMInput.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/OM\/OMInput.swift",
       "kind": "StringLiteral",
       "offset": 163,
       "length": 18,
       "value": "\"window.omWrapper\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 442,
       "length": 17,
       "value": "\"adloader.min.js\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 484,
       "length": 15,
       "value": "\"adcore.min.js\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 528,
       "length": 19,
       "value": "\"adplayer.min.html\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 571,
       "length": 9,
       "value": "\"VERSION\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 631,
       "length": 8,
       "value": "\"lib-js\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 680,
       "length": 7,
       "value": "\"teads\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 738,
       "length": 5,
       "value": "\"tmp\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 2025,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/JsAssetManager\/AssetsStorage.swift",
       "kind": "StringLiteral",
       "offset": 8834,
       "length": 10,
       "value": "\"download\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 256,
       "length": 15,
       "value": "\"No Connection\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 292,
       "length": 6,
       "value": "\"Wifi\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 323,
       "length": 10,
       "value": "\"Cellular\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 1326,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/AVAssetLoader.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/AVAssetLoader.swift",
       "kind": "IntegerLiteral",
       "offset": 673,
       "length": 4,
       "value": "1000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/AVAssetLoader.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/AVAssetLoader.swift",
       "kind": "BooleanLiteral",
       "offset": 689,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RunningEnvironment.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/RunningEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 178,
       "length": 16,
       "value": "\"-configForTest\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
       "kind": "BooleanLiteral",
       "offset": 1063,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
       "kind": "IntegerLiteral",
       "offset": 5213,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/DeviceBridge.swift",
       "kind": "IntegerLiteral",
       "offset": 5235,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewAccessibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewAccessibility.swift",
       "kind": "StringLiteral",
       "offset": 307,
       "length": 26,
       "value": "\"ui-component-progressbar\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewAccessibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewAccessibility.swift",
       "kind": "StringLiteral",
       "offset": 357,
       "length": 26,
       "value": "\"ui-component-soundbutton\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 497,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "StringLiteral",
       "offset": 591,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "FloatLiteral",
       "offset": 709,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 1083,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 1897,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 1930,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 8764,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 8989,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "IntegerLiteral",
       "offset": 9072,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "IntegerLiteral",
       "offset": 9741,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "IntegerLiteral",
       "offset": 9863,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 11502,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "BooleanLiteral",
       "offset": 12584,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/ViewVisibility.swift",
       "kind": "Array",
       "offset": 12636,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
       "kind": "StringLiteral",
       "offset": 220,
       "length": 6,
       "value": "\"icon\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
       "kind": "StringLiteral",
       "offset": 266,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
       "kind": "StringLiteral",
       "offset": 305,
       "length": 9,
       "value": "\"sponsor\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
       "kind": "StringLiteral",
       "offset": 339,
       "length": 5,
       "value": "\"cta\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Ad\/AssetType.swift",
       "kind": "StringLiteral",
       "offset": 412,
       "length": 10,
       "value": "\"adChoice\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/NetworkBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/NetworkBridge.swift",
       "kind": "Array",
       "offset": 329,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 1637,
       "length": 5,
       "value": "\"p10\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 1735,
       "length": 5,
       "value": "\"p11\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 1809,
       "length": 5,
       "value": "\"p20\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 1879,
       "length": 5,
       "value": "\"p21\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 1976,
       "length": 5,
       "value": "\"p22\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 2044,
       "length": 5,
       "value": "\"p23\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/JSEngine\/Bridges\/LoggerBridge.swift",
       "kind": "StringLiteral",
       "offset": 2114,
       "length": 5,
       "value": "\"p25\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 724,
       "length": 7,
       "value": "\"admob\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 938,
       "length": 10,
       "value": "\"applovin\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 1154,
       "length": 7,
       "value": "\"smart\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 1345,
       "length": 9,
       "value": "\"gravite\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 1526,
       "length": 9,
       "value": "\"flutter\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 1716,
       "length": 13,
       "value": "\"reactnative\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Mediation\/AdapterIntegrationType.swift",
       "kind": "StringLiteral",
       "offset": 1924,
       "length": 14,
       "value": "\"prebidmobile\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 515,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 576,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 650,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 705,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 880,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 952,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 1071,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 1240,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "IntegerLiteral",
       "offset": 1309,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "StringLiteral",
       "offset": 2855,
       "length": 36,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "StringLiteral",
       "offset": 2872,
       "length": 1,
       "value": "\" - \""
     },
     {
-      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/AdFailReason.swift",
       "kind": "StringLiteral",
       "offset": 2890,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 731,
       "length": 11,
       "value": "\"adChoices\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 874,
       "length": 13,
       "value": "\"closeButton\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1028,
       "length": 18,
       "value": "\"fullscreen.close\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1198,
       "length": 24,
       "value": "\"icon-endscreen-bookNow\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1378,
       "length": 26,
       "value": "\"icon-endscreen-contactUs\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1558,
       "length": 25,
       "value": "\"icon-endscreen-download\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1739,
       "length": 26,
       "value": "\"icon-endscreen-learnMore\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1915,
       "length": 23,
       "value": "\"icon-endscreen-replay\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2090,
       "length": 24,
       "value": "\"icon-endscreen-shopNow\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2264,
       "length": 23,
       "value": "\"icon-endscreen-signUp\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2443,
       "length": 26,
       "value": "\"icon-endscreen-watchMore\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2635,
       "length": 32,
       "value": "\"teads_ic_sound_button_disabled\""
     },
     {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/TeadsSDK-bjlrkiqocjvtxpgsekfzvaqhpxfd\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/richard.depierre\/Documents\/Teads\/repos\/service-inapp-sdk-ios\/DerivedData\/TeadsSDK\/Build\/Intermediates.noindex\/ArchiveIntermediates\/TeadsSDK\/IntermediateBuildFilesPath\/TeadsSDK.build\/Release-iphoneos\/TeadsSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2831,
       "length": 31,
