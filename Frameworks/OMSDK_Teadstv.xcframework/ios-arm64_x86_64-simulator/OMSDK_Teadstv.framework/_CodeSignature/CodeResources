@@ -26,7 +26,11 @@
 		</data>
 		<key>Headers/OMIDImports.h</key>
 		<data>
-		kklBQQiiHyi6ArUe1OOfy92xxX4=
+		/ghw/vX0KUlF9SSq4LZhhZDpZb4=
+		</data>
+		<key>Headers/OMIDJavaScriptSessionService.h</key>
+		<data>
+		pJ4XKIL8ipfPW/7EcpqT/9HhAOI=
 		</data>
 		<key>Headers/OMIDMediaEvents.h</key>
 		<data>
@@ -58,11 +62,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XGyZBulFo2FDL+dReMSLe8iLPNs=
+		nCFgF2FAhOC8zC3rY+Ej6a0JF6Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		pzaxjZRoexu7sq7HD5JqUw+u4a0=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		7BgfS40JHW2Znl7afTrGvxB58Ws=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -106,7 +114,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWfw+Z3RNrtOfWYdio9jyxKjmeVbPXzWNH7Pa7ErD0U=
+			XQBgb62m3DEN2XBtnlS+hqca4MEIuBJjq6po9fIbZco=
+			</data>
+		</dict>
+		<key>Headers/OMIDJavaScriptSessionService.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PXGEp/WFQN9w1H2MmxxHd+vWcZF6jCz71HAn+4wvuWQ=
 			</data>
 		</dict>
 		<key>Headers/OMIDMediaEvents.h</key>
@@ -163,6 +178,13 @@
 			<key>hash2</key>
 			<data>
 			lj/XY9z6Hyg+moaNmDyVblzwzk8TqBLbCZHyyZL91uo=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5rdpDTW6MDoz1u2y0rCJB5ensp/KZWPv7EAq4o8GtfM=
 			</data>
 		</dict>
 	</dict>

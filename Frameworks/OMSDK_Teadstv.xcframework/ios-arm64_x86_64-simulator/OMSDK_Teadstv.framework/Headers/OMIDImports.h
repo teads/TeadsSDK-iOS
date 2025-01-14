@@ -7,3 +7,4 @@
 #import "OMIDAdEvents.h"
 #import "OMIDVASTProperties.h"
 #import "OMIDMediaEvents.h"
+#import "OMIDJavaScriptSessionService.h"

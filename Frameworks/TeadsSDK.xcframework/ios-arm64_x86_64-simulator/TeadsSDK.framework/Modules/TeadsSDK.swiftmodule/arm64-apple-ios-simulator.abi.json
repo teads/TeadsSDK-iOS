@@ -16138,6 +16138,34 @@
             ],
             "usr": "s:12ExtensionKit03AppA5SceneP",
             "mangledName": "$s12ExtensionKit03AppA5SceneP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AccelerateMutableBuffer",
+            "printedName": "AccelerateMutableBuffer",
+            "usr": "s:10Accelerate0A13MutableBufferP",
+            "mangledName": "$s10Accelerate0A13MutableBufferP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AccelerateBuffer",
+            "printedName": "AccelerateBuffer",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Accelerate0A6BufferP",
+            "mangledName": "$s10Accelerate0A6BufferP"
           }
         ]
       },
@@ -16623,6 +16651,13 @@
             ],
             "usr": "s:s21_ObjectiveCBridgeableP",
             "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BNNSScalar",
+            "printedName": "BNNSScalar",
+            "usr": "s:10Accelerate10BNNSScalarP",
+            "mangledName": "$s10Accelerate10BNNSScalarP"
           },
           {
             "kind": "Conformance",
@@ -17576,6 +17611,86 @@
             ],
             "usr": "s:7SwiftUI10AnimatableP",
             "mangledName": "$s7SwiftUI10AnimatableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_FloatingPointConvertable",
+            "printedName": "vDSP_FloatingPointConvertable",
+            "usr": "s:10Accelerate29vDSP_FloatingPointConvertableP",
+            "mangledName": "$s10Accelerate29vDSP_FloatingPointConvertableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_DiscreteFourierTransformable",
+            "printedName": "vDSP_DiscreteFourierTransformable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "DiscreteFourierTransformFunctions",
+                "printedName": "DiscreteFourierTransformFunctions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DFTDoublePrecisionSplitComplexFunctions",
+                    "printedName": "Accelerate.vDSP.DFTDoublePrecisionSplitComplexFunctions",
+                    "usr": "s:10Accelerate4vDSPO39DFTDoublePrecisionSplitComplexFunctionsV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Accelerate33vDSP_DiscreteFourierTransformableP",
+            "mangledName": "$s10Accelerate33vDSP_DiscreteFourierTransformableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_FloatingPointDiscreteFourierTransformable",
+            "printedName": "vDSP_FloatingPointDiscreteFourierTransformable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "DFTFunctions",
+                "printedName": "DFTFunctions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VectorizableDouble",
+                    "printedName": "Accelerate.vDSP.VectorizableDouble",
+                    "usr": "s:10Accelerate4vDSPO18VectorizableDoubleV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Accelerate46vDSP_FloatingPointDiscreteFourierTransformableP",
+            "mangledName": "$s10Accelerate46vDSP_FloatingPointDiscreteFourierTransformableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_FloatingPointBiquadFilterable",
+            "printedName": "vDSP_FloatingPointBiquadFilterable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "BiquadFunctions",
+                "printedName": "BiquadFunctions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VectorizableDouble",
+                    "printedName": "Accelerate.vDSP.VectorizableDouble",
+                    "usr": "s:10Accelerate4vDSPO18VectorizableDoubleV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Accelerate34vDSP_FloatingPointBiquadFilterableP",
+            "mangledName": "$s10Accelerate34vDSP_FloatingPointBiquadFilterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_FloatingPointGeneratable",
+            "printedName": "vDSP_FloatingPointGeneratable",
+            "usr": "s:10Accelerate29vDSP_FloatingPointGeneratableP",
+            "mangledName": "$s10Accelerate29vDSP_FloatingPointGeneratableP"
           },
           {
             "kind": "Conformance",
@@ -18614,7 +18729,7 @@
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"5.1.9\""
+      "value": "\"5.2.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
