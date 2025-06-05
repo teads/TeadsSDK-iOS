@@ -29,11 +29,11 @@ class NativeAppLovinTableViewController: TeadsViewController {
             elements.append(nil)
         }
 
-        ALSdk.shared().mediationProvider = ALMediationProviderMAX
-        ALSdk.shared().settings.isVerboseLoggingEnabled = true
-        ALSdk.shared().initializeSdk { [weak self] (_: ALSdkConfiguration) in
-            self?.loadAd()
-        }
+//        ALSdk.shared().mediationProvider = ALMediationProviderMAX
+//        ALSdk.shared().settings.isVerboseLoggingEnabled = true
+//        ALSdk.shared().initializeSdk { [weak self] (_: ALSdkConfiguration) in
+//            self?.loadAd()
+//        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

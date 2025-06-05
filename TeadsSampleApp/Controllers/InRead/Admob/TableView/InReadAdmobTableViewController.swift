@@ -111,7 +111,7 @@ extension InReadAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
                     cellAd.addSubview(admobAdView)
                     admobAdView.frame.origin = CGPoint(x: 10, y: 0)
                     // Be sure to call the DFPBannerView resize method to prevent admob from reloading a new ad experience
-                    admobAdView.resize(adSizeFor(CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
+                    admobAdView.resize(adSizeFor(cgSize: CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
                 }
                 return cellAd
             default:

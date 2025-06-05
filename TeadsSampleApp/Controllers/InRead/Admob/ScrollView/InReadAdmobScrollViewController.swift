@@ -80,7 +80,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
 
     private func resizeAd(height: CGFloat) {
         slotViewHeightConstraint.constant = height
-        bannerView.resize(adSizeFor(CGSize(width: slotView.frame.width, height: height)))
+        bannerView.resize(adSizeFor(cgSize: CGSize(width: slotView.frame.width, height: height)))
     }
 }
 
