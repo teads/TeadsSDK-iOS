@@ -9,5 +9,5 @@ import GoogleMobileAds
 import UIKit
 
 class AdmobNativeAdTableViewCell: UITableViewCell {
-    @IBOutlet var nativeAdView: GADNativeAdView!
+    @IBOutlet var nativeAdView: NativeAdView!
 }

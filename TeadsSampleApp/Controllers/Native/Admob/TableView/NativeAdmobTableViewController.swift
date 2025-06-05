@@ -19,9 +19,9 @@ class NativeAdmobTableViewController: TeadsViewController {
     let fakeArticleCell = "FakeArticleNativeTableViewCell"
     let adRowNumber = 3
 
-    private var elements = [GADNativeAd?]()
+    private var elements = [NativeAd?]()
 
-    var adLoader: GADAdLoader!
+    var adLoader: AdLoader!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,14 +84,14 @@ extension NativeAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
     }
 }
 
-extension NativeAdmobTableViewController: GADAdLoaderDelegate {
-    func adLoader(_: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+extension NativeAdmobTableViewController: AdLoaderDelegate {
+    func adLoader(_: AdLoader, didFailToReceiveAdWithError error: Error) {
         print("didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 }
 
-extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
-    func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+extension NativeAdmobTableViewController: NativeAdLoaderDelegate {
+    func adLoader(_: AdLoader, didReceive nativeAd: NativeAd) {
         elements.insert(nativeAd, at: adRowNumber)
         let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
         tableView.insertRows(at: indexPaths, with: .automatic)
@@ -99,18 +99,18 @@ extension NativeAdmobTableViewController: GADNativeAdLoaderDelegate {
     }
 }
 
-extension NativeAdmobTableViewController: GADNativeAdDelegate {
-    func nativeAdDidRecordClick(_: GADNativeAd) {
+extension NativeAdmobTableViewController: NativeAdDelegate {
+    func nativeAdDidRecordClick(_: NativeAd) {
         // you may want to use this callback for your own analytics
     }
 
-    func nativeAdDidRecordImpression(_: GADNativeAd) {
+    func nativeAdDidRecordImpression(_: NativeAd) {
         // you may want to use this callback for your own analytics
     }
 }
 
-extension GADNativeAdView {
-    func bind(_ ad: GADNativeAd, videoControllerDelegate: GADVideoControllerDelegate? = nil) {
+extension NativeAdView {
+    func bind(_ ad: NativeAd, videoControllerDelegate: VideoControllerDelegate? = nil) {
         nativeAd = ad
         // Populate the native ad view with the native ad assets.
         // The headline and mediaContent are guaranteed to be present in every native ad.
