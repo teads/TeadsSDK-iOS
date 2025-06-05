@@ -30,7 +30,7 @@ class NativeAdmobTableViewController: TeadsViewController {
             elements.append(nil)
         }
 
-        adLoader = GADAdLoader(
+        adLoader = AdLoader(
             // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
             adUnitID: pid,
             rootViewController: self,
