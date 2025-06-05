@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
     s.source                    = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "#{s.version}" }
     s.platform                  = 'ios'
-    s.ios.deployment_target     = '10.0'
+    s.ios.deployment_target     = '12.0'
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsAdMobAdapter/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
