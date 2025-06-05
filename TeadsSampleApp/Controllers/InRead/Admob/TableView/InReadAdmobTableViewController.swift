@@ -21,7 +21,7 @@ class InReadAdmobTableViewController: TeadsViewController {
     var adHeight: CGFloat?
     var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
-    var admobAdView: GAMBannerView?
+    var admobAdView: BannerView?
     var tableViewAdCellWidth: CGFloat!
 
     override func viewDidLoad() {
