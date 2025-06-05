@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                             Teads allows you to integrate a single SDK into your app, and serve premium branded ads from Teads' SSP.
                             DESC
     s.documentation_url     = "https://support.teads.tv/support/solutions/articles/36000314785"
-    s.ios.deployment_target = "10.0"
+    s.ios.deployment_target = "12.0"
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
     s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.author                = { "Teads" => "support-sdk@teads.tv" }
