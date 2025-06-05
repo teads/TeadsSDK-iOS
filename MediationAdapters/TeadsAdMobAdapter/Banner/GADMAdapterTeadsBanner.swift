@@ -14,7 +14,7 @@ public final class GADMAdapterTeadsBanner: GADMAdapterTeadsCustomEvent {
     fileprivate var bannerAd: GADMAdapterTeadsBannerAd?
 
     public func loadBanner(
-        for adConfiguration: MediationBannerAdConfiguration,
+        for adConfiguration: GADMediationBannerAdConfiguration,
         completionHandler: @escaping GADMediationBannerLoadCompletionHandler
     ) {
         bannerAd = GADMAdapterTeadsBannerAd()

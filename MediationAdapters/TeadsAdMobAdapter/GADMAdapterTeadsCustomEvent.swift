@@ -10,8 +10,8 @@ import GoogleMobileAds
 import TeadsSDK
 
 @objc(GADMAdapterTeadsCustomEvent)
-public class GADMAdapterTeadsCustomEvent: NSObject, MediationAdapter {
-    public static func adSDKVersion() -> VersionNumber {
+public class GADMAdapterTeadsCustomEvent: NSObject, GADMediationAdapter {
+    public static func adSDKVersion() -> GADVersionNumber {
         let versionComponents = String(Teads.sdkVersion).components(
             separatedBy: ".")
 
@@ -20,24 +20,24 @@ public class GADMAdapterTeadsCustomEvent: NSObject, MediationAdapter {
             let minorVersion = Int(versionComponents[1]) ?? 0
             let patchVersion = Int(versionComponents[2]) ?? 0
 
-            return VersionNumber(
+            return GADVersionNumber(
                 majorVersion: majorVersion, minorVersion: minorVersion, patchVersion: patchVersion
             )
         }
 
-        return VersionNumber()
+        return GADVersionNumber()
     }
 
-    public static func adapterVersion() -> VersionNumber {
+    public static func adapterVersion() -> GADVersionNumber {
         adSDKVersion()
     }
 
-    public static func networkExtrasClass() -> AdNetworkExtras.Type? {
+    public static func networkExtrasClass() -> GADAdNetworkExtras.Type? {
         TeadsAdapterSettings.self
     }
 
     public static func setUpWith(
-        _: MediationServerConfiguration,
+        _: GADMediationServerConfiguration,
         completionHandler: @escaping GADMediationAdapterSetUpCompletionBlock
     ) {
         Teads.configure()

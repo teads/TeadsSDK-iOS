@@ -50,7 +50,7 @@ class InReadDirectTableViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for _ in 0 ..< 8 {
+        (0 ..< 8).forEach { _ in
             elements.append(.article)
         }
 
@@ -96,7 +96,8 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
             teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
         } else if case let .trackerView(trackerView) = elements[indexPath.row],
-                  let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell {
+                  let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell
+        {
             cellAd.setTrackerView(trackerView)
             return cellAd
         } else {

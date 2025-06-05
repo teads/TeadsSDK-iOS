@@ -10,19 +10,19 @@ import TeadsSDK
 import UIKit
 
 @objc(GADMAdapterTeadsNativeAd)
-final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
+final class GADMAdapterTeadsNativeAd: NSObject, GADMediationNativeAd {
     /// The ad event delegate to forward ad rendering events to the Google Mobile Ads SDK.
-    var delegate: MediationNativeAdEventDelegate?
+    var delegate: GADMediationNativeAdEventDelegate?
 
     /// Completion handler called after ad load
     var completionHandler: GADMediationNativeLoadCompletionHandler?
 
     private var placement: TeadsNativeAdPlacement?
-    private var adConfiguration: MediationNativeAdConfiguration?
+    private var adConfiguration: GADMediationNativeAdConfiguration?
     private var adOpportunityView: TeadsAdOpportunityTrackerView?
 
-    private var mappedImages = [NativeAdImage]()
-    private var mappedIcon: NativeAdImage?
+    private var mappedImages = [GADNativeAdImage]()
+    private var mappedIcon: GADNativeAdImage?
     private var teadsMediaView: TeadsMediaView?
     private var adSettings: TeadsAdapterSettings?
 
@@ -34,7 +34,7 @@ final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
         nativeAd?.title?.text
     }
 
-    var images: [NativeAdImage]? {
+    var images: [GADNativeAdImage]? {
         mappedImages
     }
 
@@ -42,7 +42,7 @@ final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
         nativeAd?.content?.text
     }
 
-    var icon: NativeAdImage? {
+    var icon: GADNativeAdImage? {
         mappedIcon
     }
 
@@ -95,7 +95,7 @@ final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
     }
 
     func loadNativeAd(
-        for adConfiguration: MediationNativeAdConfiguration,
+        for adConfiguration: GADMediationNativeAdConfiguration,
         completionHandler: @escaping GADMediationNativeLoadCompletionHandler
     ) {
         // Check PID
@@ -171,11 +171,11 @@ final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
             }
         }
         nativeAd?.image?.loadImage(async: false) { [weak self] image in
-            self?.mappedImages = [NativeAdImage(image: image)]
+            self?.mappedImages = [GADNativeAdImage(image: image)]
         }
 
         nativeAd?.icon?.loadImage(async: false) { [weak self] image in
-            self?.mappedIcon = NativeAdImage(image: image)
+            self?.mappedIcon = GADNativeAdImage(image: image)
         }
     }
 }

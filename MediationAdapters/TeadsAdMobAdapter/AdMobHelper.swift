@@ -12,7 +12,7 @@ import UIKit
 public enum AdMobHelper {
     public static func getGMAVersionNumber() -> String {
         // Get GMA version number
-        let gmaVersionNumber = MobileAds.shared.versionNumber
+        let gmaVersionNumber = GADMobileAds.sharedInstance().versionNumber
 
         // Extract major, minor, and patch version numbers
         let majorVersion = gmaVersionNumber.majorVersion
