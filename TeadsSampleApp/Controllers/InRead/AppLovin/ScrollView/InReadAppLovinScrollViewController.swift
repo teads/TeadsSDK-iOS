@@ -21,11 +21,11 @@ class InReadAppLovinScrollViewController: AppLovinViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
-        ALSdk.shared()!.settings.isVerboseLoggingEnabled = true
-        ALSdk.shared()!.initializeSdk { [weak self] _ in
-            self?.loadAd()
-        }
+//        ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
+//        ALSdk.shared()!.settings.isVerboseLoggingEnabled = true
+//        ALSdk.shared()!.initializeSdk { [weak self] _ in
+//            self?.loadAd()
+//        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

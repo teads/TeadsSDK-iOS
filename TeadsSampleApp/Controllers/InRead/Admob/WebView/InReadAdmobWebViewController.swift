@@ -44,7 +44,7 @@ extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
         guard let webViewHelper = webViewHelper else {
             return
         }
-        bannerView?.resize(GADAdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
+        bannerView?.resize(AdSize(size: CGSize(width: webViewHelper.adViewHTMLElementWidth, height: adRatio.calculateHeight(for: webViewHelper.adViewHTMLElementWidth)), flags: 1))
         webViewHelper.updateSlot(adRatio: adRatio)
     }
 }
