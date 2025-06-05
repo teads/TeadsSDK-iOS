@@ -1,5 +1,5 @@
 //
-//  SASInReadScrollViewController.swift
+//  InReadSASScrollViewController.swift
 //  TeadsSampleApp
 //
 //  Created by Jérémy Grosjean on 18/11/2020.

@@ -23,7 +23,7 @@ class NativeDirectCollectionViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        (0 ..< 8).forEach { _ in
+        for _ in 0 ..< 8 {
             elements.append(nil)
         }
 

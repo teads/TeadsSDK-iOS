@@ -41,8 +41,7 @@ class RootViewController: TeadsViewController {
         destination.pid = pidForCreative()
 
         if let appLovinViewController = destination as? AppLovinViewController,
-           [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name)
-        {
+           [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
             appLovinViewController.isMREC = true
         }
     }
@@ -107,7 +106,6 @@ class RootViewController: TeadsViewController {
                         return PID.appLovinSquare
                     case .carousel:
                         return PID.appLovinCarousel
-
                     case .appLovinMRECLandscape:
                         return PID.appLovinLandscapeMREC
                     case .appLovinMRECVertical:
@@ -116,7 +114,6 @@ class RootViewController: TeadsViewController {
                         return PID.appLovinSquareMREC
                     case .appLovinMRECCarousel:
                         return PID.appLovinCarouselMREC
-
                     case .custom:
                         return PID.custom
                     case .nativeDisplay:
@@ -331,7 +328,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
 
     func getButtonWidth(buttonValues: [String]) -> Int {
         var width = 0
-        buttonValues.forEach { item in
+        for item in buttonValues {
             width = max(width, Int(item.size(withAttributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18),
             ]).width))
