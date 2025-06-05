@@ -133,7 +133,7 @@ enum PID {
     static var directNativeDisplay = "124859"
     static var custom: String {
         get {
-            return (UserDefaults.standard.string(forKey: "PID") ?? PID.directLandscape)
+            return UserDefaults.standard.string(forKey: "PID") ?? PID.directLandscape
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: "PID")

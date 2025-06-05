@@ -10,12 +10,12 @@ import GoogleMobileAds
 import TeadsSDK
 
 @objc(GADMAdapterTeadsBannerAd)
-public final class GADMAdapterTeadsBannerAd: NSObject, GADMediationBannerAd {
+public final class GADMAdapterTeadsBannerAd: NSObject, MediationBannerAd {
     /// The Teads Ad network InRead AdView
     var bannerAd: TeadsInReadAdView?
 
     /// The ad event delegate to forward ad rendering events to the Google Mobile Ads SDK.
-    var delegate: GADMediationBannerAdEventDelegate?
+    var delegate: MediationBannerAdEventDelegate?
 
     /// Completion handler called after ad load
     var completionHandler: GADMediationBannerLoadCompletionHandler?
@@ -25,11 +25,11 @@ public final class GADMAdapterTeadsBannerAd: NSObject, GADMediationBannerAd {
     }
 
     private var placement: TeadsInReadAdPlacement?
-    private var adConfiguration: GADMediationBannerAdConfiguration?
+    private var adConfiguration: MediationBannerAdConfiguration?
     private var adSettings: TeadsAdapterSettings?
 
     public func loadBanner(
-        for adConfiguration: GADMediationBannerAdConfiguration,
+        for adConfiguration: MediationBannerAdConfiguration,
         completionHandler: @escaping GADMediationBannerLoadCompletionHandler
     ) {
         // Check PID

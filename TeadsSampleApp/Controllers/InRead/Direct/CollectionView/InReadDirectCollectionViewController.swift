@@ -33,7 +33,7 @@ class InReadDirectCollectionViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        (0 ..< 8).forEach { _ in
+        for _ in 0 ..< 8 {
             elements.append(.article)
         }
 
@@ -90,8 +90,7 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
             teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
         } else if case let .trackerView(trackerView) = elements[indexPath.row],
-                  let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier, for: indexPath) as? AdOpportunityTrackerCollectionViewCell
-        {
+                  let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier, for: indexPath) as? AdOpportunityTrackerCollectionViewCell {
             cellAd.setTrackerView(trackerView)
             return cellAd
         } else {

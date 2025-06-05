@@ -14,7 +14,7 @@ public final class GADMAdapterTeadsNative: GADMAdapterTeadsCustomEvent {
     fileprivate var nativeAd: GADMAdapterTeadsNativeAd?
 
     public func loadNativeAd(
-        for adConfiguration: GADMediationNativeAdConfiguration,
+        for adConfiguration: MediationNativeAdConfiguration,
         completionHandler: @escaping GADMediationNativeLoadCompletionHandler
     ) {
         nativeAd = GADMAdapterTeadsNativeAd()
