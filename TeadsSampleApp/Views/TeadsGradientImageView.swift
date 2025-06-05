@@ -1,5 +1,5 @@
 //
-//  TeadsGradientImageView.swift
+//  TeadsGradienImageView.swift
 //  TeadsSampleApp
 //
 //  Created by Jérémy Grosjean on 08/10/2020.

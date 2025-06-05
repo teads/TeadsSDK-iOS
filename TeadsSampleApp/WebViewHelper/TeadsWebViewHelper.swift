@@ -104,8 +104,8 @@ import WebKit
         }
 
         // add message handler method name to communicate with the wkwebview
-        for item in JSBootstrapOutput.allCases.map(\.rawValue) {
-            webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: item)
+        JSBootstrapOutput.allCases.map(\.rawValue).forEach {
+            webView.configuration.userContentController.add(WKWeakScriptHandler(delegate: self), name: $0)
         }
 
         guard let bootstrap = bootstrap else {
@@ -120,8 +120,8 @@ import WebKit
     deinit {
         closeSlot()
         Self.mainThread { [weak webView] in
-            for item in JSBootstrapOutput.allCases.map(\.rawValue) {
-                webView?.configuration.userContentController.removeScriptMessageHandler(forName: item)
+            JSBootstrapOutput.allCases.map(\.rawValue).forEach {
+                webView?.configuration.userContentController.removeScriptMessageHandler(forName: $0)
             }
         }
         webViewObservation = nil

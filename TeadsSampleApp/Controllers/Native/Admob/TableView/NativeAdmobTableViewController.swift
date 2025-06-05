@@ -1,5 +1,5 @@
 //
-//  NativeAdmobTableViewController.swift
+//  NativeAdmobScrollViewController.swift
 //  TeadsSampleApp
 //
 //  Created by Paul Nicolas on 26/07/2021.
@@ -26,7 +26,7 @@ class NativeAdmobTableViewController: TeadsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for _ in 0 ..< 8 {
+        (0 ..< 8).forEach { _ in
             elements.append(nil)
         }
 
