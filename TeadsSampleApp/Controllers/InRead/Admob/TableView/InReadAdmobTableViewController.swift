@@ -28,7 +28,7 @@ class InReadAdmobTableViewController: TeadsViewController {
         super.viewDidLoad()
 
         // Be sure to use DFPBannerView instead of GADBannerView
-        admobAdView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
+        admobAdView = AdManagerBannerView(adSize: GADAdSizeMediumRectangle)
 
         // 2. Attach Delegate (will include Teads events)
         // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
@@ -50,7 +50,7 @@ class InReadAdmobTableViewController: TeadsViewController {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let request = GADRequest()
+        let request = Request()
         request.register(adSettings)
 
         admobAdView?.load(request)
@@ -111,7 +111,7 @@ extension InReadAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
                     cellAd.addSubview(admobAdView)
                     admobAdView.frame.origin = CGPoint(x: 10, y: 0)
                     // Be sure to call the DFPBannerView resize method to prevent admob from reloading a new ad experience
-                    admobAdView.resize(GADAdSizeFromCGSize(CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
+                    admobAdView.resize(adSizeFor(CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
                 }
                 return cellAd
             default:

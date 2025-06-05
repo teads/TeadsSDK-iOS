@@ -31,7 +31,7 @@ class InReadAdmobWebViewController: TeadsViewController {
 
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
-        bannerView = GAMBannerView(adSize: GADAdSizeMediumRectangle)
+        bannerView = AdManagerBannerView(adSize: GADAdSizeMediumRectangle)
         // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
         bannerView.adUnitID = pid
         bannerView.rootViewController = self
@@ -96,7 +96,7 @@ extension InReadAdmobWebViewController: TeadsWebViewHelperDelegate {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let request = GADRequest()
+        let request = Request()
         request.register(adSettings)
 
         bannerView.load(request)
