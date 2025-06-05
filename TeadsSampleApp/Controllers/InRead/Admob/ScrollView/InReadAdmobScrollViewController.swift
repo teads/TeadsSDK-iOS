@@ -40,7 +40,7 @@ func requestPermission() {
 }
 
 class InReadAdmobScrollViewController: TeadsViewController {
-    var bannerView: GAMBannerView!
+    var bannerView: AdManagerBannerView!
     @IBOutlet var slotView: UIView!
     @IBOutlet var slotViewHeightConstraint: NSLayoutConstraint!
 
@@ -84,30 +84,30 @@ class InReadAdmobScrollViewController: TeadsViewController {
     }
 }
 
-extension InReadAdmobScrollViewController: GADBannerViewDelegate {
-    func bannerViewDidReceiveAd(_: GADBannerView) {
+extension InReadAdmobScrollViewController: BannerViewDelegate {
+    func bannerViewDidReceiveAd(_: BannerView) {
         // not used
     }
 
     /// Tells the delegate an ad request failed.
-    func bannerView(_: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_: BannerView, didFailToReceiveAdWithError error: Error) {
         resizeAd(height: 0)
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 
     /// Tells the delegate that a full-screen view will be presented in response
     /// to the user clicking on an ad.
-    func bannerViewWillPresentScreen(_: GADBannerView) {
+    func bannerViewWillPresentScreen(_: BannerView) {
         // not used
     }
 
     /// Tells the delegate that the full-screen view will be dismissed.
-    func bannerViewWillDismissScreen(_: GADBannerView) {
+    func bannerViewWillDismissScreen(_: BannerView) {
         // not used
     }
 
     /// Tells the delegate that the full-screen view has been dismissed.
-    func bannerViewDidDismissScreen(_: GADBannerView) {
+    func bannerViewDidDismissScreen(_: BannerView) {
         // not used
     }
 }

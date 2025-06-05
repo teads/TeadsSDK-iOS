@@ -15,7 +15,7 @@ import WebKit
 class InReadAdmobWebViewController: TeadsViewController {
     @IBOutlet var webView: WKWebView!
     var webViewHelper: TeadsWebViewHelper?
-    var bannerView: GAMBannerView!
+    var bannerView: AdManagerBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,26 +49,26 @@ extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
     }
 }
 
-extension InReadAdmobWebViewController: GADBannerViewDelegate {
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension InReadAdmobWebViewController: BannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         print("SampleApp: banner is loaded.")
         webViewHelper?.openSlot(adView: bannerView)
     }
 
-    func bannerView(_: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_: BannerView, didFailToReceiveAdWithError error: Error) {
         print("SampleApp: banner failed to load with error: \(error)")
         webViewHelper?.closeSlot()
     }
 
-    func bannerViewWillPresentScreen(_: GADBannerView) {
+    func bannerViewWillPresentScreen(_: BannerView) {
         print("SampleApp: banner will present screen.")
     }
 
-    func bannerViewWillDismissScreen(_: GADBannerView) {
+    func bannerViewWillDismissScreen(_: BannerView) {
         print("SampleApp: banner will dismiss screen.")
     }
 
-    func bannerViewDidDismissScreen(_: GADBannerView) {
+    func bannerViewDidDismissScreen(_: BannerView) {
         print("SampleApp: banner did dismiss screen.")
     }
 }
