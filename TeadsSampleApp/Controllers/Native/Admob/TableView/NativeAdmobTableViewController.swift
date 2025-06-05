@@ -45,7 +45,7 @@ class NativeAdmobTableViewController: TeadsViewController {
             settings.pageUrl("http://teads.tv")
         }
 
-        let request = GADRequest()
+        let request = Request()
         request.register(settings)
         adLoader.load(request)
     }

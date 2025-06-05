@@ -48,7 +48,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
         super.viewDidLoad()
         requestPermission()
         // 1. Create AdMob view and add it to hierarchy
-        bannerView = GAMBannerView(adSize: GADAdSizeFluid)
+        bannerView = AdManagerBannerView(adSize: AdSizeFluid)
         slotView.addSubview(bannerView)
 
         bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +72,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
             // settings.pageUrl("http://page.com/article1")
         }
 
-        let request = GADRequest()
+        let request = Request()
         request.register(adSettings)
 
         bannerView.load(request)
@@ -80,7 +80,7 @@ class InReadAdmobScrollViewController: TeadsViewController {
 
     private func resizeAd(height: CGFloat) {
         slotViewHeightConstraint.constant = height
-        bannerView.resize(GADAdSizeFromCGSize(CGSize(width: slotView.frame.width, height: height)))
+        bannerView.resize(adSizeFor(CGSize(width: slotView.frame.width, height: height)))
     }
 }
 
