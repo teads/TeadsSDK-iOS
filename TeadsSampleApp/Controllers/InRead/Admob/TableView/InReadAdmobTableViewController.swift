@@ -28,7 +28,7 @@ class InReadAdmobTableViewController: TeadsViewController {
         super.viewDidLoad()
 
         // Be sure to use DFPBannerView instead of GADBannerView
-        admobAdView = AdManagerBannerView(adSize: GADAdSizeMediumRectangle)
+        admobAdView = AdManagerBannerView(adSize: AdSizeMediumRectangle)
 
         // 2. Attach Delegate (will include Teads events)
         // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
@@ -111,7 +111,7 @@ extension InReadAdmobTableViewController: UITableViewDelegate, UITableViewDataSo
                     cellAd.addSubview(admobAdView)
                     admobAdView.frame.origin = CGPoint(x: 10, y: 0)
                     // Be sure to call the DFPBannerView resize method to prevent admob from reloading a new ad experience
-                    admobAdView.resize(adSizeFor(cgSize: CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
+//                    admobAdView.resize(adSizeFor(cgSize: CGSize(width: tableViewAdCellWidth, height: adHeight ?? 250)))
                 }
                 return cellAd
             default:

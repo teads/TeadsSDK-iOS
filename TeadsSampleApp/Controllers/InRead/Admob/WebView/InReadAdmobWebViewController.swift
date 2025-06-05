@@ -31,7 +31,7 @@ class InReadAdmobWebViewController: TeadsViewController {
 
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
-        bannerView = AdManagerBannerView(adSize: GADAdSizeMediumRectangle)
+        bannerView = AdManagerBannerView(adSize: AdSizeMediumRectangle)
         // FIXME: This id below should be replaced by your own AdMob application and ad block/unit ids
         bannerView.adUnitID = pid
         bannerView.rootViewController = self
