@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsPrebidPlugin'
-    s.version                   = '5.5.0'
+    s.version                   = '5.3.0'
     s.summary                   = "PrebidMobile Plugin renderer for Teads' iOS SDK"
     s.module_name               = 'TeadsPrebidPlugin'
     s.description               = <<-DESC

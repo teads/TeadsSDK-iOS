@@ -12259,8 +12259,8 @@
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "AccessControl",
-              "Override"
+              "Override",
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -12286,8 +12286,8 @@
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "AccessControl",
-              "Override"
+              "Override",
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -18734,7 +18734,7 @@
       "kind": "StringLiteral",
       "offset": 108,
       "length": 5,
-      "value": "\"207\""
+      "value": "\"203\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
@@ -18797,7 +18797,7 @@
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"5.5.0\""
+      "value": "\"5.3.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
