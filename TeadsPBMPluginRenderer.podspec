@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
 
-    s.name                      = 'TeadsPrebidPlugin'
+    s.name                      = 'TeadsPBMPluginRenderer'
     s.version                   = '5.5.0'
     s.summary                   = "PrebidMobile Plugin renderer for Teads' iOS SDK"
-    s.module_name               = 'TeadsPrebidPlugin'
+    s.module_name               = 'TeadsPBMPluginRenderer'
     s.description               = <<-DESC
                                 Use this plugin to request and render Teads demand source in your PrebidMobile integration
                                 DESC
