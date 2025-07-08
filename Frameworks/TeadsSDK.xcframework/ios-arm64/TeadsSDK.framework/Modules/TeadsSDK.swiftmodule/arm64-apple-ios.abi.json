@@ -18797,7 +18797,7 @@
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"5.5.0\""
+      "value": "\"5.5.1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
