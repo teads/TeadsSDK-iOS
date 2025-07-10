@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3CF0BD2BC80530002A20FA /* PrebidAdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF0BC2BC80530002A20FA /* PrebidAdResponse.swift */; };
 		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
 		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
 		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
@@ -227,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */,
+				3C3CF0BC2BC80530002A20FA /* PrebidAdResponse.swift */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -759,6 +761,7 @@
 				E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */,
 				B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */,
 				A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */,
+				3C3CF0BD2BC80530002A20FA /* PrebidAdResponse.swift in Sources */,
 				E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */,
 				B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */,
 				E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */,
