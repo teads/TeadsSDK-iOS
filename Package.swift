@@ -41,7 +41,7 @@ let package = Package(
         .package(
             name: appLovinMaxModuleName,
             url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            "12.3.1" ..< "13.0.0"
+            "13.3.1" ..< "14.0.0"
         ),
     ],
     targets: [
