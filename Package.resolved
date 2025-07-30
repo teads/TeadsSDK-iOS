@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
         "state": {
           "branch": null,
-          "revision": "e662cd201df1da33f989766267283e9b40f7a432",
-          "version": "12.3.1"
+          "revision": "c184b428415a05dcad488c6834e0bd02fe1d8f3e",
+          "version": "13.3.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
         "state": {
           "branch": null,
-          "revision": "5ff977255c2ba5844e7e9da779f1f2a5a00e0028",
-          "version": "11.2.0"
+          "revision": "49efd19f8f4bbe130de7e2ee9e061d202a9a2a8b",
+          "version": "12.8.0"
         }
       },
       {
