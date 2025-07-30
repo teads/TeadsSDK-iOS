@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
         "state": {
           "branch": null,
-          "revision": "3b924ce3313a5fd2fc6a8dc889a8c38f76890fe3",
-          "version": "2.0.0"
+          "revision": "69b53394c5258b3fe688e625a998047d1f393497",
+          "version": "3.0.0"
         }
       }
     ]
