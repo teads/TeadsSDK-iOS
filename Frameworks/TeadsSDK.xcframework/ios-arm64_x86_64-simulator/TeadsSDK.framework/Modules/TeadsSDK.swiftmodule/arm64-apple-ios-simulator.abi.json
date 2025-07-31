@@ -18734,7 +18734,7 @@
       "kind": "StringLiteral",
       "offset": 108,
       "length": 5,
-      "value": "\"207\""
+      "value": "\"208\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/FullscreenController.swift",
@@ -18797,7 +18797,7 @@
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"5.5.1\""
+      "value": "\"5.5.2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/TeadsAdRequestSettings.swift",
