@@ -29,7 +29,7 @@ class RootViewController: TeadsViewController {
 
         // Register validation toggle cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ValidationToggleCell")
-        
+
         // Register showcase button cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ShowcaseButtonCell")
     }
@@ -155,11 +155,12 @@ class RootViewController: TeadsViewController {
 
 extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in _: UICollectionView) -> Int {
-        var numberOfSections = 1 // Add 1 for showcase section at the top
+        var numberOfSections = 0
         numberOfSections += selectionList.count > 0 ? 1 : 0
         numberOfSections += (selectionList.first(where: { $0.isSelected })?.providers.count ?? 0) > 0 ? 1 : 0
         numberOfSections += (selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0) > 0 ? 1 : 0
-        numberOfSections = numberOfSections == 2 ? 2 : numberOfSections + 1
+        numberOfSections = numberOfSections == 1 ? 1 : numberOfSections + 1
+        numberOfSections += 1 // Add showcase section after integrations
         numberOfSections += 1 // Add validation toggle section at the end
         return numberOfSections
     }
@@ -170,17 +171,20 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if section == totalSections - 1 {
             return 1 // Validation toggle cell
         }
+        
+        // Check if this is the showcase section (second to last)
+        if section == totalSections - 2 {
+            return 1 // Showcase button
+        }
 
         switch section {
             case 0:
-                return 1 // Showcase button
-            case 1:
                 return selectionList.count
-            case 2:
+            case 1:
                 return selectionList.first(where: { $0.isSelected })?.providers.count ?? 0
-            case 3:
+            case 2:
                 return selectionList.first(where: { $0.isSelected })?.creativeTypes.count ?? 0
-            case 4:
+            case 3:
                 return selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0
             default:
                 return 0
@@ -199,16 +203,20 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
 
+        // Check if this is the showcase section (second to last)
+        if indexPath.section == totalSections - 2 {
+            cell.label.text = "Showcase"
+            return cell
+        }
+
         switch indexPath.section {
             case 0:
-                cell.label.text = "Showcase"
-            case 1:
                 cell.label.text = "Formats"
-            case 2:
+            case 1:
                 cell.label.text = "Providers"
-            case 3:
+            case 2:
                 cell.label.text = "Creatives"
-            case 4:
+            case 3:
                 cell.label.text = "Integrations"
             default:
                 break
@@ -259,36 +267,38 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
 
+        // Check if this is the showcase section (second to last)
+        if indexPath.section == totalSections - 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseButtonCell", for: indexPath)
+
+            // Clear any existing subviews
+            cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+
+            // Create button
+            let button = UIButton(type: .system)
+            button.setTitle("📺 Media + Feed Showcase", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            button.backgroundColor = .systemBlue
+            button.setTitleColor(.white, for: .normal)
+            button.layer.cornerRadius = 8
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.addTarget(self, action: #selector(showMediaFeedShowcase), for: .touchUpInside)
+
+            cell.contentView.addSubview(button)
+
+            NSLayoutConstraint.activate([
+                button.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
+                button.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16),
+                button.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16),
+                button.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -8),
+                button.heightAnchor.constraint(equalToConstant: 50),
+            ])
+
+            return cell
+        }
+
         switch indexPath.section {
             case 0:
-                // Showcase button cell
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseButtonCell", for: indexPath)
-                
-                // Clear any existing subviews
-                cell.contentView.subviews.forEach { $0.removeFromSuperview() }
-                
-                // Create button
-                let button = UIButton(type: .system)
-                button.setTitle("📺 Media + Feed Showcase", for: .normal)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-                button.backgroundColor = .systemBlue
-                button.setTitleColor(.white, for: .normal)
-                button.layer.cornerRadius = 8
-                button.translatesAutoresizingMaskIntoConstraints = false
-                button.addTarget(self, action: #selector(showMediaFeedShowcase), for: .touchUpInside)
-                
-                cell.contentView.addSubview(button)
-                
-                NSLayoutConstraint.activate([
-                    button.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
-                    button.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16),
-                    button.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16),
-                    button.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -8),
-                    button.heightAnchor.constraint(equalToConstant: 50)
-                ])
-                
-                return cell
-            case 1:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                     return UICollectionViewCell()
                 }
@@ -296,7 +306,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.label.text = cellValue.name.rawValue
                 cell.isButtonSelected = cellValue.isSelected
                 return cell
-            case 2:
+            case 1:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                     return UICollectionViewCell()
                 }
@@ -305,7 +315,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     cell.isButtonSelected = cellValue.isSelected
                 }
                 return cell
-            case 3:
+            case 2:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                     return UICollectionViewCell()
                 }
@@ -314,7 +324,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     cell.isButtonSelected = cellValue.isSelected
                 }
                 return cell
-            case 4:
+            case 3:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
                     return UICollectionViewCell()
                 }
@@ -329,11 +339,14 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Check if this is the showcase or validation section - no action needed
+        let totalSections = numberOfSections(in: collectionView)
+        if indexPath.section == totalSections - 1 || indexPath.section == totalSections - 2 {
+            return
+        }
+
         switch indexPath.section {
             case 0:
-                // Showcase section - handled by button tap
-                return
-            case 1:
                 for i in 0 ..< selectionList.count {
                     selectionList[i].isSelected = indexPath.item == i
                     if indexPath.item == i {
@@ -350,13 +363,13 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 if selectionList.first(where: { $0.isSelected })?.providers.count == 0 {
                     let alert = UIAlertController(title: "Coming soon", message: "", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                        let indexPath = IndexPath(item: 0, section: 1)
+                        let indexPath = IndexPath(item: 0, section: 0)
                         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
                         self.collectionView(collectionView, didSelectItemAt: indexPath)
                     }))
                     present(alert, animated: true, completion: nil)
                 }
-            case 2:
+            case 1:
                 for j in 0 ..< selectionList.count where selectionList[j].isSelected {
                     for i in 0 ..< selectionList[j].providers.count {
                         selectionList[j].providers[i].isSelected = indexPath.item == i
@@ -374,7 +387,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 }
 
                 collectionView.reloadData()
-            case 3:
+            case 2:
                 for j in 0 ..< selectionList.count where selectionList[j].isSelected {
                     for i in 0 ..< selectionList[j].creativeTypes.count {
                         selectionList[j].creativeTypes[i].isSelected = indexPath.item == i
@@ -387,7 +400,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     }
                 }
                 collectionView.reloadData()
-            case 4:
+            case 3:
                 for j in 0 ..< selectionList.count where selectionList[j].isSelected {
                     for i in 0 ..< selectionList[j].providers.count where selectionList[j].providers[i].isSelected {
                         for h in 0 ..< selectionList[j].providers[i].integrations.count {
@@ -416,22 +429,24 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.bounds.width - 32, height: 60)
         }
 
+        // Check if this is the showcase section (second to last)
+        if indexPath.section == totalSections - 2 {
+            return CGSize(width: collectionView.bounds.width - 32, height: 66)
+        }
+
         switch indexPath.section {
             case 0:
-                // Showcase button - full width
-                return CGSize(width: collectionView.bounds.width - 32, height: 66)
-            case 1:
                 let spacing: CGFloat = 4
                 let count: CGFloat = .init(selectionList.count)
                 let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
                 return CGSize(width: width, height: 32)
-            case 2:
+            case 1:
                 let providerList = selectionList.first(where: { $0.isSelected })?.providers ?? []
                 return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })
-            case 3:
+            case 2:
                 let creativesTypeList = selectionList.first(where: { $0.isSelected })?.creativeTypes ?? []
                 return getButtonButtonSize(buttonValues: creativesTypeList.map { $0.name.rawValue })
-            case 4:
+            case 3:
                 let spacing: CGFloat = 16
                 let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)
                 return CGSize(width: width, height: width)
