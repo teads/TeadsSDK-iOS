@@ -29,6 +29,21 @@ class RootViewController: TeadsViewController {
 
         // Register validation toggle cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ValidationToggleCell")
+
+        // Add showcase button to navigation bar
+        let showcaseButton = UIBarButtonItem(
+            title: "📺 Showcase",
+            style: .plain,
+            target: self,
+            action: #selector(showMediaFeedShowcase)
+        )
+        navigationItem.rightBarButtonItem = showcaseButton
+    }
+
+    @objc private func showMediaFeedShowcase() {
+        let showcase = MediaFeedShowcaseViewController()
+        showcase.validationModeEnabled = validationModeEnabled
+        navigationController?.pushViewController(showcase, animated: true)
     }
 
     @objc private func validationModeToggled(_ sender: UISwitch) {

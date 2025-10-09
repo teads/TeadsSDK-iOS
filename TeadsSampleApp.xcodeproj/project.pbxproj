@@ -36,6 +36,7 @@
 		E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */; };
 		F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */; };
 		F7651FE426A07A58004DAFD9 /* TeadsWebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */; };
+		MF2024100900000001 /* MediaFeedShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = MF2024100900000002 /* MediaFeedShowcaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeadsSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsSampleAppUITests.swift; sourceTree = "<group>"; };
 		F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeadsWebViewHelper.swift; sourceTree = "<group>"; };
+		MF2024100900000002 /* MediaFeedShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFeedShowcaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -306,6 +308,7 @@
 				40D289ED25384E980031A64D /* InRead */,
 				40D289EA25384E5A0031A64D /* RootController */,
 				B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */,
+				MF2024100900000002 /* MediaFeedShowcaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
 				B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
+				MF2024100900000001 /* MediaFeedShowcaseViewController.swift in Sources */,
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
@@ -773,7 +777,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -865,7 +869,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
