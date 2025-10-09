@@ -23,6 +23,13 @@ class InReadDirectTableViewController: TeadsViewController {
     var adViews: [UUID: UIView] = [:]
     var adHeights: [UUID: CGFloat] = [:]
 
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            resetAds()
+        }
+    }
+
     enum TeadsElement: Equatable {
         case article
         case ad(id: UUID)
@@ -60,7 +67,7 @@ class InReadDirectTableViewController: TeadsViewController {
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         if let placement: TeadsAdPlacementMedia = Teads.createPlacement(with: config, delegate: self) {
@@ -83,6 +90,22 @@ class InReadDirectTableViewController: TeadsViewController {
         placements.removeValue(forKey: adId)
         adViews.removeValue(forKey: adId)
         adHeights.removeValue(forKey: adId)
+        tableView.reloadData()
+    }
+
+    private func resetAds() {
+        // Clear all ad state
+        placements.removeAll()
+        adViews.removeAll()
+        adHeights.removeAll()
+        adRequestedIndices.removeAll()
+
+        // Reset elements to articles only
+        elements = [TeadsElement]()
+        for _ in 0 ..< 8 {
+            elements.append(.article)
+        }
+
         tableView.reloadData()
     }
 }
@@ -112,7 +135,7 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
             cellAd.contentView.addSubview(adView)
             adView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        } else if case let .trackerView(id) = elements[indexPath.row],
+        } else if case .trackerView = elements[indexPath.row],
                   let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell {
             // Tracker views are now managed internally by the new API
             return cellAd

@@ -17,6 +17,13 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
     var placement: TeadsAdPlacementMedia?
     var adView: UIView?
 
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,11 +41,22 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
 
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        if adView != nil {
+            webViewHelper?.closeSlot()
+        }
+        placement = nil
+        adView = nil
+
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)

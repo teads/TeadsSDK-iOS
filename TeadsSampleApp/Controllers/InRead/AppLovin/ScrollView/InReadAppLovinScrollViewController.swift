@@ -46,7 +46,7 @@ class InReadAppLovinScrollViewController: AppLovinViewController {
         let settings = TeadsAdapterSettings { settings in
             settings.enableDebug()
             settings.pageUrl("https://teads.com")
-            try? settings.registerAdView(bannerView, delegate: self)
+            settings.registerAdView(bannerView, delegate: self)
         }
         bannerView.register(teadsAdSettings: settings)
 

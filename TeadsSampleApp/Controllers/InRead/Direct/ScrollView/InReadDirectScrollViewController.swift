@@ -15,14 +15,29 @@ class InReadDirectScrollViewController: TeadsViewController {
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     var placement: TeadsAdPlacementMedia?
 
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        teadsAdContainerView.subviews.forEach { $0.removeFromSuperview() }
+        teadsAdHeightConstraint.constant = 0
 
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)

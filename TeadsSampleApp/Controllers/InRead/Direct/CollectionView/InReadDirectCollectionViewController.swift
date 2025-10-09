@@ -12,16 +12,13 @@ import UIKit
 class InReadDirectCollectionViewController: TeadsViewController {
     enum TeadsElement: Equatable {
         case article
-        case ad(id: UUID)
-        case trackerView(id: UUID)
+        case ad(id: String)
 
         static func ==(lhs: TeadsElement, rhs: TeadsElement) -> Bool {
             switch (lhs, rhs) {
                 case (.article, .article):
                     return true
                 case let (.ad(id1), .ad(id2)):
-                    return id1 == id2
-                case let (.trackerView(id1), .trackerView(id2)):
                     return id1 == id2
                 default:
                     return false
@@ -42,11 +39,18 @@ class InReadDirectCollectionViewController: TeadsViewController {
     var placement: TeadsAdPlacementMedia?
 
     // Store placement and ad view
-    var adId: UUID?
+    var adId: String?
     var adView: UIView?
     var adHeight: CGFloat = 0
 
     private var elements = [TeadsElement]()
+
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,24 +59,39 @@ class InReadDirectCollectionViewController: TeadsViewController {
             elements.append(.article)
         }
 
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        adView = nil
+        adHeight = 0
+        if let id = adId {
+            elements.removeAll { $0 == .ad(id: id) }
+        }
+
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
 
+        if let id = placement?.placementId {
+            adId = id
+            elements.insert(.ad(id: id), at: 3)
+        }
+
         // Load ad and store view
-        let id = UUID()
-        adId = id
         if let view = try? placement?.loadAd() {
             adView = view
             // Ad will be inserted when ready event is received
         }
 
-        collectionView.register(AdOpportunityTrackerCollectionViewCell.self, forCellWithReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier)
+        collectionView.reloadData()
     }
 
     @objc func rotationDetected() {
@@ -84,14 +103,14 @@ class InReadDirectCollectionViewController: TeadsViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    func closeSlot(id: UUID) {
+    func closeSlot(id: String) {
         elements.removeAll { $0 == .ad(id: id) }
         adView = nil
         adHeight = 0
         collectionView.reloadData()
     }
 
-    func updateAdSize(id: UUID) {
+    func updateAdSize(id: String) {
         if let row = elements.firstIndex(of: .ad(id: id)) {
             collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
             collectionView.collectionViewLayout.invalidateLayout()
@@ -115,10 +134,6 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
             cellAd.contentView.addSubview(view)
             view.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        } else if case .trackerView = elements[indexPath.row],
-                  let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier, for: indexPath) as? AdOpportunityTrackerCollectionViewCell {
-            // Tracker views are now managed internally by the new API
-            return cellAd
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
             return cell
@@ -135,8 +150,6 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
         } else if case .ad = elements[indexPath.row] {
             let width = collectionView.frame.width - 20
             return .init(width: width, height: adHeight)
-        } else if case .trackerView = elements[indexPath.row] {
-            return .init(width: 1, height: 0)
         } else {
             return CGSize(width: collectionView.bounds.width, height: 300)
         }

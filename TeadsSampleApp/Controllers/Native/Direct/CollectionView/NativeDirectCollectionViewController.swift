@@ -21,6 +21,13 @@ class NativeDirectCollectionViewController: TeadsViewController {
 
     private var elements = [Bool]() // true = ad loaded, false = article
 
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,11 +35,22 @@ class NativeDirectCollectionViewController: TeadsViewController {
             elements.append(false)
         }
 
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        adView = nil
+        if adItemNumber < elements.count {
+            elements[adItemNumber] = false
+        }
+
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
@@ -45,6 +63,8 @@ class NativeDirectCollectionViewController: TeadsViewController {
         if let bindClosure = try? placement?.loadAd() {
             bindClosure(nativeAdView)
         }
+
+        collectionView.reloadData()
     }
 }
 

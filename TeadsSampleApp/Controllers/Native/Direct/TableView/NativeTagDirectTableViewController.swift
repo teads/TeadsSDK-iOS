@@ -23,6 +23,13 @@ class NativeTagDirectTableViewController: TeadsViewController {
 
     private var elements = [Bool]() // true = ad loaded, false = article
 
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,11 +37,23 @@ class NativeTagDirectTableViewController: TeadsViewController {
             elements.append(false)
         }
 
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        adView = nil
+        teadsAdIsLoaded = false
+        if adRowNumber < elements.count {
+            elements[adRowNumber] = false
+        }
+
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: true
+            enableValidationMode: validationModeEnabled
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
@@ -47,6 +66,8 @@ class NativeTagDirectTableViewController: TeadsViewController {
         if let bindClosure = try? placement?.loadAd() {
             bindClosure(nativeAdView)
         }
+
+        tableView.reloadData()
     }
 
     override func viewDidLayoutSubviews() {

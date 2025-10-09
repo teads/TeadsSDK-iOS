@@ -18,9 +18,22 @@ class RootViewController: TeadsViewController {
     private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
     var adSelection: AdSelection = .init()
 
+    private let validationModeKey = "TeadsValidationModeEnabled"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hasTeadsArticleNavigationBar = false
+
+        // Load validation mode from UserDefaults
+        validationModeEnabled = UserDefaults.standard.object(forKey: validationModeKey) as? Bool ?? true
+
+        // Register validation toggle cell
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ValidationToggleCell")
+    }
+
+    @objc private func validationModeToggled(_ sender: UISwitch) {
+        validationModeEnabled = sender.isOn
+        UserDefaults.standard.set(validationModeEnabled, forKey: validationModeKey)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -35,14 +48,22 @@ class RootViewController: TeadsViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        guard let destination = segue.destination as? TeadsViewController else {
+        // Handle TeadsViewController subclasses
+        if let destination = segue.destination as? TeadsViewController {
+            destination.pid = pidForCreative()
+            destination.validationModeEnabled = validationModeEnabled
+
+            if let appLovinViewController = destination as? AppLovinViewController,
+               [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
+                appLovinViewController.isMREC = true
+            }
             return
         }
-        destination.pid = pidForCreative()
 
-        if let appLovinViewController = destination as? AppLovinViewController,
-           [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
-            appLovinViewController.isMREC = true
+        // Handle InReadPageViewController separately (doesn't inherit from TeadsViewController)
+        if let destination = segue.destination as? InReadPageViewController {
+            destination.pid = pidForCreative()
+            destination.validationModeEnabled = validationModeEnabled
         }
     }
 
@@ -130,10 +151,17 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         numberOfSections += (selectionList.first(where: { $0.isSelected })?.providers.count ?? 0) > 0 ? 1 : 0
         numberOfSections += (selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0) > 0 ? 1 : 0
         numberOfSections = numberOfSections == 1 ? 1 : numberOfSections + 1
+        numberOfSections += 1 // Add validation toggle section at the end
         return numberOfSections
     }
 
-    func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // Check if this is the validation toggle section (last section)
+        let totalSections = numberOfSections(in: collectionView)
+        if section == totalSections - 1 {
+            return 1 // Validation toggle cell
+        }
+
         switch section {
             case 0:
                 return selectionList.count
@@ -152,6 +180,14 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath) as? RootHeaderCollectionReusableView else {
             return UICollectionReusableView()
         }
+
+        // Check if this is the validation toggle section (last section)
+        let totalSections = numberOfSections(in: collectionView)
+        if indexPath.section == totalSections - 1 {
+            cell.label.text = "Settings"
+            return cell
+        }
+
         switch indexPath.section {
             case 0:
                 cell.label.text = "Formats"
@@ -168,6 +204,48 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Check if this is the validation toggle section (last section)
+        let totalSections = numberOfSections(in: collectionView)
+        if indexPath.section == totalSections - 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ValidationToggleCell", for: indexPath)
+
+            // Clear any existing subviews
+            cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+
+            // Create horizontal stack view
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.alignment = .center
+            stackView.spacing = 12
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+
+            // Create label
+            let label = UILabel()
+            label.text = "Validation Mode"
+            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 16)
+
+            // Create switch
+            let switchControl = UISwitch()
+            switchControl.isOn = validationModeEnabled
+            switchControl.tag = indexPath.item
+            switchControl.addTarget(self, action: #selector(validationModeToggled(_:)), for: .valueChanged)
+
+            stackView.addArrangedSubview(label)
+            stackView.addArrangedSubview(switchControl)
+
+            cell.contentView.addSubview(stackView)
+
+            // Add constraints
+            NSLayoutConstraint.activate([
+                stackView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16),
+                stackView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16),
+                stackView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+            ])
+
+            return cell
+        }
+
         switch indexPath.section {
             case 0:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
@@ -288,6 +366,12 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension RootViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Check if this is the validation toggle section (last section)
+        let totalSections = numberOfSections(in: collectionView)
+        if indexPath.section == totalSections - 1 {
+            return CGSize(width: collectionView.bounds.width - 32, height: 60)
+        }
+
         switch indexPath.section {
             case 0:
                 let spacing: CGFloat = 4

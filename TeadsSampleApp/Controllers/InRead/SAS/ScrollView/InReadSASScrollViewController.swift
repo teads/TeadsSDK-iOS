@@ -25,7 +25,7 @@ class InReadSASScrollViewController: TeadsViewController {
         let teadsAdSettings = TeadsAdapterSettings { settings in
             settings.enableDebug()
             settings.pageUrl("https://teads.tv")
-            try? settings.registerAdView(banner!, delegate: self)
+            settings.registerAdView(banner!, delegate: self)
         }
 
         let webSiteId = 385_317

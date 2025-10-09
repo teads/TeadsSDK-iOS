@@ -40,7 +40,7 @@ class InReadAdmobTableViewController: TeadsViewController {
         let adSettings = TeadsAdapterSettings { settings in
             settings.enableDebug()
             if let admobAdView = admobAdView {
-                try? settings.registerAdView(admobAdView, delegate: self)
+                settings.registerAdView(admobAdView, delegate: self)
             }
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent

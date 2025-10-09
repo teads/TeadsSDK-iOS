@@ -10,14 +10,14 @@ import SASDisplayKit
 import UIKit
 
 class SmartNativeAdTableViewCell: UITableViewCell {
-    @IBOutlet public var titleLabel: UILabel?
-    @IBOutlet public var contentLabel: UILabel?
-    @IBOutlet public var mediaView: UIView!
-    @IBOutlet public var iconImageView: UIImageView?
-    @IBOutlet public var advertiserLabel: UILabel?
-    @IBOutlet public var callToActionButton: UIButton?
-    @IBOutlet public var ratingView: UIView?
-    @IBOutlet public var priceLabel: UILabel?
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var contentLabel: UILabel?
+    @IBOutlet var mediaView: UIView!
+    @IBOutlet var iconImageView: UIImageView?
+    @IBOutlet var advertiserLabel: UILabel?
+    @IBOutlet var callToActionButton: UIButton?
+    @IBOutlet var ratingView: UIView?
+    @IBOutlet var priceLabel: UILabel?
 }
 
 extension SmartNativeAdTableViewCell {
