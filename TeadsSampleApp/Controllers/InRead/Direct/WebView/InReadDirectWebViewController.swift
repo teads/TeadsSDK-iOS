@@ -14,7 +14,8 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
     @IBOutlet var webView: WKWebView!
     var webViewHelper: TeadsWebViewHelper?
 
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsAdPlacementMedia?
+    var adView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,65 +34,66 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
 
         webView.loadHTMLString(contentStringWithIntegrationType, baseURL: Bundle.main.bundleURL)
 
-        let pSettings = TeadsAdPlacementSettings { _ in
-            // settings.enableDebug()
+        // Create placement with new API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com"),
+            enableValidationMode: true
+        )
+
+        placement = Teads.createPlacement(with: config, delegate: self)
+
+        // Load ad and store view
+        if let view = try? placement?.loadAd() {
+            adView = view
         }
-
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
     }
 }
 
-extension InReadDirectWebViewController: TeadsInReadAdPlacementDelegate {
-    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        // update slot with the right ratio
-        webViewHelper?.updateSlot(adRatio: adRatio)
-        print("didUpdateRatio")
-    }
+extension InReadDirectWebViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                print("Ad ready")
+                // Open the slot with ad view
+                if let view = adView {
+                    webViewHelper?.openSlot(adView: view)
+                }
 
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        // open the slot
-        webViewHelper?.openSlot(ad: ad, adRatio: adRatio)
-        print("didReceiveAd")
-        ad.playbackDelegate = self
-        ad.delegate = self
-    }
+            case .rendered:
+                print("Ad rendered")
 
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd \(reason.localizedDescription)")
-    }
+            case .heightUpdated:
+                print("Height updated")
+                // The ad view auto-resizes, no need to manually update slot
 
-    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        webViewHelper?.setAdOpportunityTrackerView(trackerView)
-    }
-}
+            case .viewed:
+                print("Ad viewed (impression)")
 
-extension InReadDirectWebViewController: TeadsAdDelegate {
-    func didClose(ad _: TeadsAd) {
-        webViewHelper?.closeSlot()
-    }
+            case .clicked:
+                print("Ad clicked")
 
-    func didRecordImpression(ad _: TeadsAd) {}
+            case .failed:
+                print("Ad failed: \(data?["reason"] ?? "Unknown")")
+                webViewHelper?.closeSlot()
 
-    func didRecordClick(ad _: TeadsAd) {}
+            case .play:
+                print("Video play")
 
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        print("willPresentModalView")
-        return self
-    }
+            case .pause:
+                print("Video pause")
 
-    func didCatchError(ad _: TeadsAd, error: Error) {
-        print("didCatchError \(error.localizedDescription)")
-    }
-}
+            case .complete:
+                print("Video complete")
+                webViewHelper?.closeSlot()
 
-extension InReadDirectWebViewController: TeadsPlaybackDelegate {
-    func adStartPlayingAudio(_: TeadsAd) {
-        print("adStartPlayingAudio")
-    }
-
-    func adStopPlayingAudio(_: TeadsAd) {
-        print("adStopPlayingAudio")
+            default:
+                break
+        }
     }
 }
 
@@ -106,9 +108,7 @@ extension InReadDirectWebViewController: TeadsWebViewHelperDelegate {
 
     func webViewHelperSlotFoundSuccessfully() {
         print("webViewHelperSlotFoundSuccessfully")
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        // Ad is already loaded in viewDidLoad with the new API
     }
 
     func webViewHelperSlotNotFound() {

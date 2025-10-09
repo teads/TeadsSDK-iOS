@@ -10,40 +10,42 @@ import TeadsSDK
 import UIKit
 
 class InReadDirectPageViewController: TeadsViewController {
-    @IBOutlet var teadsAdView: TeadsInReadAdView!
+    @IBOutlet var teadsAdContainerView: UIView!
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var articleLabel: UILabel!
     var articleLabelText: String?
-    weak var placement: TeadsInReadAdPlacement? // strong reference is maintained by InReadPageViewController
+    weak var adViewReference: UIView? // strong reference is maintained by InReadPageViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         articleLabel.text = articleLabelText
-        loadAd()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
 
-    func loadAd() {
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+    func setupAdView(_ adView: UIView) {
+        // Remove from previous parent if any
+        adView.removeFromSuperview()
+        teadsAdContainerView.addSubview(adView)
+
+        // Pin adView to container edges
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            adView.topAnchor.constraint(equalTo: teadsAdContainerView.topAnchor),
+            adView.leadingAnchor.constraint(equalTo: teadsAdContainerView.leadingAnchor),
+            adView.trailingAnchor.constraint(equalTo: teadsAdContainerView.trailingAnchor),
+            adView.bottomAnchor.constraint(equalTo: teadsAdContainerView.bottomAnchor),
+        ])
     }
 
-    func resizeTeadsAd(adRatio: TeadsAdRatio) {
-        let computedHeight = adRatio.calculateHeight(for: teadsAdView.frame.size.width)
-        teadsAdHeightConstraint.constant = computedHeight
+    func updateAdHeight(_ height: CGFloat) {
+        teadsAdHeightConstraint.constant = height
+        view.layoutIfNeeded()
     }
 
     func closeAd() {
         teadsAdHeightConstraint.constant = 0
-    }
-}
-
-extension InReadDirectPageViewController: TeadsAdDelegate {
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        self
     }
 }

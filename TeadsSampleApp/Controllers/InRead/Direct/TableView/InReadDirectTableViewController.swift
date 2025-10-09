@@ -15,37 +15,35 @@ class InReadDirectTableViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    var adPosition: [(UUID, Int)] = []
     static let incrementPosition = 3
     var adRequestedIndices = Set<Int>()
 
-    var placement: TeadsInReadAdPlacement?
+    // Store placements and their corresponding ad views
+    var placements: [UUID: TeadsAdPlacementMedia] = [:]
+    var adViews: [UUID: UIView] = [:]
+    var adHeights: [UUID: CGFloat] = [:]
 
     enum TeadsElement: Equatable {
         case article
-        case ad(_ ad: TeadsInReadAd)
-        case trackerView(_ trackerView: TeadsAdOpportunityTrackerView)
+        case ad(id: UUID)
+        case trackerView(id: UUID)
+
+        static func ==(lhs: TeadsElement, rhs: TeadsElement) -> Bool {
+            switch (lhs, rhs) {
+                case (.article, .article):
+                    return true
+                case let (.ad(id1), .ad(id2)):
+                    return id1 == id2
+                case let (.trackerView(id1), .trackerView(id2)):
+                    return id1 == id2
+                default:
+                    return false
+            }
+        }
     }
 
     private var elements = [TeadsElement]()
-
-    func trackerViewRowNumber(requestIdentifier: UUID?) -> Int {
-        guard let requestIdentifier else {
-            return InReadDirectTableViewController.incrementPosition
-        }
-        guard let position = adPosition.first(where: { uuid, _ in
-            uuid == requestIdentifier
-        }) else {
-            let newPosition = (adPosition.last?.1 ?? 0) + InReadDirectTableViewController.incrementPosition
-            adPosition.append((requestIdentifier, newPosition))
-            return newPosition
-        }
-        return position.1
-    }
-
-    func adRowNumber(requestIdentifier: UUID?) -> Int {
-        return trackerViewRowNumber(requestIdentifier: requestIdentifier) + 1
-    }
+    private var currentAdIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,20 +52,37 @@ class InReadDirectTableViewController: TeadsViewController {
             elements.append(.article)
         }
 
-        let placementSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
-        }
-
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
         tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
 
-    func closeSlot(ad: TeadsAd) {
-        guard let inReadAd = ad as? TeadsInReadAd else {
-            return
+    func createAndLoadAd(at position: Int) {
+        let adId = UUID()
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com"),
+            enableValidationMode: true
+        )
+
+        if let placement: TeadsAdPlacementMedia = Teads.createPlacement(with: config, delegate: self) {
+            placements[adId] = placement
+
+            if let adView = try? placement.loadAd() {
+                adViews[adId] = adView
+
+                // Insert ad into table
+                let adRowIndex = position + 1
+                elements.insert(.ad(id: adId), at: adRowIndex)
+                let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
+                tableView.insertRows(at: indexPaths, with: .automatic)
+            }
         }
-        elements.removeAll { $0 == .ad(inReadAd) }
+    }
+
+    func closeSlot(adId: UUID) {
+        elements.removeAll { $0 == .ad(id: adId) }
+        placements.removeValue(forKey: adId)
+        adViews.removeValue(forKey: adId)
+        adHeights.removeValue(forKey: adId)
         tableView.reloadData()
     }
 }
@@ -78,26 +93,28 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row % InReadDirectTableViewController.incrementPosition == 0, elements[indexPath.row] == .article, !adRequestedIndices.contains(indexPath.row) {
+        if indexPath.row % InReadDirectTableViewController.incrementPosition == 0,
+           elements[indexPath.row] == .article,
+           !adRequestedIndices.contains(indexPath.row) {
             adRequestedIndices.insert(indexPath.row)
-            placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-                settings.pageUrl("https://www.teads.com")
-            })
+            createAndLoadAd(at: indexPath.row)
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
-        } else if case let .ad(ad) = elements[indexPath.row] {
+        } else if case let .ad(id) = elements[indexPath.row],
+                  let adView = adViews[id] {
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
-            let teadsAdView = TeadsInReadAdView(bind: ad)
-            cellAd.contentView.addSubview(teadsAdView)
-            teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
+            // Remove from previous parent if any
+            adView.removeFromSuperview()
+            cellAd.contentView.addSubview(adView)
+            adView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        } else if case let .trackerView(trackerView) = elements[indexPath.row],
+        } else if case let .trackerView(id) = elements[indexPath.row],
                   let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell {
-            cellAd.setTrackerView(trackerView)
+            // Tracker views are now managed internally by the new API
             return cellAd
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
@@ -105,9 +122,10 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case let .ad(ad) = elements[indexPath.row] {
-            return ad.adRatio.calculateHeight(for: tableView.frame.width - 20)
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if case let .ad(id) = elements[indexPath.row],
+           let height = adHeights[id] {
+            return height
         } else if case .trackerView = elements[indexPath.row] {
             return 0
         }
@@ -115,50 +133,50 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
-extension InReadDirectTableViewController: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        let adRowIndex = adRowNumber(requestIdentifier: ad.requestIdentifier)
-
-        elements.insert(.ad(ad), at: adRowIndex)
-        ad.delegate = self
-        let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
-
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
-
-    func didUpdateRatio(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        if let row = elements.firstIndex(of: .ad(ad)) {
-            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+extension InReadDirectTableViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _ placement: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        // Find which ad this event belongs to
+        guard let placementId = placement?.placementId,
+              let adId = placements.first(where: { $0.value.placementId == placementId })?.key else {
+            return
         }
-    }
 
-    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        let trackerRowIndex = trackerViewRowNumber(requestIdentifier: trackerView.requestIdentifier)
-        elements.insert(.trackerView(trackerView), at: trackerRowIndex)
+        switch event {
+            case .ready:
+                print("Ad ready for \(adId)")
 
-        let indexPaths = [IndexPath(row: trackerRowIndex, section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
-}
+            case .rendered:
+                print("Ad rendered for \(adId)")
 
-extension InReadDirectTableViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {}
+            case .heightUpdated:
+                if let height = data?["height"] as? CGFloat {
+                    adHeights[adId] = height
+                    if let row = elements.firstIndex(of: .ad(id: adId)) {
+                        tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+                    }
+                }
 
-    func didRecordClick(ad _: TeadsAd) {}
+            case .viewed:
+                print("Ad viewed for \(adId)")
 
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
+            case .clicked:
+                print("Ad clicked for \(adId)")
 
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
+            case .failed:
+                print("Ad failed for \(adId): \(data?["reason"] ?? "Unknown")")
+                closeSlot(adId: adId)
 
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
+            case .complete:
+                print("Video complete for \(adId)")
+                closeSlot(adId: adId)
+
+            default:
+                break
+        }
     }
 }
 
