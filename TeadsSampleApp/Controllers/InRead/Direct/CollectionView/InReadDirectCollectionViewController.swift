@@ -31,10 +31,7 @@ class InReadDirectCollectionViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let trackerViewItemNumber = 2 // tracker view needs to be placed above the slot view
-    var adItemNumber: Int {
-        return trackerViewItemNumber + 1
-    }
+    let adItemNumber = 3
 
     var placement: TeadsAdPlacementMedia?
 

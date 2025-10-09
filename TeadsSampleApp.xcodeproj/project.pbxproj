@@ -3,34 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		28AED0FC9C839CB0F08FB2ED /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE69E124DD7520D4468526 /* Pods_TeadsSampleApp.framework */; };
-		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
 		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
 		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
 		408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */; };
 		408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */; };
-		40DCC3C925306FA00012407C /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCC3C825306FA00012407C /* Format.swift */; };
 		979210C427E0A5C00010E81A /* AppLovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979210C327E0A5C00010E81A /* AppLovinViewController.swift */; };
-		A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */; };
-		A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */; };
-		A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */; };
 		A98FA31F2A25070D00FB8F75 /* InReadDirectPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98FA31E2A25070D00FB8F75 /* InReadDirectPageViewController.swift */; };
 		A98FA3212A250A0200FB8F75 /* InReadPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98FA3202A250A0200FB8F75 /* InReadPageViewController.swift */; };
 		B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */; };
-		B50425D0252E078B00ABF07D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425CF252E078B00ABF07D /* String.swift */; };
-		B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425D2252E134E00ABF07D /* FakeArticleView.swift */; };
-		B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */ = {isa = PBXBuildFile; fileRef = B50425F3252F436000ABF07D /* coffeeDesk2.png */; };
-		B50425F6252F436000ABF07D /* sample.html in Resources */ = {isa = PBXBuildFile; fileRef = B50425F4252F436000ABF07D /* sample.html */; };
-		B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
 		B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3C1F7CDF80007406D4 /* Assets.xcassets */; };
 		B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */; };
-		B56A8ABA26988C780090A14A /* InReadDirectScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */; };
 		B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */; };
 		B5966D1C269C7690005CA2FF /* InReadDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */; };
 		B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */; };
@@ -39,22 +28,13 @@
 		B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */; };
 		B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */; };
 		B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */; };
-		E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */; };
-		E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */; };
-		E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */; };
-		E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C1F9927E4902D00151530 /* UIView-extension.swift */; };
-		E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */; };
-		E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */; };
-		E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */; };
 		E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */; };
 		E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */; };
 		E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */; };
 		E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */; };
-		E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */; };
 		E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */; };
 		E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */; };
 		F71C452127918A88000C696F /* TeadsSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */; };
-		F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = F7651FE126A07A58004DAFD9 /* bootstrap.js */; };
 		F7651FE426A07A58004DAFD9 /* TeadsWebViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,27 +51,17 @@
 /* Begin PBXFileReference section */
 		25FE69E124DD7520D4468526 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
-		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		408A2D47253D995200CCFF44 /* RootHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		408A2D48253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootImageViewLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		40D28A26253853710031A64D /* InReadAdmobTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewController.swift; sourceTree = "<group>"; };
-		40DCC3C825306FA00012407C /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		979210C327E0A5C00010E81A /* AppLovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinViewController.swift; sourceTree = "<group>"; };
 		9AB2585A1900E7CF4656B9D7 /* Pods-TeadsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTagDirectTableViewController.swift; sourceTree = "<group>"; };
-		A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewController.swift; sourceTree = "<group>"; };
-		A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartNativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		A98FA31E2A25070D00FB8F75 /* InReadDirectPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectPageViewController.swift; sourceTree = "<group>"; };
 		A98FA3202A250A0200FB8F75 /* InReadPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadPageViewController.swift; sourceTree = "<group>"; };
 		B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewController.swift; sourceTree = "<group>"; };
 		B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectTableViewController.swift; sourceTree = "<group>"; };
-		B50425CF252E078B00ABF07D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		B50425D2252E134E00ABF07D /* FakeArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArticleView.swift; sourceTree = "<group>"; };
-		B50425F3252F436000ABF07D /* coffeeDesk2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeeDesk2.png; sourceTree = "<group>"; };
-		B50425F4252F436000ABF07D /* sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
-		B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsGradientImageView.swift; sourceTree = "<group>"; };
 		B50C184822CCDC65004F2360 /* InReadAdmobWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewController.swift; sourceTree = "<group>"; };
 		B52A5AC22566B4A7007CFA73 /* InReadSASTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASTableViewController.swift; sourceTree = "<group>"; };
 		B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,30 +70,30 @@
 		B5555A3C1F7CDF80007406D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5555A3F1F7CDF80007406D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5555A411F7CDF80007406D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectScrollViewController.swift; sourceTree = "<group>"; };
 		B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsViewController.swift; sourceTree = "<group>"; };
 		B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewController.swift; sourceTree = "<group>"; };
 		DB4660DB2181B865003A6CF5 /* InReadAdmobScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewController.swift; sourceTree = "<group>"; };
 		E6242F3692E82435952FA44E /* Pods-TeadsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLovinNativeAdView.xib; sourceTree = "<group>"; };
-		E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinNativeAdView.swift; sourceTree = "<group>"; };
-		E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAppLovinTableViewController.swift; sourceTree = "<group>"; };
-		E96C1F9927E4902D00151530 /* UIView-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-extension.swift"; sourceTree = "<group>"; };
-		E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewController.swift; sourceTree = "<group>"; };
-		E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeDirectCollectionViewController.swift; sourceTree = "<group>"; };
-		E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdmobTableViewController.swift; sourceTree = "<group>"; };
 		E9984EF426B2D46F000D42D3 /* NativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeArticleNativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTableViewCell.swift; sourceTree = "<group>"; };
 		E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobNativeAdTableViewCell.swift; sourceTree = "<group>"; };
-		E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdOpportunityTrackerTableViewCell.swift; sourceTree = "<group>"; };
 		E9A6F4BC26B7188D005C5F78 /* NativeAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9B7170527C7965900FB7DCB /* InReadAppLovinScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadAppLovinScrollViewController.swift; sourceTree = "<group>"; };
 		F71C451E27918A88000C696F /* TeadsSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeadsSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71C452027918A88000C696F /* TeadsSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeadsSampleAppUITests.swift; sourceTree = "<group>"; };
-		F7651FE126A07A58004DAFD9 /* bootstrap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
 		F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeadsWebViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B14510782E97D30200DAE138 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		B145107B2E97D30600DAE138 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		B145107F2E97D30A00DAE138 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		B14510852E97D30D00DAE138 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+		B145108C2E97D31100DAE138 /* Ressources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Ressources; sourceTree = "<group>"; };
+		B14510A12E97D31800DAE138 /* Native */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Native; sourceTree = "<group>"; };
+		B14510AC2E97D32000DAE138 /* ScrollView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScrollView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B5555A2F1F7CDF80007406D4 /* Frameworks */ = {
@@ -144,16 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4079F241252CBE7300B0AC31 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4079F242252CBE7F00B0AC31 /* ColorExtension.swift */,
-				B50425CF252E078B00ABF07D /* String.swift */,
-				E96C1F9927E4902D00151530 /* UIView-extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		40D289EA25384E5A0031A64D /* RootController */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,14 +133,6 @@
 			path = RootControllerCells;
 			sourceTree = "<group>";
 		};
-		40D289EC25384E7B0031A64D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				40DCC3C825306FA00012407C /* Format.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		40D289ED25384E980031A64D /* InRead */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +147,7 @@
 		40D289EE25384E9E0031A64D /* Direct */ = {
 			isa = PBXGroup;
 			children = (
-				40D289F125384ED90031A64D /* ScrollView */,
+				B14510AC2E97D32000DAE138 /* ScrollView */,
 				40D289EF25384EB00031A64D /* TableView */,
 				40D289F225384EEF0031A64D /* CollectionView */,
 				B501EC781F823C2A002909B9 /* WebView */,
@@ -208,17 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				B502BA121F827D5C008257EC /* InReadDirectTableViewController.swift */,
-				E9A3AC572795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift */,
 			);
 			path = TableView;
-			sourceTree = "<group>";
-		};
-		40D289F125384ED90031A64D /* ScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				B5555A4D1F7D3177007406D4 /* InReadDirectScrollViewController.swift */,
-			);
-			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		40D289F225384EEF0031A64D /* CollectionView */ = {
@@ -280,23 +223,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A9799DF429BF76D90038DCCD /* SAS */ = {
-			isa = PBXGroup;
-			children = (
-				A9799DF529BF76E70038DCCD /* TableView */,
-			);
-			path = SAS;
-			sourceTree = "<group>";
-		};
-		A9799DF529BF76E70038DCCD /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				A9799DF629BF770B0038DCCD /* NativeSASTableViewController.swift */,
-				A9799DF829BF771F0038DCCD /* SmartNativeAdTableViewCell.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
 		A98FA31D2A2506EC00FB8F75 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,29 +232,12 @@
 			path = PageView;
 			sourceTree = "<group>";
 		};
-		B501EC681F8232A4002909B9 /* Ressources */ = {
-			isa = PBXGroup;
-			children = (
-				B50425F2252F436000ABF07D /* SampleWebsite */,
-			);
-			path = Ressources;
-			sourceTree = "<group>";
-		};
 		B501EC781F823C2A002909B9 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
 				B501EC711F823541002909B9 /* InReadDirectWebViewController.swift */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		B50425F2252F436000ABF07D /* SampleWebsite */ = {
-			isa = PBXGroup;
-			children = (
-				B50425F3252F436000ABF07D /* coffeeDesk2.png */,
-				B50425F4252F436000ABF07D /* sample.html */,
-			);
-			path = SampleWebsite;
 			sourceTree = "<group>";
 		};
 		B52A5AB12566B3F1007CFA73 /* TableView */ = {
@@ -363,10 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				F7651FDF26A07A58004DAFD9 /* WebViewHelper */,
-				40D289EC25384E7B0031A64D /* Models */,
-				B5CF159C252CC0FA00B12F83 /* Views */,
-				4079F241252CBE7300B0AC31 /* Extensions */,
-				B501EC681F8232A4002909B9 /* Ressources */,
+				B145107B2E97D30600DAE138 /* Models */,
+				B145107F2E97D30A00DAE138 /* Views */,
+				B14510852E97D30D00DAE138 /* Extensions */,
+				B145108C2E97D31100DAE138 /* Ressources */,
 				B5555A4C1F7D3153007406D4 /* Controllers */,
 				B5555A4B1F7CEF1C007406D4 /* Cells */,
 				B5555A351F7CDF80007406D4 /* AppDelegate.swift */,
@@ -393,21 +302,12 @@
 		B5555A4C1F7D3153007406D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E9984ED526AF3CCC000D42D3 /* Native */,
+				B14510A12E97D31800DAE138 /* Native */,
 				40D289ED25384E980031A64D /* InRead */,
 				40D289EA25384E5A0031A64D /* RootController */,
 				B5CF15BE252DC47000B12F83 /* TeadsViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B5CF159C252CC0FA00B12F83 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B50425D2252E134E00ABF07D /* FakeArticleView.swift */,
-				B50425F8252F67C200ABF07D /* TeadsGradientImageView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B5EBAF5D256559A900B0DAFA /* SAS */ = {
@@ -425,77 +325,6 @@
 				B5EBAF5F25655A1300B0DAFA /* InReadSASScrollViewController.swift */,
 			);
 			path = ScrollView;
-			sourceTree = "<group>";
-		};
-		E954312227CD038A005004B4 /* AppLovin */ = {
-			isa = PBXGroup;
-			children = (
-				E954312927CD2A74005004B4 /* TableView */,
-			);
-			path = AppLovin;
-			sourceTree = "<group>";
-		};
-		E954312927CD2A74005004B4 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				E954312427CD03E8005004B4 /* AppLovinNativeAdView.swift */,
-				E954312327CD03E8005004B4 /* AppLovinNativeAdView.xib */,
-				E954312527CD03E8005004B4 /* NativeAppLovinTableViewController.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		E9984ED526AF3CCC000D42D3 /* Native */ = {
-			isa = PBXGroup;
-			children = (
-				E9984ED626AF3CCC000D42D3 /* Direct */,
-				E9984EDB26AF3CCC000D42D3 /* Admob */,
-				E954312227CD038A005004B4 /* AppLovin */,
-				A9799DF429BF76D90038DCCD /* SAS */,
-			);
-			path = Native;
-			sourceTree = "<group>";
-		};
-		E9984ED626AF3CCC000D42D3 /* Direct */ = {
-			isa = PBXGroup;
-			children = (
-				E9984ED726AF3CCC000D42D3 /* TableView */,
-				E9984ED926AF3CCC000D42D3 /* CollectionView */,
-			);
-			path = Direct;
-			sourceTree = "<group>";
-		};
-		E9984ED726AF3CCC000D42D3 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				E9984ED826AF3CCC000D42D3 /* NativeDirectTableViewController.swift */,
-				A956713729E95A3600505C29 /* NativeTagDirectTableViewController.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		E9984ED926AF3CCC000D42D3 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				E9984EDA26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		E9984EDB26AF3CCC000D42D3 /* Admob */ = {
-			isa = PBXGroup;
-			children = (
-				E9984EDE26AF3CCC000D42D3 /* TableView */,
-			);
-			path = Admob;
-			sourceTree = "<group>";
-		};
-		E9984EDE26AF3CCC000D42D3 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				E9984EDF26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift */,
-			);
-			path = TableView;
 			sourceTree = "<group>";
 		};
 		E9B7170327C7962700FB7DCB /* AppLovin */ = {
@@ -526,18 +355,10 @@
 		F7651FDF26A07A58004DAFD9 /* WebViewHelper */ = {
 			isa = PBXGroup;
 			children = (
-				F7651FE026A07A58004DAFD9 /* Resources */,
+				B14510782E97D30200DAE138 /* Resources */,
 				F7651FE226A07A58004DAFD9 /* TeadsWebViewHelper.swift */,
 			);
 			path = WebViewHelper;
-			sourceTree = "<group>";
-		};
-		F7651FE026A07A58004DAFD9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F7651FE126A07A58004DAFD9 /* bootstrap.js */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +380,15 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B14510782E97D30200DAE138 /* Resources */,
+				B145107B2E97D30600DAE138 /* Models */,
+				B145107F2E97D30A00DAE138 /* Views */,
+				B14510852E97D30D00DAE138 /* Extensions */,
+				B145108C2E97D31100DAE138 /* Ressources */,
+				B14510A12E97D31800DAE138 /* Native */,
+				B14510AC2E97D32000DAE138 /* ScrollView */,
 			);
 			name = TeadsSampleApp;
 			productName = TeadsSampleApp;
@@ -630,11 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */,
-				E954312627CD03E8005004B4 /* AppLovinNativeAdView.xib in Resources */,
-				B50425F6252F436000ABF07D /* sample.html in Resources */,
 				B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */,
-				F7651FE326A07A58004DAFD9 /* bootstrap.js in Resources */,
-				B50425F5252F436000ABF07D /* coffeeDesk2.png in Resources */,
 				B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,46 +579,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E954312827CD03E8005004B4 /* NativeAppLovinTableViewController.swift in Sources */,
 				B5966D1E269D8FC6005CA2FF /* InReadAdmobScrollViewController.swift in Sources */,
-				A956713829E95A3600505C29 /* NativeTagDirectTableViewController.swift in Sources */,
-				E9A3AC582795AF2C00F124D6 /* AdOpportunityTrackerTableViewCell.swift in Sources */,
 				B56A8ABB2698A0A20090A14A /* InReadDirectTableViewController.swift in Sources */,
 				E9984EFA26B2D46F000D42D3 /* NativeTableViewCell.swift in Sources */,
-				B50425D0252E078B00ABF07D /* String.swift in Sources */,
-				E954312727CD03E8005004B4 /* AppLovinNativeAdView.swift in Sources */,
 				408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */,
 				A98FA31F2A25070D00FB8F75 /* InReadDirectPageViewController.swift in Sources */,
 				B501EC721F823541002909B9 /* InReadDirectWebViewController.swift in Sources */,
 				E9984EF826B2D46F000D42D3 /* NativeAdTableViewCell.swift in Sources */,
-				E9984EEA26AF3CCC000D42D3 /* NativeDirectTableViewController.swift in Sources */,
-				B50425D3252E134E00ABF07D /* FakeArticleView.swift in Sources */,
-				E9984EEB26AF3CCC000D42D3 /* NativeDirectCollectionViewController.swift in Sources */,
 				A98FA3212A250A0200FB8F75 /* InReadPageViewController.swift in Sources */,
 				B5966D1D269C7F33005CA2FF /* InReadAdmobTableViewController.swift in Sources */,
 				408A2D4A253D995200CCFF44 /* RootHeaderCollectionReusableView.swift in Sources */,
-				A9799DF729BF770B0038DCCD /* NativeSASTableViewController.swift in Sources */,
 				E9A6F4BD26B7188D005C5F78 /* NativeAdCollectionViewCell.swift in Sources */,
 				E9984EFB26B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift in Sources */,
 				408A2D4B253D995200CCFF44 /* RootImageViewLabelCollectionViewCell.swift in Sources */,
 				B5966D1C269C7690005CA2FF /* InReadDirectCollectionViewController.swift in Sources */,
 				979210C427E0A5C00010E81A /* AppLovinViewController.swift in Sources */,
-				B50425F9252F67C200ABF07D /* TeadsGradientImageView.swift in Sources */,
-				40DCC3C925306FA00012407C /* Format.swift in Sources */,
 				F7651FE426A07A58004DAFD9 /* TeadsWebViewHelper.swift in Sources */,
 				B5966D22269DE859005CA2FF /* InReadSASScrollViewController.swift in Sources */,
 				4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */,
 				B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */,
-				A9799DF929BF771F0038DCCD /* SmartNativeAdTableViewCell.swift in Sources */,
-				B56A8ABA26988C780090A14A /* InReadDirectScrollViewController.swift in Sources */,
 				B5966D23269DE8D0005CA2FF /* InReadSASTableViewController.swift in Sources */,
 				B5CF15BF252DC47000B12F83 /* TeadsViewController.swift in Sources */,
 				E9984EF926B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift in Sources */,
-				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
-				E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
-				E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,7 +751,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -963,7 +774,10 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1052,7 +866,10 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = TeadsSampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

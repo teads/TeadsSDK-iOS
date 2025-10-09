@@ -33,15 +33,12 @@ class InReadDirectTableViewController: TeadsViewController {
     enum TeadsElement: Equatable {
         case article
         case ad(id: UUID)
-        case trackerView(id: UUID)
 
         static func ==(lhs: TeadsElement, rhs: TeadsElement) -> Bool {
             switch (lhs, rhs) {
                 case (.article, .article):
                     return true
                 case let (.ad(id1), .ad(id2)):
-                    return id1 == id2
-                case let (.trackerView(id1), .trackerView(id2)):
                     return id1 == id2
                 default:
                     return false
@@ -58,8 +55,6 @@ class InReadDirectTableViewController: TeadsViewController {
         for _ in 0 ..< 8 {
             elements.append(.article)
         }
-
-        tableView.register(AdOpportunityTrackerTableViewCell.self, forCellReuseIdentifier: AdOpportunityTrackerTableViewCell.identifier)
     }
 
     func createAndLoadAd(at position: Int) {
@@ -135,10 +130,6 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
             cellAd.contentView.addSubview(adView)
             adView.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
-        } else if case .trackerView = elements[indexPath.row],
-                  let cellAd = tableView.dequeueReusableCell(withIdentifier: AdOpportunityTrackerTableViewCell.identifier, for: indexPath) as? AdOpportunityTrackerTableViewCell {
-            // Tracker views are now managed internally by the new API
-            return cellAd
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
             return cell
@@ -149,8 +140,6 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
         if case let .ad(id) = elements[indexPath.row],
            let height = adHeights[id] {
             return height
-        } else if case .trackerView = elements[indexPath.row] {
-            return 0
         }
         return UITableView.automaticDimension
     }
