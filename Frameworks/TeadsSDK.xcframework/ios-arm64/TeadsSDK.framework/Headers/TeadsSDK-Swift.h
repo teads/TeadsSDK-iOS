@@ -417,99 +417,6 @@ typedef SWIFT_ENUM(NSInteger, MediaScale, open) {
   MediaScaleScaleAspectFit = 1,
 };
 
-SWIFT_CLASS("_TtC8TeadsSDK12OBDisclosure")
-@interface OBDisclosure : NSObject
-@property (nonatomic, copy) NSString * _Nullable imageUrl;
-@property (nonatomic, copy) NSString * _Nullable clickUrl;
-- (nonnull instancetype)initWithImageUrl:(NSString * _Nullable)imageUrl clickUrl:(NSString * _Nullable)clickUrl OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-enum OBErrorType : NSInteger;
-enum OBErrorCode : NSInteger;
-SWIFT_CLASS("_TtC8TeadsSDK7OBError")
-@interface OBError : NSObject
-@property (nonatomic, readonly) enum OBErrorType type;
-@property (nonatomic, readonly, copy) NSString * _Nullable message;
-@property (nonatomic, readonly) enum OBErrorCode code;
-- (nonnull instancetype)initWithType:(enum OBErrorType)type message:(NSString * _Nullable)message code:(enum OBErrorCode)code OBJC_DESIGNATED_INITIALIZER;
-+ (OBError * _Nonnull)genericWithMessage:(NSString * _Nullable)message code:(enum OBErrorCode)code SWIFT_WARN_UNUSED_RESULT;
-+ (OBError * _Nonnull)networkWithMessage:(NSString * _Nullable)message code:(enum OBErrorCode)code SWIFT_WARN_UNUSED_RESULT;
-+ (OBError * _Nonnull)nativeWithMessage:(NSString * _Nullable)message code:(enum OBErrorCode)code SWIFT_WARN_UNUSED_RESULT;
-+ (OBError * _Nonnull)zeroRecommendationsWithMessage:(NSString * _Nullable)message code:(enum OBErrorCode)code SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-typedef SWIFT_ENUM(NSInteger, OBErrorCode, open) {
-  OBErrorCodeGeneric = 10200,
-  OBErrorCodeParsing = 10201,
-  OBErrorCodeServer = 10202,
-  OBErrorCodeInvalidParameters = 10203,
-  OBErrorCodeNoRecommendations = 10204,
-  OBErrorCodeNoData = 10205,
-  OBErrorCodeNetwork = 10206,
-};
-
-typedef SWIFT_ENUM(NSInteger, OBErrorType, open) {
-  OBErrorTypeGeneric = 0,
-  OBErrorTypeNetwork = 1,
-  OBErrorTypeNative = 2,
-  OBErrorTypeZeroRecommendations = 3,
-};
-
-@class NSURL;
-SWIFT_CLASS("_TtC8TeadsSDK11OBImageInfo")
-@interface OBImageInfo : NSObject
-@property (nonatomic, readonly) NSInteger width;
-@property (nonatomic, readonly) NSInteger height;
-@property (nonatomic, readonly, copy) NSURL * _Nullable url;
-@end
-
-@class NSDate;
-SWIFT_CLASS("_TtC8TeadsSDK16OBRecommendation")
-@interface OBRecommendation : NSObject
-@property (nonatomic, copy) NSString * _Nullable url;
-@property (nonatomic, copy) NSString * _Nullable origUrl;
-@property (nonatomic, copy) NSString * _Nullable content;
-@property (nonatomic, copy) NSString * _Nullable source;
-@property (nonatomic, strong) OBImageInfo * _Nullable image;
-@property (nonatomic, copy) NSString * _Nullable position;
-@property (nonatomic, copy) NSString * _Nullable author;
-@property (nonatomic, copy) NSDate * _Nullable publishDate;
-@property (nonatomic) BOOL sameSource;
-@property (nonatomic, strong) OBDisclosure * _Nullable disclosure;
-@property (nonatomic, copy) NSArray<NSString *> * _Nullable pixels;
-@property (nonatomic, copy) NSString * _Nullable reqId;
-@property (nonatomic, readonly) BOOL isPaidLink;
-@property (nonatomic, readonly) BOOL isRTB;
-@property (nonatomic, readonly) BOOL isVideo;
-- (BOOL)shouldDisplayDisclosureIcon SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class OBViewabilityActions;
-SWIFT_CLASS("_TtC8TeadsSDK24OBRecommendationResponse")
-@interface OBRecommendationResponse : NSObject
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull request;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull settings;
-@property (nonatomic, readonly, strong) OBViewabilityActions * _Nullable viewabilityActions;
-@property (nonatomic, readonly, copy) NSArray<OBRecommendation *> * _Nonnull recommendations;
-@property (nonatomic, strong) OBError * _Nullable error;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-SWIFT_CLASS("_TtC8TeadsSDK20OBViewabilityActions")
-@interface OBViewabilityActions : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable reportServed;
-@property (nonatomic, readonly, copy) NSString * _Nullable reportViewed;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 /// EU Transparency & Consent Framework versions
 /// note:
 /// Europe  General Data Protection Regulation (GDPR) see <a href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a>
@@ -589,7 +496,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// returns:
 /// TeadsInReadAdPlacement instance, this instance must be owned/retained
-+ (id <TeadsInReadAdPlacement> _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate;
++ (id <TeadsInReadAdPlacement> _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 /// Create an  inRead ad placement to request load Prebid ad response
 /// important:
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
@@ -602,7 +509,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 ///
 /// returns:
 /// TeadsInReadAdPlacement instance, this instance must be owned/retained
-+ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate;
++ (id <TeadsPrebidAdPlacement> _Nullable)createPrebidPlacementWithSettings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -615,7 +522,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// TeadsSDK does not disturb any third party crash handler/reporter such as Crashlytics
 /// warning:
 /// To ensure the crash handler is ready to catch crashes you need to initialize Teads handler in <code>AppDelegate</code>
-+ (void)configureWith:(NSString * _Nullable)partnerKey;
++ (void)configure;
 @end
 
 @protocol TeadsAdDelegate;
@@ -688,7 +595,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK15TeadsAdDelegate_")
 ///
 - (void)didCollapsedFromFullscreenWithAd:(TeadsAd * _Nonnull)ad;
 /// Called when an ad is terminated (deinit)
-/// \param requestIdentifier The ad request identifier
+/// \param identifier The ad request identifier
 ///
 - (void)didTerminateWithRequestIdentifier:(NSUUID * _Nonnull)requestIdentifier;
 @end
@@ -722,6 +629,8 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
 /// Called each time TeadsSDK triggers a log message
 /// \param message log message
 ///
+/// \param note If no subscribers is set, log message will be written into console
+///
 - (void)didLogMessageWithMessage:(NSString * _Nonnull)message;
 @end
 
@@ -736,174 +645,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
 /// \param trackerView the view that will monitor your inventory
 ///
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@end
-
-typedef SWIFT_ENUM(NSInteger, TeadsAdPlacementEventName, open) {
-  TeadsAdPlacementEventNameReady = 0,
-  TeadsAdPlacementEventNameRendered = 1,
-  TeadsAdPlacementEventNameViewed = 2,
-  TeadsAdPlacementEventNameFailed = 3,
-  TeadsAdPlacementEventNameClicked = 4,
-  TeadsAdPlacementEventNameClickedOrganic = 5,
-  TeadsAdPlacementEventNamePlay = 6,
-  TeadsAdPlacementEventNamePause = 7,
-  TeadsAdPlacementEventNameLoaded = 8,
-  TeadsAdPlacementEventNameComplete = 9,
-  TeadsAdPlacementEventNameStartPlayAudio = 10,
-  TeadsAdPlacementEventNameStopPlayAudio = 11,
-  TeadsAdPlacementEventNameHeightUpdated = 12,
-};
-
-@protocol TeadsAdPlacementIdentifiable;
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsAdPlacementEventsDelegate_")
-@protocol TeadsAdPlacementEventsDelegate <NSObject>
-- (void)adPlacement:(id <TeadsAdPlacementIdentifiable> _Nullable)placement didEmitEvent:(enum TeadsAdPlacementEventName)event data:(NSDictionary<NSString *, id> * _Nullable)data;
-@end
-
-SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdPlacementFeed")
-@interface TeadsAdPlacementFeed : NSObject
-- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey widgetIndex:(NSInteger)widgetIndex userId:(NSString * _Nullable)userId darkMode:(BOOL)darkMode extId:(NSString * _Nullable)extId extSecondaryId:(NSString * _Nullable)extSecondaryId obPubImp:(NSString * _Nullable)obPubImp delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (UIView * _Nonnull)getAdView SWIFT_WARN_UNUSED_RESULT;
-- (void)toggleDarkMode:(BOOL)darkMode;
-- (void)showExploreMoreOnExploreMoreDismissed:(void (^ _Nullable)(void))onExploreMoreDismissed;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@interface TeadsAdPlacementFeed (SWIFT_EXTENSION(TeadsSDK))
-- (void)didChangeHeight:(CGFloat)newHeight;
-- (void)widgetEvent:(NSString * _Nonnull)eventName additionalData:(NSDictionary<NSString *, id> * _Nonnull)additionalData;
-- (void)onRecClick:(NSURL * _Nonnull)url;
-- (void)onOrganicRecClick:(NSURL * _Nonnull)url;
-@end
-
-enum TeadsAdPlacementType : NSInteger;
-SWIFT_PROTOCOL("_TtP8TeadsSDK28TeadsAdPlacementIdentifiable_")
-@protocol TeadsAdPlacementIdentifiable
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-@end
-
-@interface TeadsAdPlacementFeed (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testDisplay;)
-+ (BOOL)testDisplay SWIFT_WARN_UNUSED_RESULT;
-+ (void)setTestDisplay:(BOOL)value;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL infiniteWidgetsOnTheSamePage;)
-+ (BOOL)infiniteWidgetsOnTheSamePage SWIFT_WARN_UNUSED_RESULT;
-+ (void)setInfiniteWidgetsOnTheSamePage:(BOOL)value;
-+ (void)printLogsWithDomain:(NSString * _Nullable)domain;
-@end
-
-SWIFT_CLASS("_TtC8TeadsSDK21TeadsAdPlacementMedia")
-@interface TeadsAdPlacementMedia : NSObject
-- (nonnull instancetype)initWithPid:(NSInteger)pid articleUrl:(NSURL * _Nullable)articleUrl delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (nonnull instancetype)initWithPid:(NSInteger)pid articleUrl:(NSURL * _Nullable)articleUrl enableValidationMode:(BOOL)enableValidationMode delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (UIView * _Nullable)loadAdAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-@end
-
-@class TeadsInReadAd;
-@class TeadsAdRatio;
-/// Delegate methods needed to follow Teads inRead ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
-@protocol TeadsInReadAdPlacementDelegate <TeadsAdPlacementDelegate>
-/// Called when the Teads SDK has received an ad for you to display
-/// \param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
-/// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
-/// When it called it is the right place to update your view ratio. A basic implementation may look litke this:
-/// \code
-/// func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-///     yourViewHeight = adRatio.calculateHeight(for: yourViewWidth)
-/// }
-///
-/// \endcodeAlternatively you can call <code>adRatio.value(for:)</code> to set multiplier constraint
-/// \code
-/// func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-///     let multiplier = adRatio.value(for: yourViewWidth)
-///     // create constaint with `multiplier and replace it with exisiting one
-/// }
-///
-/// \endcode\param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didUpdateRatioWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
-@end
-
-@interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsInReadAdPlacementDelegate>
-- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
-- (void)didUpdateRatioWithAd:(TeadsInReadAd * _Nonnull)_ adRatio:(TeadsAdRatio * _Nonnull)adRatio;
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-@end
-
-@class TeadsNativeAdView;
-SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdPlacementMediaNative")
-@interface TeadsAdPlacementMediaNative : NSObject
-- (nonnull instancetype)initWithPid:(NSInteger)pid articleUrl:(NSURL * _Nullable)articleUrl delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (nonnull instancetype)initWithPid:(NSInteger)pid articleUrl:(NSURL * _Nullable)articleUrl enableValidationMode:(BOOL)enableValidationMode delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (void (^ _Nullable)(TeadsNativeAdView * _Nonnull))loadAdAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class TeadsNativeAd;
-/// Delegate methods needed to follow Teads native ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
-@protocol TeadsNativeAdPlacementDelegate <TeadsAdPlacementDelegate>
-/// Called when the Teads SDK has received an ad for you to display
-/// \param ad The teadsAd object
-///
-/// \param adRatio an object that will help you display the ad correctly
-///
-- (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
-@end
-
-@interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsNativeAdPlacementDelegate>
-- (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
-- (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
-- (void)didFailToReceiveAdWithReason:(AdFailReason * _Nonnull)reason;
-@end
-
-@interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-@end
-
-SWIFT_CLASS("_TtC8TeadsSDK31TeadsAdPlacementRecommendations")
-@interface TeadsAdPlacementRecommendations : NSObject
-- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId widgetIndex:(NSInteger)widgetIndex delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-/// Convenience initializer for platform requests
-- (nonnull instancetype)initWithWidgetId:(NSString * _Nonnull)widgetId widgetIndex:(NSInteger)widgetIndex contentUrl:(NSString * _Nullable)contentUrl portalUrl:(NSString * _Nullable)portalUrl bundleUrl:(NSString * _Nullable)bundleUrl lang:(NSString * _Nullable)lang psub:(NSString * _Nullable)psub delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
-- (void)loadAdWithCompletion:(void (^ _Nonnull)(OBRecommendationResponse * _Nonnull))completion;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@interface TeadsAdPlacementRecommendations (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-+ (void)configureViewabilityPerListingFor:(UIView * _Nonnull)view withRec:(OBRecommendation * _Nonnull)rec;
-+ (NSURL * _Nullable)getAboutURL SWIFT_WARN_UNUSED_RESULT;
-+ (NSURL * _Nullable)getUrl:(OBRecommendation * _Nonnull)rec SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable testLocation;)
-+ (NSString * _Nullable)testLocation SWIFT_WARN_UNUSED_RESULT;
-+ (void)setTestLocation:(NSString * _Nullable)value;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testRTB;)
-+ (BOOL)testRTB SWIFT_WARN_UNUSED_RESULT;
-+ (void)setTestRTB:(BOOL)value;
 @end
 
 /// Specify which settings you want to set for your Teads placement.
@@ -970,13 +711,6 @@ SWIFT_CLASS("_TtC8TeadsSDK24TeadsAdPlacementSettings")
 - (nonnull instancetype)initWithBuild:(SWIFT_NOESCAPE void (^ _Nonnull)(TeadsAdPlacementSettings * _Nonnull))build OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
-typedef SWIFT_ENUM(NSInteger, TeadsAdPlacementType, open) {
-  TeadsAdPlacementTypeFeed = 0,
-  TeadsAdPlacementTypeMedia = 1,
-  TeadsAdPlacementTypeMediaNative = 2,
-  TeadsAdPlacementTypeRecommendations = 3,
-};
 
 /// This class is used to help in resizing a given ad view to a given aspect ratio.
 SWIFT_CLASS("_TtC8TeadsSDK12TeadsAdRatio")
@@ -1239,6 +973,36 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsInReadAdPlacement_")
 - (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
 @end
 
+/// Delegate methods needed to follow Teads inRead ad requests flow
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
+@protocol TeadsInReadAdPlacementDelegate <TeadsAdPlacementDelegate>
+/// Called when the Teads SDK has received an ad for you to display
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didReceiveAdWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
+/// Called when the Teads SDK needs you to resize your adView the creative inform us of its new ratio
+/// When it called it is the right place to update your view ratio. A basic implementation may look litke this:
+/// \code
+/// func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+///     yourViewHeight = adRatio.calculateHeight(for: yourViewWidth)
+/// }
+///
+/// \endcodeAlternatively you can call <code>adRatio.value(for:)</code> to set multiplier constraint
+/// \code
+/// func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+///     let multiplier = adRatio.value(for: yourViewWidth)
+///     // create constaint with `multiplier and replace it with exisiting one
+/// }
+///
+/// \endcode\param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didUpdateRatioWithAd:(TeadsInReadAd * _Nonnull)ad adRatio:(TeadsAdRatio * _Nonnull)adRatio;
+@end
+
 @class UIWindow;
 /// The Teads inRead ad view is responsible to manage a Teads inRead ad.
 SWIFT_CLASS("_TtC8TeadsSDK17TeadsInReadAdView")
@@ -1350,6 +1114,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 - (void)registerWithContainerView:(UIView * _Nonnull)containerView;
 @end
 
+@protocol TeadsNativeAdPlacementDelegate;
 /// Native ad placement to request native ads
 /// From instance reponsible for performing request and is tied to you PID (placement identifier)
 /// In order to create placement, call <code>Teads/createNativePlacement(pid:settings:delegate:)</code>
@@ -1371,6 +1136,17 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsNativeAdPlacement_")
 /// returns:
 /// a unique request identifier, this identifier will be the same value of TeadsNativeAd requestIdentifier property
 - (NSUUID * _Nonnull)requestAdWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings;
+@end
+
+/// Delegate methods needed to follow Teads native ad requests flow
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
+@protocol TeadsNativeAdPlacementDelegate <TeadsAdPlacementDelegate>
+/// Called when the Teads SDK has received an ad for you to display
+/// \param ad The teadsAd object
+///
+/// \param adRatio an object that will help you display the ad correctly
+///
+- (void)didReceiveAdWithAd:(TeadsNativeAd * _Nonnull)ad;
 @end
 
 @class UILabel;
@@ -1481,78 +1257,6 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
 /// throws:
 /// error when not able to gather data
 - (NSDictionary * _Nullable)getDataWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings error:(NSError * _Nullable * _Nullable)error;
-@end
-
-SWIFT_CLASS("_TtC8TeadsSDK12TeadsPrivacy")
-@interface TeadsPrivacy : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsPrivacy * _Nonnull shared;)
-+ (TeadsPrivacy * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-/// Set custom GDPR consent string from host app
-/// \param consentString IAB TCF consent string
-///
-- (void)setGDPRConsentString:(NSString * _Nullable)consentString;
-/// Set custom GDPR TCF v1 consent string from host app
-/// \param consentString IAB TCF v1 consent string
-///
-- (void)setGDPRConsentStringV1:(NSString * _Nullable)consentString;
-/// Set custom GDPR TCF v2 consent string from host app
-/// \param consentString IAB TCF v2 consent string
-///
-- (void)setGDPRConsentStringV2:(NSString * _Nullable)consentString;
-/// Set whether GDPR applies from host app
-/// \param applies true if GDPR applies, false otherwise, nil to use system value
-///
-- (void)setGDPRApplies:(BOOL)applies;
-/// Set custom US Privacy string from host app
-/// \param privacyString CCPA privacy string
-///
-- (void)setUSPrivacyString:(NSString * _Nullable)privacyString;
-/// Set custom IDFA consent from host app
-/// \param hasConsent true if user has given IDFA consent, false otherwise, nil to use system value
-///
-- (void)setIDFAConsent:(BOOL)hasConsent;
-/// Set custom GPP string from host app
-/// \param gppString IAB GPP consent string
-///
-- (void)setGPPString:(NSString * _Nullable)gppString;
-/// Set custom GPP sections from host app
-/// \param sections String representation of section IDs (e.g., “2,6,7”)
-///
-- (void)setGPPSections:(NSString * _Nullable)sections;
-/// Clear custom IDFA consent to use system value
-- (void)clearCustomIDFAConsent;
-/// Clear all custom privacy settings to use system values
-- (void)clearAllCustomSettings;
-/// Check if GDPR applies (prefers custom value over system)
-@property (nonatomic, readonly) BOOL gdprApplies;
-/// Get GDPR consent string (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable gdprConsentString;
-/// Get GDPR TCF v1 consent string (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable gdprConsentStringV1;
-/// Get GDPR TCF v2 consent string (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable gdprConsentStringV2;
-/// Check if user has given consent for Teads (Vendor ID 132)
-@property (nonatomic, readonly) BOOL hasGDPRConsentForTeads;
-/// Get US Privacy string (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable usPrivacyString;
-/// Check if user has opted out of sale under CCPA
-@property (nonatomic, readonly) BOOL hasOptedOutOfSale;
-/// Get GPP string (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable gppString;
-/// Get GPP sections (prefers custom value over system)
-@property (nonatomic, readonly, copy) NSString * _Nullable gppSections;
-/// Check if GPP applies (has GPP string)
-@property (nonatomic, readonly) BOOL gppApplies;
-/// Check IDFA tracking authorization status (prefers custom value over system)
-@property (nonatomic, readonly) BOOL idfaTrackingAuthorized;
-/// Get IDFA string if tracking is authorized
-@property (nonatomic, readonly, copy) NSString * _Nullable idfaString;
-/// Request IDFA permission (iOS 14+)
-- (void)requestIDFAPermissionWithCompletion:(void (^ _Nonnull)(BOOL))completion SWIFT_AVAILABILITY(ios,introduced=14);
-/// Check if CMP is present
-@property (nonatomic, readonly) BOOL isCMPPresent;
 @end
 
 /// Delegate methods sending informations about Teads ads sound states.

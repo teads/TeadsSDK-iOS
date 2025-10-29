@@ -36,8 +36,8 @@ public class GADMAdapterTeadsCustomEvent: NSObject, MediationAdapter {
         TeadsAdapterSettings.self
     }
 
-    public static func setUp(
-        with _: MediationServerConfiguration,
+    public static func setUpWith(
+        _: MediationServerConfiguration,
         completionHandler: @escaping GADMediationAdapterSetUpCompletionBlock
     ) {
         Teads.configure()
