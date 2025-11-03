@@ -51,11 +51,13 @@ struct Integration {
 
 // Formats
 enum Formats {
-    case inRead, native
+    case inRead, native, feed, recommendations
     func format() -> Format {
         switch self {
             case .inRead: return inReadFormat
             case .native: return nativeFormat
+            case .feed: return feedFormat
+            case .recommendations: return recommendationFormat
         }
     }
 }
@@ -65,6 +67,8 @@ let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLov
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
 let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false, creativeTypes: [display, custom])
+let feedFormat = Format(name: .feed, providers: [inReadDFeedProvider], isSelected: false, creativeTypes: defaultInReadCreativeTypes)
+let recommendationFormat = Format(name: .feed, providers: [inReadDFeedProvider], isSelected: false, creativeTypes: defaultInReadCreativeTypes)
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
@@ -73,6 +77,16 @@ let inReadDirectProvider = Provider(name: .direct, integrations: [
     collectionViewIntegration,
     pageViewIntegration,
     webViewIntegration,
+], isSelected: true)
+let inReadDFeedProvider = Provider(name: .direct, integrations: [
+    scrollViewIntegration,
+    tableViewIntegration,
+    collectionViewIntegration,
+], isSelected: true)
+let inReadRecommendationsProvider = Provider(name: .direct, integrations: [
+    scrollViewIntegration,
+    tableViewIntegration,
+    collectionViewIntegration,
 ], isSelected: true)
 let inReadAdmobProvider = Provider(name: .admob, integrations: [
     scrollViewIntegration,
@@ -167,6 +181,8 @@ enum PID {
 enum FormatName: String {
     case inRead
     case native = "Native"
+    case feed = "Feed"
+    case recommendations = "Recommendations"
 }
 
 enum ProviderName: String {

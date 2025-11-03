@@ -11,7 +11,7 @@ import UIKit
 
 class RootViewController: TeadsViewController {
     @IBOutlet var collectionView: UICollectionView!
-    private var selectionList = [inReadFormat, nativeFormat]
+    private var selectionList = [inReadFormat, nativeFormat, feedFormat, recommendationFormat]
 
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"

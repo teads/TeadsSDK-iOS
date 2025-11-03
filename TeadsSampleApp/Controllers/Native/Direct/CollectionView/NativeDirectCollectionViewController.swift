@@ -16,9 +16,9 @@ class NativeDirectCollectionViewController: TeadsViewController {
     let teadsAdCellIndentifier = "NativeAdCollectionViewCell"
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 3
-    var placement: TeadsNativeAdPlacement?
+    var placement: TeadsAdPlacementMedia?
 
-    private var elements = [TeadsNativeAd?]()
+    private var elements: [Any?] = [] // Changed to Any? to accommodate different ad types
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +31,21 @@ class NativeDirectCollectionViewController: TeadsViewController {
             settings.enableDebug()
         }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createNativePlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+        // Create placement with unified API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+        placement = TeadsAdPlacementMedia(config, delegate: self)
 
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        // Load ad with unified API
+        do {
+            if let adView = try placement?.loadAd() {
+                // For native ads, we may need to extract the native ad object differently
+            }
+        } catch {
+            print("Failed to load ad: \(error)")
+        }
     }
 }
 
@@ -51,11 +60,20 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
             cell.contentView.translatesAutoresizingMaskIntoConstraints = false
             cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.bounds.width).isActive = true
             return cell
-        } else if let ad = elements[indexPath.item] {
+        } else if let nativeAd = elements[indexPath.item] as? TeadsNativeAd {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeAdCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.adView.bind(ad)
+            cell.adView.bind(nativeAd)
+            return cell
+        } else if let adView = elements[indexPath.item] as? UIView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath)
+            cell.contentView.addSubview(adView)
+            adView.translatesAutoresizingMaskIntoConstraints = false
+            adView.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+            adView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            adView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+            adView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeCollectionViewCell else {
@@ -70,48 +88,40 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
         return CGSize(width: collectionView.bounds.width, height: 250)
     }
 
-    func closeSlot(ad: TeadsAd) {
-        elements.removeAll { $0 == ad }
+    func closeSlot(ad: Any) {
+        elements.removeAll {
+            if let element = $0, let elementAsEquatable = element as? AnyHashable, let adAsEquatable = ad as? AnyHashable {
+                return elementAsEquatable == adAsEquatable
+            }
+            return false
+        }
         collectionView.reloadData()
     }
 }
 
-extension NativeDirectCollectionViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func didRecordClick(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
-
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
-
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
-    }
-}
-
-extension NativeDirectCollectionViewController: TeadsNativeAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsNativeAd) {
-        elements.insert(ad, at: adItemNumber)
-        let indexPaths = [IndexPath(item: adItemNumber, section: 0)]
-        collectionView.insertItems(at: indexPaths)
-        collectionView.reloadData()
-        ad.delegate = self
-    }
-
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        // not relevant in collectionView integration
+extension NativeDirectCollectionViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                // For native ads, the ad object may be in the data dictionary
+                if let nativeAd = data?["nativeAd"] as? TeadsNativeAd {
+                    elements.insert(nativeAd, at: adItemNumber)
+                    let indexPaths = [IndexPath(item: adItemNumber, section: 0)]
+                    collectionView.insertItems(at: indexPaths)
+                    collectionView.reloadData()
+                } else if let adView = data?["adView"] as? UIView {
+                    elements.insert(adView, at: adItemNumber)
+                    let indexPaths = [IndexPath(item: adItemNumber, section: 0)]
+                    collectionView.insertItems(at: indexPaths)
+                }
+            case .failed:
+                print("didFailToReceiveAd: \(String(describing: data?["error"]))")
+            default:
+                break
+        }
     }
 }

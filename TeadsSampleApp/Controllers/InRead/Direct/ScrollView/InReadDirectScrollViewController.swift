@@ -14,7 +14,7 @@ class InReadDirectScrollViewController: TeadsViewController {
     @IBOutlet var teadsAdView: TeadsInReadAdView!
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     var adRatio: TeadsAdRatio?
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsAdPlacementMedia?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +22,27 @@ class InReadDirectScrollViewController: TeadsViewController {
             settings.enableDebug()
         }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: pSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        // Create placement with unified API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+        placement = TeadsAdPlacementMedia(config, delegate: self)
+
+        // Load ad with unified API
+        do {
+            if let adView = try placement?.loadAd() {
+                teadsAdView.addSubview(adView)
+                adView.translatesAutoresizingMaskIntoConstraints = false
+                adView.topAnchor.constraint(equalTo: teadsAdView.topAnchor).isActive = true
+                adView.leadingAnchor.constraint(equalTo: teadsAdView.leadingAnchor).isActive = true
+                adView.trailingAnchor.constraint(equalTo: teadsAdView.trailingAnchor).isActive = true
+                adView.bottomAnchor.constraint(equalTo: teadsAdView.bottomAnchor).isActive = true
+            }
+        } catch {
+            print("Failed to load ad: \(error)")
+            closeAd()
+        }
         // We use an observer to know when a rotation happened, to resize the ad
         // You can use whatever way you want to do so
         NotificationCenter.default.addObserver(self, selector: #selector(rotationDetected), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -54,44 +70,31 @@ class InReadDirectScrollViewController: TeadsViewController {
     }
 }
 
-extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
-    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        teadsAdView.addSubview(trackerView)
-    }
-
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        teadsAdView.bind(ad)
-        ad.delegate = self
-        resizeTeadsAd(adRatio: adRatio)
-    }
-
-    func didFailToReceiveAd(reason _: AdFailReason) {
-        closeAd()
-    }
-
-    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        resizeTeadsAd(adRatio: adRatio)
+extension InReadDirectScrollViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                if let adRatioValue = data?["adRatio"] as? TeadsAdRatio {
+                    resizeTeadsAd(adRatio: adRatioValue)
+                }
+            case .heightUpdated:
+                if let height = data?["height"] as? CGFloat {
+                    teadsAdHeightConstraint.constant = height
+                } else if let adRatioValue = data?["adRatio"] as? TeadsAdRatio {
+                    resizeTeadsAd(adRatio: adRatioValue)
+                }
+            case .failed:
+                closeAd()
+            case .complete:
+                closeAd()
+            default:
+                break
+        }
     }
 }
 
-extension InReadDirectScrollViewController: TeadsAdDelegate {
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
-
-    func didCatchError(ad _: TeadsAd, error _: Error) {
-        closeAd()
-    }
-
-    func didClose(ad _: TeadsAd) {
-        closeAd()
-    }
-
-    func didRecordImpression(ad _: TeadsAd) {}
-
-    func didRecordClick(ad _: TeadsAd) {}
-
-    func didExpandedToFullscreen(ad _: TeadsAd) {}
-
-    func didCollapsedFromFullscreen(ad _: TeadsAd) {}
-}
+// TeadsAdDelegate is handled through unified events system

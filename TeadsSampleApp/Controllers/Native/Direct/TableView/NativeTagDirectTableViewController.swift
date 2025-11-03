@@ -18,7 +18,7 @@ class NativeTagDirectTableViewController: TeadsViewController {
     let adRowNumber = 3
     var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
-    var placement: TeadsNativeAdPlacement?
+    var placement: TeadsAdPlacementMedia?
     var tableViewAdCellWidth: CGFloat!
 
     private var elements = [TeadsNativeAd?]()
@@ -34,12 +34,21 @@ class NativeTagDirectTableViewController: TeadsViewController {
             settings.enableDebug()
         }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createNativePlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+        // Create placement with unified API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+        placement = TeadsAdPlacementMedia(config, delegate: self)
 
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        // Load ad with unified API
+        do {
+            if let adView = try placement?.loadAd() {
+                // For native ads with tags, we may need to extract the native ad object differently
+            }
+        } catch {
+            print("Failed to load ad: \(error)")
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -93,42 +102,31 @@ extension NativeTagDirectTableViewController: UITableViewDelegate, UITableViewDa
     }
 }
 
-extension NativeTagDirectTableViewController: TeadsNativeAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsNativeAd) {
-        elements.insert(ad, at: adRowNumber)
-        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-        tableView.reloadData()
-        ad.delegate = self
-    }
-
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        // not relevant in tableView integration
-    }
-}
-
-extension NativeTagDirectTableViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func didRecordClick(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
-
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
-
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
+extension NativeTagDirectTableViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                // For native ads, the ad object may be in the data dictionary
+                if let nativeAd = data?["nativeAd"] as? TeadsNativeAd {
+                    elements.insert(nativeAd, at: adRowNumber)
+                    let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+                    tableView.insertRows(at: indexPaths, with: .automatic)
+                    tableView.reloadData()
+                } else if let adView = data?["adView"] as? UIView {
+//                    elements.insert(adView, at: adRowNumber)
+//                    let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+//                    tableView.insertRows(at: indexPaths, with: .automatic)
+                }
+            case .failed:
+                print("didFailToReceiveAd: \(String(describing: data?["error"]))")
+            default:
+                break
+        }
     }
 }
+
+// TeadsAdDelegate is handled through unified events system

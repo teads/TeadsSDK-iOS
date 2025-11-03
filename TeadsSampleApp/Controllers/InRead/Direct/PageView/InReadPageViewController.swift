@@ -16,7 +16,7 @@ class InReadPageViewController: UIPageViewController {
     var currentViewControlelr: UIViewController?
 
     // keep a strong reference to placement instance
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsAdPlacementMedia?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,11 @@ class InReadPageViewController: UIPageViewController {
         let placementSettings = TeadsAdPlacementSettings { settings in
             settings.enableDebug()
         }
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+        placement = TeadsAdPlacementMedia(config, delegate: self)
     }
 }
 
@@ -63,29 +67,30 @@ extension InReadPageViewController: UIPageViewControllerDataSource {
     }
 }
 
-extension InReadPageViewController: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+extension InReadPageViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
         guard let currentViewController = currentViewControlelr as? InReadDirectPageViewController else {
             return
         }
 
-        ad.delegate = currentViewController
-        currentViewController.resizeTeadsAd(adRatio: adRatio)
-        currentViewController.teadsAdView.bind(ad)
-    }
-
-    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        guard let currentViewController = currentViewControlelr as? InReadDirectPageViewController else {
-            return
+        switch event {
+            case .ready:
+                if let adRatio = data?["adRatio"] as? TeadsAdRatio {
+                    currentViewController.resizeTeadsAd(adRatio: adRatio)
+                    // Ad view should be handled by the child view controller
+                }
+            case .heightUpdated:
+                if let adRatio = data?["adRatio"] as? TeadsAdRatio {
+                    currentViewController.resizeTeadsAd(adRatio: adRatio)
+                }
+            case .failed:
+                print("didFailToReceiveAd")
+            default:
+                break
         }
-        currentViewController.resizeTeadsAd(adRatio: adRatio)
-    }
-
-    func didFailToReceiveAd(reason _: AdFailReason) {
-        print(#function)
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        print(#function)
     }
 }

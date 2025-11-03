@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28AED0FC9C839CB0F08FB2ED /* Pods_TeadsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE69E124DD7520D4468526 /* Pods_TeadsSampleApp.framework */; };
+		3C4D052A2EB8AD280050513C /* CustomNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D05292EB8AD280050513C /* CustomNativeAdView.swift */; };
 		4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F242252CBE7F00B0AC31 /* ColorExtension.swift */; };
 		4079F253252CC1EF00B0AC31 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4079F252252CC1EF00B0AC31 /* RootViewController.swift */; };
 		408A2D49253D995200CCFF44 /* RootButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A2D46253D995200CCFF44 /* RootButtonCollectionViewCell.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		25FE69E124DD7520D4468526 /* Pods_TeadsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C4D05292EB8AD280050513C /* CustomNativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNativeAdView.swift; sourceTree = "<group>"; };
 		40077B422534AABF00D53197 /* InReadDirectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InReadDirectCollectionViewController.swift; sourceTree = "<group>"; };
 		4079F242252CBE7F00B0AC31 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4079F252252CC1EF00B0AC31 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		B5555A4B1F7CEF1C007406D4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3C4D05292EB8AD280050513C /* CustomNativeAdView.swift */,
 				E9984EF726B2D46F000D42D3 /* AdmobNativeAdTableViewCell.swift */,
 				E9984EF526B2D46F000D42D3 /* FakeArticleNativeTableViewCell.swift */,
 				E9984EF626B2D46F000D42D3 /* NativeTableViewCell.swift */,
@@ -795,6 +798,7 @@
 				4079F243252CBE7F00B0AC31 /* ColorExtension.swift in Sources */,
 				E96C1F9A27E4902D00151530 /* UIView-extension.swift in Sources */,
 				E9B7170627C7965900FB7DCB /* InReadAppLovinScrollViewController.swift in Sources */,
+				3C4D052A2EB8AD280050513C /* CustomNativeAdView.swift in Sources */,
 				B5966D1F269D9982005CA2FF /* InReadAdmobWebViewController.swift in Sources */,
 				E9984EED26AF3CCC000D42D3 /* NativeAdmobTableViewController.swift in Sources */,
 			);

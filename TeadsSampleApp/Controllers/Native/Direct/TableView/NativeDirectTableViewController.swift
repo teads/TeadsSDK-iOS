@@ -9,6 +9,7 @@
 import TeadsSDK
 import UIKit
 
+@available(iOS 13.0, *)
 class NativeDirectTableViewController: TeadsViewController {
     @IBOutlet var tableView: UITableView!
 
@@ -18,10 +19,11 @@ class NativeDirectTableViewController: TeadsViewController {
     let adRowNumber = 3
     var adRatio: TeadsAdRatio?
     var teadsAdIsLoaded = false
-    var placement: TeadsNativeAdPlacement?
+    var placement: TeadsAdPlacementMediaNative?
+    private var nativeAdView: TeadsNativeAdView?
     var tableViewAdCellWidth: CGFloat!
 
-    private var elements = [TeadsNativeAd?]()
+    private var elements: [Any?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +32,40 @@ class NativeDirectTableViewController: TeadsViewController {
             elements.append(nil)
         }
 
-        let placementSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
+        // Create custom native ad view
+        nativeAdView = createCustomNativeAdView()
+
+        // Create configuration
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+
+        // Create placement
+        placement = TeadsAdPlacementMediaNative(config, delegate: self)
+
+        // Load and bind the ad
+        do {
+            if let binder = try placement?.loadAd(), let nativeAdView = nativeAdView {
+                binder(nativeAdView)
+            }
+        } catch {
+            print("Failed to load native ad: \(error)")
         }
+    }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createNativePlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+    @available(iOS 13.0, *)
+    private func createCustomNativeAdView() -> TeadsNativeAdView {
+        // Create your custom native ad view
+        let adView = TeadsNativeAdView(frame: .zero)
 
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        adView.backgroundColor = .systemBackground
+        adView.layer.cornerRadius = 12
+        adView.layer.shadowColor = UIColor.black.cgColor
+        adView.layer.shadowOpacity = 0.1
+        adView.layer.shadowRadius = 8
+
+        return adView
     }
 
     override func viewDidLayoutSubviews() {
@@ -47,8 +73,13 @@ class NativeDirectTableViewController: TeadsViewController {
         tableViewAdCellWidth = tableView.frame.width - 20
     }
 
-    func closeSlot(ad: TeadsAd) {
-        elements.removeAll { $0 == ad }
+    func closeSlot(ad: Any) {
+        elements.removeAll {
+            if let element = $0, let elementAsEquatable = element as? AnyHashable, let adAsEquatable = ad as? AnyHashable {
+                return elementAsEquatable == adAsEquatable
+            }
+            return false
+        }
         tableView.reloadData()
     }
 
@@ -57,6 +88,7 @@ class NativeDirectTableViewController: TeadsViewController {
     }
 }
 
+@available(iOS 13.0, *)
 extension NativeDirectTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return elements.count
@@ -66,11 +98,22 @@ extension NativeDirectTableViewController: UITableViewDelegate, UITableViewDataS
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCell, for: indexPath)
             return cell
-        } else if let ad = elements[indexPath.row] {
+        } else if elements[indexPath.row] != nil && elements[indexPath.row] is String, let nativeAdView = nativeAdView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeAdTableViewCell else {
                 return UITableViewCell()
             }
-            cell.adView.bind(ad)
+            // The native ad view is already bound, just ensure it's in the cell
+            if nativeAdView.superview != cell.contentView {
+                // Remove from any previous parent
+                nativeAdView.removeFromSuperview()
+                // Add to cell
+                cell.contentView.addSubview(nativeAdView)
+                nativeAdView.translatesAutoresizingMaskIntoConstraints = false
+                nativeAdView.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+                nativeAdView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+                nativeAdView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+                nativeAdView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeTableViewCell else {
@@ -86,42 +129,27 @@ extension NativeDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
-extension NativeDirectTableViewController: TeadsNativeAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsNativeAd) {
-        elements.insert(ad, at: adRowNumber)
-        let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-        tableView.reloadData()
-        ad.delegate = self
-    }
-
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        // not relevant in tableView integration
-    }
-}
-
-extension NativeDirectTableViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func didRecordClick(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
-
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
-
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
-
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
+@available(iOS 13.0, *)
+extension NativeDirectTableViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                // Ad is ready, insert a marker in the elements array to indicate ad is ready
+                if let _ = nativeAdView {
+                    elements.insert("nativeAd" as Any, at: adRowNumber)
+                    let indexPaths = [IndexPath(row: adRowNumber, section: 0)]
+                    tableView.insertRows(at: indexPaths, with: .automatic)
+                }
+            case .failed:
+                print("didFailToReceiveAd: \(String(describing: data?["error"]))")
+            default:
+                break
+        }
     }
 }
+
+// TeadsAdDelegate is handled through unified events system

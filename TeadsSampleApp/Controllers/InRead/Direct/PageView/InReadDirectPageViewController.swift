@@ -14,7 +14,7 @@ class InReadDirectPageViewController: TeadsViewController {
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var articleLabel: UILabel!
     var articleLabelText: String?
-    weak var placement: TeadsInReadAdPlacement? // strong reference is maintained by InReadPageViewController
+    weak var placement: TeadsAdPlacementMedia? // strong reference is maintained by InReadPageViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,18 @@ class InReadDirectPageViewController: TeadsViewController {
     }
 
     func loadAd() {
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        do {
+            if let adView = try placement?.loadAd() {
+                teadsAdView.addSubview(adView)
+                adView.translatesAutoresizingMaskIntoConstraints = false
+                adView.topAnchor.constraint(equalTo: teadsAdView.topAnchor).isActive = true
+                adView.leadingAnchor.constraint(equalTo: teadsAdView.leadingAnchor).isActive = true
+                adView.trailingAnchor.constraint(equalTo: teadsAdView.trailingAnchor).isActive = true
+                adView.bottomAnchor.constraint(equalTo: teadsAdView.bottomAnchor).isActive = true
+            }
+        } catch {
+            print("Failed to load ad: \(error)")
+        }
     }
 
     func resizeTeadsAd(adRatio: TeadsAdRatio) {
@@ -42,8 +51,4 @@ class InReadDirectPageViewController: TeadsViewController {
     }
 }
 
-extension InReadDirectPageViewController: TeadsAdDelegate {
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        self
-    }
-}
+// TeadsAdDelegate is handled through unified events system
