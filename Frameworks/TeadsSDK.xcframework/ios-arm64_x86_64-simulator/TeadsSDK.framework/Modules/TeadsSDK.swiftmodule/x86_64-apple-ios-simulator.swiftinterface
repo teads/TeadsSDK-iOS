@@ -102,6 +102,7 @@ internal protocol AnyEncodableProtocol {
 }
 @_inheritsConvenienceInitializers @objc final public class Teads : ObjectiveC.NSObject {
   @objc public static let sdkVersion: Swift.String
+  @objc public static var wrapperFrameworkInfo: TeadsSDK.WrapperFrameworkInfo?
   @discardableResult
   final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsNativeAdPlacement)?
   @discardableResult
@@ -637,6 +638,22 @@ extension TeadsSDK.TeadsAdPlacementContainerView : TeadsSDK.DarkModeTogglable {
   @objc @_Concurrency.MainActor @preconcurrency public init(binding component: TeadsSDK.OverlayComponent? = nil)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc public class WrapperFrameworkInfo : ObjectiveC.NSObject {
+  @objc final public let type: TeadsSDK.FrameworkType
+  @objc final public let version: Swift.String
+  @objc public static func flutter(_ flutterVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
+  @objc public static func reactNative(_ reactNativeVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
+  @objc deinit
+}
+@objc public enum FrameworkType : Swift.Int {
+  case flutter
+  case reactNative
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
   @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
   @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
@@ -645,9 +662,15 @@ extension TeadsSDK.TeadsAdPlacementContainerView : TeadsSDK.DarkModeTogglable {
   @objc var pid: Swift.Int { get }
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject {
+  public static let frameworkTypeKey: Swift.String
+  public static let frameworkVersionKey: Swift.String
+  @available(*, deprecated, message: "Use frameworkTypeKey instead")
   public static let pluginKey: Swift.String
+  @available(*, deprecated, message: "Use frameworkTypeKey instead")
   public static let pluginFlutter: Swift.String
+  @available(*, deprecated, message: "Use frameworkTypeKey instead")
   public static let pluginReactNative: Swift.String
+  @available(*, deprecated, message: "Use frameworkVersionKey instead")
   public static let pluginVersionKey: Swift.String
   @objc final public func disableCrashMonitoring()
   @objc final public func disableTeadsAudioSessionManagement()
@@ -944,6 +967,9 @@ extension TeadsSDK.OBErrorCode : Swift.Equatable {}
 extension TeadsSDK.OBErrorCode : Swift.Hashable {}
 extension TeadsSDK.OBErrorCode : Swift.RawRepresentable {}
 extension TeadsSDK.TeadsAdPlacementSwiftUIView : Swift.Sendable {}
+extension TeadsSDK.FrameworkType : Swift.Equatable {}
+extension TeadsSDK.FrameworkType : Swift.Hashable {}
+extension TeadsSDK.FrameworkType : Swift.RawRepresentable {}
 extension TeadsSDK.TeadsAdPlacementSettings : Swift.Encodable {}
 extension TeadsSDK.TeadsAdPlacementSettings : Swift.Decodable {}
 extension TeadsSDK.TeadsAdPlacementType : Swift.Equatable {}
