@@ -54,20 +54,21 @@ extension Bid: @retroactive Encodable {
     /// - Throws: `TeadsPluginError.jsonSerialization` if the dictionary is invalid JSON.
     ///           `TeadsPluginError.stringEncoding` if UTF-8 conversion fails.
     public func stringify() throws -> String {
-        let dictionary = bid.toJsonDictionary()
-        guard JSONSerialization.isValidJSONObject(dictionary) else {
-            throw TeadsPBMPluginError.jsonSerialization
-        }
-
-        let data = try JSONSerialization.data(
-            withJSONObject: dictionary,
-            options: .prettyPrinted
-        )
-
-        guard let jsonString = String(data: data, encoding: .utf8) else {
-            throw TeadsPBMPluginError.stringEncoding
-        }
-
-        return jsonString
+        return ""
+//        let dictionary = bid.toJsonDictionary()
+//        guard JSONSerialization.isValidJSONObject(dictionary) else {
+//            throw TeadsPBMPluginError.jsonSerialization
+//        }
+//
+//        let data = try JSONSerialization.data(
+//            withJSONObject: dictionary,
+//            options: .prettyPrinted
+//        )
+//
+//        guard let jsonString = String(data: data, encoding: .utf8) else {
+//            throw TeadsPBMPluginError.stringEncoding
+//        }
+//
+//        return jsonString
     }
 }

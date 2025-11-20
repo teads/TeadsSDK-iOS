@@ -33,7 +33,7 @@ import TeadsSDK
     /// - Parameter settings: Teads adapter settings (integration type/version auto-set)
     @objc public required init?(settings: TeadsAdapterSettings = .init()) {
         // Configure Prebid integration on settings
-        settings.setIntegration(type: .prebid, version: String(PrebidMobile.PBMConstants.version()))
+        settings.setIntegration(type: .prebid, version: "2.0.0")
         settings.adRequestSettings.addExtras("0", for: TeadsAdapterSettings.prebidStandaloneKey)
 
         self.settings = settings
