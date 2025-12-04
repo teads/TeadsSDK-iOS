@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bV7rrzNYwRSnRhQeL+FfQbG3Hng=
+		oDW5Z0A4MkpFbnjk9w+9P+9fOBQ=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		7mlIKhpV+cpTLoXDeYZohyjfS1s=
+		Mxqjr8Z2MyzBxh7Q7IIkMdNHzi4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		QVQXQSLk7NZYCqQyobLfklWy1rY=
+		wROVAQYbua6U5jvvDXlMBa8FSSI=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,19 +34,19 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		QVQXQSLk7NZYCqQyobLfklWy1rY=
+		wROVAQYbua6U5jvvDXlMBa8FSSI=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DJPAyxH2IVKQco6wGT1cGtZS3tE=
+		GFlGQN5ijxqNZE573PUcD9V8M5o=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		7mlIKhpV+cpTLoXDeYZohyjfS1s=
+		Mxqjr8Z2MyzBxh7Q7IIkMdNHzi4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/Pb+OBiRjJVddXDb8Yt4nPMZUhM=
+		ZtLWKlc4dKhF7alIWqLDudHW5hY=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/Pb+OBiRjJVddXDb8Yt4nPMZUhM=
+		ZtLWKlc4dKhF7alIWqLDudHW5hY=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		x322fX18v4o6By8bPjqo0DeRQPQ=
+		JOSbrtMoOSpdi4Vgg701rkjy8CQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>lib-js.tar</key>
 		<data>
-		ggq8bx9WZC2tjnFLw/rzKKgPMv4=
+		ZlASSWyz5xA4K1fN6zKdjhE2zrw=
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
@@ -112,14 +112,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IKn2EiQ3mnHvNhftAUa8AINEno4ZptFWCbj/dCSOxzo=
+			+9pmvGlRZoqp58WaPKS5uiNyLkmXVHY+XUEwaUXUmeQ=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6DocSSM64PV/Q2XGKU3ln6TAFBmY0QByYZe/1EqiGl0=
+			Hgy+DmHKKMkBWIQwm7+qsXsXiXSjwq/qkDFaMB7VyEw=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -133,28 +133,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6DocSSM64PV/Q2XGKU3ln6TAFBmY0QByYZe/1EqiGl0=
+			Hgy+DmHKKMkBWIQwm7+qsXsXiXSjwq/qkDFaMB7VyEw=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yHo3T/dwwdvBHTij52w/QaARB0mruqbx+lbECtGPtH4=
+			AtXOWo1HdE2JASkwuCH83o8/hXnt+maU95mHQ916aGo=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IKn2EiQ3mnHvNhftAUa8AINEno4ZptFWCbj/dCSOxzo=
+			+9pmvGlRZoqp58WaPKS5uiNyLkmXVHY+XUEwaUXUmeQ=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZCQe0MSmGmoRagoW1Fu+43dRbSv6Ytsvh6MCvpKnd9M=
+			e7DKbb16f0A4VriWmYsIYb4qsrSbM+fHcSektkuY8bs=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -168,14 +168,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZCQe0MSmGmoRagoW1Fu+43dRbSv6Ytsvh6MCvpKnd9M=
+			e7DKbb16f0A4VriWmYsIYb4qsrSbM+fHcSektkuY8bs=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wfz8p8GbaQ5jeeEtDRNZ4HkhpiUeS/e1g4NgONa+5oo=
+			B0EIKT3ump/pP41dxxqllRvN5TKpGVXB/+7phYT9F4g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -196,7 +196,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xVOXMp5dRNdREDGv83eMeL2xQGY3uJBHFXzELOe+I9U=
+			53f5YiWxsKK1oRe0np2hmWY+S3gzJocE8e0F/J/W0Os=
 			</data>
 		</dict>
 		<key>omid-session-client-v1.js</key>

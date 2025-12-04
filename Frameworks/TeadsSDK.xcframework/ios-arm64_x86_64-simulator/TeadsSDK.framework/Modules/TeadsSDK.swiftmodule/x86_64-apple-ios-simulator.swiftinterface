@@ -827,8 +827,8 @@ extension TeadsSDK.CommonComponent {
   @_Concurrency.MainActor @preconcurrency public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreFoundation.CGRect = .zero)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
   @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
   @objc public var contentAspectRatio: CoreFoundation.CGFloat {
