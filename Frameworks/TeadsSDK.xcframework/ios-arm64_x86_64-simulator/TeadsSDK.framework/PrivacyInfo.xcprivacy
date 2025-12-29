@@ -63,18 +63,10 @@
 		<dict>
 			<key>NSPrivacyAccessedAPITypeReasons</key>
 			<array>
-				<string>CA92.1</string>				
+				<string>CA92.1</string>
 			</array>
 			<key>NSPrivacyAccessedAPIType</key>
 			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
-		</dict>
-		<dict>
-			<key>NSPrivacyAccessedAPIType</key>
-			<string>NSPrivacyAccessedAPICategoryAdvertisingData</string>
-			<key>NSPrivacyAccessedAPITypeReasons</key>
-			<array>
-				<string>3B52.1</string>
-			</array>
 		</dict>
 	</array>
 	<key>NSPrivacyCollectedDataTypes</key>

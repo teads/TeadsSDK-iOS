@@ -383,6 +383,12 @@ SWIFT_CLASS("_TtC8TeadsSDK18ContainerComponent")
 @interface ContainerComponent : CommonComponent
 @end
 
+/// Represents the type of wrapper framework used for SDK integration.
+typedef SWIFT_ENUM(NSInteger, FrameworkType, open) {
+  FrameworkTypeFlutter = 0,
+  FrameworkTypeReactNative = 1,
+};
+
 @class UIImage;
 /// Native image component containing image url
 /// note:
@@ -552,6 +558,7 @@ SWIFT_CLASS("_TtC8TeadsSDK16TagBinderBuilder")
 @property (nonatomic) NSInteger priceLabelTag;
 @end
 
+@class WrapperFrameworkInfo;
 @class TeadsAdPlacementSettings;
 @protocol TeadsInReadAdPlacementDelegate;
 @protocol TeadsInReadAdPlacement;
@@ -575,6 +582,28 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 /// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
+/// Specifies the wrapper framework type and version used to integrate the Teads SDK.
+/// This property is <code>nil</code> for native iOS integration (default).
+/// Set this property only when using Flutter or React Native as a wrapper framework.
+/// <em>Default value</em>: <code>nil</code> (native iOS integration)
+/// <em>For Flutter integration</em>:
+/// \code
+/// Teads.wrapperFrameworkInfo = WrapperFrameworkInfo.flutter("1.0.0")
+///
+/// \endcode<em>For React Native integration</em>:
+/// \code
+/// Teads.wrapperFrameworkInfo = WrapperFrameworkInfo.reactNative("1.0.0")
+///
+/// \endcodenote:
+/// This property should be set only if the publisher uses Flutter or React Native
+/// as a wrapper to the SDK. For native iOS integration, keep it as <code>nil</code>.
+/// seealso:
+/// <code>WrapperFrameworkInfo</code>
+/// seealso:
+/// <code>FrameworkType</code>
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) WrapperFrameworkInfo * _Nullable wrapperFrameworkInfo;)
++ (WrapperFrameworkInfo * _Nullable)wrapperFrameworkInfo SWIFT_WARN_UNUSED_RESULT;
++ (void)setWrapperFrameworkInfo:(WrapperFrameworkInfo * _Nullable)value;
 /// Create an inRead ad placement to request inRead ads
 /// important:
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
@@ -1595,6 +1624,33 @@ SWIFT_CLASS("_TtC8TeadsSDK14VideoComponent")
 @interface VideoComponent : CommonComponent
 /// Media content aspect ratio (width/height).
 @property (nonatomic, readonly) CGFloat contentAspectRatio;
+@end
+
+/// Represents wrapper framework integration information for the Teads SDK.
+/// Contains both the framework type and its version used to integrate the SDK.
+/// This is only used for non-native integrations (Flutter or React Native).
+SWIFT_CLASS("_TtC8TeadsSDK20WrapperFrameworkInfo")
+@interface WrapperFrameworkInfo : NSObject
+/// The type of wrapper framework used for integration (Flutter or React Native)
+@property (nonatomic, readonly) enum FrameworkType type;
+/// The version of the wrapper framework integration
+@property (nonatomic, readonly, copy) NSString * _Nonnull version;
+/// Creates a WrapperFrameworkInfo for Flutter integration.
+/// \param flutterVersion The version of the Flutter package
+///
+///
+/// returns:
+/// A WrapperFrameworkInfo instance for Flutter
++ (WrapperFrameworkInfo * _Nonnull)flutter:(NSString * _Nonnull)flutterVersion SWIFT_WARN_UNUSED_RESULT;
+/// Creates a WrapperFrameworkInfo for React Native integration.
+/// \param reactNativeVersion The version of the React Native package
+///
+///
+/// returns:
+/// A WrapperFrameworkInfo instance for React Native
++ (WrapperFrameworkInfo * _Nonnull)reactNative:(NSString * _Nonnull)reactNativeVersion SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 #endif
