@@ -21,7 +21,6 @@ class InReadDirectTableViewController: TeadsViewController {
     // Store placements and their corresponding ad views
     var placements: [UUID: TeadsAdPlacementMedia] = [:]
     var adViews: [UUID: UIView] = [:]
-    var adHeights: [UUID: CGFloat] = [:]
 
     override var pid: String {
         didSet {
@@ -84,7 +83,6 @@ class InReadDirectTableViewController: TeadsViewController {
         elements.removeAll { $0 == .ad(id: adId) }
         placements.removeValue(forKey: adId)
         adViews.removeValue(forKey: adId)
-        adHeights.removeValue(forKey: adId)
         tableView.reloadData()
     }
 
@@ -92,7 +90,6 @@ class InReadDirectTableViewController: TeadsViewController {
         // Clear all ad state
         placements.removeAll()
         adViews.removeAll()
-        adHeights.removeAll()
         adRequestedIndices.removeAll()
 
         // Reset elements to articles only
@@ -136,11 +133,7 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
         }
     }
 
-    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if case let .ad(id) = elements[indexPath.row],
-           let height = adHeights[id] {
-            return height
-        }
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
@@ -165,12 +158,8 @@ extension InReadDirectTableViewController: TeadsAdPlacementEventsDelegate {
                 print("Ad rendered for \(adId)")
 
             case .heightUpdated:
-                if let height = data?["height"] as? CGFloat {
-                    adHeights[adId] = height
-                    if let row = elements.firstIndex(of: .ad(id: adId)) {
-                        tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
-                    }
-                }
+                tableView.beginUpdates()
+                tableView.endUpdates()
 
             case .viewed:
                 print("Ad viewed for \(adId)")

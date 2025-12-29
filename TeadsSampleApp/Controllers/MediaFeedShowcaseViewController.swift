@@ -204,10 +204,10 @@ class MediaFeedShowcaseViewController: TeadsViewController {
 
     private func setupFeedPlacement() {
         // Create Feed Placement configuration
-        // Using test Widget ID MB_1 and Installation Key NANOWDGT01
+        // Using test Widget ID MB_2 and Installation Key NANOWDGT01
         let feedConfig = TeadsAdPlacementFeedConfig(
             articleUrl: URL(string: "https://mobile-demo.outbrain.com")!,
-            widgetId: "MB_1",
+            widgetId: "MB_2",
             installationKey: "NANOWDGT01",
             widgetIndex: 0
         )

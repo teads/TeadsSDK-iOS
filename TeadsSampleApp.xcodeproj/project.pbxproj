@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,7 +38,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B147A6A52ECF139A0082CB96 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		B147A6A52ECF139A0082CB96 /* Exceptions for "WebViewHelper" folder in "TeadsSampleApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/bootstrap.js,
@@ -49,14 +49,63 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B145107B2E97D30600DAE138 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
-		B145107F2E97D30A00DAE138 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
-		B14510852E97D30D00DAE138 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
-		B145108C2E97D31100DAE138 /* Ressources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Ressources; sourceTree = "<group>"; };
-		B147A67C2ECF13790082CB96 /* Controllers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controllers; sourceTree = "<group>"; };
-		B147A6A22ECF139A0082CB96 /* WebViewHelper */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B147A6A52ECF139A0082CB96 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = WebViewHelper; sourceTree = "<group>"; };
-		B147A6AB2ECF139E0082CB96 /* Cells */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Cells; sourceTree = "<group>"; };
-		B147A6B22ECF13A30082CB96 /* TeadsSampleAppUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TeadsSampleAppUITests; sourceTree = "<group>"; };
+		B145107B2E97D30600DAE138 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B145107F2E97D30A00DAE138 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B14510852E97D30D00DAE138 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B145108C2E97D31100DAE138 /* Ressources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		B147A67C2ECF13790082CB96 /* Controllers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B147A6A22ECF139A0082CB96 /* WebViewHelper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B147A6A52ECF139A0082CB96 /* Exceptions for "WebViewHelper" folder in "TeadsSampleApp" target */,
+			);
+			path = WebViewHelper;
+			sourceTree = "<group>";
+		};
+		B147A6AB2ECF139E0082CB96 /* Cells */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B147A6B22ECF13A30082CB96 /* TeadsSampleAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = TeadsSampleAppUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +260,6 @@
 				};
 			};
 			buildConfigurationList = B5555A2D1F7CDF80007406D4 /* Build configuration list for PBXProject "TeadsSampleApp" */;
-			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -219,6 +267,7 @@
 				Base,
 			);
 			mainGroup = B5555A291F7CDF80007406D4;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = B5555A331F7CDF80007406D4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,19 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK/AppLovinSDK.framework/AppLovinSDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Smart-Display-SDK/SASDisplayKit.framework/SASDisplayKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/TeadsSDK.framework/TeadsSDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/OMSDK_Teadstv.framework/OMSDK_Teadstv",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppLovinSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SASDisplayKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Teadstv.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -314,15 +356,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMobileAdsResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UserMessagingPlatformResources.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeadsSampleApp/Pods-TeadsSampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -171,7 +171,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if section == totalSections - 1 {
             return 1 // Validation toggle cell
         }
-        
+
         // Check if this is the showcase section (second to last)
         if section == totalSections - 2 {
             return 1 // Showcase button
