@@ -17,6 +17,12 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
     var placement: TeadsAdPlacementMedia?
     var adView: UIView?
 
+    // Track slot state
+    private var isSlotOpened = false
+    private var isSlotFound = false
+    private var isAdReady = false
+    private var currentAdHeight: CGFloat = 0
+
     override var pid: String {
         didSet {
             guard oldValue != pid, isViewLoaded else { return }
@@ -51,6 +57,9 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
         }
         placement = nil
         adView = nil
+        isSlotOpened = false
+        isAdReady = false
+        currentAdHeight = 0
 
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
@@ -66,6 +75,26 @@ class InReadDirectWebViewController: TeadsViewController, WKNavigationDelegate {
             adView = view
         }
     }
+
+    /// Try to open the slot when both conditions are met:
+    /// 1. The HTML slot is found
+    /// 2. The ad is ready (or we have an adView)
+    private func tryOpenSlot() {
+        guard !isSlotOpened,
+              isSlotFound,
+              let view = adView else {
+            return
+        }
+
+        print("Opening slot with adView")
+        isSlotOpened = true
+        webViewHelper?.openSlot(adView: view)
+
+        // If we already have a valid height, update the slot
+        if currentAdHeight > 0 {
+            webViewHelper?.updateSlotWithHeight(currentAdHeight)
+        }
+    }
 }
 
 extension InReadDirectWebViewController: TeadsAdPlacementEventsDelegate {
@@ -77,17 +106,22 @@ extension InReadDirectWebViewController: TeadsAdPlacementEventsDelegate {
         switch event {
             case .ready:
                 print("Ad ready")
-                // Open the slot with ad view
-                if let view = adView {
-                    webViewHelper?.openSlot(adView: view)
-                }
+                isAdReady = true
+                // Try to open the slot if not already opened
+                tryOpenSlot()
 
             case .rendered:
                 print("Ad rendered")
 
             case .heightUpdated:
-                print("Height updated")
-                // The ad view auto-resizes, no need to manually update slot
+                if let height = data?["height"] as? CGFloat {
+                    print("Height updated: \(height)")
+                    currentAdHeight = height
+                    // Only update if slot is already opened and height is valid
+                    if isSlotOpened, height > 0 {
+                        webViewHelper?.updateSlotWithHeight(height)
+                    }
+                }
 
             case .viewed:
                 print("Ad viewed (impression)")
@@ -126,7 +160,9 @@ extension InReadDirectWebViewController: TeadsWebViewHelperDelegate {
 
     func webViewHelperSlotFoundSuccessfully() {
         print("webViewHelperSlotFoundSuccessfully")
-        // Ad is already loaded in viewDidLoad with the new API
+        isSlotFound = true
+        // Try to open the slot now that it's found
+        tryOpenSlot()
     }
 
     func webViewHelperSlotNotFound() {
