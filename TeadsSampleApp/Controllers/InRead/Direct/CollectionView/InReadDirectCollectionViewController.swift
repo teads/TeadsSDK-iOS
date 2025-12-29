@@ -12,8 +12,18 @@ import UIKit
 class InReadDirectCollectionViewController: TeadsViewController {
     enum TeadsElement: Equatable {
         case article
-        case ad(_ ad: TeadsInReadAd)
-        case trackerView(_ trackerView: TeadsAdOpportunityTrackerView)
+        case ad(id: String)
+
+        static func ==(lhs: TeadsElement, rhs: TeadsElement) -> Bool {
+            switch (lhs, rhs) {
+                case (.article, .article):
+                    return true
+                case let (.ad(id1), .ad(id2)):
+                    return id1 == id2
+                default:
+                    return false
+            }
+        }
     }
 
     @IBOutlet var collectionView: UICollectionView!
@@ -21,14 +31,23 @@ class InReadDirectCollectionViewController: TeadsViewController {
     let contentCell = "TeadsContentCell"
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
-    let trackerViewItemNumber = 2 // tracker view needs to be placed above the slot view
-    var adItemNumber: Int {
-        return trackerViewItemNumber + 1
-    }
+    let adItemNumber = 3
 
-    var placement: TeadsInReadAdPlacement?
+    var placement: TeadsAdPlacementMedia?
+
+    // Store placement and ad view
+    var adId: String?
+    var adView: UIView?
+    var adHeight: CGFloat = 0
 
     private var elements = [TeadsElement]()
+
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +56,39 @@ class InReadDirectCollectionViewController: TeadsViewController {
             elements.append(.article)
         }
 
-        let placementSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        adView = nil
+        adHeight = 0
+        if let id = adId {
+            elements.removeAll { $0 == .ad(id: id) }
         }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        // Create placement with new API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com"),
+            enableValidationMode: validationModeEnabled
+        )
 
-        collectionView.register(AdOpportunityTrackerCollectionViewCell.self, forCellWithReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier)
+        placement = Teads.createPlacement(with: config, delegate: self)
+
+        if let id = placement?.placementId {
+            adId = id
+            elements.insert(.ad(id: id), at: 3)
+        }
+
+        // Load ad and store view
+        if let view = try? placement?.loadAd() {
+            adView = view
+            // Ad will be inserted when ready event is received
+        }
+
+        collectionView.reloadData()
     }
 
     @objc func rotationDetected() {
@@ -59,16 +100,15 @@ class InReadDirectCollectionViewController: TeadsViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    func closeSlot(ad: TeadsAd) {
-        guard let inReadAd = ad as? TeadsInReadAd else {
-            return
-        }
-        elements.removeAll { $0 == .ad(inReadAd) }
+    func closeSlot(id: String) {
+        elements.removeAll { $0 == .ad(id: id) }
+        adView = nil
+        adHeight = 0
         collectionView.reloadData()
     }
 
-    func updateAdSize(ad: TeadsInReadAd) {
-        if let row = elements.firstIndex(of: .ad(ad)) {
+    func updateAdSize(id: String) {
+        if let row = elements.firstIndex(of: .ad(id: id)) {
             collectionView.reloadItems(at: [IndexPath(row: row, section: 0)])
             collectionView.collectionViewLayout.invalidateLayout()
         }
@@ -83,15 +123,13 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
             return collectionView.dequeueReusableCell(withReuseIdentifier: contentCell, for: indexPath)
-        } else if case let .ad(ad) = elements[indexPath.row] {
+        } else if case .ad = elements[indexPath.row],
+                  let view = adView {
             let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath)
-            let teadsAdView = TeadsInReadAdView(bind: ad)
-            cellAd.contentView.addSubview(teadsAdView)
-            teadsAdView.setupConstraintsToFitSuperView(horizontalMargin: 10)
-            return cellAd
-        } else if case let .trackerView(trackerView) = elements[indexPath.row],
-                  let cellAd = collectionView.dequeueReusableCell(withReuseIdentifier: AdOpportunityTrackerCollectionViewCell.identifier, for: indexPath) as? AdOpportunityTrackerCollectionViewCell {
-            cellAd.setTrackerView(trackerView)
+            // Remove from previous parent if any
+            view.removeFromSuperview()
+            cellAd.contentView.addSubview(view)
+            view.setupConstraintsToFitSuperView(horizontalMargin: 10)
             return cellAd
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath)
@@ -106,57 +144,59 @@ extension InReadDirectCollectionViewController: UICollectionViewDelegate, UIColl
                 return CGSize.zero
             }
             return CGSize(width: collectionView.bounds.width, height: bounds.height)
-        } else if case let .ad(ad) = elements[indexPath.row] {
+        } else if case .ad = elements[indexPath.row] {
             let width = collectionView.frame.width - 20
-            let height = ad.adRatio.calculateHeight(for: width)
-            return .init(width: width, height: height)
-        } else if case .trackerView = elements[indexPath.row] {
-            return .init(width: 1, height: 0)
+            return .init(width: width, height: adHeight)
         } else {
             return CGSize(width: collectionView.bounds.width, height: 300)
         }
     }
 }
 
-extension InReadDirectCollectionViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {}
+extension InReadDirectCollectionViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        guard let id = adId else {
+            return
+        }
 
-    func didRecordClick(ad _: TeadsAd) {}
+        switch event {
+            case .ready:
+                print("Ad ready")
+                // Insert ad into collection
+                elements.insert(.ad(id: id), at: adItemNumber)
+                let indexPaths = [IndexPath(row: adItemNumber, section: 0)]
+                collectionView.insertItems(at: indexPaths)
+                collectionView.collectionViewLayout.invalidateLayout()
 
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
+            case .rendered:
+                print("Ad rendered")
 
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
+            case .heightUpdated:
+                if let height = data?["height"] as? CGFloat {
+                    adHeight = height
+                    updateAdSize(id: id)
+                }
 
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
-    }
-}
+            case .viewed:
+                print("Ad viewed (impression)")
 
-extension InReadDirectCollectionViewController: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        elements.insert(.ad(ad), at: adItemNumber)
-        let indexPaths = [IndexPath(row: adItemNumber, section: 0)]
-        collectionView.insertItems(at: indexPaths)
-        collectionView.collectionViewLayout.invalidateLayout()
-        ad.delegate = self
-    }
+            case .clicked:
+                print("Ad clicked")
 
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
+            case .failed:
+                print("Ad failed: \(data?["reason"] ?? "Unknown")")
+                closeSlot(id: id)
 
-    func didUpdateRatio(ad: TeadsInReadAd, adRatio _: TeadsAdRatio) {
-        updateAdSize(ad: ad)
-    }
+            case .complete:
+                print("Video complete")
+                closeSlot(id: id)
 
-    func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
-        elements.insert(.trackerView(trackerView), at: trackerViewItemNumber)
-        let indexPaths = [IndexPath(row: trackerViewItemNumber, section: 0)]
-        collectionView.insertItems(at: indexPaths)
-        collectionView.collectionViewLayout.invalidateLayout()
+            default:
+                break
+        }
     }
 }

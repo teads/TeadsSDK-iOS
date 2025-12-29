@@ -490,7 +490,7 @@
                     <connections>
                         <outlet property="scrollDownImageView" destination="fEP-Fu-cZD" id="ue9-YP-U3j"/>
                         <outlet property="teadsAdHeightConstraint" destination="vLI-WC-g6W" id="58R-uK-yI2"/>
-                        <outlet property="teadsAdView" destination="bgm-5a-Yc8" id="pOQ-UV-OrD"/>
+                        <outlet property="teadsAdContainerView" destination="bgm-5a-Yc8" id="pOQ-UV-OrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBB-TJ-3hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -654,7 +654,7 @@
                     <connections>
                         <outlet property="articleLabel" destination="bKU-X7-s6C" id="LaP-n4-5w5"/>
                         <outlet property="teadsAdHeightConstraint" destination="2CS-0c-I0r" id="U4w-sI-DUK"/>
-                        <outlet property="teadsAdView" destination="jae-At-vrZ" id="c7Q-Dx-AuJ"/>
+                        <outlet property="teadsAdContainerView" destination="jae-At-vrZ" id="c7Q-Dx-AuJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iv-58-Xbg" userLabel="First Responder" sceneMemberID="firstResponder"/>

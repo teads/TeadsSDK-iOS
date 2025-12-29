@@ -16,27 +16,55 @@ class NativeDirectCollectionViewController: TeadsViewController {
     let teadsAdCellIndentifier = "NativeAdCollectionViewCell"
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 3
-    var placement: TeadsNativeAdPlacement?
+    var placement: TeadsAdPlacementMediaNative?
+    var adView: TeadsNativeAdView?
 
-    private var elements = [TeadsNativeAd?]()
+    private var elements = [Bool]() // true = ad loaded, false = article
+
+    override var pid: String {
+        didSet {
+            guard oldValue != pid, isViewLoaded else { return }
+            setupPlacement()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         for _ in 0 ..< 8 {
-            elements.append(nil)
+            elements.append(false)
         }
 
-        let placementSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
+        setupPlacement()
+    }
+
+    private func setupPlacement() {
+        // Clean up existing placement and views
+        placement = nil
+        adView = nil
+        if adItemNumber < elements.count {
+            elements[adItemNumber] = false
         }
 
-        // keep a strong reference to placement instance
-        placement = Teads.createNativePlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
+        // Create placement with new API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com"),
+            enableValidationMode: validationModeEnabled
+        )
 
-        placement?.requestAd(requestSettings: TeadsAdRequestSettings { settings in
-            settings.pageUrl("https://www.teads.com")
-        })
+        placement = Teads.createPlacement(with: config, delegate: self)
+
+        // Create native ad view
+        let nativeAdView = TeadsNativeAdView()
+        adView = nativeAdView
+
+        // Load ad and register the view
+        if let bindClosure = try? placement?.loadAd() {
+            bindClosure(nativeAdView)
+        }
+
+        collectionView.reloadData()
     }
 }
 
@@ -51,11 +79,15 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
             cell.contentView.translatesAutoresizingMaskIntoConstraints = false
             cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.bounds.width).isActive = true
             return cell
-        } else if let ad = elements[indexPath.item] {
+        } else if elements[indexPath.item], let nativeAdView = adView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeAdCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.adView.bind(ad)
+            // The ad is already bound via loadAd() closure
+            // Just add the view to the cell if not already added
+            if cell.adView != nativeAdView {
+                cell.adView = nativeAdView
+            }
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeCollectionViewCell else {
@@ -70,48 +102,40 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
         return CGSize(width: collectionView.bounds.width, height: 250)
     }
 
-    func closeSlot(ad: TeadsAd) {
-        elements.removeAll { $0 == ad }
+    func closeSlot() {
+        if adItemNumber < elements.count {
+            elements[adItemNumber] = false
+        }
         collectionView.reloadData()
     }
 }
 
-extension NativeDirectCollectionViewController: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
+extension NativeDirectCollectionViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        switch event {
+            case .ready:
+                print("Native ad ready")
+                elements.insert(true, at: adItemNumber)
+                let indexPaths = [IndexPath(item: adItemNumber, section: 0)]
+                collectionView.insertItems(at: indexPaths)
+                collectionView.reloadData()
 
-    func didRecordClick(ad _: TeadsAd) {
-        // you may want to use this callback for your own analytics
-    }
+            case .viewed:
+                print("Native ad viewed (impression)")
 
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
-    }
+            case .clicked:
+                print("Native ad clicked")
 
-    func didCatchError(ad: TeadsAd, error _: Error) {
-        closeSlot(ad: ad)
-    }
+            case .failed:
+                print("Native ad failed: \(data?["error"] ?? "Unknown")")
+                closeSlot()
 
-    func didClose(ad: TeadsAd) {
-        closeSlot(ad: ad)
-    }
-}
-
-extension NativeDirectCollectionViewController: TeadsNativeAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsNativeAd) {
-        elements.insert(ad, at: adItemNumber)
-        let indexPaths = [IndexPath(item: adItemNumber, section: 0)]
-        collectionView.insertItems(at: indexPaths)
-        collectionView.reloadData()
-        ad.delegate = self
-    }
-
-    func didFailToReceiveAd(reason: AdFailReason) {
-        print("didFailToReceiveAd: \(reason.description)")
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        // not relevant in collectionView integration
+            default:
+                break
+        }
     }
 }

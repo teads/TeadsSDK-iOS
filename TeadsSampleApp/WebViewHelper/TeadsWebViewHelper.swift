@@ -272,6 +272,48 @@ import WebKit
         }
     }
 
+    /// Update the slot height with the given height value
+    ///
+    /// This method is designed for the new unified SDK API that provides height directly
+    /// instead of TeadsAdRatio. It calculates the ratio internally and updates the slot.
+    ///
+    /// - Parameters:
+    ///   - height: the height of the ad in points
+    ///
+    /// - Note: Should be called from `.heightUpdated` event handler
+    @objc public func updateSlotWithHeight(_ height: CGFloat) {
+        guard isJsReady else {
+            return
+        }
+        guard let webView = webView else {
+            delegate?.webViewHelperOnError?(error: "Webview can't be nil")
+            return
+        }
+
+        let width = adViewHTMLElementWidth
+        guard width > 0, height > 0 else {
+            delegate?.webViewHelperOnError?(error: "Width and height must be greater than zero")
+            return
+        }
+
+        // Calculate ratio from width and height
+        // The JS bootstrap expects ratio where: height = width / ratio
+        // So: ratio = width / height
+        var ratio = width / height
+
+        // Prevent the ad from being bigger than the screen or the webview
+        let visibleHeight = min(UIScreen.main.bounds.height, webView.frame.height)
+        if height > visibleHeight {
+            ratio = width / visibleHeight
+        }
+
+        evaluateBootstrapInput(JSBootstrapInput.updatePlaceholder(offsetHeight: 0, ratioVideo: ratio)) { [delegate] _, error in
+            if error != nil {
+                delegate?.webViewHelperOnError?(error: "updateSlotWithHeight failed")
+            }
+        }
+    }
+
     /// Call the bootstrap to close the slot
     ///
     /// - Note: sould be called from ```TeadsAdDelegate.onError(ad: TeadsAd, error: Error)```

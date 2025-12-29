@@ -12,11 +12,14 @@ import UIKit
 
 class InReadPageViewController: UIPageViewController {
     var pid: String = PID.directLandscape
+    var validationModeEnabled = true
     var orderedViewControllers: [UIViewController] = []
     var currentViewControlelr: UIViewController?
 
-    // keep a strong reference to placement instance
-    var placement: TeadsInReadAdPlacement?
+    // keep a strong reference to placement instance and ad view
+    var placement: TeadsAdPlacementMedia?
+    var adView: UIView?
+    var currentAdHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class InReadPageViewController: UIPageViewController {
 
         for index in 0 ..< 20 {
             if let viewController = storyboard?.instantiateViewController(withIdentifier: "page-view-controller") as? InReadDirectPageViewController {
-                viewController.placement = placement
+                viewController.adViewReference = adView
                 viewController.articleLabelText = "ARTICLE \(index + 1) of 20"
                 orderedViewControllers.append(viewController)
             }
@@ -36,10 +39,19 @@ class InReadPageViewController: UIPageViewController {
     }
 
     func loadPlacement() {
-        let placementSettings = TeadsAdPlacementSettings { settings in
-            settings.enableDebug()
+        // Create placement with new API
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com"),
+            enableValidationMode: validationModeEnabled
+        )
+
+        placement = Teads.createPlacement(with: config, delegate: self)
+
+        // Load ad and store view
+        if let view = try? placement?.loadAd() {
+            adView = view
         }
-        placement = Teads.createInReadPlacement(pid: Int(pid) ?? 0, settings: placementSettings, delegate: self)
     }
 }
 
@@ -63,29 +75,49 @@ extension InReadPageViewController: UIPageViewControllerDataSource {
     }
 }
 
-extension InReadPageViewController: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+extension InReadPageViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
         guard let currentViewController = currentViewControlelr as? InReadDirectPageViewController else {
             return
         }
 
-        ad.delegate = currentViewController
-        currentViewController.resizeTeadsAd(adRatio: adRatio)
-        currentViewController.teadsAdView.bind(ad)
-    }
+        switch event {
+            case .ready:
+                print("Ad ready")
+                // Add ad view to current child's container
+                if let view = adView {
+                    currentViewController.setupAdView(view)
+                }
 
-    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
-        guard let currentViewController = currentViewControlelr as? InReadDirectPageViewController else {
-            return
+            case .rendered:
+                print("Ad rendered")
+
+            case .heightUpdated:
+                if let height = data?["height"] as? CGFloat {
+                    currentAdHeight = height
+                    currentViewController.updateAdHeight(height)
+                }
+
+            case .viewed:
+                print("Ad viewed (impression)")
+
+            case .clicked:
+                print("Ad clicked")
+
+            case .failed:
+                print("Ad failed: \(data?["reason"] ?? "Unknown")")
+                currentViewController.closeAd()
+
+            case .complete:
+                print("Video complete")
+                currentViewController.closeAd()
+
+            default:
+                break
         }
-        currentViewController.resizeTeadsAd(adRatio: adRatio)
-    }
-
-    func didFailToReceiveAd(reason _: AdFailReason) {
-        print(#function)
-    }
-
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
-        print(#function)
     }
 }

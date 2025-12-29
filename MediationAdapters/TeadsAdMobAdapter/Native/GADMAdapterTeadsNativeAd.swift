@@ -204,28 +204,28 @@ extension GADMAdapterTeadsNativeAd: TeadsNativeAdPlacementDelegate {
 }
 
 extension GADMAdapterTeadsNativeAd: TeadsAdDelegate {
-    public func didRecordImpression(ad _: TeadsAd) {
+    func didRecordImpression(ad _: TeadsAd) {
         delegate?.reportImpression()
     }
 
-    public func didRecordClick(ad _: TeadsAd) {
+    func didRecordClick(ad _: TeadsAd) {
         delegate?.reportClick()
     }
 
-    public func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
+    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         delegate?.willPresentFullScreenView()
         return viewController
     }
 
-    public func didCatchError(ad _: TeadsAd, error: Error) {
+    func didCatchError(ad _: TeadsAd, error: Error) {
         delegate?.didFailToPresentWithError(error)
     }
 
-    public func didExpandedToFullscreen(ad _: TeadsAd) {
+    func didExpandedToFullscreen(ad _: TeadsAd) {
         delegate?.willPresentFullScreenView()
     }
 
-    public func didCollapsedFromFullscreen(ad _: TeadsAd) {
+    func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.didDismissFullScreenView()
     }
 }

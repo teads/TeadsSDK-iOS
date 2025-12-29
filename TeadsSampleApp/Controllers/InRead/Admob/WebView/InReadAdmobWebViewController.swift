@@ -40,7 +40,7 @@ class InReadAdmobWebViewController: TeadsViewController {
 }
 
 extension InReadAdmobWebViewController: TeadsMediatedAdViewDelegate {
-    public func didUpdateRatio(_: UIView, adRatio: TeadsAdRatio) {
+    func didUpdateRatio(_: UIView, adRatio: TeadsAdRatio) {
         guard let webViewHelper = webViewHelper else {
             return
         }
@@ -86,7 +86,7 @@ extension InReadAdmobWebViewController: TeadsWebViewHelperDelegate {
         print("webViewHelperSlotFoundSuccessfully")
         let adSettings = TeadsAdapterSettings { settings in
             settings.enableDebug()
-            try? settings.registerAdView(bannerView, delegate: self)
+            settings.registerAdView(bannerView, delegate: self)
 
             // Needed by european regulation
             // See https://mobile.teads.tv/sdk/documentation/ios/gdpr-consent
