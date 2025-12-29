@@ -8,12 +8,12 @@
 
 ----
 
-Teads allows you to integrate a single SDK into your app, and serve premium branded "outstream" video ads from Teads SSP ad server. This sample app includes Teads iOS framework and is showing integration examples.
+Teads SDK provides seamless access to both premium video advertising and content recommendation capabilities through a modern, unified interface. This sample app includes Teads iOS framework and demonstrates integration examples for Media Placements (video ads), Native Ads, and Feed Placements (content recommendations).
 
 ## 📋 Table of Contents
 
 - [Integration Documentation](#-integration-documentation)
-- [Migrating from v4 to v5](#-migrating-from-v4-to-v5)
+- [Migrating to v6](#-migrating-to-v6)
 - [Run the sample app](#-run-the-sample-app)
 - [Installation](#-install-the-teads-sdk-ios-framework)
 - [Mediation Adapters](#-mediation-adapters)
@@ -22,12 +22,13 @@ Teads allows you to integrate a single SDK into your app, and serve premium bran
 
 ## 📚 Integration Documentation
 
-- Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314785).
-- Framework API documentation is available [here](https://teads.github.io/TeadsSDK-iOS/latest/)
+- Integration instructions are available on [Teads Developer Portal](https://developers.teads.com/docs/iOS-SDK/Getting-Started/).
+- Installation guide is available [here](https://developers.teads.com/docs/iOS-SDK/Getting-Started/installation).
+- Full integration guide is available [here](https://developers.teads.com/docs/iOS-SDK/Getting-Started/integration-guide).
 
-## 🕊 Migrating from v4 to v5
+## 🕊 Migrating to v6
 
-TeadsSDK v5 introduces some changes regarding v4, see [Migration Documentation](https://support.teads.tv/support/solutions/articles/36000314772-migrating-from-v4-to-v5)
+TeadsSDK v6 introduces a new unified `createPlacement` API. See [Migration Documentation](https://developers.teads.com/docs/iOS-SDK/Getting-Started/migration-teads) for details.
 
 ## 🚲 Run the sample app
 
@@ -40,7 +41,7 @@ Clone this repository, open it with Xcode, and run project.
 To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
 
 ```ruby
-pod 'TeadsSDK', '~> 5.0'
+pod 'TeadsSDK', '~> 6.0.5'
 ```
 
 On your terminal, go to the directory containing your project's `.xcodeproj` file and your Podfile and run `pod install` command. This will install Teads SDK along with our needed dependencies.
@@ -62,7 +63,7 @@ Before installing Teads adapter, you need to implement [Google Mobile Ads](https
 ```console
 https://github.com/teads/TeadsSDK-iOS
 ```
-3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and keep `5.0.0 < 6.0.0`.
+3. Next, set the **Dependency Rule** to be `Up to Next Major Version` and keep `6.0.0 < 7.0.0`.
 4. Choose the Teads product that you want to be installed in your app: `TeadsSDK`
 
 #### Alternatively, add Teads to your Package.swift manifest
@@ -70,7 +71,7 @@ https://github.com/teads/TeadsSDK-iOS
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "5.0.0"))
+    .package(url: "https://github.com/teads/TeadsSDK-iOS", .upToNextMajor(from: "6.0.0"))
 ]
 ```
 
@@ -100,6 +101,4 @@ Teads SDK supports the [IAB](https://www.iabcertification.com/) [Open Measuremen
 
 ## ⌚️ Changelog
 
-See [changelog here](https://github.com/teads/TeadsSDK-iOS/releases). 
-
-Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
+See [changelog here](https://github.com/teads/TeadsSDK-iOS/releases) or check the [Release Notes](https://developers.teads.com/docs/iOS-SDK/Getting-Started/release-notes).
