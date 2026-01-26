@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target     = '12.0'
     s.static_framework          = true
     s.requires_arc              = true
-    s.source_files              = ['MediationAdapters/TeadsPluginRenderer/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
+    s.source_files              = ['MediationAdapters/TeadsPBMPluginRenderer/**/*{.swift}', 'MediationAdapters/Common/*{.swift}']
     s.exclude_files             = []
     s.dependency                'TeadsSDK', s.version.to_s
     s.dependency                'PrebidMobile', '>= 3.0.2'
