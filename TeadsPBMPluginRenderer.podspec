@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
                                 Use this plugin to request and render Teads demand source in your PrebidMobile integration
                                 DESC
     s.homepage                  = 'https://github.com/teads/TeadsSDK-iOS'
-    s.documentation_url         = "https://support.teads.tv/support/solutions/articles/36000459748"
-    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
+    s.documentation_url         = "https://developers.teads.com/docs/iOS-SDK/Prebid/custom_plugin"
+    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2026' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 
     s.source                    = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "#{s.version}" }
