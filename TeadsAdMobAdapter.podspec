@@ -1,18 +1,18 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsAdMobAdapter'
-    s.version                   = '6.0.5'
+    s.version                   = '6.0.6'
     s.summary                   = "AdMob Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsAdMobAdapter'
     s.description               = <<-DESC
                                 Use this adapter to include AdMob as a demand source in your mediation waterfall
                                 DESC
-    s.homepage                  = 'https://github.com/teads/TeadsSDK-iOS'
-    s.documentation_url         = "https://developers.teads.com/docs/iOS-SDK/Mediation/admob_inread"
-    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2026' }
+    s.homepage                  = 'https://github.com/teads/TeadsSDK-adapter-admob-ios'
+    s.documentation_url         = "https://support.teads.tv/support/solutions/articles/36000166678-google-ad-manager-and-admob-mediation-ios"
+    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 
-    s.source                    = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "#{s.version}" }
+    s.source                    = { :git => 'https://github.com/teads/TeadsSDK-adapter-admob-ios.git', :tag => "v#{s.version}"}
     s.platform                  = 'ios'
     s.ios.deployment_target     = '12.0'
     s.static_framework          = true

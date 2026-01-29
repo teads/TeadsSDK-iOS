@@ -6,10 +6,10 @@ If you want to display Teads ads in your iOS application through AdMob mediation
 
 ## Requirements
 
-- ![Platform: iOS 12+](https://img.shields.io/badge/Platform-iOS%2012%2B-blue.svg?style=flat)
+- ![Platform: iOS 10+](https://img.shields.io/badge/Platform-iOS%2010%2B-blue.svg?style=flat)
 - ![Xcode: 12.5+](https://img.shields.io/badge/Xcode-12.5+-blue.svg?style=flat)
 - ![GoogleMobileAdsSDK: 8.0+](https://img.shields.io/badge/GoogleMobileAdsSDK-8.0+-blue.svg?style=flat)
-- ![Teads SDK: 6.0.5+](https://img.shields.io/badge/Teads%20SDK-6.0.5+-blue.svg?style=flat)
+- ![Teads SDK: 5.0.3+](https://img.shields.io/badge/Teads%20SDK-5.0.3+-blue.svg?style=flat)
 
 ## Features
 
@@ -29,15 +29,14 @@ It will install Teads adapter and Teads SDK.
 1. Add pod named `TeadsAdMobAdapter` in your Podfile:
 
 ```ruby
-platform :ios, '12.0'
-pod 'TeadsAdMobAdapter', '~> 6.0'
+platform :ios, '10.0'
+pod 'TeadsAdMobAdapter', '~> 5.1'
 ```
 
 2. Run `pod install --repo-update` to install the adapter in your project.
-3. Follow the integration guide to finish the setup.
-4. You're done.
+3. Follow the [Define Custom Event](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation#defining_a_custom_event) step to finish the integration.
+4. You’re done.
 
 ## Integration Documentation
 
-- [Media Placement Integration](https://developers.teads.com/docs/iOS-SDK/Mediation/admob_inread)
-- [Native Ad Integration](https://developers.teads.com/docs/iOS-SDK/Mediation/admob_native)
+Integration instructions are available on [Teads SDK Documentation](https://support.teads.tv/support/solutions/articles/36000314767-inread-google-ad-manager-and-admob-mediation).
