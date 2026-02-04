@@ -878,6 +878,40 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
 @end
 
+/// Delegate methods sending informations about Teads ads playback states.
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
+@protocol TeadsPlaybackDelegate
+@optional
+/// Called when an ad starts playing audio.
+/// \param ad The ad that has started playing audio.
+///
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when an ad stops playing audio.
+/// \param ad The ad that has stopped playing audio.
+///
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has started or resumed.
+/// \param ad The ad that has played or resumed.
+///
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has been paused.
+/// \param ad The ad that has been paused.
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has ended.
+/// \param ad The ad that has ended.
+///
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
+@interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsPlaybackDelegate>
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
 @class TeadsNativeAdView;
 SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdPlacementMediaNative")
 @interface TeadsAdPlacementMediaNative : NSObject
@@ -909,6 +943,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 @interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
 @property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
 @property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
+@end
+
+@interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsPlaybackDelegate>
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
 @end
 
 SWIFT_CLASS("_TtC8TeadsSDK31TeadsAdPlacementRecommendations")
@@ -1427,6 +1469,8 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
+- (void)willMoveToWindow:(UIWindow * _Nullable)newWindow;
+- (void)didMoveToWindow;
 /// Call this function to bind a native ad to your native ad view.
 /// important:
 /// This call is mandatory in order to monitor ad viewability of each components
@@ -1452,32 +1496,6 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 - (void)bind:(TeadsNativeAd * _Nonnull)ad tagBinder:(SWIFT_NOESCAPE void (^ _Nonnull)(TagBinderBuilder * _Nonnull))tagBinder;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-/// Delegate methods sending informations about Teads ads playback states.
-SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
-@protocol TeadsPlaybackDelegate
-@optional
-/// Called when an ad starts playing audio.
-/// \param ad The ad that has started playing audio.
-///
-- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when an ad stops playing audio.
-/// \param ad The ad that has stopped playing audio.
-///
-- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has started or resumed.
-/// \param ad The ad that has played or resumed.
-///
-- (void)didPlay:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has been paused.
-/// \param ad The ad that has been paused.
-///
-- (void)didPause:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has ended.
-/// \param ad The ad that has ended.
-///
-- (void)didComplete:(TeadsAd * _Nonnull)ad;
 @end
 
 /// / Prebid ad placement to load inRead ads from Prebid winning bid
@@ -2541,6 +2559,40 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
 - (void)adOpportunityTrackerViewWithTrackerView:(TeadsAdOpportunityTrackerView * _Nonnull)trackerView;
 @end
 
+/// Delegate methods sending informations about Teads ads playback states.
+SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
+@protocol TeadsPlaybackDelegate
+@optional
+/// Called when an ad starts playing audio.
+/// \param ad The ad that has started playing audio.
+///
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when an ad stops playing audio.
+/// \param ad The ad that has stopped playing audio.
+///
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has started or resumed.
+/// \param ad The ad that has played or resumed.
+///
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has been paused.
+/// \param ad The ad that has been paused.
+///
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+/// Called when an ad has ended.
+/// \param ad The ad that has ended.
+///
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
+@interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsPlaybackDelegate>
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
+@end
+
 @class TeadsNativeAdView;
 SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdPlacementMediaNative")
 @interface TeadsAdPlacementMediaNative : NSObject
@@ -2572,6 +2624,14 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 @interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
 @property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
 @property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
+@end
+
+@interface TeadsAdPlacementMediaNative (SWIFT_EXTENSION(TeadsSDK)) <TeadsPlaybackDelegate>
+- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
+- (void)didPlay:(TeadsAd * _Nonnull)ad;
+- (void)didPause:(TeadsAd * _Nonnull)ad;
+- (void)didComplete:(TeadsAd * _Nonnull)ad;
 @end
 
 SWIFT_CLASS("_TtC8TeadsSDK31TeadsAdPlacementRecommendations")
@@ -3090,6 +3150,8 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 @property (nonatomic, strong) IBOutlet UIView * _Nullable ratingView;
 /// The native ad price label.
 @property (nonatomic, strong) IBOutlet UILabel * _Nullable priceLabel;
+- (void)willMoveToWindow:(UIWindow * _Nullable)newWindow;
+- (void)didMoveToWindow;
 /// Call this function to bind a native ad to your native ad view.
 /// important:
 /// This call is mandatory in order to monitor ad viewability of each components
@@ -3115,32 +3177,6 @@ SWIFT_CLASS("_TtC8TeadsSDK17TeadsNativeAdView")
 - (void)bind:(TeadsNativeAd * _Nonnull)ad tagBinder:(SWIFT_NOESCAPE void (^ _Nonnull)(TagBinderBuilder * _Nonnull))tagBinder;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-/// Delegate methods sending informations about Teads ads playback states.
-SWIFT_PROTOCOL("_TtP8TeadsSDK21TeadsPlaybackDelegate_")
-@protocol TeadsPlaybackDelegate
-@optional
-/// Called when an ad starts playing audio.
-/// \param ad The ad that has started playing audio.
-///
-- (void)adStartPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when an ad stops playing audio.
-/// \param ad The ad that has stopped playing audio.
-///
-- (void)adStopPlayingAudio:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has started or resumed.
-/// \param ad The ad that has played or resumed.
-///
-- (void)didPlay:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has been paused.
-/// \param ad The ad that has been paused.
-///
-- (void)didPause:(TeadsAd * _Nonnull)ad;
-/// Called when an ad has ended.
-/// \param ad The ad that has ended.
-///
-- (void)didComplete:(TeadsAd * _Nonnull)ad;
 @end
 
 /// / Prebid ad placement to load inRead ads from Prebid winning bid

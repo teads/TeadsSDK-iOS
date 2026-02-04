@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsSASAdapter'
-    s.version                   = '6.0.6'
+    s.version                   = '6.0.7'
     s.summary                   = "SAS Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsSASAdapter'
     s.description               = <<-DESC
