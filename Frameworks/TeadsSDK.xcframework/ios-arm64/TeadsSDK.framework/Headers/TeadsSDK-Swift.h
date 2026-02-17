@@ -604,6 +604,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) WrapperFrameworkInfo * _Nullable wrapperFrameworkInfo;)
 + (WrapperFrameworkInfo * _Nullable)wrapperFrameworkInfo SWIFT_WARN_UNUSED_RESULT;
 + (void)setWrapperFrameworkInfo:(WrapperFrameworkInfo * _Nullable)value;
+/// Enables test mode for the SDK.
+/// When set to <code>true</code>, the SDK operates in test mode, which adds a <code>testMode</code> parameter
+/// to ad requests and switches widget events to testing mode.
+/// <em>Default value</em>: <code>false</code>
+/// \code
+/// Teads.testMode = true
+///
+/// \endcode
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testMode;)
++ (BOOL)testMode SWIFT_WARN_UNUSED_RESULT;
++ (void)setTestMode:(BOOL)newValue;
 /// Create an inRead ad placement to request inRead ads
 /// important:
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>

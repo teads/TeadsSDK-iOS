@@ -6,13 +6,6 @@
 	<true/>
 	<key>NSPrivacyTrackingDomains</key>
 	<array>
-		<string>t.teads.tv</string>
-		<string>a.teads.tv</string>
-		<string>s8t.teads.tv</string>
-		<string>analytics.teads.tv</string>
-		<string>ad.teads.tv</string>
-		<string>api.teads.tv</string>
-		<string>sdk.teads.tv</string>
 		<string>t-odb.outbrain.com</string>
 		<string>t-mv.outbrain.com</string>
 		<string>t-log.outbrainimg.com</string>
