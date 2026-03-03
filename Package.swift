@@ -93,6 +93,7 @@ let package = Package(
             dependencies: [
                 .product(name: prebidMobileModuleName, package: prebidMobileModuleName),
                 .target(name: teadsModuleName),
+                .target(name: omModuleName),
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsPBMPluginRendererModuleName)"
         ),

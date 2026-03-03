@@ -7,6 +7,7 @@
 
 import PrebidMobile
 import TeadsSDK
+import UIKit
 
 // MARK: - PrebidMobilePluginRenderer Conformance
 
