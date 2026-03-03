@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "PrebidMobile",
+        "repositoryURL": "https://github.com/prebid/prebid-mobile-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "a59bc756e22813ca76a55abda5db96edf9ede75e",
+          "version": "3.2.1"
+        }
+      },
+      {
         "package": "GoogleMobileAds",
         "repositoryURL": "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
         "state": {

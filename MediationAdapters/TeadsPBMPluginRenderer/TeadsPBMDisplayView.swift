@@ -8,6 +8,7 @@
 import Foundation
 import PrebidMobile
 import TeadsSDK
+import UIKit
 
 // MARK: - Teads Prebid Display View
 
