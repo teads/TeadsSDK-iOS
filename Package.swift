@@ -6,9 +6,11 @@ let teadsModuleName = "TeadsSDK"
 let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsSASAdapterModuleName = "TeadsSASAdapter"
+let teadsPBMPluginRendererModuleName = "TeadsPBMPluginRenderer"
 let mediationAdaptersDirectory = "MediationAdapters"
 let googleMobileAdsModuleName = "GoogleMobileAds"
 let appLovinMaxModuleName = "AppLovinSDK"
+let prebidMobileModuleName = "PrebidMobile"
 let omModuleName = "OMSDK_Teadstv"
 let commonModuleName = "TeadsAdapterCommon"
 let commonModuleNamePath = "Common"
@@ -31,6 +33,10 @@ let package = Package(
             name: teadsAppLovinAdapterModuleName,
             targets: [teadsAppLovinAdapterModuleName]
         ),
+        .library(
+            name: teadsPBMPluginRendererModuleName,
+            targets: [teadsPBMPluginRendererModuleName]
+        ),
     ],
     dependencies: [
         .package(
@@ -42,6 +48,11 @@ let package = Package(
             name: appLovinMaxModuleName,
             url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
             "13.3.1" ..< "14.0.0"
+        ),
+        .package(
+            name: prebidMobileModuleName,
+            url: "https://github.com/prebid/prebid-mobile-ios.git",
+            "3.0.2" ..< "4.0.0"
         ),
     ],
     targets: [
@@ -76,6 +87,14 @@ let package = Package(
                 .target(name: commonModuleName),
             ],
             path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
+        ),
+        .target(
+            name: teadsPBMPluginRendererModuleName,
+            dependencies: [
+                .product(name: prebidMobileModuleName, package: prebidMobileModuleName),
+                .target(name: teadsModuleName),
+            ],
+            path: "\(mediationAdaptersDirectory)/\(teadsPBMPluginRendererModuleName)"
         ),
     ]
 )
