@@ -18,8 +18,9 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
     /// Plugin renderer version (Teads SDK version)
     public var version: String { Teads.sdkVersion }
 
-    /// Data dictionary returned after bidding
+    /// Data dictionary sent in bid request ext.prebid.sdk.renderers[].data
     public var data: [String: Any]? {
+        guard let placement = placement else { return [:] }
         do {
             let rawData = try placement.getData(requestSettings: settings.adRequestSettings)
             return Dictionary(uniqueKeysWithValues: rawData.map { (String(describing: $0.key), $0.value) })
@@ -31,21 +32,25 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
 
     /// Called by Prebid when it starts sending lifecycle events for an ad unit
     public func registerEventDelegate(
-        pluginEventDelegate: TeadsPBMEventDelegate,
+        pluginEventDelegate: PluginEventDelegate,
         adUnitConfigFingerprint: String
     ) {
-        pluginEventDelegates[adUnitConfigFingerprint] = pluginEventDelegate
+        guard let teadsDelegate = pluginEventDelegate as? TeadsPBMEventDelegate else { return }
+        pluginEventDelegates[adUnitConfigFingerprint] = teadsDelegate
+        lastRegisteredFingerprint = adUnitConfigFingerprint
+        updateAdResizingSubscription()
     }
 
     /// Called by Prebid when it stops sending lifecycle events
     public func unregisterEventDelegate(
-        pluginEventDelegate _: TeadsPBMEventDelegate,
+        pluginEventDelegate _: PluginEventDelegate,
         adUnitConfigFingerprint: String
     ) {
         pluginEventDelegates.removeValue(forKey: adUnitConfigFingerprint)
+        updateAdResizingSubscription()
     }
 
-    /// Create and load a banner view
+    /// Create and load a banner view using the winning bid's ADM
     public func createBannerView(
         with frame: CGRect,
         bid: Bid,
@@ -53,6 +58,17 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
         loadingDelegate: any DisplayViewLoadingDelegate,
         interactionDelegate: any DisplayViewInteractionDelegate
     ) -> (any UIView & PrebidMobileDisplayViewProtocol)? {
+        guard let placement = placement else {
+            dispatchError(TeadsPBMPluginError.placementInitialization)
+            return nil
+        }
+
+        // Serialize the winning bid to JSON for the Teads SDK
+        guard let adResponse = try? bid.stringify() else {
+            dispatchError(TeadsPBMPluginError.jsonSerialization)
+            return nil
+        }
+
         let prebidDisplayView = TeadsPBMDisplayView(frame: frame)
 
         let adViewContainer = TeadsPBMViewContainer(
@@ -60,26 +76,21 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
             loadingDelegate: loadingDelegate,
             interactionDelegate: interactionDelegate
         )
+        adViewContainer.adUnitConfigFingerprint = lastRegisteredFingerprint
 
-        // Clean up previous delegates for this ad unit and put the new one
+        // Clean up stale containers whose delegates have been deallocated
         adViewContainers
-            .filter { $0.value.loadingDelegate != nil && $0.value.interactionDelegate != nil }
+            .filter { $0.value.loadingDelegate == nil || $0.value.interactionDelegate == nil }
             .forEach { adViewContainers.removeValue(forKey: $0.key) }
 
-        // Loading ad
-        do {
-            let adResponse = try bid.stringify()
-            let loadId = placement.loadAd(
-                adResponse: adResponse,
-                requestSettings: settings.adRequestSettings
-            )
+        // Load the winning bid ADM via Teads SDK
+        let loadId = placement.loadAd(
+            adResponse: adResponse,
+            requestSettings: settings.adRequestSettings
+        )
+        adViewContainers[loadId.uuidString] = adViewContainer
 
-            adViewContainers[loadId.uuidString] = adViewContainer
-            return prebidDisplayView
-        } catch {
-            dispatchError(error)
-            return nil
-        }
+        return prebidDisplayView
     }
 
     /// Create interstitial controller (unsupported)

@@ -11,8 +11,10 @@ import TeadsSDK
 
 // MARK: - Plugin Event Delegate
 
-/// Protocol for receiving ad size ratio updates from Teads SDK.
-/// Conforming types should adjust view layout based on the provided `TeadsAdRatio`.
+/// Protocol for receiving ad lifecycle updates from the Teads Prebid plugin renderer.
+/// Conforming types should respond to ratio updates and other lifecycle events
+/// (such as full-screen expansion/collapse and load failures) by updating layout
+/// and UI state as appropriate (e.g. adjusting view layout based on `TeadsAdRatio`).
 public protocol TeadsPBMEventDelegate: PluginEventDelegate {
     func didUpdateRatio(adRatio: TeadsAdRatio)
 
@@ -27,7 +29,7 @@ public protocol TeadsPBMEventDelegate: PluginEventDelegate {
 
 public extension TeadsPBMEventDelegate {
     /// Default implementation returns the registered plugin renderer name.
-    func getPluginRendererName() -> String {
+    func getPluginName() -> String {
         return TeadsPBMPluginRenderer.name
     }
 }

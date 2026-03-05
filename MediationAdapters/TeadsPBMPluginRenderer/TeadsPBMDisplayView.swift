@@ -13,27 +13,15 @@ import UIKit
 // MARK: - Teads Prebid Display View
 
 /// A wrapper view conforming to `PrebidMobileDisplayViewProtocol` that
-/// hosts a `TeadsInReadAdView` and relays load/interaction callbacks to Prebid.
+/// hosts a `TeadsInReadAdView` and relays callbacks to Prebid.
 class TeadsPBMDisplayView: UIView, PrebidMobileDisplayViewProtocol {
-    /// The underlying Teads in-read ad view.
-    let teadsView: TeadsInReadAdView
+    /// The Teads ad view, set when `didReceiveAd` is called.
+    private(set) var teadsAdView: TeadsInReadAdView?
 
     // MARK: - Initializers
 
-    override required init(frame: CGRect) {
-        // Create Teads ad view with same frame
-        teadsView = TeadsInReadAdView(frame: frame)
+    override init(frame: CGRect) {
         super.init(frame: frame)
-
-        // Add and constrain the Teads ad view to fill this container
-        addSubview(teadsView)
-        teadsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            teadsView.topAnchor.constraint(equalTo: topAnchor),
-            teadsView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            teadsView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            teadsView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
     }
 
     /// Unavailable since this view is not intended to be instantiated from a nib/storyboard.
@@ -42,12 +30,31 @@ class TeadsPBMDisplayView: UIView, PrebidMobileDisplayViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Ad View Embedding
+
+    /// Embeds a `TeadsInReadAdView` bound to the received ad.
+    func embed(_ adView: TeadsInReadAdView) {
+        teadsAdView = adView
+        addSubview(adView)
+        adView.translatesAutoresizingMaskIntoConstraints = false
+
+        // Bottom constraint at low priority so TeadsInReadAdView's internal
+        // height constraint (.defaultHigh) drives the content size.
+        let bottom = adView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        bottom.priority = .defaultLow
+
+        NSLayoutConstraint.activate([
+            adView.topAnchor.constraint(equalTo: topAnchor),
+            adView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            adView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottom,
+        ])
+    }
+
     // MARK: - PrebidMobileDisplayViewProtocol
 
-    /// Notifies Prebid that the creative is ready to be displayed.
-    ///
     /// Called by Prebid after this view is returned from `createBannerView`.
     func loadAd() {
-        // No-op because the ad is already loaded on view init.
+        // No-op — the ad is loaded via TeadsPrebidAdPlacement.loadAd(adResponse:).
     }
 }

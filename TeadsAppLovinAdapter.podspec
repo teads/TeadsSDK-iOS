@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsAppLovinAdapter'
-    s.version                   = '6.0.8'
+    s.version                   = '6.0.9'
     s.summary                   = "AppLovin MAX Adapter for Teads' iOS SDK"
     s.module_name               = 'TeadsAppLovinAdapter'
     s.description               = <<-DESC
-                                Use this adapter to include AppLovin as a demand source in your mediation waterfall
+                                Use this adapter to include Teads as a demand source in your mediation waterfall via AppLovin MAX mediation
                                 DESC
     s.homepage                  = 'https://github.com/teads/TeadsSDK-iOS'
-    s.documentation_url         = "https://support.teads.tv/support/solutions/articles/36000314771-smart-adserver-mediation-inread"
-    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2023' }
+    s.documentation_url         = 'https://developers.teads.com/docs/iOS-SDK/Mediation/applovin_inread'
+    s.license                   = { :type => 'Copyright', :text => 'Copyright Teads 2026' }
     s.authors                   = { 'Teads' => 'support-sdk@teads.tv'}
 
     s.source                    = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "#{s.version}" }

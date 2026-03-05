@@ -12,39 +12,64 @@ import UIKit
 // MARK: - TeadsInReadAdPlacementDelegate
 
 extension TeadsPBMPluginRenderer: TeadsInReadAdPlacementDelegate {
-    public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio _: TeadsSDK.TeadsAdRatio) {
-        guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
-              let adView = adContainer.adView else {
-            dispatchError(TeadsPBMPluginError.viewMissing)
-            return
-        }
+    public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        let requestId = ad.requestIdentifier.uuidString
+        guard let adContainer = adViewContainers[requestId],
+              let displayView = adContainer.adView else { return }
+
+        // Create the Teads ad view on the main thread (UIView must be initialized on main)
         ad.delegate = self
-        adView.teadsView.bind(ad)
-        adContainer.loadingDelegate?.displayViewDidLoadAd(adView)
-    }
+        runOnMain {
+            let teadsAdView = TeadsInReadAdView(bind: ad)
+            displayView.embed(teadsAdView)
 
-    public func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio) {
-        pluginEventDelegates[ad.requestIdentifier.uuidString]?.didUpdateRatio(adRatio: adRatio)
-    }
+            // Notify Prebid that the ad loaded
+            if !adContainer.didNotifyAdLoaded {
+                adContainer.didNotifyAdLoaded = true
+                adContainer.loadingDelegate?.displayViewDidLoadAd(displayView)
+            }
 
-    public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason) {
-        pluginEventDelegates[reason.requestIdentifier.uuidString]?.onFailedToLoadAd(reason: reason.description)
-        dispatchError(reason)
-
-        guard let adContainer = adViewContainers[reason.requestIdentifier.uuidString],
-              let adView = adContainer.adView else {
-            dispatchError(TeadsPBMPluginError.viewMissing)
-            return
+            // Forward initial ratio to plugin event delegates
+            if let fingerprint = adContainer.adUnitConfigFingerprint {
+                self.pluginEventDelegates[fingerprint]?.didUpdateRatio(adRatio: adRatio)
+            }
         }
-
-        adContainer.loadingDelegate?.displayView(adView, didFailWithError: reason)
     }
 
-    public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView) {
-        guard let requestIdentifier = trackerView.requestIdentifier,
-              let adContainer = adViewContainers[requestIdentifier.uuidString],
-              let adView = adContainer.adView else { return }
+    public func didUpdateRatio(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+        let requestId = ad.requestIdentifier.uuidString
+        guard let adContainer = adViewContainers[requestId] else { return }
 
-        adView.addSubview(trackerView)
+        if let fingerprint = adContainer.adUnitConfigFingerprint {
+            pluginEventDelegates[fingerprint]?.didUpdateRatio(adRatio: adRatio)
+        }
+    }
+
+    public func didFailToReceiveAd(reason: AdFailReason) {
+        for (_, container) in adViewContainers {
+            // Notify Prebid loading delegate of the failure
+            if let adView = container.adView {
+                runOnMain {
+                    container.loadingDelegate?.displayView(adView, didFailWithError: reason)
+                }
+            }
+
+            // Forward failure to the matching plugin event delegate
+            if let fingerprint = container.adUnitConfigFingerprint {
+                pluginEventDelegates[fingerprint]?.onFailedToLoadAd(reason: reason.description)
+            }
+        }
+    }
+
+    public func adOpportunityTrackerView(trackerView: TeadsAdOpportunityTrackerView) {
+        // Tracker view handling — attach to the display view associated with this request
+        guard
+            let requestId = trackerView.requestIdentifier?.uuidString,
+            let container = adViewContainers[requestId],
+            let displayView = container.adView else { return }
+
+        runOnMain {
+            displayView.addSubview(trackerView)
+        }
     }
 }

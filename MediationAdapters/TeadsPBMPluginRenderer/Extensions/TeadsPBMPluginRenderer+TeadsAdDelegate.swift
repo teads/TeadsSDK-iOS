@@ -12,17 +12,26 @@ extension TeadsPBMPluginRenderer: TeadsAdDelegate {
     public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIViewController? {
         guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
               let adView = adContainer.adView else { return nil }
-        DispatchQueue.main.sync {
+        runOnMain {
             adContainer.interactionDelegate?.willPresentModal(from: adView)
         }
-        return nil
+
+        var presentingViewController: UIViewController?
+        if Thread.isMainThread {
+            presentingViewController = adContainer.interactionDelegate?.viewControllerForModalPresentation(fromDisplayView: adView)
+        } else {
+            DispatchQueue.main.sync {
+                presentingViewController = adContainer.interactionDelegate?.viewControllerForModalPresentation(fromDisplayView: adView)
+            }
+        }
+        return presentingViewController
     }
 
     public func didRecordImpression(ad: TeadsAd) {
         guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
               let adView = adContainer.adView else { return }
 
-        DispatchQueue.main.sync {
+        runOnMain {
             adContainer.interactionDelegate?.trackImpression(forDisplayView: adView)
         }
     }
@@ -31,7 +40,7 @@ extension TeadsPBMPluginRenderer: TeadsAdDelegate {
         guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
               let adView = adContainer.adView else { return }
 
-        DispatchQueue.main.sync {
+        runOnMain {
             adContainer.interactionDelegate?.didLeaveApp(from: adView)
         }
     }
@@ -40,16 +49,20 @@ extension TeadsPBMPluginRenderer: TeadsAdDelegate {
         guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
               let adView = adContainer.adView else { return }
 
-        DispatchQueue.main.sync {
+        runOnMain {
             adContainer.loadingDelegate?.displayView(adView, didFailWithError: error)
         }
     }
 
     public func didCollapsedFromFullscreen(ad: TeadsAd) {
-        pluginEventDelegates[ad.requestIdentifier.uuidString]?.onAdCollapsedFromFullScreen()
+        if let fingerprint = adViewContainers[ad.requestIdentifier.uuidString]?.adUnitConfigFingerprint {
+            pluginEventDelegates[fingerprint]?.onAdCollapsedFromFullScreen()
+        }
     }
 
     public func didExpandedToFullscreen(ad: TeadsAd) {
-        pluginEventDelegates[ad.requestIdentifier.uuidString]?.onAdExpandedToFullScreen()
+        if let fingerprint = adViewContainers[ad.requestIdentifier.uuidString]?.adUnitConfigFingerprint {
+            pluginEventDelegates[fingerprint]?.onAdExpandedToFullScreen()
+        }
     }
 }
