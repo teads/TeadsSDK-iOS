@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
     s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }
     s.author                = { "Teads" => "support-sdk@teads.tv" }
-    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'master', :tag => "v#{s.version}"}
+    s.source                = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :branch => 'master', :tag => "#{s.version}"}
     
     s.requires_arc          = true
     
