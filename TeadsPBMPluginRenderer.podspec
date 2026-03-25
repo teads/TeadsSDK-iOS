@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                      = 'TeadsPBMPluginRenderer'
-    s.version                   = '6.0.10'
+    s.version                   = '6.0.11'
     s.summary                   = "PrebidMobile Plugin renderer for Teads' iOS SDK"
     s.module_name               = 'TeadsPBMPluginRenderer'
     s.description               = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
     s.source                    = { :git => 'https://github.com/teads/TeadsSDK-iOS.git', :tag => "#{s.version}" }
     s.platform                  = 'ios'
-    s.ios.deployment_target     = '12.0'
+    s.ios.deployment_target     = '14.0'
     s.static_framework          = true
     s.requires_arc              = true
     s.source_files              = ['MediationAdapters/TeadsPBMPluginRenderer/**/*{.swift}']

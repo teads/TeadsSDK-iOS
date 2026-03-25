@@ -526,6 +526,12 @@ typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV1 = 1,
 /// Version 2 of TCF
   TCFVersionV2 = 2,
+/// Version 2.1 of TCF (IAB policy version 3)
+  TCFVersionV2p1 = 3,
+/// Version 2.2 of TCF (IAB policy version 4)
+  TCFVersionV2p2 = 4,
+/// Version 2.3 of TCF (IAB policy version 5)
+  TCFVersionV2p3 = 5,
 };
 
 /// This builder allows you to bind UI elements programmatically using <code>TeadsNativeAdView/bind(_:tagBinder:)</code>
@@ -1583,7 +1589,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsPrivacy
 - (void)clearCustomIDFAConsent;
 /// Clear all custom privacy settings to use system values
 - (void)clearAllCustomSettings;
-/// Check if GDPR applies (prefers custom value over system)
+/// Check if GDPR applies (prefers custom value, then TCFv2, then TCFv1)
 @property (nonatomic, readonly) BOOL gdprApplies;
 /// Get GDPR consent string (prefers custom value over system)
 @property (nonatomic, readonly, copy) NSString * _Nullable gdprConsentString;
@@ -2218,6 +2224,12 @@ typedef SWIFT_ENUM(NSInteger, TCFVersion, open) {
   TCFVersionV1 = 1,
 /// Version 2 of TCF
   TCFVersionV2 = 2,
+/// Version 2.1 of TCF (IAB policy version 3)
+  TCFVersionV2p1 = 3,
+/// Version 2.2 of TCF (IAB policy version 4)
+  TCFVersionV2p2 = 4,
+/// Version 2.3 of TCF (IAB policy version 5)
+  TCFVersionV2p3 = 5,
 };
 
 /// This builder allows you to bind UI elements programmatically using <code>TeadsNativeAdView/bind(_:tagBinder:)</code>
@@ -3275,7 +3287,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsPrivacy
 - (void)clearCustomIDFAConsent;
 /// Clear all custom privacy settings to use system values
 - (void)clearAllCustomSettings;
-/// Check if GDPR applies (prefers custom value over system)
+/// Check if GDPR applies (prefers custom value, then TCFv2, then TCFv1)
 @property (nonatomic, readonly) BOOL gdprApplies;
 /// Get GDPR consent string (prefers custom value over system)
 @property (nonatomic, readonly, copy) NSString * _Nullable gdprConsentString;
