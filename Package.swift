@@ -19,11 +19,11 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: teadsModuleName,
-            path: "\(teadsModuleName).xcframework"
+            path: "Frameworks/\(teadsModuleName).xcframework"
         ),
         .binaryTarget(
             name: omModuleName,
-            path: "\(omModuleName).xcframework"
+            path: "Frameworks/\(omModuleName).xcframework"
         ),
     ]
 )
