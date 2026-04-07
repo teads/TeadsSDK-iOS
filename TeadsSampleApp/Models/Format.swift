@@ -51,11 +51,12 @@ struct Integration {
 
 // Formats
 enum Formats {
-    case inRead, native
+    case inRead, native, interstitial
     func format() -> Format {
         switch self {
             case .inRead: return inReadFormat
             case .native: return nativeFormat
+            case .interstitial: return interstitialFormat
         }
     }
 }
@@ -65,6 +66,7 @@ let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLov
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
 let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false, creativeTypes: [display, custom])
+let interstitialFormat = Format(name: .interstitial, providers: [interstitialAdmobProvider], isSelected: false, creativeTypes: [])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
@@ -86,6 +88,9 @@ let inReadSASProvider = Provider(name: .sas, integrations: [
 let inReadAppLovinProvider = Provider(name: .appLovin, integrations: [
     scrollViewIntegration,
 ], isSelected: false)
+
+// Interstitial Providers
+let interstitialAdmobProvider = Provider(name: .admob, integrations: [scrollViewIntegration], isSelected: true)
 
 // Native Providers
 let nativeDirectProvider = Provider(name: .direct, integrations: [
@@ -162,11 +167,15 @@ enum PID {
     static let appLovinSquare = "4df06edb6937371e"
     static let appLovinCarousel = "373d7d2b25d2d8cc"
     static let appLovinNativeDisplay = "5738024757e4ef72"
+
+    static let admobInterstitial = "ca-app-pub-3068786746829754/9358977978"
+    static let admobInterstitialTest = "ca-app-pub-3940256099942544/4411468910"
 }
 
 enum FormatName: String {
     case inRead
     case native = "Native"
+    case interstitial = "Interstitial"
 }
 
 enum ProviderName: String {
