@@ -9,7 +9,6 @@ import GoogleMobileAds
 import UIKit
 
 final class InterstitialAdmobViewController: TeadsViewController {
-
     private var interstitialAd: InterstitialAd?
     private var isContentUnlocked = false
     private var isWaitingForAd = false

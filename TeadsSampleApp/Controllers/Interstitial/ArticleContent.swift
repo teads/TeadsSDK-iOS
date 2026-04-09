@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ArticleContent {
+enum ArticleContent {
     static let title = "The Future of Digital Advertising"
 
     static let previewParagraph = """
