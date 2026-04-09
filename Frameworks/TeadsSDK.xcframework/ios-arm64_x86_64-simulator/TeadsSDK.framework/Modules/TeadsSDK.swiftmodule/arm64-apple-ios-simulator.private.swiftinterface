@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TeadsSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import ARKit
 import AVFoundation
 import AVKit
@@ -25,13 +25,772 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@objc public protocol TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
-  @objc var delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? { get set }
-  @discardableResult
-  @objc func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
+@objc @objcMembers public class OBDisclosure : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var imageUrl: Swift.String?
+  @objc public var clickUrl: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(imageUrl: Swift.String? = nil, clickUrl: Swift.String? = nil)
+  #endif
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsAdChoicesView : UIKit.UIView {
-  @objc @_Concurrency.MainActor @preconcurrency public init(binding component: TeadsSDK.OverlayComponent? = nil)
+@objc public enum OBErrorType : Swift.Int, Swift.Sendable {
+  case generic = 0
+  case network
+  case native
+  case zeroRecommendations
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum OBErrorCode : Swift.Int, Swift.Sendable {
+  case generic = 10200
+  case parsing = 10201
+  case server = 10202
+  case invalidParameters = 10203
+  case noRecommendations = 10204
+  case noData = 10205
+  case network = 10206
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class OBError : ObjectiveC.NSObject, Swift.Error {
+  @objc final public let type: TeadsSDK.OBErrorType
+  @objc final public let message: Swift.String?
+  @objc final public let code: TeadsSDK.OBErrorCode
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(type: TeadsSDK.OBErrorType, message: Swift.String?, code: TeadsSDK.OBErrorCode)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func generic(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func network(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func native(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func zeroRecommendations(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
+  #endif
+  @objc deinit
+}
+@objc @objcMembers public class OBImageInfo : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let width: Swift.Int
+  @objc final public let height: Swift.Int
+  @objc final public let url: Foundation.URL?
+  @objc deinit
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class OBRecommendation : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var url: Swift.String?
+  @objc public var origUrl: Swift.String?
+  @objc public var content: Swift.String?
+  @objc public var source: Swift.String?
+  @objc public var image: TeadsSDK.OBImageInfo?
+  @objc public var position: Swift.String?
+  @objc public var author: Swift.String?
+  @objc public var publishDate: Foundation.Date?
+  @objc public var sameSource: Swift.Bool
+  @objc public var disclosure: TeadsSDK.OBDisclosure?
+  @objc public var pixels: [Swift.String]?
+  @objc public var reqId: Swift.String?
+  @objc public var isPaidLink: Swift.Bool {
+    @objc get
+  }
+  @objc public var isRTB: Swift.Bool {
+    @objc get
+  }
+  @objc public var isVideo: Swift.Bool {
+    @objc get
+  }
+  @objc public func shouldDisplayDisclosureIcon() -> Swift.Bool
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class OBRecommendationResponse : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let request: [Swift.String : Any]
+  @objc final public let settings: [Swift.String : Any]
+  @objc final public let viewabilityActions: TeadsSDK.OBViewabilityActions?
+  @objc final public let recommendations: [TeadsSDK.OBRecommendation]
+  @objc public var error: TeadsSDK.OBError?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class OBViewabilityActions : ObjectiveC.NSObject, Swift.Decodable {
+  @objc final public let reportServed: Swift.String?
+  @objc final public let reportViewed: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class AdChoicesComponent : TeadsSDK.OverlayComponent {
+  final public let clickThroughUrl: Foundation.URL
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
+  @objc deinit
+  @objc public func didTapView()
+}
+extension TeadsSDK.CommonComponent {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var text: Swift.String? {
+    get
+  }
+  #endif
+}
+@_hasMissingDesignatedInitializers @objc final public class ContainerComponent : TeadsSDK.CommonComponent {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
+  final public let url: Foundation.URL
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((any Swift.Error) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var image: UIKit.UIImage? {
+    @objc get
+  }
+  #endif
+  final public func loadImage() async throws -> UIKit.UIImage
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class OverlayComponent : TeadsSDK.CommonComponent {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
+  @objc public var contentAspectRatio: CoreFoundation.CGFloat {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class TeadsAd : ObjectiveC.NSObject {
+  @objc weak public var delegate: (any TeadsSDK.TeadsAdDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc weak public var playbackDelegate: (any TeadsSDK.TeadsPlaybackDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc final public let requestIdentifier: Foundation.UUID
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc final public class TeadsInReadAd : TeadsSDK.TeadsAd {
+  @objc deinit
+}
+extension TeadsSDK.TeadsInReadAd {
+  @objc final public var adRatio: TeadsSDK.TeadsAdRatio {
+    @objc get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAd : TeadsSDK.TeadsAd {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var title: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var content: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var image: TeadsSDK.ImageComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var icon: TeadsSDK.ImageComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var sponsored: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var callToAction: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var video: TeadsSDK.VideoComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var rating: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var price: TeadsSDK.CommonComponent? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var adChoices: TeadsSDK.AdChoicesComponent? {
+    @objc get
+  }
+  #endif
+  @objc final public func register(containerView: UIKit.UIView)
+  final public func performTap()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency final public var requestIdentifier: Foundation.UUID? {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func removeFromSuperview()
+  @objc deinit
+}
+public struct TeadsAdPlacementFeedConfig {
+  public let articleUrl: Foundation.URL
+  public let widgetId: Swift.String
+  public let installationKey: Swift.String
+  public let widgetIndex: Swift.Int
+  public let userId: Swift.String?
+  public let darkMode: Swift.Bool
+  public let extId: Swift.String?
+  public let extSecondaryId: Swift.String?
+  public let obPubImp: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String, widgetIndex: Swift.Int, userId: Swift.String? = nil, darkMode: Swift.Bool = false, extId: Swift.String? = nil, extSecondaryId: Swift.String? = nil, obPubImp: Swift.String? = nil)
+  #endif
+}
+public struct TeadsAdPlacementInterstitialConfig {
+  public let articleUrl: Foundation.URL
+  public let widgetId: Swift.String
+  public let installationKey: Swift.String
+  public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String)
+}
+public struct TeadsAdPlacementMediaConfig {
+  public let pid: Swift.Int
+  public let articleUrl: Foundation.URL?
+  public let adUnitId: Swift.String?
+  public let integrationType: Swift.String?
+  public let enableValidationMode: Swift.Bool
+  public let disableAudioSessionManagement: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, adUnitId: Swift.String? = nil, integrationType: Swift.String? = nil, enableValidationMode: Swift.Bool = false, disableAudioSessionManagement: Swift.Bool = false)
+  #endif
+}
+public protocol TeadsAdPlacementRecommendationsConfig {
+  var widgetId: Swift.String { get }
+  var widgetIndex: Swift.Int { get }
+}
+public struct TeadsAdPlacementRecommendationsURLConfig : TeadsSDK.TeadsAdPlacementRecommendationsConfig {
+  public let articleUrl: Foundation.URL
+  public let widgetId: Swift.String
+  public let widgetIndex: Swift.Int
+  public init(articleUrl: Foundation.URL, widgetId: Swift.String, widgetIndex: Swift.Int = 0)
+}
+public struct TeadsAdPlacementRecommendationsPlatformConfig : TeadsSDK.TeadsAdPlacementRecommendationsConfig {
+  public let widgetId: Swift.String
+  public let widgetIndex: Swift.Int
+  public let contentUrl: Swift.String?
+  public let portalUrl: Swift.String?
+  public let bundleUrl: Swift.String?
+  public let lang: Swift.String?
+  public let psub: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(widgetId: Swift.String, widgetIndex: Swift.Int = 0, contentUrl: Swift.String? = nil, portalUrl: Swift.String? = nil, bundleUrl: Swift.String? = nil, lang: Swift.String? = nil, psub: Swift.String? = nil)
+  #endif
+}
+@objc public protocol TeadsAdPlacementEventsDelegate : ObjectiveC.NSObjectProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc func adPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
+  #endif
+}
+@objc public protocol TeadsAdPlacementIdentifiable {
+  @objc var placementId: Swift.String { get }
+  @objc var placementType: TeadsSDK.TeadsAdPlacementType { get }
+}
+public protocol TeadsAdPlacementProtocol {
+  associatedtype PlacementResult
+  associatedtype Config
+  #if compiler(>=5.3) && $NonescapableTypes
+  init(_ config: Self.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
+  #endif
+  func loadAd() throws -> Self.PlacementResult
+}
+@objc public enum TeadsFullScreenEventName : Swift.Int, Swift.CaseIterable {
+  case willPresent
+  case presented
+  case willDismiss
+  case dismissed
+  public var description: Swift.String {
+    get
+  }
+  public var identifier: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [TeadsSDK.TeadsFullScreenEventName]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [TeadsSDK.TeadsFullScreenEventName] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol TeadsFullScreenEventsDelegate : TeadsSDK.TeadsAdPlacementEventsDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc func fullScreenPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsFullScreenEventName, data: [Swift.String : Any]?)
+  #endif
+}
+public protocol TeadsUIViewPlacement : TeadsSDK.TeadsAdPlacementProtocol {
+  associatedtype ViewType : UIKit.UIView
+  var uiViewResult: Self.ViewType { get throws }
+}
+extension TeadsSDK.TeadsUIViewPlacement where Self.PlacementResult == Self.ViewType {
+  public var uiViewResult: Self.PlacementResult {
+    get throws
+  }
+}
+@objc public class TeadsAdPlacementFeed : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol, TeadsSDK.TeadsUIViewPlacement {
+  public typealias ViewType = UIKit.UIView
+  public var uiViewResult: UIKit.UIView {
+    get throws
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  required public init(_ config: TeadsSDK.TeadsAdPlacementFeedConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String, widgetIndex: Swift.Int, userId: Swift.String? = nil, darkMode: Swift.Bool = false, extId: Swift.String? = nil, extSecondaryId: Swift.String? = nil, obPubImp: Swift.String? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  public func loadAd() throws -> any UIKit.UIView & TeadsSDK.DarkModeTogglable
+  @objc public func getAdView() -> UIKit.UIView
+  @objc public func toggleDarkMode(_ darkMode: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func showExploreMore(onExploreMoreDismissed: (() -> Swift.Void)?)
+  #endif
+  public typealias Config = TeadsSDK.TeadsAdPlacementFeedConfig
+  public typealias PlacementResult = any UIKit.UIView & TeadsSDK.DarkModeTogglable
+  @objc deinit
+}
+extension TeadsSDK.TeadsAdPlacementFeed {
+  @objc dynamic public func didChangeHeight(_ newHeight: CoreFoundation.CGFloat)
+  @objc dynamic public func widgetEvent(_ eventName: Swift.String, additionalData: [Swift.String : Any])
+  @objc dynamic public func onRecClick(_ url: Foundation.URL)
+  @objc dynamic public func onOrganicRecClick(_ url: Foundation.URL)
+}
+extension TeadsSDK.TeadsAdPlacementFeed : TeadsSDK.TeadsAdPlacementIdentifiable {
+  @objc dynamic public var placementId: Swift.String {
+    @objc get
+  }
+  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
+    @objc get
+  }
+  @objc public static var testDisplay: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static var infiniteWidgetsOnTheSamePage: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func printLogs(domain: Swift.String? = nil)
+  #endif
+}
+@_hasMissingDesignatedInitializers @preconcurrency @_Concurrency.MainActor @objc public class TeadsAdPlacementInterstitial : ObjectiveC.NSObject, @_Concurrency.MainActor TeadsSDK.TeadsAdPlacementProtocol, @_Concurrency.MainActor TeadsSDK.TeadsAdPlacementIdentifiable {
+  public typealias PlacementResult = Swift.Void
+  public typealias Config = TeadsSDK.TeadsAdPlacementInterstitialConfig
+  @_Concurrency.MainActor @preconcurrency @objc public var placementId: Swift.String {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc public var placementType: TeadsSDK.TeadsAdPlacementType {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var isReady: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency required public init(_ config: TeadsSDK.TeadsAdPlacementInterstitialConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @_Concurrency.MainActor @preconcurrency convenience public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  @objc deinit
+  @objc @_Concurrency.MainActor @preconcurrency public func invalidate()
+  @objc @_Concurrency.MainActor @preconcurrency public func loadAd()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @_Concurrency.MainActor @preconcurrency public func show(from viewController: UIKit.UIViewController? = nil)
+  #endif
+}
+extension TeadsSDK.TeadsAdPlacementInterstitial : SafariServices.SFSafariViewControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
+}
+extension TeadsSDK.TeadsAdPlacementInterstitial {
+  @objc @_Concurrency.MainActor @preconcurrency public static var testDisplay: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc public class TeadsAdPlacementMedia : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol, TeadsSDK.TeadsUIViewPlacement {
+  public typealias ViewType = UIKit.UIView
+  final public let contentView: TeadsSDK.TeadsAdPlacementContainerView<TeadsSDK.TeadsInReadAdView>
+  #if compiler(>=5.3) && $NonescapableTypes
+  required public init(_ config: TeadsSDK.TeadsAdPlacementMediaConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, enableValidationMode: Swift.Bool = false, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  @objc public func loadAd() throws -> UIKit.UIView
+  @objc deinit
+  public typealias Config = TeadsSDK.TeadsAdPlacementMediaConfig
+  public typealias PlacementResult = UIKit.UIView
+}
+extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsInReadAdPlacementDelegate {
+  @objc dynamic public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc dynamic public func didUpdateRatio(ad _: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc dynamic public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+  @objc dynamic public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+}
+extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsAdPlacementIdentifiable {
+  @objc dynamic public var placementId: Swift.String {
+    @objc get
+  }
+  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
+    @objc get
+  }
+}
+extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsPlaybackDelegate {
+  @objc dynamic public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didPlay(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didPause(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didComplete(_ ad: TeadsSDK.TeadsAd)
+}
+@objc public class TeadsAdPlacementMediaNative : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  required public init(_ config: TeadsSDK.TeadsAdPlacementMediaConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, enableValidationMode: Swift.Bool = false, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  @objc public func loadAd() throws -> (TeadsSDK.TeadsNativeAdView) -> Swift.Void
+  public typealias Config = TeadsSDK.TeadsAdPlacementMediaConfig
+  public typealias PlacementResult = (TeadsSDK.TeadsNativeAdView) -> Swift.Void
+  @objc deinit
+}
+extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsNativeAdPlacementDelegate {
+  @objc dynamic public func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
+  @objc dynamic public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+  @objc dynamic public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+}
+extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsAdPlacementIdentifiable {
+  @objc dynamic public var placementId: Swift.String {
+    @objc get
+  }
+  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
+    @objc get
+  }
+}
+extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsPlaybackDelegate {
+  @objc dynamic public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didPlay(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didPause(_ ad: TeadsSDK.TeadsAd)
+  @objc dynamic public func didComplete(_ ad: TeadsSDK.TeadsAd)
+}
+@objc public class TeadsAdPlacementRecommendations : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  required public init(_ config: any TeadsSDK.TeadsAdPlacementRecommendationsConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(articleUrl: Foundation.URL, widgetId: Swift.String, widgetIndex: Swift.Int, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc convenience public init(widgetId: Swift.String, widgetIndex: Swift.Int, contentUrl: Swift.String? = nil, portalUrl: Swift.String? = nil, bundleUrl: Swift.String? = nil, lang: Swift.String? = nil, psub: Swift.String? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  public func loadAd() throws -> () async throws -> [TeadsSDK.OBRecommendation]
+  @objc public func loadAd(completion: @escaping (TeadsSDK.OBRecommendationResponse) -> Swift.Void)
+  public typealias Config = any TeadsSDK.TeadsAdPlacementRecommendationsConfig
+  public typealias PlacementResult = () async throws -> [TeadsSDK.OBRecommendation]
+  @objc deinit
+}
+extension TeadsSDK.TeadsAdPlacementRecommendations : TeadsSDK.TeadsAdPlacementIdentifiable {
+  @objc dynamic public var placementId: Swift.String {
+    @objc get
+  }
+  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
+    @objc get
+  }
+  @objc dynamic public class func configureViewabilityPerListing(for view: UIKit.UIView, withRec rec: TeadsSDK.OBRecommendation)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func getAboutURL() -> Foundation.URL?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func getUrl(_ rec: TeadsSDK.OBRecommendation) -> Foundation.URL?
+  #endif
+  @objc public static var testLocation: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc public static var testRTB: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc public enum TeadsAdPlacementType : Swift.Int, Swift.CaseIterable {
+  case feed, media, mediaNative, recommendations, interstitial
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [TeadsSDK.TeadsAdPlacementType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [TeadsSDK.TeadsAdPlacementType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Dictionary where Key == Swift.String, Value == Any {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var recClickUrl: Swift.String? {
+    get
+  }
+  #endif
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TeadsPrivacy : ObjectiveC.NSObject {
+  @objc public static var shared: TeadsSDK.TeadsPrivacy {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setGDPRConsentString(_ consentString: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setGDPRConsentStringV1(_ consentString: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setGDPRConsentStringV2(_ consentString: Swift.String?)
+  #endif
+  @objc public func setGDPRApplies(_ applies: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setUSPrivacyString(_ privacyString: Swift.String?)
+  #endif
+  @objc public func setIDFAConsent(_ hasConsent: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setGPPString(_ gppString: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func setGPPSections(_ sections: Swift.String?)
+  #endif
+  @objc public func clearCustomIDFAConsent()
+  @objc public func clearAllCustomSettings()
+  @objc public var gdprApplies: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var gdprConsentString: Swift.String? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var gdprConsentStringV1: Swift.String? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var gdprConsentStringV2: Swift.String? {
+    @objc get
+  }
+  #endif
+  @objc public var hasGDPRConsentForTeads: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var usPrivacyString: Swift.String? {
+    @objc get
+  }
+  #endif
+  @objc public var hasOptedOutOfSale: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var gppString: Swift.String? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var gppSections: Swift.String? {
+    @objc get
+  }
+  #endif
+  @objc public var gppApplies: Swift.Bool {
+    @objc get
+  }
+  @objc public var idfaTrackingAuthorized: Swift.Bool {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var idfaString: Swift.String? {
+    @objc get
+  }
+  #endif
+  @available(iOS 14, *)
+  @objc public func requestIDFAPermission(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public var isCMPPresent: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol DarkModeTogglable {
+  func toggleDarkMode(_ darkMode: Swift.Bool)
+}
+@_Concurrency.MainActor @preconcurrency public struct TeadsAdPlacementSwiftUIView<Placement> : SwiftUICore.View where Placement : TeadsSDK.TeadsUIViewPlacement {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s8TeadsSDK0A22AdPlacementSwiftUIViewV4bodyQrvp", 0) __<Placement>
+}
+extension SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public func teadsAdPlacement<Placement>(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil) -> some SwiftUICore.View where Placement : TeadsSDK.TeadsUIViewPlacement
+  
+  #endif
+}
+final public class TeadsAdPlacementViewModel<Placement> : ObjectiveC.NSObject, Combine.ObservableObject, TeadsSDK.TeadsAdPlacementEventsDelegate where Placement : TeadsSDK.TeadsUIViewPlacement {
+  @Combine.Published @_projectedValueProperty($adHeight) final public var adHeight: CoreFoundation.CGFloat {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  final public var $adHeight: Combine.Published<CoreFoundation.CGFloat>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($isLoading) final public var isLoading: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  final public var $isLoading: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($hasError) final public var hasError: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  final public var $hasError: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @Combine.Published @_projectedValueProperty($errorMessage) final public var errorMessage: Swift.String? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public var $errorMessage: Combine.Published<Swift.String?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
+  #endif
+  final public func triggerHeightUpdate()
+  final public func toggleDarkMode(_ darkMode: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func showExploreMore(onExploreMoreDismissed: (() -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc nonisolated final public func adPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
+  #endif
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class TeadsAdPlacementContainerView<T> : UIKit.UIView where T : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let placementView: T
+  @_Concurrency.MainActor @preconcurrency public init(placementView: T)
+  @objc deinit
+}
+extension TeadsSDK.TeadsAdPlacementContainerView : TeadsSDK.DarkModeTogglable {
+  @_Concurrency.MainActor @preconcurrency public func toggleDarkMode(_ darkMode: Swift.Bool)
+}
+@objc public enum TeadsAdPlacementEventName : Swift.Int, Swift.CaseIterable {
+  case ready
+  case rendered
+  case viewed
+  case failed
+  case clicked
+  case clickedOrganic
+  case play
+  case pause
+  case loaded
+  case complete
+  case startPlayAudio
+  case stopPlayAudio
+  case heightUpdated
+  public var description: Swift.String {
+    get
+  }
+  public var identifier: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [TeadsSDK.TeadsAdPlacementEventName]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [TeadsSDK.TeadsAdPlacementEventName] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsAdapterIntegrationType : ObjectiveC.NSObject {
+  public static let adMob: TeadsSDK.TeadsAdapterIntegrationType
+  public static let appLovin: TeadsSDK.TeadsAdapterIntegrationType
+  public static let smart: TeadsSDK.TeadsAdapterIntegrationType
+  public static let gravite: TeadsSDK.TeadsAdapterIntegrationType
+  public static let flutter: TeadsSDK.TeadsAdapterIntegrationType
+  public static let reactNative: TeadsSDK.TeadsAdapterIntegrationType
+  public static let prebid: TeadsSDK.TeadsAdapterIntegrationType
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdapterSettings : ObjectiveC.NSObject {
@@ -79,30 +838,26 @@ import _SwiftConcurrencyShims
   @objc final public class func instance(from dictionary: [Swift.AnyHashable : Any]) throws -> TeadsSDK.TeadsAdapterSettings
   @objc final public func setIntegration(type integration: TeadsSDK.TeadsAdapterIntegrationType, version: Swift.String)
 }
-@objc public protocol TeadsNativeAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
-  @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
+@objc public enum FrameworkType : Swift.Int {
+  case flutter
+  case reactNative
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
-@_hasMissingDesignatedInitializers @objc final public class ContainerComponent : TeadsSDK.CommonComponent {
+@_hasMissingDesignatedInitializers @objc public class WrapperFrameworkInfo : ObjectiveC.NSObject {
+  @objc final public let type: TeadsSDK.FrameworkType
+  @objc final public let version: Swift.String
+  @objc public static func flutter(_ flutterVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
+  @objc public static func reactNative(_ reactNativeVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
   @objc deinit
 }
 @objc public protocol TeadsAdPlacement {
   @objc var pid: Swift.Int { get }
-}
-@objc public protocol TeadsMediatedAdViewDelegate {
-  @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
-}
-@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
-  @_Concurrency.MainActor @preconcurrency @objc override final public func willMove(toWindow newWindow: UIKit.UIWindow?)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func didMoveToWindow()
-  @objc @_Concurrency.MainActor @preconcurrency final public func bind(_ ad: TeadsSDK.TeadsInReadAd)
-  @_Concurrency.MainActor @preconcurrency public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreFoundation.CGRect = .zero)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @objc deinit
-  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
-}
-@objc public protocol TeadsLogMessageDelegate {
-  @objc optional func didLogMessage(message: Swift.String)
 }
 @_inheritsConvenienceInitializers @objc final public class TeadsAdPlacementSettings : ObjectiveC.NSObject {
   public static let frameworkTypeKey: Swift.String
@@ -136,67 +891,95 @@ import _SwiftConcurrencyShims
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class OverlayComponent : TeadsSDK.CommonComponent {
+@objc public protocol TeadsInReadAdPlacement : TeadsSDK.TeadsAdPlacement {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc var delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? { get set }
+  #endif
+  @discardableResult
+  @objc func requestAd(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
+}
+@objc public protocol TeadsNativeAdPlacement : TeadsSDK.TeadsAdPlacement {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc var delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? { get set }
+  #endif
+  @discardableResult
+  @objc func requestAd(requestSettings: TeadsSDK.TeadsNativeAdRequestSettings) -> Foundation.UUID
+}
+@objc public protocol TeadsPrebidAdPlacement : TeadsSDK.TeadsAdPlacement {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic var delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? { get set }
+  #endif
+  @discardableResult
+  @objc func loadAd(adResponse: Swift.String, requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
+  @discardableResult
+  @objc func getData(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) throws -> [Swift.AnyHashable : Any]
+}
+@objc public enum AdErrorCode : Swift.Int {
+  case errorNoSlot = 1
+  case errorNetwork = 2
+  case errorNotFilled = 3
+  case errorBadResponse = 4
+  case errorVastError = 5
+  case errorUserIdMissing = 6
+  case errorInternal = 7
+  case disabledApp = 8
+  case errorAdRequest = 9
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
+  @objc final public let code: TeadsSDK.AdErrorCode
+  @objc final public var requestIdentifier: Foundation.UUID! {
+    get
+  }
+  @objc override final public var description: Swift.String {
+    @objc get
+  }
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsNativeAd : TeadsSDK.TeadsAd {
-  @objc final public var title: TeadsSDK.CommonComponent? {
-    @objc get
+extension TeadsSDK.AdFailReason : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
   }
-  @objc final public var content: TeadsSDK.CommonComponent? {
-    @objc get
+  final public var errorCode: Swift.Int {
+    get
   }
-  @objc final public var image: TeadsSDK.ImageComponent? {
-    @objc get
+  final public var errorUserInfo: [Swift.String : Any] {
+    get
   }
-  @objc final public var icon: TeadsSDK.ImageComponent? {
-    @objc get
-  }
-  @objc final public var sponsored: TeadsSDK.CommonComponent? {
-    @objc get
-  }
-  @objc final public var callToAction: TeadsSDK.CommonComponent? {
-    @objc get
-  }
-  @objc final public var video: TeadsSDK.VideoComponent? {
-    @objc get
-  }
-  @objc final public var rating: TeadsSDK.CommonComponent? {
-    @objc get
-  }
-  @objc final public var price: TeadsSDK.CommonComponent? {
-    @objc get
-  }
-  @objc final public var adChoices: TeadsSDK.AdChoicesComponent? {
-    @objc get
-  }
-  @objc final public func register(containerView: UIKit.UIView)
-  final public func performTap()
+}
+@_hasMissingDesignatedInitializers @objc final public class TeadsAdRatio : ObjectiveC.NSObject {
+  final public let creativeRatio: CoreFoundation.CGFloat
+  final public let headerHeight: CoreFoundation.CGFloat
+  final public let footerHeight: CoreFoundation.CGFloat
+  @objc public static let zero: TeadsSDK.TeadsAdRatio
+  @objc public static let `default`: TeadsSDK.TeadsAdRatio
+  @objc(calculateHeightForWidth:) final public func calculateHeight(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+  @objc final public func value(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class TeadsNativeAdView : TeadsSDK.TeadsAdView {
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var titleLabel: UIKit.UILabel?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var contentLabel: UIKit.UILabel?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var mediaView: TeadsSDK.TeadsMediaView?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var iconImageView: UIKit.UIImageView?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var advertiserLabel: UIKit.UILabel?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var callToActionButton: UIKit.UIButton?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var ratingView: UIKit.UIView?
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var priceLabel: UIKit.UILabel?
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willMove(toWindow newWindow: UIKit.UIWindow?)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMoveToWindow()
-  @objc @_Concurrency.MainActor @preconcurrency public func bind(_ ad: TeadsSDK.TeadsNativeAd)
-  @objc @_Concurrency.MainActor @preconcurrency public func bind(_ ad: TeadsSDK.TeadsNativeAd, tagBinder: (TeadsSDK.TagBinderBuilder) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc public class TeadsAdRequestSettings : ObjectiveC.NSObject {
+  @objc public func enableValidationMode()
+  @objc public func pageUrl(_ rawUrlString: Swift.String)
+  @objc public func addExtras(_ value: Swift.String, for key: Swift.String)
+  public typealias BuildTeadsAdRequestSettings = (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void
+  @objc public init(build: (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void)
+  @objc override dynamic public init()
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@objc public protocol TeadsAdPlacementDelegate : TeadsSDK.TeadsLogMessageDelegate {
-  @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-  @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
-}
+public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
+public typealias TeadsInReadAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
 @objc public protocol TeadsAdDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
+  #endif
   @objc optional func didCatchError(ad: TeadsSDK.TeadsAd, error: any Swift.Error)
   @objc optional func didClose(ad: TeadsSDK.TeadsAd)
   @objc optional func didRecordImpression(ad: TeadsSDK.TeadsAd)
@@ -205,19 +988,19 @@ import _SwiftConcurrencyShims
   @objc optional func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
   @objc optional func didTerminate(requestIdentifier: Foundation.UUID)
 }
-extension UIKit.UIButton {
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+@objc public protocol TeadsAdPlacementDelegate : TeadsSDK.TeadsLogMessageDelegate {
+  @objc func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+  @objc func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VideoComponent : TeadsSDK.CommonComponent {
-  @objc public var contentAspectRatio: CoreFoundation.CGFloat {
-    get
-  }
-  @objc deinit
+@objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
+  @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
 }
-@usableFromInline
-internal protocol AnyEncodableProtocol {
-  var value: Any { get }
-  init<T>(_ value: T?)
+@objc public protocol TeadsLogMessageDelegate {
+  @objc optional func didLogMessage(message: Swift.String)
+}
+@objc public protocol TeadsNativeAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
+  @objc func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
 }
 @objc public protocol TeadsPlaybackDelegate {
   @objc optional func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
@@ -231,43 +1014,25 @@ internal protocol AnyEncodableProtocol {
   @objc func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
   @objc func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
 }
-extension UIKit.UILabel {
+extension UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+  #endif
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsAdOpportunityTrackerView : UIKit.UIView {
-  @objc @_Concurrency.MainActor @preconcurrency final public var requestIdentifier: Foundation.UUID? {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func removeFromSuperview()
-  @objc deinit
+extension UIKit.UIImageView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+  #endif
 }
-@_hasMissingDesignatedInitializers @objc final public class TeadsAdRatio : ObjectiveC.NSObject {
-  final public let creativeRatio: CoreFoundation.CGFloat
-  final public let headerHeight: CoreFoundation.CGFloat
-  final public let footerHeight: CoreFoundation.CGFloat
-  @objc public static let zero: TeadsSDK.TeadsAdRatio
-  @objc public static let `default`: TeadsSDK.TeadsAdRatio
-  @objc(calculateHeightForWidth:) final public func calculateHeight(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
-  @objc final public func value(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
-  @objc deinit
+extension UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
+  #endif
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsAdapterIntegrationType : ObjectiveC.NSObject {
-  public static let adMob: TeadsSDK.TeadsAdapterIntegrationType
-  public static let appLovin: TeadsSDK.TeadsAdapterIntegrationType
-  public static let smart: TeadsSDK.TeadsAdapterIntegrationType
-  public static let gravite: TeadsSDK.TeadsAdapterIntegrationType
-  public static let flutter: TeadsSDK.TeadsAdapterIntegrationType
-  public static let reactNative: TeadsSDK.TeadsAdapterIntegrationType
-  public static let prebid: TeadsSDK.TeadsAdapterIntegrationType
-  @objc deinit
-}
-@objc public protocol TeadsPrebidAdPlacement : TeadsSDK.TeadsAdPlacement {
-  @objc dynamic var delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? { get set }
-  @discardableResult
-  @objc func loadAd(adResponse: Swift.String, requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
-  @discardableResult
-  @objc func getData(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) throws -> [Swift.AnyHashable : Any]
+extension UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public func bind(component: TeadsSDK.CommonComponent?)
+  #endif
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TagBinderBuilder : ObjectiveC.NSObject {
   @objc final public var titleLabelTag: Swift.Int {
@@ -304,503 +1069,42 @@ extension UIKit.UILabel {
   }
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc final public class Teads : ObjectiveC.NSObject {
-  @objc public static let sdkVersion: Swift.String
-  @objc public static var wrapperFrameworkInfo: TeadsSDK.WrapperFrameworkInfo?
-  @objc public static var testMode: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @discardableResult
-  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsNativeAdPlacement)?
-  @discardableResult
-  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsInReadAdPlacement)?
-  @discardableResult
-  @objc final public class func createPrebidPlacement(settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsPrebidAdPlacement)?
-  @objc override dynamic public init()
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsAdChoicesView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @_Concurrency.MainActor @preconcurrency public init(binding component: TeadsSDK.OverlayComponent? = nil)
+  #endif
   @objc deinit
-}
-extension TeadsSDK.Teads {
-  @objc final public class func configure(with partnerKey: Swift.String? = nil)
-}
-extension TeadsSDK.Teads {
-  final public class func createPlacement<PlacementType>(with config: PlacementType.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil) -> PlacementType? where PlacementType : TeadsSDK.TeadsAdPlacementProtocol
-}
-@objc public enum TeadsAdPlacementType : Swift.Int, Swift.CaseIterable {
-  case feed, media, mediaNative, recommendations
-  public init?(rawValue: Swift.Int)
-  public typealias AllCases = [TeadsSDK.TeadsAdPlacementType]
-  public typealias RawValue = Swift.Int
-  nonisolated public static var allCases: [TeadsSDK.TeadsAdPlacementType] {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public struct TeadsAdPlacementFeedConfig {
-  public let articleUrl: Foundation.URL
-  public let widgetId: Swift.String
-  public let installationKey: Swift.String
-  public let widgetIndex: Swift.Int
-  public let userId: Swift.String?
-  public let darkMode: Swift.Bool
-  public let extId: Swift.String?
-  public let extSecondaryId: Swift.String?
-  public let obPubImp: Swift.String?
-  public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String, widgetIndex: Swift.Int, userId: Swift.String? = nil, darkMode: Swift.Bool = false, extId: Swift.String? = nil, extSecondaryId: Swift.String? = nil, obPubImp: Swift.String? = nil)
-}
-public protocol DarkModeTogglable {
-  func toggleDarkMode(_ darkMode: Swift.Bool)
-}
-public struct TeadsAdPlacementMediaConfig {
-  public let pid: Swift.Int
-  public let articleUrl: Foundation.URL?
-  public let adUnitId: Swift.String?
-  public let integrationType: Swift.String?
-  public let enableValidationMode: Swift.Bool
-  public let disableAudioSessionManagement: Swift.Bool
-  public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, adUnitId: Swift.String? = nil, integrationType: Swift.String? = nil, enableValidationMode: Swift.Bool = false, disableAudioSessionManagement: Swift.Bool = false)
-}
-public protocol TeadsAdPlacementRecommendationsConfig {
-  var widgetId: Swift.String { get }
-  var widgetIndex: Swift.Int { get }
-}
-public struct TeadsAdPlacementRecommendationsURLConfig : TeadsSDK.TeadsAdPlacementRecommendationsConfig {
-  public let articleUrl: Foundation.URL
-  public let widgetId: Swift.String
-  public let widgetIndex: Swift.Int
-  public init(articleUrl: Foundation.URL, widgetId: Swift.String, widgetIndex: Swift.Int = 0)
-}
-public struct TeadsAdPlacementRecommendationsPlatformConfig : TeadsSDK.TeadsAdPlacementRecommendationsConfig {
-  public let widgetId: Swift.String
-  public let widgetIndex: Swift.Int
-  public let contentUrl: Swift.String?
-  public let portalUrl: Swift.String?
-  public let bundleUrl: Swift.String?
-  public let lang: Swift.String?
-  public let psub: Swift.String?
-  public init(widgetId: Swift.String, widgetIndex: Swift.Int = 0, contentUrl: Swift.String? = nil, portalUrl: Swift.String? = nil, bundleUrl: Swift.String? = nil, lang: Swift.String? = nil, psub: Swift.String? = nil)
-}
-@_Concurrency.MainActor @preconcurrency public struct TeadsAdPlacementSwiftUIView<Placement> : SwiftUICore.View where Placement : TeadsSDK.TeadsUIViewPlacement {
-  @_Concurrency.MainActor @preconcurrency public init(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s8TeadsSDK0A22AdPlacementSwiftUIViewV4bodyQrvp", 0) __<Placement>
-}
-extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func teadsAdPlacement<Placement>(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil) -> some SwiftUICore.View where Placement : TeadsSDK.TeadsUIViewPlacement
-  
-}
-final public class TeadsAdPlacementViewModel<Placement> : ObjectiveC.NSObject, Combine.ObservableObject, TeadsSDK.TeadsAdPlacementEventsDelegate where Placement : TeadsSDK.TeadsUIViewPlacement {
-  @Combine.Published @_projectedValueProperty($adHeight) final public var adHeight: CoreFoundation.CGFloat {
-    get
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    set
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    _modify
-  }
-  final public var $adHeight: Combine.Published<CoreFoundation.CGFloat>.Publisher {
-    get
-    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
-    set
-  }
-  @Combine.Published @_projectedValueProperty($isLoading) final public var isLoading: Swift.Bool {
-    get
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    set
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    _modify
-  }
-  final public var $isLoading: Combine.Published<Swift.Bool>.Publisher {
-    get
-    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
-    set
-  }
-  @Combine.Published @_projectedValueProperty($hasError) final public var hasError: Swift.Bool {
-    get
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    set
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    _modify
-  }
-  final public var $hasError: Combine.Published<Swift.Bool>.Publisher {
-    get
-    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
-    set
-  }
-  @Combine.Published @_projectedValueProperty($errorMessage) final public var errorMessage: Swift.String? {
-    get
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    set
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    _modify
-  }
-  final public var $errorMessage: Combine.Published<Swift.String?>.Publisher {
-    get
-    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
-    set
-  }
-  public init(config: Placement.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  final public func triggerHeightUpdate()
-  final public func toggleDarkMode(_ darkMode: Swift.Bool)
-  final public func showExploreMore(onExploreMoreDismissed: (() -> Swift.Void)? = nil)
-  @objc nonisolated final public func adPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
-  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
-  @objc deinit
-}
-@objc public protocol TeadsAdPlacementEventsDelegate : ObjectiveC.NSObjectProtocol {
-  @objc func adPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
-}
-@_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class TeadsAdPlacementContainerView<T> : UIKit.UIView where T : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency final public let placementView: T
-  @_Concurrency.MainActor @preconcurrency public init(placementView: T)
-  @objc deinit
-}
-extension TeadsSDK.TeadsAdPlacementContainerView : TeadsSDK.DarkModeTogglable {
-  @_Concurrency.MainActor @preconcurrency public func toggleDarkMode(_ darkMode: Swift.Bool)
-}
-@objc public protocol TeadsAdPlacementIdentifiable {
-  @objc var placementId: Swift.String { get }
-  @objc var placementType: TeadsSDK.TeadsAdPlacementType { get }
-}
-@objc public enum TeadsAdPlacementEventName : Swift.Int, Swift.CaseIterable {
-  case ready
-  case rendered
-  case viewed
-  case failed
-  case clicked
-  case clickedOrganic
-  case play
-  case pause
-  case loaded
-  case complete
-  case startPlayAudio
-  case stopPlayAudio
-  case heightUpdated
-  public var description: Swift.String {
-    get
-  }
-  public var identifier: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias AllCases = [TeadsSDK.TeadsAdPlacementEventName]
-  public typealias RawValue = Swift.Int
-  nonisolated public static var allCases: [TeadsSDK.TeadsAdPlacementEventName] {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public protocol TeadsAdPlacementProtocol {
-  associatedtype PlacementResult
-  associatedtype Config
-  init(_ config: Self.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
-  func loadAd() throws -> Self.PlacementResult
-}
-extension Swift.Dictionary where Key == Swift.String, Value == Any {
-  public var recClickUrl: Swift.String? {
-    get
-  }
-}
-public protocol TeadsUIViewPlacement : TeadsSDK.TeadsAdPlacementProtocol {
-  associatedtype ViewType : UIKit.UIView
-  var uiViewResult: Self.ViewType { get throws }
-}
-extension TeadsSDK.TeadsUIViewPlacement where Self.PlacementResult == Self.ViewType {
-  public var uiViewResult: Self.PlacementResult {
-    get throws
-  }
-}
-@objc public class TeadsAdPlacementFeed : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol, TeadsSDK.TeadsUIViewPlacement {
-  public typealias ViewType = UIKit.UIView
-  public var uiViewResult: UIKit.UIView {
-    get throws
-  }
-  required public init(_ config: TeadsSDK.TeadsAdPlacementFeedConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc convenience public init(articleUrl: Foundation.URL, widgetId: Swift.String, installationKey: Swift.String, widgetIndex: Swift.Int, userId: Swift.String? = nil, darkMode: Swift.Bool = false, extId: Swift.String? = nil, extSecondaryId: Swift.String? = nil, obPubImp: Swift.String? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  public func loadAd() throws -> any UIKit.UIView & TeadsSDK.DarkModeTogglable
-  @objc public func getAdView() -> UIKit.UIView
-  @objc public func toggleDarkMode(_ darkMode: Swift.Bool)
-  @objc public func showExploreMore(onExploreMoreDismissed: (() -> Swift.Void)?)
-  public typealias Config = TeadsSDK.TeadsAdPlacementFeedConfig
-  public typealias PlacementResult = any UIKit.UIView & TeadsSDK.DarkModeTogglable
-  @objc deinit
-}
-extension TeadsSDK.TeadsAdPlacementFeed {
-  @objc dynamic public func didChangeHeight(_ newHeight: CoreFoundation.CGFloat)
-  @objc dynamic public func widgetEvent(_ eventName: Swift.String, additionalData: [Swift.String : Any])
-  @objc dynamic public func onRecClick(_ url: Foundation.URL)
-  @objc dynamic public func onOrganicRecClick(_ url: Foundation.URL)
-}
-extension TeadsSDK.TeadsAdPlacementFeed : TeadsSDK.TeadsAdPlacementIdentifiable {
-  @objc dynamic public var placementId: Swift.String {
-    @objc get
-  }
-  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
-    @objc get
-  }
-  @objc public static var testDisplay: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc public static var infiniteWidgetsOnTheSamePage: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc public static func printLogs(domain: Swift.String? = nil)
-}
-@objc public class TeadsAdPlacementMedia : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol, TeadsSDK.TeadsUIViewPlacement {
-  public typealias ViewType = UIKit.UIView
-  final public let contentView: TeadsSDK.TeadsAdPlacementContainerView<TeadsSDK.TeadsInReadAdView>
-  required public init(_ config: TeadsSDK.TeadsAdPlacementMediaConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, enableValidationMode: Swift.Bool = false, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc public func loadAd() throws -> UIKit.UIView
-  @objc deinit
-  public typealias Config = TeadsSDK.TeadsAdPlacementMediaConfig
-  public typealias PlacementResult = UIKit.UIView
-}
-extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsInReadAdPlacementDelegate {
-  @objc dynamic public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-  @objc dynamic public func didUpdateRatio(ad _: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-  @objc dynamic public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-  @objc dynamic public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
-}
-extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsAdPlacementIdentifiable {
-  @objc dynamic public var placementId: Swift.String {
-    @objc get
-  }
-  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
-    @objc get
-  }
-}
-extension TeadsSDK.TeadsAdPlacementMedia : TeadsSDK.TeadsPlaybackDelegate {
-  @objc dynamic public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didPlay(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didPause(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didComplete(_ ad: TeadsSDK.TeadsAd)
-}
-@objc public class TeadsAdPlacementMediaNative : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol {
-  required public init(_ config: TeadsSDK.TeadsAdPlacementMediaConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
-  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc convenience public init(pid: Swift.Int, articleUrl: Foundation.URL? = nil, enableValidationMode: Swift.Bool = false, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc public func loadAd() throws -> (TeadsSDK.TeadsNativeAdView) -> Swift.Void
-  public typealias Config = TeadsSDK.TeadsAdPlacementMediaConfig
-  public typealias PlacementResult = (TeadsSDK.TeadsNativeAdView) -> Swift.Void
-  @objc deinit
-}
-extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsNativeAdPlacementDelegate {
-  @objc dynamic public func didReceiveAd(ad: TeadsSDK.TeadsNativeAd)
-  @objc dynamic public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
-  @objc dynamic public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
-}
-extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsAdPlacementIdentifiable {
-  @objc dynamic public var placementId: Swift.String {
-    @objc get
-  }
-  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
-    @objc get
-  }
-}
-extension TeadsSDK.TeadsAdPlacementMediaNative : TeadsSDK.TeadsPlaybackDelegate {
-  @objc dynamic public func adStartPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func adStopPlayingAudio(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didPlay(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didPause(_ ad: TeadsSDK.TeadsAd)
-  @objc dynamic public func didComplete(_ ad: TeadsSDK.TeadsAd)
-}
-@objc public class TeadsAdPlacementRecommendations : ObjectiveC.NSObject, TeadsSDK.TeadsAdPlacementProtocol {
-  required public init(_ config: any TeadsSDK.TeadsAdPlacementRecommendationsConfig, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)?)
-  @objc convenience public init(articleUrl: Foundation.URL, widgetId: Swift.String, widgetIndex: Swift.Int, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  @objc convenience public init(widgetId: Swift.String, widgetIndex: Swift.Int, contentUrl: Swift.String? = nil, portalUrl: Swift.String? = nil, bundleUrl: Swift.String? = nil, lang: Swift.String? = nil, psub: Swift.String? = nil, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil)
-  public func loadAd() throws -> () async throws -> [TeadsSDK.OBRecommendation]
-  @objc public func loadAd(completion: @escaping (TeadsSDK.OBRecommendationResponse) -> Swift.Void)
-  public typealias Config = any TeadsSDK.TeadsAdPlacementRecommendationsConfig
-  public typealias PlacementResult = () async throws -> [TeadsSDK.OBRecommendation]
-  @objc deinit
-}
-extension TeadsSDK.TeadsAdPlacementRecommendations : TeadsSDK.TeadsAdPlacementIdentifiable {
-  @objc dynamic public var placementId: Swift.String {
-    @objc get
-  }
-  @objc dynamic public var placementType: TeadsSDK.TeadsAdPlacementType {
-    @objc get
-  }
-  @objc dynamic public class func configureViewabilityPerListing(for view: UIKit.UIView, withRec rec: TeadsSDK.OBRecommendation)
-  @objc public static func getAboutURL() -> Foundation.URL?
-  @objc public static func getUrl(_ rec: TeadsSDK.OBRecommendation) -> Foundation.URL?
-  @objc public static var testLocation: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc public static var testRTB: Swift.Bool {
-    @objc get
-    @objc set
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TeadsPrivacy : ObjectiveC.NSObject {
-  @objc public static var shared: TeadsSDK.TeadsPrivacy {
-    @objc get
-  }
-  @objc public func setGDPRConsentString(_ consentString: Swift.String?)
-  @objc public func setGDPRConsentStringV1(_ consentString: Swift.String?)
-  @objc public func setGDPRConsentStringV2(_ consentString: Swift.String?)
-  @objc public func setGDPRApplies(_ applies: Swift.Bool)
-  @objc public func setUSPrivacyString(_ privacyString: Swift.String?)
-  @objc public func setIDFAConsent(_ hasConsent: Swift.Bool)
-  @objc public func setGPPString(_ gppString: Swift.String?)
-  @objc public func setGPPSections(_ sections: Swift.String?)
-  @objc public func clearCustomIDFAConsent()
-  @objc public func clearAllCustomSettings()
-  @objc public var gdprApplies: Swift.Bool {
-    @objc get
-  }
-  @objc public var gdprConsentString: Swift.String? {
-    @objc get
-  }
-  @objc public var gdprConsentStringV1: Swift.String? {
-    @objc get
-  }
-  @objc public var gdprConsentStringV2: Swift.String? {
-    @objc get
-  }
-  @objc public var hasGDPRConsentForTeads: Swift.Bool {
-    @objc get
-  }
-  @objc public var usPrivacyString: Swift.String? {
-    @objc get
-  }
-  @objc public var hasOptedOutOfSale: Swift.Bool {
-    @objc get
-  }
-  @objc public var gppString: Swift.String? {
-    @objc get
-  }
-  @objc public var gppSections: Swift.String? {
-    @objc get
-  }
-  @objc public var gppApplies: Swift.Bool {
-    @objc get
-  }
-  @objc public var idfaTrackingAuthorized: Swift.Bool {
-    @objc get
-  }
-  @objc public var idfaString: Swift.String? {
-    @objc get
-  }
-  @available(iOS 14, *)
-  @objc public func requestIDFAPermission(completion: @escaping (Swift.Bool) -> Swift.Void)
-  @objc public var isCMPPresent: Swift.Bool {
-    @objc get
-  }
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class AdChoicesComponent : TeadsSDK.OverlayComponent {
-  final public let clickThroughUrl: Foundation.URL
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers @objc public class CommonComponent : ObjectiveC.NSObject {
-  @objc deinit
-  @objc public func didTapView()
-}
-extension TeadsSDK.CommonComponent {
-  public var text: Swift.String? {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc public class TeadsAd : ObjectiveC.NSObject {
-  @objc weak public var delegate: (any TeadsSDK.TeadsAdDelegate)? {
-    @objc get
-    @objc set
-  }
-  @objc weak public var playbackDelegate: (any TeadsSDK.TeadsPlaybackDelegate)? {
-    @objc get
-    @objc set
-  }
-  @objc final public let requestIdentifier: Foundation.UUID
-  @objc deinit
-}
-@objc public enum AdErrorCode : Swift.Int {
-  case errorNoSlot = 1
-  case errorNetwork = 2
-  case errorNotFilled = 3
-  case errorBadResponse = 4
-  case errorVastError = 5
-  case errorUserIdMissing = 6
-  case errorInternal = 7
-  case disabledApp = 8
-  case errorAdRequest = 9
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc final public class AdFailReason : ObjectiveC.NSObject {
-  @objc final public let code: TeadsSDK.AdErrorCode
-  @objc final public var requestIdentifier: Foundation.UUID! {
-    get
-  }
-  @objc override final public var description: Swift.String {
-    @objc get
-  }
-  @objc deinit
-}
-extension TeadsSDK.AdFailReason : Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
-    get
-  }
-  final public var errorCode: Swift.Int {
-    get
-  }
-  final public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class TeadsAdView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
-@objc public enum TCFVersion : Swift.Int, Swift.Codable {
-  @available(*, deprecated, message: "no longer supported since 15 August 2020")
-  case v1 = 1
-  case v2 = 2
-  case v2p1 = 3
-  case v2p2 = 4
-  case v2p3 = 5
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
+@objc public protocol TeadsMediatedAdViewDelegate {
+  @objc func didUpdateRatio(_ adView: UIKit.UIView, adRatio: TeadsSDK.TeadsAdRatio)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageComponent : TeadsSDK.CommonComponent {
-  final public let url: Foundation.URL
-  @objc final public func loadImage(async: Swift.Bool = true, success: ((UIKit.UIImage) -> Swift.Void)?, failure: ((any Swift.Error) -> Swift.Void)? = nil)
-  @objc final public var image: UIKit.UIImage? {
-    @objc get
-  }
-  final public func loadImage() async throws -> UIKit.UIImage
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency final public class TeadsInReadAdView : TeadsSDK.TeadsAdView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override final public func willMove(toWindow newWindow: UIKit.UIWindow?)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc override final public func didMoveToWindow()
+  @objc @_Concurrency.MainActor @preconcurrency final public func bind(_ ad: TeadsSDK.TeadsInReadAd)
+  @_Concurrency.MainActor @preconcurrency public init(bind ad: TeadsSDK.TeadsInReadAd, frame: CoreFoundation.CGRect = .zero)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc deinit
-}
-@_hasMissingDesignatedInitializers @objc final public class TeadsInReadAd : TeadsSDK.TeadsAd {
-  @objc deinit
-}
-extension TeadsSDK.TeadsInReadAd {
-  @objc final public var adRatio: TeadsSDK.TeadsAdRatio {
-    @objc get
-  }
+  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
 }
 @objc public enum MediaScale : Swift.Int, Swift.Codable {
   case scaleAspectFill = 0
   case scaleAspectFit = 1
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -815,153 +1119,103 @@ extension TeadsSDK.TeadsInReadAd {
   @objc @_Concurrency.MainActor @preconcurrency public init(videoComponent: TeadsSDK.VideoComponent)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override final public func bind(component: TeadsSDK.CommonComponent?)
+  #endif
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class TeadsAdRequestSettings : ObjectiveC.NSObject {
-  @objc public func enableValidationMode()
-  @objc public func pageUrl(_ rawUrlString: Swift.String)
-  @objc public func addExtras(_ value: Swift.String, for key: Swift.String)
-  public typealias BuildTeadsAdRequestSettings = (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void
-  @objc public init(build: (TeadsSDK.TeadsAdRequestSettings) -> Swift.Void)
-  @objc override dynamic public init()
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class TeadsNativeAdView : TeadsSDK.TeadsAdView {
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var titleLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var contentLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var mediaView: TeadsSDK.TeadsMediaView?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var iconImageView: UIKit.UIImageView?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var advertiserLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var callToActionButton: UIKit.UIButton?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var ratingView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var priceLabel: UIKit.UILabel?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willMove(toWindow newWindow: UIKit.UIWindow?)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMoveToWindow()
+  @objc @_Concurrency.MainActor @preconcurrency public func bind(_ ad: TeadsSDK.TeadsNativeAd)
+  @objc @_Concurrency.MainActor @preconcurrency public func bind(_ ad: TeadsSDK.TeadsNativeAd, tagBinder: (TeadsSDK.TagBinderBuilder) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
-}
-public typealias TeadsNativeAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
-public typealias TeadsInReadAdRequestSettings = TeadsSDK.TeadsAdRequestSettings
-@objc public enum FrameworkType : Swift.Int {
-  case flutter
-  case reactNative
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc public class WrapperFrameworkInfo : ObjectiveC.NSObject {
-  @objc final public let type: TeadsSDK.FrameworkType
-  @objc final public let version: Swift.String
-  @objc public static func flutter(_ flutterVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
-  @objc public static func reactNative(_ reactNativeVersion: Swift.String) -> TeadsSDK.WrapperFrameworkInfo
-  @objc deinit
-}
-@objc public protocol TeadsInReadAdPlacementDelegate : TeadsSDK.TeadsAdPlacementDelegate {
-  @objc func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-  @objc func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
-}
-extension UIKit.UIImageView {
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func bind(component: TeadsSDK.CommonComponent?)
-}
-@objc public protocol TeadsInReadAdPlacement : TeadsSDK.TeadsAdPlacement {
-  @objc var delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? { get set }
-  @discardableResult
-  @objc func requestAd(requestSettings: TeadsSDK.TeadsInReadAdRequestSettings) -> Foundation.UUID
 }
 @usableFromInline
 internal protocol AnyDecodableProtocol {
   var value: Any { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   init<T>(_ value: T?)
+  #endif
 }
-extension UIKit.UIView {
-  @objc @_Concurrency.MainActor @preconcurrency dynamic public func bind(component: TeadsSDK.CommonComponent?)
+@usableFromInline
+internal protocol AnyEncodableProtocol {
+  var value: Any { get }
+  #if compiler(>=5.3) && $NonescapableTypes
+  init<T>(_ value: T?)
+  #endif
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class OBRecommendation : ObjectiveC.NSObject, Swift.Decodable {
-  @objc public var url: Swift.String?
-  @objc public var origUrl: Swift.String?
-  @objc public var content: Swift.String?
-  @objc public var source: Swift.String?
-  @objc public var image: TeadsSDK.OBImageInfo?
-  @objc public var position: Swift.String?
-  @objc public var author: Swift.String?
-  @objc public var publishDate: Foundation.Date?
-  @objc public var sameSource: Swift.Bool
-  @objc public var disclosure: TeadsSDK.OBDisclosure?
-  @objc public var pixels: [Swift.String]?
-  @objc public var reqId: Swift.String?
-  @objc public var isPaidLink: Swift.Bool {
-    @objc get
-  }
-  @objc public var isRTB: Swift.Bool {
-    @objc get
-  }
-  @objc public var isVideo: Swift.Bool {
-    @objc get
-  }
-  @objc public func shouldDisplayDisclosureIcon() -> Swift.Bool
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc deinit
-}
-@objc public enum OBErrorType : Swift.Int, Swift.Sendable {
-  case generic = 0
-  case network
-  case native
-  case zeroRecommendations
+@objc public enum TCFVersion : Swift.Int, Swift.Codable {
+  @available(*, deprecated, message: "no longer supported since 15 August 2020")
+  case v1 = 1
+  case v2 = 2
+  case v2p1 = 3
+  case v2p2 = 4
+  case v2p3 = 5
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
-@objc public enum OBErrorCode : Swift.Int, Swift.Sendable {
-  case generic = 10200
-  case parsing = 10201
-  case server = 10202
-  case invalidParameters = 10203
-  case noRecommendations = 10204
-  case noData = 10205
-  case network = 10206
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
+@_inheritsConvenienceInitializers @objc final public class Teads : ObjectiveC.NSObject {
+  @objc public static let sdkVersion: Swift.String
+  @objc public static var wrapperFrameworkInfo: TeadsSDK.WrapperFrameworkInfo?
+  @objc public static var testMode: Swift.Bool {
+    @objc get
+    @objc set
   }
-}
-@objc @objcMembers public class OBError : ObjectiveC.NSObject, Swift.Error {
-  @objc final public let type: TeadsSDK.OBErrorType
-  @objc final public let message: Swift.String?
-  @objc final public let code: TeadsSDK.OBErrorCode
-  @objc public init(type: TeadsSDK.OBErrorType, message: Swift.String?, code: TeadsSDK.OBErrorCode)
-  @objc public static func generic(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
-  @objc public static func network(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
-  @objc public static func native(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
-  @objc public static func zeroRecommendations(message: Swift.String?, code: TeadsSDK.OBErrorCode) -> TeadsSDK.OBError
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public class func createNativePlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsNativeAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsNativeAdPlacement)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @objc final public class func createInReadPlacement(pid: Swift.Int, settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsInReadAdPlacement)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @objc final public class func createPrebidPlacement(settings: TeadsSDK.TeadsAdPlacementSettings = TeadsAdPlacementSettings(), delegate: (any TeadsSDK.TeadsInReadAdPlacementDelegate)? = nil) -> (any TeadsSDK.TeadsPrebidAdPlacement)?
+  #endif
+  @objc override dynamic public init()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class OBViewabilityActions : ObjectiveC.NSObject, Swift.Decodable {
-  @objc final public let reportServed: Swift.String?
-  @objc final public let reportViewed: Swift.String?
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc deinit
+extension TeadsSDK.Teads {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public class func configure(with partnerKey: Swift.String? = nil)
+  #endif
 }
-@objc @objcMembers public class OBImageInfo : ObjectiveC.NSObject, Swift.Decodable {
-  @objc final public let width: Swift.Int
-  @objc final public let height: Swift.Int
-  @objc final public let url: Foundation.URL?
-  @objc deinit
-  required public init(from decoder: any Swift.Decoder) throws
+extension TeadsSDK.Teads {
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public class func createPlacement<PlacementType>(with config: PlacementType.Config, delegate: (any TeadsSDK.TeadsAdPlacementEventsDelegate)? = nil) -> PlacementType? where PlacementType : TeadsSDK.TeadsAdPlacementProtocol
+  #endif
 }
-@objc @objcMembers public class OBDisclosure : ObjectiveC.NSObject, Swift.Decodable {
-  @objc public var imageUrl: Swift.String?
-  @objc public var clickUrl: Swift.String?
-  @objc public init(imageUrl: Swift.String? = nil, clickUrl: Swift.String? = nil)
-  @objc deinit
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_hasMissingDesignatedInitializers @objcMembers public class OBRecommendationResponse : ObjectiveC.NSObject, Swift.Decodable {
-  @objc final public let request: [Swift.String : Any]
-  @objc final public let settings: [Swift.String : Any]
-  @objc final public let viewabilityActions: TeadsSDK.OBViewabilityActions?
-  @objc final public let recommendations: [TeadsSDK.OBRecommendation]
-  @objc public var error: TeadsSDK.OBError?
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc deinit
-}
-extension TeadsSDK.TeadsAdapterSettings : Swift.Encodable {}
-extension TeadsSDK.TeadsAdapterSettings : Swift.Decodable {}
-extension TeadsSDK.TeadsAdPlacementSettings : Swift.Encodable {}
-extension TeadsSDK.TeadsAdPlacementSettings : Swift.Decodable {}
+extension TeadsSDK.OBErrorType : Swift.Equatable {}
+extension TeadsSDK.OBErrorType : Swift.Hashable {}
+extension TeadsSDK.OBErrorType : Swift.RawRepresentable {}
+extension TeadsSDK.OBErrorCode : Swift.Equatable {}
+extension TeadsSDK.OBErrorCode : Swift.Hashable {}
+extension TeadsSDK.OBErrorCode : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsFullScreenEventName : Swift.Equatable {}
+extension TeadsSDK.TeadsFullScreenEventName : Swift.Hashable {}
+extension TeadsSDK.TeadsFullScreenEventName : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsAdPlacementInterstitial : Swift.Sendable {}
 extension TeadsSDK.TeadsAdPlacementType : Swift.Equatable {}
 extension TeadsSDK.TeadsAdPlacementType : Swift.Hashable {}
 extension TeadsSDK.TeadsAdPlacementType : Swift.RawRepresentable {}
@@ -969,23 +1223,21 @@ extension TeadsSDK.TeadsAdPlacementSwiftUIView : Swift.Sendable {}
 extension TeadsSDK.TeadsAdPlacementEventName : Swift.Equatable {}
 extension TeadsSDK.TeadsAdPlacementEventName : Swift.Hashable {}
 extension TeadsSDK.TeadsAdPlacementEventName : Swift.RawRepresentable {}
-extension TeadsSDK.AdErrorCode : Swift.Equatable {}
-extension TeadsSDK.AdErrorCode : Swift.Hashable {}
-extension TeadsSDK.AdErrorCode : Swift.RawRepresentable {}
-extension TeadsSDK.TCFVersion : Swift.Equatable {}
-extension TeadsSDK.TCFVersion : Swift.Hashable {}
-extension TeadsSDK.TCFVersion : Swift.RawRepresentable {}
-extension TeadsSDK.MediaScale : Swift.Equatable {}
-extension TeadsSDK.MediaScale : Swift.Hashable {}
-extension TeadsSDK.MediaScale : Swift.RawRepresentable {}
-extension TeadsSDK.TeadsAdRequestSettings : Swift.Encodable {}
-extension TeadsSDK.TeadsAdRequestSettings : Swift.Decodable {}
+extension TeadsSDK.TeadsAdapterSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdapterSettings : Swift.Decodable {}
 extension TeadsSDK.FrameworkType : Swift.Equatable {}
 extension TeadsSDK.FrameworkType : Swift.Hashable {}
 extension TeadsSDK.FrameworkType : Swift.RawRepresentable {}
-extension TeadsSDK.OBErrorType : Swift.Equatable {}
-extension TeadsSDK.OBErrorType : Swift.Hashable {}
-extension TeadsSDK.OBErrorType : Swift.RawRepresentable {}
-extension TeadsSDK.OBErrorCode : Swift.Equatable {}
-extension TeadsSDK.OBErrorCode : Swift.Hashable {}
-extension TeadsSDK.OBErrorCode : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsAdPlacementSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdPlacementSettings : Swift.Decodable {}
+extension TeadsSDK.AdErrorCode : Swift.Equatable {}
+extension TeadsSDK.AdErrorCode : Swift.Hashable {}
+extension TeadsSDK.AdErrorCode : Swift.RawRepresentable {}
+extension TeadsSDK.TeadsAdRequestSettings : Swift.Encodable {}
+extension TeadsSDK.TeadsAdRequestSettings : Swift.Decodable {}
+extension TeadsSDK.MediaScale : Swift.Equatable {}
+extension TeadsSDK.MediaScale : Swift.Hashable {}
+extension TeadsSDK.MediaScale : Swift.RawRepresentable {}
+extension TeadsSDK.TCFVersion : Swift.Equatable {}
+extension TeadsSDK.TCFVersion : Swift.Hashable {}
+extension TeadsSDK.TCFVersion : Swift.RawRepresentable {}
