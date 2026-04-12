@@ -11,7 +11,7 @@ import UIKit
 
 class RootViewController: TeadsViewController {
     @IBOutlet var collectionView: UICollectionView!
-    private var selectionList = [inReadFormat, nativeFormat]
+    private var selectionList = [inReadFormat, nativeFormat, interstitialFormat]
 
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
@@ -51,6 +51,15 @@ class RootViewController: TeadsViewController {
     }
 
     func showSampleController(for integration: Integration) {
+        // Interstitial is programmatic — no storyboard segue
+        if adSelection.format.name == .interstitial {
+            let vc = InterstitialAdmobViewController()
+            vc.pid = PID.admobInterstitial
+            vc.validationModeEnabled = validationModeEnabled
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        }
+
         let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(integration.name)"
             .lowercased()
         performSegue(withIdentifier: identifier, sender: self)
@@ -77,6 +86,9 @@ class RootViewController: TeadsViewController {
     }
 
     private func pidForCreative() -> String {
+        if adSelection.format.name == .interstitial {
+            return PID.admobInterstitial
+        }
         switch adSelection.provider.name {
             case .direct:
                 switch adSelection.creation.name {
