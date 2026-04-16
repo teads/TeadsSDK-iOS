@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
         "state": {
           "branch": null,
-          "revision": "c184b428415a05dcad488c6834e0bd02fe1d8f3e",
-          "version": "13.3.1"
+          "revision": "d829feb5b7de8755e9a1834c2e1e0b95c9126424",
+          "version": "13.6.2"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/prebid/prebid-mobile-ios.git",
         "state": {
           "branch": null,
-          "revision": "a59bc756e22813ca76a55abda5db96edf9ede75e",
-          "version": "3.2.1"
+          "revision": "0c276ce9590ffe365d949217ddd51aeb4441a61a",
+          "version": "3.3.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
         "state": {
           "branch": null,
-          "revision": "49efd19f8f4bbe130de7e2ee9e061d202a9a2a8b",
-          "version": "12.8.0"
+          "revision": "8d08e4396ea955a7d2baf067c0eedfc34ca0821d",
+          "version": "13.2.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
         "state": {
           "branch": null,
-          "revision": "69b53394c5258b3fe688e625a998047d1f393497",
-          "version": "3.0.0"
+          "revision": "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
+          "version": "3.1.0"
         }
       }
     ]
