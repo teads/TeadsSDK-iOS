@@ -1,18 +1,21 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 
 import PackageDescription
 
+// BINARY ADAPTER variant — paths match THIS folder's flat layout (xcframeworks at root).
+// All adapters shipped as prebuilt .xcframeworks. No third-party package dependencies
+// are declared: consumers who use an adapter MUST add the corresponding third-party SDK
+// to their own project (PrebidMobile / GoogleMobileAds / AppLovinSDK).
+//
+// NOTE: TeadsSDK.xcframework and OMSDK_Teads.xcframework must also be present in this
+// folder for the package to resolve. In the public repo, all xcframeworks live under
+// Frameworks/ — adjust the `path:` values accordingly when publishing.
+
 let teadsModuleName = "TeadsSDK"
+let omModuleName = "OMSDK_Teads"
 let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsPBMPluginRendererModuleName = "TeadsPBMPluginRenderer"
-let mediationAdaptersDirectory = "MediationAdapters"
-let googleMobileAdsModuleName = "GoogleMobileAds"
-let appLovinMaxModuleName = "AppLovinSDK"
-let prebidMobileModuleName = "PrebidMobile"
-let omModuleName = "OMSDK_Teadstv"
-let commonModuleName = "TeadsAdapterCommon"
-let commonModuleNamePath = "Common"
 
 let package = Package(
     name: "Teads",
@@ -37,23 +40,7 @@ let package = Package(
             targets: [teadsPBMPluginRendererModuleName]
         ),
     ],
-    dependencies: [
-        .package(
-            name: googleMobileAdsModuleName,
-            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            "12.2.0" ..< "14.0.0"
-        ),
-        .package(
-            name: appLovinMaxModuleName,
-            url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            "13.3.1" ..< "14.0.0"
-        ),
-        .package(
-            name: prebidMobileModuleName,
-            url: "https://github.com/prebid/prebid-mobile-ios.git",
-            "3.0.2" ..< "4.0.0"
-        ),
-    ],
+    
     targets: [
         .binaryTarget(
             name: teadsModuleName,
@@ -63,38 +50,17 @@ let package = Package(
             name: omModuleName,
             path: "Frameworks/\(omModuleName).xcframework"
         ),
-        .target(
-            name: commonModuleName,
-            dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
-        ),
-        .target(
+        .binaryTarget(
             name: teadsAdMobAdapterModuleName,
-            dependencies: [
-                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAdMobAdapterModuleName)"
+            path: "Frameworks/\(teadsAdMobAdapterModuleName).xcframework"
         ),
-        .target(
+        .binaryTarget(
             name: teadsAppLovinAdapterModuleName,
-            dependencies: [
-                .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
+            path: "Frameworks/\(teadsAppLovinAdapterModuleName).xcframework"
         ),
-        .target(
+        .binaryTarget(
             name: teadsPBMPluginRendererModuleName,
-            dependencies: [
-                .product(name: prebidMobileModuleName, package: prebidMobileModuleName),
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsPBMPluginRendererModuleName)"
+            path: "Frameworks/\(teadsPBMPluginRendererModuleName).xcframework"
         ),
     ]
 )

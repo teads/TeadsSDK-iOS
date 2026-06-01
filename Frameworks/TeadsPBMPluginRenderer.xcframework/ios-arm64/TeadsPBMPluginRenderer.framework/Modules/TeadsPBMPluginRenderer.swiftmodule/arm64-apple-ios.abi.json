@@ -1,0 +1,2096 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TeadsPBMPluginRenderer",
+    "printedName": "TeadsPBMPluginRenderer",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsPBMEventDelegate",
+        "printedName": "TeadsPBMEventDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didUpdateRatio",
+            "printedName": "didUpdateRatio(adRatio:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdRatio",
+                "printedName": "TeadsSDK.TeadsAdRatio",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdRatio"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegateP14didUpdateRatio02adH0y0A3SDK0a2AdH0C_tF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegateP14didUpdateRatio02adH0y0A3SDK0a2AdH0C_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "genericSig": "<τ_0_0 where τ_0_0 : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "sugared_genericSig": "<Self where Self : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onAdExpandedToFullScreen",
+            "printedName": "onAdExpandedToFullScreen()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegateP24onAdExpandedToFullScreenyyF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegateP24onAdExpandedToFullScreenyyF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "genericSig": "<τ_0_0 where τ_0_0 : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "sugared_genericSig": "<Self where Self : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onAdCollapsedFromFullScreen",
+            "printedName": "onAdCollapsedFromFullScreen()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegateP27onAdCollapsedFromFullScreenyyF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegateP27onAdCollapsedFromFullScreenyyF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "genericSig": "<τ_0_0 where τ_0_0 : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "sugared_genericSig": "<Self where Self : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onFailedToLoadAd",
+            "printedName": "onFailedToLoadAd(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegateP16onFailedToLoadAd6reasonySS_tF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegateP16onFailedToLoadAd6reasonySS_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "genericSig": "<τ_0_0 where τ_0_0 : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "sugared_genericSig": "<Self where Self : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPluginName",
+            "printedName": "getPluginName()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegatePAAE13getPluginNameSSyF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegatePAAE13getPluginNameSSyF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "genericSig": "<τ_0_0 where τ_0_0 : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "sugared_genericSig": "<Self where Self : TeadsPBMPluginRenderer.TeadsPBMEventDelegate>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:22TeadsPBMPluginRenderer0A16PBMEventDelegateP",
+        "mangledName": "$s22TeadsPBMPluginRenderer0A16PBMEventDelegateP",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "genericSig": "<τ_0_0 : PrebidMobile.PluginEventDelegate>",
+        "sugared_genericSig": "<Self : PrebidMobile.PluginEventDelegate>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PluginEventDelegate",
+            "printedName": "PluginEventDelegate",
+            "usr": "c:@M@PrebidMobile@objc(pl)PluginEventDelegate",
+            "mangledName": "$s12PrebidMobile19PluginEventDelegateP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsPBMPluginRenderer",
+        "printedName": "TeadsPBMPluginRenderer",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRendererAAC4nameSSvpZ",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC4nameSSvpZ",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRendererAAC4nameSSvgZ",
+                "mangledName": "$s22TeadsPBMPluginRendererAAC4nameSSvgZ",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginRenderer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginRenderer",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginRenderer",
+                    "usr": "c:@M@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdapterSettings",
+                "printedName": "TeadsSDK.TeadsAdapterSettings",
+                "hasDefaultArg": true,
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdapterSettings"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)initWithSettings:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC8settingsABSg0A3SDK0A15AdapterSettingsC_tcfc",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "initWithSettings:",
+            "declAttributes": [
+              "Required",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsPBMPluginRenderer",
+                "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginRenderer",
+                "usr": "c:@M@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)init",
+            "mangledName": "$s22TeadsPBMPluginRendererAACABycfc",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(py)name",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC4nameSSvp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "name",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)name",
+                "mangledName": "$s22TeadsPBMPluginRendererAAC4nameSSvg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "objc_name": "name",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(py)version",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC7versionSSvp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "version",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)version",
+                "mangledName": "$s22TeadsPBMPluginRendererAAC7versionSSvg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "objc_name": "version",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "data",
+            "printedName": "data",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(py)data",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC4dataSDySSypGSgvp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "data",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)data",
+                "mangledName": "$s22TeadsPBMPluginRendererAAC4dataSDySSypGSgvg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "objc_name": "data",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "registerEventDelegate",
+            "printedName": "registerEventDelegate(pluginEventDelegate:adUnitConfigFingerprint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PluginEventDelegate",
+                "printedName": "any PrebidMobile.PluginEventDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)PluginEventDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)registerEventDelegateWithPluginEventDelegate:adUnitConfigFingerprint:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC21registerEventDelegate06plugineF023adUnitConfigFingerprinty12PrebidMobile06PlugineF0_p_SStF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "registerEventDelegateWithPluginEventDelegate:adUnitConfigFingerprint:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unregisterEventDelegate",
+            "printedName": "unregisterEventDelegate(pluginEventDelegate:adUnitConfigFingerprint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PluginEventDelegate",
+                "printedName": "any PrebidMobile.PluginEventDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)PluginEventDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)unregisterEventDelegateWithPluginEventDelegate:adUnitConfigFingerprint:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC23unregisterEventDelegate06plugineF023adUnitConfigFingerprinty12PrebidMobile06PlugineF0_p_SStF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "unregisterEventDelegateWithPluginEventDelegate:adUnitConfigFingerprint:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createBannerView",
+            "printedName": "createBannerView(with:bid:adConfiguration:loadingDelegate:interactionDelegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any UIKit.UIView & PrebidMobile.PrebidMobileDisplayViewProtocol)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "any UIKit.UIView & PrebidMobile.PrebidMobileDisplayViewProtocol"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bid",
+                "printedName": "PrebidMobile.Bid",
+                "usr": "c:@M@PrebidMobile@objc(cs)Bid"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AdUnitConfig",
+                "printedName": "PrebidMobile.AdUnitConfig",
+                "usr": "c:@M@PrebidMobile@objc(cs)AdUnitConfig"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DisplayViewLoadingDelegate",
+                "printedName": "any PrebidMobile.DisplayViewLoadingDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)DisplayViewLoadingDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DisplayViewInteractionDelegate",
+                "printedName": "any PrebidMobile.DisplayViewInteractionDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)DisplayViewInteractionDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)createBannerViewWith:bid:adConfiguration:loadingDelegate:interactionDelegate:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC16createBannerView4with3bid15adConfiguration15loadingDelegate011interactionL012PrebidMobile0no7DisplayF8Protocol_So6UIViewCXcSgSo6CGRectV_AI3BidCAI12AdUnitConfigCAI0pf7LoadingL0_pAI0pf11InteractionL0_ptF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "createBannerViewWith:bid:adConfiguration:loadingDelegate:interactionDelegate:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createInterstitialController",
+            "printedName": "createInterstitialController(bid:adConfiguration:loadingDelegate:interactionDelegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any PrebidMobile.PrebidMobileInterstitialControllerProtocol)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PrebidMobileInterstitialControllerProtocol",
+                    "printedName": "any PrebidMobile.PrebidMobileInterstitialControllerProtocol",
+                    "usr": "c:@M@PrebidMobile@objc(pl)PrebidMobileInterstitialControllerProtocol"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bid",
+                "printedName": "PrebidMobile.Bid",
+                "usr": "c:@M@PrebidMobile@objc(cs)Bid"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AdUnitConfig",
+                "printedName": "PrebidMobile.AdUnitConfig",
+                "usr": "c:@M@PrebidMobile@objc(cs)AdUnitConfig"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "InterstitialControllerLoadingDelegate",
+                "printedName": "any PrebidMobile.InterstitialControllerLoadingDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)InterstitialControllerLoadingDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "InterstitialControllerInteractionDelegate",
+                "printedName": "any PrebidMobile.InterstitialControllerInteractionDelegate",
+                "usr": "c:@M@PrebidMobile@objc(pl)InterstitialControllerInteractionDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)createInterstitialControllerWithBid:adConfiguration:loadingDelegate:interactionDelegate:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC28createInterstitialController3bid15adConfiguration15loadingDelegate011interactionK012PrebidMobile0mneF8Protocol_pSgAH3BidC_AH12AdUnitConfigCAH0ef7LoadingK0_pAH0ef11InteractionK0_ptF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "createInterstitialControllerWithBid:adConfiguration:loadingDelegate:interactionDelegate:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "willPresentModalView",
+            "printedName": "willPresentModalView(ad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)willPresentModalViewWithAd:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC20willPresentModalView2adSo16UIViewControllerCSg0A3SDK0A2AdC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "willPresentModalViewWithAd:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didRecordImpression",
+            "printedName": "didRecordImpression(ad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didRecordImpressionWithAd:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC19didRecordImpression2ady0A3SDK0A2AdC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didRecordImpressionWithAd:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didRecordClick",
+            "printedName": "didRecordClick(ad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didRecordClickWithAd:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC14didRecordClick2ady0A3SDK0A2AdC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didRecordClickWithAd:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didCatchError",
+            "printedName": "didCatchError(ad:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didCatchErrorWithAd:error:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC13didCatchError2ad5errory0A3SDK0A2AdC_s0F0_ptF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didCatchErrorWithAd:error:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didCollapsedFromFullscreen",
+            "printedName": "didCollapsedFromFullscreen(ad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didCollapsedFromFullscreenWithAd:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC26didCollapsedFromFullscreen2ady0A3SDK0A2AdC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didCollapsedFromFullscreenWithAd:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didExpandedToFullscreen",
+            "printedName": "didExpandedToFullscreen(ad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAd",
+                "printedName": "TeadsSDK.TeadsAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didExpandedToFullscreenWithAd:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC23didExpandedToFullscreen2ady0A3SDK0A2AdC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didExpandedToFullscreenWithAd:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didReceiveAd",
+            "printedName": "didReceiveAd(ad:adRatio:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsInReadAd",
+                "printedName": "TeadsSDK.TeadsInReadAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsInReadAd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdRatio",
+                "printedName": "TeadsSDK.TeadsAdRatio",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdRatio"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didReceiveAdWithAd:adRatio:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC12didReceiveAd2ad0G5Ratioy0A3SDK0a6InReadF0C_AF0afH0CtF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didReceiveAdWithAd:adRatio:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didUpdateRatio",
+            "printedName": "didUpdateRatio(ad:adRatio:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsInReadAd",
+                "printedName": "TeadsSDK.TeadsInReadAd",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsInReadAd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdRatio",
+                "printedName": "TeadsSDK.TeadsAdRatio",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdRatio"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didUpdateRatioWithAd:adRatio:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC14didUpdateRatio2ad0gF0y0A3SDK0A8InReadAdC_AF0akF0CtF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didUpdateRatioWithAd:adRatio:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFailToReceiveAd",
+            "printedName": "didFailToReceiveAd(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AdFailReason",
+                "printedName": "TeadsSDK.AdFailReason",
+                "usr": "c:@M@TeadsSDK@objc(cs)AdFailReason"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)didFailToReceiveAdWithReason:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC18didFailToReceiveAd6reasony0A3SDK0hE6ReasonC_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "didFailToReceiveAdWithReason:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "adOpportunityTrackerView",
+            "printedName": "adOpportunityTrackerView(trackerView:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdOpportunityTrackerView",
+                "printedName": "TeadsSDK.TeadsAdOpportunityTrackerView",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdOpportunityTrackerView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer(im)adOpportunityTrackerViewWithTrackerView:",
+            "mangledName": "$s22TeadsPBMPluginRendererAAC24adOpportunityTrackerView07trackerG0y0A3SDK0a2AdefG0C_tF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "objc_name": "adOpportunityTrackerViewWithTrackerView:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TeadsPBMPluginRenderer@objc(cs)TeadsPBMPluginRenderer",
+        "mangledName": "$s22TeadsPBMPluginRendererAAC",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PrebidMobilePluginRenderer",
+            "printedName": "PrebidMobilePluginRenderer",
+            "usr": "c:@M@PrebidMobile@objc(pl)PrebidMobilePluginRenderer",
+            "mangledName": "$s12PrebidMobile0aB14PluginRendererP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TeadsAdDelegate",
+            "printedName": "TeadsAdDelegate",
+            "usr": "c:@M@TeadsSDK@objc(pl)TeadsAdDelegate",
+            "mangledName": "$s8TeadsSDK0A10AdDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TeadsInReadAdPlacementDelegate",
+            "printedName": "TeadsInReadAdPlacementDelegate",
+            "usr": "c:@M@TeadsSDK@objc(pl)TeadsInReadAdPlacementDelegate",
+            "mangledName": "$s8TeadsSDK0A25InReadAdPlacementDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TeadsAdPlacementDelegate",
+            "printedName": "TeadsAdPlacementDelegate",
+            "usr": "c:@M@TeadsSDK@objc(pl)TeadsAdPlacementDelegate",
+            "mangledName": "$s8TeadsSDK0A19AdPlacementDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TeadsLogMessageDelegate",
+            "printedName": "TeadsLogMessageDelegate",
+            "usr": "c:@M@TeadsSDK@objc(pl)TeadsLogMessageDelegate",
+            "mangledName": "$s8TeadsSDK0A18LogMessageDelegateP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsPBMPluginError",
+        "printedName": "TeadsPBMPluginError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "placementInitialization",
+            "printedName": "placementInitialization",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsPBMPluginRenderer.TeadsPBMPluginError.Type) -> TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsPBMPluginError",
+                        "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO23placementInitializationyA2CmF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO23placementInitializationyA2CmF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stringEncoding",
+            "printedName": "stringEncoding",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsPBMPluginRenderer.TeadsPBMPluginError.Type) -> TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsPBMPluginError",
+                        "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO14stringEncodingyA2CmF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO14stringEncodingyA2CmF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jsonSerialization",
+            "printedName": "jsonSerialization",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsPBMPluginRenderer.TeadsPBMPluginError.Type) -> TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsPBMPluginError",
+                        "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO17jsonSerializationyA2CmF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO17jsonSerializationyA2CmF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "viewMissing",
+            "printedName": "viewMissing",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsPBMPluginRenderer.TeadsPBMPluginError.Type) -> TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsPBMPluginError",
+                        "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO11viewMissingyA2CmF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO11viewMissingyA2CmF",
+            "moduleName": "TeadsPBMPluginRenderer"
+          },
+          {
+            "kind": "Var",
+            "name": "adLoadError",
+            "printedName": "adLoadError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsPBMPluginRenderer.TeadsPBMPluginError.Type) -> TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsPBMPluginError",
+                        "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO06adLoadD0yA2CmF",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO06adLoadD0yA2CmF",
+            "moduleName": "TeadsPBMPluginRenderer"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDomain",
+            "printedName": "errorDomain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO11errorDomainSSvpZ",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO11errorDomainSSvpZ",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO11errorDomainSSvgZ",
+                "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO11errorDomainSSvgZ",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO9errorCodeSivp",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO9errorCodeSivp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO9errorCodeSivg",
+                "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO9errorCodeSivg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO16errorDescriptionSSvp",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO16errorDescriptionSSvp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO16errorDescriptionSSvg",
+                "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO16errorDescriptionSSvg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorUserInfo",
+            "printedName": "errorUserInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO13errorUserInfoSDySSypGvp",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO13errorUserInfoSDySSypGvp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO13errorUserInfoSDySSypGvg",
+                "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO13errorUserInfoSDySSypGvg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsPBMPluginError",
+                    "printedName": "TeadsPBMPluginRenderer.TeadsPBMPluginError",
+                    "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO8rawValueACSgSi_tcfc",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO8rawValueACSgSi_tcfc",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO8rawValueSivp",
+            "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO8rawValueSivp",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO8rawValueSivg",
+                "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO8rawValueSivg",
+                "moduleName": "TeadsPBMPluginRenderer",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:22TeadsPBMPluginRenderer0aB5ErrorO",
+        "mangledName": "$s22TeadsPBMPluginRenderer0aB5ErrorO",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomNSError",
+            "printedName": "CustomNSError",
+            "usr": "s:10Foundation13CustomNSErrorP",
+            "mangledName": "$s10Foundation13CustomNSErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PrebidMobile",
+        "printedName": "PrebidMobile",
+        "declKind": "Import",
+        "moduleName": "TeadsPBMPluginRenderer"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Bid",
+        "printedName": "Bid",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12PrebidMobile3BidC22TeadsPBMPluginRendererE6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s12PrebidMobile3BidC22TeadsPBMPluginRendererE6encode2toys7Encoder_p_tKF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stringify",
+            "printedName": "stringify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12PrebidMobile3BidC22TeadsPBMPluginRendererE9stringifySSyKF",
+            "mangledName": "$s12PrebidMobile3BidC22TeadsPBMPluginRendererE9stringifySSyKF",
+            "moduleName": "TeadsPBMPluginRenderer",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@PrebidMobile@objc(cs)Bid",
+        "mangledName": "$s12PrebidMobile3BidC",
+        "moduleName": "PrebidMobile",
+        "declAttributes": [
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMViewContainer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 600,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/Extensions\/TeadsPBMPluginRenderer+PrebidMobilePluginRenderer.swift",
+      "kind": "Dictionary",
+      "offset": 664,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/Extensions\/TeadsPBMPluginRenderer+PrebidMobilePluginRenderer.swift",
+      "kind": "Dictionary",
+      "offset": 954,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginRenderer.swift",
+      "kind": "StringLiteral",
+      "offset": 324,
+      "length": 7,
+      "value": "\"teads\""
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginRenderer.swift",
+      "kind": "StringLiteral",
+      "offset": 1026,
+      "length": 55,
+      "value": "\"TeadsPBMPluginRenderer.lastRegisteredFingerprintQueue\""
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/ThreadSafeDictionary.swift",
+      "kind": "StringLiteral",
+      "offset": 279,
+      "length": 26,
+      "value": "\"Dictionary Barrier Queue\""
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 370,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 446,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 528,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 558,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/llemesev\/work\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsPBMPluginRenderer\/TeadsPBMPluginError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 588,
+      "length": 1,
+      "value": "5"
+    }
+  ]
+}
