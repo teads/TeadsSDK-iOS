@@ -12,7 +12,7 @@ import PackageDescription
 // Frameworks/ — adjust the `path:` values accordingly when publishing.
 
 let teadsModuleName = "TeadsSDK"
-let omModuleName = "OMSDK_Teads"
+let omModuleName = "OMSDK_Teadstv"
 let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsPBMPluginRendererModuleName = "TeadsPBMPluginRenderer"
@@ -40,7 +40,7 @@ let package = Package(
             targets: [teadsPBMPluginRendererModuleName]
         ),
     ],
-    
+
     targets: [
         .binaryTarget(
             name: teadsModuleName,
