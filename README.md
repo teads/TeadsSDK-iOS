@@ -15,6 +15,7 @@ Teads SDK provides seamless access to both premium video advertising and content
 - [Integration Documentation](#-integration-documentation)
 - [Migrating to v6](#-migrating-to-v6)
 - [Run the sample app](#-run-the-sample-app)
+- [SwiftUI sample app](#-swiftui-sample-app)
 - [Installation](#-install-the-teads-sdk-ios-framework)
 - [Mediation Adapters](#-mediation-adapters)
 - [Certifications](#-certifications)
@@ -33,6 +34,34 @@ TeadsSDK v6 introduces a new unified `createPlacement` API. See [Migration Docum
 ## 🚲 Run the sample app
 
 Clone this repository, open it with Xcode, and run project.
+
+## 📱 SwiftUI sample app
+
+Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps.
+
+1. Run `pod install`.
+2. Open `TeadsSampleApp.xcworkspace`.
+3. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
+
+The Direct InRead samples use the official SwiftUI API shipped by the SDK:
+
+```swift
+import SwiftUI
+import TeadsSDK
+
+struct ContentView: View {
+    private let config = TeadsAdPlacementMediaConfig(pid: 84242, articleUrl: URL(string: "https://www.teads.com"))
+
+    var body: some View {
+        ScrollView {
+            // ...article content...
+            TeadsAdPlacementSwiftUIView<TeadsAdPlacementMedia>(config: config)
+        }
+    }
+}
+```
+
+You can also use the `.teadsAdPlacement(config:delegate:)` view modifier, which stacks the ad below the modified content.
 
 ## 📦 Install the Teads SDK iOS framework
 
