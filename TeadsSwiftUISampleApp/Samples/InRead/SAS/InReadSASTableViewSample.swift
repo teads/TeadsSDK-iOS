@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// InRead • SAS • TableView.
 struct InReadSASTableViewSample: View {
     let formatId: Int
 

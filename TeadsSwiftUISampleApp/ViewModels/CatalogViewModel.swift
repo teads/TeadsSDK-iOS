@@ -9,14 +9,9 @@ import Combine
 import Foundation
 import SwiftUI
 
-/// Drives the root catalogue selection (Format → Provider → Creative → Integration).
-///
-/// Mirrors the UIKit `RootViewController`'s `AdSelection` state machine, plus the validation toggle
-/// and the custom-PID dialog, all persisted in `UserDefaults` for parity with the UIKit sample.
+/// Drives the catalogue selection.
 @MainActor
 final class CatalogViewModel: ObservableObject {
-    // MARK: Selection state
-
     @Published var format: SampleFormat = .inRead {
         didSet { onFormatChanged() }
     }
@@ -31,13 +26,9 @@ final class CatalogViewModel: ObservableObject {
         didSet { defaults.set(validationModeEnabled, forKey: Self.validationModeKey) }
     }
 
-    /// Drives presentation of the "Custom PID" alert.
     @Published var isCustomPIDAlertPresented = false
 
-    /// Drives presentation of the "Coming soon" alert.
     @Published var comingSoonMessage: String?
-
-    // MARK: Derived options
 
     var availableProviders: [SampleProvider] {
         SampleMatrix.providers(for: format)
@@ -51,10 +42,7 @@ final class CatalogViewModel: ObservableObject {
         SampleMatrix.integrations(for: format, provider: provider)
     }
 
-    /// Format/Provider currently support Interstitial without creative pills.
     var showsCreatives: Bool { !availableCreatives.isEmpty }
-
-    // MARK: Init
 
     private let defaults: UserDefaults
     private static let validationModeKey = "TeadsValidationModeEnabled"
@@ -64,17 +52,13 @@ final class CatalogViewModel: ObservableObject {
         validationModeEnabled = defaults.object(forKey: Self.validationModeKey) as? Bool ?? true
     }
 
-    // MARK: Selection transitions
-
     private func onFormatChanged() {
-        // Reset provider and creative to a valid default for the new format.
         if let firstProvider = SampleMatrix.providers(for: format).first {
-            provider = firstProvider // triggers onProviderChanged
+            provider = firstProvider
         }
     }
 
     private func onProviderChanged() {
-        // Reset creative to the first valid one for the new provider.
         if let firstCreative = SampleMatrix.creatives(for: format, provider: provider).first {
             creative = firstCreative
         }
@@ -97,8 +81,6 @@ final class CatalogViewModel: ObservableObject {
             isCustomPIDAlertPresented = true
         }
     }
-
-    // MARK: Resolved selection for downstream samples
 
     func selection(for integration: SampleIntegration) -> SampleSelection {
         SampleSelection(format: format, provider: provider, creative: creative, integration: integration)

@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-/// A pill button matching the UIKit sample's `RootButtonCollectionViewCell`.
-///
-/// Selected pills fill with the primary color and white text; unselected pills show a bordered
-/// outline. Used for the Formats and Providers rows.
+/// Pill button used in the catalogue rows.
 struct RootPillButton: View {
     let title: String
     var isSelected: Bool
@@ -21,9 +18,9 @@ struct RootPillButton: View {
             Text(title)
                 .font(.system(size: 16))
                 .lineLimit(1)
-                .padding(.horizontal, 14)
-                .frame(height: 32)
                 .frame(maxWidth: .infinity)
+                .padding(.horizontal, 12)
+                .frame(height: 32)
                 .foregroundStyle(isSelected ? Color.white : Color.cellBorder)
                 .background(isSelected ? Color.teadsPrimary : Color.appBackground)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
@@ -36,8 +33,7 @@ struct RootPillButton: View {
     }
 }
 
-/// A square image + label card matching the UIKit sample's `RootImageViewLabelCollectionViewCell`,
-/// used for the Integrations grid.
+/// Card used in the integrations grid.
 struct IntegrationCard: View {
     let title: String
     let imageName: String
@@ -48,12 +44,13 @@ struct IntegrationCard: View {
                 .resizable()
                 .renderingMode(.template)
                 .scaledToFit()
-                .frame(height: 56)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             Text(title)
-                .font(.system(size: 16))
+                .font(.system(size: 17))
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
         }
+        .padding(16)
         .foregroundStyle(Color.teadsGray)
         .frame(maxWidth: .infinity)
         .aspectRatio(1, contentMode: .fit)
@@ -64,7 +61,7 @@ struct IntegrationCard: View {
     }
 }
 
-/// Section header matching the UIKit catalogue's section titles ("Formats", "Providers", ...).
+/// Catalogue section header.
 struct RootSectionHeader: View {
     let title: String
 

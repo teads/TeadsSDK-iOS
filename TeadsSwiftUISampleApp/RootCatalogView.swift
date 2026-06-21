@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-/// Entry screen — the SwiftUI port of the UIKit `RootViewController` catalogue:
-/// Formats / Providers / Creatives / Integrations + Showcase + Settings, branded nav bar.
+/// Catalogue entry screen.
 struct RootCatalogView: View {
     @StateObject private var viewModel = CatalogViewModel()
     @State private var showShowcase = false
 
+    private let itemSpacing: CGFloat = 15
     private let integrationColumns = [
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16),
@@ -55,12 +55,10 @@ struct RootCatalogView: View {
         }
     }
 
-    // MARK: Sections
-
     private var formatsSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Formats")
-            HStack(spacing: 4) {
+            HStack(spacing: itemSpacing) {
                 ForEach(SampleFormat.allCases) { format in
                     RootPillButton(
                         title: format.displayName,
@@ -68,6 +66,7 @@ struct RootCatalogView: View {
                     ) {
                         viewModel.selectFormat(format)
                     }
+                    .frame(maxWidth: .infinity)
                 }
             }
         }
@@ -76,15 +75,12 @@ struct RootCatalogView: View {
     private var providersSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Providers")
-            FlowHStack(spacing: 4) {
-                ForEach(viewModel.availableProviders) { provider in
-                    RootPillButton(
-                        title: provider.displayName,
-                        isSelected: viewModel.provider == provider
-                    ) {
-                        viewModel.selectProvider(provider)
-                    }
-                    .fixedSize()
+            pillRows(for: viewModel.availableProviders, perRow: 3) { provider in
+                RootPillButton(
+                    title: provider.displayName,
+                    isSelected: viewModel.provider == provider
+                ) {
+                    viewModel.selectProvider(provider)
                 }
             }
         }
@@ -93,15 +89,29 @@ struct RootCatalogView: View {
     private var creativesSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Creatives")
-            FlowHStack(spacing: 4) {
-                ForEach(viewModel.availableCreatives) { creative in
-                    RootPillButton(
-                        title: creative.displayName,
-                        isSelected: viewModel.creative == creative
-                    ) {
-                        viewModel.selectCreative(creative)
+            pillRows(for: viewModel.availableCreatives, perRow: 3) { creative in
+                RootPillButton(
+                    title: creative.displayName,
+                    isSelected: viewModel.creative == creative
+                ) {
+                    viewModel.selectCreative(creative)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func pillRows<Item: Hashable>(
+        for items: [Item],
+        perRow: Int,
+        @ViewBuilder pill: @escaping (Item) -> some View
+    ) -> some View {
+        VStack(alignment: .leading, spacing: itemSpacing) {
+            ForEach(items.chunked(into: perRow), id: \.self) { row in
+                HStack(spacing: itemSpacing) {
+                    ForEach(row, id: \.self) { item in
+                        pill(item).fixedSize()
                     }
-                    .fixedSize()
                 }
             }
         }
@@ -152,71 +162,12 @@ struct RootCatalogView: View {
     }
 }
 
-/// A simple horizontal flow container that wraps to the next line when items don't fit.
-/// Used for the Providers and Creatives pill rows (the UIKit sample uses a flow layout there too).
-struct FlowHStack<Content: View>: View {
-    let spacing: CGFloat
-    @ViewBuilder var content: () -> Content
-
-    init(spacing: CGFloat = 4, @ViewBuilder content: @escaping () -> Content) {
-        self.spacing = spacing
-        self.content = content
-    }
-
-    var body: some View {
-        FlowLayout(spacing: spacing) {
-            content()
+private extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        guard size > 0 else { return [] }
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
         }
-    }
-}
-
-/// Minimal flow layout. Available on iOS 16+, matching the project's deployment target.
-private struct FlowLayout: Layout {
-    var spacing: CGFloat = 4
-
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache _: inout ()) -> CGSize {
-        let width = proposal.width ?? .infinity
-        let rows = arrange(subviews: subviews, in: width)
-        let height = rows.reduce(into: CGFloat(0)) { sum, row in
-            sum += row.height + (sum == 0 ? 0 : spacing)
-        }
-        return CGSize(width: width.isFinite ? width : rows.map(\.width).max() ?? 0, height: height)
-    }
-
-    func placeSubviews(in bounds: CGRect, proposal _: ProposedViewSize, subviews: Subviews, cache _: inout ()) {
-        let rows = arrange(subviews: subviews, in: bounds.width)
-        var y = bounds.minY
-        for row in rows {
-            var x = bounds.minX
-            for item in row.items {
-                let size = item.view.sizeThatFits(.unspecified)
-                item.view.place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(width: size.width, height: size.height))
-                x += size.width + spacing
-            }
-            y += row.height + spacing
-        }
-    }
-
-    private struct Row {
-        var items: [(view: LayoutSubview, size: CGSize)] = []
-        var width: CGFloat = 0
-        var height: CGFloat = 0
-    }
-
-    private func arrange(subviews: Subviews, in width: CGFloat) -> [Row] {
-        var rows: [Row] = [Row()]
-        for view in subviews {
-            let size = view.sizeThatFits(.unspecified)
-            let candidateWidth = rows[rows.count - 1].width + (rows[rows.count - 1].items.isEmpty ? 0 : spacing) + size.width
-            if candidateWidth > width, !rows[rows.count - 1].items.isEmpty {
-                rows.append(Row())
-            }
-            let last = rows.count - 1
-            rows[last].items.append((view: view, size: size))
-            rows[last].width += size.width + (rows[last].items.count == 1 ? 0 : spacing)
-            rows[last].height = max(rows[last].height, size.height)
-        }
-        return rows
     }
 }
 

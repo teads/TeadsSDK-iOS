@@ -7,9 +7,7 @@
 
 import Foundation
 
-/// Public test placement identifiers, kept in sync with the UIKit `TeadsSampleApp`'s `PID` enum.
-///
-/// These are public demo PIDs only — no internal placements are referenced here.
+/// Public demo PIDs. Replace with your own placement identifiers in production.
 enum SamplePID {
     // MARK: Direct
 
@@ -54,10 +52,8 @@ enum SamplePID {
     static let appLovinSquareMREC = "512f790c9cf57ccd"
     static let appLovinCarouselMREC = "9b2445c1ac3d55d6"
 
-    /// Default article URL used by demo placements.
     static let articleURL = URL(string: "https://www.teads.com")
 
-    /// User-configurable custom integer PID, persisted in UserDefaults under "PID" (matches UIKit sample).
     static var custom: Int {
         get { UserDefaults.standard.integer(forKey: "PID") }
         set { UserDefaults.standard.set(newValue, forKey: "PID") }

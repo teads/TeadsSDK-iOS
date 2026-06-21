@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// Applies the Teads-branded navigation bar used throughout the UIKit `TeadsSampleApp`:
-/// a purple-to-blue gradient background with the white Teads logo centered as the title.
+/// Teads-branded navigation bar: gradient background, white logo title.
 private struct TeadsBrandNavigationBar: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -28,7 +27,7 @@ private struct TeadsBrandNavigationBar: ViewModifier {
 }
 
 extension View {
-    /// Renders the Teads gradient navigation bar with the white logo, matching the UIKit sample.
+    /// Applies the Teads-branded navigation bar.
     func teadsBrandNavigationBar() -> some View {
         modifier(TeadsBrandNavigationBar())
     }

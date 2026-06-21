@@ -7,9 +7,6 @@
 
 import Foundation
 
-// MARK: Format / Provider / Creative / Integration
-
-/// Top-level ad format. Matches the UIKit sample's `Formats`.
 enum SampleFormat: String, CaseIterable, Identifiable {
     case inRead
     case native = "Native"
@@ -19,7 +16,6 @@ enum SampleFormat: String, CaseIterable, Identifiable {
     var displayName: String { rawValue }
 }
 
-/// Demand source / SDK provider.
 enum SampleProvider: String, CaseIterable, Identifiable {
     case direct = "Direct"
     case admob = "Admob"
@@ -30,7 +26,6 @@ enum SampleProvider: String, CaseIterable, Identifiable {
     var displayName: String { rawValue }
 }
 
-/// Creative type. Mirrors the UIKit sample's `CreativeTypeName`.
 enum SampleCreative: String, CaseIterable, Identifiable {
     case landscape = "Landscape"
     case vertical = "Vertical"
@@ -48,7 +43,6 @@ enum SampleCreative: String, CaseIterable, Identifiable {
     var displayName: String { rawValue }
 }
 
-/// Container/integration kind. Mirrors the UIKit sample's `Integration` entries.
 enum SampleIntegration: String, CaseIterable, Identifiable {
     case scrollView = "ScrollView"
     case tableView = "TableView"
@@ -60,7 +54,6 @@ enum SampleIntegration: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var displayName: String { rawValue }
 
-    /// Asset name of the integration icon (shared with the UIKit catalogue).
     var imageName: String {
         switch self {
             case .scrollView: "ScrollView"
@@ -72,23 +65,17 @@ enum SampleIntegration: String, CaseIterable, Identifiable {
     }
 }
 
-// MARK: Selection rules (mirrors UIKit Format.swift)
-
+/// Available providers, creatives and integrations per selection.
 enum SampleMatrix {
-    /// Default creative list per provider for InRead.
     static let defaultInReadCreatives: [SampleCreative] = [.landscape, .vertical, .square, .carousel, .custom]
-    /// AppLovin gets a longer list (banner + MREC variants).
     static let appLovinInReadCreatives: [SampleCreative] = [
         .landscape, .vertical, .square, .carousel,
         .appLovinMRECLandscape, .appLovinMRECVertical, .appLovinMRECSquare, .appLovinMRECCarousel,
         .custom,
     ]
-    /// Native uses Display + Custom.
     static let nativeCreatives: [SampleCreative] = [.nativeDisplay, .custom]
-    /// Interstitial has no creative pills.
     static let interstitialCreatives: [SampleCreative] = []
 
-    /// Providers offered per format.
     static func providers(for format: SampleFormat) -> [SampleProvider] {
         switch format {
             case .inRead: [.direct, .admob, .sas, .appLovin]
@@ -97,7 +84,6 @@ enum SampleMatrix {
         }
     }
 
-    /// Integration containers offered per (format, provider).
     static func integrations(for format: SampleFormat, provider: SampleProvider) -> [SampleIntegration] {
         switch format {
             case .inRead:
@@ -117,7 +103,6 @@ enum SampleMatrix {
         }
     }
 
-    /// Creative pills offered per (format, provider).
     static func creatives(for format: SampleFormat, provider: SampleProvider) -> [SampleCreative] {
         switch format {
             case .inRead:
@@ -128,16 +113,13 @@ enum SampleMatrix {
     }
 }
 
-// MARK: Resolved selection (the configuration a sample screen consumes)
-
-/// A fully-resolved selection that downstream sample screens consume.
+/// Resolved catalogue selection consumed by the sample screens.
 struct SampleSelection: Equatable {
     var format: SampleFormat = .inRead
     var provider: SampleProvider = .direct
     var creative: SampleCreative = .landscape
     var integration: SampleIntegration = .scrollView
 
-    /// Integer PID for direct/SAS placements.
     var integerPID: Int {
         switch format {
             case .interstitial: return 0
@@ -168,7 +150,6 @@ struct SampleSelection: Equatable {
         }
     }
 
-    /// String PID for AdMob / AppLovin ad units.
     var stringPID: String {
         switch format {
             case .interstitial: return SamplePID.admobInterstitial
@@ -202,7 +183,6 @@ struct SampleSelection: Equatable {
         }
     }
 
-    /// True when the creative is an MREC variant (AppLovin only).
     var isMREC: Bool {
         switch creative {
             case .appLovinMRECLandscape, .appLovinMRECVertical, .appLovinMRECSquare, .appLovinMRECCarousel:

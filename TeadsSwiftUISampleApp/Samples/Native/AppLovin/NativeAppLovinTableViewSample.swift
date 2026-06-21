@@ -10,10 +10,6 @@ import SwiftUI
 import TeadsAppLovinAdapter
 import TeadsSDK
 
-/// Native • AppLovin • TableView.
-///
-/// Loads an AppLovin `MANativeAdView` via the Teads adapter, inserted at row 3 (matches the
-/// UIKit `NativeAppLovinTableViewController`).
 struct NativeAppLovinTableViewSample: View {
     let pid: String
 

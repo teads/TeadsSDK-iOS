@@ -11,10 +11,6 @@ import TeadsAdMobAdapter
 import TeadsSDK
 import WebKit
 
-/// InRead • AdMob • WebView.
-///
-/// Mirrors `InReadAdmobWebViewController`: AdMob loads via the Teads adapter, and once the WebView
-/// helper finds the JS slot we feed the AdMob banner into it.
 struct InReadAdmobWebViewSample: View {
     let pid: String
 

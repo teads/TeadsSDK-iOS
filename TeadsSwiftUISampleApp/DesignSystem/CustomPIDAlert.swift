@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// Modifier that mirrors the UIKit sample's `pidAlert()` — a number-pad text field for entering a
-/// custom PID, persisted to `UserDefaults` via `SamplePID.custom`.
+/// Number-pad alert for entering a custom PID.
 private struct CustomPIDAlertModifier: ViewModifier {
     @Binding var isPresented: Bool
     @State private var entry = ""
@@ -28,9 +27,6 @@ private struct CustomPIDAlertModifier: ViewModifier {
         }
     }
 
-    /// Mirrors the upstream `isPresented` binding, but seeds `entry` the moment SwiftUI flips it
-    /// to `true` — which is the same hook point an `onChange(of:)` would have served, minus the
-    /// API-version dance.
     private var seedingBinding: Binding<Bool> {
         Binding(
             get: { isPresented },
@@ -46,7 +42,7 @@ private struct CustomPIDAlertModifier: ViewModifier {
 }
 
 extension View {
-    /// Presents the custom-PID alert when `isPresented` is true.
+    /// Presents the custom-PID alert.
     func customPIDAlert(isPresented: Binding<Bool>) -> some View {
         modifier(CustomPIDAlertModifier(isPresented: isPresented))
     }

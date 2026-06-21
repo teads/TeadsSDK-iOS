@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// The gradient article header image, mirroring the UIKit sample's `TeadsGradientImageView`
-/// (the `coffeeDesk` photo overlaid with the Teads purple-to-blue gradient).
+/// Gradient article header.
 struct ArticleHeaderImage: View {
     var height: CGFloat = 200
 
@@ -22,7 +21,7 @@ struct ArticleHeaderImage: View {
     }
 }
 
-/// Gray skeleton "fake article" lines, mirroring the UIKit sample's `FakeArticleView`.
+/// Skeleton article lines.
 struct FakeArticleLines: View {
     var lineCount = 6
 
@@ -37,9 +36,7 @@ struct FakeArticleLines: View {
     }
 }
 
-/// A fake article page: gradient header, skeleton text, an ad slot, then more skeleton text.
-///
-/// Reproduces the layout of the UIKit InRead article screens, with the ad injected in the middle.
+/// Fake article scaffold with an ad slot in the middle.
 struct FakeArticle<AdSlot: View>: View {
     var topLines = 6
     var bottomLines = 12

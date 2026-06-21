@@ -9,10 +9,6 @@
 import SwiftUI
 import TeadsSASAdapter
 
-/// Native • SAS • TableView.
-///
-/// Loads a Smart AdServer native ad with the Teads adapter applied via keyword targeting, then
-/// renders it through a programmatic view (mirrors `NativeSASTableViewController`).
 struct NativeSASTableViewSample: View {
     @State private var nativeAd: SASNativeAd?
     @State private var adManagerHolder = SASNativeAdHolder()

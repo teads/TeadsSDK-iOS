@@ -8,10 +8,7 @@
 import SwiftUI
 import TeadsSDK
 
-/// Hosts a Teads `TeadsNativeAdView` (driven by `TeadsAdPlacementMediaNative`) inside SwiftUI.
-///
-/// Mirrors the wiring done by the UIKit `NativeDirectTableViewController`: create the placement,
-/// call `loadAd()`, and pass the bind closure a `TeadsNativeAdView`.
+/// Hosts a `TeadsNativeAdView` driven by `TeadsAdPlacementMediaNative`.
 struct TeadsNativeAdHost: UIViewRepresentable {
     let pid: Int
     let validationMode: Bool

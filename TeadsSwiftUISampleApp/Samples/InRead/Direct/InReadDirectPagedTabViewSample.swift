@@ -8,10 +8,6 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • TabView (the SwiftUI idiom for the UIKit PageView integration).
-///
-/// Mirrors `InReadPageViewController`: 20 pageable articles with a Teads ad embedded on the
-/// first page (paginated horizontally).
 struct InReadDirectPageViewSample: View {
     let selection: SampleSelection
     let validationMode: Bool

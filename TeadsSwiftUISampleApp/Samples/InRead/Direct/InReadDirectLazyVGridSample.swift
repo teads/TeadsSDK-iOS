@@ -8,16 +8,12 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • LazyVGrid (the SwiftUI idiom for the UIKit CollectionView integration).
-///
-/// Reproduces the UIKit `InReadDirectCollectionViewController` pattern: a 2-column grid of
-/// article cards with a full-width Teads ad inserted after the third card.
 struct InReadDirectCollectionViewSample: View {
     let selection: SampleSelection
     let validationMode: Bool
 
     private static let articleCount = 8
-    private static let adIndex = 3 // matches `adItemNumber` in UIKit
+    private static let adIndex = 3
 
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
@@ -55,7 +51,6 @@ struct InReadDirectCollectionViewSample: View {
     }
 }
 
-/// A simple square article placeholder mirroring the UIKit `fakeArticleCell` in the collection.
 private struct ArticleCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {

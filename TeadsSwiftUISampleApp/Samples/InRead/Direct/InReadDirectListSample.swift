@@ -8,16 +8,12 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • List (the SwiftUI idiom for the UIKit TableView integration).
-///
-/// 8 article rows with Teads ads inserted every 3rd article row, matching the UIKit sample's
-/// `InReadDirectTableViewController` behavior. Each ad is a separate placement that auto-resizes.
 struct InReadDirectTableViewSample: View {
     let selection: SampleSelection
     let validationMode: Bool
 
     private static let articleCount = 8
-    private static let adInterval = 3 // matches `incrementPosition` in UIKit
+    private static let adInterval = 3
 
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
@@ -50,7 +46,6 @@ struct InReadDirectTableViewSample: View {
     }
 }
 
-/// A skeleton row resembling the UIKit `fakeArticleCell`.
 private struct FakeArticleRow: View {
     var body: some View {
         FakeArticleLines(lineCount: 5)

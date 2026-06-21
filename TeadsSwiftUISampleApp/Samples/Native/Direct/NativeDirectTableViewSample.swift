@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/// Native • Direct • TableView.
-///
-/// 8 article rows with a Teads native ad inserted at row 3 (matches the UIKit sample's
-/// `adRowNumber = 3`). Each row is 250pt tall to mirror the UIKit storyboard's row height.
 struct NativeDirectTableViewSample: View {
     let pid: Int
     let validationMode: Bool
@@ -43,8 +39,6 @@ struct NativeDirectTableViewSample: View {
     }
 }
 
-/// Mock native-style article row matching the UIKit `FakeArticleNativeTableViewCell`:
-/// media + icon + title + CTA.
 struct FakeNativeArticleRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

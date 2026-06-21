@@ -10,7 +10,7 @@ import SwiftUI
 import TeadsSASAdapter
 import TeadsSDK
 
-/// Hosts a Smart AdServer `SASBannerView` driven by the Teads adapter inside SwiftUI.
+/// Hosts a Smart AdServer `SASBannerView` driven by the Teads adapter.
 struct SASBannerHost: UIViewRepresentable {
     let formatId: Int
 

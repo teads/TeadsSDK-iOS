@@ -7,10 +7,7 @@
 
 import Foundation
 
-/// Shared HTML article scaffold used by the WebView samples (Direct and AdMob).
-///
-/// Contains a `#teads-placement-slot` element that `TeadsWebViewHelper` discovers to inject
-/// the Teads ad container.
+/// HTML scaffold whose `#teads-placement-slot` element is discovered by `TeadsWebViewHelper`.
 enum WebViewArticleHTML {
     static let document = """
     <!DOCTYPE html>

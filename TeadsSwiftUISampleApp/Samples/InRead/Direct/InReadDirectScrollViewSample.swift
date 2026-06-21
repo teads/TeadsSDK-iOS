@@ -8,10 +8,6 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • ScrollView.
-///
-/// Drops the official `TeadsMediaSwiftUIView` (alias for
-/// `TeadsAdPlacementSwiftUIView<TeadsAdPlacementMedia>`) straight into the article flow.
 struct InReadDirectScrollViewSample: View {
     let selection: SampleSelection
     let validationMode: Bool

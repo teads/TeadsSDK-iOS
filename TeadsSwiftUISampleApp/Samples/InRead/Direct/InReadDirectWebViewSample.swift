@@ -9,11 +9,7 @@ import SwiftUI
 import TeadsSDK
 import WebKit
 
-/// InRead • Direct • WebView.
-///
-/// The InRead WebView integration is driven by `TeadsWebViewHelper`, which manages a JS slot inside
-/// the page. Since this is a UIKit/WebKit flow, the sample wraps a `WKWebView` in a
-/// `UIViewRepresentable`; all the ad orchestration lives in the `Coordinator`.
+/// `TeadsWebViewHelper` discovers a JS slot in the page and opens/closes it as the placement emits events.
 struct InReadDirectWebViewSample: View {
     let selection: SampleSelection
 

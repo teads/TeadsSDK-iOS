@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// Fake article fixtures used to surround the ad slots, mirroring the UIKit sample's content style.
 enum ArticleContent {
     static let title = "The Future of Digital Advertising"
 
@@ -17,7 +16,6 @@ enum ArticleContent {
     and advertisers are rethinking how they connect with audiences.
     """
 
-    /// Visible "above the paywall" excerpt used by the Interstitial sample.
     static let previewParagraph = """
     The digital advertising landscape is undergoing a profound transformation. \
     As privacy regulations tighten and third-party cookies phase out, publishers \
@@ -26,7 +24,6 @@ enum ArticleContent {
     attention while respecting user choice.
     """
 
-    /// Paragraphs that unlock after the interstitial is watched.
     static let lockedParagraphs = paragraphs
 
     static let paragraphs = [

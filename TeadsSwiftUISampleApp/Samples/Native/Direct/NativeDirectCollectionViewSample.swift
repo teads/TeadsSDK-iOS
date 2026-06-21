@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/// Native • Direct • CollectionView.
-///
-/// 8 article cards in a single-column lazy stack with a Teads native ad inserted at index 3
-/// (matches the UIKit `NativeDirectCollectionViewController`'s `adItemNumber = 3`).
 struct NativeDirectCollectionViewSample: View {
     let pid: Int
     let validationMode: Bool

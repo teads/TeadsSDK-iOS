@@ -10,11 +10,8 @@ import SwiftUI
 import TeadsAdMobAdapter
 import TeadsSDK
 
-/// Hosts a Google `AdManagerBannerView` with the Teads adapter inside SwiftUI, resizing the
-/// SwiftUI container as Teads emits `didUpdateRatio` events.
+/// Hosts an AdMob `AdManagerBannerView` with the Teads adapter, resizing as `didUpdateRatio` fires.
 struct AdMobBannerHost: UIViewRepresentable {
-    /// AdMob banner format. Most InRead integrations use `.fluid` (matches UIKit ScrollView sample);
-    /// the TableView/WebView samples use a medium-rectangle initial size.
     enum Format {
         case fluid
         case mediumRectangle
@@ -59,8 +56,6 @@ struct AdMobBannerHost: UIViewRepresentable {
 
     func updateUIView(_: ResizingContainer, context _: Context) {}
 
-    // MARK: Container
-
     /// Container view whose intrinsic height tracks the Teads ad ratio so SwiftUI relays it out.
     final class ResizingContainer: UIView {
         private var heightConstraint: NSLayoutConstraint?
@@ -83,8 +78,6 @@ struct AdMobBannerHost: UIViewRepresentable {
             invalidateIntrinsicContentSize()
         }
     }
-
-    // MARK: Coordinator
 
     final class Coordinator: NSObject, BannerViewDelegate, TeadsMediatedAdViewDelegate {
         private weak var container: ResizingContainer?

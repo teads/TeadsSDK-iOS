@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-/// InRead • SAS • ScrollView.
-///
-/// Drives Smart AdServer via the Teads adapter, with a fake article scaffold around the ad slot.
 struct InReadSASScrollViewSample: View {
     let formatId: Int
 

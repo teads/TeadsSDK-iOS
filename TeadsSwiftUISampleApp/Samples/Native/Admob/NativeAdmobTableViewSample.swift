@@ -10,10 +10,6 @@ import SwiftUI
 import TeadsAdMobAdapter
 import TeadsSDK
 
-/// Native • AdMob • TableView.
-///
-/// Loads a Google AdMob native ad via the Teads adapter and renders it through a programmatic
-/// `NativeAdView`. Mirrors `NativeAdmobTableViewController` (8 rows, ad inserted at row 3).
 struct NativeAdmobTableViewSample: View {
     let pid: String
 
@@ -50,7 +46,6 @@ struct NativeAdmobTableViewSample: View {
     }
 }
 
-/// Retains the `AdLoader` for the lifetime of the sample.
 @MainActor
 private final class AdLoaderHolder: NSObject, AdLoaderDelegate, NativeAdLoaderDelegate {
     private var loader: AdLoader?
@@ -87,8 +82,6 @@ private final class AdLoaderHolder: NSObject, AdLoaderDelegate, NativeAdLoaderDe
 }
 
 extension UIApplication {
-    /// Returns the first key window across all connected scenes (used to look up the root
-    /// view controller for interstitial presentation and AdMob loader's `rootViewController`).
     var firstKeyWindow: UIWindow? {
         connectedScenes
             .compactMap { $0 as? UIWindowScene }
@@ -97,7 +90,6 @@ extension UIApplication {
     }
 }
 
-/// Programmatic `NativeAdView` that exposes its subviews so the AdMob SDK can bind them.
 private struct AdMobNativeAdHost: UIViewRepresentable {
     let ad: NativeAd
 

@@ -10,7 +10,7 @@ import SwiftUI
 import TeadsAppLovinAdapter
 import TeadsSDK
 
-/// Hosts an AppLovin `MAAdView` driven by the Teads adapter inside SwiftUI.
+/// Hosts an AppLovin `MAAdView` driven by the Teads adapter.
 struct AppLovinBannerHost: UIViewRepresentable {
     let adUnitID: String
     let isMREC: Bool

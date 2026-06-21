@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-/// SwiftUI accessors for the brand colors shared with the UIKit `TeadsSampleApp`.
-///
-/// The color assets themselves are copied from the UIKit sample's catalogue so both apps render
-/// with the exact same palette.
+/// Teads brand colors.
 extension Color {
     static let appText = Color("AppTextColor")
     static let appBackground = Color("AppBackgroundColor")
@@ -23,7 +20,7 @@ extension Color {
     static let cellBorder = Color("CellBorderColor")
 }
 
-/// The signature Teads purple-to-blue horizontal gradient used on the navigation bar and headers.
+/// Teads purple-to-blue gradient.
 extension LinearGradient {
     static let teadsBrand = LinearGradient(
         colors: [.teadsPurple, .teadsBlue],

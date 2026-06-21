@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/// InRead • AppLovin • ScrollView.
-///
-/// Loads an AppLovin `MAAdView` (banner or MREC) and routes the creative through the Teads adapter.
-/// Matches the UIKit `InReadAppLovinScrollViewController`, including the simulator-warning alert.
 struct InReadAppLovinScrollViewSample: View {
     let adUnitId: String
     let isMREC: Bool

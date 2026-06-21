@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// Maps a resolved `SampleSelection` to the concrete SwiftUI sample screen, so the catalogue
-/// doesn't need to know the screen layout for every (format × provider × integration) combo.
+/// Resolves a `SampleSelection` to the concrete sample screen.
 enum SampleDestinationFactory {
     @ViewBuilder
     static func destination(for selection: SampleSelection, validationMode: Bool) -> some View {
@@ -18,8 +17,6 @@ enum SampleDestinationFactory {
             case .interstitial: InterstitialAdmobSample(pid: selection.stringPID)
         }
     }
-
-    // MARK: InRead
 
     @ViewBuilder
     private static func inReadDestination(for selection: SampleSelection, validationMode: Bool) -> some View {
@@ -51,8 +48,6 @@ enum SampleDestinationFactory {
         }
     }
 
-    // MARK: Native
-
     @ViewBuilder
     private static func nativeDestination(for selection: SampleSelection, validationMode: Bool) -> some View {
         switch selection.provider {
@@ -70,7 +65,7 @@ enum SampleDestinationFactory {
     }
 }
 
-/// Placeholder shown when a (format × provider × integration) cell has no implementation.
+/// Placeholder shown for catalogue combinations without an implementation.
 struct SampleUnavailableView: View {
     var body: some View {
         VStack(spacing: 12) {

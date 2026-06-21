@@ -8,10 +8,6 @@
 import GoogleMobileAds
 import SwiftUI
 
-/// Interstitial • AdMob.
-///
-/// Mirrors `InterstitialAdmobViewController`: a paywall article preview that loads an AdMob
-/// interstitial, presents it on tap, and unlocks the rest of the article on dismiss.
 struct InterstitialAdmobSample: View {
     let pid: String
 

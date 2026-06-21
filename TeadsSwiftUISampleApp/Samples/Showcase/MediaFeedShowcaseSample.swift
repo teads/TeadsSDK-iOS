@@ -8,11 +8,7 @@
 import SwiftUI
 import TeadsSDK
 
-/// Media + Feed Showcase.
-///
-/// SwiftUI port of `MediaFeedShowcaseViewController`: drops a Media (video) placement and a Feed
-/// (content recommendations) placement into the same article. The Media one uses
-/// `TeadsMediaSwiftUIView`; the Feed one uses `TeadsFeedSwiftUIView`.
+/// Shows a Media (video) placement and a Feed (recommendations) placement in the same article.
 struct MediaFeedShowcaseSample: View {
     let validationMode: Bool
 

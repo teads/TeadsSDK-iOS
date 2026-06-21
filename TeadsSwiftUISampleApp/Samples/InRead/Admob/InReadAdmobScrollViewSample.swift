@@ -11,10 +11,6 @@ import SwiftUI
 import TeadsAdMobAdapter
 import TeadsSDK
 
-/// InRead • AdMob • ScrollView.
-///
-/// Mirrors the UIKit `InReadAdmobScrollViewController`: an AdMob `AdManagerBannerView` configured
-/// to use AdSizeFluid, with Teads loading its creative through the `TeadsAdMobAdapter`.
 struct InReadAdmobScrollViewSample: View {
     let pid: String
 

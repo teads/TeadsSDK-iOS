@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-/// InRead • AdMob • TableView (the SwiftUI idiom for the UIKit TableView integration).
-///
-/// 4 article rows with the Teads-via-AdMob banner inserted at index 2 (matches
-/// `InReadAdmobTableViewController.adRowNumber = 2`).
 struct InReadAdmobTableViewSample: View {
     let pid: String
 
