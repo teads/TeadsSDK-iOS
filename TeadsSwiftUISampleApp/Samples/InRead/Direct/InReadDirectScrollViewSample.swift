@@ -13,31 +13,31 @@ import TeadsSDK
 /// Drops the official `TeadsMediaSwiftUIView` (alias for
 /// `TeadsAdPlacementSwiftUIView<TeadsAdPlacementMedia>`) straight into the article flow.
 struct InReadDirectScrollViewSample: View {
-    private let config = TeadsAdPlacementMediaConfig(
-        pid: SamplePID.inReadDirectLandscape,
-        articleUrl: SamplePID.articleURL
-    )
+    let selection: SampleSelection
+    let validationMode: Bool
+
+    private var config: TeadsAdPlacementMediaConfig {
+        TeadsAdPlacementMediaConfig(
+            pid: selection.integerPID,
+            articleUrl: SamplePID.articleURL,
+            enableValidationMode: validationMode
+        )
+    }
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                ArticleHeader()
-
-                ArticleParagraph(text: ArticleContent.paragraphs[0])
-
+            FakeArticle {
                 TeadsMediaSwiftUIView(config: config)
-
-                ForEach(ArticleContent.paragraphs.indices.dropFirst(), id: \.self) { index in
-                    ArticleParagraph(text: ArticleContent.paragraphs[index])
-                }
+                    .padding(.horizontal)
             }
-            .padding()
         }
-        .navigationTitle("Direct • ScrollView")
         .navigationBarTitleDisplayMode(.inline)
+        .teadsBrandNavigationBar()
     }
 }
 
 #Preview {
-    NavigationStack { InReadDirectScrollViewSample() }
+    NavigationStack {
+        InReadDirectScrollViewSample(selection: SampleSelection(), validationMode: true)
+    }
 }

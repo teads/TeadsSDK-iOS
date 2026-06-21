@@ -8,42 +8,64 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • Paged TabView (the SwiftUI idiom for a PageViewController).
+/// InRead • Direct • TabView (the SwiftUI idiom for the UIKit PageView integration).
 ///
-/// Each page is its own article; the middle page hosts the InRead ad.
-struct InReadDirectPagedTabViewSample: View {
-    private let config = TeadsAdPlacementMediaConfig(
-        pid: SamplePID.inReadDirectLandscape,
-        articleUrl: SamplePID.articleURL
-    )
+/// Mirrors `InReadPageViewController`: 20 pageable articles with a Teads ad embedded on the
+/// first page (paginated horizontally).
+struct InReadDirectPageViewSample: View {
+    let selection: SampleSelection
+    let validationMode: Bool
+
+    private static let pageCount = 20
+
+    private var config: TeadsAdPlacementMediaConfig {
+        TeadsAdPlacementMediaConfig(
+            pid: selection.integerPID,
+            articleUrl: SamplePID.articleURL,
+            enableValidationMode: validationMode
+        )
+    }
 
     var body: some View {
         TabView {
-            page(text: ArticleContent.paragraphs[0], includesAd: false)
-            page(text: ArticleContent.paragraphs[1], includesAd: true)
-            page(text: ArticleContent.paragraphs[2], includesAd: false)
+            ForEach(0 ..< Self.pageCount, id: \.self) { index in
+                page(index: index)
+                    .tag(index)
+            }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .navigationTitle("Direct • PageView")
+        .background(Color.appBackground)
         .navigationBarTitleDisplayMode(.inline)
+        .teadsBrandNavigationBar()
     }
 
-    private func page(text: String, includesAd: Bool) -> some View {
+    @ViewBuilder
+    private func page(index: Int) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                ArticleHeader()
-                ArticleParagraph(text: text)
+                Text("ARTICLE \(index + 1) of \(Self.pageCount)")
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.horizontal)
+                    .padding(.top, 12)
 
-                if includesAd {
+                ArticleHeaderImage()
+
+                if index == 0 {
                     TeadsMediaSwiftUIView(config: config)
+                        .padding(.horizontal)
                 }
+
+                FakeArticleLines(lineCount: 8)
+                    .padding(.horizontal)
+                    .padding(.bottom, 20)
             }
-            .padding()
         }
     }
 }
 
 #Preview {
-    NavigationStack { InReadDirectPagedTabViewSample() }
+    NavigationStack {
+        InReadDirectPageViewSample(selection: SampleSelection(), validationMode: true)
+    }
 }

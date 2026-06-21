@@ -8,37 +8,60 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • List.
+/// InRead • Direct • List (the SwiftUI idiom for the UIKit TableView integration).
 ///
-/// Inserts the ad as its own `List` row. The SDK resizes the view as the ad ratio updates, so the
-/// row height follows automatically.
-struct InReadDirectListSample: View {
-    private let config = TeadsAdPlacementMediaConfig(
-        pid: SamplePID.inReadDirectLandscape,
-        articleUrl: SamplePID.articleURL
-    )
+/// 8 article rows with Teads ads inserted every 3rd article row, matching the UIKit sample's
+/// `InReadDirectTableViewController` behavior. Each ad is a separate placement that auto-resizes.
+struct InReadDirectTableViewSample: View {
+    let selection: SampleSelection
+    let validationMode: Bool
+
+    private static let articleCount = 8
+    private static let adInterval = 3 // matches `incrementPosition` in UIKit
+
+    private var config: TeadsAdPlacementMediaConfig {
+        TeadsAdPlacementMediaConfig(
+            pid: selection.integerPID,
+            articleUrl: SamplePID.articleURL,
+            enableValidationMode: validationMode
+        )
+    }
 
     var body: some View {
         List {
-            ArticleHeader()
-                .listRowSeparator(.hidden)
-
-            ArticleParagraph(text: ArticleContent.paragraphs[0])
-
-            TeadsMediaSwiftUIView(config: config)
+            ArticleHeaderImage()
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
 
-            ForEach(ArticleContent.paragraphs.indices.dropFirst(), id: \.self) { index in
-                ArticleParagraph(text: ArticleContent.paragraphs[index])
+            ForEach(0 ..< Self.articleCount, id: \.self) { index in
+                Group {
+                    FakeArticleRow()
+                    if index > 0, index % Self.adInterval == 0 {
+                        TeadsMediaSwiftUIView(config: config)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            .listRowSeparator(.hidden)
+                    }
+                }
             }
         }
         .listStyle(.plain)
-        .navigationTitle("Direct • List")
         .navigationBarTitleDisplayMode(.inline)
+        .teadsBrandNavigationBar()
+    }
+}
+
+/// A skeleton row resembling the UIKit `fakeArticleCell`.
+private struct FakeArticleRow: View {
+    var body: some View {
+        FakeArticleLines(lineCount: 5)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 8)
+            .listRowSeparator(.hidden)
     }
 }
 
 #Preview {
-    NavigationStack { InReadDirectListSample() }
+    NavigationStack {
+        InReadDirectTableViewSample(selection: SampleSelection(), validationMode: true)
+    }
 }

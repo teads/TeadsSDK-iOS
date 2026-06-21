@@ -17,6 +17,18 @@ enum ArticleContent {
     and advertisers are rethinking how they connect with audiences.
     """
 
+    /// Visible "above the paywall" excerpt used by the Interstitial sample.
+    static let previewParagraph = """
+    The digital advertising landscape is undergoing a profound transformation. \
+    As privacy regulations tighten and third-party cookies phase out, publishers \
+    and advertisers are rethinking how they connect with audiences. New formats \
+    like interstitial ads offer immersive, full-screen experiences that capture \
+    attention while respecting user choice.
+    """
+
+    /// Paragraphs that unlock after the interstitial is watched.
+    static let lockedParagraphs = paragraphs
+
     static let paragraphs = [
         """
         InRead ads have emerged as one of the most effective formats for mobile content. \

@@ -37,11 +37,28 @@ Clone this repository, open it with Xcode, and run project.
 
 ## 📱 SwiftUI sample app
 
-Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps.
+Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps share the same workspace and Pods.
 
 1. Run `pod install`.
 2. Open `TeadsSampleApp.xcworkspace`.
 3. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
+
+### Coverage
+
+The SwiftUI sample mirrors the UIKit `TeadsSampleApp` parity matrix and uses the same public test PIDs:
+
+| Format       | Provider                  | Containers                                                                            |
+| ------------ | ------------------------- | ------------------------------------------------------------------------------------- |
+| InRead       | Direct                    | `ScrollView`, `List`, `LazyVGrid`, paginated `TabView`, `WKWebView` via `UIViewRepresentable` |
+| InRead       | AdMob, AppLovin, SAS      | `ScrollView`, `List`, `WKWebView` (where the provider supports the integration)       |
+| Native       | Direct                    | `List`, `LazyVStack`, tag-based `List`                                                 |
+| Native       | AdMob, AppLovin, SAS      | `List`                                                                                |
+| Interstitial | AdMob                     | Article paywall + interstitial presentation                                            |
+| Showcase     | Direct                    | Media (video) + Feed (content recommendations) in a single article                     |
+
+The root catalogue (`RootCatalogView`) mirrors the UIKit `RootController` selection flow: Format → Provider → Creative → Integration, plus a Validation Mode toggle and a custom-PID alert.
+
+### Direct InRead — official SwiftUI API
 
 The Direct InRead samples use the official SwiftUI API shipped by the SDK:
 
@@ -61,7 +78,11 @@ struct ContentView: View {
 }
 ```
 
-You can also use the `.teadsAdPlacement(config:delegate:)` view modifier, which stacks the ad below the modified content.
+You can also use the `.teadsAdPlacement(config:delegate:)` view modifier, which stacks the ad below the modified content. For readability, the sample app aliases the generic view as `TeadsMediaSwiftUIView` (= `TeadsAdPlacementSwiftUIView<TeadsAdPlacementMedia>`) and `TeadsFeedSwiftUIView` for the Feed equivalent.
+
+### Mediation, Native and Interstitial — `UIViewRepresentable`
+
+Mediation (AdMob, AppLovin, SAS), Native ads (any provider, including Teads Direct via `TeadsAdPlacementMediaNative`/`TeadsNativeAdView`) and the AdMob Interstitial flow render UIKit views. The sample bridges them into SwiftUI with focused `UIViewRepresentable` / `UIViewControllerRepresentable` wrappers (`AdMobBannerHost`, `AppLovinBannerHost`, `SASBannerHost`, `TeadsNativeAdHost`, etc.) — the same pattern publishers will use when embedding mediated ads in a SwiftUI screen.
 
 ## 📦 Install the Teads SDK iOS framework
 

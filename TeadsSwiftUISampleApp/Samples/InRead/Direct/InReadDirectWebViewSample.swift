@@ -15,11 +15,13 @@ import WebKit
 /// the page. Since this is a UIKit/WebKit flow, the sample wraps a `WKWebView` in a
 /// `UIViewRepresentable`; all the ad orchestration lives in the `Coordinator`.
 struct InReadDirectWebViewSample: View {
+    let selection: SampleSelection
+
     var body: some View {
-        TeadsWebViewContainer(pid: SamplePID.inReadDirectLandscape)
+        TeadsWebViewContainer(pid: selection.integerPID)
             .ignoresSafeArea(edges: .bottom)
-            .navigationTitle("Direct • WebView")
             .navigationBarTitleDisplayMode(.inline)
+            .teadsBrandNavigationBar()
     }
 }
 
@@ -55,12 +57,15 @@ private struct TeadsWebViewContainer: UIViewRepresentable {
             let slotSelector = "#teads-placement-slot"
             webViewHelper = TeadsWebViewHelper(webView: webView, selector: slotSelector, delegate: self)
 
-            let config = TeadsAdPlacementMediaConfig(pid: pid, articleUrl: SamplePID.articleURL)
-            let placement = TeadsAdPlacementMedia(config, delegate: self)
-            self.placement = placement
-            adView = try? placement.loadAd()
+            let config = TeadsAdPlacementMediaConfig(
+                pid: pid,
+                articleUrl: SamplePID.articleURL,
+                enableValidationMode: true
+            )
+            placement = Teads.createPlacement(with: config, delegate: self)
+            adView = try? placement?.loadAd()
 
-            webView.loadHTMLString(Self.articleHTML, baseURL: nil)
+            webView.loadHTMLString(WebViewArticleHTML.document, baseURL: nil)
             return webView
         }
 
@@ -107,34 +112,11 @@ private struct TeadsWebViewContainer: UIViewRepresentable {
         func webViewHelperOnError(error: String) {
             print("Teads WebView helper error: \(error)")
         }
-
-        static let articleHTML = """
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-            <style>
-                :root { color-scheme: light dark; }
-                body { font-family: -apple-system, sans-serif; margin: 16px; }
-                h1 { font-size: 26px; }
-                p { font-size: 17px; line-height: 1.5; }
-                .spacer { height: 60vh; }
-            </style>
-        </head>
-        <body>
-            <h1>The Future of Digital Advertising</h1>
-            <p>InRead ads live inside the article flow, delivering higher engagement and better brand recall.</p>
-            <div class="spacer"></div>
-            <div id="teads-placement-slot"></div>
-            <div class="spacer"></div>
-            <p>End of article 👋</p>
-        </body>
-        </html>
-        """
     }
 }
 
 #Preview {
-    NavigationStack { InReadDirectWebViewSample() }
+    NavigationStack {
+        InReadDirectWebViewSample(selection: SampleSelection())
+    }
 }

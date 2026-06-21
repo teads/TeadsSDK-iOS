@@ -8,55 +8,73 @@
 import SwiftUI
 import TeadsSDK
 
-/// InRead • Direct • LazyVGrid (the SwiftUI idiom for a CollectionView).
+/// InRead • Direct • LazyVGrid (the SwiftUI idiom for the UIKit CollectionView integration).
 ///
-/// The ad spans the full grid width while the surrounding article cards flow in two columns.
-struct InReadDirectLazyVGridSample: View {
-    private let config = TeadsAdPlacementMediaConfig(
-        pid: SamplePID.inReadDirectLandscape,
-        articleUrl: SamplePID.articleURL
-    )
+/// Reproduces the UIKit `InReadDirectCollectionViewController` pattern: a 2-column grid of
+/// article cards with a full-width Teads ad inserted after the third card.
+struct InReadDirectCollectionViewSample: View {
+    let selection: SampleSelection
+    let validationMode: Bool
 
-    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    private static let articleCount = 8
+    private static let adIndex = 3 // matches `adItemNumber` in UIKit
+
+    private var config: TeadsAdPlacementMediaConfig {
+        TeadsAdPlacementMediaConfig(
+            pid: selection.integerPID,
+            articleUrl: SamplePID.articleURL,
+            enableValidationMode: validationMode
+        )
+    }
+
+    private let columns = [
+        GridItem(.flexible(), spacing: 8),
+        GridItem(.flexible(), spacing: 8),
+    ]
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(0 ..< 4, id: \.self) { index in
-                    ArticleCard(text: ArticleContent.paragraphs[index % ArticleContent.paragraphs.count])
+            ArticleHeaderImage()
+
+            LazyVGrid(columns: columns, spacing: 8) {
+                ForEach(0 ..< Self.articleCount, id: \.self) { index in
+                    if index == Self.adIndex {
+                        Color.clear.frame(height: 0)
+                        TeadsMediaSwiftUIView(config: config)
+                            .padding(.horizontal, 10)
+                            .gridCellColumns(2)
+                    }
+                    ArticleCard()
                 }
             }
-            .padding()
-
-            // Full-width ad between two grid sections.
-            TeadsMediaSwiftUIView(config: config)
-                .padding(.horizontal)
-
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(4 ..< 8, id: \.self) { index in
-                    ArticleCard(text: ArticleContent.paragraphs[index % ArticleContent.paragraphs.count])
-                }
-            }
-            .padding()
+            .padding(.horizontal, 8)
         }
-        .navigationTitle("Direct • LazyVGrid")
+        .background(Color.appBackground)
         .navigationBarTitleDisplayMode(.inline)
+        .teadsBrandNavigationBar()
     }
 }
 
+/// A simple square article placeholder mirroring the UIKit `fakeArticleCell` in the collection.
 private struct ArticleCard: View {
-    let text: String
-
     var body: some View {
-        Text(text)
-            .font(.footnote)
-            .padding()
-            .frame(maxWidth: .infinity, minHeight: 120, alignment: .topLeading)
-            .background(Color(.secondarySystemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+        VStack(alignment: .leading, spacing: 6) {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.fakeArticle)
+                .aspectRatio(16 / 9, contentMode: .fit)
+            FakeArticleLines(lineCount: 3)
+        }
+        .padding(8)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8).stroke(Color.cellBorder, lineWidth: 0.5)
+        )
     }
 }
 
 #Preview {
-    NavigationStack { InReadDirectLazyVGridSample() }
+    NavigationStack {
+        InReadDirectCollectionViewSample(selection: SampleSelection(), validationMode: true)
+    }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A001000000000000000C0101 /* TeadsColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000000000000000C0102 /* TeadsColors.swift */; };
+		A002000000000000000C0201 /* TeadsBrandNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */; };
+		A003000000000000000C0301 /* RootCatalogComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003000000000000000C0302 /* RootCatalogComponents.swift */; };
 		2465E61D424E3E76FEF5C062 /* TeadsSwiftUITypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7CCC52F97309DCB34118AB /* TeadsSwiftUITypeAliases.swift */; };
 		283C867C8B044B8593258EF5 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */; };
 		284D5C07967CFA8D9F9F0278 /* InReadDirectWebViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228E6F7EA2AAB3AFC4899E3 /* InReadDirectWebViewSample.swift */; };
@@ -23,9 +26,35 @@
 		BBEF5F60A5F6BF23C724BFCE /* SamplePID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0DD3A75428EE78E37BA1A /* SamplePID.swift */; };
 		C984A82F8E25C524A417E77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696A3545A3DEB03ED6AFA944 /* Assets.xcassets */; };
 		D424FAF6D05D9651462FD085 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43B1F28453F68D6A64A48C3 /* Foundation.framework */; };
+		A101000000000000000C0001 /* CatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101000000000000000C0002 /* CatalogModels.swift */; };
+		A102000000000000000C0001 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A102000000000000000C0002 /* CatalogViewModel.swift */; };
+		A103000000000000000C0001 /* CustomPIDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103000000000000000C0002 /* CustomPIDAlert.swift */; };
+		A104000000000000000C0001 /* SampleDestinationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104000000000000000C0002 /* SampleDestinationFactory.swift */; };
+		A105000000000000000C0001 /* WebViewArticleHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105000000000000000C0002 /* WebViewArticleHTML.swift */; };
+		A106000000000000000C0001 /* InReadAdmobScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106000000000000000C0002 /* InReadAdmobScrollViewSample.swift */; };
+		A107000000000000000C0001 /* InReadAdmobTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107000000000000000C0002 /* InReadAdmobTableViewSample.swift */; };
+		A108000000000000000C0001 /* InReadAdmobWebViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A108000000000000000C0002 /* InReadAdmobWebViewSample.swift */; };
+		A109000000000000000C0001 /* InReadAppLovinScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109000000000000000C0002 /* InReadAppLovinScrollViewSample.swift */; };
+		A110000000000000000C0001 /* InReadSASScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A110000000000000000C0002 /* InReadSASScrollViewSample.swift */; };
+		A111000000000000000C0001 /* InReadSASTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111000000000000000C0002 /* InReadSASTableViewSample.swift */; };
+		A112000000000000000C0001 /* AdMobBannerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112000000000000000C0002 /* AdMobBannerHost.swift */; };
+		A113000000000000000C0001 /* SASBannerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113000000000000000C0002 /* SASBannerHost.swift */; };
+		A114000000000000000C0001 /* AppLovinBannerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114000000000000000C0002 /* AppLovinBannerHost.swift */; };
+		A115000000000000000C0001 /* TeadsNativeAdHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A115000000000000000C0002 /* TeadsNativeAdHost.swift */; };
+		A116000000000000000C0001 /* NativeDirectTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116000000000000000C0002 /* NativeDirectTableViewSample.swift */; };
+		A117000000000000000C0001 /* NativeDirectCollectionViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117000000000000000C0002 /* NativeDirectCollectionViewSample.swift */; };
+		A118000000000000000C0001 /* NativeDirectTagTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118000000000000000C0002 /* NativeDirectTagTableViewSample.swift */; };
+		A119000000000000000C0001 /* NativeAdmobTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119000000000000000C0002 /* NativeAdmobTableViewSample.swift */; };
+		A120000000000000000C0001 /* NativeAppLovinTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A120000000000000000C0002 /* NativeAppLovinTableViewSample.swift */; };
+		A121000000000000000C0001 /* NativeSASTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121000000000000000C0002 /* NativeSASTableViewSample.swift */; };
+		A122000000000000000C0001 /* InterstitialAdmobSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122000000000000000C0002 /* InterstitialAdmobSample.swift */; };
+		A123000000000000000C0001 /* MediaFeedShowcaseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123000000000000000C0002 /* MediaFeedShowcaseSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A001000000000000000C0102 /* TeadsColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsColors.swift; sourceTree = "<group>"; };
+		A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsBrandNavigationBar.swift; sourceTree = "<group>"; };
+		A003000000000000000C0302 /* RootCatalogComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootCatalogComponents.swift; sourceTree = "<group>"; };
 		08F0DD3A75428EE78E37BA1A /* SamplePID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SamplePID.swift; sourceTree = "<group>"; };
 		1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */ = {isa = PBXFileReference; includeInIndex = 1; name = bootstrap.js; path = Resources/bootstrap.js; sourceTree = "<group>"; };
 		1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSwiftUISampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +75,29 @@
 		F43B1F28453F68D6A64A48C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F78FFB81A7EE38B8958F68D5 /* InReadDirectLazyVGridSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectLazyVGridSample.swift; sourceTree = "<group>"; };
 		FB58D80AE43B8D98E6BD9C43 /* ArticleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleViews.swift; sourceTree = "<group>"; };
+		A101000000000000000C0002 /* CatalogModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CatalogModels.swift; sourceTree = "<group>"; };
+		A102000000000000000C0002 /* CatalogViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
+		A103000000000000000C0002 /* CustomPIDAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomPIDAlert.swift; sourceTree = "<group>"; };
+		A104000000000000000C0002 /* SampleDestinationFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SampleDestinationFactory.swift; sourceTree = "<group>"; };
+		A105000000000000000C0002 /* WebViewArticleHTML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebViewArticleHTML.swift; sourceTree = "<group>"; };
+		A106000000000000000C0002 /* InReadAdmobScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadAdmobScrollViewSample.swift; sourceTree = "<group>"; };
+		A107000000000000000C0002 /* InReadAdmobTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadAdmobTableViewSample.swift; sourceTree = "<group>"; };
+		A108000000000000000C0002 /* InReadAdmobWebViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadAdmobWebViewSample.swift; sourceTree = "<group>"; };
+		A109000000000000000C0002 /* InReadAppLovinScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadAppLovinScrollViewSample.swift; sourceTree = "<group>"; };
+		A110000000000000000C0002 /* InReadSASScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadSASScrollViewSample.swift; sourceTree = "<group>"; };
+		A111000000000000000C0002 /* InReadSASTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadSASTableViewSample.swift; sourceTree = "<group>"; };
+		A112000000000000000C0002 /* AdMobBannerHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdMobBannerHost.swift; sourceTree = "<group>"; };
+		A113000000000000000C0002 /* SASBannerHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SASBannerHost.swift; sourceTree = "<group>"; };
+		A114000000000000000C0002 /* AppLovinBannerHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLovinBannerHost.swift; sourceTree = "<group>"; };
+		A115000000000000000C0002 /* TeadsNativeAdHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsNativeAdHost.swift; sourceTree = "<group>"; };
+		A116000000000000000C0002 /* NativeDirectTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeDirectTableViewSample.swift; sourceTree = "<group>"; };
+		A117000000000000000C0002 /* NativeDirectCollectionViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeDirectCollectionViewSample.swift; sourceTree = "<group>"; };
+		A118000000000000000C0002 /* NativeDirectTagTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeDirectTagTableViewSample.swift; sourceTree = "<group>"; };
+		A119000000000000000C0002 /* NativeAdmobTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeAdmobTableViewSample.swift; sourceTree = "<group>"; };
+		A120000000000000000C0002 /* NativeAppLovinTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeAppLovinTableViewSample.swift; sourceTree = "<group>"; };
+		A121000000000000000C0002 /* NativeSASTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewSample.swift; sourceTree = "<group>"; };
+		A122000000000000000C0002 /* InterstitialAdmobSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InterstitialAdmobSample.swift; sourceTree = "<group>"; };
+		A123000000000000000C0002 /* MediaFeedShowcaseSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MediaFeedShowcaseSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B56600F0CCF64B168167D368 /* ArticleContent.swift */,
+				A101000000000000000C0002 /* CatalogModels.swift */,
 				08F0DD3A75428EE78E37BA1A /* SamplePID.swift */,
 			);
 			name = Models;
@@ -101,6 +154,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A000000000000000000C0000 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A001000000000000000C0102 /* TeadsColors.swift */,
+				A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */,
+				A003000000000000000C0302 /* RootCatalogComponents.swift */,
+				A103000000000000000C0002 /* CustomPIDAlert.swift */,
+			);
+			name = DesignSystem;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		382C97110311500558500ED0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +179,12 @@
 		43058B981CD46450A52DE052 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				A104000000000000000C0002 /* SampleDestinationFactory.swift */,
 				EB358D7E54E17D5AF06EE80A /* InRead */,
+				A301000000000000000A0000 /* Mediation */,
+				A302000000000000000A0000 /* Native */,
+				A303000000000000000A0000 /* Interstitial */,
+				A304000000000000000A0000 /* Showcase */,
 			);
 			name = Samples;
 			path = Samples;
@@ -152,8 +222,10 @@
 		ACD87A98A76D2784F4B45B5F /* TeadsSwiftUISampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				A000000000000000000C0000 /* DesignSystem */,
 				3033C8088DF79451F9064A66 /* Helpers */,
 				0BD1F8DC72B0782F86D3B912 /* Models */,
+				A300000000000000000A0000 /* ViewModels */,
 				877FEE5D96BA28F5FD9D3BAE /* Resources */,
 				257B5012139583F4B6770965 /* RootCatalogView.swift */,
 				742C449C8201B4D9C769FCFB /* SDKExtensions */,
@@ -186,7 +258,11 @@
 		EB358D7E54E17D5AF06EE80A /* InRead */ = {
 			isa = PBXGroup;
 			children = (
+				A105000000000000000C0002 /* WebViewArticleHTML.swift */,
 				25EC1E7353E6C62F7145CE57 /* Direct */,
+				A305000000000000000A0000 /* Admob */,
+				A306000000000000000A0000 /* AppLovin */,
+				A307000000000000000A0000 /* SAS */,
 			);
 			name = InRead;
 			path = InRead;
@@ -199,6 +275,125 @@
 				1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A300000000000000000A0000 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A102000000000000000C0002 /* CatalogViewModel.swift */,
+			);
+			name = ViewModels;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A301000000000000000A0000 /* Mediation */ = {
+			isa = PBXGroup;
+			children = (
+				A112000000000000000C0002 /* AdMobBannerHost.swift */,
+				A113000000000000000C0002 /* SASBannerHost.swift */,
+				A114000000000000000C0002 /* AppLovinBannerHost.swift */,
+			);
+			name = Mediation;
+			path = Mediation;
+			sourceTree = "<group>";
+		};
+		A302000000000000000A0000 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				A115000000000000000C0002 /* TeadsNativeAdHost.swift */,
+				A308000000000000000A0000 /* Direct */,
+				A309000000000000000A0000 /* Admob */,
+				A310000000000000000A0000 /* AppLovin */,
+				A311000000000000000A0000 /* SAS */,
+			);
+			name = Native;
+			path = Native;
+			sourceTree = "<group>";
+		};
+		A303000000000000000A0000 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				A122000000000000000C0002 /* InterstitialAdmobSample.swift */,
+			);
+			name = Interstitial;
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		A304000000000000000A0000 /* Showcase */ = {
+			isa = PBXGroup;
+			children = (
+				A123000000000000000C0002 /* MediaFeedShowcaseSample.swift */,
+			);
+			name = Showcase;
+			path = Showcase;
+			sourceTree = "<group>";
+		};
+		A305000000000000000A0000 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				A106000000000000000C0002 /* InReadAdmobScrollViewSample.swift */,
+				A107000000000000000C0002 /* InReadAdmobTableViewSample.swift */,
+				A108000000000000000C0002 /* InReadAdmobWebViewSample.swift */,
+			);
+			name = Admob;
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		A306000000000000000A0000 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				A109000000000000000C0002 /* InReadAppLovinScrollViewSample.swift */,
+			);
+			name = AppLovin;
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		A307000000000000000A0000 /* SAS */ = {
+			isa = PBXGroup;
+			children = (
+				A110000000000000000C0002 /* InReadSASScrollViewSample.swift */,
+				A111000000000000000C0002 /* InReadSASTableViewSample.swift */,
+			);
+			name = SAS;
+			path = SAS;
+			sourceTree = "<group>";
+		};
+		A308000000000000000A0000 /* Direct */ = {
+			isa = PBXGroup;
+			children = (
+				A116000000000000000C0002 /* NativeDirectTableViewSample.swift */,
+				A117000000000000000C0002 /* NativeDirectCollectionViewSample.swift */,
+				A118000000000000000C0002 /* NativeDirectTagTableViewSample.swift */,
+			);
+			name = Direct;
+			path = Direct;
+			sourceTree = "<group>";
+		};
+		A309000000000000000A0000 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				A119000000000000000C0002 /* NativeAdmobTableViewSample.swift */,
+			);
+			name = Admob;
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		A310000000000000000A0000 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				A120000000000000000C0002 /* NativeAppLovinTableViewSample.swift */,
+			);
+			name = AppLovin;
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		A311000000000000000A0000 /* SAS */ = {
+			isa = PBXGroup;
+			children = (
+				A121000000000000000C0002 /* NativeSASTableViewSample.swift */,
+			);
+			name = SAS;
+			path = SAS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,16 +534,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A001000000000000000C0101 /* TeadsColors.swift in Sources */,
+				A002000000000000000C0201 /* TeadsBrandNavigationBar.swift in Sources */,
+				A003000000000000000C0301 /* RootCatalogComponents.swift in Sources */,
+				A103000000000000000C0001 /* CustomPIDAlert.swift in Sources */,
 				B000AB508FCAE03C9A397C0F /* ArticleViews.swift in Sources */,
 				6479D2366538E9DF9900B08F /* ArticleContent.swift in Sources */,
 				BBEF5F60A5F6BF23C724BFCE /* SamplePID.swift in Sources */,
+				A101000000000000000C0001 /* CatalogModels.swift in Sources */,
+				A102000000000000000C0001 /* CatalogViewModel.swift in Sources */,
 				2A395D2D812472A0797CA593 /* RootCatalogView.swift in Sources */,
 				2465E61D424E3E76FEF5C062 /* TeadsSwiftUITypeAliases.swift in Sources */,
+				A104000000000000000C0001 /* SampleDestinationFactory.swift in Sources */,
+				A105000000000000000C0001 /* WebViewArticleHTML.swift in Sources */,
 				A4DA04C2E2C8F0671656D661 /* InReadDirectLazyVGridSample.swift in Sources */,
 				61730BA1A3AC6D60EA41A214 /* InReadDirectListSample.swift in Sources */,
 				A7EF5F832B6250777814F344 /* InReadDirectPagedTabViewSample.swift in Sources */,
 				6B47B14F007D0B400C0450EB /* InReadDirectScrollViewSample.swift in Sources */,
 				284D5C07967CFA8D9F9F0278 /* InReadDirectWebViewSample.swift in Sources */,
+				A106000000000000000C0001 /* InReadAdmobScrollViewSample.swift in Sources */,
+				A107000000000000000C0001 /* InReadAdmobTableViewSample.swift in Sources */,
+				A108000000000000000C0001 /* InReadAdmobWebViewSample.swift in Sources */,
+				A109000000000000000C0001 /* InReadAppLovinScrollViewSample.swift in Sources */,
+				A110000000000000000C0001 /* InReadSASScrollViewSample.swift in Sources */,
+				A111000000000000000C0001 /* InReadSASTableViewSample.swift in Sources */,
+				A112000000000000000C0001 /* AdMobBannerHost.swift in Sources */,
+				A113000000000000000C0001 /* SASBannerHost.swift in Sources */,
+				A114000000000000000C0001 /* AppLovinBannerHost.swift in Sources */,
+				A115000000000000000C0001 /* TeadsNativeAdHost.swift in Sources */,
+				A116000000000000000C0001 /* NativeDirectTableViewSample.swift in Sources */,
+				A117000000000000000C0001 /* NativeDirectCollectionViewSample.swift in Sources */,
+				A118000000000000000C0001 /* NativeDirectTagTableViewSample.swift in Sources */,
+				A119000000000000000C0001 /* NativeAdmobTableViewSample.swift in Sources */,
+				A120000000000000000C0001 /* NativeAppLovinTableViewSample.swift in Sources */,
+				A121000000000000000C0001 /* NativeSASTableViewSample.swift in Sources */,
+				A122000000000000000C0001 /* InterstitialAdmobSample.swift in Sources */,
+				A123000000000000000C0001 /* MediaFeedShowcaseSample.swift in Sources */,
 				7853099CAB30260E480347DB /* TeadsSwiftUISampleAppApp.swift in Sources */,
 				635A443BB4F8482A12A9FA36 /* TeadsWebViewHelper.swift in Sources */,
 			);
