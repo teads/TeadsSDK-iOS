@@ -78,8 +78,8 @@ enum SampleMatrix {
 
     static func providers(for format: SampleFormat) -> [SampleProvider] {
         switch format {
-            case .inRead: [.direct, .admob, .sas, .appLovin]
-            case .native: [.direct, .admob, .sas, .appLovin]
+            case .inRead: [.direct, .admob, .appLovin, .sas]
+            case .native: [.direct, .admob, .appLovin, .sas]
             case .interstitial: [.admob]
         }
     }

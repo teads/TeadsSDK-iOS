@@ -42,7 +42,6 @@ struct IntegrationCard: View {
         VStack(spacing: 8) {
             Image(imageName)
                 .resizable()
-                .renderingMode(.template)
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             Text(title)

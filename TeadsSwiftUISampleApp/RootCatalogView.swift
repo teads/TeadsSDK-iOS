@@ -75,7 +75,7 @@ struct RootCatalogView: View {
     private var providersSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Providers")
-            pillRows(for: viewModel.availableProviders, perRow: 3) { provider in
+            pillGrid(for: viewModel.availableProviders, columns: 3) { provider in
                 RootPillButton(
                     title: provider.displayName,
                     isSelected: viewModel.provider == provider
@@ -89,7 +89,7 @@ struct RootCatalogView: View {
     private var creativesSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Creatives")
-            pillRows(for: viewModel.availableCreatives, perRow: 3) { creative in
+            pillGrid(for: viewModel.availableCreatives, columns: 2) { creative in
                 RootPillButton(
                     title: creative.displayName,
                     isSelected: viewModel.creative == creative
@@ -101,18 +101,15 @@ struct RootCatalogView: View {
     }
 
     @ViewBuilder
-    private func pillRows<Item: Hashable>(
+    private func pillGrid<Item: Hashable>(
         for items: [Item],
-        perRow: Int,
+        columns: Int,
         @ViewBuilder pill: @escaping (Item) -> some View
     ) -> some View {
-        VStack(alignment: .leading, spacing: itemSpacing) {
-            ForEach(items.chunked(into: perRow), id: \.self) { row in
-                HStack(spacing: itemSpacing) {
-                    ForEach(row, id: \.self) { item in
-                        pill(item).fixedSize()
-                    }
-                }
+        let pillColumn = GridItem(.flexible(), spacing: itemSpacing)
+        LazyVGrid(columns: Array(repeating: pillColumn, count: columns), spacing: itemSpacing) {
+            ForEach(items, id: \.self) { item in
+                pill(item)
             }
         }
     }
@@ -158,15 +155,6 @@ struct RootCatalogView: View {
             Toggle("Validation Mode", isOn: $viewModel.validationModeEnabled)
                 .font(.system(size: 16))
                 .padding(.vertical, 8)
-        }
-    }
-}
-
-private extension Array {
-    func chunked(into size: Int) -> [[Element]] {
-        guard size > 0 else { return [] }
-        return stride(from: 0, to: count, by: size).map {
-            Array(self[$0 ..< Swift.min($0 + size, count)])
         }
     }
 }
