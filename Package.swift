@@ -6,13 +6,7 @@ let teadsModuleName = "TeadsSDK"
 let teadsAdMobAdapterModuleName = "TeadsAdMobAdapter"
 let teadsAppLovinAdapterModuleName = "TeadsAppLovinAdapter"
 let teadsPBMPluginRendererModuleName = "TeadsPBMPluginRenderer"
-let mediationAdaptersDirectory = "MediationAdapters"
-let googleMobileAdsModuleName = "GoogleMobileAds"
-let appLovinMaxModuleName = "AppLovinSDK"
-let prebidMobileModuleName = "PrebidMobile"
-let omModuleName = "OMSDK_Teadstv"
-let commonModuleName = "TeadsAdapterCommon"
-let commonModuleNamePath = "Common"
+let omModuleName = "OMSDK_Teads"
 
 let package = Package(
     name: "Teads",
@@ -37,23 +31,6 @@ let package = Package(
             targets: [teadsPBMPluginRendererModuleName]
         ),
     ],
-    dependencies: [
-        .package(
-            name: googleMobileAdsModuleName,
-            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            "12.2.0" ..< "14.0.0"
-        ),
-        .package(
-            name: appLovinMaxModuleName,
-            url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            "13.3.1" ..< "14.0.0"
-        ),
-        .package(
-            name: prebidMobileModuleName,
-            url: "https://github.com/prebid/prebid-mobile-ios.git",
-            "3.0.2" ..< "4.0.0"
-        ),
-    ],
     targets: [
         .binaryTarget(
             name: teadsModuleName,
@@ -63,38 +40,21 @@ let package = Package(
             name: omModuleName,
             path: "Frameworks/\(omModuleName).xcframework"
         ),
-        .target(
-            name: commonModuleName,
-            dependencies: [
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(commonModuleNamePath)"
-        ),
-        .target(
+        // Adapter xcframeworks are prebuilt binaries. Each adapter bundles its own
+        // TeadsAdapterCommon code and references the corresponding third-party SDK
+        // (GoogleMobileAds / AppLovinSDK / PrebidMobile) as undefined external symbols.
+        // Consumers MUST add the matching third-party SDK to their project themselves.
+        .binaryTarget(
             name: teadsAdMobAdapterModuleName,
-            dependencies: [
-                .product(name: googleMobileAdsModuleName, package: googleMobileAdsModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAdMobAdapterModuleName)"
+            path: "Frameworks/\(teadsAdMobAdapterModuleName).xcframework"
         ),
-        .target(
+        .binaryTarget(
             name: teadsAppLovinAdapterModuleName,
-            dependencies: [
-                .product(name: appLovinMaxModuleName, package: appLovinMaxModuleName),
-                .target(name: commonModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsAppLovinAdapterModuleName)"
+            path: "Frameworks/\(teadsAppLovinAdapterModuleName).xcframework"
         ),
-        .target(
+        .binaryTarget(
             name: teadsPBMPluginRendererModuleName,
-            dependencies: [
-                .product(name: prebidMobileModuleName, package: prebidMobileModuleName),
-                .target(name: teadsModuleName),
-                .target(name: omModuleName),
-            ],
-            path: "\(mediationAdaptersDirectory)/\(teadsPBMPluginRendererModuleName)"
+            path: "Frameworks/\(teadsPBMPluginRendererModuleName).xcframework"
         ),
     ]
 )

@@ -49,14 +49,14 @@ class ThreadSafeDictionary<V: Hashable, T>: Collection {
     }
 
     subscript(key: V) -> T? {
-        set(newValue) {
-            concurrentQueue.async(flags: .barrier) { [weak self] in
-                self?.dictionary[key] = newValue
-            }
-        }
         get {
             concurrentQueue.sync {
                 self.dictionary[key]
+            }
+        }
+        set(newValue) {
+            concurrentQueue.async(flags: .barrier) { [weak self] in
+                self?.dictionary[key] = newValue
             }
         }
     }

@@ -7,52 +7,129 @@
 
 import Foundation
 import GoogleMobileAds
-import TeadsSDK
+@_spi(Adapters) import TeadsSDK
 
 @objc(GADMAdapterTeadsBannerAd)
 public final class GADMAdapterTeadsBannerAd: NSObject, MediationBannerAd {
+    // MARK: InRead path
+
     /// The Teads Ad network InRead AdView
-    var bannerAd: TeadsInReadAdView?
+    private var bannerAd: TeadsInReadAdView?
+    private var placement: TeadsInReadAdPlacement?
+    private var adSettings: TeadsAdapterSettings?
 
-    /// The ad event delegate to forward ad rendering events to the Google Mobile Ads SDK.
-    var delegate: MediationBannerAdEventDelegate?
+    // MARK: Banner path
 
-    /// Completion handler called after ad load
-    var completionHandler: GADMediationBannerLoadCompletionHandler?
+    private var bannerPlacement: TeadsAdPlacementBanner?
+    private var bannerWrapperView: UIView?
+
+    // MARK: Shared
+
+    var delegate: MediationAdEventDelegate?
+
+    var resolveLoad: ((Result<Void, Error>) -> Void)?
+
+    private var adConfiguration: MediationBannerAdConfiguration?
 
     public var view: UIView {
-        bannerAd ?? UIView()
+        bannerWrapperView ?? bannerAd ?? UIView()
     }
 
-    private var placement: TeadsInReadAdPlacement?
-    private var adConfiguration: MediationBannerAdConfiguration?
-    private var adSettings: TeadsAdapterSettings?
+    // MARK: - Load
 
     public func loadBanner(
         for adConfiguration: MediationBannerAdConfiguration,
         completionHandler: @escaping GADMediationBannerLoadCompletionHandler
     ) {
-        // Check PID
-        guard let rawPid = adConfiguration.credentials.settings["parameter"] as? String, let pid = Int(rawPid) else {
-            delegate = completionHandler(nil, TeadsAdapterErrorCode.pidNotFound)
+        if let appIdError = TeadsAdMobErrorMapper.appIdentifierError() {
+            delegate = completionHandler(nil, appIdError)
             return
         }
 
-        self.completionHandler = completionHandler
         self.adConfiguration = adConfiguration
+        resolveLoad = { [weak self] result in
+            guard let self else { return }
+            switch result {
+                case .success:
+                    self.delegate = completionHandler(self, nil)
+                case let .failure(error):
+                    self.delegate = completionHandler(nil, error)
+            }
+        }
 
-        // Prepare ad settings
+        if let params = parseBannerParameters(from: adConfiguration) {
+            loadBannerPlacement(adConfiguration: adConfiguration, params: params)
+        } else {
+            loadInReadBanner(from: adConfiguration)
+        }
+    }
+
+    private func loadBannerPlacement(
+        adConfiguration: MediationBannerAdConfiguration,
+        params: BannerParameters
+    ) {
+        let config = BannerConfigBuilder.make(
+            params: params,
+            credentialsJSON: adConfiguration.credentials.settings["parameter"] as? String
+        )
+        let placement = TeadsAdPlacementBanner(config, delegate: self)
+        bannerPlacement = placement
+        bannerWrapperView = makeBannerWrapperView(adView: placement.getAdView(), adSize: adConfiguration.adSize.size)
+    }
+
+    private func loadInReadBanner(from adConfiguration: MediationBannerAdConfiguration) {
+        guard let rawPid = adConfiguration.credentials.settings["parameter"] as? String,
+              let pid = Int(rawPid) else {
+            if let resolveLoad {
+                self.resolveLoad = nil
+                resolveLoad(.failure(TeadsAdMobErrorMapper.error(preRequest: .placementIdentifierMissing)))
+            }
+            return
+        }
+
         let adSettings = (adConfiguration.extras as? TeadsAdapterSettings) ?? TeadsAdapterSettings()
         adSettings.setIntegration(type: .adMob, version: AdMobHelper.getGMAVersionNumber())
         self.adSettings = adSettings
 
-        let adSize = adConfiguration.adSize
-        bannerAd = TeadsInReadAdView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: adSize.size.width, height: adSize.size.height)))
-
+        let adSize = adConfiguration.adSize.size
+        bannerAd = TeadsInReadAdView(frame: CGRect(origin: .zero, size: adSize))
         placement = Teads.createInReadPlacement(pid: pid, settings: adSettings.adPlacementSettings, delegate: self)
         placement?.requestAd(requestSettings: adSettings.adRequestSettings)
     }
+
+    // MARK: - Parameter Parsing
+
+    private func parseBannerParameters(from adConfiguration: MediationBannerAdConfiguration) -> BannerParameters? {
+        if let settings = adConfiguration.extras as? TeadsAdapterSettings,
+           let dict = try? settings.toDictionary() as? [String: Any] {
+            return AdMobParameterParser.parse(fromSettingsDict: dict)
+        }
+        if let rawParameter = adConfiguration.credentials.settings["parameter"] as? String {
+            return AdMobParameterParser.parse(fromCredentialJSON: rawParameter)
+        }
+        return nil
+    }
+
+    // MARK: - Banner view bridging
+
+    // GMA positions MediationBannerAd.view by frame, but getAdView() uses Auto Layout and
+    // needs constraints — wrap it so neither side collapses to 0×0.
+    private func makeBannerWrapperView(adView: UIView, adSize: CGSize) -> UIView {
+        let wrapper = UIView(frame: CGRect(origin: .zero, size: adSize))
+        wrapper.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        wrapper.addSubview(adView)
+        NSLayoutConstraint.activate([
+            adView.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor),
+            adView.trailingAnchor.constraint(equalTo: wrapper.trailingAnchor),
+            adView.topAnchor.constraint(equalTo: wrapper.topAnchor),
+            adView.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor),
+        ])
+        return wrapper
+    }
 }
+
+// MARK: - TeadsInReadAdPlacementDelegate (InRead path)
 
 extension GADMAdapterTeadsBannerAd: TeadsInReadAdPlacementDelegate {
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
@@ -61,13 +138,15 @@ extension GADMAdapterTeadsBannerAd: TeadsInReadAdPlacementDelegate {
         if adSettings?.hasSubscribedToAdResizing ?? false {
             bannerAd?.updateHeight(with: adRatio)
         }
-        delegate = completionHandler?(self, nil)
-        completionHandler = nil
+        guard let resolveLoad else { return }
+        self.resolveLoad = nil
+        resolveLoad(.success(()))
     }
 
     public func didFailToReceiveAd(reason: AdFailReason) {
-        delegate = completionHandler?(nil, reason)
-        completionHandler = nil
+        guard let resolveLoad else { return }
+        self.resolveLoad = nil
+        resolveLoad(.failure(TeadsAdMobErrorMapper.error(from: reason)))
     }
 
     public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
@@ -80,6 +159,8 @@ extension GADMAdapterTeadsBannerAd: TeadsInReadAdPlacementDelegate {
         }
     }
 }
+
+// MARK: - TeadsAdDelegate (InRead path)
 
 extension GADMAdapterTeadsBannerAd: TeadsAdDelegate {
     public func didRecordImpression(ad _: TeadsAd) {
@@ -105,5 +186,24 @@ extension GADMAdapterTeadsBannerAd: TeadsAdDelegate {
 
     public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.didDismissFullScreenView()
+    }
+}
+
+// MARK: - TeadsAdPlacementEventsDelegate (Banner path)
+
+extension GADMAdapterTeadsBannerAd: TeadsAdPlacementEventsDelegate {
+    public func adPlacement(
+        _: TeadsAdPlacementIdentifiable?,
+        didEmitEvent event: TeadsAdPlacementEventName,
+        data: [String: Any]?
+    ) {
+        AdapterEventBridge.handle(event: event, data: data, delegate: delegate, resolveLoad: &resolveLoad)
+    }
+}
+
+@_spi(Adapters)
+extension GADMAdapterTeadsBannerAd: AdapterIntegrationProviding {
+    public var adapterIntegrationType: TeadsAdapterIntegrationType {
+        .adMob
     }
 }

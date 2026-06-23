@@ -1,0 +1,98 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TeadsPBMPluginRenderer
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import Foundation
+import PrebidMobile
+import Swift
+import TeadsSDK
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol TeadsPBMEventDelegate : PrebidMobile.PluginEventDelegate {
+  func didUpdateRatio(adRatio: TeadsSDK.TeadsAdRatio)
+  func onAdExpandedToFullScreen()
+  func onAdCollapsedFromFullScreen()
+  func onFailedToLoadAd(reason: Swift.String)
+}
+extension TeadsPBMPluginRenderer.TeadsPBMEventDelegate {
+  public func getPluginName() -> Swift.String
+}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginRenderer : PrebidMobile.PrebidMobilePluginRenderer {
+  @objc final public var name: Swift.String {
+    @objc get
+  }
+  @objc final public var version: Swift.String {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var data: [Swift.String : Any]? {
+    @objc get
+  }
+  #endif
+  @objc final public func registerEventDelegate(pluginEventDelegate: any PrebidMobile.PluginEventDelegate, adUnitConfigFingerprint: Swift.String)
+  @objc final public func unregisterEventDelegate(pluginEventDelegate: any PrebidMobile.PluginEventDelegate, adUnitConfigFingerprint: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func createBannerView(with frame: CoreFoundation.CGRect, bid: PrebidMobile.Bid, adConfiguration: PrebidMobile.AdUnitConfig, loadingDelegate: any PrebidMobile.DisplayViewLoadingDelegate, interactionDelegate: any PrebidMobile.DisplayViewInteractionDelegate) -> (any UIKit.UIView & PrebidMobile.PrebidMobileDisplayViewProtocol)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func createInterstitialController(bid: PrebidMobile.Bid, adConfiguration: PrebidMobile.AdUnitConfig, loadingDelegate: any PrebidMobile.InterstitialControllerLoadingDelegate, interactionDelegate: any PrebidMobile.InterstitialControllerInteractionDelegate) -> (any PrebidMobile.PrebidMobileInterstitialControllerProtocol)?
+  #endif
+}
+@objc final public class TeadsPBMPluginRenderer : ObjectiveC.NSObject {
+  public static let name: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init?(settings: TeadsSDK.TeadsAdapterSettings = .init())
+  #endif
+  @objc deinit
+}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginRenderer : TeadsSDK.TeadsAdDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
+  #endif
+  @objc final public func didRecordImpression(ad: TeadsSDK.TeadsAd)
+  @objc final public func didRecordClick(ad: TeadsSDK.TeadsAd)
+  @objc final public func didCatchError(ad: TeadsSDK.TeadsAd, error: any Swift.Error)
+  @objc final public func didCollapsedFromFullscreen(ad: TeadsSDK.TeadsAd)
+  @objc final public func didExpandedToFullscreen(ad: TeadsSDK.TeadsAd)
+}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginRenderer : TeadsSDK.TeadsInReadAdPlacementDelegate {
+  @objc final public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc final public func didUpdateRatio(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc final public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+  @objc final public func adOpportunityTrackerView(trackerView: TeadsSDK.TeadsAdOpportunityTrackerView)
+}
+public enum TeadsPBMPluginError : Swift.Int, Foundation.CustomNSError {
+  case placementInitialization
+  case stringEncoding
+  case jsonSerialization
+  case viewMissing
+  case adLoadError
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorDescription: Swift.String {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PrebidMobile.Bid : @retroactive Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func stringify() throws -> Swift.String
+}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginError : Swift.Equatable {}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginError : Swift.Hashable {}
+extension TeadsPBMPluginRenderer.TeadsPBMPluginError : Swift.RawRepresentable {}

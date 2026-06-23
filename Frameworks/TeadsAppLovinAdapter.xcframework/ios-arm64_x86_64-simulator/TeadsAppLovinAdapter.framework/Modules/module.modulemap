@@ -1,0 +1,4 @@
+framework module TeadsAppLovinAdapter {
+  header "TeadsAppLovinAdapter-Swift.h"
+  requires objc
+}

@@ -98,9 +98,13 @@ final class GADMAdapterTeadsNativeAd: NSObject, MediationNativeAd {
         for adConfiguration: MediationNativeAdConfiguration,
         completionHandler: @escaping GADMediationNativeLoadCompletionHandler
     ) {
+        if let appIdError = TeadsAdMobErrorMapper.appIdentifierError() {
+            delegate = completionHandler(nil, appIdError)
+            return
+        }
         // Check PID
         guard let rawPid = adConfiguration.credentials.settings["parameter"] as? String, let pid = Int(rawPid) else {
-            delegate = completionHandler(nil, TeadsAdapterErrorCode.pidNotFound)
+            delegate = completionHandler(nil, TeadsAdMobErrorMapper.error(preRequest: .placementIdentifierMissing))
             return
         }
 
@@ -193,7 +197,7 @@ extension GADMAdapterTeadsNativeAd: TeadsNativeAdPlacementDelegate {
     }
 
     func didFailToReceiveAd(reason: AdFailReason) {
-        delegate = completionHandler?(nil, reason)
+        delegate = completionHandler?(nil, TeadsAdMobErrorMapper.error(from: reason))
         completionHandler = nil
         placement = nil
     }

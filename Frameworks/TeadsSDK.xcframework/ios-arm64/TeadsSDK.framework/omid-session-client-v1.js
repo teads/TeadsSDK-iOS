@@ -7,7 +7,7 @@
   // global context.
   } else {
     var exports = {};
-    var versions = ['1.5.2-iab4528'];
+    var versions = ['1.6.5-iab382'];
     var additionalVersionString = 'default';
     if (!!additionalVersionString) {
        versions.push(additionalVersionString);
@@ -320,6 +320,40 @@ $jscomp.polyfill("Array.prototype.keys", function(a) {
     });
   };
 }, "es6", "es3");
+$jscomp.checkStringArgs = function(a, b, c) {
+  if (null == a) {
+    throw new TypeError("The 'this' value for String.prototype." + c + " must not be null or undefined");
+  }
+  if (b instanceof RegExp) {
+    throw new TypeError("First argument to String.prototype." + c + " must not be a regular expression");
+  }
+  return a + "";
+};
+$jscomp.polyfill("String.prototype.repeat", function(a) {
+  return a ? a : function(b) {
+    var c = $jscomp.checkStringArgs(this, null, "repeat");
+    if (0 > b || 1342177279 < b) {
+      throw new RangeError("Invalid count value");
+    }
+    b |= 0;
+    for (var d = ""; b;) {
+      if (b & 1 && (d += c), b >>>= 1) {
+        c += c;
+      }
+    }
+    return d;
+  };
+}, "es6", "es3");
+$jscomp.stringPadding = function(a, b) {
+  a = void 0 !== a ? String(a) : " ";
+  return 0 < b && a ? a.repeat(Math.ceil(b / a.length)).substring(0, b) : "";
+};
+$jscomp.polyfill("String.prototype.padStart", function(a) {
+  return a ? a : function(b, c) {
+    var d = $jscomp.checkStringArgs(this, null, "padStart");
+    return $jscomp.stringPadding(c, b - d.length) + d;
+  };
+}, "es8", "es3");
 $jscomp.owns = function(a, b) {
   return Object.prototype.hasOwnProperty.call(a, b);
 };
@@ -547,13 +581,6 @@ $jscomp.polyfill("Map", function(a) {
   }, p = 0;
   return d;
 }, "es6", "es3");
-var module$exports$omid$common$constants = {AdEventType:{IMPRESSION:"impression", LOADED:"loaded", GEOMETRY_CHANGE:"geometryChange", SESSION_START:"sessionStart", SESSION_ERROR:"sessionError", SESSION_FINISH:"sessionFinish", MEDIA:"media", VIDEO:"video", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", 
-PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction", STATE_CHANGE:"stateChange",}, MediaEventType:{LOADED:"loaded", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction",}, ImpressionType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", 
-UNSPECIFIED:"unspecified", LOADED:"loaded", BEGIN_TO_RENDER:"beginToRender", ONE_PIXEL:"onePixel", VIEWABLE:"viewable", AUDIBLE:"audible", OTHER:"other",}, ErrorType:{GENERIC:"generic", VIDEO:"video", MEDIA:"media",}, AdSessionType:{NATIVE:"native", HTML:"html", JAVASCRIPT:"javascript",}, EventOwner:{NATIVE:"native", JAVASCRIPT:"javascript", NONE:"none",}, SessionOwner:{JAVASCRIPT:"javascript", NATIVE:"native",}, AccessMode:{FULL:"full", DOMAIN:"domain", LIMITED:"limited",}, AppState:{BACKGROUNDED:"backgrounded", 
-FOREGROUNDED:"foregrounded",}, DeviceLockState:{LOCKED:"locked", UNLOCKED:"unlocked",}, Environment:{APP:"app", WEB:"web",}, DeviceCategory:{CTV:"ctv", DESKTOP:"desktop", MOBILE:"mobile", OTHER:"other",}, InteractionType:{CLICK:"click", INVITATION_ACCEPT:"invitationAccept",}, CreativeType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", HTML_DISPLAY:"htmlDisplay", NATIVE_DISPLAY:"nativeDisplay", VIDEO:"video", AUDIO:"audio",}, MediaType:{DISPLAY:"display", VIDEO:"video",}, Reason:{NOT_FOUND:"notFound", 
-HIDDEN:"hidden", BACKGROUNDED:"backgrounded", PICTURE_IN_PICTURE:"pictureInPicture", DEVICE_LOCKED:"deviceLocked", VIEWPORT:"viewport", OBSTRUCTED:"obstructed", CLIPPED:"clipped", UNMEASURABLE:"unmeasurable", NO_WINDOW_FOCUS:"noWindowFocus", NO_OUTPUT_DEVICE:"noOutputDevice",}, SupportedFeatures:{CONTAINER:"clid", VIDEO:"vlid",}, VideoPosition:{PREROLL:"preroll", MIDROLL:"midroll", POSTROLL:"postroll", STANDALONE:"standalone",}, VideoPlayerState:{MINIMIZED:"minimized", COLLAPSED:"collapsed", NORMAL:"normal", 
-EXPANDED:"expanded", FULLSCREEN:"fullscreen",}, NativeViewKeys:{X:"x", LEFT:"left", Y:"y", TOP:"top", WIDTH:"width", HEIGHT:"height", AD_SESSION_ID:"adSessionId", IS_FRIENDLY_OBSTRUCTION_FOR:"isFriendlyObstructionFor", CLIPS_TO_BOUNDS:"clipsToBounds", CHILD_VIEWS:"childViews", END_X:"endX", END_Y:"endY", OBSTRUCTIONS:"obstructions", OBSTRUCTION_CLASS:"obstructionClass", OBSTRUCTION_PURPOSE:"obstructionPurpose", OBSTRUCTION_REASON:"obstructionReason", PIXELS:"pixels", HAS_WINDOW_FOCUS:"hasWindowFocus",
-}, MeasurementStateChangeSource:{CONTAINER:"container", CREATIVE:"creative",}, ElementMarkup:{OMID_ELEMENT_CLASS_NAME:"omid-element",}, CommunicationType:{NONE:"NONE", DIRECT:"DIRECT", POST_MESSAGE:"POST_MESSAGE",}, OmidImplementer:{OMSDK:"omsdk",}, MessageMethod:{IDENTIFY_SERVICE_WINDOW:"identifyServiceWindow",}};
 var module$contents$omid$common$InternalMessage_GUID_KEY = "omid_message_guid", module$contents$omid$common$InternalMessage_METHOD_KEY = "omid_message_method", module$contents$omid$common$InternalMessage_VERSION_KEY = "omid_message_version", module$contents$omid$common$InternalMessage_ARGS_KEY = "omid_message_args", module$exports$omid$common$InternalMessage = function(a, b, c, d) {
   this.guid = a;
   this.method = b;
@@ -573,6 +600,13 @@ module$exports$omid$common$InternalMessage.prototype.serialize = function() {
   void 0 !== this.args && (a[module$contents$omid$common$InternalMessage_ARGS_KEY] = this.args);
   return a;
 };
+var module$exports$omid$common$constants = {AdEventType:{IMPRESSION:"impression", LOADED:"loaded", GEOMETRY_CHANGE:"geometryChange", SESSION_START:"sessionStart", SESSION_ERROR:"sessionError", SESSION_FINISH:"sessionFinish", MEDIA:"media", VIDEO:"video", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", 
+PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction", STATE_CHANGE:"stateChange",}, MediaEventType:{LOADED:"loaded", START:"start", FIRST_QUARTILE:"firstQuartile", MIDPOINT:"midpoint", THIRD_QUARTILE:"thirdQuartile", COMPLETE:"complete", PAUSE:"pause", RESUME:"resume", BUFFER_START:"bufferStart", BUFFER_FINISH:"bufferFinish", SKIPPED:"skipped", VOLUME_CHANGE:"volumeChange", PLAYER_STATE_CHANGE:"playerStateChange", AD_USER_INTERACTION:"adUserInteraction",}, ImpressionType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", 
+UNSPECIFIED:"unspecified", LOADED:"loaded", BEGIN_TO_RENDER:"beginToRender", ONE_PIXEL:"onePixel", VIEWABLE:"viewable", AUDIBLE:"audible", OTHER:"other",}, ErrorType:{GENERIC:"generic", VIDEO:"video", MEDIA:"media",}, AdSessionType:{NATIVE:"native", HTML:"html", JAVASCRIPT:"javascript",}, EventOwner:{NATIVE:"native", JAVASCRIPT:"javascript", NONE:"none",}, SessionOwner:{JAVASCRIPT:"javascript", NATIVE:"native",}, AccessMode:{FULL:"full", DOMAIN:"domain", LIMITED:"limited",}, AppState:{BACKGROUNDED:"backgrounded", 
+FOREGROUNDED:"foregrounded",}, DeviceLockState:{LOCKED:"locked", UNLOCKED:"unlocked",}, Environment:{APP:"app", WEB:"web",}, DeviceCategory:{CTV:"ctv", DESKTOP:"desktop", MOBILE:"mobile", OTHER:"other",}, InteractionType:{CLICK:"click", INVITATION_ACCEPT:"invitationAccept",}, CreativeType:{DEFINED_BY_JAVASCRIPT:"definedByJavaScript", HTML_DISPLAY:"htmlDisplay", NATIVE_DISPLAY:"nativeDisplay", VIDEO:"video", AUDIO:"audio",}, MediaType:{DISPLAY:"display", VIDEO:"video",}, Reason:{NOT_FOUND:"notFound", 
+HIDDEN:"hidden", BACKGROUNDED:"backgrounded", PICTURE_IN_PICTURE:"pictureInPicture", DEVICE_LOCKED:"deviceLocked", VIEWPORT:"viewport", OBSTRUCTED:"obstructed", CLIPPED:"clipped", UNMEASURABLE:"unmeasurable", NO_WINDOW_FOCUS:"noWindowFocus", NO_OUTPUT_DEVICE:"noOutputDevice",}, SupportedFeatures:{CONTAINER:"clid", VIDEO:"vlid",}, VideoPosition:{PREROLL:"preroll", MIDROLL:"midroll", POSTROLL:"postroll", STANDALONE:"standalone",}, VideoPlayerState:{MINIMIZED:"minimized", COLLAPSED:"collapsed", NORMAL:"normal", 
+EXPANDED:"expanded", FULLSCREEN:"fullscreen",}, NativeViewKeys:{X:"x", LEFT:"left", Y:"y", TOP:"top", WIDTH:"width", HEIGHT:"height", AD_SESSION_ID:"adSessionId", IS_FRIENDLY_OBSTRUCTION_FOR:"isFriendlyObstructionFor", CLIPS_TO_BOUNDS:"clipsToBounds", CHILD_VIEWS:"childViews", END_X:"endX", END_Y:"endY", OBSTRUCTIONS:"obstructions", OBSTRUCTION_CLASS:"obstructionClass", OBSTRUCTION_PURPOSE:"obstructionPurpose", OBSTRUCTION_REASON:"obstructionReason", PIXELS:"pixels", HAS_WINDOW_FOCUS:"hasWindowFocus",
+}, MeasurementStateChangeSource:{CONTAINER:"container", CREATIVE:"creative",}, ElementMarkup:{OMID_ELEMENT_CLASS_NAME:"omid-element",}, CommunicationType:{NONE:"NONE", DIRECT:"DIRECT", POST_MESSAGE:"POST_MESSAGE",}, OmidImplementer:{OMSDK:"omsdk",}, MessageMethod:{IDENTIFY_SERVICE_WINDOW:"identifyServiceWindow",}};
 var module$exports$omid$common$Communication = function(a) {
   this.to = a;
   this.communicationType_ = module$exports$omid$common$constants.CommunicationType.NONE;
@@ -675,9 +709,20 @@ module$exports$omid$sessionClient$VerificationScriptResource.prototype.toJSON = 
   return {accessMode:this.accessMode, resourceUrl:this.resourceUrl, vendorKey:this.vendorKey, verificationParameters:this.verificationParameters,};
 };
 module$contents$omid$common$exporter_packageExport("OmidSessionClient.VerificationScriptResource", module$exports$omid$sessionClient$VerificationScriptResource);
-var module$exports$omid$sessionClient$Context = function(a, b, c, d) {
+var module$exports$omid$sessionClient$UniversalAdId = function(a, b) {
+  module$contents$omid$common$argsChecker_assertTruthyString("UniversalAdId.value", a);
+  module$contents$omid$common$argsChecker_assertTruthyString("UniversalAdId.idRegistry", b);
+  this.value = a;
+  this.idRegistry = b;
+};
+module$exports$omid$sessionClient$UniversalAdId.prototype.toSerialisedValue = function() {
+  return this.value + "; " + this.idRegistry;
+};
+module$contents$omid$common$exporter_packageExport("OmidSessionClient.UniversalAdId", module$exports$omid$sessionClient$UniversalAdId);
+var module$exports$omid$sessionClient$Context = function(a, b, c, d, e) {
   c = void 0 === c ? null : c;
   d = void 0 === d ? null : d;
+  e = void 0 === e ? null : e;
   module$contents$omid$common$argsChecker_assertNotNullObject("Context.partner", a);
   this.partner = a;
   this.verificationScriptResources = b;
@@ -686,6 +731,7 @@ var module$exports$omid$sessionClient$Context = function(a, b, c, d) {
   this.customReferenceData = d;
   this.underEvaluation = !1;
   this.serviceWindow = null;
+  this.universalAdId = e;
 };
 module$exports$omid$sessionClient$Context.prototype.setVideoElement = function(a) {
   module$contents$omid$common$argsChecker_assertNotNullObject("Context.videoElement", a);
@@ -749,7 +795,23 @@ var module$exports$omid$common$Rectangle = function(a, b, c, d) {
   this.height = d;
 };
 var module$exports$omid$common$guid = {};
+function module$contents$omid$common$guid_isCryptoAvailable() {
+  return "undefined" !== typeof crypto && "function" === typeof crypto.getRandomValues;
+}
 function module$contents$omid$common$guid_generateGuid() {
+  return module$contents$omid$common$guid_isCryptoAvailable() ? module$contents$omid$common$guid_generateSecureGuid() : module$contents$omid$common$guid_generateFallbackGuid();
+}
+function module$contents$omid$common$guid_generateSecureGuid() {
+  var a = new Uint8Array(16);
+  crypto.getRandomValues(a);
+  a[6] = a[6] & 15 | 64;
+  a[8] = a[8] & 63 | 128;
+  for (var b = [], c = 0; 16 > c; c++) {
+    b.push(a[c].toString(16).padStart(2, "0"));
+  }
+  return b[0] + b[1] + b[2] + b[3] + "-" + b[4] + b[5] + "-" + b[6] + b[7] + "-" + b[8] + b[9] + "-" + b[10] + b[11] + b[12] + b[13] + b[14] + b[15];
+}
+function module$contents$omid$common$guid_generateFallbackGuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(a) {
     var b = 16 * Math.random() | 0;
     a = "y" === a ? (b & 3 | 8).toString(16) : b.toString(16);
@@ -757,6 +819,9 @@ function module$contents$omid$common$guid_generateGuid() {
   });
 }
 module$exports$omid$common$guid.generateGuid = module$contents$omid$common$guid_generateGuid;
+module$exports$omid$common$guid.generateSecureGuid = module$contents$omid$common$guid_generateSecureGuid;
+module$exports$omid$common$guid.generateFallbackGuid = module$contents$omid$common$guid_generateFallbackGuid;
+module$exports$omid$common$guid.isCryptoAvailable = module$contents$omid$common$guid_isCryptoAvailable;
 var module$exports$omid$common$logger = {};
 function module$contents$omid$common$logger_error() {
   var a = $jscomp.getRestArguments.apply(0, arguments);
@@ -778,8 +843,8 @@ function module$contents$omid$common$logger_executeLog(a, b) {
 }
 module$exports$omid$common$logger.error = module$contents$omid$common$logger_error;
 module$exports$omid$common$logger.debug = module$contents$omid$common$logger_debug;
-var module$exports$omid$common$eventTypedefs = {};
-var module$exports$omid$common$version = {ApiVersion:"1.0", Version:"1.5.2-iab4528"};
+var module$exports$omid$common$eventTypedefs = {}, module$contents$omid$common$eventTypedefs_SupportedAttestationMechanism;
+var module$exports$omid$common$version = {ApiVersion:"1.0", Version:"1.6.5-iab382"};
 var module$exports$omid$common$VersionUtils = {}, module$contents$omid$common$VersionUtils_SEMVER_DIGITS_NUMBER = 3;
 function module$contents$omid$common$VersionUtils_isValidVersion(a) {
   return /\d+\.\d+\.\d+(-.*)?/.test(a);
@@ -1107,7 +1172,9 @@ module$exports$omid$sessionClient$AdSession.prototype.registerSessionObserver = 
   this.sendMessage("registerSessionObserver", a, this.adSessionId_);
 };
 module$exports$omid$sessionClient$AdSession.prototype.start = function() {
-  this.sendOneWayMessage("startSession", {customReferenceData:this.context_.customReferenceData, underEvaluation:this.context_.underEvaluation,}, this.adSessionId_);
+  var a = {customReferenceData:this.context_.customReferenceData, underEvaluation:this.context_.underEvaluation,};
+  this.context_.universalAdId && (a.universalAdId = this.context_.universalAdId.toSerialisedValue());
+  this.sendOneWayMessage("startSession", a, this.adSessionId_);
 };
 module$exports$omid$sessionClient$AdSession.prototype.finish = function() {
   this.sendOneWayMessage("finishSession", this.adSessionId_);
@@ -1315,7 +1382,7 @@ module$contents$omid$common$exporter_packageExport("OmidSessionClient.listenForS
 module$exports$omid$sessionClient$ServiceCommunication.listenForServiceWindow = module$contents$omid$sessionClient$ServiceCommunication_listenForServiceWindow;
 var module$exports$omid$sessionClient$VastPropertiesExports = {};
 module$contents$omid$common$exporter_packageExport("OmidSessionClient.VastProperties", module$exports$omid$common$VastProperties);
-var module$exports$omid$sessionClient$VerificationVendor = {VerificationVendorId:{OTHER:1, MOAT:2, DOUBLEVERIFY:3, INTEGRAL_AD_SCIENCE:4, PIXELATE:5, NIELSEN:6, COMSCORE:7, MEETRICS:8, GOOGLE:9,}};
+var module$exports$omid$sessionClient$VerificationVendor = {VerificationVendorId:{OTHER:1, MOAT:2, DOUBLEVERIFY:3, INTEGRAL_AD_SCIENCE:4, PIXELATE:5, NIELSEN:6, COMSCORE:7, MEETRICS:8, GOOGLE:9, HUMAN:10, MOBIAN:11,}};
 function module$contents$omid$sessionClient$VerificationVendor_verificationVendorIdForScriptUrl(a) {
   for (var b = $jscomp.makeIterator(module$contents$omid$sessionClient$VerificationVendor_VERIFICATION_VENDORS.keys()), c = b.next(); !c.done; c = b.next()) {
     c = c.value;
@@ -1327,10 +1394,10 @@ function module$contents$omid$sessionClient$VerificationVendor_verificationVendo
   }
   return module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.OTHER;
 }
-var module$contents$omid$sessionClient$VerificationVendor_VERIFICATION_VENDORS = new Map([[module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.MOAT, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.moatads\.com\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.DOUBLEVERIFY, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.doubleverify\.com\/.*$/, /^(https?:\/\/|\/\/)?c\.[\w\-]+\.com\/vfw\/dv\/.*$/, /^(https?:\/\/|\/\/)?(www\.)?[\w]+\.tv\/r\/s\/d\/.*$/, /^(https?:\/\/|\/\/)?(\w\.?)+\.dv\.tech\/.*$/,
-],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.INTEGRAL_AD_SCIENCE, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.adsafeprotected\.com\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.PIXELATE, [/^https?:\/\/(q|cdn)\.adrta\.com\/s\/.*\/(aa|aanf)\.js.*$/, /^https:\/\/cdn\.rta247\.com\/s\/.*\/(aa|aanf)\.js.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.NIELSEN, [],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.COMSCORE, 
-[/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.voicefive\.com\/.*$/, /^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.measuread\.com\/.*$/, /^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.scorecardresearch\.com\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.MEETRICS, [/^(https?:\/\/|\/\/)?s418\.mxcdn\.net\/bb-serve\/omid-meetrics.*\.js$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.GOOGLE, [/^(https?:\/\/|\/\/)?pagead2\.googlesyndication\.com\/.*$/, /^(https?:\/\/|\/\/)?www\.googletagservices\.com\/.*$/,
-],],]);
+var module$contents$omid$sessionClient$VerificationVendor_VERIFICATION_VENDORS = new Map([[module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.DOUBLEVERIFY, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.doubleverify\.com\/.*$/, /^(https?:\/\/|\/\/)?c\.[\w\-]+\.com\/vfw\/dv\/.*$/, /^(https?:\/\/|\/\/)?(www\.)?[\w]+\.tv\/r\/s\/d\/.*$/, /^(https?:\/\/|\/\/)?(\w\.?)+\.dv\.tech\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.INTEGRAL_AD_SCIENCE, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.adsafeprotected\.com\/.*$/,
+],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.PIXELATE, [/^https?:\/\/(q|cdn)\.adrta\.com\/s\/.*\/(aa|aanf)\.js.*$/, /^https:\/\/cdn\.rta247\.com\/s\/.*\/(aa|aanf)\.js.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.NIELSEN, [],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.COMSCORE, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.voicefive\.com\/.*$/, /^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.measuread\.com\/.*$/, 
+/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.scorecardresearch\.com\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.MEETRICS, [/^(https?:\/\/|\/\/)?s418\.mxcdn\.net\/bb-serve\/omid-meetrics.*\.js$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.GOOGLE, [/^(https?:\/\/|\/\/)?pagead2\.googlesyndication\.com\/.*$/, /^(https?:\/\/|\/\/)?www\.googletagservices\.com\/.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.HUMAN, 
+[/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.script\.ac\/.*$/, /^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\/(2|ag|static)\/[a-zA-Z0-9.]*\/analytics.js.*$/,],], [module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId.MOBIAN, [/^(https?:\/\/|\/\/)?[-a-zA-Z0-9.]+\.outcomes\.net\/.*$/,],],]);
 module$contents$omid$common$exporter_packageExport("OmidSessionClient.verificationVendorIdForScriptUrl", module$contents$omid$sessionClient$VerificationVendor_verificationVendorIdForScriptUrl);
 module$contents$omid$common$exporter_packageExport("OmidSessionClient.VerificationVendorId", module$exports$omid$sessionClient$VerificationVendor.VerificationVendorId);
 module$exports$omid$sessionClient$VerificationVendor.verificationVendorIdForScriptUrl = module$contents$omid$sessionClient$VerificationVendor_verificationVendorIdForScriptUrl;

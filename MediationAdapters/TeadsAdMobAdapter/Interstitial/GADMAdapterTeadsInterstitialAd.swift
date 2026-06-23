@@ -7,79 +7,74 @@
 
 import Foundation
 import GoogleMobileAds
-import TeadsSDK
-
-// MARK: - Interstitial Parameters
-
-/// Typed parameters required to create an interstitial placement.
-private struct InterstitialParameters: Decodable {
-    let articleUrl: URL
-    let widgetId: String
-    let installationKey: String
-}
-
-/// Wrapper for decoding interstitial params from TeadsAdapterSettings serialized dict.
-private struct AdapterSettingsWrapper: Decodable {
-    let adRequestSettings: RequestSettings
-
-    struct RequestSettings: Decodable {
-        let extras: InterstitialParameters
-    }
-}
+@_spi(Adapters) import TeadsSDK
 
 // MARK: - GADMAdapterTeadsInterstitialAd
 
 @objc(GADMAdapterTeadsInterstitialAd)
 public final class GADMAdapterTeadsInterstitialAd: NSObject, MediationInterstitialAd {
-    /// The ad event delegate to forward ad rendering events to the Google Mobile Ads SDK.
-    var delegate: MediationInterstitialAdEventDelegate?
+    var delegate: MediationAdEventDelegate?
 
-    /// Completion handler called after ad load
-    var completionHandler: GADMediationInterstitialLoadCompletionHandler?
+    var resolveLoad: ((Result<Void, Error>) -> Void)?
 
     var placement: TeadsAdPlacementInterstitial?
     private var adConfiguration: MediationInterstitialAdConfiguration?
+
+    // MARK: - Load
 
     public func loadInterstitial(
         for adConfiguration: MediationInterstitialAdConfiguration,
         completionHandler: @escaping GADMediationInterstitialLoadCompletionHandler
     ) {
+        if let appIdError = TeadsAdMobErrorMapper.appIdentifierError() {
+            delegate = completionHandler(nil, appIdError)
+            return
+        }
         guard let params = parseParameters(from: adConfiguration) else {
-            delegate = completionHandler(nil, TeadsAdapterErrorCode.serverParameterError)
+            delegate = completionHandler(nil, TeadsAdMobErrorMapper.error(preRequest: .serverParameters))
             return
         }
 
-        self.completionHandler = completionHandler
         self.adConfiguration = adConfiguration
+        resolveLoad = { [weak self] result in
+            guard let self else { return }
+            switch result {
+                case .success:
+                    self.delegate = completionHandler(self, nil)
+                case let .failure(error):
+                    self.delegate = completionHandler(nil, error)
+            }
+        }
+
+        let publisherFloorPrice = (adConfiguration.extras as? TeadsAdapterSettings)?.floorPrice
+        let serverFloorPrice = ServerFloorPriceParser.floorPrice(fromJSON: adConfiguration.credentials.settings["parameter"] as? String)
+        let floorPrice = publisherFloorPrice ?? serverFloorPrice
 
         let config = TeadsAdPlacementInterstitialConfig(
             articleUrl: params.articleUrl,
             widgetId: params.widgetId,
-            installationKey: params.installationKey
+            installationKey: params.installationKey,
+            floorPrice: floorPrice
         )
 
         placement = TeadsAdPlacementInterstitial(config, delegate: self)
         placement?.loadAd()
     }
 
+    // MARK: - Parameter Parsing
+
     private func parseParameters(from adConfiguration: MediationInterstitialAdConfiguration) -> InterstitialParameters? {
-        // Accept TeadsAdapterSettings (registered via networkExtrasClass)
         if let settings = adConfiguration.extras as? TeadsAdapterSettings,
-           let dict = try? settings.toDictionary(),
-           let data = try? JSONSerialization.data(withJSONObject: dict),
-           let wrapper = try? JSONDecoder().decode(AdapterSettingsWrapper.self, from: data) {
-            return wrapper.adRequestSettings.extras
+           let dict = try? settings.toDictionary() as? [String: Any] {
+            return AdMobParameterParser.parse(fromSettingsDict: dict)
         }
-
-        // Fall back to credentials from server (production)
-        if let rawParameter = adConfiguration.credentials.settings["parameter"] as? String,
-           let data = rawParameter.data(using: .utf8),
-           let params = try? JSONDecoder().decode(InterstitialParameters.self, from: data) {
-            return params
+        if let rawParameter = adConfiguration.credentials.settings["parameter"] as? String {
+            return AdMobParameterParser.parse(fromCredentialJSON: rawParameter)
         }
-
         return nil
     }
+
+    // MARK: - Present
 
     public func present(from viewController: UIViewController) {
         placement?.show(from: viewController)
@@ -94,36 +89,7 @@ extension GADMAdapterTeadsInterstitialAd: TeadsAdPlacementEventsDelegate {
         didEmitEvent event: TeadsAdPlacementEventName,
         data: [String: Any]?
     ) {
-        switch event {
-            case .ready:
-                if let completionHandler {
-                    delegate = completionHandler(self, nil)
-                    self.completionHandler = nil
-                }
-
-            case .failed:
-                let reason = data?["reason"] as? String ?? "Unknown error"
-                let error = NSError(
-                    domain: TeadsAdapterErrorCode.errorDomain,
-                    code: TeadsAdapterErrorCode.loadError.rawValue,
-                    userInfo: [NSLocalizedDescriptionKey: reason]
-                )
-                if let completionHandler {
-                    delegate = completionHandler(nil, error)
-                    self.completionHandler = nil
-                } else {
-                    delegate?.didFailToPresentWithError(error)
-                }
-
-            case .clicked:
-                delegate?.reportClick()
-
-            case .viewed:
-                delegate?.reportImpression()
-
-            default:
-                break
-        }
+        AdapterEventBridge.handle(event: event, data: data, delegate: delegate, resolveLoad: &resolveLoad)
     }
 }
 
@@ -147,5 +113,12 @@ extension GADMAdapterTeadsInterstitialAd: TeadsFullScreenEventsDelegate {
             @unknown default:
                 break
         }
+    }
+}
+
+@_spi(Adapters)
+extension GADMAdapterTeadsInterstitialAd: AdapterIntegrationProviding {
+    public var adapterIntegrationType: TeadsAdapterIntegrationType {
+        .adMob
     }
 }
