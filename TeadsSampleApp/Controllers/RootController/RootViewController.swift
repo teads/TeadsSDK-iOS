@@ -483,10 +483,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
 
         switch indexPath.section {
             case 0:
-                let spacing: CGFloat = 4
-                let count: CGFloat = .init(selectionList.count)
-                let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-                return CGSize(width: width, height: 32)
+                return getButtonButtonSize(buttonValues: selectionList.map { $0.name.rawValue })
             case 1:
                 let providerList = selectionList.first(where: { $0.isSelected })?.providers ?? []
                 return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })

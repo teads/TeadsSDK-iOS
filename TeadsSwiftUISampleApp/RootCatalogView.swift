@@ -32,6 +32,7 @@ struct RootCatalogView: View {
                     settingsSection
                 }
                 .padding(.horizontal, 16)
+                .padding(.top, 16)
                 .padding(.bottom, 32)
             }
             .background(Color.appBackground)
@@ -58,15 +59,12 @@ struct RootCatalogView: View {
     private var formatsSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Formats")
-            HStack(spacing: itemSpacing) {
-                ForEach(SampleFormat.allCases) { format in
-                    RootPillButton(
-                        title: format.displayName,
-                        isSelected: viewModel.format == format
-                    ) {
-                        viewModel.selectFormat(format)
-                    }
-                    .frame(maxWidth: .infinity)
+            pillGrid(for: SampleFormat.allCases, columns: 3) { format in
+                RootPillButton(
+                    title: format.displayName,
+                    isSelected: viewModel.format == format
+                ) {
+                    viewModel.selectFormat(format)
                 }
             }
         }
