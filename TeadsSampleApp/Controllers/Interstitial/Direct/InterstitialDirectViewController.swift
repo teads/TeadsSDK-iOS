@@ -129,7 +129,8 @@ class InterstitialDirectViewController: TeadsViewController {
 
 extension InterstitialDirectViewController: TeadsFullScreenEventsDelegate {
     func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsAdPlacementEventName, data: [String: Any]?) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
             switch event {
                 case .ready:
                     self.isReady = true
@@ -144,7 +145,8 @@ extension InterstitialDirectViewController: TeadsFullScreenEventsDelegate {
     }
 
     func fullScreenPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsFullScreenEventName, data _: [String: Any]?) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
             if event == .dismissed {
                 self.placement?.invalidate()
                 self.placement = nil

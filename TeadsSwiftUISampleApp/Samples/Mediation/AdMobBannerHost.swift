@@ -93,7 +93,7 @@ private struct AdMobBannerRepresentable: UIViewRepresentable {
             banner?.resize(AdSize(size: CGSize(width: width, height: newHeight), flags: 1))
             guard newHeight != lastHeight else { return }
             lastHeight = newHeight
-            DispatchQueue.main.async { self.height = newHeight }
+            DispatchQueue.main.async { [weak self] in self?.height = newHeight }
         }
     }
 }
