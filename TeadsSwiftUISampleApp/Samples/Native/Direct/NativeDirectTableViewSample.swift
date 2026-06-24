@@ -42,7 +42,7 @@ struct NativeDirectTableViewSample: View {
 struct FakeNativeArticleRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Image("social-covers")
+            Image("image-article")
                 .resizable()
                 .scaledToFill()
                 .frame(height: 120)
