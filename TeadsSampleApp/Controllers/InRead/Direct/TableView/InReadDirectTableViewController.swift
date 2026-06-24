@@ -16,7 +16,9 @@ class InReadDirectTableViewController: TeadsViewController {
     let teadsAdCellIndentifier = "TeadsAdCell"
     let fakeArticleCell = "fakeArticleCell"
     static let incrementPosition = 3
-    var adRequestedIndices = Set<Int>()
+    static let articleCount = 8
+
+    var requestedAdIds = Set<UUID>()
 
     // Store placements and their corresponding ad views
     var placements: [UUID: TeadsAdPlacementMedia] = [:]
@@ -46,57 +48,55 @@ class InReadDirectTableViewController: TeadsViewController {
     }
 
     private var elements = [TeadsElement]()
-    private var currentAdIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        buildElements()
+    }
 
-        for _ in 0 ..< 8 {
+    /// Seeds the feed with a fixed layout: articles interleaved with ad placeholder slots.
+    /// The row count never changes afterwards, so ads only fill their existing slot.
+    private func buildElements() {
+        elements = []
+        for index in 0 ..< Self.articleCount {
             elements.append(.article)
+            if (index + 1) % Self.incrementPosition == 0 {
+                elements.append(.ad(id: UUID()))
+            }
         }
     }
 
-    func createAndLoadAd(at position: Int) {
-        let adId = UUID()
+    private func loadAd(for adId: UUID) {
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
             articleUrl: URL(string: "https://www.teads.com")
         )
 
-        if let placement: TeadsAdPlacementMedia = Teads.createPlacement(with: config, delegate: self) {
-            placements[adId] = placement
+        guard let placement: TeadsAdPlacementMedia = Teads.createPlacement(with: config, delegate: self) else { return }
+        placements[adId] = placement
 
-            if let adView = try? placement.loadAd() {
-                adViews[adId] = adView
+        guard let adView = try? placement.loadAd() else { return }
+        adViews[adId] = adView
+        // Slot already exists — refresh it (deferred so we never mutate during a display pass).
+        DispatchQueue.main.async { [weak self] in self?.reloadAdRow(for: adId) }
+    }
 
-                // Insert ad into table
-                let adRowIndex = position + 1
-                elements.insert(.ad(id: adId), at: adRowIndex)
-                let indexPaths = [IndexPath(row: adRowIndex, section: 0)]
-                tableView.insertRows(at: indexPaths, with: .automatic)
-            }
-        }
+    private func reloadAdRow(for adId: UUID) {
+        guard let row = elements.firstIndex(of: .ad(id: adId)) else { return }
+        tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
     }
 
     func closeSlot(adId: UUID) {
-        elements.removeAll { $0 == .ad(id: adId) }
         placements.removeValue(forKey: adId)
         adViews.removeValue(forKey: adId)
-        tableView.reloadData()
+        reloadAdRow(for: adId)
     }
 
     private func resetAds() {
-        // Clear all ad state
         placements.removeAll()
         adViews.removeAll()
-        adRequestedIndices.removeAll()
-
-        // Reset elements to articles only
-        elements = [TeadsElement]()
-        for _ in 0 ..< 8 {
-            elements.append(.article)
-        }
-
+        requestedAdIds.removeAll()
+        buildElements()
         tableView.reloadData()
     }
 }
@@ -107,24 +107,22 @@ extension InReadDirectTableViewController: UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row % InReadDirectTableViewController.incrementPosition == 0,
-           elements[indexPath.row] == .article,
-           !adRequestedIndices.contains(indexPath.row) {
-            adRequestedIndices.insert(indexPath.row)
-            createAndLoadAd(at: indexPath.row)
-        }
+        guard case let .ad(id) = elements[indexPath.row], !requestedAdIds.contains(id) else { return }
+        requestedAdIds.insert(id)
+        loadAd(for: id)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return tableView.dequeueReusableCell(withIdentifier: contentCell, for: indexPath)
-        } else if case let .ad(id) = elements[indexPath.row],
-                  let adView = adViews[id] {
+        } else if case let .ad(id) = elements[indexPath.row] {
             let cellAd = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath)
-            // Remove from previous parent if any
-            adView.removeFromSuperview()
-            cellAd.contentView.addSubview(adView)
-            adView.setupConstraintsToFitSuperView(horizontalMargin: 10)
+            cellAd.contentView.subviews.forEach { $0.removeFromSuperview() }
+            if let adView = adViews[id] {
+                adView.removeFromSuperview()
+                cellAd.contentView.addSubview(adView)
+                adView.setupConstraintsToFitSuperView(horizontalMargin: 10)
+            }
             return cellAd
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath)
@@ -157,8 +155,7 @@ extension InReadDirectTableViewController: TeadsAdPlacementEventsDelegate {
                 print("Ad rendered for \(adId)")
 
             case .heightUpdated:
-                tableView.beginUpdates()
-                tableView.endUpdates()
+                reloadAdRow(for: adId)
 
             case .viewed:
                 print("Ad viewed for \(adId)")
