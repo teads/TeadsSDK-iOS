@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NativeDirectTableViewSample: View {
     let pid: Int
-    let validationMode: Bool
 
     private static let articleCount = 8
     private static let adIndex = 3
@@ -22,7 +21,7 @@ struct NativeDirectTableViewSample: View {
 
             ForEach(0 ..< Self.articleCount, id: \.self) { index in
                 if index == Self.adIndex {
-                    TeadsNativeAdHost(pid: pid, validationMode: validationMode)
+                    TeadsNativeAdHost(pid: pid)
                         .frame(height: 250)
                         .padding(.horizontal, 10)
                         .listRowInsets(EdgeInsets())
@@ -88,6 +87,6 @@ struct FakeNativeArticleRow: View {
 
 #Preview {
     NavigationStack {
-        NativeDirectTableViewSample(pid: SamplePID.directNativeDisplay, validationMode: true)
+        NativeDirectTableViewSample(pid: SamplePID.directNativeDisplay)
     }
 }

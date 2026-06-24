@@ -12,7 +12,6 @@ import UIKit
 
 class InReadPageViewController: UIPageViewController {
     var pid: String = PID.directLandscape
-    var validationModeEnabled = true
     var orderedViewControllers: [UIViewController] = []
     var currentViewControlelr: UIViewController?
 
@@ -42,8 +41,7 @@ class InReadPageViewController: UIPageViewController {
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
-            articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)

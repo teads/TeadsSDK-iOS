@@ -10,13 +10,11 @@ import TeadsSDK
 
 struct InReadDirectScrollViewSample: View {
     let selection: SampleSelection
-    let validationMode: Bool
 
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
             pid: selection.integerPID,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
     }
 
@@ -34,6 +32,6 @@ struct InReadDirectScrollViewSample: View {
 
 #Preview {
     NavigationStack {
-        InReadDirectScrollViewSample(selection: SampleSelection(), validationMode: true)
+        InReadDirectScrollViewSample(selection: SampleSelection())
     }
 }

@@ -10,10 +10,10 @@ import SwiftUI
 /// Resolves a `SampleSelection` to the concrete sample screen.
 enum SampleDestinationFactory {
     @ViewBuilder
-    static func destination(for selection: SampleSelection, validationMode: Bool) -> some View {
+    static func destination(for selection: SampleSelection) -> some View {
         switch selection.format {
-            case .inRead: inReadDestination(for: selection, validationMode: validationMode)
-            case .native: nativeDestination(for: selection, validationMode: validationMode)
+            case .inRead: inReadDestination(for: selection)
+            case .native: nativeDestination(for: selection)
             case .feed: feedDestination(for: selection)
             case .recommendations: recommendationsDestination(for: selection)
             case .banner: bannerDestination(for: selection)
@@ -55,14 +55,14 @@ enum SampleDestinationFactory {
     }
 
     @ViewBuilder
-    private static func inReadDestination(for selection: SampleSelection, validationMode: Bool) -> some View {
+    private static func inReadDestination(for selection: SampleSelection) -> some View {
         switch selection.provider {
             case .direct:
                 switch selection.integration {
-                    case .scrollView: InReadDirectScrollViewSample(selection: selection, validationMode: validationMode)
-                    case .tableView: InReadDirectTableViewSample(selection: selection, validationMode: validationMode)
-                    case .collectionView: InReadDirectCollectionViewSample(selection: selection, validationMode: validationMode)
-                    case .pageView: InReadDirectPageViewSample(selection: selection, validationMode: validationMode)
+                    case .scrollView: InReadDirectScrollViewSample(selection: selection)
+                    case .tableView: InReadDirectTableViewSample(selection: selection)
+                    case .collectionView: InReadDirectCollectionViewSample(selection: selection)
+                    case .pageView: InReadDirectPageViewSample(selection: selection)
                     case .webView: InReadDirectWebViewSample(selection: selection)
                     case .tableTagView: SampleUnavailableView()
                 }
@@ -85,13 +85,13 @@ enum SampleDestinationFactory {
     }
 
     @ViewBuilder
-    private static func nativeDestination(for selection: SampleSelection, validationMode: Bool) -> some View {
+    private static func nativeDestination(for selection: SampleSelection) -> some View {
         switch selection.provider {
             case .direct:
                 switch selection.integration {
-                    case .tableView: NativeDirectTableViewSample(pid: selection.integerPID, validationMode: validationMode)
-                    case .collectionView: NativeDirectCollectionViewSample(pid: selection.integerPID, validationMode: validationMode)
-                    case .tableTagView: NativeDirectTagTableViewSample(pid: selection.integerPID, validationMode: validationMode)
+                    case .tableView: NativeDirectTableViewSample(pid: selection.integerPID)
+                    case .collectionView: NativeDirectCollectionViewSample(pid: selection.integerPID)
+                    case .tableTagView: NativeDirectTagTableViewSample(pid: selection.integerPID)
                     default: SampleUnavailableView()
                 }
             case .admob: NativeAdmobTableViewSample(pid: selection.stringPID)

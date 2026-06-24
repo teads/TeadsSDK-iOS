@@ -11,7 +11,6 @@ import TeadsSDK
 /// Hosts a `TeadsNativeAdView` driven by `TeadsAdPlacementMediaNative`.
 struct TeadsNativeAdHost: UIViewRepresentable {
     let pid: Int
-    let validationMode: Bool
 
     func makeCoordinator() -> Coordinator { Coordinator() }
 
@@ -21,8 +20,7 @@ struct TeadsNativeAdHost: UIViewRepresentable {
 
         let config = TeadsAdPlacementMediaConfig(
             pid: pid,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
         let placement: TeadsAdPlacementMediaNative? = Teads.createPlacement(with: config, delegate: context.coordinator)
         context.coordinator.placement = placement

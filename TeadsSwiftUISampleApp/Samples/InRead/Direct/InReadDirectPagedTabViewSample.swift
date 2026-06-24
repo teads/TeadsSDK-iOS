@@ -10,15 +10,13 @@ import TeadsSDK
 
 struct InReadDirectPageViewSample: View {
     let selection: SampleSelection
-    let validationMode: Bool
 
     private static let pageCount = 20
 
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
             pid: selection.integerPID,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
     }
 
@@ -62,6 +60,6 @@ struct InReadDirectPageViewSample: View {
 
 #Preview {
     NavigationStack {
-        InReadDirectPageViewSample(selection: SampleSelection(), validationMode: true)
+        InReadDirectPageViewSample(selection: SampleSelection())
     }
 }

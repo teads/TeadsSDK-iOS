@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NativeDirectCollectionViewSample: View {
     let pid: Int
-    let validationMode: Bool
 
     private static let articleCount = 8
     private static let adIndex = 3
@@ -21,7 +20,7 @@ struct NativeDirectCollectionViewSample: View {
                     if index == 0 {
                         ArticleHeaderImage()
                     } else if index == Self.adIndex {
-                        TeadsNativeAdHost(pid: pid, validationMode: validationMode)
+                        TeadsNativeAdHost(pid: pid)
                             .frame(height: 250)
                             .padding(.horizontal, 8)
                     } else {
@@ -38,6 +37,6 @@ struct NativeDirectCollectionViewSample: View {
 
 #Preview {
     NavigationStack {
-        NativeDirectCollectionViewSample(pid: SamplePID.directNativeDisplay, validationMode: true)
+        NativeDirectCollectionViewSample(pid: SamplePID.directNativeDisplay)
     }
 }

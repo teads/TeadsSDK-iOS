@@ -22,10 +22,6 @@ final class CatalogViewModel: ObservableObject {
 
     @Published var creative: SampleCreative = .landscape
 
-    @Published var validationModeEnabled: Bool {
-        didSet { defaults.set(validationModeEnabled, forKey: Self.validationModeKey) }
-    }
-
     @Published var isCustomPIDAlertPresented = false
 
     @Published var comingSoonMessage: String?
@@ -43,14 +39,6 @@ final class CatalogViewModel: ObservableObject {
     }
 
     var showsCreatives: Bool { !availableCreatives.isEmpty }
-
-    private let defaults: UserDefaults
-    private static let validationModeKey = "TeadsValidationModeEnabled"
-
-    init(defaults: UserDefaults = .standard) {
-        self.defaults = defaults
-        validationModeEnabled = defaults.object(forKey: Self.validationModeKey) as? Bool ?? true
-    }
 
     private func onFormatChanged() {
         if let firstProvider = SampleMatrix.providers(for: format).first {

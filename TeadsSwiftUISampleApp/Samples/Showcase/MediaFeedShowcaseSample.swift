@@ -10,13 +10,10 @@ import TeadsSDK
 
 /// Shows a Media (video) placement and a Feed (recommendations) placement in the same article.
 struct MediaFeedShowcaseSample: View {
-    let validationMode: Bool
-
     private var mediaConfig: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
             pid: SamplePID.directLandscape,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
     }
 
@@ -76,6 +73,6 @@ struct MediaFeedShowcaseSample: View {
 
 #Preview {
     NavigationStack {
-        MediaFeedShowcaseSample(validationMode: true)
+        MediaFeedShowcaseSample()
     }
 }

@@ -10,7 +10,6 @@ import TeadsSDK
 
 struct InReadDirectTableViewSample: View {
     let selection: SampleSelection
-    let validationMode: Bool
 
     private static let articleCount = 8
     private static let adInterval = 3
@@ -18,8 +17,7 @@ struct InReadDirectTableViewSample: View {
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
             pid: selection.integerPID,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
     }
 
@@ -57,6 +55,6 @@ private struct FakeArticleRow: View {
 
 #Preview {
     NavigationStack {
-        InReadDirectTableViewSample(selection: SampleSelection(), validationMode: true)
+        InReadDirectTableViewSample(selection: SampleSelection())
     }
 }

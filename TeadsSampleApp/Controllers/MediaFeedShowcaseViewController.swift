@@ -179,8 +179,7 @@ class MediaFeedShowcaseViewController: TeadsViewController {
         // Using test PID 84242 (Direct Landscape)
         let mediaConfig = TeadsAdPlacementMediaConfig(
             pid: 84242,
-            articleUrl: URL(string: "https://www.teads.com")!,
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")!
         )
 
         // Create placement using unified API

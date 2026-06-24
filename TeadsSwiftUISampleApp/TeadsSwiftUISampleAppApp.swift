@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import TeadsSDK
 
 @main
 struct TeadsSwiftUISampleAppApp: App {
+    init() {
+        Teads.testMode = true
+    }
+
     var body: some Scene {
         WindowGroup {
             RootCatalogView()

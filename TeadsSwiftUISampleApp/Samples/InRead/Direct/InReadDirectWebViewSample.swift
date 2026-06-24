@@ -55,8 +55,7 @@ private struct TeadsWebViewContainer: UIViewRepresentable {
 
             let config = TeadsAdPlacementMediaConfig(
                 pid: pid,
-                articleUrl: SamplePID.articleURL,
-                enableValidationMode: true
+                articleUrl: SamplePID.articleURL
             )
             placement = Teads.createPlacement(with: config, delegate: self)
             adView = try? placement?.loadAd()

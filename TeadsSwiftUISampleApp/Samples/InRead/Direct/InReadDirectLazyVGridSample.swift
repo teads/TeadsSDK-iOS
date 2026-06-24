@@ -10,7 +10,6 @@ import TeadsSDK
 
 struct InReadDirectCollectionViewSample: View {
     let selection: SampleSelection
-    let validationMode: Bool
 
     private static let articleCount = 8
     private static let adIndex = 3
@@ -18,8 +17,7 @@ struct InReadDirectCollectionViewSample: View {
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
             pid: selection.integerPID,
-            articleUrl: SamplePID.articleURL,
-            enableValidationMode: validationMode
+            articleUrl: SamplePID.articleURL
         )
     }
 
@@ -70,6 +68,6 @@ private struct ArticleCard: View {
 
 #Preview {
     NavigationStack {
-        InReadDirectCollectionViewSample(selection: SampleSelection(), validationMode: true)
+        InReadDirectCollectionViewSample(selection: SampleSelection())
     }
 }

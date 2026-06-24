@@ -11,7 +11,6 @@ import UIKit
 class TeadsViewController: UIViewController {
     var hasTeadsArticleNavigationBar = true
     var pid: String = PID.directLandscape
-    var validationModeEnabled = true
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

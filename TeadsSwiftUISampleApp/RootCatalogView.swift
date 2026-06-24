@@ -29,7 +29,6 @@ struct RootCatalogView: View {
                     }
                     integrationsSection
                     showcaseSection
-                    settingsSection
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
@@ -51,7 +50,7 @@ struct RootCatalogView: View {
                 Text(viewModel.comingSoonMessage ?? "")
             }
             .navigationDestination(isPresented: $showShowcase) {
-                MediaFeedShowcaseSample(validationMode: viewModel.validationModeEnabled)
+                MediaFeedShowcaseSample()
             }
         }
     }
@@ -118,10 +117,7 @@ struct RootCatalogView: View {
             LazyVGrid(columns: integrationColumns, spacing: 16) {
                 ForEach(viewModel.availableIntegrations) { integration in
                     NavigationLink {
-                        SampleDestinationFactory.destination(
-                            for: viewModel.selection(for: integration),
-                            validationMode: viewModel.validationModeEnabled
-                        )
+                        SampleDestinationFactory.destination(for: viewModel.selection(for: integration))
                     } label: {
                         IntegrationCard(title: integration.displayName, imageName: integration.imageName)
                     }
@@ -144,15 +140,6 @@ struct RootCatalogView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-        }
-    }
-
-    private var settingsSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            RootSectionHeader("Settings")
-            Toggle("Validation Mode", isOn: $viewModel.validationModeEnabled)
-                .font(.system(size: 16))
-                .padding(.vertical, 8)
         }
     }
 }

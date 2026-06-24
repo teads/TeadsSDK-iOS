@@ -9,15 +9,14 @@ import SwiftUI
 
 struct NativeDirectTagTableViewSample: View {
     let pid: Int
-    let validationMode: Bool
 
     var body: some View {
-        NativeDirectTableViewSample(pid: pid, validationMode: validationMode)
+        NativeDirectTableViewSample(pid: pid)
     }
 }
 
 #Preview {
     NavigationStack {
-        NativeDirectTagTableViewSample(pid: SamplePID.directNativeDisplay, validationMode: true)
+        NativeDirectTagTableViewSample(pid: SamplePID.directNativeDisplay)
     }
 }

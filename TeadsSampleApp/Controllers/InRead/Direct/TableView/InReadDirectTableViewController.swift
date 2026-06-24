@@ -60,8 +60,7 @@ class InReadDirectTableViewController: TeadsViewController {
         let adId = UUID()
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
-            articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")
         )
 
         if let placement: TeadsAdPlacementMedia = Teads.createPlacement(with: config, delegate: self) {
