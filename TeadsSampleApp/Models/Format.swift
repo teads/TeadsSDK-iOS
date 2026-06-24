@@ -51,11 +51,14 @@ struct Integration {
 
 // Formats
 enum Formats {
-    case inRead, native, interstitial
+    case inRead, native, feed, recommendations, banner, interstitial
     func format() -> Format {
         switch self {
             case .inRead: return inReadFormat
             case .native: return nativeFormat
+            case .feed: return feedFormat
+            case .recommendations: return recommendationsFormat
+            case .banner: return bannerFormat
             case .interstitial: return interstitialFormat
         }
     }
@@ -66,7 +69,10 @@ let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLov
 
 let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
 let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false, creativeTypes: [display, custom])
-let interstitialFormat = Format(name: .interstitial, providers: [interstitialAdmobProvider], isSelected: false, creativeTypes: [])
+let feedFormat = Format(name: .feed, providers: [feedDirectProvider], isSelected: false, creativeTypes: [])
+let recommendationsFormat = Format(name: .recommendations, providers: [recommendationsDirectProvider], isSelected: false, creativeTypes: [])
+let bannerFormat = Format(name: .banner, providers: [bannerDirectProvider, bannerAdmobProvider], isSelected: false, creativeTypes: [])
+let interstitialFormat = Format(name: .interstitial, providers: [interstitialDirectProvider, interstitialAdmobProvider], isSelected: false, creativeTypes: [])
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
@@ -89,8 +95,25 @@ let inReadAppLovinProvider = Provider(name: .appLovin, integrations: [
     scrollViewIntegration,
 ], isSelected: false)
 
+// Feed Providers
+let feedDirectProvider = Provider(name: .direct, integrations: [
+    tableViewIntegration,
+    collectionViewIntegration,
+], isSelected: true)
+
+// Recommendations Providers
+let recommendationsDirectProvider = Provider(name: .direct, integrations: [
+    tableViewIntegration,
+    scrollViewIntegration,
+], isSelected: true)
+
+// Banner Providers
+let bannerDirectProvider = Provider(name: .direct, integrations: [scrollViewIntegration], isSelected: true)
+let bannerAdmobProvider = Provider(name: .admob, integrations: [collectionViewIntegration], isSelected: false)
+
 // Interstitial Providers
-let interstitialAdmobProvider = Provider(name: .admob, integrations: [scrollViewIntegration], isSelected: true)
+let interstitialDirectProvider = Provider(name: .direct, integrations: [scrollViewIntegration], isSelected: true)
+let interstitialAdmobProvider = Provider(name: .admob, integrations: [scrollViewIntegration], isSelected: false)
 
 // Native Providers
 let nativeDirectProvider = Provider(name: .direct, integrations: [
@@ -170,11 +193,26 @@ enum PID {
 
     static let admobInterstitial = "ca-app-pub-3068786746829754/9358977978"
     static let admobInterstitialTest = "ca-app-pub-3940256099942544/4411468910"
+
+    // Outbrain widget placements (Direct Feed / Recommendations / Banner / Interstitial)
+    static let outbrainArticleUrl = "https://mobile-demo.outbrain.com/"
+    static let outbrainInstallationKey = "NANOWDGT01"
+    static let feedWidgetId = "MB_1"
+    static let recommendationsWidgetId = "SDK_1"
+    static let bannerWidgetId = "MB_10"
+
+    static let interstitialDirectArticleUrl = "https://example.com/article"
+    static let interstitialDirectWidgetId = "INT_MW_1"
+
+    static let admobBanner = "ca-app-pub-3068786746829754/2411019030"
 }
 
 enum FormatName: String {
     case inRead
     case native = "Native"
+    case feed = "Feed"
+    case recommendations = "Recos"
+    case banner = "Banner"
     case interstitial = "Interstitial"
 }
 

@@ -52,6 +52,21 @@ enum SamplePID {
     static let appLovinSquareMREC = "512f790c9cf57ccd"
     static let appLovinCarouselMREC = "9b2445c1ac3d55d6"
 
+    // MARK: Outbrain widget placements (Direct Feed / Recommendations / Banner / Interstitial)
+
+    static let outbrainArticleURL = URL(string: "https://mobile-demo.outbrain.com/")!
+    static let outbrainInstallationKey = "NANOWDGT01"
+    static let feedWidgetId = "MB_1"
+    static let recommendationsWidgetId = "SDK_1"
+    static let bannerWidgetId = "MB_10"
+
+    static let interstitialDirectArticleURL = URL(string: "https://example.com/article")!
+    static let interstitialDirectWidgetId = "INT_MW_1"
+
+    // MARK: AdMob (banner)
+
+    static let admobBanner = "ca-app-pub-3068786746829754/2411019030"
+
     static let articleURL = URL(string: "https://www.teads.com")
 
     static var custom: Int {

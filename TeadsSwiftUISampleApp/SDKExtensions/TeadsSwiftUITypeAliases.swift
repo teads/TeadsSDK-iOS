@@ -12,3 +12,6 @@ public typealias TeadsMediaSwiftUIView = TeadsAdPlacementSwiftUIView<TeadsAdPlac
 
 /// SwiftUI view for a Feed placement.
 public typealias TeadsFeedSwiftUIView = TeadsAdPlacementSwiftUIView<TeadsAdPlacementFeed>
+
+/// SwiftUI view for a Banner placement.
+public typealias TeadsBannerSwiftUIView = TeadsAdPlacementSwiftUIView<TeadsAdPlacementBanner>

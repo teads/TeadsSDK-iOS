@@ -14,7 +14,43 @@ enum SampleDestinationFactory {
         switch selection.format {
             case .inRead: inReadDestination(for: selection, validationMode: validationMode)
             case .native: nativeDestination(for: selection, validationMode: validationMode)
-            case .interstitial: InterstitialAdmobSample(pid: selection.stringPID)
+            case .feed: feedDestination(for: selection)
+            case .recommendations: recommendationsDestination(for: selection)
+            case .banner: bannerDestination(for: selection)
+            case .interstitial:
+                switch selection.provider {
+                    case .direct: InterstitialDirectSample()
+                    default: InterstitialAdmobSample(pid: selection.stringPID)
+                }
+        }
+    }
+
+    @ViewBuilder
+    private static func feedDestination(for selection: SampleSelection) -> some View {
+        switch selection.integration {
+            case .scrollView: FeedDirectScrollViewSample()
+            case .tableView: FeedDirectTableViewSample()
+            default: SampleUnavailableView()
+        }
+    }
+
+    @ViewBuilder
+    private static func recommendationsDestination(for selection: SampleSelection) -> some View {
+        switch selection.integration {
+            case .scrollView: RecommendationsDirectScrollViewSample()
+            case .tableView: RecommendationsDirectTableViewSample()
+            default: SampleUnavailableView()
+        }
+    }
+
+    @ViewBuilder
+    private static func bannerDestination(for selection: SampleSelection) -> some View {
+        switch (selection.provider, selection.integration) {
+            case (.direct, .scrollView): BannerDirectScrollViewSample()
+            case (.direct, .tableView): BannerDirectTableViewSample()
+            case (.admob, .scrollView): BannerAdmobScrollViewSample(adUnitID: selection.stringPID)
+            case (.admob, .tableView): BannerAdmobTableViewSample(adUnitID: selection.stringPID)
+            default: SampleUnavailableView()
         }
     }
 

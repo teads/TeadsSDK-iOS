@@ -139,7 +139,7 @@ struct RootCatalogView: View {
             Button {
                 showShowcase = true
             } label: {
-                Text("📺 Media + Feed Showcase")
+                Text("📺 Media + Feed")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, minHeight: 50)

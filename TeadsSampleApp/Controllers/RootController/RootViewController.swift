@@ -11,7 +11,7 @@ import UIKit
 
 class RootViewController: TeadsViewController {
     @IBOutlet var collectionView: UICollectionView!
-    private var selectionList = [inReadFormat, nativeFormat, interstitialFormat]
+    private var selectionList = [inReadFormat, nativeFormat, feedFormat, recommendationsFormat, bannerFormat, interstitialFormat]
 
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
@@ -51,18 +51,53 @@ class RootViewController: TeadsViewController {
     }
 
     func showSampleController(for integration: Integration) {
-        // Interstitial is programmatic — no storyboard segue
-        if adSelection.format.name == .interstitial {
-            let vc = InterstitialAdmobViewController()
-            vc.pid = PID.admobInterstitial
-            vc.validationModeEnabled = validationModeEnabled
-            navigationController?.pushViewController(vc, animated: true)
+        // Formats added with the 6.2.0 SDK are built programmatically — no storyboard segue.
+        if let controller = programmaticController(for: integration) {
+            controller.validationModeEnabled = validationModeEnabled
+            navigationController?.pushViewController(controller, animated: true)
             return
         }
 
         let identifier = "\(adSelection.format.name)-\(adSelection.provider.name)-\(integration.name)"
             .lowercased()
         performSegue(withIdentifier: identifier, sender: self)
+    }
+
+    private func programmaticController(for integration: Integration) -> TeadsViewController? {
+        switch adSelection.format.name {
+            case .interstitial:
+                switch adSelection.provider.name {
+                    case .direct: return InterstitialDirectViewController()
+                    default:
+                        let vc = InterstitialAdmobViewController()
+                        vc.pid = PID.admobInterstitial
+                        return vc
+                }
+            case .feed:
+                switch integration.name {
+                    case tableViewIntegration.name: return FeedDirectTableViewController()
+                    case collectionViewIntegration.name: return FeedDirectCollectionViewController()
+                    default: return nil
+                }
+            case .recommendations:
+                switch integration.name {
+                    case tableViewIntegration.name: return RecommendationsDirectTableViewController()
+                    case scrollViewIntegration.name: return RecommendationsDirectScrollViewController()
+                    default: return nil
+                }
+            case .banner:
+                if adSelection.provider.name == .direct, integration.name == scrollViewIntegration.name {
+                    return BannerDirectScrollViewController()
+                }
+                if adSelection.provider.name == .admob, integration.name == collectionViewIntegration.name {
+                    let vc = BannerAdmobCollectionViewController()
+                    vc.pid = PID.admobBanner
+                    return vc
+                }
+                return nil
+            default:
+                return nil
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -288,7 +323,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
             // Create button
             let button = UIButton(type: .system)
-            button.setTitle("📺 Media + Feed Showcase", for: .normal)
+            button.setTitle("📺 Media + Feed", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             button.backgroundColor = .systemBlue
             button.setTitleColor(.white, for: .normal)

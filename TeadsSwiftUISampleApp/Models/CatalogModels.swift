@@ -10,6 +10,9 @@ import Foundation
 enum SampleFormat: String, CaseIterable, Identifiable {
     case inRead
     case native = "Native"
+    case feed = "Feed"
+    case recommendations = "Recos"
+    case banner = "Banner"
     case interstitial = "Interstitial"
 
     var id: String { rawValue }
@@ -80,7 +83,10 @@ enum SampleMatrix {
         switch format {
             case .inRead: [.direct, .admob, .appLovin, .sas]
             case .native: [.direct, .admob, .appLovin, .sas]
-            case .interstitial: [.admob]
+            case .feed: [.direct]
+            case .recommendations: [.direct]
+            case .banner: [.direct, .admob]
+            case .interstitial: [.direct, .admob]
         }
     }
 
@@ -98,6 +104,8 @@ enum SampleMatrix {
                     case .direct: [.tableView, .collectionView, .tableTagView]
                     default: [.tableView]
                 }
+            case .feed, .recommendations, .banner:
+                [.scrollView, .tableView]
             case .interstitial:
                 [.scrollView]
         }
@@ -108,7 +116,7 @@ enum SampleMatrix {
             case .inRead:
                 provider == .appLovin ? appLovinInReadCreatives : defaultInReadCreatives
             case .native: nativeCreatives
-            case .interstitial: interstitialCreatives
+            case .feed, .recommendations, .banner, .interstitial: []
         }
     }
 }
@@ -122,7 +130,7 @@ struct SampleSelection: Equatable {
 
     var integerPID: Int {
         switch format {
-            case .interstitial: return 0
+            case .interstitial, .feed, .recommendations, .banner: return 0
             case .inRead, .native: break
         }
         switch provider {
@@ -153,6 +161,8 @@ struct SampleSelection: Equatable {
     var stringPID: String {
         switch format {
             case .interstitial: return SamplePID.admobInterstitial
+            case .banner: return SamplePID.admobBanner
+            case .feed, .recommendations: return ""
             case .inRead, .native: break
         }
         switch provider {
