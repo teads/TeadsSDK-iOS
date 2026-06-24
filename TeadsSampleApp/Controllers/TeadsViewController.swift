@@ -12,8 +12,6 @@ class TeadsViewController: UIViewController {
     var hasTeadsArticleNavigationBar = true
     var pid: String = PID.directLandscape
     var validationModeEnabled = true
-    fileprivate let teadsLogo = UIImage(named: "Teads-Sample-App")
-    fileprivate let teadsLogoWhite = UIImage(named: "Teads-Sample-App-White")
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,12 +48,7 @@ class TeadsViewController: UIViewController {
         let backgroundImage = imageFromLayer(layer: gradientLayer)
         navigationBar.setBackgroundImage(backgroundImage, for: .default)
 
-        let imageView = UIImageView(image: teadsLogoWhite)
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        navigationItem.titleView = imageView
+        navigationItem.titleView = TeadsLogoUIView(dark: true)
 
         navigationBar.tintColor = .white
 
@@ -76,11 +69,7 @@ class TeadsViewController: UIViewController {
         }
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
-        let imageView = UIImageView(image: teadsLogo)
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        navigationItem.titleView = imageView
+        navigationItem.titleView = TeadsLogoUIView(dark: false)
         if #available(iOS 15, *) {
             let appearance = navigationBar.standardAppearance
             appearance.backgroundImage = UIImage()

@@ -13,11 +13,7 @@ private struct TeadsBrandNavigationBar: ViewModifier {
         content
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Image("Teads-Sample-App-White")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 30)
-                        .accessibilityLabel("Teads")
+                    TeadsLogoView(dark: true)
                 }
             }
             .toolbarBackground(LinearGradient.teadsBrand, for: .navigationBar)

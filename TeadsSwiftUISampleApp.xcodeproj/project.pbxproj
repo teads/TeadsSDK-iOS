@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14864F0AF1A358E3AA7EAA88 /* TeadsLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663E960DEB1F48D2040E66D /* TeadsLogoView.swift */; };
 		2465E61D424E3E76FEF5C062 /* TeadsSwiftUITypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7CCC52F97309DCB34118AB /* TeadsSwiftUITypeAliases.swift */; };
 		283C867C8B044B8593258EF5 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */; };
 		284D5C07967CFA8D9F9F0278 /* InReadDirectWebViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228E6F7EA2AAB3AFC4899E3 /* InReadDirectWebViewSample.swift */; };
@@ -76,6 +77,7 @@
 		5D7CCC52F97309DCB34118AB /* TeadsSwiftUITypeAliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsSwiftUITypeAliases.swift; sourceTree = "<group>"; };
 		5E7915DA1D4B173687C0EB9A /* RecommendationsDirectScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecommendationsDirectScrollViewSample.swift; sourceTree = "<group>"; };
 		5F3B672C3E88870B8D706720 /* BannerAdmobTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerAdmobTableViewSample.swift; sourceTree = "<group>"; };
+		6663E960DEB1F48D2040E66D /* TeadsLogoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsLogoView.swift; sourceTree = "<group>"; };
 		696A3545A3DEB03ED6AFA944 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		6C69DA8CD77DA076BA528003 /* Pods-TeadsSwiftUISampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSwiftUISampleApp.debug.xcconfig"; path = "Target Support Files/Pods-TeadsSwiftUISampleApp/Pods-TeadsSwiftUISampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		704A37B753E211D54854D2DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */,
 				A003000000000000000C0302 /* RootCatalogComponents.swift */,
 				A103000000000000000C0002 /* CustomPIDAlert.swift */,
+				6663E960DEB1F48D2040E66D /* TeadsLogoView.swift */,
 			);
 			name = DesignSystem;
 			path = DesignSystem;
@@ -675,6 +678,7 @@
 				98BB5A7A00D5CE50342D0AFC /* BannerAdmobScrollViewSample.swift in Sources */,
 				62DC8EF7727F29700E4DFD5D /* BannerAdmobTableViewSample.swift in Sources */,
 				B711D9B1D67B411C2B91339F /* InterstitialDirectSample.swift in Sources */,
+				14864F0AF1A358E3AA7EAA88 /* TeadsLogoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
