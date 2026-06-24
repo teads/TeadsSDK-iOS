@@ -10,36 +10,54 @@ import SwiftUI
 import TeadsAdMobAdapter
 import TeadsSDK
 
-/// Hosts an AdMob `AdManagerBannerView` with the Teads adapter, resizing as `didUpdateRatio` fires.
-struct AdMobBannerHost: UIViewRepresentable {
+/// Hosts a fluid AdMob `AdManagerBannerView` with the Teads adapter. The creative
+/// height is bridged back to SwiftUI state so the layout reflows as it resizes.
+struct AdMobBannerHost: View {
     enum Format {
-        case fluid
         case mediumRectangle
+        case banner
     }
 
     let adUnitID: String
     let format: Format
 
+    @State private var height: CGFloat = 0
+
+    var body: some View {
+        AdMobBannerRepresentable(adUnitID: adUnitID, height: $height)
+            .frame(height: height)
+    }
+}
+
+private struct AdMobBannerRepresentable: UIViewRepresentable {
+    let adUnitID: String
+    @Binding var height: CGFloat
+
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(height: $height)
     }
 
-    func makeUIView(context: Context) -> ResizingContainer {
-        let container = ResizingContainer()
-        let adSize: AdSize = (format == .fluid) ? AdSizeFluid : AdSizeMediumRectangle
-        let banner = AdManagerBannerView(adSize: adSize)
+    func makeUIView(context: Context) -> UIView {
+        let container = UIView()
+        container.clipsToBounds = true
+
+        let banner = AdManagerBannerView(adSize: AdSizeFluid)
         banner.adUnitID = adUnitID
+        // Restrict to Fluid so GMA doesn't invoke the mediation adapter once per candidate size.
+        banner.validAdSizes = [nsValue(for: AdSizeFluid)]
+        banner.rootViewController = UIApplication.shared.firstKeyWindow?.rootViewController
         banner.delegate = context.coordinator
+        banner.isAutoloadEnabled = false
+        banner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150)
         banner.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(banner)
         NSLayoutConstraint.activate([
-            banner.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            banner.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            banner.topAnchor.constraint(equalTo: container.topAnchor),
+            banner.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            banner.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            banner.bottomAnchor.constraint(equalTo: container.bottomAnchor),
         ])
-
-        DispatchQueue.main.async {
-            banner.rootViewController = banner.window?.rootViewController
-        }
+        context.coordinator.banner = banner
 
         let settings = TeadsAdapterSettings { settings in
             settings.enableDebug()
@@ -47,61 +65,35 @@ struct AdMobBannerHost: UIViewRepresentable {
         }
         let request = Request()
         request.register(settings)
-
-        context.coordinator.bind(container: container, banner: banner)
         banner.load(request)
 
         return container
     }
 
-    func updateUIView(_: ResizingContainer, context _: Context) {}
-
-    /// Container view whose intrinsic height tracks the Teads ad ratio so SwiftUI relays it out.
-    final class ResizingContainer: UIView {
-        private var heightConstraint: NSLayoutConstraint?
-
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            translatesAutoresizingMaskIntoConstraints = false
-            heightConstraint = heightAnchor.constraint(equalToConstant: 0)
-            heightConstraint?.priority = .required
-            heightConstraint?.isActive = true
-        }
-
-        @available(*, unavailable)
-        required init?(coder _: NSCoder) {
-            fatalError("init(coder:) is not supported")
-        }
-
-        func update(height: CGFloat) {
-            heightConstraint?.constant = height
-            invalidateIntrinsicContentSize()
-        }
-    }
+    func updateUIView(_: UIView, context _: Context) {}
 
     final class Coordinator: NSObject, BannerViewDelegate, TeadsMediatedAdViewDelegate {
-        private weak var container: ResizingContainer?
-        private weak var banner: AdManagerBannerView?
+        @Binding var height: CGFloat
+        weak var banner: AdManagerBannerView?
+        private var lastHeight: CGFloat = 0
 
-        func bind(container: ResizingContainer, banner: AdManagerBannerView) {
-            self.container = container
-            self.banner = banner
+        init(height: Binding<CGFloat>) {
+            _height = height
         }
 
-        // BannerViewDelegate
         func bannerViewDidReceiveAd(_: BannerView) {}
+
         func bannerView(_: BannerView, didFailToReceiveAdWithError error: Error) {
             print("AdMob banner failed to load: \(error.localizedDescription)")
-            container?.update(height: 0)
         }
 
-        // TeadsMediatedAdViewDelegate
-        func didUpdateRatio(_: UIView, adRatio: TeadsAdRatio) {
-            guard let container, let banner else { return }
-            let width = container.bounds.width
-            let height = adRatio.calculateHeight(for: width)
-            container.update(height: height)
-            banner.resize(adSizeFor(cgSize: CGSize(width: width, height: height)))
+        func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+            let width = adView.frame.width
+            let newHeight = adRatio.calculateHeight(for: width)
+            banner?.resize(AdSize(size: CGSize(width: width, height: newHeight), flags: 1))
+            guard newHeight != lastHeight else { return }
+            lastHeight = newHeight
+            DispatchQueue.main.async { self.height = newHeight }
         }
     }
 }

@@ -20,7 +20,7 @@ struct BannerAdmobTableViewSample: View {
                 .padding(.vertical, 12)
                 .listRowSeparator(.hidden)
 
-            AdMobBannerHost(adUnitID: adUnitID, format: .fluid)
+            AdMobBannerHost(adUnitID: adUnitID, format: .banner)
                 .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 .listRowSeparator(.hidden)
 

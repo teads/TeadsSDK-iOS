@@ -13,7 +13,7 @@ struct BannerAdmobScrollViewSample: View {
     var body: some View {
         ScrollView {
             FakeArticle {
-                AdMobBannerHost(adUnitID: adUnitID, format: .fluid)
+                AdMobBannerHost(adUnitID: adUnitID, format: .banner)
                     .padding(.horizontal)
             }
         }

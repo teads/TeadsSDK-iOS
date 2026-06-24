@@ -11,6 +11,7 @@ import TeadsSDK
 @main
 struct TeadsSwiftUISampleAppApp: App {
     init() {
+        Teads.configure()
         Teads.testMode = true
     }
 

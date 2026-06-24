@@ -58,7 +58,7 @@ struct RootCatalogView: View {
     private var formatsSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             RootSectionHeader("Formats")
-            pillGrid(for: SampleFormat.allCases, columns: 3) { format in
+            pillGrid(for: SampleFormat.allCases, columns: 2) { format in
                 RootPillButton(
                     title: format.displayName,
                     isSelected: viewModel.format == format

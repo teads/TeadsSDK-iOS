@@ -208,8 +208,8 @@ enum PID {
 }
 
 enum FormatName: String {
-    case inRead
-    case native = "Native"
+    case inRead = "Media"
+    case native = "Media Native"
     case feed = "Feed"
     case recommendations = "Recos"
     case banner = "Banner"

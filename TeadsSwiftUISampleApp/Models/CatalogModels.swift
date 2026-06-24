@@ -8,8 +8,8 @@
 import Foundation
 
 enum SampleFormat: String, CaseIterable, Identifiable {
-    case inRead
-    case native = "Native"
+    case inRead = "Media"
+    case native = "Media Native"
     case feed = "Feed"
     case recommendations = "Recos"
     case banner = "Banner"
