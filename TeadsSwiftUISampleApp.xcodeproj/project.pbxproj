@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A001000000000000000C0101 /* TeadsColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000000000000000C0102 /* TeadsColors.swift */; };
-		A002000000000000000C0201 /* TeadsBrandNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */; };
-		A003000000000000000C0301 /* RootCatalogComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003000000000000000C0302 /* RootCatalogComponents.swift */; };
 		2465E61D424E3E76FEF5C062 /* TeadsSwiftUITypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7CCC52F97309DCB34118AB /* TeadsSwiftUITypeAliases.swift */; };
 		283C867C8B044B8593258EF5 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */; };
 		284D5C07967CFA8D9F9F0278 /* InReadDirectWebViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228E6F7EA2AAB3AFC4899E3 /* InReadDirectWebViewSample.swift */; };
@@ -20,12 +17,9 @@
 		6B47B14F007D0B400C0450EB /* InReadDirectScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31572EF1847CA785DE2F696F /* InReadDirectScrollViewSample.swift */; };
 		7853099CAB30260E480347DB /* TeadsSwiftUISampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BB1B9959EB98BD44A9FEA6 /* TeadsSwiftUISampleAppApp.swift */; };
 		9D5040722B2FC0A503C0729D /* Pods_TeadsSwiftUISampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */; };
-		A4DA04C2E2C8F0671656D661 /* InReadDirectLazyVGridSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FFB81A7EE38B8958F68D5 /* InReadDirectLazyVGridSample.swift */; };
-		A7EF5F832B6250777814F344 /* InReadDirectPagedTabViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D0703AEB711A339D52790 /* InReadDirectPagedTabViewSample.swift */; };
-		B000AB508FCAE03C9A397C0F /* ArticleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58D80AE43B8D98E6BD9C43 /* ArticleViews.swift */; };
-		BBEF5F60A5F6BF23C724BFCE /* SamplePID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0DD3A75428EE78E37BA1A /* SamplePID.swift */; };
-		C984A82F8E25C524A417E77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696A3545A3DEB03ED6AFA944 /* Assets.xcassets */; };
-		D424FAF6D05D9651462FD085 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43B1F28453F68D6A64A48C3 /* Foundation.framework */; };
+		A001000000000000000C0101 /* TeadsColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000000000000000C0102 /* TeadsColors.swift */; };
+		A002000000000000000C0201 /* TeadsBrandNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */; };
+		A003000000000000000C0301 /* RootCatalogComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003000000000000000C0302 /* RootCatalogComponents.swift */; };
 		A101000000000000000C0001 /* CatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101000000000000000C0002 /* CatalogModels.swift */; };
 		A102000000000000000C0001 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A102000000000000000C0002 /* CatalogViewModel.swift */; };
 		A103000000000000000C0001 /* CustomPIDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103000000000000000C0002 /* CustomPIDAlert.swift */; };
@@ -49,12 +43,15 @@
 		A121000000000000000C0001 /* NativeSASTableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121000000000000000C0002 /* NativeSASTableViewSample.swift */; };
 		A122000000000000000C0001 /* InterstitialAdmobSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122000000000000000C0002 /* InterstitialAdmobSample.swift */; };
 		A123000000000000000C0001 /* MediaFeedShowcaseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123000000000000000C0002 /* MediaFeedShowcaseSample.swift */; };
+		A4DA04C2E2C8F0671656D661 /* InReadDirectLazyVGridSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FFB81A7EE38B8958F68D5 /* InReadDirectLazyVGridSample.swift */; };
+		A7EF5F832B6250777814F344 /* InReadDirectPagedTabViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D0703AEB711A339D52790 /* InReadDirectPagedTabViewSample.swift */; };
+		B000AB508FCAE03C9A397C0F /* ArticleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58D80AE43B8D98E6BD9C43 /* ArticleViews.swift */; };
+		BBEF5F60A5F6BF23C724BFCE /* SamplePID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0DD3A75428EE78E37BA1A /* SamplePID.swift */; };
+		C984A82F8E25C524A417E77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696A3545A3DEB03ED6AFA944 /* Assets.xcassets */; };
+		D424FAF6D05D9651462FD085 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43B1F28453F68D6A64A48C3 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A001000000000000000C0102 /* TeadsColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsColors.swift; sourceTree = "<group>"; };
-		A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsBrandNavigationBar.swift; sourceTree = "<group>"; };
-		A003000000000000000C0302 /* RootCatalogComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootCatalogComponents.swift; sourceTree = "<group>"; };
 		08F0DD3A75428EE78E37BA1A /* SamplePID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SamplePID.swift; sourceTree = "<group>"; };
 		1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */ = {isa = PBXFileReference; includeInIndex = 1; name = bootstrap.js; path = Resources/bootstrap.js; sourceTree = "<group>"; };
 		1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeadsSwiftUISampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,12 +66,9 @@
 		704A37B753E211D54854D2DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7228E6F7EA2AAB3AFC4899E3 /* InReadDirectWebViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectWebViewSample.swift; sourceTree = "<group>"; };
 		7264BE3BC917DCF8F6CED523 /* TeadsWebViewHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsWebViewHelper.swift; sourceTree = "<group>"; };
-		B56600F0CCF64B168167D368 /* ArticleContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleContent.swift; sourceTree = "<group>"; };
-		B8D85E4ACC538E3D5F543737 /* TeadsSwiftUISampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSwiftUISampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C98D0703AEB711A339D52790 /* InReadDirectPagedTabViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectPagedTabViewSample.swift; sourceTree = "<group>"; };
-		F43B1F28453F68D6A64A48C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F78FFB81A7EE38B8958F68D5 /* InReadDirectLazyVGridSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectLazyVGridSample.swift; sourceTree = "<group>"; };
-		FB58D80AE43B8D98E6BD9C43 /* ArticleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleViews.swift; sourceTree = "<group>"; };
+		A001000000000000000C0102 /* TeadsColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsColors.swift; sourceTree = "<group>"; };
+		A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsBrandNavigationBar.swift; sourceTree = "<group>"; };
+		A003000000000000000C0302 /* RootCatalogComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootCatalogComponents.swift; sourceTree = "<group>"; };
 		A101000000000000000C0002 /* CatalogModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CatalogModels.swift; sourceTree = "<group>"; };
 		A102000000000000000C0002 /* CatalogViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		A103000000000000000C0002 /* CustomPIDAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomPIDAlert.swift; sourceTree = "<group>"; };
@@ -98,6 +92,12 @@
 		A121000000000000000C0002 /* NativeSASTableViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativeSASTableViewSample.swift; sourceTree = "<group>"; };
 		A122000000000000000C0002 /* InterstitialAdmobSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InterstitialAdmobSample.swift; sourceTree = "<group>"; };
 		A123000000000000000C0002 /* MediaFeedShowcaseSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MediaFeedShowcaseSample.swift; sourceTree = "<group>"; };
+		B56600F0CCF64B168167D368 /* ArticleContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleContent.swift; sourceTree = "<group>"; };
+		B8D85E4ACC538E3D5F543737 /* TeadsSwiftUISampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeadsSwiftUISampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C98D0703AEB711A339D52790 /* InReadDirectPagedTabViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectPagedTabViewSample.swift; sourceTree = "<group>"; };
+		F43B1F28453F68D6A64A48C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F78FFB81A7EE38B8958F68D5 /* InReadDirectLazyVGridSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectLazyVGridSample.swift; sourceTree = "<group>"; };
+		FB58D80AE43B8D98E6BD9C43 /* ArticleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,18 +154,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		A000000000000000000C0000 /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				A001000000000000000C0102 /* TeadsColors.swift */,
-				A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */,
-				A003000000000000000C0302 /* RootCatalogComponents.swift */,
-				A103000000000000000C0002 /* CustomPIDAlert.swift */,
-			);
-			name = DesignSystem;
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
 		382C97110311500558500ED0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,62 +207,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		ACD87A98A76D2784F4B45B5F /* TeadsSwiftUISampleApp */ = {
+		A000000000000000000C0000 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				A000000000000000000C0000 /* DesignSystem */,
-				3033C8088DF79451F9064A66 /* Helpers */,
-				0BD1F8DC72B0782F86D3B912 /* Models */,
-				A300000000000000000A0000 /* ViewModels */,
-				877FEE5D96BA28F5FD9D3BAE /* Resources */,
-				257B5012139583F4B6770965 /* RootCatalogView.swift */,
-				742C449C8201B4D9C769FCFB /* SDKExtensions */,
-				43058B981CD46450A52DE052 /* Samples */,
-				41BB1B9959EB98BD44A9FEA6 /* TeadsSwiftUISampleAppApp.swift */,
-				696A3545A3DEB03ED6AFA944 /* Assets.xcassets */,
+				A001000000000000000C0102 /* TeadsColors.swift */,
+				A002000000000000000C0202 /* TeadsBrandNavigationBar.swift */,
+				A003000000000000000C0302 /* RootCatalogComponents.swift */,
+				A103000000000000000C0002 /* CustomPIDAlert.swift */,
 			);
-			name = TeadsSwiftUISampleApp;
-			path = TeadsSwiftUISampleApp;
-			sourceTree = "<group>";
-		};
-		D169BB4363840EBEE33DEA54 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				7264BE3BC917DCF8F6CED523 /* TeadsWebViewHelper.swift */,
-				1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */,
-			);
-			name = Shared;
-			path = TeadsSampleApp/WebViewHelper;
-			sourceTree = "<group>";
-		};
-		D7823D596D177D59DC754A88 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F43B1F28453F68D6A64A48C3 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		EB358D7E54E17D5AF06EE80A /* InRead */ = {
-			isa = PBXGroup;
-			children = (
-				A105000000000000000C0002 /* WebViewArticleHTML.swift */,
-				25EC1E7353E6C62F7145CE57 /* Direct */,
-				A305000000000000000A0000 /* Admob */,
-				A306000000000000000A0000 /* AppLovin */,
-				A307000000000000000A0000 /* SAS */,
-			);
-			name = InRead;
-			path = InRead;
-			sourceTree = "<group>";
-		};
-		EE62296142E2C4383DA164B9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7823D596D177D59DC754A88 /* iOS */,
-				1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */,
-			);
-			name = Frameworks;
+			name = DesignSystem;
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		A300000000000000000A0000 /* ViewModels */ = {
@@ -396,6 +338,64 @@
 			path = SAS;
 			sourceTree = "<group>";
 		};
+		ACD87A98A76D2784F4B45B5F /* TeadsSwiftUISampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				A000000000000000000C0000 /* DesignSystem */,
+				3033C8088DF79451F9064A66 /* Helpers */,
+				0BD1F8DC72B0782F86D3B912 /* Models */,
+				A300000000000000000A0000 /* ViewModels */,
+				877FEE5D96BA28F5FD9D3BAE /* Resources */,
+				257B5012139583F4B6770965 /* RootCatalogView.swift */,
+				742C449C8201B4D9C769FCFB /* SDKExtensions */,
+				43058B981CD46450A52DE052 /* Samples */,
+				41BB1B9959EB98BD44A9FEA6 /* TeadsSwiftUISampleAppApp.swift */,
+				696A3545A3DEB03ED6AFA944 /* Assets.xcassets */,
+			);
+			name = TeadsSwiftUISampleApp;
+			path = TeadsSwiftUISampleApp;
+			sourceTree = "<group>";
+		};
+		D169BB4363840EBEE33DEA54 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7264BE3BC917DCF8F6CED523 /* TeadsWebViewHelper.swift */,
+				1D50EB58B6BCD4B51DD4B9E2 /* bootstrap.js */,
+			);
+			name = Shared;
+			path = TeadsSampleApp/WebViewHelper;
+			sourceTree = "<group>";
+		};
+		D7823D596D177D59DC754A88 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F43B1F28453F68D6A64A48C3 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EB358D7E54E17D5AF06EE80A /* InRead */ = {
+			isa = PBXGroup;
+			children = (
+				A105000000000000000C0002 /* WebViewArticleHTML.swift */,
+				25EC1E7353E6C62F7145CE57 /* Direct */,
+				A305000000000000000A0000 /* Admob */,
+				A306000000000000000A0000 /* AppLovin */,
+				A307000000000000000A0000 /* SAS */,
+			);
+			name = InRead;
+			path = InRead;
+			sourceTree = "<group>";
+		};
+		EE62296142E2C4383DA164B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7823D596D177D59DC754A88 /* iOS */,
+				1F60571993F02DD9DAE255BE /* Pods_TeadsSwiftUISampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -471,14 +471,14 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppLovinSDK/AppLovinSDK.framework/AppLovinSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Smart-Display-SDK/SASDisplayKit.framework/SASDisplayKit",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/TeadsSDK.framework/TeadsSDK",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/OMSDK_Teadstv.framework/OMSDK_Teadstv",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TeadsSDK/Core/OMSDK_Teads.framework/OMSDK_Teads",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppLovinSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SASDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TeadsSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Teadstv.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Teads.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

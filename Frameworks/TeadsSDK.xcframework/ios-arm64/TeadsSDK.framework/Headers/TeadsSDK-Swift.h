@@ -589,6 +589,22 @@ SWIFT_CLASS("_TtC8TeadsSDK5Teads")
 /// This value does not rely anymore on <code>CFBundleShortVersionString</code> plist value since Xcode auto update all versions declared in plists with app bundle version value during archive process
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
+/// Global test mode setting that applies to all placements
+/// When enabled, this will automatically enable debug mode for all placements created through the SDK.
+/// This setting takes precedence over individual placement settings.
+/// warning:
+/// Remember to disable this setting when going to production
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testMode;)
++ (BOOL)testMode SWIFT_WARN_UNUSED_RESULT;
++ (void)setTestMode:(BOOL)newValue;
+/// Global crash monitoring setting that applies to all placements
+/// When disabled, this will automatically disable crash monitoring for all placements created through the SDK.
+/// This setting takes precedence over individual placement settings.
+/// note:
+/// Crash monitoring is enabled by default. Set to false to disable globally.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isCrashMonitoringEnabled;)
++ (BOOL)isCrashMonitoringEnabled SWIFT_WARN_UNUSED_RESULT;
++ (void)setIsCrashMonitoringEnabled:(BOOL)value;
 /// Specifies the wrapper framework type and version used to integrate the Teads SDK.
 /// This property is <code>nil</code> for native iOS integration (default).
 /// Set this property only when using Flutter or React Native as a wrapper framework.
@@ -611,17 +627,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) WrapperFrameworkInfo * _Nullable wrapperFrameworkInfo;)
 + (WrapperFrameworkInfo * _Nullable)wrapperFrameworkInfo SWIFT_WARN_UNUSED_RESULT;
 + (void)setWrapperFrameworkInfo:(WrapperFrameworkInfo * _Nullable)value;
-/// Enables test mode for the SDK.
-/// When set to <code>true</code>, the SDK operates in test mode, which adds a <code>testMode</code> parameter
-/// to ad requests and switches widget events to testing mode.
-/// <em>Default value</em>: <code>false</code>
-/// \code
-/// Teads.testMode = true
-///
-/// \endcode
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testMode;)
-+ (BOOL)testMode SWIFT_WARN_UNUSED_RESULT;
-+ (void)setTestMode:(BOOL)newValue;
 /// Create an inRead ad placement to request inRead ads
 /// important:
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
@@ -636,7 +641,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testMode;)
 ///
 /// returns:
 /// TeadsInReadAdPlacement instance, this instance must be owned/retained
-+ (id <TeadsInReadAdPlacement> _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate;
++ (id <TeadsInReadAdPlacement> _Nullable)createInReadPlacementWithPid:(NSInteger)pid settings:(TeadsAdPlacementSettings * _Nonnull)settings delegate:(id <TeadsInReadAdPlacementDelegate> _Nullable)delegate SWIFT_DEPRECATED_MSG("This legacy placement API will be removed in the next major version. Please migrate to the new CombinedSDK using Teads.createPlacement<TeadsAdPlacementMedia>(with:delegate:). For migration guidance, visit https://developers.teads.com/");
 /// Create an  inRead ad placement to request load Prebid ad response
 /// important:
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly: you can free placement instance on       <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code> or  <code>TeadsAdPlacementDelegate/didFailToReceiveAd(reason:)</code>
@@ -754,12 +759,51 @@ SWIFT_CLASS("_TtC8TeadsSDK29TeadsAdOpportunityTrackerView")
 - (void)removeFromSuperview;
 @end
 
-SWIFT_PROTOCOL("_TtP8TeadsSDK16TeadsAdPlacement_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK16TeadsAdPlacement_") SWIFT_DEPRECATED_MSG("This legacy placement protocol will be removed in the next major version. Please migrate to the new CombinedSDK using TeadsAdPlacementProtocol. For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsAdPlacement
 /// Your Teads placement identifier for <em>inRead</em> or <em>native</em> ads
 /// note:
 /// no use for <code>TeadsPrebidAdPlacement</code>
 @property (nonatomic, readonly) NSInteger pid;
+@end
+
+@protocol TeadsAdPlacementEventsDelegate;
+@protocol UIViewControllerTransitionCoordinator;
+SWIFT_CLASS("_TtC8TeadsSDK22TeadsAdPlacementBanner")
+@interface TeadsAdPlacementBanner : NSObject
+- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey userId:(NSString * _Nullable)userId darkMode:(BOOL)darkMode extId:(NSString * _Nullable)extId extSecondaryId:(NSString * _Nullable)extSecondaryId obPubImp:(NSString * _Nullable)obPubImp delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
+/// Creates a banner placement with a bid floor price.
+/// Use this initializer from Objective-C. Swift callers should use
+/// <code>TeadsAdPlacementBannerConfig</code> and <code>TeadsAdPlacementBanner/init(_:delegate:)</code> instead.
+/// \param floorPrice Bid floor price in <em>US cents</em>. Only positive values are forwarded to the
+/// bridge as <code>pbf</code>. Pass <code>0</code> if no floor price is required.
+///
+- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey userId:(NSString * _Nullable)userId darkMode:(BOOL)darkMode extId:(NSString * _Nullable)extId extSecondaryId:(NSString * _Nullable)extSecondaryId obPubImp:(NSString * _Nullable)obPubImp floorPrice:(NSInteger)floorPrice delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
+- (UIView * _Nonnull)getAdView SWIFT_WARN_UNUSED_RESULT;
+- (void)toggleDarkMode:(BOOL)darkMode;
+- (void)viewWillTransitionTo:(CGSize)size with:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum TeadsAdPlacementType : NSInteger;
+SWIFT_PROTOCOL("_TtP8TeadsSDK28TeadsAdPlacementIdentifiable_")
+@protocol TeadsAdPlacementIdentifiable
+@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
+@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
+@end
+
+@interface TeadsAdPlacementBanner (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
+@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
+@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
+@end
+
+@interface TeadsAdPlacementBanner (SWIFT_EXTENSION(TeadsSDK))
+/// Routed via the view model so pre-fill heights are buffered, not leaked.
+- (void)didChangeHeight:(CGFloat)newHeight;
+- (void)widgetEvent:(NSString * _Nonnull)eventName additionalData:(NSDictionary<NSString *, id> * _Nonnull)additionalData;
+- (void)onRecClick:(NSURL * _Nonnull)url;
+- (void)onOrganicRecClick:(NSURL * _Nonnull)url;
 @end
 
 /// Log delegate enabling you to route every log message written in console into a dedicated area of your choice
@@ -773,7 +817,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK23TeadsLogMessageDelegate_")
 @end
 
 /// Root placement delegate methods needed to follow Teads ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK24TeadsAdPlacementDelegate_") SWIFT_DEPRECATED_MSG("This legacy placement delegate protocol will be removed in the next major version. Please migrate to the new CombinedSDK using TeadsAdPlacementEventsDelegate. For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsAdPlacementDelegate <TeadsLogMessageDelegate>
 /// Called when the Teads SDK has not received an ad, the reason will be detailled in the parameter
 /// \param reason an object that contains the fail reason
@@ -801,7 +845,6 @@ typedef SWIFT_ENUM(NSInteger, TeadsAdPlacementEventName, open) {
   TeadsAdPlacementEventNameHeightUpdated = 12,
 };
 
-@protocol TeadsAdPlacementIdentifiable;
 SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsAdPlacementEventsDelegate_")
 @protocol TeadsAdPlacementEventsDelegate <NSObject>
 - (void)adPlacement:(id <TeadsAdPlacementIdentifiable> _Nullable)placement didEmitEvent:(enum TeadsAdPlacementEventName)event data:(NSDictionary<NSString *, id> * _Nullable)data;
@@ -810,9 +853,18 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsAdPlacementEventsDelegate_")
 SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdPlacementFeed")
 @interface TeadsAdPlacementFeed : NSObject
 - (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey widgetIndex:(NSInteger)widgetIndex userId:(NSString * _Nullable)userId darkMode:(BOOL)darkMode extId:(NSString * _Nullable)extId extSecondaryId:(NSString * _Nullable)extSecondaryId obPubImp:(NSString * _Nullable)obPubImp delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
+/// Creates a feed placement with a bid floor price.
+/// Use this initializer from Objective-C. Swift callers should use
+/// <code>TeadsAdPlacementFeedConfig</code> and <code>TeadsAdPlacementFeed/init(_:delegate:)</code> instead.
+/// \param floorPrice Bid floor price in <em>US cents</em>. Only positive values are forwarded to the
+/// bridge as <code>pbf</code>. Pass <code>0</code> if no floor price is required.
+///
+- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey widgetIndex:(NSInteger)widgetIndex userId:(NSString * _Nullable)userId darkMode:(BOOL)darkMode extId:(NSString * _Nullable)extId extSecondaryId:(NSString * _Nullable)extSecondaryId obPubImp:(NSString * _Nullable)obPubImp floorPrice:(NSInteger)floorPrice delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
 - (UIView * _Nonnull)getAdView SWIFT_WARN_UNUSED_RESULT;
 - (void)toggleDarkMode:(BOOL)darkMode;
 - (void)showExploreMoreOnExploreMoreDismissed:(void (^ _Nullable)(void))onExploreMoreDismissed;
+- (void)reportPageViewOnTheSameWidget;
+- (void)viewWillTransitionTo:(CGSize)size with:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -824,16 +876,13 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdPlacementFeed")
 - (void)onOrganicRecClick:(NSURL * _Nonnull)url;
 @end
 
-enum TeadsAdPlacementType : NSInteger;
-SWIFT_PROTOCOL("_TtP8TeadsSDK28TeadsAdPlacementIdentifiable_")
-@protocol TeadsAdPlacementIdentifiable
-@property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
-@property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
-@end
-
 @interface TeadsAdPlacementFeed (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
 @property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
 @property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
+/// Test display mode setting for feed placements
+/// When enabled, this will enable test display mode for all feed placements.
+/// note:
+/// Test display mode is disabled by default. Set to true to enable for feed placements.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testDisplay;)
 + (BOOL)testDisplay SWIFT_WARN_UNUSED_RESULT;
 + (void)setTestDisplay:(BOOL)value;
@@ -841,6 +890,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL infiniteWidgetsOnTheSameP
 + (BOOL)infiniteWidgetsOnTheSamePage SWIFT_WARN_UNUSED_RESULT;
 + (void)setInfiniteWidgetsOnTheSamePage:(BOOL)value;
 + (void)printLogsWithDomain:(NSString * _Nullable)domain;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable organicReferrerUrl;)
++ (NSString * _Nullable)organicReferrerUrl SWIFT_WARN_UNUSED_RESULT;
++ (void)setOrganicReferrerUrl:(NSString * _Nullable)newValue;
 @end
 
 /// Interstitial ad placement that presents a fullscreen ad webview
@@ -851,6 +903,13 @@ SWIFT_CLASS("_TtC8TeadsSDK28TeadsAdPlacementInterstitial")
 /// Check if interstitial is ready to show
 @property (nonatomic, readonly) BOOL isReady;
 - (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
+/// Creates an interstitial placement with a bid floor price.
+/// Use this initializer from Objective-C. Swift callers should use
+/// <code>TeadsAdPlacementInterstitialConfig</code> and <code>TeadsAdPlacementInterstitial/init(_:delegate:)</code> instead.
+/// \param floorPrice Bid floor price in <em>US cents</em>. Only positive values are forwarded to the
+/// bridge as <code>pbf</code>. Pass <code>0</code> if no floor price is required.
+///
+- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId installationKey:(NSString * _Nonnull)installationKey floorPrice:(NSInteger)floorPrice delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
 /// Deterministic cleanup — stops timers, finishes OM session, removes views.
 /// Safe to call multiple times. After invalidation the placement can be reloaded via <code>loadAd()</code>.
 - (void)invalidate;
@@ -884,6 +943,13 @@ SWIFT_CLASS("_TtC8TeadsSDK21TeadsAdPlacementMedia")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdDelegate>
+- (UIViewController * _Nullable)willPresentModalViewWithAd:(TeadsAd * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)didRecordImpressionWithAd:(TeadsAd * _Nonnull)_;
+- (void)didRecordClickWithAd:(TeadsAd * _Nonnull)_;
+- (void)didCatchErrorWithAd:(TeadsAd * _Nonnull)_ error:(NSError * _Nonnull)error;
+@end
+
 @interface TeadsAdPlacementMedia (SWIFT_EXTENSION(TeadsSDK)) <TeadsAdPlacementIdentifiable>
 @property (nonatomic, readonly, copy) NSString * _Nonnull placementId;
 @property (nonatomic, readonly) enum TeadsAdPlacementType placementType;
@@ -892,7 +958,7 @@ SWIFT_CLASS("_TtC8TeadsSDK21TeadsAdPlacementMedia")
 @class TeadsInReadAd;
 @class TeadsAdRatio;
 /// Delegate methods needed to follow Teads inRead ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsInReadAdPlacementDelegate_") SWIFT_DEPRECATED_MSG("This legacy InRead placement delegate will be removed in the next major version. Please migrate to the new CombinedSDK using TeadsAdPlacementEventsDelegate. For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsInReadAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
@@ -974,7 +1040,7 @@ SWIFT_CLASS("_TtC8TeadsSDK27TeadsAdPlacementMediaNative")
 
 @class TeadsNativeAd;
 /// Delegate methods needed to follow Teads native ad requests flow
-SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_") SWIFT_DEPRECATED_MSG("This legacy Native placement delegate will be removed in the next major version. Please migrate to the new CombinedSDK using TeadsAdPlacementEventsDelegate. For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsNativeAdPlacementDelegate <TeadsAdPlacementDelegate>
 /// Called when the Teads SDK has received an ad for you to display
 /// \param ad The teadsAd object
@@ -1005,7 +1071,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK30TeadsNativeAdPlacementDelegate_")
 
 SWIFT_CLASS("_TtC8TeadsSDK31TeadsAdPlacementRecommendations")
 @interface TeadsAdPlacementRecommendations : NSObject
-- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId widgetIndex:(NSInteger)widgetIndex delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
+- (nonnull instancetype)initWithArticleUrl:(NSURL * _Nonnull)articleUrl widgetId:(NSString * _Nonnull)widgetId widgetIndex:(NSInteger)widgetIndex externalID:(NSString * _Nullable)externalID delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
 /// Convenience initializer for platform requests
 - (nonnull instancetype)initWithWidgetId:(NSString * _Nonnull)widgetId widgetIndex:(NSInteger)widgetIndex contentUrl:(NSString * _Nullable)contentUrl portalUrl:(NSString * _Nullable)portalUrl bundleUrl:(NSString * _Nullable)bundleUrl lang:(NSString * _Nullable)lang psub:(NSString * _Nullable)psub delegate:(id <TeadsAdPlacementEventsDelegate> _Nullable)delegate;
 - (void)loadAdWithCompletion:(void (^ _Nonnull)(OBRecommendationResponse * _Nonnull))completion;
@@ -1025,6 +1091,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable tes
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testRTB;)
 + (BOOL)testRTB SWIFT_WARN_UNUSED_RESULT;
 + (void)setTestRTB:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable customUserId;)
++ (NSString * _Nullable)customUserId SWIFT_WARN_UNUSED_RESULT;
++ (void)setCustomUserId:(NSString * _Nullable)value;
 @end
 
 /// Specify which settings you want to set for your Teads placement.
@@ -1098,10 +1167,11 @@ typedef SWIFT_ENUM(NSInteger, TeadsAdPlacementType, open) {
   TeadsAdPlacementTypeMediaNative = 2,
   TeadsAdPlacementTypeRecommendations = 3,
   TeadsAdPlacementTypeInterstitial = 4,
+  TeadsAdPlacementTypeBanner = 5,
 };
 
 /// This class is used to help in resizing a given ad view to a given aspect ratio.
-SWIFT_CLASS("_TtC8TeadsSDK12TeadsAdRatio")
+SWIFT_CLASS("_TtC8TeadsSDK12TeadsAdRatio") SWIFT_DEPRECATED_MSG("This legacy ad ratio class will be removed in the next major version. Please migrate to the new CombinedSDK. For migration guidance, visit https://developers.teads.com/")
 @interface TeadsAdRatio : NSObject
 /// The <code>zero</code> size ratio.
 /// note:
@@ -1321,6 +1391,12 @@ SWIFT_CLASS("_TtC8TeadsSDK20TeadsAdapterSettings")
 /// important:
 /// Adapters internal purpose only
 - (void)setIntegrationWithType:(TeadsAdapterIntegrationType * _Nonnull)integration version:(NSString * _Nonnull)version;
+/// Set the bid floor price in US cents.
+/// The value is forwarded to the MV bridge under the <code>pbf</code> key.
+/// Non-positive values are ignored — pass a value <code>> 0</code> to set a floor price.
+/// \param price Floor price in US cents. Must be greater than zero.
+///
+- (void)setFloorPrice:(NSInteger)price;
 @end
 
 /// Fullscreen lifecycle events emitted by placements that present content fullscreen (e.g. interstitial).
@@ -1343,7 +1419,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK29TeadsFullScreenEventsDelegate_")
 /// This instance is returned through <code>TeadsInReadAdPlacementDelegate/didReceiveAd(ad:adRatio:)</code>
 /// note:
 /// you need use <code>TeadsInReadAdView</code> to bind a <code>TeadsInReadAd</code>
-SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
+SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd") SWIFT_DEPRECATED_MSG("This legacy InRead ad class will be removed in the next major version. Please migrate to the new CombinedSDK using TeadsAdPlacementMedia. For migration guidance, visit https://developers.teads.com/")
 @interface TeadsInReadAd : TeadsAd
 @end
 
@@ -1361,7 +1437,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsInReadAd")
 /// You must own/retain <code>TeadsInReadAdPlacement</code> instance, otherwise ads could not be delivered properly
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314722-inread-classic-integration">InRead implementation guide</a> documentation
-SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsInReadAdPlacement_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsInReadAdPlacement_") SWIFT_DEPRECATED_MSG("This legacy InRead placement protocol will be removed in the next major version. Please migrate to the new CombinedSDK using Teads.createPlacement<TeadsAdPlacementMedia>(with:delegate:). For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsInReadAdPlacement <TeadsAdPlacement>
 /// TeadsInReadAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, strong) id <TeadsInReadAdPlacementDelegate> _Nullable delegate;
@@ -1495,7 +1571,7 @@ SWIFT_CLASS("_TtC8TeadsSDK13TeadsNativeAd")
 /// You must own/retain <code>TeadsNativeAdPlacement</code> instance, otherwise ads could not be delivered properly
 /// note:
 /// See <a href="https://support.teads.tv/support/solutions/articles/36000314757-native-ad-classic-integration">Native implementation guide</a> documentation
-SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsNativeAdPlacement_")
+SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsNativeAdPlacement_") SWIFT_DEPRECATED_MSG("This legacy Native placement protocol will be removed in the next major version. Please migrate to the new CombinedSDK using Teads.createPlacement<TeadsAdPlacementFeed>(with:delegate:) or Teads.createPlacement<TeadsAdPlacementMediaNative>(with:delegate:). For migration guidance, visit https://developers.teads.com/")
 @protocol TeadsNativeAdPlacement <TeadsAdPlacement>
 /// TeadsNativeAdPlacementDelegate to follow ad placement lifecycle
 @property (nonatomic, strong) id <TeadsNativeAdPlacementDelegate> _Nullable delegate;
@@ -1597,6 +1673,7 @@ SWIFT_PROTOCOL("_TtP8TeadsSDK22TeadsPrebidAdPlacement_")
 - (NSDictionary * _Nullable)getDataWithRequestSettings:(TeadsAdRequestSettings * _Nonnull)requestSettings error:(NSError * _Nullable * _Nullable)error;
 @end
 
+@class NSNumber;
 SWIFT_CLASS("_TtC8TeadsSDK12TeadsPrivacy")
 @interface TeadsPrivacy : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1665,6 +1742,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TeadsPrivacy
 @property (nonatomic, readonly, copy) NSString * _Nullable idfaString;
 /// Request IDFA permission (iOS 14+)
 - (void)requestIDFAPermissionWithCompletion:(void (^ _Nonnull)(BOOL))completion SWIFT_AVAILABILITY(ios,introduced=14);
+/// Get CMP SDK ID from UserDefaults (TCFv2)
+@property (nonatomic, readonly, strong) NSNumber * _Nullable cmpSdkID;
 /// Check if CMP is present
 @property (nonatomic, readonly) BOOL isCMPPresent;
 @end

@@ -1,0 +1,4 @@
+framework module TeadsPBMPluginRenderer {
+  header "TeadsPBMPluginRenderer-Swift.h"
+  requires objc
+}

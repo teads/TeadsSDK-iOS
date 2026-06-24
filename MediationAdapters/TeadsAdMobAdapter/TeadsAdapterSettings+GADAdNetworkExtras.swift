@@ -32,7 +32,7 @@ import TeadsSDK
     ///  request.register(adSettings)
     ///  ```
     @available(*, unavailable, message: "customEventExtra is not available anymore, you can register TeadsAdapterSettings directly calling `GADRequest.register(_ )")
-    @objc public class func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String) -> GADCustomEventExtras {
+    @objc public static func customEventExtra(with teadsAdSettings: TeadsAdapterSettings, for label: String) -> GADCustomEventExtras {
         let customEventExtras = CustomEventExtras()
         if let parameters = try? teadsAdSettings.toDictionary() {
             customEventExtras.setExtras(parameters, forLabel: label)

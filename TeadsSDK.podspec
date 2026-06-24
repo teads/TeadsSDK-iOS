@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = "TeadsSDK"
-    s.version               = "6.1.0"
+    s.version               = "6.2.0"
     s.summary               = "Teads' iOS SDK"
     s.module_name           = s.name
     s.description           = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     s.default_subspec     = 'Core'
 
     s.subspec 'Core' do |core|
-      core.preserve_paths        = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
-      core.vendored_frameworks   = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teadstv.xcframework"
+      core.preserve_paths        = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teads.xcframework"
+      core.vendored_frameworks   = "Frameworks/#{s.name}.xcframework", "Frameworks/OMSDK_Teads.xcframework"
     end
 end

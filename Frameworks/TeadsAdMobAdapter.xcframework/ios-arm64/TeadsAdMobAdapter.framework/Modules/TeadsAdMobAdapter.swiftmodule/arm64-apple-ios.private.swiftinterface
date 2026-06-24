@@ -1,0 +1,139 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TeadsAdMobAdapter
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import Foundation
+import GoogleMobileAds
+import Swift
+@_spi(Adapters) import TeadsSDK
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum AdMobHelper {
+  public static func getGMAVersionNumber() -> Swift.String
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsNative) final public class GADMAdapterTeadsNative : TeadsAdMobAdapter.GADMAdapterTeadsCustomEvent {
+  @objc final public func loadNativeAd(for adConfiguration: GoogleMobileAds.MediationNativeAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationNativeLoadCompletionHandler)
+  @objc required dynamic public init()
+  @objc deinit
+}
+public enum Helper {
+  public static func bannerSize(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+}
+@available(*, deprecated, renamed: "TeadsAdapterSettings", message: "Only relevant when using TeadsAdMobAdapter, TeadsAppLovinAdapter, TeadsSmartAdapter")
+public typealias TeadsAdSettings = TeadsSDK.TeadsAdapterSettings
+public enum TeadsAdapterErrorCode : Swift.Int {
+  case pidNotFound
+  case serverParameterError
+  case loadError
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+extension TeadsSDK.TeadsInReadAdView {
+  @_Concurrency.MainActor @preconcurrency final public func updateHeight(with adRatio: TeadsSDK.TeadsAdRatio)
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsBanner) final public class GADMAdapterTeadsBanner : TeadsAdMobAdapter.GADMAdapterTeadsCustomEvent {
+  @objc final public func loadBanner(for adConfiguration: GoogleMobileAds.MediationBannerAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationBannerLoadCompletionHandler)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsInterstitial) final public class GADMAdapterTeadsInterstitial : TeadsAdMobAdapter.GADMAdapterTeadsCustomEvent {
+  @objc final public func loadInterstitial(for adConfiguration: GoogleMobileAds.MediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsInterstitialAd) final public class GADMAdapterTeadsInterstitialAd : ObjectiveC.NSObject, GoogleMobileAds.MediationInterstitialAd {
+  final public func loadInterstitial(for adConfiguration: GoogleMobileAds.MediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
+  @objc final public func present(from viewController: UIKit.UIViewController)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension TeadsAdMobAdapter.GADMAdapterTeadsInterstitialAd : TeadsSDK.TeadsAdPlacementEventsDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func adPlacement(_: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
+  #endif
+}
+extension TeadsAdMobAdapter.GADMAdapterTeadsInterstitialAd : TeadsSDK.TeadsFullScreenEventsDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func fullScreenPlacement(_ placement: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsFullScreenEventName, data: [Swift.String : Any]?)
+  #endif
+}
+@_spi(Adapters) extension TeadsAdMobAdapter.GADMAdapterTeadsInterstitialAd : TeadsSDK.AdapterIntegrationProviding {
+  @_spi(Adapters) final public var adapterIntegrationType: TeadsSDK.TeadsAdapterIntegrationType {
+    @_spi(Adapters) get
+  }
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsCustomEvent) public class GADMAdapterTeadsCustomEvent : ObjectiveC.NSObject, GoogleMobileAds.MediationAdapter {
+  @objc public static func adSDKVersion() -> GoogleMobileAds.VersionNumber
+  @objc public static func adapterVersion() -> GoogleMobileAds.VersionNumber
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func networkExtrasClass() -> (any GoogleMobileAds.AdNetworkExtras.Type)?
+  #endif
+  @objc public static func setUp(with _: GoogleMobileAds.MediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
+  @objc override required dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(GADMAdapterTeadsBannerAd) final public class GADMAdapterTeadsBannerAd : ObjectiveC.NSObject, GoogleMobileAds.MediationBannerAd {
+  @objc final public var view: UIKit.UIView {
+    @objc get
+  }
+  final public func loadBanner(for adConfiguration: GoogleMobileAds.MediationBannerAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationBannerLoadCompletionHandler)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension TeadsAdMobAdapter.GADMAdapterTeadsBannerAd : TeadsSDK.TeadsInReadAdPlacementDelegate {
+  @objc final public func didReceiveAd(ad: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+  @objc final public func didFailToReceiveAd(reason: TeadsSDK.AdFailReason)
+  @objc final public func adOpportunityTrackerView(trackerView _: TeadsSDK.TeadsAdOpportunityTrackerView)
+  @objc final public func didUpdateRatio(ad _: TeadsSDK.TeadsInReadAd, adRatio: TeadsSDK.TeadsAdRatio)
+}
+extension TeadsAdMobAdapter.GADMAdapterTeadsBannerAd : TeadsSDK.TeadsAdDelegate {
+  @objc final public func didRecordImpression(ad _: TeadsSDK.TeadsAd)
+  @objc final public func didRecordClick(ad _: TeadsSDK.TeadsAd)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func willPresentModalView(ad _: TeadsSDK.TeadsAd) -> UIKit.UIViewController?
+  #endif
+  @objc final public func didCatchError(ad _: TeadsSDK.TeadsAd, error: any Swift.Error)
+  @objc final public func didExpandedToFullscreen(ad _: TeadsSDK.TeadsAd)
+  @objc final public func didCollapsedFromFullscreen(ad _: TeadsSDK.TeadsAd)
+}
+extension TeadsAdMobAdapter.GADMAdapterTeadsBannerAd : TeadsSDK.TeadsAdPlacementEventsDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func adPlacement(_: (any TeadsSDK.TeadsAdPlacementIdentifiable)?, didEmitEvent event: TeadsSDK.TeadsAdPlacementEventName, data: [Swift.String : Any]?)
+  #endif
+}
+@_spi(Adapters) extension TeadsAdMobAdapter.GADMAdapterTeadsBannerAd : TeadsSDK.AdapterIntegrationProviding {
+  @_spi(Adapters) final public var adapterIntegrationType: TeadsSDK.TeadsAdapterIntegrationType {
+    @_spi(Adapters) get
+  }
+}
+@_inheritsConvenienceInitializers @objc final public class GADMAdapterTeads : ObjectiveC.NSObject {
+  @available(*, deprecated, message: "defaultLabel is not used anymore please pass your label value as parameter of the customEventExtra method")
+  @objc public static let defaultLabel: Swift.String
+  @available(*, unavailable, message: "customEventExtra is not available anymore, you can register TeadsAdapterSettings directly calling `GADRequest.register(_ )")
+  @objc public static func customEventExtra(with teadsAdSettings: TeadsSDK.TeadsAdapterSettings, for label: Swift.String) -> GoogleMobileAds.GADCustomEventExtras
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension TeadsSDK.TeadsAdapterSettings : GoogleMobileAds.AdNetworkExtras {
+}
+extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.Equatable {}
+extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.Hashable {}
+extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.RawRepresentable {}

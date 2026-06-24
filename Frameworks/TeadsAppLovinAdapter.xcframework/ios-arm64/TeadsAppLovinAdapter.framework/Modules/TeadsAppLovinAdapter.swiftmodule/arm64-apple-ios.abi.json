@@ -1,0 +1,1174 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TeadsAppLovinAdapter",
+    "printedName": "TeadsAppLovinAdapter",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "AppLovinSDK",
+        "printedName": "AppLovinSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "AppLovinSDK",
+        "printedName": "AppLovinSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Helper",
+        "printedName": "Helper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "bannerSize",
+            "printedName": "bannerSize(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20TeadsAppLovinAdapter6HelperO10bannerSize3forSo6CGSizeV14CoreFoundation7CGFloatV_tFZ",
+            "mangledName": "$s20TeadsAppLovinAdapter6HelperO10bannerSize3forSo6CGSizeV12CoreGraphics7CGFloatV_tFZ",
+            "moduleName": "TeadsAppLovinAdapter",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20TeadsAppLovinAdapter6HelperO",
+        "mangledName": "$s20TeadsAppLovinAdapter6HelperO",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsAdapterErrorCode",
+        "printedName": "TeadsAdapterErrorCode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "pidNotFound",
+            "printedName": "pidNotFound",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type) -> TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsAdapterErrorCode",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                    "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsAdapterErrorCode",
+                        "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                        "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO11pidNotFoundyA2CmF",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO11pidNotFoundyA2CmF",
+            "moduleName": "TeadsAppLovinAdapter"
+          },
+          {
+            "kind": "Var",
+            "name": "serverParameterError",
+            "printedName": "serverParameterError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type) -> TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsAdapterErrorCode",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                    "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsAdapterErrorCode",
+                        "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                        "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO015serverParameterE0yA2CmF",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO015serverParameterE0yA2CmF",
+            "moduleName": "TeadsAppLovinAdapter"
+          },
+          {
+            "kind": "Var",
+            "name": "loadError",
+            "printedName": "loadError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type) -> TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsAdapterErrorCode",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                    "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TeadsAdapterErrorCode",
+                        "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                        "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO04loadE0yA2CmF",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO04loadE0yA2CmF",
+            "moduleName": "TeadsAppLovinAdapter"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TeadsAdapterErrorCode",
+                    "printedName": "TeadsAppLovinAdapter.TeadsAdapterErrorCode",
+                    "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueACSgSi_tcfc",
+            "moduleName": "TeadsAppLovinAdapter",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueSivp",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueSivp",
+            "moduleName": "TeadsAppLovinAdapter",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueSivg",
+                "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO8rawValueSivg",
+                "moduleName": "TeadsAppLovinAdapter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDomain",
+            "printedName": "errorDomain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO11errorDomainSSvpZ",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO11errorDomainSSvpZ",
+            "moduleName": "TeadsAppLovinAdapter",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO11errorDomainSSvgZ",
+                "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO11errorDomainSSvgZ",
+                "moduleName": "TeadsAppLovinAdapter",
+                "static": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO05errorF0Sivp",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO05errorF0Sivp",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO05errorF0Sivg",
+                "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO05errorF0Sivg",
+                "moduleName": "TeadsAppLovinAdapter",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorUserInfo",
+            "printedName": "errorUserInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO13errorUserInfoSDySSypGvp",
+            "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO13errorUserInfoSDySSypGvp",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO13errorUserInfoSDySSypGvg",
+                "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO13errorUserInfoSDySSypGvg",
+                "moduleName": "TeadsAppLovinAdapter",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20TeadsAppLovinAdapter0aD9ErrorCodeO",
+        "mangledName": "$s20TeadsAppLovinAdapter0aD9ErrorCodeO",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomNSError",
+            "printedName": "CustomNSError",
+            "usr": "s:10Foundation13CustomNSErrorP",
+            "mangledName": "$s10Foundation13CustomNSErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "AppLovinSDK",
+        "printedName": "AppLovinSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TeadsSDK",
+        "printedName": "TeadsSDK",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TeadsAppLovinAdapter"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MANativeAdLoader",
+        "printedName": "MANativeAdLoader",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(teadsAdSettings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdapterSettings",
+                "printedName": "TeadsSDK.TeadsAdapterSettings",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdapterSettings"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsAppLovinAdapter@@objc(cs)MANativeAdLoader(im)registerWithTeadsAdSettings:",
+            "mangledName": "$sSo16MANativeAdLoaderC20TeadsAppLovinAdapterE8register05teadsB8Settingsy0D3SDK0dgJ0C_tF",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)MANativeAdLoader",
+        "moduleName": "AppLovinSDK",
+        "isOpen": true,
+        "objc_name": "MANativeAdLoader",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MAAdView",
+        "printedName": "MAAdView",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(teadsAdSettings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdapterSettings",
+                "printedName": "TeadsSDK.TeadsAdapterSettings",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdapterSettings"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@TeadsAppLovinAdapter@@objc(cs)MAAdView(im)registerWithTeadsAdSettings:",
+            "mangledName": "$sSo8MAAdViewC20TeadsAppLovinAdapterE8register15teadsAdSettingsy0C3SDK0cfJ0C_tF",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)MAAdView",
+        "moduleName": "AppLovinSDK",
+        "isOpen": true,
+        "objc_name": "MAAdView",
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)UIView",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsAdapterSettings",
+        "printedName": "TeadsAdapterSettings",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MAAdView",
+                "printedName": "AppLovinSDK.MAAdView",
+                "usr": "c:objc(cs)MAAdView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8TeadsSDK0A15AdapterSettingsC0a8AppLovinC0E8register4intoySo8MAAdViewC_tF",
+            "mangledName": "$s8TeadsSDK0A15AdapterSettingsC0a8AppLovinC0E8register4intoySo8MAAdViewC_tF",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MANativeAdLoader",
+                "printedName": "AppLovinSDK.MANativeAdLoader",
+                "usr": "c:objc(cs)MANativeAdLoader"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8TeadsSDK0A15AdapterSettingsC0a8AppLovinC0E8register4intoySo16MANativeAdLoaderC_tF",
+            "mangledName": "$s8TeadsSDK0A15AdapterSettingsC0a8AppLovinC0E8register4intoySo16MANativeAdLoaderC_tF",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdapterSettings",
+        "mangledName": "$s8TeadsSDK0A15AdapterSettingsC",
+        "moduleName": "TeadsSDK",
+        "declAttributes": [
+          "Final",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TeadsInReadAdView",
+        "printedName": "TeadsInReadAdView",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "updateHeight",
+            "printedName": "updateHeight(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TeadsAdRatio",
+                "printedName": "TeadsSDK.TeadsAdRatio",
+                "usr": "c:@M@TeadsSDK@objc(cs)TeadsAdRatio"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8TeadsSDK0A12InReadAdViewC0A15AppLovinAdapterE12updateHeight4withyAA0aE5RatioC_tF",
+            "mangledName": "$s8TeadsSDK0A12InReadAdViewC0A15AppLovinAdapterE12updateHeight4withyAA0aE5RatioC_tF",
+            "moduleName": "TeadsAppLovinAdapter",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TeadsSDK@objc(cs)TeadsInReadAdView",
+        "mangledName": "$s8TeadsSDK0A12InReadAdViewC",
+        "moduleName": "TeadsSDK",
+        "declAttributes": [
+          "Preconcurrency",
+          "Final",
+          "ObjC",
+          "Custom"
+        ],
+        "superclassUsr": "c:@M@TeadsSDK@objc(cs)TeadsAdView",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "TeadsSDK.TeadsAdView",
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/Common\/TeadsAdapterErrorCode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 260,
+      "length": 20,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/Common\/TeadsAdapterErrorCode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 290,
+      "length": 9,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/MediationAdapters\/MediationAdapters\/TeadsAppLovinAdapter\/TeadsMediationAdapter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1169,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

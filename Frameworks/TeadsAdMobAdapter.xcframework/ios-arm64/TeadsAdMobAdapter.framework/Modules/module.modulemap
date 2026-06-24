@@ -1,0 +1,4 @@
+framework module TeadsAdMobAdapter {
+  header "TeadsAdMobAdapter-Swift.h"
+  requires objc
+}
