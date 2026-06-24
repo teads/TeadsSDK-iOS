@@ -58,6 +58,8 @@ class BannerAdmobCollectionViewController: TeadsViewController {
 
     private func setupBanner() {
         bannerView = AdManagerBannerView(adSize: AdSizeFluid)
+        // Declare the fluid request so Ad Manager can resolve the request type.
+        bannerView.validAdSizes = [nsValue(for: AdSizeFluid)]
         bannerView.adUnitID = pid
         bannerView.rootViewController = self
         bannerView.delegate = self
