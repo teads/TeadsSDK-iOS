@@ -19,7 +19,7 @@ import UIKit
 extension FakeNativeCell {
     func setMockValues() {
         mediaView.image = UIImage(named: "social-covers")
-        iconImageView.image = UIImage(named: "teads-logo")
+        iconImageView.image = UIImage(named: "TeadsLogo")
         titleLabel.text = "Teads"
         contentLabel.text = "The global media platform"
         callToActionButton.setTitle("Discover", for: .normal)

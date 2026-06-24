@@ -48,7 +48,7 @@ struct FakeNativeArticleRow: View {
                 .frame(height: 120)
                 .clipped()
             HStack(spacing: 12) {
-                Image("teads-logo")
+                Image("TeadsLogo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 28, height: 28)

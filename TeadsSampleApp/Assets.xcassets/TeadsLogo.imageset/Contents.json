@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logoTeads copy.png",
+      "filename" : "TeadsLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logoTeads@2x.png",
+      "filename" : "TeadsLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logoTeads@3x.png",
+      "filename" : "TeadsLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
