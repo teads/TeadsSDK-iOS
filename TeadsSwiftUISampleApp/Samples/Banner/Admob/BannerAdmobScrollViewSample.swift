@@ -12,10 +12,20 @@ struct BannerAdmobScrollViewSample: View {
 
     var body: some View {
         ScrollView {
-            FakeArticle {
-                AdMobBannerHost(adUnitID: adUnitID, format: .banner)
-                    .padding(.horizontal)
+            VStack(spacing: 20) {
+                ArticleHeaderImage()
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                // Keeps the last content above the anchored banner.
+                Color.clear.frame(height: AnchoredAdMobBanner.size.height + 16)
             }
+            .padding(.bottom)
+        }
+        .anchoredBanner {
+            AnchoredAdMobBanner(adUnitID: adUnitID)
+                .frame(width: AnchoredAdMobBanner.size.width, height: AnchoredAdMobBanner.size.height)
         }
         .navigationBarTitleDisplayMode(.inline)
         .teadsBrandNavigationBar()

@@ -8,15 +8,9 @@
 import TeadsSDK
 import UIKit
 
-/// Direct Banner placement hosted in a scrolling article.
+/// Direct Banner placement anchored to the bottom of the screen over a scrolling article.
 class BannerDirectViewController: TeadsViewController {
-    fileprivate let adContainer: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private var adHeightConstraint: NSLayoutConstraint?
+    private let scrollView = UIScrollView()
     private var placement: TeadsAdPlacementBanner?
 
     override func viewDidLoad() {
@@ -28,7 +22,6 @@ class BannerDirectViewController: TeadsViewController {
     }
 
     private func setupScrollArticle() {
-        let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
 
@@ -36,7 +29,12 @@ class BannerDirectViewController: TeadsViewController {
             SampleArticleViews.headerImageView(),
             SampleArticleViews.titleLabel("The Future of Digital Advertising"),
             SampleArticleViews.paragraphLabel(),
-            adContainer,
+            SampleArticleViews.paragraphLabel(),
+            SampleArticleViews.titleLabel("Why Outstream Wins"),
+            SampleArticleViews.paragraphLabel(),
+            SampleArticleViews.paragraphLabel(),
+            SampleArticleViews.paragraphLabel(),
+            SampleArticleViews.titleLabel("Looking Ahead"),
             SampleArticleViews.paragraphLabel(),
             SampleArticleViews.paragraphLabel(),
         ])
@@ -46,9 +44,6 @@ class BannerDirectViewController: TeadsViewController {
         stack.isLayoutMarginsRelativeArrangement = true
         stack.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(stack)
-
-        adHeightConstraint = adContainer.heightAnchor.constraint(equalToConstant: 250)
-        adHeightConstraint?.isActive = true
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -74,26 +69,22 @@ class BannerDirectViewController: TeadsViewController {
         placement = Teads.createPlacement(with: config, delegate: self)
         guard let adView = try? placement?.loadAd() else { return }
         adView.translatesAutoresizingMaskIntoConstraints = false
-        adContainer.addSubview(adView)
+        adView.backgroundColor = .systemBackground
+        view.addSubview(adView)
         NSLayoutConstraint.activate([
-            adView.topAnchor.constraint(equalTo: adContainer.topAnchor),
-            adView.leadingAnchor.constraint(equalTo: adContainer.leadingAnchor),
-            adView.trailingAnchor.constraint(equalTo: adContainer.trailingAnchor),
-            adView.bottomAnchor.constraint(equalTo: adContainer.bottomAnchor),
+            adView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            adView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            adView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-
-    fileprivate func updateAdHeight(_ height: CGFloat) {
-        adHeightConstraint?.constant = height
-        UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
     }
 }
 
 extension BannerDirectViewController: TeadsAdPlacementEventsDelegate {
     func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsAdPlacementEventName, data: [String: Any]?) {
-        if event == .heightUpdated, let height = data?["height"] as? CGFloat {
-            updateAdHeight(height)
-        }
+        guard event == .heightUpdated, let height = data?["height"] as? CGFloat else { return }
+        // Reserve room so the last content clears the anchored banner.
+        scrollView.contentInset.bottom = height + 16
+        scrollView.verticalScrollIndicatorInsets.bottom = height + 16
     }
 }
 

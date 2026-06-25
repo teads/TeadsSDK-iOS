@@ -56,6 +56,7 @@
 		B711D9B1D67B411C2B91339F /* InterstitialDirectSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1698144F51C16F64ADB60 /* InterstitialDirectSample.swift */; };
 		BA9FFBF44521B42199C83747 /* TeadsRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C581773B9115AF9D65F6AD /* TeadsRecommendationsView.swift */; };
 		BBEF5F60A5F6BF23C724BFCE /* SamplePID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0DD3A75428EE78E37BA1A /* SamplePID.swift */; };
+		C6D7CC022ED3DB4F3CF4074D /* AnchoredBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698A18F3729EBEDF4DBBA7E /* AnchoredBanner.swift */; };
 		C984A82F8E25C524A417E77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696A3545A3DEB03ED6AFA944 /* Assets.xcassets */; };
 		CB9C012771A37E51CA3B5283 /* BannerDirectScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB34A83A4187FB7D56864E /* BannerDirectScrollViewSample.swift */; };
 		D424FAF6D05D9651462FD085 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43B1F28453F68D6A64A48C3 /* Foundation.framework */; };
@@ -73,6 +74,7 @@
 		409E9B6E68FB19A5F7EC8BE6 /* FeedDirectScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedDirectScrollViewSample.swift; sourceTree = "<group>"; };
 		41BB1B9959EB98BD44A9FEA6 /* TeadsSwiftUISampleAppApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsSwiftUISampleAppApp.swift; sourceTree = "<group>"; };
 		42D632CB57F04C455ABDB5C1 /* InReadDirectListSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InReadDirectListSample.swift; sourceTree = "<group>"; };
+		5698A18F3729EBEDF4DBBA7E /* AnchoredBanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnchoredBanner.swift; sourceTree = "<group>"; };
 		5C70FF78B6DFF66422755E3E /* Pods-TeadsSwiftUISampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeadsSwiftUISampleApp.release.xcconfig"; path = "Target Support Files/Pods-TeadsSwiftUISampleApp/Pods-TeadsSwiftUISampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		5D7CCC52F97309DCB34118AB /* TeadsSwiftUITypeAliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeadsSwiftUITypeAliases.swift; sourceTree = "<group>"; };
 		5E7915DA1D4B173687C0EB9A /* RecommendationsDirectScrollViewSample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecommendationsDirectScrollViewSample.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 			children = (
 				FCAC82F3D0AC1592549C6993 /* Direct */,
 				6B49895A33D2868AE5072E6E /* Admob */,
+				5698A18F3729EBEDF4DBBA7E /* AnchoredBanner.swift */,
 			);
 			name = Banner;
 			path = Banner;
@@ -679,6 +682,7 @@
 				62DC8EF7727F29700E4DFD5D /* BannerAdmobTableViewSample.swift in Sources */,
 				B711D9B1D67B411C2B91339F /* InterstitialDirectSample.swift in Sources */,
 				14864F0AF1A358E3AA7EAA88 /* TeadsLogoView.swift in Sources */,
+				C6D7CC022ED3DB4F3CF4074D /* AnchoredBanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

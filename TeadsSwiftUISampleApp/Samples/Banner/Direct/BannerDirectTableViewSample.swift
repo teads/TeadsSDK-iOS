@@ -9,6 +9,8 @@ import SwiftUI
 import TeadsSDK
 
 struct BannerDirectTableViewSample: View {
+    @StateObject private var bannerDelegate = BannerHeightDelegate()
+
     private var config: TeadsAdPlacementBannerConfig {
         TeadsAdPlacementBannerConfig(
             articleUrl: SamplePID.outbrainArticleURL,
@@ -24,19 +26,21 @@ struct BannerDirectTableViewSample: View {
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
 
-            FakeArticleLines(lineCount: 6)
-                .padding(.vertical, 12)
-                .listRowSeparator(.hidden)
+            ForEach(0 ..< 5, id: \.self) { _ in
+                FakeArticleLines(lineCount: 6)
+                    .padding(.vertical, 12)
+                    .listRowSeparator(.hidden)
+            }
 
-            TeadsBannerSwiftUIView(config: config)
-                .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                .listRowSeparator(.hidden)
-
-            FakeArticleLines(lineCount: 6)
-                .padding(.vertical, 12)
+            // Keeps the last content above the anchored banner.
+            Color.clear
+                .frame(height: bannerDelegate.height + 16)
                 .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .anchoredBanner {
+            TeadsBannerSwiftUIView(config: config, delegate: bannerDelegate)
+        }
         .navigationBarTitleDisplayMode(.inline)
         .teadsBrandNavigationBar()
     }

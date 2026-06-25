@@ -16,19 +16,22 @@ struct BannerAdmobTableViewSample: View {
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
 
-            FakeArticleLines(lineCount: 6)
-                .padding(.vertical, 12)
-                .listRowSeparator(.hidden)
+            ForEach(0 ..< 5, id: \.self) { _ in
+                FakeArticleLines(lineCount: 6)
+                    .padding(.vertical, 12)
+                    .listRowSeparator(.hidden)
+            }
 
-            AdMobBannerHost(adUnitID: adUnitID, format: .banner)
-                .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                .listRowSeparator(.hidden)
-
-            FakeArticleLines(lineCount: 6)
-                .padding(.vertical, 12)
+            // Keeps the last content above the anchored banner.
+            Color.clear
+                .frame(height: AnchoredAdMobBanner.size.height + 16)
                 .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .anchoredBanner {
+            AnchoredAdMobBanner(adUnitID: adUnitID)
+                .frame(width: AnchoredAdMobBanner.size.width, height: AnchoredAdMobBanner.size.height)
+        }
         .navigationBarTitleDisplayMode(.inline)
         .teadsBrandNavigationBar()
     }

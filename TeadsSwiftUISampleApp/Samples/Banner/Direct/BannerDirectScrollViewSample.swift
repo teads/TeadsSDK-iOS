@@ -9,6 +9,8 @@ import SwiftUI
 import TeadsSDK
 
 struct BannerDirectScrollViewSample: View {
+    @StateObject private var bannerDelegate = BannerHeightDelegate()
+
     private var config: TeadsAdPlacementBannerConfig {
         TeadsAdPlacementBannerConfig(
             articleUrl: SamplePID.outbrainArticleURL,
@@ -20,10 +22,19 @@ struct BannerDirectScrollViewSample: View {
 
     var body: some View {
         ScrollView {
-            FakeArticle {
-                TeadsBannerSwiftUIView(config: config)
-                    .padding(.horizontal)
+            VStack(spacing: 20) {
+                ArticleHeaderImage()
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                FakeArticleLines(lineCount: 10).padding(.horizontal)
+                // Keeps the last content above the anchored banner.
+                Color.clear.frame(height: bannerDelegate.height + 16)
             }
+            .padding(.bottom)
+        }
+        .anchoredBanner {
+            TeadsBannerSwiftUIView(config: config, delegate: bannerDelegate)
         }
         .navigationBarTitleDisplayMode(.inline)
         .teadsBrandNavigationBar()
