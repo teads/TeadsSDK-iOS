@@ -24,7 +24,6 @@ class RootViewController: TeadsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hasTeadsArticleNavigationBar = false
 
         // Register showcase button cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ShowcaseButtonCell")
@@ -223,6 +222,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath) as? RootHeaderCollectionReusableView else {
             return UICollectionReusableView()
         }
+
+        cell.label.font = .preferredFont(forTextStyle: .title3)
 
         // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
