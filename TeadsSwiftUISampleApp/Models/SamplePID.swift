@@ -36,6 +36,7 @@ enum SamplePID {
     static let sasNativeDisplay = 102_803
     static let sasSiteId = 385_317
     static let sasPageId = 1_399_206
+    static let sasNativePageName = "1399205"
 
     // MARK: AppLovin (banner)
 

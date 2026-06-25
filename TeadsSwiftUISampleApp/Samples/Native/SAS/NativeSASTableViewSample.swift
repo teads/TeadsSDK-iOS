@@ -55,7 +55,7 @@ private final class SASNativeAdHolder {
         keywords = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywords, adSettings: settings)
         let placement = SASAdPlacement(
             siteId: SamplePID.sasSiteId,
-            pageId: SamplePID.sasPageId,
+            pageName: SamplePID.sasNativePageName,
             formatId: SamplePID.sasNativeDisplay,
             keywordTargeting: keywords
         )

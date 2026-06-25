@@ -34,13 +34,13 @@ class NativeSASTableViewController: TeadsViewController {
         }
 
         let webSiteId = 385_317
-        let pageId = 1_399_206
+        let pageName = "1399205"
         let formatId = PID.sasNativeDisplay
         var keywordsTargetting = "yourkw=something"
         keywordsTargetting = TeadsSASAdapterHelper.concatAdSettingsToKeywords(keywordsStrings: keywordsTargetting, adSettings: teadsAdSettings)
 
         // Create a placement
-        let adPlacement = SASAdPlacement(siteId: webSiteId, pageId: pageId, formatId: formatId, keywordTargeting: keywordsTargetting)
+        let adPlacement = SASAdPlacement(siteId: webSiteId, pageName: pageName, formatId: formatId, keywordTargeting: keywordsTargetting)
         nativeAdManager = SASNativeAdManager(placement: adPlacement)
 
         DispatchQueue.global(qos: .background).async { [weak self] in
