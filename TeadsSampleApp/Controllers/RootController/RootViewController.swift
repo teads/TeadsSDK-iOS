@@ -18,6 +18,10 @@ class RootViewController: TeadsViewController {
     private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
     var adSelection: AdSelection = .init()
 
+    private var currentCreativeTypes: [CreativeType] {
+        creativeTypes(for: adSelection.format.name, provider: adSelection.provider.name)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hasTeadsArticleNavigationBar = false
@@ -207,7 +211,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case 1:
                 return selectionList.first(where: { $0.isSelected })?.providers.count ?? 0
             case 2:
-                return selectionList.first(where: { $0.isSelected })?.creativeTypes.count ?? 0
+                return currentCreativeTypes.count
             case 3:
                 return selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0
             default:
@@ -296,10 +300,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                     return UICollectionViewCell()
                 }
-                if let cellValue = selectionList.first(where: { $0.isSelected })?.creativeTypes[indexPath.item] {
-                    cell.label.text = cellValue.name.rawValue
-                    cell.isButtonSelected = cellValue.isSelected
-                }
+                let creativeType = currentCreativeTypes[indexPath.item]
+                cell.label.text = creativeType.name.rawValue
+                cell.isButtonSelected = creativeType.name == adSelection.creation.name
                 return cell
             case 3:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
@@ -328,11 +331,11 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     selectionList[i].isSelected = indexPath.item == i
                     if indexPath.item == i {
                         adSelection.format = selectionList[i]
-                        if let creation = adSelection.format.creativeTypes.first(where: { $0.isSelected }) {
-                            adSelection.creation = creation
-                        }
                         if let provider = adSelection.format.providers.first(where: { $0.isSelected }) {
                             adSelection.provider = provider
+                        }
+                        if let creation = currentCreativeTypes.first {
+                            adSelection.creation = creation
                         }
                     }
                 }
@@ -355,27 +358,17 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                         }
                     }
                 }
-
-                // Change creative type for AppLovin setup due to Banner vs MREC integration
-                if adSelection.provider == inReadAppLovinProvider {
-                    selectionList[0].creativeTypes = appLovinInReadCreativeTypes
-                } else {
-                    selectionList[0].creativeTypes = defaultInReadCreativeTypes
+                // Reset the creative to one valid for the newly selected provider.
+                if let creation = currentCreativeTypes.first {
+                    adSelection.creation = creation
                 }
-
                 collectionView.reloadData()
             case 2:
-                for j in 0 ..< selectionList.count where selectionList[j].isSelected {
-                    for i in 0 ..< selectionList[j].creativeTypes.count {
-                        selectionList[j].creativeTypes[i].isSelected = indexPath.item == i
-                        if indexPath.item == i {
-                            if selectionList[j].creativeTypes[i].name == .custom {
-                                pidAlert()
-                            }
-                            self.adSelection.creation = selectionList[j].creativeTypes[i]
-                        }
-                    }
+                let creativeType = currentCreativeTypes[indexPath.item]
+                if creativeType.name == .custom {
+                    pidAlert()
                 }
+                adSelection.creation = creativeType
                 collectionView.reloadData()
             case 3:
                 for j in 0 ..< selectionList.count where selectionList[j].isSelected {
@@ -413,8 +406,7 @@ extension RootViewController: UICollectionViewDelegateFlowLayout {
                 let providerList = selectionList.first(where: { $0.isSelected })?.providers ?? []
                 return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })
             case 2:
-                let creativesTypeList = selectionList.first(where: { $0.isSelected })?.creativeTypes ?? []
-                return getButtonButtonSize(buttonValues: creativesTypeList.map { $0.name.rawValue })
+                return getButtonButtonSize(buttonValues: currentCreativeTypes.map { $0.name.rawValue })
             case 3:
                 let spacing: CGFloat = 16
                 let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)

@@ -24,7 +24,6 @@ struct Format {
     let name: FormatName
     var providers: [Provider]
     var isSelected: Bool
-    var creativeTypes: [CreativeType]
 }
 
 struct Provider {
@@ -66,13 +65,28 @@ enum Formats {
 
 let defaultInReadCreativeTypes = [landscape, vertical, square, carousel, custom]
 let appLovinInReadCreativeTypes = [landscape, vertical, square, carousel, appLovinMRECLandscape, appLovinMRECVertical, appLovinMRECSquare, appLovinMRECCarousel, custom]
+let sasInReadCreativeTypes = [landscape]
+let nativeCreativeTypes = [display, custom]
 
-let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true, creativeTypes: defaultInReadCreativeTypes)
-let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false, creativeTypes: [display, custom])
-let feedFormat = Format(name: .feed, providers: [feedDirectProvider], isSelected: false, creativeTypes: [])
-let recommendationsFormat = Format(name: .recommendations, providers: [recommendationsDirectProvider], isSelected: false, creativeTypes: [])
-let bannerFormat = Format(name: .banner, providers: [bannerDirectProvider, bannerAdmobProvider], isSelected: false, creativeTypes: [])
-let interstitialFormat = Format(name: .interstitial, providers: [interstitialDirectProvider, interstitialAdmobProvider], isSelected: false, creativeTypes: [])
+func creativeTypes(for format: FormatName, provider: ProviderName) -> [CreativeType] {
+    switch format {
+        case .inRead:
+            switch provider {
+                case .appLovin: return appLovinInReadCreativeTypes
+                case .sas: return sasInReadCreativeTypes
+                default: return defaultInReadCreativeTypes
+            }
+        case .native: return nativeCreativeTypes
+        case .feed, .recommendations, .banner, .interstitial: return []
+    }
+}
+
+let inReadFormat = Format(name: .inRead, providers: [inReadDirectProvider, inReadAdmobProvider, inReadAppLovinProvider, inReadSASProvider], isSelected: true)
+let nativeFormat = Format(name: .native, providers: [nativeDirectProvider, nativeAdmobProvider, nativeAppLovinProvider, nativeSASProvider], isSelected: false)
+let feedFormat = Format(name: .feed, providers: [feedDirectProvider], isSelected: false)
+let recommendationsFormat = Format(name: .recommendations, providers: [recommendationsDirectProvider], isSelected: false)
+let bannerFormat = Format(name: .banner, providers: [bannerDirectProvider, bannerAdmobProvider], isSelected: false)
+let interstitialFormat = Format(name: .interstitial, providers: [interstitialDirectProvider, interstitialAdmobProvider], isSelected: false)
 
 // inRead Providers
 let inReadDirectProvider = Provider(name: .direct, integrations: [
