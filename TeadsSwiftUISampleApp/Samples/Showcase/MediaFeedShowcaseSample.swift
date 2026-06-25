@@ -20,7 +20,7 @@ struct MediaFeedShowcaseSample: View {
     private var feedConfig: TeadsAdPlacementFeedConfig {
         TeadsAdPlacementFeedConfig(
             articleUrl: URL(string: "https://mobile-demo.outbrain.com")!,
-            widgetId: "MB_2",
+            widgetId: "MB_1",
             installationKey: "NANOWDGT01",
             widgetIndex: 0
         )

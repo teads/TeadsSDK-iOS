@@ -225,8 +225,8 @@ enum FormatName: String {
     case inRead = "Media"
     case native = "Media Native"
     case feed = "Feed"
-    case recommendations = "Recos"
-    case banner = "Banner"
+    case recommendations = "Recommendations"
+    case banner = "Anchored Banner"
     case interstitial = "Interstitial"
 }
 

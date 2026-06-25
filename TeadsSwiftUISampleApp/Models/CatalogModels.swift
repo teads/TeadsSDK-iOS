@@ -11,8 +11,8 @@ enum SampleFormat: String, CaseIterable, Identifiable {
     case inRead = "Media"
     case native = "Media Native"
     case feed = "Feed"
-    case recommendations = "Recos"
-    case banner = "Banner"
+    case recommendations = "Recommendations"
+    case banner = "Anchored Banner"
     case interstitial = "Interstitial"
 
     var id: String { rawValue }

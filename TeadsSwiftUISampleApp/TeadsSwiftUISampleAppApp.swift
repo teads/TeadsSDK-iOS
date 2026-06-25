@@ -11,7 +11,8 @@ import TeadsSDK
 @main
 struct TeadsSwiftUISampleAppApp: App {
     init() {
-        Teads.configure()
+        // Partner key is required for Feed and Recommendations placements.
+        Teads.configure(with: "iOSSampleApp2014")
         Teads.testMode = true
     }
 
