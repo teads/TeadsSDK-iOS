@@ -77,6 +77,7 @@ enum SampleMatrix {
         .custom,
     ]
     static let nativeCreatives: [SampleCreative] = [.nativeDisplay, .custom]
+    static let sasInReadCreatives: [SampleCreative] = [.landscape]
     static let interstitialCreatives: [SampleCreative] = []
 
     static func providers(for format: SampleFormat) -> [SampleProvider] {
@@ -114,7 +115,11 @@ enum SampleMatrix {
     static func creatives(for format: SampleFormat, provider: SampleProvider) -> [SampleCreative] {
         switch format {
             case .inRead:
-                provider == .appLovin ? appLovinInReadCreatives : defaultInReadCreatives
+                switch provider {
+                    case .appLovin: appLovinInReadCreatives
+                    case .sas: sasInReadCreatives
+                    default: defaultInReadCreatives
+                }
             case .native: nativeCreatives
             case .feed, .recommendations, .banner, .interstitial: []
         }
