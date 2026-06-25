@@ -223,7 +223,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionReusableView()
         }
 
-        cell.label.font = .preferredFont(forTextStyle: .title3)
+        let title3 = UIFont.preferredFont(forTextStyle: .title3)
+        cell.label.font = UIFont(descriptor: title3.fontDescriptor.withSymbolicTraits(.traitBold) ?? title3.fontDescriptor, size: 0)
 
         // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
@@ -388,7 +389,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 80)
+        return CGSize(width: collectionView.bounds.width, height: 56)
     }
 }
 
