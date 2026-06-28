@@ -11,20 +11,33 @@ import TeadsSASAdapter
 import TeadsSDK
 
 /// Hosts a Smart AdServer `SASBannerView` driven by the Teads adapter.
-struct SASBannerHost: UIViewRepresentable {
+/// Bridges the reported height back to SwiftUI (same pattern as the AdMob host).
+struct SASBannerHost: View {
     let formatId: Int
 
-    func makeCoordinator() -> Coordinator { Coordinator() }
+    @State private var height: CGFloat = 0
 
-    func makeUIView(context: Context) -> ResizingContainer {
-        let container = ResizingContainer()
+    var body: some View {
+        SASBannerRepresentable(formatId: formatId, height: $height)
+            .frame(height: height)
+    }
+}
+
+private struct SASBannerRepresentable: UIViewRepresentable {
+    let formatId: Int
+    @Binding var height: CGFloat
+
+    func makeCoordinator() -> Coordinator { Coordinator(height: $height) }
+
+    func makeUIView(context: Context) -> UIView {
+        let container = UIView()
+        container.clipsToBounds = true
+
         let banner = SASBannerView(
-            frame: .init(x: 0, y: 0, width: 320, height: 200),
+            frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 250),
             loader: .activityIndicatorStyleWhite
         )
-        DispatchQueue.main.async { [weak banner, weak container] in
-            banner?.modalParentViewController = container?.window?.rootViewController
-        }
+        banner.modalParentViewController = UIApplication.shared.firstKeyWindow?.rootViewController
         banner.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(banner)
         NSLayoutConstraint.activate([
@@ -33,6 +46,7 @@ struct SASBannerHost: UIViewRepresentable {
             banner.topAnchor.constraint(equalTo: container.topAnchor),
             banner.bottomAnchor.constraint(equalTo: container.bottomAnchor),
         ])
+        context.coordinator.banner = banner
 
         let settings = TeadsAdapterSettings { settings in
             settings.enableDebug()
@@ -52,43 +66,31 @@ struct SASBannerHost: UIViewRepresentable {
             keywordTargeting: keywordTargeting
         )
 
-        context.coordinator.bind(container: container)
         banner.load(with: placement)
         return container
     }
 
-    func updateUIView(_: ResizingContainer, context _: Context) {}
-
-    final class ResizingContainer: UIView {
-        private var heightConstraint: NSLayoutConstraint?
-
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            translatesAutoresizingMaskIntoConstraints = false
-            heightConstraint = heightAnchor.constraint(equalToConstant: 250)
-            heightConstraint?.priority = .required
-            heightConstraint?.isActive = true
-        }
-
-        @available(*, unavailable)
-        required init?(coder _: NSCoder) {
-            fatalError("init(coder:) is not supported")
-        }
-
-        func update(height: CGFloat) {
-            heightConstraint?.constant = height
-            invalidateIntrinsicContentSize()
+    func updateUIView(_ container: UIView, context: Context) {
+        // Keep a valid presenting controller once the view is in the window.
+        let rootVC = container.window?.rootViewController ?? UIApplication.shared.firstKeyWindow?.rootViewController
+        if context.coordinator.banner?.modalParentViewController == nil {
+            context.coordinator.banner?.modalParentViewController = rootVC
         }
     }
 
     final class Coordinator: NSObject, TeadsMediatedAdViewDelegate {
-        private weak var container: ResizingContainer?
+        @Binding var height: CGFloat
+        weak var banner: SASBannerView?
+        private var lastHeight: CGFloat = 0
 
-        func bind(container: ResizingContainer) { self.container = container }
+        init(height: Binding<CGFloat>) { _height = height }
 
-        func didUpdateRatio(_: UIView, adRatio: TeadsAdRatio) {
-            guard let container else { return }
-            container.update(height: adRatio.calculateHeight(for: container.bounds.width))
+        func didUpdateRatio(_ adView: UIView, adRatio: TeadsAdRatio) {
+            let width = adView.frame.width
+            let newHeight = adRatio.calculateHeight(for: width)
+            guard newHeight > 0, newHeight != lastHeight else { return }
+            lastHeight = newHeight
+            DispatchQueue.main.async { [weak self] in self?.height = newHeight }
         }
     }
 }
