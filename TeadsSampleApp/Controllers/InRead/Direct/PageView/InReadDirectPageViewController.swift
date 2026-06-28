@@ -14,15 +14,25 @@ class InReadDirectPageViewController: TeadsViewController {
     @IBOutlet var teadsAdHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var articleLabel: UILabel!
     var articleLabelText: String?
-    weak var adViewReference: UIView? // strong reference is maintained by InReadPageViewController
+
+    // Each page owns its placement so an ad shows on every page.
+    private var placement: TeadsAdPlacementMedia?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         articleLabel.text = articleLabelText
+        loadAd()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    private func loadAd() {
+        let config = TeadsAdPlacementMediaConfig(
+            pid: Int(pid) ?? 0,
+            articleUrl: URL(string: "https://www.teads.com")
+        )
+        placement = Teads.createPlacement(with: config, delegate: self)
+        if let adView = try? placement?.loadAd() {
+            setupAdView(adView)
+        }
     }
 
     func setupAdView(_ adView: UIView) {
@@ -47,5 +57,18 @@ class InReadDirectPageViewController: TeadsViewController {
 
     func closeAd() {
         teadsAdHeightConstraint.constant = 0
+    }
+}
+
+extension InReadDirectPageViewController: TeadsAdPlacementEventsDelegate {
+    func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsAdPlacementEventName, data: [String: Any]?) {
+        switch event {
+            case .heightUpdated:
+                if let height = data?["height"] as? CGFloat { updateAdHeight(height) }
+            case .failed, .complete:
+                closeAd()
+            default:
+                break
+        }
     }
 }

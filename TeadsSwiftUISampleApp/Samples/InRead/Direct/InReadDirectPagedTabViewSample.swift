@@ -45,10 +45,8 @@ struct InReadDirectPageViewSample: View {
 
                 ArticleHeaderImage()
 
-                if index == 0 {
-                    TeadsMediaSwiftUIView(config: config)
-                        .padding(.horizontal)
-                }
+                TeadsMediaSwiftUIView(config: config)
+                    .padding(.horizontal)
 
                 FakeArticleLines(lineCount: 8)
                     .padding(.horizontal)
