@@ -12,7 +12,7 @@ struct InReadDirectTableViewSample: View {
     let selection: SampleSelection
 
     private static let articleCount = 8
-    private static let adInterval = 3
+    private static let adIndex = 3
 
     private var config: TeadsAdPlacementMediaConfig {
         TeadsAdPlacementMediaConfig(
@@ -30,7 +30,7 @@ struct InReadDirectTableViewSample: View {
             ForEach(0 ..< Self.articleCount, id: \.self) { index in
                 Group {
                     FakeArticleRow()
-                    if index > 0, index % Self.adInterval == 0 {
+                    if index == Self.adIndex {
                         TeadsMediaSwiftUIView(config: config)
                             .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                             .listRowSeparator(.hidden)
