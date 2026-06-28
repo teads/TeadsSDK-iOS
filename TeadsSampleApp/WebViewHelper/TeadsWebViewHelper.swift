@@ -390,7 +390,8 @@ import WebKit
     /// - Parameters:
     ///   - position: top/bottom/right/left position of the slot
     private func updateAdViewPosition(position: SlotPosition) {
-        guard let webView = webView, let adView = adView else {
+        guard let webView = webView, let adView = adView,
+              adView.isDescendant(of: webView.scrollView) else {
             return
         }
 
