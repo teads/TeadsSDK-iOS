@@ -21,13 +21,7 @@ struct InterstitialDirectSample: View {
                     .font(.body)
                     .foregroundStyle(.secondary)
 
-                if viewModel.isContentUnlocked {
-                    ForEach(ArticleContent.lockedParagraphs, id: \.self) { paragraph in
-                        Text(paragraph)
-                            .font(.body)
-                            .foregroundStyle(.secondary)
-                    }
-                } else {
+                if !viewModel.isContentUnlocked {
                     VStack(spacing: 12) {
                         Text("Premium Content")
                             .font(.system(size: 18, weight: .bold))

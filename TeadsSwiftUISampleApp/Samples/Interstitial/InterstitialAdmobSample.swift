@@ -28,13 +28,7 @@ struct InterstitialAdmobSample: View {
                     .font(.body)
                     .foregroundStyle(.secondary)
 
-                if viewModel.isContentUnlocked {
-                    ForEach(ArticleContent.lockedParagraphs, id: \.self) { paragraph in
-                        Text(paragraph)
-                            .font(.body)
-                            .foregroundStyle(.secondary)
-                    }
-                } else {
+                if !viewModel.isContentUnlocked {
                     PaywallSection(
                         teaser: ArticleContent.lockedParagraphs.first ?? "",
                         isLoading: viewModel.isWaitingForAd,

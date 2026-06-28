@@ -45,6 +45,7 @@ struct TeadsRecommendationsView<ItemContent: View>: View {
                         .foregroundStyle(.secondary)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 .onAppear { loadRecommendations() }
             } else if recommendations.isEmpty {
                 statusView(systemImage: "doc.text", title: "No recommendations available", detail: nil)
