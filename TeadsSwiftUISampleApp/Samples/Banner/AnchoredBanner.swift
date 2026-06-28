@@ -9,8 +9,7 @@ import GoogleMobileAds
 import SwiftUI
 import TeadsSDK
 
-/// Tracks the Direct banner's reported height so scrollable content can reserve
-/// matching space behind the bottom-anchored banner.
+/// Tracks the Direct banner's reported height for the content's bottom spacer.
 final class BannerHeightDelegate: NSObject, ObservableObject, TeadsAdPlacementEventsDelegate {
     @Published var height: CGFloat = 0
 

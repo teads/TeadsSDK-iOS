@@ -29,7 +29,8 @@ struct FeedDirectTableViewSample: View {
                 .listRowSeparator(.hidden)
 
             TeadsFeedSwiftUIView(config: config)
-                .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                .frame(maxWidth: .infinity)
+                .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
 
             FakeArticleLines(lineCount: 6)

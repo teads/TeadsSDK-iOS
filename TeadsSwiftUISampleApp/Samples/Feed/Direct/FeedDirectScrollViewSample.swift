@@ -22,7 +22,7 @@ struct FeedDirectScrollViewSample: View {
         ScrollView {
             FakeArticle {
                 TeadsFeedSwiftUIView(config: config)
-                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

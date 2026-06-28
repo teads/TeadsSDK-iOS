@@ -8,7 +8,7 @@
 import TeadsSDK
 import UIKit
 
-/// Direct Feed placement inserted as an item inside a UICollectionView article.
+/// Direct Feed placement anchored as the last (bottom) item of a UICollectionView article.
 class FeedDirectCollectionViewController: TeadsViewController {
     private enum Item: Equatable {
         case article
@@ -16,7 +16,7 @@ class FeedDirectCollectionViewController: TeadsViewController {
     }
 
     private var collectionView: UICollectionView!
-    private let items: [Item] = [.article, .article, .ad, .article, .article]
+    private let items: [Item] = [.article, .article, .article, .article, .ad]
 
     private var placement: TeadsAdPlacementFeed?
     private var adView: UIView?
@@ -31,19 +31,16 @@ class FeedDirectCollectionViewController: TeadsViewController {
     }
 
     private func setupCollection() {
-        let layout = UICollectionViewCompositionalLayout { _, _ in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(120))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [item])
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
-            section.interGroupSpacing = 12
-            return section
-        }
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 12
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemBackground
+        collectionView.isPrefetchingEnabled = false
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(ArticleTextCollectionViewCell.self, forCellWithReuseIdentifier: ArticleTextCollectionViewCell.reuseId)
         collectionView.register(AdHostCollectionViewCell.self, forCellWithReuseIdentifier: AdHostCollectionViewCell.reuseId)
         view.addSubview(collectionView)
@@ -71,6 +68,17 @@ class FeedDirectCollectionViewController: TeadsViewController {
         guard let index = items.firstIndex(of: .ad) else { return }
         collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
+
+    private func articleHeight(forWidth width: CGFloat) -> CGFloat {
+        let text = SampleArticleViews.paragraph as NSString
+        let rect = text.boundingRect(
+            with: CGSize(width: width - 32, height: .greatestFiniteMagnitude),
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            attributes: [.font: UIFont.systemFont(ofSize: 16)],
+            context: nil
+        )
+        return ceil(rect.height) + 24
+    }
 }
 
 extension FeedDirectCollectionViewController: UICollectionViewDataSource {
@@ -82,8 +90,20 @@ extension FeedDirectCollectionViewController: UICollectionViewDataSource {
                 return collectionView.dequeueReusableCell(withReuseIdentifier: ArticleTextCollectionViewCell.reuseId, for: indexPath)
             case .ad:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdHostCollectionViewCell.reuseId, for: indexPath) as! AdHostCollectionViewCell
-                if let adView { cell.host(adView, height: adHeight) }
+                if let adView { cell.host(adView) }
                 return cell
+        }
+    }
+}
+
+extension FeedDirectCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        switch items[indexPath.item] {
+            case .ad:
+                return CGSize(width: width, height: adHeight)
+            case .article:
+                return CGSize(width: width, height: articleHeight(forWidth: width))
         }
     }
 }
@@ -92,7 +112,8 @@ extension FeedDirectCollectionViewController: TeadsAdPlacementEventsDelegate {
     func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsAdPlacementEventName, data: [String: Any]?) {
         if event == .heightUpdated, let height = data?["height"] as? CGFloat {
             adHeight = height
-            reloadAdItem()
+            // Re-apply sizes without rebuilding the ad cell.
+            collectionView.performBatchUpdates(nil, completion: nil)
         }
     }
 }
@@ -106,10 +127,10 @@ final class ArticleTextCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: contentView.topAnchor),
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
         ])
     }
 
@@ -117,28 +138,20 @@ final class ArticleTextCollectionViewCell: UICollectionViewCell {
     required init?(coder _: NSCoder) { fatalError("init(coder:) is not supported") }
 }
 
-/// Collection cell that hosts an ad view with an adjustable height.
+/// Hosts the feed ad view, top-anchored so a tall ad isn't clipped.
 final class AdHostCollectionViewCell: UICollectionViewCell {
     static let reuseId = "AdHostCollectionViewCell"
-    private var heightConstraint: NSLayoutConstraint?
 
-    func host(_ adView: UIView, height: CGFloat) {
-        guard adView.superview !== contentView else {
-            heightConstraint?.constant = height
-            return
-        }
+    func host(_ adView: UIView) {
+        guard adView.superview !== contentView else { return }
         contentView.subviews.forEach { $0.removeFromSuperview() }
         adView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(adView)
-        let heightConstraint = adView.heightAnchor.constraint(equalToConstant: height)
-        heightConstraint.priority = .defaultHigh
-        self.heightConstraint = heightConstraint
         NSLayoutConstraint.activate([
             adView.topAnchor.constraint(equalTo: contentView.topAnchor),
             adView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             adView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            adView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            heightConstraint,
+            adView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor),
         ])
     }
 }

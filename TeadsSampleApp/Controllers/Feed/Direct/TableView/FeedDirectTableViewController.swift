@@ -16,7 +16,7 @@ class FeedDirectTableViewController: TeadsViewController {
     }
 
     private let tableView = UITableView()
-    private let rows: [Row] = [.article, .article, .ad, .article, .article]
+    private let rows: [Row] = [.article, .article, .article, .article, .ad]
 
     private var placement: TeadsAdPlacementFeed?
     private var adView: UIView?
@@ -33,9 +33,10 @@ class FeedDirectTableViewController: TeadsViewController {
     private func setupTable() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 100
         tableView.register(ArticleTextTableViewCell.self, forCellReuseIdentifier: ArticleTextTableViewCell.reuseId)
         tableView.register(AdHostTableViewCell.self, forCellReuseIdentifier: AdHostTableViewCell.reuseId)
         view.addSubview(tableView)
@@ -74,9 +75,20 @@ extension FeedDirectTableViewController: UITableViewDataSource {
                 return tableView.dequeueReusableCell(withIdentifier: ArticleTextTableViewCell.reuseId, for: indexPath)
             case .ad:
                 let cell = tableView.dequeueReusableCell(withIdentifier: AdHostTableViewCell.reuseId, for: indexPath) as! AdHostTableViewCell
-                if let adView { cell.host(adView, height: adHeight) }
+                if let adView { cell.host(adView) }
                 return cell
         }
+    }
+}
+
+extension FeedDirectTableViewController: UITableViewDelegate {
+    // Drive the ad row height from the reported height.
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        rows[indexPath.row] == .ad && adHeight > 0 ? adHeight : UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        self.tableView(tableView, heightForRowAt: indexPath)
     }
 }
 
@@ -84,7 +96,9 @@ extension FeedDirectTableViewController: TeadsAdPlacementEventsDelegate {
     func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent event: TeadsAdPlacementEventName, data: [String: Any]?) {
         if event == .heightUpdated, let height = data?["height"] as? CGFloat {
             adHeight = height
-            reloadAdRow()
+            // Re-apply heights without rebuilding the ad cell.
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
     }
 }

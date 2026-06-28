@@ -7,28 +7,20 @@
 
 import UIKit
 
-/// Table cell that hosts an ad view pinned to its content, with an adjustable height.
+/// Hosts an ad view; the controller drives the row height.
 final class AdHostTableViewCell: UITableViewCell {
     static let reuseId = "AdHostTableViewCell"
-    private var heightConstraint: NSLayoutConstraint?
 
-    func host(_ adView: UIView, height: CGFloat) {
-        guard adView.superview !== contentView else {
-            heightConstraint?.constant = height
-            return
-        }
+    func host(_ adView: UIView) {
+        guard adView.superview !== contentView else { return }
         contentView.subviews.forEach { $0.removeFromSuperview() }
         adView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(adView)
-        let heightConstraint = adView.heightAnchor.constraint(equalToConstant: height)
-        heightConstraint.priority = .defaultHigh
-        self.heightConstraint = heightConstraint
         NSLayoutConstraint.activate([
-            adView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            adView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            adView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            adView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            heightConstraint,
+            adView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            adView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            adView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            adView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor),
         ])
     }
 }

@@ -11,7 +11,6 @@ import TeadsSASAdapter
 import TeadsSDK
 
 /// Hosts a Smart AdServer `SASBannerView` driven by the Teads adapter.
-/// Bridges the reported height back to SwiftUI (same pattern as the AdMob host).
 struct SASBannerHost: View {
     let formatId: Int
 
