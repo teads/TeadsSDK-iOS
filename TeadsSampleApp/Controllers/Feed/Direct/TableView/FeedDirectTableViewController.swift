@@ -97,8 +97,7 @@ extension FeedDirectTableViewController: TeadsAdPlacementEventsDelegate {
         if event == .heightUpdated, let height = data?["height"] as? CGFloat {
             adHeight = height
             // Re-apply heights without rebuilding the ad cell.
-            tableView.beginUpdates()
-            tableView.endUpdates()
+            tableView.performBatchUpdates(nil)
         }
     }
 }
