@@ -42,18 +42,25 @@ struct MediaFeedShowcaseSample: View {
                     paragraph()
 
                     sectionHeader("Media Placement (Video Ad)")
-                    TeadsMediaSwiftUIView(config: mediaConfig)
-                        .frame(minHeight: 200)
+                }
+                .padding(.horizontal, 16)
 
+                // Full-width so the SDK's fullscreen expansion isn't offset.
+                TeadsMediaSwiftUIView(config: mediaConfig)
+                    .frame(minHeight: 200)
+
+                VStack(alignment: .leading, spacing: 16) {
                     paragraph()
                     paragraph()
 
                     sectionHeader("Feed Placement (Content Recommendations)")
-                    TeadsFeedSwiftUIView(config: feedConfig)
-                        .frame(minHeight: 200)
                 }
-                .padding(16)
+                .padding(.horizontal, 16)
+
+                TeadsFeedSwiftUIView(config: feedConfig)
+                    .frame(minHeight: 200)
             }
+            .padding(.vertical, 16)
         }
         .background(Color.appBackground)
         .navigationBarTitleDisplayMode(.inline)
