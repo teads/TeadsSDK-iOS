@@ -78,7 +78,6 @@ class InReadDirectCollectionViewController: TeadsViewController {
 
         if let id = placement?.placementId {
             adId = id
-            elements.insert(.ad(id: id), at: 3)
         }
 
         // Load ad and store view

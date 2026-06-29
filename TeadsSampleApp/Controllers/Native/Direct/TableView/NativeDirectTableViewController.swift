@@ -45,9 +45,8 @@ class NativeDirectTableViewController: TeadsViewController {
         placement = nil
         bindAdView = nil
         teadsAdIsLoaded = false
-        if adRowNumber < elements.count {
-            elements[adRowNumber] = false
-        }
+        // Reset to the base articles so a previously inserted ad row can't accumulate.
+        elements = Array(repeating: false, count: 8)
 
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
