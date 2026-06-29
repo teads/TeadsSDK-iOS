@@ -17,6 +17,7 @@ class InterstitialDirectViewController: TeadsViewController {
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
+        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 32, bottom: 12, right: 32)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
