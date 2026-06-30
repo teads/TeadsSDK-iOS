@@ -49,6 +49,8 @@ class InReadAdmobScrollViewController: TeadsViewController {
         requestPermission()
         // 1. Create AdMob view and add it to hierarchy
         bannerView = AdManagerBannerView(adSize: AdSizeFluid)
+        // Declare the fluid request so Ad Manager can resolve the request type.
+        bannerView.validAdSizes = [nsValue(for: AdSizeFluid)]
         slotView.addSubview(bannerView)
 
         bannerView.translatesAutoresizingMaskIntoConstraints = false

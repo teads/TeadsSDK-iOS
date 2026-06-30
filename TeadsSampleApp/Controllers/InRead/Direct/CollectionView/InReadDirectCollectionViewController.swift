@@ -71,15 +71,13 @@ class InReadDirectCollectionViewController: TeadsViewController {
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
-            articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
 
         if let id = placement?.placementId {
             adId = id
-            elements.insert(.ad(id: id), at: 3)
         }
 
         // Load ad and store view

@@ -61,22 +61,18 @@ class MediaFeedShowcaseViewController: TeadsViewController {
         return label
     }()
 
-    // Media Placement Container
+    // Media Placement Container (full width)
     private let mediaPlacementContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
-        view.layer.cornerRadius = 8
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     private var mediaHeightConstraint: NSLayoutConstraint?
 
-    // Feed Placement Container
+    // Feed Placement Container (full width)
     private let feedPlacementContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
-        view.layer.cornerRadius = 8
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -108,63 +104,49 @@ class MediaFeedShowcaseViewController: TeadsViewController {
         // Header image
         contentStackView.addArrangedSubview(headerImageView)
 
-        // Content container
-        let contentContainer = UIView()
-        let contentStack = UIStackView(arrangedSubviews: [
+        // Inset text, full-width media ad, inset text, full-width feed ad.
+        contentStackView.addArrangedSubview(makeTextStack([
             titleLabel,
             descriptionLabel,
             createArticleParagraph(),
             createSectionHeader("Media Placement (Video Ad)"),
-            mediaPlacementContainer,
+        ]))
+        contentStackView.addArrangedSubview(mediaPlacementContainer)
+        contentStackView.addArrangedSubview(makeTextStack([
             createArticleParagraph(),
             createArticleParagraph(),
             createSectionHeader("Feed Placement (Content Recommendations)"),
-            feedPlacementContainer,
-        ])
-        contentStack.axis = .vertical
-        contentStack.spacing = 16
-        contentStack.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        contentStack.isLayoutMarginsRelativeArrangement = true
+        ]))
+        contentStackView.addArrangedSubview(feedPlacementContainer)
 
-        contentContainer.addSubview(contentStack)
-        contentStack.translatesAutoresizingMaskIntoConstraints = false
-
-        contentStackView.addArrangedSubview(contentContainer)
-
-        // Constraints
         NSLayoutConstraint.activate([
-            // ScrollView
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            // Content Stack
             contentStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-            // Header image
             headerImageView.heightAnchor.constraint(equalToConstant: 200),
-
-            // Content stack
-            contentStack.topAnchor.constraint(equalTo: contentContainer.topAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor),
-            contentStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: contentContainer.bottomAnchor),
-
-            // Media container
             mediaPlacementContainer.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-
-            // Feed container
             feedPlacementContainer.heightAnchor.constraint(greaterThanOrEqualToConstant: 200),
         ])
 
-        // Store media height constraint for dynamic updates
         mediaHeightConstraint = mediaPlacementContainer.heightAnchor.constraint(equalToConstant: 300)
         mediaHeightConstraint?.isActive = true
+    }
+
+    private func makeTextStack(_ views: [UIView]) -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: views)
+        stack.axis = .vertical
+        stack.spacing = 16
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
     }
 
     private func setupPlacements() {
@@ -179,8 +161,7 @@ class MediaFeedShowcaseViewController: TeadsViewController {
         // Using test PID 84242 (Direct Landscape)
         let mediaConfig = TeadsAdPlacementMediaConfig(
             pid: 84242,
-            articleUrl: URL(string: "https://www.teads.com")!,
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")!
         )
 
         // Create placement using unified API
@@ -204,10 +185,10 @@ class MediaFeedShowcaseViewController: TeadsViewController {
 
     private func setupFeedPlacement() {
         // Create Feed Placement configuration
-        // Using test Widget ID MB_2 and Installation Key NANOWDGT01
+        // Using test Widget ID MB_1 and Installation Key NANOWDGT01
         let feedConfig = TeadsAdPlacementFeedConfig(
             articleUrl: URL(string: "https://mobile-demo.outbrain.com")!,
-            widgetId: "MB_2",
+            widgetId: "MB_1",
             installationKey: "NANOWDGT01",
             widgetIndex: 0
         )
@@ -221,10 +202,10 @@ class MediaFeedShowcaseViewController: TeadsViewController {
             feedPlacementContainer.addSubview(feedView)
 
             NSLayoutConstraint.activate([
-                feedView.topAnchor.constraint(equalTo: feedPlacementContainer.topAnchor, constant: 8),
-                feedView.leadingAnchor.constraint(equalTo: feedPlacementContainer.leadingAnchor, constant: 8),
-                feedView.trailingAnchor.constraint(equalTo: feedPlacementContainer.trailingAnchor, constant: -8),
-                feedView.bottomAnchor.constraint(equalTo: feedPlacementContainer.bottomAnchor, constant: -8),
+                feedView.topAnchor.constraint(equalTo: feedPlacementContainer.topAnchor),
+                feedView.leadingAnchor.constraint(equalTo: feedPlacementContainer.leadingAnchor),
+                feedView.trailingAnchor.constraint(equalTo: feedPlacementContainer.trailingAnchor),
+                feedView.bottomAnchor.constraint(equalTo: feedPlacementContainer.bottomAnchor)
             ])
         }
     }

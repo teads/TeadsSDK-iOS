@@ -1,0 +1,122 @@
+//
+//  SampleDestinationFactory.swift
+//  TeadsSwiftUISampleApp
+//
+//  Copyright © 2026 Teads. All rights reserved.
+//
+
+import SwiftUI
+
+/// Resolves a `SampleSelection` to the concrete sample screen.
+enum SampleDestinationFactory {
+    @ViewBuilder
+    static func destination(for selection: SampleSelection) -> some View {
+        switch selection.format {
+            case .inRead: inReadDestination(for: selection)
+            case .native: nativeDestination(for: selection)
+            case .feed: feedDestination(for: selection)
+            case .recommendations: recommendationsDestination(for: selection)
+            case .banner: bannerDestination(for: selection)
+            case .interstitial:
+                switch selection.provider {
+                    case .direct: InterstitialDirectSample()
+                    default: InterstitialAdmobSample(pid: selection.stringPID)
+                }
+        }
+    }
+
+    @ViewBuilder
+    private static func feedDestination(for selection: SampleSelection) -> some View {
+        switch selection.integration {
+            case .scrollView: FeedDirectScrollViewSample()
+            case .tableView: FeedDirectTableViewSample()
+            default: SampleUnavailableView()
+        }
+    }
+
+    @ViewBuilder
+    private static func recommendationsDestination(for selection: SampleSelection) -> some View {
+        switch selection.integration {
+            case .scrollView: RecommendationsDirectScrollViewSample()
+            case .tableView: RecommendationsDirectTableViewSample()
+            default: SampleUnavailableView()
+        }
+    }
+
+    @ViewBuilder
+    private static func bannerDestination(for selection: SampleSelection) -> some View {
+        switch (selection.provider, selection.integration) {
+            case (.direct, .scrollView): BannerDirectScrollViewSample()
+            case (.direct, .tableView): BannerDirectTableViewSample()
+            case (.admob, .scrollView): BannerAdmobScrollViewSample(adUnitID: selection.stringPID)
+            case (.admob, .tableView): BannerAdmobTableViewSample(adUnitID: selection.stringPID)
+            default: SampleUnavailableView()
+        }
+    }
+
+    @ViewBuilder
+    private static func inReadDestination(for selection: SampleSelection) -> some View {
+        switch selection.provider {
+            case .direct:
+                switch selection.integration {
+                    case .scrollView: InReadDirectScrollViewSample(selection: selection)
+                    case .tableView: InReadDirectTableViewSample(selection: selection)
+                    case .collectionView: InReadDirectCollectionViewSample(selection: selection)
+                    case .pageView: InReadDirectPageViewSample(selection: selection)
+                    case .webView: InReadDirectWebViewSample(selection: selection)
+                    case .tableTagView: SampleUnavailableView()
+                }
+            case .admob:
+                switch selection.integration {
+                    case .scrollView: InReadAdmobScrollViewSample(pid: selection.stringPID)
+                    case .tableView: InReadAdmobTableViewSample(pid: selection.stringPID)
+                    case .webView: InReadAdmobWebViewSample(pid: selection.stringPID)
+                    default: SampleUnavailableView()
+                }
+            case .sas:
+                switch selection.integration {
+                    case .scrollView: InReadSASScrollViewSample(formatId: selection.integerPID)
+                    case .tableView: InReadSASTableViewSample(formatId: selection.integerPID)
+                    default: SampleUnavailableView()
+                }
+            case .appLovin:
+                InReadAppLovinScrollViewSample(adUnitId: selection.stringPID, isMREC: selection.isMREC)
+        }
+    }
+
+    @ViewBuilder
+    private static func nativeDestination(for selection: SampleSelection) -> some View {
+        switch selection.provider {
+            case .direct:
+                switch selection.integration {
+                    case .tableView: NativeDirectTableViewSample(pid: selection.integerPID)
+                    case .collectionView: NativeDirectCollectionViewSample(pid: selection.integerPID)
+                    case .tableTagView: NativeDirectTagTableViewSample(pid: selection.integerPID)
+                    default: SampleUnavailableView()
+                }
+            case .admob: NativeAdmobTableViewSample(pid: selection.stringPID)
+            case .appLovin: NativeAppLovinTableViewSample(pid: selection.stringPID)
+            case .sas: NativeSASTableViewSample()
+        }
+    }
+}
+
+/// Placeholder shown for catalogue combinations without an implementation.
+struct SampleUnavailableView: View {
+    var body: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "tray")
+                .font(.system(size: 48))
+                .foregroundStyle(.secondary)
+            Text("Coming soon")
+                .font(.headline)
+            Text("This integration is not available yet in the SwiftUI sample.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .teadsBrandNavigationBar()
+    }
+}

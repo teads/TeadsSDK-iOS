@@ -17,7 +17,7 @@ class NativeDirectCollectionViewController: TeadsViewController {
     let fakeArticleCell = "fakeArticleCell"
     let adItemNumber = 3
     var placement: TeadsAdPlacementMediaNative?
-    var adView: TeadsNativeAdView?
+    var bindAdView: ((TeadsNativeAdView) -> Void)?
 
     private var elements = [Bool]() // true = ad loaded, false = article
 
@@ -41,28 +41,20 @@ class NativeDirectCollectionViewController: TeadsViewController {
     private func setupPlacement() {
         // Clean up existing placement and views
         placement = nil
-        adView = nil
-        if adItemNumber < elements.count {
-            elements[adItemNumber] = false
-        }
+        bindAdView = nil
+        // Reset to the base articles so a previously inserted ad row can't accumulate.
+        elements = Array(repeating: false, count: 8)
 
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
-            articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
 
-        // Create native ad view
-        let nativeAdView = TeadsNativeAdView()
-        adView = nativeAdView
-
-        // Load ad and register the view
-        if let bindClosure = try? placement?.loadAd() {
-            bindClosure(nativeAdView)
-        }
+        // Keep the bind closure; bind it to the cell's ad view when the item is shown.
+        bindAdView = try? placement?.loadAd()
 
         collectionView.reloadData()
     }
@@ -79,15 +71,12 @@ extension NativeDirectCollectionViewController: UICollectionViewDelegate, UIColl
             cell.contentView.translatesAutoresizingMaskIntoConstraints = false
             cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.bounds.width).isActive = true
             return cell
-        } else if elements[indexPath.item], let nativeAdView = adView {
+        } else if elements[indexPath.item] {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeAdCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            // The ad is already bound via loadAd() closure
-            // Just add the view to the cell if not already added
-            if cell.adView != nativeAdView {
-                cell.adView = nativeAdView
-            }
+            // Bind the ad to the cell's native ad view (laid out in the storyboard).
+            bindAdView?(cell.adView)
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeCollectionViewCell else {

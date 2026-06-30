@@ -11,24 +11,19 @@ import UIKit
 
 class RootViewController: TeadsViewController {
     @IBOutlet var collectionView: UICollectionView!
-    private var selectionList = [inReadFormat, nativeFormat, interstitialFormat]
+    private var selectionList = [inReadFormat, nativeFormat, feedFormat, recommendationsFormat, bannerFormat, interstitialFormat]
 
     private let headerCell = "RootHeaderCollectionReusableView"
     private let buttonCell = "RootButtonCollectionViewCell"
     private let imageViewButtonCell = "RootImageViewLabelCollectionViewCell"
     var adSelection: AdSelection = .init()
 
-    private let validationModeKey = "TeadsValidationModeEnabled"
+    private var currentCreativeTypes: [CreativeType] {
+        creativeTypes(for: adSelection.format.name, provider: adSelection.provider.name)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hasTeadsArticleNavigationBar = false
-
-        // Load validation mode from UserDefaults
-        validationModeEnabled = UserDefaults.standard.object(forKey: validationModeKey) as? Bool ?? true
-
-        // Register validation toggle cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ValidationToggleCell")
 
         // Register showcase button cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ShowcaseButtonCell")
@@ -36,13 +31,7 @@ class RootViewController: TeadsViewController {
 
     @objc private func showMediaFeedShowcase() {
         let showcase = MediaFeedShowcaseViewController()
-        showcase.validationModeEnabled = validationModeEnabled
         navigationController?.pushViewController(showcase, animated: true)
-    }
-
-    @objc private func validationModeToggled(_ sender: UISwitch) {
-        validationModeEnabled = sender.isOn
-        UserDefaults.standard.set(validationModeEnabled, forKey: validationModeKey)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -51,12 +40,9 @@ class RootViewController: TeadsViewController {
     }
 
     func showSampleController(for integration: Integration) {
-        // Interstitial is programmatic — no storyboard segue
-        if adSelection.format.name == .interstitial {
-            let vc = InterstitialAdmobViewController()
-            vc.pid = PID.admobInterstitial
-            vc.validationModeEnabled = validationModeEnabled
-            navigationController?.pushViewController(vc, animated: true)
+        // Formats added with the 6.2.0 SDK are built programmatically — no storyboard segue.
+        if let controller = programmaticController(for: integration) {
+            navigationController?.pushViewController(controller, animated: true)
             return
         }
 
@@ -65,11 +51,47 @@ class RootViewController: TeadsViewController {
         performSegue(withIdentifier: identifier, sender: self)
     }
 
+    private func programmaticController(for integration: Integration) -> TeadsViewController? {
+        switch adSelection.format.name {
+            case .interstitial:
+                switch adSelection.provider.name {
+                    case .direct: return InterstitialDirectViewController()
+                    default:
+                        let vc = InterstitialAdmobViewController()
+                        vc.pid = PID.admobInterstitial
+                        return vc
+                }
+            case .feed:
+                switch integration.name {
+                    case tableViewIntegration.name: return FeedDirectTableViewController()
+                    case collectionViewIntegration.name: return FeedDirectCollectionViewController()
+                    default: return nil
+                }
+            case .recommendations:
+                switch integration.name {
+                    case tableViewIntegration.name: return RecommendationsDirectTableViewController()
+                    case scrollViewIntegration.name: return RecommendationsDirectScrollViewController()
+                    default: return nil
+                }
+            case .banner:
+                if adSelection.provider.name == .direct, integration.name == scrollViewIntegration.name {
+                    return BannerDirectScrollViewController()
+                }
+                if adSelection.provider.name == .admob, integration.name == collectionViewIntegration.name {
+                    let vc = BannerAdmobCollectionViewController()
+                    vc.pid = PID.admobBanner
+                    return vc
+                }
+                return nil
+            default:
+                return nil
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         // Handle TeadsViewController subclasses
         if let destination = segue.destination as? TeadsViewController {
             destination.pid = pidForCreative()
-            destination.validationModeEnabled = validationModeEnabled
 
             if let appLovinViewController = destination as? AppLovinViewController,
                [CreativeTypeName.appLovinMRECCarousel, CreativeTypeName.appLovinMRECSquare, CreativeTypeName.appLovinMRECLandscape, CreativeTypeName.appLovinMRECVertical].contains(adSelection.creation.name) {
@@ -81,7 +103,6 @@ class RootViewController: TeadsViewController {
         // Handle InReadPageViewController separately (doesn't inherit from TeadsViewController)
         if let destination = segue.destination as? InReadPageViewController {
             destination.pid = pidForCreative()
-            destination.validationModeEnabled = validationModeEnabled
         }
     }
 
@@ -173,19 +194,13 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
         numberOfSections += (selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0) > 0 ? 1 : 0
         numberOfSections = numberOfSections == 1 ? 1 : numberOfSections + 1
         numberOfSections += 1 // Add showcase section after integrations
-        numberOfSections += 1 // Add validation toggle section at the end
         return numberOfSections
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Check if this is the validation toggle section (last section)
+        // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
         if section == totalSections - 1 {
-            return 1 // Validation toggle cell
-        }
-
-        // Check if this is the showcase section (second to last)
-        if section == totalSections - 2 {
             return 1 // Showcase button
         }
 
@@ -195,7 +210,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case 1:
                 return selectionList.first(where: { $0.isSelected })?.providers.count ?? 0
             case 2:
-                return selectionList.first(where: { $0.isSelected })?.creativeTypes.count ?? 0
+                return currentCreativeTypes.count
             case 3:
                 return selectionList.first(where: { $0.isSelected })?.providers.first(where: { $0.isSelected })?.integrations.count ?? 0
             default:
@@ -208,15 +223,12 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionReusableView()
         }
 
-        // Check if this is the validation toggle section (last section)
+        let title3 = UIFont.preferredFont(forTextStyle: .title3)
+        cell.label.font = UIFont(descriptor: title3.fontDescriptor.withSymbolicTraits(.traitBold) ?? title3.fontDescriptor, size: 0)
+
+        // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
         if indexPath.section == totalSections - 1 {
-            cell.label.text = "Settings"
-            return cell
-        }
-
-        // Check if this is the showcase section (second to last)
-        if indexPath.section == totalSections - 2 {
             cell.label.text = "Showcase"
             return cell
         }
@@ -237,50 +249,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // Check if this is the validation toggle section (last section)
+        // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
         if indexPath.section == totalSections - 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ValidationToggleCell", for: indexPath)
-
-            // Clear any existing subviews
-            cell.contentView.subviews.forEach { $0.removeFromSuperview() }
-
-            // Create horizontal stack view
-            let stackView = UIStackView()
-            stackView.axis = .horizontal
-            stackView.alignment = .center
-            stackView.spacing = 12
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-
-            // Create label
-            let label = UILabel()
-            label.text = "Validation Mode"
-            label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 16)
-
-            // Create switch
-            let switchControl = UISwitch()
-            switchControl.isOn = validationModeEnabled
-            switchControl.tag = indexPath.item
-            switchControl.addTarget(self, action: #selector(validationModeToggled(_:)), for: .valueChanged)
-
-            stackView.addArrangedSubview(label)
-            stackView.addArrangedSubview(switchControl)
-
-            cell.contentView.addSubview(stackView)
-
-            // Add constraints
-            NSLayoutConstraint.activate([
-                stackView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16),
-                stackView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16),
-                stackView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
-            ])
-
-            return cell
-        }
-
-        // Check if this is the showcase section (second to last)
-        if indexPath.section == totalSections - 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseButtonCell", for: indexPath)
 
             // Clear any existing subviews
@@ -288,7 +259,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
             // Create button
             let button = UIButton(type: .system)
-            button.setTitle("📺 Media + Feed Showcase", for: .normal)
+            button.setTitle("📺 Media + Feed", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             button.backgroundColor = .systemBlue
             button.setTitleColor(.white, for: .normal)
@@ -331,10 +302,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCell, for: indexPath) as? RootButtonCollectionViewCell else {
                     return UICollectionViewCell()
                 }
-                if let cellValue = selectionList.first(where: { $0.isSelected })?.creativeTypes[indexPath.item] {
-                    cell.label.text = cellValue.name.rawValue
-                    cell.isButtonSelected = cellValue.isSelected
-                }
+                let creativeType = currentCreativeTypes[indexPath.item]
+                cell.label.text = creativeType.name.rawValue
+                cell.isButtonSelected = creativeType.name == adSelection.creation.name
                 return cell
             case 3:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewButtonCell, for: indexPath) as? RootImageViewLabelCollectionViewCell else {
@@ -351,9 +321,9 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Check if this is the showcase or validation section - no action needed
+        // Check if this is the showcase section - no action needed
         let totalSections = numberOfSections(in: collectionView)
-        if indexPath.section == totalSections - 1 || indexPath.section == totalSections - 2 {
+        if indexPath.section == totalSections - 1 {
             return
         }
 
@@ -363,11 +333,11 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     selectionList[i].isSelected = indexPath.item == i
                     if indexPath.item == i {
                         adSelection.format = selectionList[i]
-                        if let creation = adSelection.format.creativeTypes.first(where: { $0.isSelected }) {
-                            adSelection.creation = creation
-                        }
                         if let provider = adSelection.format.providers.first(where: { $0.isSelected }) {
                             adSelection.provider = provider
+                        }
+                        if let creation = currentCreativeTypes.first {
+                            adSelection.creation = creation
                         }
                     }
                 }
@@ -390,27 +360,17 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
                         }
                     }
                 }
-
-                // Change creative type for AppLovin setup due to Banner vs MREC integration
-                if adSelection.provider == inReadAppLovinProvider {
-                    selectionList[0].creativeTypes = appLovinInReadCreativeTypes
-                } else {
-                    selectionList[0].creativeTypes = defaultInReadCreativeTypes
+                // Reset the creative to one valid for the newly selected provider.
+                if let creation = currentCreativeTypes.first {
+                    adSelection.creation = creation
                 }
-
                 collectionView.reloadData()
             case 2:
-                for j in 0 ..< selectionList.count where selectionList[j].isSelected {
-                    for i in 0 ..< selectionList[j].creativeTypes.count {
-                        selectionList[j].creativeTypes[i].isSelected = indexPath.item == i
-                        if indexPath.item == i {
-                            if selectionList[j].creativeTypes[i].name == .custom {
-                                pidAlert()
-                            }
-                            self.adSelection.creation = selectionList[j].creativeTypes[i]
-                        }
-                    }
+                let creativeType = currentCreativeTypes[indexPath.item]
+                if creativeType.name == .custom {
+                    pidAlert()
                 }
+                adSelection.creation = creativeType
                 collectionView.reloadData()
             case 3:
                 for j in 0 ..< selectionList.count where selectionList[j].isSelected {
@@ -429,35 +389,26 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 80)
+        return CGSize(width: collectionView.bounds.width, height: 56)
     }
 }
 
 extension RootViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // Check if this is the validation toggle section (last section)
+        // Check if this is the showcase section (last section)
         let totalSections = numberOfSections(in: collectionView)
         if indexPath.section == totalSections - 1 {
-            return CGSize(width: collectionView.bounds.width - 32, height: 60)
-        }
-
-        // Check if this is the showcase section (second to last)
-        if indexPath.section == totalSections - 2 {
             return CGSize(width: collectionView.bounds.width - 32, height: 66)
         }
 
         switch indexPath.section {
             case 0:
-                let spacing: CGFloat = 4
-                let count: CGFloat = .init(selectionList.count)
-                let width = ((collectionView.bounds.width - 32) / count) - spacing * (count - 1)
-                return CGSize(width: width, height: 32)
+                return getButtonButtonSize(buttonValues: selectionList.map { $0.name.rawValue })
             case 1:
                 let providerList = selectionList.first(where: { $0.isSelected })?.providers ?? []
                 return getButtonButtonSize(buttonValues: providerList.map { $0.name.rawValue })
             case 2:
-                let creativesTypeList = selectionList.first(where: { $0.isSelected })?.creativeTypes ?? []
-                return getButtonButtonSize(buttonValues: creativesTypeList.map { $0.name.rawValue })
+                return getButtonButtonSize(buttonValues: currentCreativeTypes.map { $0.name.rawValue })
             case 3:
                 let spacing: CGFloat = 16
                 let width = ((collectionView.bounds.width - 32) / 2) - (spacing / 2)

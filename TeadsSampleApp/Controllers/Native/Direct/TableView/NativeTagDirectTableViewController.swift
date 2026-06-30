@@ -19,7 +19,7 @@ class NativeTagDirectTableViewController: TeadsViewController {
     var teadsAdIsLoaded = false
     var placement: TeadsAdPlacementMediaNative?
     var tableViewAdCellWidth: CGFloat!
-    var adView: TeadsNativeAdView?
+    var bindAdView: ((TeadsNativeAdView) -> Void)?
 
     private var elements = [Bool]() // true = ad loaded, false = article
 
@@ -43,29 +43,21 @@ class NativeTagDirectTableViewController: TeadsViewController {
     private func setupPlacement() {
         // Clean up existing placement and views
         placement = nil
-        adView = nil
+        bindAdView = nil
         teadsAdIsLoaded = false
-        if adRowNumber < elements.count {
-            elements[adRowNumber] = false
-        }
+        // Reset to the base articles so a previously inserted ad row can't accumulate.
+        elements = Array(repeating: false, count: 8)
 
         // Create placement with new API
         let config = TeadsAdPlacementMediaConfig(
             pid: Int(pid) ?? 0,
-            articleUrl: URL(string: "https://www.teads.com"),
-            enableValidationMode: validationModeEnabled
+            articleUrl: URL(string: "https://www.teads.com")
         )
 
         placement = Teads.createPlacement(with: config, delegate: self)
 
-        // Create native ad view
-        let nativeAdView = TeadsNativeAdView()
-        adView = nativeAdView
-
-        // Load ad and register the view
-        if let bindClosure = try? placement?.loadAd() {
-            bindClosure(nativeAdView)
-        }
+        // Keep the bind closure; bind it to the cell's ad view when the row is shown.
+        bindAdView = try? placement?.loadAd()
 
         tableView.reloadData()
     }
@@ -99,16 +91,12 @@ extension NativeTagDirectTableViewController: UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCell, for: indexPath)
             return cell
-        } else if elements[indexPath.row], let nativeAdView = adView {
+        } else if elements[indexPath.row] {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: teadsAdCellIndentifier, for: indexPath) as? NativeAdTableViewCell else {
                 return UITableViewCell()
             }
-            // The ad is already bound via loadAd() closure
-            // Note: Tag-based binding would need to be set up when creating the adView
-            // Just add the view to the cell if not already added
-            if cell.adView != nativeAdView {
-                cell.adView = nativeAdView
-            }
+            // Bind the ad to the cell's native ad view (laid out in the storyboard).
+            bindAdView?(cell.adView)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: fakeArticleCell, for: indexPath) as? FakeArticleNativeTableViewCell else {
