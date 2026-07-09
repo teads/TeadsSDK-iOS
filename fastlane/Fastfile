@@ -1,0 +1,12 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Tag the current release commit using the version from TeadsSDK.podspec and push to remote"
+  lane :tag_release do
+    version = get_podspec_version(path: "TeadsSDK.podspec")
+    tag = "v#{version}"
+    add_git_tag(tag: tag)
+    push_git_tags(tag: tag)
+    UI.success("Tagged and pushed #{tag}")
+  end
+end
