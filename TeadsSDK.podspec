@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = "TeadsSDK"
-    s.version               = "6.2.0"
+    s.version               = "6.2.1"
     s.summary               = "Teads' iOS SDK"
     s.module_name           = s.name
     s.description           = <<-DESC
@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
                             DESC
     s.documentation_url     = "https://developers.teads.com/docs/iOS-SDK/Getting-Started/"
     s.ios.deployment_target = "14.0"
+    s.swift_version         = '5.0'
 
     s.homepage              = "https://github.com/teads/TeadsSDK-iOS"
     s.license               = { :type => 'Copyright', :text => 'Copyright Teads 2021' }

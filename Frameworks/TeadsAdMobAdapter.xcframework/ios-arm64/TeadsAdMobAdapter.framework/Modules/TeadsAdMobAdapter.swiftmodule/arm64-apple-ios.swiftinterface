@@ -124,6 +124,11 @@ extension TeadsAdMobAdapter.GADMAdapterTeadsBannerAd : TeadsSDK.TeadsAdPlacement
 }
 extension TeadsSDK.TeadsAdapterSettings : GoogleMobileAds.AdNetworkExtras {
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class TeadsAdMobMediation : ObjectiveC.NSObject {
+  @discardableResult
+  @objc public static func register() -> [Swift.String]
+  @objc deinit
+}
 extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.Equatable {}
 extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.Hashable {}
 extension TeadsAdMobAdapter.TeadsAdapterErrorCode : Swift.RawRepresentable {}

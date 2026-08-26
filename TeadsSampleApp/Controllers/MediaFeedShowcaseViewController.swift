@@ -205,7 +205,7 @@ class MediaFeedShowcaseViewController: TeadsViewController {
                 feedView.topAnchor.constraint(equalTo: feedPlacementContainer.topAnchor),
                 feedView.leadingAnchor.constraint(equalTo: feedPlacementContainer.leadingAnchor),
                 feedView.trailingAnchor.constraint(equalTo: feedPlacementContainer.trailingAnchor),
-                feedView.bottomAnchor.constraint(equalTo: feedPlacementContainer.bottomAnchor)
+                feedView.bottomAnchor.constraint(equalTo: feedPlacementContainer.bottomAnchor),
             ])
         }
     }

@@ -416,6 +416,35 @@ SWIFT_CLASS_NAMED("GADMAdapterTeadsNative")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+/// Entry point that links the Teads AdMob custom-event classes into the host application.
+SWIFT_CLASS("_TtC17TeadsAdMobAdapter19TeadsAdMobMediation")
+@interface TeadsAdMobMediation : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Keeps the Teads custom-event classes in the app binary.
+/// Google Mobile Ads instantiates <code>GADMAdapterTeadsBanner</code>, <code>GADMAdapterTeadsNative</code>
+/// and <code>GADMAdapterTeadsInterstitial</code> <em>by name</em>, from the AdMob dashboard
+/// configuration — nothing in publisher code ever references them. Because the adapter
+/// is distributed as a static framework, a linker that sees no reference to those
+/// classes leaves them out of the app binary. The app then builds, launches and runs
+/// normally, and Teads simply never serves through mediation.
+/// Calling this from the app supplies the missing reference. Call it once, before
+/// <code>MobileAds.shared.start(completionHandler:)</code> or the first ad request:
+/// \code
+/// TeadsAdMobMediation.register()
+/// MobileAds.shared.start()
+///
+/// \endcodeCocoaPods integrations get the same effect from the <code>-ObjC</code> linker flag that the
+/// Google Mobile Ads podspec applies to the app target automatically. Calling this as
+/// well is harmless, so it is safe to call unconditionally.
+///
+/// returns:
+/// the Objective-C names of the linked classes. Also printed automatically
+/// in debug builds, so a launch log is enough to confirm the classes reached the
+/// binary — no need to inspect the return value yourself.
++ (NSArray<NSString *> * _Nonnull)register;
+@end
+
 @interface TeadsAdapterSettings (SWIFT_EXTENSION(TeadsAdMobAdapter)) <GADAdNetworkExtras>
 @end
 

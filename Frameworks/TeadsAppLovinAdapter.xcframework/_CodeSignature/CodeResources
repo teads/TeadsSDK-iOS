@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/TeadsAppLovinAdapter.framework/Info.plist</key>
 		<data>
-		MbFD2jjyorqIoJ7Pf/b6uoseGXU=
+		amVPkI0qOUmMbgckMtV8m4s5bRE=
 		</data>
 		<key>ios-arm64/TeadsAppLovinAdapter.framework/Modules/TeadsAppLovinAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAppLovinAdapter.framework/Info.plist</key>
 		<data>
-		qtSgF0ZyA0k55pMXNRVw8F5QtPM=
+		atpiQ1wFbqESpqsxMZMIzx1Cz8M=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAppLovinAdapter.framework/Modules/TeadsAppLovinAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IKOBYK+aof0XMCTqhbfp1o+pfljopnNMWWunjl6p0cQ=
+			lyUhYEeTjB2lwVLRuHLH4ycJs3WIR+XPPyV02AMcGZE=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAppLovinAdapter.framework/Modules/TeadsAppLovinAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -154,7 +154,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hJMk3pziF9atfWEVZDDb00RkLmFQ7w26CZZ6r5uyM+k=
+			1XPCks9xC4XW3kNMqCtkG+SM2xYGY8jnZOZ3AL/AL4E=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAppLovinAdapter.framework/Modules/TeadsAppLovinAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

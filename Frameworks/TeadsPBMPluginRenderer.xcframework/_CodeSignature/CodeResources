@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/TeadsPBMPluginRenderer.framework/Info.plist</key>
 		<data>
-		u7aIx2rq5lVSmBrr3KdCroxwOdE=
+		GaEeS4yjvwt+WSr/43/3XDMN5+I=
 		</data>
 		<key>ios-arm64/TeadsPBMPluginRenderer.framework/Modules/TeadsPBMPluginRenderer.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsPBMPluginRenderer.framework/Info.plist</key>
 		<data>
-		Fhn/io2Hs9bvJIDcisNGvJ7324I=
+		KbAO43U2Pr8CawEmcvYzTVpuJr8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsPBMPluginRenderer.framework/Modules/TeadsPBMPluginRenderer.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GCLGNekjXtsKhfNnQqUjr8hu93syAQkb+LFSLe+prV4=
+			I7xGKeMfmQZSm4g2MT88iOPm6Ty1lHvFS9DzaUfwKWs=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsPBMPluginRenderer.framework/Modules/TeadsPBMPluginRenderer.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -154,7 +154,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VUIG9ZgLPXrof0YfuJnc1ZSTMjFHfKAuGMSCizC3Xo4=
+			7CUlid/gBrngUTcgWl8ALyjt6XDVgTsNJdhV2PhEidY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsPBMPluginRenderer.framework/Modules/TeadsPBMPluginRenderer.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

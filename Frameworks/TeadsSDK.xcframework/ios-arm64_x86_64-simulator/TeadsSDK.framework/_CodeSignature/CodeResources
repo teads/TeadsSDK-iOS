@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		i9C1CGMBKa08Pv9Levndu0AUOsM=
+		gs8uI3GiwcwjpWgtz6V5Lv20WvM=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		3/SbU5/jYqfJCc0Anl6UvzuNsHE=
+		wZxL6x4Wr8Ercf7Nukzm30ljoc0=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		cBZ5991CFqjWR0svWoxzNg5hSbY=
+		ofGgi3PZi8Lh/urUCgV53KdLMrA=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Sbx4nvjkqOr/AI+qUQZOIYVMoEE=
+		bJNcpxbDZlOrClQUZdbT5y7RbIM=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gxc0um0CHTPa+9YeWgO01qvc46A=
+		jrXg0hgxriBL3Xhnq26Q9iGhQmk=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		I07f17MC7f+ksMBgO7QKQfrFyto=
+		CqZ2mZwos/ZtLpPTznwXCGwbGAw=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		3/SbU5/jYqfJCc0Anl6UvzuNsHE=
+		wZxL6x4Wr8Ercf7Nukzm30ljoc0=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		c9TNY+T1zhB71aUmaq917jFYDc8=
+		2nGMnw2eRKteH/n4/eLM3RFAtxM=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		GbfLKlqECtkqPF1vpe+PxwupThY=
+		uxhzd0eVEz44ReoO0DWDeanU4jI=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PG/aKWRXkMiNZWX54PWMK9VT3dc=
+		1LJhqOH4U1T4+0Gu7xW1r2SuabA=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hvNsCKdxhNDpodT0l/XNrYWbwnQ=
+		6FWZnUt9TKC1Fbg3b0nWxmDAI00=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>lib-js.tar</key>
 		<data>
-		Ib0BH84AwiEt1Jmu2IKkWwhJWZ0=
+		2t2q4byiuAjwY0nz+/JOkYK1S3s=
 		</data>
 		<key>omid-session-client-v1.js</key>
 		<data>
@@ -112,70 +112,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ju3w3hc0b32JmVfgXOq+jf0Rka3BAkyAQjA0kmWvwbw=
+			6Msbq1Rkz/ZHNfyKU0cXaExMOHFmwFSQXfGKxutY1K4=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XzwlBgdFXa4H1y05NbjGKvY8COqUoJxVqF9sMUOrm/c=
+			2BjPKDjUAJfYQAay5BGUkgL9dB4EqqFlyfyWfih2vqQ=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T8UXduKXZc6LZQfhyvsyVAJ2vOe3j3df4ltkgWwcMEo=
+			ml+SGSV9v00cmk/38XUVGCzPNtzIHdP5u+uUAAKGesw=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LuMSJWD0aFHlynmHVZjVtloTp/cLMuRTyEmIeShvQ88=
+			CTpuRmLWs2Zbwy7YHWfA9ONm0XkPvWGdPI8WUtrAm9I=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4AwR8qClLVSQcvCKz7CKCOLZV4l5qolFYeZTMTsr88Q=
+			/yZKMHHxJVqVmdeWyYaktRLK+4DzPRikgLx35hXAoYM=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ju3w3hc0b32JmVfgXOq+jf0Rka3BAkyAQjA0kmWvwbw=
+			6Msbq1Rkz/ZHNfyKU0cXaExMOHFmwFSQXfGKxutY1K4=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fwi6m7g7MGH0lerXlmTzzQQZqLH2ISXs6vjCE4NaywQ=
+			r5NFKg+eLmY1kK+Voo8QUTHoek/tFignZjV+BT6ZvR4=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jcjEqdxdNzL0Q1e+8t06Ih0WKB7qT4L46JSaFD34+vA=
+			hky2CK17owItJzGRQDKVn8207jfi4lXrkTxhX59wkOs=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EtKAxdduNp3lJ0//oNHpGhEg/PDsSun8kEnqpyzfNTA=
+			PSdNRGeChhleUGnlFwbgtODM0znlgZz5uqc/WQqjhcs=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BG7AWzZFT/3JYTMVf2EvQ2X8P1ZYqO9bS6sj7SDErLc=
+			chvyDXEbVLpBlArQZn+E28F/uAoaqOPkYISdXmZY12w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -196,7 +196,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7a2/xc87R+WamJvPyJlJkNIV1QbFVKyjGljm8gInOhY=
+			l8Qfyb6lyAgyEyrgYRbSY29/4QjLJj8uEE8tzh69JlU=
 			</data>
 		</dict>
 		<key>omid-session-client-v1.js</key>

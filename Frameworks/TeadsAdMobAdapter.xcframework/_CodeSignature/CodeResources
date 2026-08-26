@@ -4,37 +4,29 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/Info.plist</key>
-		<data>
-		N4XMuH2oouVv1K6MC6grWaVfXt8=
-		</data>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		VWCA3MeaiPMoOAS1uOteTSLX8js=
-		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Headers/TeadsAdMobAdapter-Swift.h</key>
 		<data>
-		J30UDcX5ta+nKErqITlxicSGeEs=
+		olgNsrEjX3JuCd2zZzc+muaxBF8=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Info.plist</key>
 		<data>
-		bosoTgl4dJfb/HbN1HYMcGVkmTY=
+		eulMlTqWGTBPuhrTqzQEdS+KELw=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		t+Zul3k9TPfhY7jkSa8wjA46huk=
+		cjVZMQIbWwfiKQyo1DSWt2FC7EA=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		W6NbrB8d3X/D11KKVC7UjlVf+zE=
+		8Vc/wT/GSTePksFyNMo/hM0szE0=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		agQHjSkZ7xvkScX+MyibVOpaXxs=
+		PW68ZtQCO08yM7MrPoHQRPx8Evg=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		cTHWxmgFRNwh2IMRJguiOuJdJes=
+		5mNRZf5joeqvLkUO+NQsiSd8q4o=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/module.modulemap</key>
 		<data>
@@ -42,63 +34,47 @@
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/TeadsAdMobAdapter</key>
 		<data>
-		E2sz3P8mDPYG91v0ECH542mIAaE=
-		</data>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/Info.plist</key>
-		<data>
-		wYPQfmijf1+xWdsbbd8fFbGSR4Q=
-		</data>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		k9OFlDPBRWfteJ+bfG12WAoBuls=
-		</data>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/Info.plist</key>
-		<data>
-		QDNz9uEQQPQ0DskYCFfxUtHdt4w=
-		</data>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		VWCA3MeaiPMoOAS1uOteTSLX8js=
+		laHjQu0lVcslfU+e3JgzYFYlywo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Headers/TeadsAdMobAdapter-Swift.h</key>
 		<data>
-		ZEeLSgIbUb0n+D2WdyQtGX+lxL8=
+		Wn5LONFv1wG4E45hg/2CKQM5TDw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Info.plist</key>
 		<data>
-		7hL3cgzpGNvkyIEiqA8+74GVt0w=
+		jJv31jX65pjLePgknhIx5moqKfA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		t+Zul3k9TPfhY7jkSa8wjA46huk=
+		cjVZMQIbWwfiKQyo1DSWt2FC7EA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		X+/CXlQhjBY8J/W71bPzLGz4i4c=
+		8Bd/FXfAcH+OQ+Hoxj5xZAEWq0o=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Z9p/lnoYxcYyWdwWp5xtzXsBTAg=
+		D6X/U4sB6O+v38d8Pww7PwXBEqQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UIOw8zDFL9xOFH2zcZeSQpssC6A=
+		8PTdo6jJZTtb1QRh6Bop/ke8qTQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		t+Zul3k9TPfhY7jkSa8wjA46huk=
+		cjVZMQIbWwfiKQyo1DSWt2FC7EA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		tn6izLjyJdPZGaKcVmuc7YzZf1I=
+		HWXSy8lUOt/FJ7Gu5kYyIOZgg5M=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dxHs2YvmFYL/TnREg2qiCWkq+pE=
+		kORmGZ9Ai4TbQTTcYmvlUcmsa8A=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CrDHWc2Pew4oobj7vbGF7zfSCg4=
+		SLIcZMmx3QBSFeFLiUqdBky89TM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/module.modulemap</key>
 		<data>
@@ -106,73 +82,51 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/TeadsAdMobAdapter</key>
 		<data>
-		TN5Ntn6IWViwi3pjNSGC16b/IIM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/Info.plist</key>
-		<data>
-		lNmukocqUQkJBGdCzYtrhDKuYg0=
-		</data>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		k9OFlDPBRWfteJ+bfG12WAoBuls=
+		SQB2OSW+yIYXRj63gbjwEmC3MUc=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			omzwJBDpY2IgjbG3I9ZBcbBAyG5HmMKOaX02rGLlsF4=
-			</data>
-		</dict>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			afsRJYL8I/wGxjXJYdJio/e0tWVNKEeHSR3jAA2t+dI=
-			</data>
-		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Headers/TeadsAdMobAdapter-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u6rmRlJYg0JtsnBR2HFXvguoh5mwGa1SlnpFwZ9eD8M=
+			FwdoOTEqNjAZpv9cOZfTTfcFicRmZX3b+R0fVBZ1KB0=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LnFeDhaSIObOP+RMXU170fL8dRDANlmFZObgHlKSWJs=
+			Uh7ZDpdsB9dtuMC+7R34qSBE0iwf8VohA6aO8uBwwRY=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			22AdcOs/2UcOxLAVIAi2ulbCSOJRSmdRg1xzfKL/WM8=
+			kVUEZlYqeHl/GstHcalzlMnhlee2G2YqPbxV85oWy08=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			twn3hlQErLllYVGwZi5fXneY01Lg9H/wlkxbnnUD5k0=
+			385fJurVgO7UmZNkszcsRWLaVq9iKqbvPXabazKBq84=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JkbrKzxjeHNE4g6p322rfJYcqzezYJOXlDG5hDAqKL8=
+			crBkl2Z+RobF8VAhn2PY9GkWYjhZ06kt6+DptSurrjY=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ppDm4cRbPyvPsDapSuQr+xmmQ2Cn2tF0o2mgOdbRaVY=
+			30ZhRZTe7gW57dt395XypDA5JcUSBia76sZROWnAj24=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/module.modulemap</key>
@@ -186,105 +140,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7jMD8QXdaZGmEM8CRN25A5DkEr0tlH6zQWB7sIL69g4=
-			</data>
-		</dict>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			rxAzBtHkvrH+8Kbyeq4Of3rk0LkW6Gw4WUUP/tYH+VE=
-			</data>
-		</dict>
-		<key>ios-arm64/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			RbetuZ/NLZYqHIAPv8wTJbV6f6QWX0FhgjI7tf/pyQA=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gdVEjrYrTFdZjNLrDLIwAYrN38kz/XV320do2PWanF4=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/GoogleMobileAdsResources.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			afsRJYL8I/wGxjXJYdJio/e0tWVNKEeHSR3jAA2t+dI=
+			/KKTCzVLFQqSzf5V/XrQ9v0+2rBZ7FbxWTYNBxNyPPc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Headers/TeadsAdMobAdapter-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r2BYm85RCvV15KCDr7xDMKWvTPecaJKrS6afnsD0Nc4=
+			Lj6za2ER/ZsYWj8PKcvUg+ZNd0SUQk0bg9p8xygprYc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cjSy4m8G46emEzSAzKPcJ2JbDxBExddcH3XL6nm3Kao=
+			Up+hOmBztyq4Mlz7PM9D520DXI8aQD39nWPIk7Mbb2o=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			22AdcOs/2UcOxLAVIAi2ulbCSOJRSmdRg1xzfKL/WM8=
+			kVUEZlYqeHl/GstHcalzlMnhlee2G2YqPbxV85oWy08=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zvA/7oDKUSdlfwxtApuOlu1RJZ3UAwbR+nFYu+3zniM=
+			nmyfFGDPRR+UK9fEUNaOdpVn9wEyjOW7FZmZY3wXUx0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZJwSVw6zU/DpKlNn5rq4bSHmoJ3LYOg2FC4ROhC2gAM=
+			kGfba2U5prmDlUu7dtHBAOjRgremSse5GPm0igtvms8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YCdiFxBkC2zkVzjBnlPPJhtV2iXNPYS45Xbc2Rpso9I=
+			yPZCpz9wvUemSU1ADowwJtMFzEQjkESXOtG09mFe05E=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			22AdcOs/2UcOxLAVIAi2ulbCSOJRSmdRg1xzfKL/WM8=
+			kVUEZlYqeHl/GstHcalzlMnhlee2G2YqPbxV85oWy08=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RKLsZOk1VPHOjQ/vqYS8ZDq+cZjQ9gVrSHSYzyKmbGQ=
+			DZtmINICoCx7YUHDpOXKJhCpB7deoc5/FUcZpoeiDPs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g2ZePHHnzAS6LI+0JmJpaF2EtOsBgD+4Bcxb7N046zk=
+			B1SLrjhyZak0zKtnNXVDJC+Li1WDuhmojWODZ3mYhhw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			deSoNSa95p483dCV2Mp1iZJmG3BHdtOKsEEPf4Eeans=
+			Wa/yaUumOCXpTBmF5991niO2NkikelBx2ZSs7n2uv4Q=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/module.modulemap</key>
@@ -298,21 +224,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BZf7Ja6AX5SB9GtcWK0Y08J21X69WPsrgwl2fozQU1w=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			i8fakdFjuT/mFtyFlueXAX/Jl9afs7+6iOUI7OQgN6U=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/UserMessagingPlatformResources.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			RbetuZ/NLZYqHIAPv8wTJbV6f6QWX0FhgjI7tf/pyQA=
+			SiLORwRzVPkCa+scjjSEyDgrbTbrYDnIxRu6ipZgZ+g=
 			</data>
 		</dict>
 	</dict>
