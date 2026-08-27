@@ -544,7 +544,6 @@
 				C4CA6212012C961027E59A24 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				4FB339819437690DEF8F9939 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
 				272856BB75D34FEBA71872B4 /* XCRemoteSwiftPackageReference "swift-package-manager-display-sdk" */,
-				CF21DF4830F25CFE98DB8C94 /* XCLocalSwiftPackageReference "." */,
 				E9524B6DAA357E1F6F411EDA /* XCLocalSwiftPackageReference "TeadsSampleAppDependencies" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -816,10 +815,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		CF21DF4830F25CFE98DB8C94 /* XCLocalSwiftPackageReference "." */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = .;
-		};
 		E9524B6DAA357E1F6F411EDA /* XCLocalSwiftPackageReference "TeadsSampleAppDependencies" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SampleApps/TeadsSampleAppDependencies;

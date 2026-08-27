@@ -43,8 +43,7 @@ The sample apps resolve the following packages:
 
 | Package | Provides |
 | ------- | -------- |
-| This repository (local, `Package.swift`) | `TeadsSDK`, `TeadsAdMobAdapter`, `TeadsAppLovinAdapter` |
-| `SampleApps/TeadsSampleAppDependencies` (local) | `TeadsSASAdapter`, built from `MediationAdapters/TeadsSASAdapter` |
+| `SampleApps/TeadsSampleAppDependencies` (local) | `TeadsSDK`, `TeadsAdMobAdapter`, `TeadsAppLovinAdapter` (the xcframeworks of `Frameworks/`, mirroring the root `Package.swift`) and `TeadsSASAdapter`, built from the `MediationAdapters/TeadsSASAdapter` sources |
 | [swift-package-manager-google-mobile-ads](https://github.com/googleads/swift-package-manager-google-mobile-ads) | `GoogleMobileAds` |
 | [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `AppLovinSDK` |
 | [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `SASDisplayKit` |
