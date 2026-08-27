@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B17B7C42E59460CCA10910F /* TeadsSASAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 06841D6415D115DCEA5FC532 /* TeadsSASAdapter */; };
-		30DFFC2913F9E14A166894F3 /* TeadsAdMobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 62E570245BBBB38F7B249A3E /* TeadsAdMobAdapter */; };
-		46541B2DE44730D387EE6B56 /* TeadsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 796DE77DF907E97F08A35D6A /* TeadsSDK */; };
-		5644AF46B8CBA8D9235978B9 /* TeadsAppLovinAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD76E6CD5249113910A1C49 /* TeadsAppLovinAdapter */; };
-		B1E7B25E3040639E00047D22 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B1E7B25D3040639E00047D22 /* GoogleMobileAds */; };
-		B1E7B262304063B200047D22 /* PrebidMobile in Frameworks */ = {isa = PBXBuildFile; productRef = B1E7B261304063B200047D22 /* PrebidMobile */; };
-		B1E7B264304063B900047D22 /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B1E7B263304063B900047D22 /* AppLovinSDK */; };
+		0CDCF5BE5E9C9A2FCE43A505 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = DCC7F86326C2F701D606512E /* GoogleMobileAds */; };
+		1A62D8125B4667FEF0E980E2 /* TeadsSASAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 04D5E0154A475598819B298E /* TeadsSASAdapter */; };
+		6467CADD1069196604B0E77B /* TeadsAdMobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = ED26E385A05630FB083855CF /* TeadsAdMobAdapter */; };
+		754BF3C95CF379DCB3B69DD5 /* TeadsSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 36192421A33F26F5B98FFCD4 /* TeadsSDK */; };
+		A1DFE8FB78C9A4B969A1415C /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 99991FBA68101BDD1D7EBA55 /* AppLovinSDK */; };
+		AB67BAD0D049A7104DAA8D64 /* SASDisplayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 594B4BC65BFF48E934E68F2D /* SASDisplayKit */; };
 		B5555A361F7CDF80007406D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5555A351F7CDF80007406D4 /* AppDelegate.swift */; };
 		B5555A3B1F7CDF80007406D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A391F7CDF80007406D4 /* Main.storyboard */; };
 		B5555A3D1F7CDF80007406D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3C1F7CDF80007406D4 /* Assets.xcassets */; };
 		B5555A401F7CDF80007406D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5555A3E1F7CDF80007406D4 /* LaunchScreen.storyboard */; };
+		FEEDA70C6BAD0F97FD2E94B3 /* TeadsAppLovinAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 531FA06366F55FD4CEDC3E2F /* TeadsAppLovinAdapter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,26 +54,36 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B145107B2E97D30600DAE138 /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Models;
 			sourceTree = "<group>";
 		};
 		B145107F2E97D30A00DAE138 /* Views */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Views;
 			sourceTree = "<group>";
 		};
 		B14510852E97D30D00DAE138 /* Extensions */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B145108C2E97D31100DAE138 /* Ressources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Ressources;
 			sourceTree = "<group>";
 		};
 		B147A67C2ECF13790082CB96 /* Controllers */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -87,11 +97,15 @@
 		};
 		B147A6AB2ECF139E0082CB96 /* Cells */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
 		B147A6B22ECF13A30082CB96 /* TeadsSampleAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = TeadsSampleAppUITests;
 			sourceTree = "<group>";
 		};
@@ -102,13 +116,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46541B2DE44730D387EE6B56 /* TeadsSDK in Frameworks */,
-				30DFFC2913F9E14A166894F3 /* TeadsAdMobAdapter in Frameworks */,
-				B1E7B262304063B200047D22 /* PrebidMobile in Frameworks */,
-				B1E7B25E3040639E00047D22 /* GoogleMobileAds in Frameworks */,
-				5644AF46B8CBA8D9235978B9 /* TeadsAppLovinAdapter in Frameworks */,
-				B1E7B264304063B900047D22 /* AppLovinSDK in Frameworks */,
-				1B17B7C42E59460CCA10910F /* TeadsSASAdapter in Frameworks */,
+				754BF3C95CF379DCB3B69DD5 /* TeadsSDK in Frameworks */,
+				6467CADD1069196604B0E77B /* TeadsAdMobAdapter in Frameworks */,
+				FEEDA70C6BAD0F97FD2E94B3 /* TeadsAppLovinAdapter in Frameworks */,
+				1A62D8125B4667FEF0E980E2 /* TeadsSASAdapter in Frameworks */,
+				0CDCF5BE5E9C9A2FCE43A505 /* GoogleMobileAds in Frameworks */,
+				A1DFE8FB78C9A4B969A1415C /* AppLovinSDK in Frameworks */,
+				AB67BAD0D049A7104DAA8D64 /* SASDisplayKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,13 +208,13 @@
 			);
 			name = TeadsSampleApp;
 			packageProductDependencies = (
-				796DE77DF907E97F08A35D6A /* TeadsSDK */,
-				62E570245BBBB38F7B249A3E /* TeadsAdMobAdapter */,
-				7CD76E6CD5249113910A1C49 /* TeadsAppLovinAdapter */,
-				06841D6415D115DCEA5FC532 /* TeadsSASAdapter */,
-				B1E7B25D3040639E00047D22 /* GoogleMobileAds */,
-				B1E7B261304063B200047D22 /* PrebidMobile */,
-				B1E7B263304063B900047D22 /* AppLovinSDK */,
+				36192421A33F26F5B98FFCD4 /* TeadsSDK */,
+				ED26E385A05630FB083855CF /* TeadsAdMobAdapter */,
+				531FA06366F55FD4CEDC3E2F /* TeadsAppLovinAdapter */,
+				04D5E0154A475598819B298E /* TeadsSASAdapter */,
+				DCC7F86326C2F701D606512E /* GoogleMobileAds */,
+				99991FBA68101BDD1D7EBA55 /* AppLovinSDK */,
+				594B4BC65BFF48E934E68F2D /* SASDisplayKit */,
 			);
 			productName = TeadsSampleApp;
 			productReference = B5555A321F7CDF80007406D4 /* TeadsSampleApp.app */;
@@ -258,10 +272,10 @@
 			);
 			mainGroup = B5555A291F7CDF80007406D4;
 			packageReferences = (
-				E00CEFFDC67374A8AD3A7E34 /* XCLocalSwiftPackageReference "SampleApps/TeadsSampleAppDependencies" */,
-				B1E7B25C3040639E00047D22 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
-				B1E7B25F304063A600047D22 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
-				B1E7B260304063B200047D22 /* XCRemoteSwiftPackageReference "prebid-mobile-ios" */,
+				4266E4FE0BC5E323D5B38733 /* XCLocalSwiftPackageReference "TeadsSampleAppDependencies" */,
+				04F83F206C33C9C406759234 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				DCE44386BB5FCD9204780AB3 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
+				F68CB63689C3016CE400BC43 /* XCRemoteSwiftPackageReference "swift-package-manager-display-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B5555A331F7CDF80007406D4 /* Products */;
@@ -324,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Formats the sources with SwiftFormat when it is installed locally\n# (`brew install swiftformat`). The build does not fail when it is missing.\nif command -v swiftformat >/dev/null 2>&1; then\n  swiftformat \"$SRCROOT\"\nelse\n  echo \"warning: swiftformat not found, skipping formatting. Install it with 'brew install swiftformat'.\"\nfi\n";
+			shellScript = "# Checks the formatting with SwiftFormat when it is installed locally\n# (`brew install swiftformat`), using the rules of `.swiftformat`.\n# `--lint` reports violations without rewriting the sources, so a publisher\n# running a different SwiftFormat version never gets the sample tree\n# reformatted behind their back. Run `swiftformat .` from the repository root\n# to apply the fixes.\nif command -v swiftformat >/dev/null 2>&1; then\n  swiftformat --lint \"$SRCROOT\" || echo \"warning: SwiftFormat reported formatting issues, run 'swiftformat .' to fix them.\"\nelse\n  echo \"warning: swiftformat not found, skipping the formatting check. Install it with 'brew install swiftformat'.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -748,70 +762,73 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		E00CEFFDC67374A8AD3A7E34 /* XCLocalSwiftPackageReference "SampleApps/TeadsSampleAppDependencies" */ = {
+		4266E4FE0BC5E323D5B38733 /* XCLocalSwiftPackageReference "TeadsSampleAppDependencies" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SampleApps/TeadsSampleAppDependencies;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1E7B25C3040639E00047D22 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		04F83F206C33C9C406759234 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 13.9.0;
+				kind = versionRange;
+				maximumVersion = 13.0.0;
+				minimumVersion = 12.12.0;
 			};
 		};
-		B1E7B25F304063A600047D22 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */ = {
+		DCE44386BB5FCD9204780AB3 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 13.6.4;
+				kind = versionRange;
+				maximumVersion = 14.0.0;
+				minimumVersion = 13.4.0;
 			};
 		};
-		B1E7B260304063B200047D22 /* XCRemoteSwiftPackageReference "prebid-mobile-ios" */ = {
+		F68CB63689C3016CE400BC43 /* XCRemoteSwiftPackageReference "swift-package-manager-display-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/prebid/prebid-mobile-ios";
+			repositoryURL = "https://github.com/smartadserver/swift-package-manager-display-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.3.4;
+				kind = versionRange;
+				maximumVersion = 8.0.0;
+				minimumVersion = 7.24.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		06841D6415D115DCEA5FC532 /* TeadsSASAdapter */ = {
+		04D5E0154A475598819B298E /* TeadsSASAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TeadsSASAdapter;
 		};
-		62E570245BBBB38F7B249A3E /* TeadsAdMobAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TeadsAdMobAdapter;
-		};
-		796DE77DF907E97F08A35D6A /* TeadsSDK */ = {
+		36192421A33F26F5B98FFCD4 /* TeadsSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TeadsSDK;
 		};
-		7CD76E6CD5249113910A1C49 /* TeadsAppLovinAdapter */ = {
+		531FA06366F55FD4CEDC3E2F /* TeadsAppLovinAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TeadsAppLovinAdapter;
 		};
-		B1E7B25D3040639E00047D22 /* GoogleMobileAds */ = {
+		594B4BC65BFF48E934E68F2D /* SASDisplayKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1E7B25C3040639E00047D22 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = F68CB63689C3016CE400BC43 /* XCRemoteSwiftPackageReference "swift-package-manager-display-sdk" */;
+			productName = SASDisplayKit;
+		};
+		99991FBA68101BDD1D7EBA55 /* AppLovinSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCE44386BB5FCD9204780AB3 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */;
+			productName = AppLovinSDK;
+		};
+		DCC7F86326C2F701D606512E /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04F83F206C33C9C406759234 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
-		B1E7B261304063B200047D22 /* PrebidMobile */ = {
+		ED26E385A05630FB083855CF /* TeadsAdMobAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1E7B260304063B200047D22 /* XCRemoteSwiftPackageReference "prebid-mobile-ios" */;
-			productName = PrebidMobile;
-		};
-		B1E7B263304063B900047D22 /* AppLovinSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1E7B25F304063A600047D22 /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */;
-			productName = AppLovinSDK;
+			productName = TeadsAdMobAdapter;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

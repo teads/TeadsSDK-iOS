@@ -41,14 +41,18 @@ Both sample apps use **Swift Package Manager** — no `pod install` step is need
 
 The sample apps resolve the following packages:
 
-| Package | Provides |
-| ------- | -------- |
-| `SampleApps/TeadsSampleAppDependencies` (local) | `TeadsSDK`, `TeadsAdMobAdapter`, `TeadsAppLovinAdapter` (the xcframeworks of `Frameworks/`, mirroring the root `Package.swift`) and `TeadsSASAdapter`, built from the `MediationAdapters/TeadsSASAdapter` sources |
-| [swift-package-manager-google-mobile-ads](https://github.com/googleads/swift-package-manager-google-mobile-ads) | `GoogleMobileAds` |
-| [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `AppLovinSDK` |
-| [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `SASDisplayKit` |
+| Package | Version | Provides |
+| ------- | ------- | -------- |
+| `SampleApps/TeadsSampleAppDependencies` (local) | — | `TeadsSDK`, `TeadsAdMobAdapter` and `TeadsAppLovinAdapter` (the xcframeworks of `Frameworks/`) and `TeadsSASAdapter`, built from the `MediationAdapters/TeadsSASAdapter` sources |
+| [swift-package-manager-google-mobile-ads](https://github.com/googleads/swift-package-manager-google-mobile-ads) | `12.12.0 ..< 13.0.0` | `GoogleMobileAds` |
+| [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `13.4.0 ..< 14.0.0` | `AppLovinSDK` |
+| [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `7.24.2 ..< 8.0.0` | `SASDisplayKit` |
 
-Code formatting is handled by a `SwiftFormat` build phase that runs `swiftformat` when it is installed locally (`brew install swiftformat`) and is skipped otherwise.
+Both app targets declare the exact same package requirements, and the exact versions they were validated against are committed in `TeadsSampleApp.xcworkspace/xcshareddata/swiftpm/Package.resolved`. Open the **workspace** rather than an individual project so that both apps resolve a single package graph.
+
+> The prebuilt `TeadsAdMobAdapter.xcframework` still exposes `GADCustomEventExtras`, which the Google Mobile Ads SDK removed in 13.0.0, hence the `12.x` requirement.
+
+Code formatting is checked by a `SwiftFormat` build phase: it runs `swiftformat --lint` when SwiftFormat is installed locally (`brew install swiftformat`) and is skipped otherwise. Run `swiftformat .` from the repository root to apply the fixes.
 
 ## 📱 SwiftUI sample app
 
@@ -101,6 +105,8 @@ Mediation (AdMob, AppLovin, SAS), Native ads (any provider, including Teads Dire
 ## 📦 Install the Teads SDK iOS framework
 
 ### Cocoapods
+
+CocoaPods remains a supported distribution channel: the podspecs at the root of this repository (`TeadsSDK.podspec` and the adapter ones) are the ones published to the trunk. Only the sample apps of this repository switched to Swift Package Manager.
 
 To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
 

@@ -5,15 +5,17 @@ import PackageDescription
 // Local package used **only** by the sample apps (`TeadsSampleApp` and
 // `TeadsSwiftUISampleApp`).
 //
-// It mirrors the products of the root `Package.swift` (the ones published to
-// SPM consumers) by pointing at the very same xcframeworks in `Frameworks/`
-// through the symlinks in `Frameworks/` here, and additionally builds the SAS
-// (Equativ) mediation adapter from source: unlike the AdMob and AppLovin
-// adapters, it is not shipped as a prebuilt xcframework.
+// It exposes the products the sample apps actually use: the `TeadsSDK`,
+// `TeadsAdMobAdapter` and `TeadsAppLovinAdapter` xcframeworks of `Frameworks/`
+// (reached through the symlinks in `Frameworks/` here, so there is a single
+// copy of each binary in the repository), plus the SAS (Equativ) mediation
+// adapter built from source: unlike the other adapters, it is not shipped as a
+// prebuilt xcframework.
 //
-// It is kept separate from the root manifest so that SPM consumers of Teads are
-// never forced to resolve the SAS SDK. When a product is added to or removed
-// from the root `Package.swift`, mirror the change here.
+// It deliberately does not mirror the whole root `Package.swift`:
+// `TeadsPBMPluginRenderer` is left out because no sample uses it, and the SAS
+// SDK dependency stays here so that SPM consumers of the root package are never
+// forced to resolve it. Add a product here when a sample app starts using one.
 let package = Package(
     name: "TeadsSampleAppDependencies",
     platforms: [

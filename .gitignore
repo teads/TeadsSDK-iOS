@@ -19,9 +19,16 @@ DerivedData
 *.xcuserstate
 .DS_Store
 
+# CocoaPods
+#
+# The podspecs are still the published CocoaPods distribution, so keep ignoring
+# the Pods directory of anyone integrating them locally.
+Pods/
+
 # Swift Package Manager
 #
+# `Package.resolved` is intentionally NOT ignored: the workspace one pins the
+# SDK versions the sample apps are validated against.
 .build/
 .swiftpm/
-*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
 .serena
