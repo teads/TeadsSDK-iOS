@@ -36,8 +36,10 @@ TeadsSDK v6 introduces a new unified `createPlacement` API. See [Migration Docum
 Both sample apps use **Swift Package Manager** — no `pod install` step is needed.
 
 1. Clone this repository.
-2. Open `TeadsSampleApp.xcworkspace` and let Xcode resolve the packages (`File` → `Packages` → `Resolve Package Versions` if it does not start automatically).
+2. Open `TeadsSampleApp.xcodeproj` and let Xcode resolve the packages (`File` → `Packages` → `Resolve Package Versions` if it does not start automatically).
 3. Select the **`TeadsSampleApp`** scheme and run.
+
+There is no Xcode workspace: each sample app is a standalone project that you open directly.
 
 The sample apps resolve the following packages:
 
@@ -48,7 +50,7 @@ The sample apps resolve the following packages:
 | [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `13.4.0 ..< 14.0.0` | `AppLovinSDK` |
 | [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `7.24.2 ..< 8.0.0` | `SASDisplayKit` |
 
-Both app targets declare the exact same package requirements, and the exact versions they were validated against are committed in `TeadsSampleApp.xcworkspace/xcshareddata/swiftpm/Package.resolved`. Open the **workspace** rather than an individual project so that both apps resolve a single package graph.
+Both app targets declare the exact same package requirements, and the exact versions they were validated against are committed in each project's `project.xcworkspace/xcshareddata/swiftpm/Package.resolved`. Keep the two lockfiles in sync when you bump a dependency: since the projects resolve independently, a divergence there is not reported as a conflict.
 
 > The prebuilt `TeadsAdMobAdapter.xcframework` still exposes `GADCustomEventExtras`, which the Google Mobile Ads SDK removed in 13.0.0, hence the `12.x` requirement.
 
@@ -56,9 +58,9 @@ Code formatting is checked by a `SwiftFormat` build phase: it runs `swiftformat 
 
 ## 📱 SwiftUI sample app
 
-Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps share the same workspace and Swift packages.
+Alongside the UIKit `TeadsSampleApp`, this repository ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps are standalone Xcode projects consuming the same Swift packages.
 
-1. Open `TeadsSampleApp.xcworkspace`.
+1. Open `TeadsSwiftUISampleApp.xcodeproj`.
 2. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
 
 ### Coverage
