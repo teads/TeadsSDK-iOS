@@ -38,7 +38,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/smartadserver/swift-package-manager-display-sdk.git", "7.24.2" ..< "8.0.0"),
+        .package(url: "https://github.com/smartadserver/swift-package-manager-display-sdk.git", "7.24.2" ..< "8.0.0")
     ],
     targets: [
         .binaryTarget(
@@ -64,7 +64,7 @@ let package = Package(
             name: "TeadsSASAdapter",
             dependencies: [
                 "TeadsSDK",
-                "SASDisplayKit",
+                .product(name: "SASDisplayKit", package: "swift-package-manager-display-sdk")
             ],
             exclude: ["TeadsSASAdapter/README.md"]
         ),
