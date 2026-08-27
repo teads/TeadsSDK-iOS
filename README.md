@@ -33,15 +33,30 @@ TeadsSDK v6 introduces a new unified `createPlacement` API. See [Migration Docum
 
 ## 🚲 Run the sample app
 
-Clone this repository, open it with Xcode, and run project.
+Both sample apps use **Swift Package Manager** — no `pod install` step is needed.
+
+1. Clone this repository.
+2. Open `TeadsSampleApp.xcworkspace` and let Xcode resolve the packages (`File` → `Packages` → `Resolve Package Versions` if it does not start automatically).
+3. Select the **`TeadsSampleApp`** scheme and run.
+
+The sample apps resolve the following packages:
+
+| Package | Provides |
+| ------- | -------- |
+| This repository (local, `Package.swift`) | `TeadsSDK`, `TeadsAdMobAdapter`, `TeadsAppLovinAdapter` |
+| `SampleApps/TeadsSampleAppDependencies` (local) | `TeadsSASAdapter`, built from `MediationAdapters/TeadsSASAdapter` |
+| [swift-package-manager-google-mobile-ads](https://github.com/googleads/swift-package-manager-google-mobile-ads) | `GoogleMobileAds` |
+| [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `AppLovinSDK` |
+| [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `SASDisplayKit` |
+
+Code formatting is handled by a `SwiftFormat` build phase that runs `swiftformat` when it is installed locally (`brew install swiftformat`) and is skipped otherwise.
 
 ## 📱 SwiftUI sample app
 
-Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps share the same workspace and Pods.
+Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps share the same workspace and Swift packages.
 
-1. Run `pod install`.
-2. Open `TeadsSampleApp.xcworkspace`.
-3. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
+1. Open `TeadsSampleApp.xcworkspace`.
+2. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
 
 ### Coverage
 
