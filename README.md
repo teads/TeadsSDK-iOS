@@ -33,15 +33,35 @@ TeadsSDK v6 introduces a new unified `createPlacement` API. See [Migration Docum
 
 ## 🚲 Run the sample app
 
-Clone this repository, open it with Xcode, and run project.
+Both sample apps use **Swift Package Manager** — no `pod install` step is needed.
+
+1. Clone this repository.
+2. Open `TeadsSampleApp.xcodeproj` and let Xcode resolve the packages (`File` → `Packages` → `Resolve Package Versions` if it does not start automatically).
+3. Select the **`TeadsSampleApp`** scheme and run.
+
+There is no Xcode workspace: each sample app is a standalone project that you open directly.
+
+The sample apps resolve the following packages:
+
+| Package | Version | Provides |
+| ------- | ------- | -------- |
+| `SampleApps/TeadsSampleAppDependencies` (local) | — | `TeadsSDK`, `TeadsAdMobAdapter` and `TeadsAppLovinAdapter` (the xcframeworks of `Frameworks/`) and `TeadsSASAdapter`, built from the `MediationAdapters/TeadsSASAdapter` sources |
+| [swift-package-manager-google-mobile-ads](https://github.com/googleads/swift-package-manager-google-mobile-ads) | `12.12.0 ..< 13.0.0` | `GoogleMobileAds` |
+| [AppLovin-MAX-Swift-Package](https://github.com/AppLovin/AppLovin-MAX-Swift-Package) | `13.4.0 ..< 14.0.0` | `AppLovinSDK` |
+| [swift-package-manager-display-sdk](https://github.com/smartadserver/swift-package-manager-display-sdk) | `7.24.2 ..< 8.0.0` | `SASDisplayKit` |
+
+Both app targets declare the exact same package requirements, and the exact versions they were validated against are committed in each project's `project.xcworkspace/xcshareddata/swiftpm/Package.resolved`. Keep the two lockfiles in sync when you bump a dependency: since the projects resolve independently, a divergence there is not reported as a conflict.
+
+> The prebuilt `TeadsAdMobAdapter.xcframework` still exposes `GADCustomEventExtras`, which the Google Mobile Ads SDK removed in 13.0.0, hence the `12.x` requirement.
+
+Code formatting is checked by a `SwiftFormat` build phase: it runs `swiftformat --lint` when SwiftFormat is installed locally (`brew install swiftformat`) and is skipped otherwise. Run `swiftformat .` from the repository root to apply the fixes.
 
 ## 📱 SwiftUI sample app
 
-Alongside the UIKit `TeadsSampleApp`, the workspace ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps share the same workspace and Pods.
+Alongside the UIKit `TeadsSampleApp`, this repository ships a SwiftUI sample, **`TeadsSwiftUISampleApp`**, demonstrating Teads integration in SwiftUI-first apps. Both apps are standalone Xcode projects consuming the same Swift packages.
 
-1. Run `pod install`.
-2. Open `TeadsSampleApp.xcworkspace`.
-3. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
+1. Open `TeadsSwiftUISampleApp.xcodeproj`.
+2. Select the **`TeadsSwiftUISampleApp`** scheme and run on an iOS 16+ simulator.
 
 ### Coverage
 
@@ -87,6 +107,8 @@ Mediation (AdMob, AppLovin, SAS), Native ads (any provider, including Teads Dire
 ## 📦 Install the Teads SDK iOS framework
 
 ### Cocoapods
+
+CocoaPods remains a supported distribution channel: the podspecs at the root of this repository (`TeadsSDK.podspec` and the adapter ones) are the ones published to the trunk. Only the sample apps of this repository switched to Swift Package Manager.
 
 To install the TeadsSDK just put this on your podfile, if you've never used cocoapods before please check the [offical documentation](https://guides.cocoapods.org/using/using-cocoapods.html).
 

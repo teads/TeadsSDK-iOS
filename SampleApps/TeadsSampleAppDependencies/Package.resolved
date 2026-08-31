@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-package-manager-display-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/smartadserver/swift-package-manager-display-sdk.git",
+      "state" : {
+        "revision" : "940a22d311d3920d7fb6035d35bf0acfd4ea29ff",
+        "version" : "7.24.2"
+      }
+    }
+  ],
+  "version" : 2
+}
