@@ -8,6 +8,7 @@
 @preconcurrency import SASDisplayKit
 import SwiftUI
 import TeadsSASAdapter
+import TeadsSDK
 
 struct NativeSASTableViewSample: View {
     @State private var nativeAd: SASNativeAd?
