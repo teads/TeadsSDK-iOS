@@ -56,6 +56,8 @@ class InReadDirectScrollViewController: TeadsViewController {
         }
     }
 
+    // Repro: to mimic a fixed-height container, set `teadsAdHeightConstraint.constant`
+    // to e.g. 250/200/150 in setupPlacement() and skip the assignment below (and in closeAd()).
     func updateAdHeight(_ height: CGFloat) {
         teadsAdHeightConstraint.constant = height
         view.layoutIfNeeded()

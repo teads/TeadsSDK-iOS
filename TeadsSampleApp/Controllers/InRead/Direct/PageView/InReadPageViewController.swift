@@ -12,7 +12,7 @@ import UIKit
 
 class InReadPageViewController: UIPageViewController {
     var pid: String = PID.directLandscape
-    var validationModeEnabled = true
+    var validationModeEnabled = false
     var orderedViewControllers: [UIViewController] = []
     var currentViewControlelr: UIViewController?
 

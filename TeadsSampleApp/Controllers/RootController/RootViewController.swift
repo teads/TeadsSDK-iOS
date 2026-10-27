@@ -25,7 +25,7 @@ class RootViewController: TeadsViewController {
         hasTeadsArticleNavigationBar = false
 
         // Load validation mode from UserDefaults
-        validationModeEnabled = UserDefaults.standard.object(forKey: validationModeKey) as? Bool ?? true
+        validationModeEnabled = UserDefaults.standard.object(forKey: validationModeKey) as? Bool ?? false
 
         // Register validation toggle cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ValidationToggleCell")

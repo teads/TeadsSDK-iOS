@@ -11,7 +11,7 @@ import UIKit
 class TeadsViewController: UIViewController {
     var hasTeadsArticleNavigationBar = true
     var pid: String = PID.directLandscape
-    var validationModeEnabled = true
+    var validationModeEnabled = false
     fileprivate let teadsLogo = UIImage(named: "Teads-Sample-App")
     fileprivate let teadsLogoWhite = UIImage(named: "Teads-Sample-App-White")
 
