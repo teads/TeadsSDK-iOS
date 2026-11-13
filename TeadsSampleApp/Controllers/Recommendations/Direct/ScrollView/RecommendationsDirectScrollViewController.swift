@@ -5,8 +5,10 @@
 //  Copyright © 2026 Teads. All rights reserved.
 //
 
+import SafariServices
 import TeadsSDK
 import UIKit
+import WebKit
 
 /// Direct Recommendations placement. The SDK returns recommendation items, so the
 /// publisher renders the UI — here as a vertical stack of cards inside an article.
@@ -74,17 +76,12 @@ class RecommendationsDirectScrollViewController: TeadsViewController {
                 guard let self else { return }
                 if response.error != nil { return }
                 for recommendation in response.recommendations {
-                    self.recommendationsStack.addArrangedSubview(RecommendationCardView(recommendation: recommendation) { [weak self] url in
-                        self?.handleClick(url: url, recommendation: recommendation)
+                    self.recommendationsStack.addArrangedSubview(RecommendationCardView(recommendation: recommendation) { [weak self] in
+                        self?.openRecommendation(recommendation)
                     })
                 }
             }
         }
-    }
-
-    private func handleClick(url: URL?, recommendation _: OBRecommendation) {
-        guard let url else { return }
-        UIApplication.shared.open(url)
     }
 }
 
@@ -92,12 +89,33 @@ extension RecommendationsDirectScrollViewController: TeadsAdPlacementEventsDeleg
     func adPlacement(_: TeadsAdPlacementIdentifiable?, didEmitEvent _: TeadsAdPlacementEventName, data _: [String: Any]?) {}
 }
 
+/// Recommendation click handling, shared by the Direct Recommendations samples.
+extension UIViewController {
+    func openRecommendation(_ recommendation: OBRecommendation) {
+        // For organic links getUrl reports the click, so only call it after the tap
+        guard let url = TeadsAdPlacementRecommendations.getUrl(recommendation) else { return }
+
+        if recommendation.isPaidLink {
+            // Paid: open in SFSafariViewController
+            present(SFSafariViewController(url: url), animated: true)
+        } else {
+            // Organic: open in the app
+            let article = RecommendationArticleViewController(url: url)
+            if let navigationController {
+                navigationController.pushViewController(article, animated: true)
+            } else {
+                present(UINavigationController(rootViewController: article), animated: true)
+            }
+        }
+    }
+}
+
 /// Simple recommendation card. Publishers can style this however they like.
 final class RecommendationCardView: UIView {
-    private let onTap: (URL?) -> Void
+    private let onTap: () -> Void
     private let recommendation: OBRecommendation
 
-    init(recommendation: OBRecommendation, onTap: @escaping (URL?) -> Void) {
+    init(recommendation: OBRecommendation, onTap: @escaping () -> Void) {
         self.recommendation = recommendation
         self.onTap = onTap
         super.init(frame: .zero)
@@ -152,6 +170,29 @@ final class RecommendationCardView: UIView {
     }
 
     @objc private func tapped() {
-        onTap(recommendation.url.flatMap { URL(string: $0) })
+        onTap()
+    }
+}
+
+/// Minimal in-app screen for organic recommendations. Replace it with your own article screen.
+final class RecommendationArticleViewController: UIViewController {
+    private let url: URL
+
+    init(url: URL) {
+        self.url = url
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) { fatalError("init(coder:) is not supported") }
+
+    override func loadView() {
+        view = WKWebView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Open the url as is, without any escaping or decoding
+        (view as? WKWebView)?.load(URLRequest(url: url))
     }
 }
