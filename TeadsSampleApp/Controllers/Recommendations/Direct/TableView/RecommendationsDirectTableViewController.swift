@@ -67,8 +67,8 @@ extension RecommendationsDirectTableViewController: UITableViewDataSource, UITab
         cell.contentView.subviews.forEach { $0.removeFromSuperview() }
         cell.selectionStyle = .none
         let recommendation = recommendations[indexPath.row]
-        let card = RecommendationCardView(recommendation: recommendation) { url in
-            if let url { UIApplication.shared.open(url) }
+        let card = RecommendationCardView(recommendation: recommendation) { [weak self] in
+            self?.openRecommendation(recommendation)
         }
         card.translatesAutoresizingMaskIntoConstraints = false
         cell.contentView.addSubview(card)
